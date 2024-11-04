@@ -20,3 +20,6 @@
 ![install](https://github.com/user-attachments/assets/9877192b-549c-4c29-92fb-90f15edee60d)
 
 ![enable](https://github.com/user-attachments/assets/ff36c924-b33d-475d-a513-5c3445afb824)
+
+## Если не видно картинки
+В Obsidian, в отличие от Github, изображения в этом файле не видны, поэтому читайте туториал на Github.
