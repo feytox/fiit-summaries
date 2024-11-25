@@ -6,7 +6,7 @@
 2. [Spoilers](https://obsidian.md/plugins?id=spoilers) - плагин для Obsidian, позволяющий создавать спойлеры для скрытия содержимого.
 
 ## Optional
-1. [Quick Latex](https://obsidian.md/plugins?id=quick-latex) - плагин для более быстрого и комфортного использования $\LaTeX$
+1. [Latex Suite](https://obsidian.md/plugins?id=latex-suite) - плагин для более быстрого и комфортного использования $\LaTeX$. В файле LaTeX_snippets.md есть пример конфига, используемого для написания конспектов.
 2. [Iconize](https://obsidian.md/plugins?id=spoilers) - плагин для иконок для файлов и папок (через гит они не синхронизируются)
 
 ## Как внести изменения?
