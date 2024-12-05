@@ -122,8 +122,8 @@
     {trigger: "<->", replacement: "\\leftrightarrow ", options: "mA"},
 	{trigger: "->", replacement: "\\to", options: "mA"},
 	{trigger: "!>", replacement: "\\mapsto", options: "mA"},
-    {trigger: "=>", replacement: "\\rightarrow", options: "mA"},
-	{trigger: "=<", replacement: "\\leftarrow", options: "mA"},
+    {trigger: "=>", replacement: "\\Rightarrow", options: "mA"},
+	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
 
 	{trigger: "and", replacement: "\\cap", options: "mA"},
 	{trigger: "orr", replacement: "\\cup", options: "mA"},
