@@ -5,6 +5,8 @@
     // custom type
     {trigger: "sqrt", replacement: "\\sqrt[$0]{$1}$2", options: "mA"},
     {trigger: "fr", replacement: "\\dfrac{$0}{$1}$2", options: "mA"},
+    {trigger: "tx", replacement: "\\text{$0}$1", options: "mA"},
+    {trigger: "$", replacement: "$$0$", options: "tA"},
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
@@ -21,14 +23,14 @@
     {trigger: "arcth", replacement: "\\mathrm{arcth} ", options: "mA"},
     
     // Greek letters
+    {trigger: "eps", replacement: "\\varepsilon", options: "mA"},
 	{trigger: "@a", replacement: "\\alpha", options: "mA"},
 	{trigger: "@b", replacement: "\\beta", options: "mA"},
 	{trigger: "@g", replacement: "\\gamma", options: "mA"},
 	{trigger: "@G", replacement: "\\Gamma", options: "mA"},
 	{trigger: "@d", replacement: "\\delta", options: "mA"},
 	{trigger: "@D", replacement: "\\Delta", options: "mA"},
-	{trigger: "@e", replacement: "\\epsilon", options: "mA"},
-	{trigger: ":e", replacement: "\\varepsilon", options: "mA"},
+	{trigger: "@e", replacement: "\\varepsilon", options: "mA"},
 	{trigger: "@z", replacement: "\\zeta", options: "mA"},
 	{trigger: "@t", replacement: "\\theta", options: "mA"},
 	{trigger: "@T", replacement: "\\Theta", options: "mA"},
@@ -46,13 +48,9 @@
 	{trigger: "ome", replacement: "\\omega", options: "mA"},
 	{trigger: "Ome", replacement: "\\Omega", options: "mA"},
 
-    // Text environment
-    {trigger: "text", replacement: "\\text{$0}$1", options: "mA"},
-    {trigger: "\"", replacement: "\\text{$0}$1", options: "mA"},
-
     // Basic operations
 	{trigger: "_", replacement: "_{$0}$1", options: "mA"},
-	{trigger: "sts", replacement: "_\\text{$0}", options: "mA"},
+    {trigger: "^", replacement: "^{$0}$1", options: "mA"},
     {trigger: /([A-Za-z])(\d)/, replacement: "[[0]]_{[[1]]}", options: "rmA", description: "Auto letter subscript", priority: -1},
 
     {trigger: /([^\\])(exp|log|ln)/, replacement: "[[0]]\\[[1]]", options: "rmA"},
@@ -124,8 +122,8 @@
     {trigger: "<->", replacement: "\\leftrightarrow ", options: "mA"},
 	{trigger: "->", replacement: "\\to", options: "mA"},
 	{trigger: "!>", replacement: "\\mapsto", options: "mA"},
-    {trigger: "=>", replacement: "\\implies", options: "mA"},
-	{trigger: "=<", replacement: "\\impliedby", options: "mA"},
+    {trigger: "=>", replacement: "\\rightarrow", options: "mA"},
+	{trigger: "=<", replacement: "\\leftarrow", options: "mA"},
 
 	{trigger: "and", replacement: "\\cap", options: "mA"},
 	{trigger: "orr", replacement: "\\cup", options: "mA"},
