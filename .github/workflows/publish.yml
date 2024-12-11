@@ -31,7 +31,7 @@ jobs:
       - name: Transform files to Quartz format
         run: |
           cd quartz
-          python quartz/transform_files.py
+          python transform_files.py
       
       - uses: actions/setup-node@v4
         with:
