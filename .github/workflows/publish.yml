@@ -35,6 +35,9 @@ jobs:
         with:
           node-version: 22
       
+      - name: Change directory to Quartz
+        run: cd quartz
+      
       - name: Install Dependencies
         run: npm ci
       
