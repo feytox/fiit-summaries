@@ -29,7 +29,9 @@ jobs:
           python-version: 3.12
       
       - name: Transform files to Quartz format
-        run: python quartz/transform_files.py
+        run: |
+          cd quartz
+          python quartz/transform_files.py
       
       - uses: actions/setup-node@v4
         with:
