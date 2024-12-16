@@ -6,7 +6,10 @@
     {trigger: "sqrt", replacement: "\\sqrt[$0]{$1}$2", options: "mA"},
     {trigger: "fr", replacement: "\\dfrac{$0}{$1}$2", options: "mA"},
     {trigger: "tx", replacement: "\\text{$0}$1", options: "mA"},
-    {trigger: "$", replacement: "$$0$", options: "tA"},
+    {trigger: "$", replacement: "$$0$", options: "tmA"},
+    {trigger: "ww", replacement: "^{$0}$1", options: "mA"}, // ВВерх типо
+    {trigger: "|", replacement: "|$0|$1", options: "mA"},
+    {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "rmA"}, // для векторов из двух букв
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
@@ -119,14 +122,14 @@
 	{trigger: "sim=", replacement: "\\simeq", options: "mA"},
     {trigger: "prop", replacement: "\\propto", options: "mA"},
 
-    {trigger: "<->", replacement: "\\leftrightarrow ", options: "mA"},
+    {trigger: "<->", replacement: "\\Leftrightarrow ", options: "mA"},
 	{trigger: "->", replacement: "\\to", options: "mA"},
 	{trigger: "!>", replacement: "\\mapsto", options: "mA"},
     {trigger: "=>", replacement: "\\Rightarrow", options: "mA"},
 	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
 
-	{trigger: "and", replacement: "\\cap", options: "mA"},
-	{trigger: "orr", replacement: "\\cup", options: "mA"},
+	{trigger: "and", replacement: "\\land", options: "mA"},
+	{trigger: "orr", replacement: "\\lor", options: "mA"},
 	{trigger: "in", replacement: "\\in", options: "mA"},
 	{trigger: "notin", replacement: "\\not\\in", options: "mA"},
     {trigger: "\\\\\\", replacement: "\\setminus", options: "mA"},
@@ -134,12 +137,13 @@
     {trigger: "sup=", replacement: "\\supseteq", options: "mA"},
 	{trigger: "eset", replacement: "\\emptyset", options: "mA"},
 	{trigger: "set", replacement: "\\{$0\\}$1", options: "mA"},
-	{trigger: "ex", replacement: "\\exists{$0}~~ $1", options: "mA"},
+	{trigger: "ex", replacement: "\\exists{$0}~~$1", options: "mA"},
     {trigger: "fal", replacement: "\\forall{$0}~~ $1", options: "mA"},
     {trigger: "qed", replacement: "\\square", options: "mA"},
 
 	{trigger: "CC", replacement: "\\mathbb{C}", options: "mA"},
 	{trigger: "RR", replacement: "\\mathbb{R}", options: "mA"},
+    {trigger: "QQ", replacement: "\\mathbb{Q}", options: "mA"},
 	{trigger: "ZZ", replacement: "\\mathbb{Z}", options: "mA"},
 	{trigger: "NN", replacement: "\\mathbb{N}", options: "mA"},
     {trigger: "FF", replacement: "\\mathbb{F}", options: "mA"},
