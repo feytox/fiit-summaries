@@ -10,6 +10,7 @@
     {trigger: "ww", replacement: "^{$0}$1", options: "mA"}, // ВВерх типо
     {trigger: "|", replacement: "|$0|$1", options: "mA"},
     {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "rmA"}, // для векторов из двух букв
+    {trigger: "baar", replacement: "\\bar{\\bar{$0}}$1", options: "rmA"},
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
