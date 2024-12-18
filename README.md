@@ -1,10 +1,14 @@
+## Подробный гайд по установке
+[*тык*](https://github.com/feytox/calculus-summaries/blob/main/Tutorial.md)
+
 ## Requirements
 1. [Obsidian](https://obsidian.md/) - IDE для конспектов.
 2. [Spoilers](https://obsidian.md/plugins?id=spoilers) - плагин для Obsidian, позволяющий создавать спойлеры для скрытия содержимого.
 
 ## Optional
-1. [Quick Latex](https://obsidian.md/plugins?id=quick-latex) - плагин для более быстрого и комфортного использования $\LaTeX$
-2. [Iconize](https://obsidian.md/plugins?id=spoilers) - плагин для иконок для файлов и папок (через гит они не синхронизируются)
+1. [Latex Suite](https://obsidian.md/plugins?id=latex-suite) - плагин для более быстрого и комфортного использования $\LaTeX$. В файле LaTeX_snippets.md есть пример конфига, используемого для написания конспектов.
+2. [No More Flickering Inline Math](https://obsidian.md/plugins?id=inline-math) - плагин для комфортного написания встроенных математических строк.
+3. [Iconize](https://obsidian.md/plugins?id=spoilers) - плагин для иконок для файлов и папок (через гит они не синхронизируются)
 
 ## Как внести изменения?
 Вариант 1. Создаёте issue и там описываете, что не так.
@@ -23,5 +27,5 @@
 
 ## TODO
 1. Найти и исправить все ошибки и неточности в конспектах
-2. Добавить гайд по установке
+2. Возможно, разобраться как совместить использование спойлеров и Jekyll (или что-то другое), чтобы можно было опубликовать коспекты через Github Pages
 3. Возможно, добавить решение примеров задач из PDF
