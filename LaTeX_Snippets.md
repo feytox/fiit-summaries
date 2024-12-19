@@ -9,8 +9,9 @@
     {trigger: "$", replacement: "$$0$", options: "tmA"},
     {trigger: "ww", replacement: "^{$0}$1", options: "mA"}, // ВВерх типо
     {trigger: "|", replacement: "|$0|$1", options: "mA"},
-    {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "rmA"}, // для векторов из двух букв
-    {trigger: "baar", replacement: "\\bar{\\bar{$0}}$1", options: "rmA"},
+    {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "mA"}, // для векторов из двух букв
+    {trigger: "baar", replacement: "\\bar{\\bar{$0}}$1", options: "mA"},
+    {trigger: "ang", replacement: "\\angle{($0, $1)}$2", options: "mA"},
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
@@ -28,6 +29,7 @@
     
     // Greek letters
     {trigger: "eps", replacement: "\\varepsilon", options: "mA"},
+    {trigger: "@p", replacement: "\\varphi", options: "mA"},
 	{trigger: "@a", replacement: "\\alpha", options: "mA"},
 	{trigger: "@b", replacement: "\\beta", options: "mA"},
 	{trigger: "@g", replacement: "\\gamma", options: "mA"},
@@ -110,8 +112,9 @@
     {trigger: "nabl", replacement: "\\nabla", options: "mA"},
 	{trigger: "del", replacement: "\\nabla", options: "mA"},
     {trigger: "xx", replacement: "\\times", options: "mA"},
-    {trigger: "**", replacement: "\\cdot", options: "mA"},
+    {trigger: "cd", replacement: "\\cdot", options: "mA"},
     {trigger: "para", replacement: "\\parallel", options: "mA"},
+    {trigger: "npara", replacement: "\\nparallel", options: "mA"},
 
 	{trigger: "===", replacement: "\\equiv", options: "mA"},
     {trigger: "!=", replacement: "\\neq", options: "mA"},
