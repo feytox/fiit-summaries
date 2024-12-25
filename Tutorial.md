@@ -22,7 +22,12 @@
 ![enable](https://github.com/user-attachments/assets/ff36c924-b33d-475d-a513-5c3445afb824) 
 
 6. Переходите в Настройки, "Appearance" ("Оформление"), в самом низу включаете сниппет `math-scroll`. Это позволит скроллить длинные математические строки в любом режиме.
+
+![math-scroll.css](https://github.com/user-attachments/assets/b4ac62c6-c143-4698-a5c7-ade55ca3ca99)
+
 7. Если сниппет отсутствует и папка с репозиторием является подпапкой вашего хранилища Obsidian, то в корневую папку вашего хранилища Obsidian (она тоже содержит `.obsidian`) скопируйте папку `.obsidian` из папки репозитория, чтобы они соединились в одну.
+
+![merge folders](https://github.com/user-attachments/assets/1d6fd79c-df8c-4401-a22d-6cd21d8de6be)
 
 ## Если не видно картинки
 В Obsidian, в отличие от Github, изображения в этом файле не видны, поэтому читайте туториал на Github.
