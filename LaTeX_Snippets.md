@@ -9,9 +9,29 @@
     {trigger: "$", replacement: "$$0$", options: "tmA"},
     {trigger: "ww", replacement: "^{$0}$1", options: "mA"}, // ВВерх типо
     {trigger: "|", replacement: "|$0|$1", options: "mA"},
-    {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "mA"}, // для векторов из двух букв
+    {trigger: "=>", replacement: "\\Rightarrow", options: "mA"},
+	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
+    {trigger: "==>", replacement: "\\implies", options: "mA"},
+	{trigger: "==<", replacement: "\\impliedby", options: "mA"},
+
+    // algem
+    {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
     {trigger: "baar", replacement: "\\bar{\\bar{$0}}$1", options: "mA"},
     {trigger: "ang", replacement: "\\angle{($0, $1)}$2", options: "mA"},
+    {trigger: "([a-zA-Z])cl", replacement: "\\mathcal{[[0]]}", options: "rmA"},
+    {trigger: "([a-zA-Z0])bf", replacement: "\\mathbf{[[0]]}", options: "rmA"},
+    {trigger: "cl", replacement: "\\mathcal{$0}$1", options: "mA"},
+    {trigger: "Ker", replacement: "\\mathrm{Ker}~", options: "mA"},
+    {trigger: "dim", replacement: "\\mathrm{dim}~", options: "mA"},
+    {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "mA"}, // для векторов из двух букв
+
+    // calculus
+    {trigger: "fx", replacement: "f(x)", options: "mA"},
+    {trigger: "gx", replacement: "g(x)", options: "mA"},
+    {trigger: "f'x", replacement: "f'(x)", options: "mA"},
+    {trigger: "g'x", replacement: "g'(x)", options: "mA"},
+    {trigger: "([a-zA-Z])tild", replacement: "\\widetilde{[[0]]}", options: "rmA"},
+    {trigger: "tild", replacement: "\\widetilde{$0}$1", options: "mA"},
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
@@ -61,8 +81,8 @@
 
     {trigger: /([^\\])(exp|log|ln)/, replacement: "[[0]]\\[[1]]", options: "rmA"},
     {trigger: "conj", replacement: "^{*}", options: "mA"},
-    {trigger: "Re", replacement: "\\mathrm{Re}", options: "mA"},
-	{trigger: "Im", replacement: "\\mathrm{Im}", options: "mA"},
+    {trigger: "Re", replacement: "\\mathrm{Re}~", options: "mA"},
+	{trigger: "Im", replacement: "\\mathrm{Im}~", options: "mA"},
     {trigger: "bf", replacement: "\\mathbf{$0}", options: "mA"},
 	{trigger: "rm", replacement: "\\mathrm{$0}$1", options: "mA"},
 
@@ -73,23 +93,21 @@
     // More operations
 	{trigger: "([a-zA-Z])hat", replacement: "\\hat{[[0]]}", options: "rmA"},
     {trigger: "([a-zA-Z])bar", replacement: "\\bar{[[0]]}", options: "rmA"},
+    {trigger: "([a-zA-Z])ovr", replacement: "\\overline{[[0]]}", options: "rmA"},
 	{trigger: "([a-zA-Z])dot", replacement: "\\dot{[[0]]}", options: "rmA", priority: -1},
 	{trigger: "([a-zA-Z])ddot", replacement: "\\ddot{[[0]]}", options: "rmA", priority: 1},
-	{trigger: "([a-zA-Z])tilde", replacement: "\\tilde{[[0]]}", options: "rmA"},
+	
 	{trigger: "([a-zA-Z])und", replacement: "\\underline{[[0]]}", options: "rmA"},
 	{trigger: "([a-zA-Z])vec", replacement: "\\vec{[[0]]}", options: "rmA"},
-    {trigger: "([a-zA-Z]),\\.", replacement: "\\mathbf{[[0]]}", options: "rmA"},
-	{trigger: "([a-zA-Z])\\.,", replacement: "\\mathbf{[[0]]}", options: "rmA"},
 	{trigger: "\\\\(${GREEK}),\\.", replacement: "\\boldsymbol{\\[[0]]}", options: "rmA"},
 	{trigger: "\\\\(${GREEK})\\.,", replacement: "\\boldsymbol{\\[[0]]}", options: "rmA"},
 
 	{trigger: "hat", replacement: "\\hat{$0}$1", options: "mA"},
-    {trigger: "bar", replacement: "\\bar{$0}$1", options: "mA"},
+    {trigger: "ovr", replacement: "\\overline{$0}$1", options: "mA"},
 	{trigger: "dot", replacement: "\\dot{$0}$1", options: "mA", priority: -1},
 	{trigger: "ddot", replacement: "\\ddot{$0}$1", options: "mA"},
 	{trigger: "cdot", replacement: "\\cdot", options: "mA"},
     {trigger: "times", replacement: "\\times", options: "mA"},
-	{trigger: "tilde", replacement: "\\tilde{$0}$1", options: "mA"},
 	{trigger: "und", replacement: "\\underline{$0}$1", options: "mA"},
 	{trigger: "vec", replacement: "\\vec{$0}$1", options: "mA"},
 
@@ -129,8 +147,6 @@
     {trigger: "<->", replacement: "\\Leftrightarrow ", options: "mA"},
 	{trigger: "->", replacement: "\\to", options: "mA"},
 	{trigger: "!>", replacement: "\\mapsto", options: "mA"},
-    {trigger: "=>", replacement: "\\Rightarrow", options: "mA"},
-	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
 
 	{trigger: "and", replacement: "\\land", options: "mA"},
 	{trigger: "orr", replacement: "\\lor", options: "mA"},
@@ -163,9 +179,8 @@
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) rd", replacement: "\\[[0]]^{$0}$1", options: "rmA"},
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) hat", replacement: "\\hat{\\[[0]]}", options: "rmA"},
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) dot", replacement: "\\dot{\\[[0]]}", options: "rmA"},
-	{trigger: "\\\\(${GREEK}|${SYMBOL}) bar", replacement: "\\bar{\\[[0]]}", options: "rmA"},
+	{trigger: "\\\\(${GREEK}|${SYMBOL}) ovr", replacement: "\\overline{\\[[0]]}", options: "rmA"},
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) vec", replacement: "\\vec{\\[[0]]}", options: "rmA"},
-	{trigger: "\\\\(${GREEK}|${SYMBOL}) tilde", replacement: "\\tilde{\\[[0]]}", options: "rmA"},
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) und", replacement: "\\underline{\\[[0]]}", options: "rmA"},
 
     // Derivatives and integrals
