@@ -13,6 +13,7 @@
 	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
     {trigger: "==>", replacement: "\\implies", options: "mA"},
 	{trigger: "==<", replacement: "\\impliedby", options: "mA"},
+    {trigger: "com", replacement: "~~\\Huge|\\normalsize", options: "mA"},
 
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
@@ -24,6 +25,12 @@
     {trigger: "Ker", replacement: "\\mathrm{Ker}~", options: "mA"},
     {trigger: "dim", replacement: "\\mathrm{dim}~", options: "mA"},
     {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "mA"}, // для векторов из двух букв
+    {trigger: "sys", replacement: "${0:a}_{1}, ${0:a}_{2}, \\dots, ${0:a}_{${1:n}}$2", options: "mA"},
+    {trigger: "rsys", replacement: "${0:\\alpha}_{1} ${1:a}_{1} + ${0:\\alpha}_{2} ${1:a}_{2} + \\dots + ${0:\\alpha}_{${2:n}} ${1:a}_{${2:n}}$3", options: "mA"},
+    {trigger: "wpe", replacement: "^{\\perp}", options: "mA"},
+    {trigger: "wte", replacement: "^{T}", options: "mA"},
+    {trigger: "..d", replacement: "\\ddots", options: "mA"},
+    {trigger: "..v", replacement: "\\vdots", options: "mA"},
 
     // calculus
     {trigger: "fx", replacement: "f(x)", options: "mA"},
@@ -50,6 +57,7 @@
     // Greek letters
     {trigger: "eps", replacement: "\\varepsilon", options: "mA"},
     {trigger: "@p", replacement: "\\varphi", options: "mA"},
+    {trigger: "@P", replacement: "\\Phi", options: "mA"},
 	{trigger: "@a", replacement: "\\alpha", options: "mA"},
 	{trigger: "@b", replacement: "\\beta", options: "mA"},
 	{trigger: "@g", replacement: "\\gamma", options: "mA"},
