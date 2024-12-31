@@ -28,6 +28,7 @@
     {trigger: "wte", replacement: "^{T}", options: "mA"},
     {trigger: "..d", replacement: "\\ddots", options: "mA"},
     {trigger: "..v", replacement: "\\vdots", options: "mA"},
+	{trigger: "Hom", replacement: "\\mathrm{Hom}(${0:V}, ${1:W})$2", options: "mA"},
 
     // calculus
     {trigger: "fx", replacement: "f(x)", options: "mA"},
