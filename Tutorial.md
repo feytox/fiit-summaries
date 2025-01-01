@@ -29,5 +29,7 @@
 
 ![merge folders](https://github.com/user-attachments/assets/1d6fd79c-df8c-4401-a22d-6cd21d8de6be)
 
+8. Теперь всё готово для использования данного хранилища. В файле `content/Index.md` вы сможете найти текущий доступный материал.
+
 ## Если не видно картинки
-В Obsidian, в отличие от Github, изображения в этом файле не видны, поэтому читайте туториал на Github.
+В Obsidian, в отличие от Github, изображения в этом файле не видны, поэтому читайте туториал на [Github](https://github.com/feytox/calculus-summaries/blob/main/Tutorial.md)
