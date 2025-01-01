@@ -2,6 +2,7 @@
     // custom type
     {trigger: "sqrt", replacement: "\\sqrt[$0]{$1}$2", options: "mA"},
     {trigger: "fr", replacement: "\\dfrac{$0}{$1}$2", options: "mA"},
+	{trigger: "rf", replacement: "\\frac{$0}{$1}$2", options: "mA"},
     {trigger: "tx", replacement: "\\text{$0}$1", options: "mA"},
     {trigger: "$", replacement: "$$0$", options: "tmA"},
     {trigger: "ww", replacement: "^{$0}$1", options: "mA"}, // ВВерх типо
@@ -36,7 +37,8 @@
     {trigger: "f'x", replacement: "f'(x)", options: "mA"},
     {trigger: "g'x", replacement: "g'(x)", options: "mA"},
     {trigger: "([a-zA-Z])tild", replacement: "\\widetilde{[[0]]}", options: "rmA"},
-    {trigger: "tild", replacement: "\\widetilde{$0}$1", options: "mA"},
+    {trigger: "tild", replacement: "\\widetilde{$0}", options: "mA"},
+	{trigger: "sign", replacement: "\\mathrm{sign}~", options: "mA"},
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
