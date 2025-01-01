@@ -1,7 +1,7 @@
 ### Эквивалентность функций
 $f(x)$ - эквивалентна $g(x)$ при $x \to a$, если
 ```spoiler-markdown
-$\lim_{x \to a} \dfrac{f(x)}{g(x)} = 1,~~~ f(x) \sim g(x)$
+$$\lim_{x \to a} \dfrac{f(x)}{g(x)} = 1,~~~ f(x) \sim g(x)$$
 ```
 
 ### o-малое
