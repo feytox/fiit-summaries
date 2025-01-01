@@ -19,5 +19,5 @@ $n > m$
 3) $o(x^{n}) - o(x^{n}) = o(x^{n})$
 4) $o(x^{n}) + o(x^{m}) = o(x^{m})$
 5) $o(x^{n}) \cdot x^{m} = o(x^{n+m})$
-6) ${} o(x^{n}) \cdot o(x^{m}) = o(x^{n+m})$
+6) $o(x^{n}) \cdot o(x^{m}) = o(x^{n+m})$
 ```
