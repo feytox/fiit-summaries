@@ -12,6 +12,7 @@
     {trigger: "==>", replacement: "\\implies", options: "mA"},
 	{trigger: "==<", replacement: "\\impliedby", options: "mA"},
     {trigger: "com", replacement: "~~\\Huge|\\normalsize", options: "mA"},
+    {trigger: "caseor", replacement: "\\left[ \\begin{array} \\\\\n$0\n\\end{array} \\right.", options: "mA"},
 
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
