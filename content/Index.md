@@ -1,8 +1,8 @@
 #### Материал по текущим экзаменам
 - [[Summaries/content/calculus_exam_1/List of Theorems|Экзамен по матану]], 1 семестр
-- [[List of Topics|Экзамен по алгему]], 1 семестр
 
 #### Материал по прошедшим экзаменам
+- [[List of Topics|Экзамен по алгему]], 1 семестр
 - Коллоквиум по матану, 1 семестр: [[List of Definitions|определения]], [[Summaries/content/calculus_colloq_1/List of Theorems|теоремы]]
 
 #### Примечание
