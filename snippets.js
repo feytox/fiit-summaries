@@ -13,6 +13,11 @@
 	{trigger: "==<", replacement: "\\impliedby", options: "mA"},
     {trigger: "com", replacement: "~~\\Huge|\\normalsize", options: "mA"},
     {trigger: "caseor", replacement: "\\left[ \\begin{array} \\\\\n$0\n\\end{array} \\right.", options: "mA"},
+    {trigger: ":", replacement: "\\mathpunct{:}~~$0", options: "mA"},
+	{trigger: "~~:", replacement: "\\mathpunct{:}~~$0", options: "mA"},
+	{trigger: "~~ :", replacement: "\\mathpunct{:}~~$0", options: "mA"},
+	{trigger: "~:", replacement: "\\mathpunct{:}~$0", options: "mA"},
+	{trigger: "~ :", replacement: "\\mathpunct{:}~$0", options: "mA"},
 
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
@@ -40,6 +45,8 @@
     {trigger: "([a-zA-Z])tild", replacement: "\\widetilde{[[0]]}", options: "rmA"},
     {trigger: "tild", replacement: "\\widetilde{$0}", options: "mA"},
 	{trigger: "sign", replacement: "\\mathrm{sign}~", options: "mA"},
+	{trigger: "lim", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)}", options: "mA"},
+	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
@@ -132,7 +139,6 @@
 	{trigger: "prod", replacement: "\\prod", options: "mA"},
 	{trigger: "\\sum", replacement: "\\sum_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},
 	{trigger: "\\prod", replacement: "\\prod_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},
-    {trigger: "lim", replacement: "\\lim_{${0:x} \\to ${1:\\infty}} $2", options: "mA"},
     {trigger: "+-", replacement: "\\pm", options: "mA"},
 	{trigger: "-+", replacement: "\\mp", options: "mA"},
     {trigger: "...", replacement: "\\dots", options: "mA"},
