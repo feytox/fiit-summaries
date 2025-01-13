@@ -13,7 +13,7 @@
 	{trigger: "==<", replacement: "\\impliedby", options: "mA"},
     {trigger: "com", replacement: "~~\\Huge|\\normalsize", options: "mA"},
     {trigger: "caseor", replacement: "\\left[ \\begin{array} \\\\\n$0\n\\end{array} \\right.", options: "mA"}, // cases, but OR
-	{trigger: "caser", replacement: "\\left. \\begin{array} \\\\\n$0\n\\end{array} \\right\}", options: "mA"}, // cases, but Right
+	{trigger: "caser", replacement: "\\left. \\begin{array} \\\\\n$0\n\\end{array} \\right\\}", options: "mA"}, // cases, but Right
     {trigger: ":", replacement: "\\mathpunct{:}~~$0", options: "mA"},
 	{trigger: "~~:", replacement: "\\mathpunct{:}~~$0", options: "mA"},
 	{trigger: "~~ :", replacement: "\\mathpunct{:}~~$0", options: "mA"},
