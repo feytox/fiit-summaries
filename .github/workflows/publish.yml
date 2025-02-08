@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches: [ "quartz" ]
+  workflow_run:
+    workflows: [Merge main into quartz]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
