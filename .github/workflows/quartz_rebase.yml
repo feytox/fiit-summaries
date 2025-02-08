@@ -27,7 +27,9 @@ jobs:
           git switch quartz
           git pull --rebase
           git rebase origin/main
+          git push
 
       - name: Push rebased quartz
         run: |
-          git push origin quartz
+          git switch quartz
+          git push
