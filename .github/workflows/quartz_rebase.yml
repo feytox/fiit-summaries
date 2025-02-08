@@ -25,11 +25,8 @@ jobs:
       - name: Rebase quartz onto main
         run: |
           git switch quartz
-          git pull --rebase
           git rebase origin/main
-          git push
 
       - name: Push rebased quartz
         run: |
-          git switch quartz
-          git push
+          git push --verbose
