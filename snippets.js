@@ -1,6 +1,7 @@
 [
     // custom type
-    {trigger: "sqrt", replacement: "\\sqrt[$0]{$1}$2", options: "mA"},
+    {trigger: "sqrt", replacement: "\\sqrt{$0}$1", options: "mA"},
+	{trigger: "sqrw", replacement: "\\sqrt[$0]{$1}$2", options: "mA"},
     {trigger: "fr", replacement: "\\dfrac{$0}{$1}$2", options: "mA"},
 	{trigger: "rf", replacement: "\\frac{$0}{$1}$2", options: "mA"},
     {trigger: "tx", replacement: "\\text{$0}$1", options: "mA"},
@@ -14,11 +15,12 @@
     {trigger: "com", replacement: "~~\\Huge|\\normalsize", options: "mA"},
     {trigger: "caseor", replacement: "\\left[ \\begin{array} \\\\\n$0\n\\end{array} \\right.", options: "mA"}, // cases, but OR
 	{trigger: "caser", replacement: "\\left. \\begin{array} \\\\\n$0\n\\end{array} \\right\\}", options: "mA"}, // cases, but Right
-    {trigger: ":", replacement: "\\mathpunct{:}~~$0", options: "mA"},
-	{trigger: "~~:", replacement: "\\mathpunct{:}~~$0", options: "mA"},
-	{trigger: "~~ :", replacement: "\\mathpunct{:}~~$0", options: "mA"},
+    {trigger: ":", replacement: "\\mathpunct{:}~~", options: "mA"},
+	{trigger: "~~:", replacement: "\\mathpunct{:}~~", options: "mA"},
 	{trigger: "~:", replacement: "\\mathpunct{:}~$0", options: "mA"},
-	{trigger: "~ :", replacement: "\\mathpunct{:}~$0", options: "mA"},
+	{trigger: "ex", replacement: "\\exists{$0}~~$1", options: "mA"},
+    {trigger: "fal", replacement: "\\forall{$0}~~$1", options: "mA"},
+    {trigger: "qed", replacement: "\\square", options: "mA"},
 
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
@@ -44,7 +46,7 @@
     {trigger: "f'x", replacement: "f'(x)", options: "mA"},
     {trigger: "g'x", replacement: "g'(x)", options: "mA"},
     {trigger: "([a-zA-Z])tild", replacement: "\\widetilde{[[0]]}", options: "rmA"},
-    {trigger: "tild", replacement: "\\widetilde{$0}", options: "mA"},
+    {trigger: "tild", replacement: "\\widetilde{$0}$1", options: "mA"},
 	{trigger: "sign", replacement: "\\mathrm{sign}~", options: "mA"},
 	{trigger: "lim", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)}", options: "mA"},
 	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
@@ -167,15 +169,12 @@
 	{trigger: "and", replacement: "\\land", options: "mA"},
 	{trigger: "orr", replacement: "\\lor", options: "mA"},
 	{trigger: "in", replacement: "\\in", options: "mA"},
-	{trigger: "notin", replacement: "\\not\\in", options: "mA"},
+	{trigger: "notin", replacement: "\\notin", options: "mA"},
     {trigger: "\\\\\\", replacement: "\\setminus", options: "mA"},
     {trigger: "sub=", replacement: "\\subseteq", options: "mA"},
     {trigger: "sup=", replacement: "\\supseteq", options: "mA"},
 	{trigger: "eset", replacement: "\\emptyset", options: "mA"},
 	{trigger: "set", replacement: "\\{$0\\}$1", options: "mA"},
-	{trigger: "ex", replacement: "\\exists{$0}~~$1", options: "mA"},
-    {trigger: "fal", replacement: "\\forall{$0}~~ $1", options: "mA"},
-    {trigger: "qed", replacement: "\\square", options: "mA"},
 
 	{trigger: "CC", replacement: "\\mathbb{C}", options: "mA"},
 	{trigger: "RR", replacement: "\\mathbb{R}", options: "mA"},
