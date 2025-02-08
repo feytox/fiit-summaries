@@ -1,4 +1,4 @@
-name: Rebase quartz on main
+name: Merge main into quartz
 
 on:
   push:
@@ -22,10 +22,10 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>@users.noreply.github.com"
 
-      - name: Rebase quartz onto main
+      - name: Merge main into quartz
         run: |
           git switch quartz
-          git rebase origin/main
+          git merge origin/main --no-edit
 
       - name: Push rebased quartz
         run: |
