@@ -29,4 +29,4 @@ jobs:
 
       - name: Push rebased quartz
         run: |
-          git push --verbose
+          git push --force
