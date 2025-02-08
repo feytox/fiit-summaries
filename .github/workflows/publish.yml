@@ -1,6 +1,7 @@
 name: Prepare and publish to Github Pages
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "quartz" ]
 
