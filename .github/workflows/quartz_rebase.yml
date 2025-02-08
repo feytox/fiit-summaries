@@ -1,0 +1,32 @@
+name: Rebase quartz on main
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  rebase-quartz:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Git user
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>@users.noreply.github.com"
+
+      - name: Rebase quartz onto main
+        run: |
+          git checkout quartz
+          git rebase origin/main
+
+      - name: Push rebased quartz
+        run: |
+          git push origin quartz
