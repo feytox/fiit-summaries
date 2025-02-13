@@ -1,6 +1,8 @@
 import shutil
 import subprocess
 import argparse
+import os
+import glob
 
 
 QUARTZ_DIR = "quartz"
@@ -52,6 +54,10 @@ def setup():
 def start():
     shutil.rmtree("quartz/content", ignore_errors=True)
     shutil.copytree("content", "quartz/content", dirs_exist_ok=True)
+    shutil.copytree("assets", "quartz/content/assets", dirs_exist_ok=True)
+    for md in glob.glob("quartz/content/assets/*.md"):
+        os.remove(md)
+    
     run_simple("python transform_files.py")
     run("npx quartz build --serve")
 

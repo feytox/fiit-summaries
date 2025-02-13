@@ -2,6 +2,9 @@
 import os
 
 def main():
+    transform_content()
+    
+def transform_content():
     count = 0
     for root, _, files in os.walk("content"):
         for file in files:
@@ -13,7 +16,7 @@ def transform_file(path: str):
     if not path.endswith(".md"):
         return
 
-    new_lines = []
+    new_lines: list[str] = []
     with open(path, encoding="utf-8") as f:
         lines = f.readlines()
         has_spoiler = False
