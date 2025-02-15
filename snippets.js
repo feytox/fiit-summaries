@@ -188,7 +188,7 @@
 	{trigger: "([^\\\\])(${SYMBOL})", replacement: "[[0]]\\[[1]]", options: "rmA", description: "Add backslash before symbols"},
 
     // Insert space after Greek letters and symbols
-	{trigger: "\\\\(${GREEK}|${SYMBOL}|${MORE_SYMBOLS})([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
+	{trigger: "\\\\(${GREEK}|${SYMBOL})([A-Za-z])", replacement: "\\[[0]] [[1]]", options: "rmA"},
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) sr", replacement: "\\[[0]]^{2}", options: "rmA"},
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) cb", replacement: "\\[[0]]^{3}", options: "rmA"},
 	{trigger: "\\\\(${GREEK}|${SYMBOL}) rd", replacement: "\\[[0]]^{$0}$1", options: "rmA"},
@@ -205,9 +205,9 @@
 
     {trigger: /([^\\])int/, replacement: "[[0]]\\int", options: "mA", priority: -1},
     {trigger: "\\int", replacement: "\\int $0 \\, d${1:x} $2", options: "m"},
-    {trigger: "dint", replacement: "\\int_{${0:0}}^{${1:1}} $2 \\, d${3:x} $4", options: "mA"},
-    {trigger: "oint", replacement: "\\oint", options: "mA"},
-	{trigger: "iint", replacement: "\\iint", options: "mA"},
+    {trigger: "dnt", replacement: "\\int_{${0:0}}^{${1:1}} $2 \\, d${3:x} $4", options: "mA", priority: 1000},
+    {trigger: "ont", replacement: "\\oint", options: "mA"},
+	{trigger: "\\inti", replacement: "\\iint", options: "mA"},
     {trigger: "iiint", replacement: "\\iiint", options: "mA"},
     {trigger: "oinf", replacement: "\\int_{0}^{\\infty} $0 \\, d${1:x} $2", options: "mA"},
 	{trigger: "infi", replacement: "\\int_{-\\infty}^{\\infty} $0 \\, d${1:x} $2", options: "mA"},
