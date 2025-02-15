@@ -31,6 +31,12 @@ jobs:
       - name: Move content to quartz content folder
         run: cp -r content quartz
 
+      - name: Move assets to quartz content folder
+        run: cp -r assets quartz/content
+      
+      - name: Remove Excalidraw .md files
+        run: rm quartz/content/assets/*.md
+
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
