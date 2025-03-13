@@ -1,5 +1,5 @@
 #### Материал по будущим экзаменам
-- [[calculus_colloq_2/List of Theorems|Коллоквиум по матану]], 2 семестр
+- Коллоквиум по матану, 2 семестр: [[calculus_colloq_2/List of Definitions|определения]], [[calculus_colloq_2/List of Theorems|теоремы]]
 - [[algem_exam_2/List of Topics|Экзамен по алгему]], 2 семестр
 
 #### Материал по текущим экзаменам
