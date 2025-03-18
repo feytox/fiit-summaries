@@ -21,6 +21,7 @@
 	{trigger: "ex", replacement: "\\exists{$0}~~$1", options: "mA"},
     {trigger: "fal", replacement: "\\forall{$0}~~$1", options: "mA"},
     {trigger: "qed", replacement: "\\square", options: "mA"},
+    {trigger: "max", replacement: "\\max", options: "mA"},
 
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
@@ -39,6 +40,9 @@
     {trigger: "..d", replacement: "\\ddots", options: "mA"},
     {trigger: "..v", replacement: "\\vdots", options: "mA"},
 	{trigger: "Hom", replacement: "\\mathrm{Hom}(${0:V}, ${1:W})$2", options: "mA"},
+	{trigger: "div", replacement: "\\mid", options: "mA"},
+	{trigger: "ndiv", replacement: "\\nmid", options: "mA"},
+	{trigger: "deg", replacement: "\\deg", options: "mA"},
 
     // calculus
     {trigger: "fx", replacement: "f(x)", options: "mA"},
@@ -50,6 +54,10 @@
 	{trigger: "sign", replacement: "\\mathrm{sign}~", options: "mA"},
 	{trigger: "lim", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)}", options: "mA"},
 	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
+	{trigger: "part", replacement: "\\tau = \\{a = x_{0} < x_{1} < \\dots < x_{n} = b\\}", options: "mA"},
+	{trigger: "dxk", replacement: "\\Delta x_{k}", options: "mA"},
+	{trigger: "lmt", replacement: "\\limits_{$0} $1", options: "mA"},
+	{trigger: "sup", replacement: "\\sup", options: "mA"},
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
@@ -77,9 +85,9 @@
 	{trigger: "@D", replacement: "\\Delta", options: "mA"},
 	{trigger: "@e", replacement: "\\varepsilon", options: "mA"},
 	{trigger: "@z", replacement: "\\zeta", options: "mA"},
-	{trigger: "@t", replacement: "\\theta", options: "mA"},
+	{trigger: "@t", replacement: "\\tau", options: "mA"},
 	{trigger: "@T", replacement: "\\Theta", options: "mA"},
-	{trigger: ":t", replacement: "\\vartheta", options: "mA"},
+	{trigger: "%t", replacement: "\\theta", options: "mA"},
 	{trigger: "@i", replacement: "\\iota", options: "mA"},
 	{trigger: "@k", replacement: "\\kappa", options: "mA"},
 	{trigger: "@l", replacement: "\\lambda", options: "mA"},
