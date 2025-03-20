@@ -7,6 +7,7 @@
     {trigger: "tx", replacement: "\\text{$0}$1", options: "mA"},
     {trigger: "$", replacement: "$$0$", options: "tmA"},
     {trigger: "ww", replacement: "^{$0}$1", options: "mA"}, // ВВерх типо
+    {trigger: "dd", replacement: "_{$0}$1", options: "mA"}, // Down типо
     {trigger: "|", replacement: "|$0|$1", options: "mA"},
     {trigger: "=>", replacement: "\\Rightarrow", options: "mA"},
 	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
@@ -56,7 +57,7 @@
 	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
 	{trigger: "part", replacement: "\\tau = \\{a = x_{0} < x_{1} < \\dots < x_{n} = b\\}", options: "mA"},
 	{trigger: "dxk", replacement: "\\Delta x_{k}", options: "mA"},
-	{trigger: "lmt", replacement: "\\limits_{$0} $1", options: "mA"},
+	{trigger: "lmt", replacement: "\\limits_{$0}$1", options: "mA"},
 	{trigger: "sup", replacement: "\\sup", options: "mA"},
 
     // russian trig and hyper notation
