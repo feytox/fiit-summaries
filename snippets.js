@@ -23,6 +23,7 @@
     {trigger: "fal", replacement: "\\forall{$0}~~$1", options: "mA"},
     {trigger: "qed", replacement: "\\square", options: "mA"},
     {trigger: "max", replacement: "\\max", options: "mA"},
+	{trigger: "mid", replacement: "\\mid", options: "mA"},
 
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
@@ -55,7 +56,7 @@
 	{trigger: "sign", replacement: "\\mathrm{sign}~", options: "mA"},
 	{trigger: "lim", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)}", options: "mA"},
 	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
-	{trigger: "part", replacement: "\\tau = \\{a = x_{0} < x_{1} < \\dots < x_{n} = b\\}", options: "mA"},
+	{trigger: "part", replacement: "\\tau = \\{a = ${0:x}_{0} < ${0:x}_{1} < \\dots < ${0:x}_{n} = b\\}", options: "mA"},
 	{trigger: "dxk", replacement: "\\Delta x_{k}", options: "mA"},
 	{trigger: "lmt", replacement: "\\limits_{$0}$1", options: "mA"},
 	{trigger: "sup", replacement: "\\sup", options: "mA"},
@@ -146,11 +147,14 @@
 	{trigger: /\\mathbf{([A-Za-z])}(\d)/, replacement: "\\mathbf{[[0]]}_{[[1]]}", options: "rmA"},
 
     // Symbols
+    {trigger: "cap", replacement: "\\cap", options: "mA"},
+    {trigger: "cup", replacement: "\\cup", options: "mA"},
+    {trigger: "rng", replacement: "~\\mathring{$0}~ $1", options: "mA"},
     {trigger: "ooo", replacement: "\\infty", options: "mA"},
 	{trigger: "sum", replacement: "\\sum", options: "mA"},
 	{trigger: "prod", replacement: "\\prod", options: "mA"},
-	{trigger: "\\sum", replacement: "\\sum_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},
-	{trigger: "\\prod", replacement: "\\prod_{${0:i}=${1:1}}^{${2:N}} $3", options: "m"},
+	{trigger: "\\sum", replacement: "\\sum_{${0:k}=${1:0}}^{${2:n}} $3", options: "m"},
+	{trigger: "\\prod", replacement: "\\prod_{${0:k}=${1:0}}^{${2:n}} $3", options: "m"},
     {trigger: "+-", replacement: "\\pm", options: "mA"},
 	{trigger: "-+", replacement: "\\mp", options: "mA"},
     {trigger: "...", replacement: "\\dots", options: "mA"},
@@ -214,7 +218,7 @@
 
     {trigger: /([^\\])int/, replacement: "[[0]]\\int", options: "mA", priority: -1},
     {trigger: "\\int", replacement: "\\int $0 \\, d${1:x} $2", options: "m"},
-    {trigger: "dnt", replacement: "\\int_{${0:0}}^{${1:1}} $2 \\, d${3:x} $4", options: "mA", priority: 1000},
+    {trigger: "dnt", replacement: "\\int_{${0:a}}^{${1:b}} $2 \\, d${3:x} $4", options: "mA", priority: 1000},
     {trigger: "ont", replacement: "\\oint", options: "mA"},
 	{trigger: "\\inti", replacement: "\\iint", options: "mA"},
     {trigger: "iiint", replacement: "\\iiint", options: "mA"},
