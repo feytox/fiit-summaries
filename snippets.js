@@ -13,6 +13,8 @@
 	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
     {trigger: "==>", replacement: "\\implies", options: "mA"},
 	{trigger: "==<", replacement: "\\impliedby", options: "mA"},
+	{trigger: "l==>", replacement: "\\Large\\implies", options: "mA"},
+	{trigger: "l==<", replacement: "\\Large\\impliedby", options: "mA"},
     {trigger: "com", replacement: "~~\\Huge|\\normalsize", options: "mA"},
     {trigger: "caseor", replacement: "\\left[ \\begin{array} \\\\\n$0\n\\end{array} \\right.", options: "mA"}, // cases, but OR
 	{trigger: "caser", replacement: "\\left. \\begin{array} \\\\\n$0\n\\end{array} \\right\\}", options: "mA"}, // cases, but Right
@@ -56,7 +58,7 @@
 	{trigger: "sign", replacement: "\\mathrm{sign}~", options: "mA"},
 	{trigger: "lim", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)}", options: "mA"},
 	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
-	{trigger: "part", replacement: "\\tau = \\{a = ${0:x}_{0} < ${0:x}_{1} < \\dots < ${0:x}_{n} = b\\}", options: "mA"},
+	{trigger: "part", replacement: "\\tau = \\{a = ${0:x}_{0} < ${0:x}_{1} < \\dots < ${0:x}_{n} = b\\}$1", options: "mA"},
 	{trigger: "dxk", replacement: "\\Delta x_{k}", options: "mA"},
 	{trigger: "lmd", replacement: "\\limits_{$0}$1", options: "mA"}, // d - типо нижний предел
 	{trigger: "lmw", replacement: "\\limits_{$0}^{$1}$2", options: "mA"}, // w - типо верхний, но там оба
