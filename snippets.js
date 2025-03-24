@@ -58,7 +58,9 @@
 	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
 	{trigger: "part", replacement: "\\tau = \\{a = ${0:x}_{0} < ${0:x}_{1} < \\dots < ${0:x}_{n} = b\\}", options: "mA"},
 	{trigger: "dxk", replacement: "\\Delta x_{k}", options: "mA"},
-	{trigger: "lmt", replacement: "\\limits_{$0}$1", options: "mA"},
+	{trigger: "lmd", replacement: "\\limits_{$0}$1", options: "mA"}, // d - типо нижний предел
+	{trigger: "lmw", replacement: "\\limits_{$0}^{$1}$2", options: "mA"}, // w - типо верхний, но там оба
+	{trigger: "lmt", replacement: "\\limits", options: "mA"}, // типо просто
 	{trigger: "sup", replacement: "\\sup", options: "mA"},
 
     // russian trig and hyper notation
@@ -217,13 +219,14 @@
     {trigger: "ddt", replacement: "\\frac{d}{dt} ", options: "mA"},
 
     {trigger: /([^\\])int/, replacement: "[[0]]\\int", options: "mA", priority: -1},
-    {trigger: "\\int", replacement: "\\int $0 \\, d${1:x} $2", options: "m"},
-    {trigger: "dnt", replacement: "\\int_{${0:a}}^{${1:b}} $2 \\, d${3:x} $4", options: "mA", priority: 1000},
+    {trigger: "\\int", replacement: "\\int $0 \\, d${1:x}$2", options: "m"},
+    {trigger: "dnt", replacement: "\\int_{${0:a}}^{${1:b}} $2 \\, d${3:x}$4", options: "mA", priority: 1000},
+    {trigger: "dlt", replacement: "\\int\\limits_{${0:a}}^{${1:b}} $2 \\, d${3:x}$4", options: "mA"},
     {trigger: "ont", replacement: "\\oint", options: "mA"},
 	{trigger: "\\inti", replacement: "\\iint", options: "mA"},
     {trigger: "iiint", replacement: "\\iiint", options: "mA"},
-    {trigger: "oinf", replacement: "\\int_{0}^{\\infty} $0 \\, d${1:x} $2", options: "mA"},
-	{trigger: "infi", replacement: "\\int_{-\\infty}^{\\infty} $0 \\, d${1:x} $2", options: "mA"},
+    {trigger: "oinf", replacement: "\\int_{0}^{\\infty} $0 \\, d${1:x}$2", options: "mA"},
+	{trigger: "infi", replacement: "\\int_{-\\infty}^{\\infty} $0 \\, d${1:x}$2", options: "mA"},
 
     // Trigonometry
     {trigger: /([^\\])(arcsin|sin|arccos|cos)/, replacement: "[[0]]\\[[1]]", options: "rmA", description: "Add backslash before trig funcs"},
