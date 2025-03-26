@@ -3,11 +3,11 @@ name: Publish
 on:
   workflow_dispatch:
   push:
-    branches: [ "quartz" ]
+    branches: [ quartz ]
   workflow_run:
     workflows: [ Merge ]
     types: [ completed ]
-    branches: [ main ]
+    branches: [ quartz ]
 
 permissions:
   contents: read
