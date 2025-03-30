@@ -26,6 +26,8 @@
     {trigger: "qed", replacement: "\\square", options: "mA"},
     {trigger: "max", replacement: "\\max", options: "mA"},
 	{trigger: "mid", replacement: "\\mid", options: "mA"},
+	{trigger: "left", replacement: "\\left", options: "mA"},
+	{trigger: "right", replacement: "\\right", options: "mA"},
 
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
@@ -221,14 +223,14 @@
     {trigger: "ddt", replacement: "\\frac{d}{dt} ", options: "mA"},
 
     {trigger: /([^\\])int/, replacement: "[[0]]\\int", options: "mA", priority: -1},
-    {trigger: "\\int", replacement: "\\int $0 \\, d${1:x}$2", options: "m"},
-    {trigger: "dnt", replacement: "\\int_{${0:a}}^{${1:b}} $2 \\, d${3:x}$4", options: "mA", priority: 1000},
-    {trigger: "dlt", replacement: "\\int\\limits_{${0:a}}^{${1:b}} $2 \\, d${3:x}$4", options: "mA"},
+    {trigger: "\\int", replacement: "\\int $0 \\, d${1:x} $2", options: "m"},
+    {trigger: "dnt", replacement: "\\int_{${0:a}}^{${1:b}} $2 \\, d${3:x} $4", options: "mA", priority: 1000},
+    {trigger: "dlt", replacement: "\\int\\limits_{${0:a}}^{${1:b}} $2 \\, d${3:x} $4", options: "mA"},
     {trigger: "ont", replacement: "\\oint", options: "mA"},
 	{trigger: "\\inti", replacement: "\\iint", options: "mA"},
     {trigger: "iiint", replacement: "\\iiint", options: "mA"},
-    {trigger: "oinf", replacement: "\\int_{0}^{\\infty} $0 \\, d${1:x}$2", options: "mA"},
-	{trigger: "infi", replacement: "\\int_{-\\infty}^{\\infty} $0 \\, d${1:x}$2", options: "mA"},
+    {trigger: "oinf", replacement: "\\int_{0}^{\\infty} $0 \\, d${1:x} $2", options: "mA"},
+	{trigger: "infi", replacement: "\\int_{-\\infty}^{\\infty} $0 \\, d${1:x} $2", options: "mA"},
 
     // Trigonometry
     {trigger: /([^\\])(arcsin|sin|arccos|cos)/, replacement: "[[0]]\\[[1]]", options: "rmA", description: "Add backslash before trig funcs"},
