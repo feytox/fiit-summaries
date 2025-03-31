@@ -66,6 +66,7 @@
 	{trigger: "lmw", replacement: "\\limits_{$0}^{$1}$2", options: "mA"}, // w - типо верхний, но там оба
 	{trigger: "lmt", replacement: "\\limits", options: "mA"}, // типо просто
 	{trigger: "sup", replacement: "\\sup", options: "mA"},
+	{trigger: "vert", replacement: "\\Bigg|_{${0:a}}^{${1:b}}$2", options: "mA"}, // типо vertical
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
