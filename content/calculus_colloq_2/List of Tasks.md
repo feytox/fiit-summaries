@@ -3,5 +3,7 @@
 1. $\dagger$ [[task1|Задача 1]] by Feytox
 2. [[task2|Задача 2]] by Feytox (из дз с практики)
 3. $\dagger$ [[task3|Задача 3]] by Feytox (из дз с практики)
+4. 
+5. $\dagger$ [[task5|Задача 5]] by Feytox
 
 $\dagger$ - Сырой вариант, нужно проверить. 
