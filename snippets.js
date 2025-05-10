@@ -71,6 +71,9 @@
 	{trigger: "lmt", replacement: "\\limits", options: "mA"}, // типо просто
 	{trigger: "sup", replacement: "\\sup", options: "mA"},
 	{trigger: "vert", replacement: "\\Bigg|_{${0:a}}^{${1:b}}$2", options: "mA"}, // типо vertical
+	{trigger: "slm", replacement: "\\sum\\limits_{${0:k}=${1:0}}^{${2:n}} $3", options: "mA"}, // типо sum + line
+	{trigger: "sus", replacement: "\\sum_{${0:n}=1}^{\\infty} $1", options: "mA"}, // типо sum + series = sus
+	{trigger: "sls", replacement: "\\sum\\limits_{${0:n}=1}^{\\infty} $1", options: "mA"}, // как и предыдущее
 
     // russian trig and hyper notation
     {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
