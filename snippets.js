@@ -53,6 +53,7 @@
 	{trigger: "div", replacement: "\\mid", options: "mA"},
 	{trigger: "ndiv", replacement: "\\nmid", options: "mA"},
 	{trigger: "deg", replacement: "\\deg", options: "mA"},
+	{trigger: "tr", replacement: "\\mathrm{tr} ", options: "mA"},
 
     // calculus
     {trigger: "fx", replacement: "f(x)", options: "mA"},
