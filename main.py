@@ -80,7 +80,7 @@ class Structure:
 class App:
     def __init__(self):
         self.folder_content = Path("content\\")
-        self.folder_result = Path("html_content\\")
+        self.folder_result = Path("docs\\")
         self.folder_result.mkdir(exist_ok=True)
         self.structure = Structure(self.folder_content, self.folder_result)
 
