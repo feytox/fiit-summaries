@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Расстояние между скрещивающимися прямыми</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Расстояние между скрещивающимися прямыми</h1><h3>Теорема об общем перпендикуляре</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Для произвольных скрещивающихся прямых $l_{1}$ и $l_{2}$ существует **общий перпендикуляр** к этим прямым - прямая, перпендикулярная к каждой из прямых и пересекающая каждую из них.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+!<span>general_perpendicular.png</span>
+Обозначим через $\vec{s_{1}}$ и $\vec{s_{2}}$ - направляющие $l_{1}$ и $l_{2}$. Пусть $l_{1} \subset \sigma, l_{2}'$ - ортогональная проекция $l_{2}$ на $\sigma$. Так как $\vec{s_{1}} \nparallel \vec{s_{2}}$, $l_{1} \cap l_{2}' = M_{1}$.
+Далее, пусть $l \perp \sigma, M_{1} \in l$, тогда $l \perp l_{1}, l_{2}'$. Из того, что $l_{2}'$ - ортогональная проекция, вытекает, что $l \perp l_{2}$ и $l \cap l_{2}$. А значит $l$ - общий перпендикуляр к $l_{1}$ и $l_{2} ~~~~~\square$</p></div></p>
+<h3>Определение: Расстояние между скрещивающимися прямыми</h3>
+<p><div class="spoiler-markdown"><p>
+Расстояния между скрещивающимися прямыми $l_{1}$ и $l_{2}$ - расстояние между точками, в которых общий перпендикуляр к $l_{1}$ и $l_{2}$ пересекает эти прямые.</p></div></p>
+<h3>Формула расстояния</h3>
+<p><div class="spoiler-markdown"><p>
+Пусть $\vec{s_{1}}, \vec{s_{2}}$ - направляющие $l_{1}$ и $l_{2}$, $A_{1} \in l_{1}, A_{2} \in l_{2}$ - произвольные точки, $\vec{a}:=\overrightarrow{A_{1}A_{2}}$, тогда расстояние между прямыми $l_{1}$ и $l_{2}$ равно:
+$$d(l_{1},l_{2}) = \dfrac{|\vec{a}\vec{s_{1}}\vec{s_{2}}|}{|\vec{s_{1}} \times \vec{s_{2}}|}$$
+Важно: система может быть не декартовой.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Продолжим построения из <span>доказательства теоремы</span>. Обозначим $l \cap l_{2} = M_{2}, ~A, B$ - концы направленных отрезков, если отложить от $A_{1}$ векторы $\vec{s_{1}}, \vec{s_{2}}$. Ясно, что расстояние между $l_{1}$ и $l_{2}$ ($M_{1}M_{2}$) равно длине высоты параллелограмма, построенного на $\overrightarrow{A_{1}A_{2}},~ \overrightarrow{A_{1}A},~ \overrightarrow{A_{1}B}$. Это следует из того, что доказательство можно проводить относительно обеих прямых и получить, что $l$ - перпендикуляр к обоим основаниям
+!<span>distance_lines.png</span>
+Из геометрического смысла векторного и смешанного произведений, получаем:
+$$d(l_{1},l_{2}) = \dfrac{V_{\text{пар}}}{S_{\text{осн}}} = \dfrac{|\overrightarrow{A_{1}A_{2}}~~ \overrightarrow{A_{1}A}~~ \overrightarrow{A_{1}B}|}{|\overrightarrow{A_{1}A} \times \overrightarrow{A_{1}B}|} = \dfrac{|\vec{a} \vec{s_{1}} \vec{s_{2}}|}{|\vec{s_{1}} \times \vec{s_{2}}|} ~~~\square$$</p></div></p></div>
+</body>
+</html>

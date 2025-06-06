@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Эллипс</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Эллипс</h1><p><strong>Определение:</strong><br/>
+<div class="spoiler-markdown"><p><br/>
+ℰ называется <strong>эллипсом</strong>, если ∃ декартова система координат, в которой его уравнение имеет вид:  </p>
+<p>$$<br/>
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \quad (a \geq b &gt; 0)<br/>
+$$  </p>
+<p><strong>Границы:</strong><br/>
+- По оси $x$: $|x| \leq a$<br/>
+- По оси $y$: $|y| \leq b$  </p>
+<p><strong>Параметры:</strong><br/>
+- $a$ — большая полуось<br/>
+- $b$ — малая полуось<br/>
+</p></div></p>
+<p><strong>Фокальное расстояние</strong>:<br/>
+<div class="spoiler-markdown"><p>
+$$
+c = \sqrt{a^2 - b^2} 
+$$</p></div></p>
+<p><strong>Фокусы:</strong><br/>
+<div class="spoiler-markdown"><p>
+Расположены на большой оси в точках:  
+$$  
+F_1 = (-c, 0), \quad F_2 = (c, 0)  
+$$</p></div></p>
+<p><strong>Эксцентриситет:</strong> <br/>
+<div class="spoiler-markdown"><p>
+$$  
+e = \frac{c}{a} \quad (0 \leq e &lt; 1)  
+$$</p></div></p>
+<p><strong>Директрисы:</strong><br/>
+<div class="spoiler-markdown"><p>
+Прямые, параллельные малой оси и отстоящие от центра на расстояние $\frac{a}{e}$:  
+$$  
+x = \pm \frac{a}{e}  
+$$</p></div></p>
+<h3>Лемма о фокальных расстояниях эллипса</h3>
+<p><strong>Формулировка:</strong><br/>
+<div class="spoiler-markdown"><p>
+Для произвольной точки $M(x, y)$, лежащей на эллипсе $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$, расстояния до фокусов выражаются формулами:
+$$
+\boxed{
+\begin{aligned}
+MF_1 &amp;= a + e x \\
+MF_2 &amp;= a - e x
+\end{aligned}
+}
+$$
+где:
+- $F_1(-c, 0)$, $F_2(c, 0)$ - фокусы эллипса
+- $c = \sqrt{a^2 - b^2}$ - фокальное расстояние
+- $e = \frac{c}{a}$ - эксцентриситет ($0 \leq e &lt; 1$)</p></div></p>
+<p><strong>Д-во:</strong><br/>
+<div class="spoiler-markdown"><p><br/>
+Выразим $y^2$ из уравнения эллипса:<br/>
+   $$ y^2 = b^2\left(1 - \frac{x^2}{a^2}\right) $$</p>
+<p>Вычислим $MF_1$ через координаты:<br/>
+   $$<br/>
+   \begin{aligned}<br/>
+   MF_1 &amp;= \sqrt{(x + c)^2 + y^2} =\<br/>
+        &amp;= \sqrt{x^2 + 2c x + c^2 + b^2 - \frac{b^2 x^2}{a^2}} =\<br/>
+        &amp;= \sqrt{\left(1 - \frac{b^2}{a^2}\right)x^2 + 2c x + (c^2 + b^2)} =<br/>
+   \end{aligned}<br/>
+   $$</p>
+<p>Подставим $c^2 = a^2 - b^2$:<br/>
+   $$<br/>
+   = \sqrt{\frac{c^2}{a^2}x^2 + 2c x + a^2} = \sqrt{(e x + a)^2} = a + e x<br/>
+   $$</p>
+<p>Аналогично доказывается для $MF_2$ (только минус появится перед с).<br/>
+</p></div></p>
+<h3>Критерий принадлежности точки к эллипсу</h3>
+<p><strong>Формулировка:</strong><br/>
+<div class="spoiler-markdown"><p>
+Точка $M$ принадлежит эллипсу $\mathcal{E}$ с фокусами $F_1$, $F_2$ и большой полуосью $a$ **тогда и только тогда**, когда выполняется:
+$$
+\boxed{MF_1 + MF_2 = 2a}
+$$</p></div></p>
+<p><strong>Д-во:</strong><br/>
+<div class="spoiler-markdown"><p>
+$\Rightarrow$
+Следует из леммы выше
+$\Leftarrow$
+Пусть для точки $M$ выполняется $MF_1 + MF_2 = 2a$. Покажем, что $M \in \mathcal{E}$:
+Запишем условие через координаты:
+   $$
+   \sqrt{(x+c)^2+y^2} + \sqrt{(x-c)^2+y^2} = 2a
+   $$
+Перенесём второй корень вправо и возведём в квадрат:
+   $$
+   (x+c)^2 + y^2 = 4a^2 - 4a\sqrt{(x-c)^2+y^2} + (x-c)^2 + y^2
+   $$
+После упрощения (сократили $y^2$, раскрыли скобки, сократили $x^2 + c^2$, поделили на 4 и перенесли):
+   $$
+   a\sqrt{(x-c)^2+y^2} = a^2 - cx
+   $$
+Повторное возведение в квадрат даёт:
+   $$
+   a^2x^2 - 2a^2cx + a^2c^2 + a^2y^2 = a^4 - 2a^2cx + c^2x^2
+   $$
+Приводим к виду:
+   $$
+   (a^2-c^2)x^2 + a^2y^2 = a^2(a^2-c^2)
+   $$
+Делим на $a^2(a^2-c^2) = a^2b^2$:
+   $$
+   \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \quad \square
+   $$</p></div></p>
+<h3>Площадь эллипса</h3>
+<p><strong>Теорема:</strong><br/>
+<div class="spoiler-markdown"><p>
+$$
+\boxed{S = \pi a b}
+$$</p></div><br/>
+<strong>Д-во:</strong><br/>
+<div class="spoiler-markdown"><p>
+   Из уравнения эллипса получаем две функции:
+   $$
+   y = \pm b\sqrt{1 - \frac{x^2}{a^2}} = \pm \frac{b}{a}\sqrt{a^2 - x^2}
+   $$
+**Вычислим площадь четверти эллипса:**
+   Рассмотрим первую четверть ($x \in [0,a]$, $y \geq 0$):
+   $$
+   S_{\frac{1}{4}} = \int_{0}^{a} \frac{b}{a}\sqrt{a^2 - x^2} \, dx
+   $$
+**Сделаем тригонометрическую замену:**
+   Положим $x = a\sin t$, тогда:
+   - $dx = a\cos t \, dt$
+   - Пределы: при $x=0$ → $t=0$; при $x=a$ → $t=\pi/2$
+   - Подынтегральное выражение: $\sqrt{a^2 - x^2} = a\cos t$
+**Преобразуем интеграл:**
+   $$
+   S_{\frac{1}{4}} = \frac{b}{a} \int_{0}^{\pi/2} a\cos t \cdot a\cos t \, dt = a b \int_{0}^{\pi/2} \cos^2 t \, dt
+   $$
+**Вычислим интеграл:**
+   Используем тождество $\cos^2 t = \frac{1 + \cos 2t}{2}$:
+   $$
+   S_{\frac{1}{4}} = a b \int_{0}^{\pi/2} \frac{1 + \cos 2t}{2} dt = \frac{a b}{2} \left[ t + \frac{\sin 2t}{2} \right]_0^{\pi/2} = \frac{a b}{2} \cdot \frac{\pi}{2} = \frac{\pi a b}{4}
+   $$
+**Найдем полную площадь:**
+   Умножаем на 4:
+   $$
+   S = 4 \cdot S_{\frac{1}{4}} = 4 \cdot \frac{\pi a b}{4} = \pi a b \quad \square
+   $$</p></div></p></div>
+</body>
+</html>

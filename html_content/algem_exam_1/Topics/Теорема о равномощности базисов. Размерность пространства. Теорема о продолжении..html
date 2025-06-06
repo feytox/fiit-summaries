@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Теорема о равномощности базисов. Размерность пространства. Теорема о продолжении.</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Теорема о равномощности базисов. Размерность пространства. Теорема о продолжении.</h1><h3>Теорема о равномощности базисов</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Если в векторном пространстве есть базис из $k$ элементов, то любой базис содержит ровно $k$ элементов.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $A:=(a_{1}, a_{2},\dots,a_{n})$ - базис векторного пространства, а $B:=(b_{1},b_{2},\dots,b_{k})$ другой базис этого же пространства. Хотим доказать, что $n=k$. <br/>
+Предположим, что это не так. Тогда Б.O.O. пусть $n&lt;k$ <br/>
+Рассмотрим систему:<br/>
+$$b_{1},a_{1},a_{2},\dots,a_{n}~~(1)$$<br/>
+Это линейно зависимая система, так как $b_{1}$ выражается через $A$. По лемме о правом крайнем в $(1)$ есть вектор, который линейно выражается через предыдущие. Это не может быть $b_{1}$, так как у него нет предыдущих. Значит это какой-то вектор $a_{i}$. Выкинув его из $(1)$, получим систему<br/>
+$$b_{1},a_{1},a_{2},...,a_{i-1},a_{i+1},\dots,a_{n}~~(2)$$<br/>
+которая останется системой образующих по лемме о прополке.<br/>
+Теперь рассмотрим $$b_{2},b_{1},a_{1},a_{2},...,a_{i-1},a_{i+1},a_{n}~~(3)$$<br/>
+Это линейно зависимая система ненулевых векторов, т.к. вектор $b_{2}$ линейно выражается через систему образующих $(2)$. По лемме о прополке в $(3)$ есть вектор, который линейно выражается через предыдущие. Это не может быть $b_{2}$ и $b_{1}$ (т.к. у $b_{2}$ нет предыдущих, а $b_{1}$ не может выражаться через $b_{2}$ т.к. $B$ линейно независима). Значит это какой-то вектор $a_{j}$  ($i\neq j$).<br/>
+Выкинув его, получим<br/>
+$$b_{2},b_{1},a_{1},a_{2},...,a_{i-1},a_{i+1},\dots,a_{j-1},a_{j+1},\dots,a_{n}~~(4)$$<br/>
+которая останется системой образующих по лемме о прополке.</p>
+<p>Продолжая добавлять вектора из $B$ и удалять вектора из $A$, на каждом шаге мы будем получать систему образующих, состоящую из $n$ элементов, в которых всё больше векторов из $B$ и меньше из $A$. Поскольку $k &gt; n$, через $n$ шагов придем к системе образующих $b_{n},b_{n-1},...,b_{1}$. Но тогда вектор $b_{n+1}$ выражается через эту систему образующих, что противоречит линейной независимости $B$ $~~~\square$<br/>
+</p></div></p>
+<h3>Следствия доказательства теоремы о равномощности</h3>
+<p><div class="spoiler-markdown"><p>
+Поскольку в доказательстве данной теоремы использовались только те факты, что $A$ - система образующих, а $B$ - линейно независима справедливы:
+1. Если у векторного пространства $V$ есть система из $n$ образующих, то любая линейно независимая система в $V$ содержит не больше $n$ векторов.
+2. Если в $V$ есть линейно независимая система из $n$ векторов, то любая система образующих пространства $V$ содержит не менее $n$ векторов.</p></div></p>
+<h3>Размерность пространства</h3>
+<p><div class="spoiler-markdown"><p>
+Если у векторного пространства есть конечный базис, то число векторов в этом базисе называется ***размерностью*** этого пространства. 
+- Размерность пространства $V$ обозначается через $\mathrm{dim}~V$.
+- $\mathrm{dim}~\{\mathbf{0}\} = 0$
+- Если $\mathrm{dim}~V = n$, пространство $V$ называют $n$-мерным. 
+- ***Конечномерным*** называют пространство, которое $n$-мерно для какого-то $n$ ≥ 0; ***бесконечномерным*** – пространство, в котором есть бесконечные линейно независимые системы.</p></div></p>
+<h3>Теорема о продолжении</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Если $V$ конечномерное пространство, то любая линейно независимая система из $V$ может быть дополнена до базиса.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $a_{1},a_{2},...,a_{n}$ - базис $V$,  а $b_{1},b_{2},\dots,b_{k}$ - это какая-то линейно независимая система. Допишем ее слева к базису $$b_{1},b_{2},\dots,b_{k},a_{1},a_{2},...,a_{n}$$<br/>
+По теореме о правом крайнем в ней есть вектор, который линейно выражается через предыдущие. Это не может быть ни один из $b_{1},b_{2},\dots,b_{k}$, так как они линейно независимы. Тогда это какой-то $a_j$ выкинем его. Продолжая этот процесс получим базис из $n$ векторов, содержащий $b_{1},b_{2},\dots,b_{k}$$~~~~~\square$</p>
+<p></p></div></p></div>
+</body>
+</html>

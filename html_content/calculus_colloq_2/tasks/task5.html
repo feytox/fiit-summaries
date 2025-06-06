@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>task5</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>task5</h1><p>Условие:<br/>
+Докажите, что если функция $f(x)$ непрерывна на $[-1, 1]$, и для каждой непрерывной на $[-1, 1]$ четной функции $g(x)$:<br/>
+$$\int_{-1}^{1} f(x)g(x) \, dx = 0$$<br/>
+то функция $f(x)$ нечетна.</p>
+<p>Д-во:<br/>
+Заметим, что 🤓<br/>
+$$f(x) = f_{e}(x) + f_{o}(x), ~~~ f_{e}(x) = \dfrac{f(x) + f(-x)}{2}, ~~~ f_{o}(x) = \dfrac{f(x) - f(-x)}{2}$$<br/>
+где $f_{e}(x)$ - чётная и непрерывна, $f_{o}(x)$ - нечётная и непрерывна. Тогда:<br/>
+$$\int_{-1}^{1} f(x)g(x) \, dx = \int_{-1}^{1} (f_{e}(x) + f_{o}(x))g(x) \, dx = \int_{-1}^{1} f_{e}(x)g(x) \, dx + \int_{-1}^{1} f_{o}(x)g(x) \, dx $$<br/>
+Сделаем замену:<br/>
+$$\int_{-1}^{1} f_{e}(x)g(x) \, dx + \int_{-1}^{1} f_{o}(x)g(x) \, dx = \begin{bmatrix}<br/>
+t = -x &amp; 1 \to -1 \ <br/>
+dt = -dx &amp; -1 \to 1<br/>
+\end{bmatrix} = -\int_{1}^{-1} f_{e}(-t)g(-t) \, dt - \int_{1}^{-1} f_{o}(-t)g(-t) \, dt =$$<br/>
+$$= \int_{-1}^{1} f_{e}(t)g(t) \, dt - \int_{-1}^{1} f_{o}(t)g(t) \, dt = 0$$<br/>
+Но так как $f_{o}(t)$ нечётна и $g(t)$ чётна:<br/>
+$$\int_{-1}^{1} f_{o}(x)g(x) \, dx = 0$$<br/>
+Значит:<br/>
+$$\int_{-1}^{1} f_{e}(x)g(x) \, dx = 0$$<br/>
+В качестве $g(x)$ возьмём $g(x) = f_{e}(x)$ и тогда:<br/>
+$$\int_{-1}^{1} f_{e}^{2}(x) \, dx = 0$$<br/>
+По невырожденности получаем, что $f_{e}(x) = 0$, а значит $f(x) = f_{o}(x)$ и $f(x)$ нечётна.</p></div>
+</body>
+</html>

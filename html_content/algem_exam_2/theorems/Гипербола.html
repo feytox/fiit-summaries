@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Гипербола</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Гипербола</h1><p><strong>Определение:</strong><br/>
+<div class="spoiler-markdown"><p><br/>
+$$<br/>
+\boxed{\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1}<br/>
+$$<br/>
+где $a &gt; 0$, $b &gt; 0$<br/>
+- Две симметричные ветви при $|x| \geq a$<br/>
+- Асимптоты: $y = \pm \frac{b}{a}x$<br/>
+- Эксцентриситет: $e = \frac{c}{a} &gt; 1$, где $c = \sqrt{a^2 + b^2}$</p>
+<p><strong>Фокусы:</strong><br/>
+Расположены на действительной оси:<br/>
+$$<br/>
+F_1(-c, 0), \quad F_2(c, 0)<br/>
+$$</p>
+<p><strong>Директрисы:</strong><br/>
+Прямые, параллельные мнимой оси:<br/>
+$$<br/>
+x = \pm \frac{a}{e} = \pm \frac{a^2}{c}<br/>
+$$<br/>
+</p></div></p>
+<h3>Асимптоты</h3>
+<p><div class="spoiler-markdown"><p>
+$$y = \pm \frac{b}{a}x$$</p></div><br/>
+<strong>Д-во:</strong><br/>
+<div class="spoiler-markdown"><p>
+$$ y(x) = kx + l $$
+Выразим $y(x)$ для правой ветви (для левой просто будет с минусом):
+$$ y(x) = \frac{b}{a}\sqrt{x^2-a^2} $$
+$$ k = \lim_{x\to+\infty} \frac{y(x)}{x} = \frac{b}{a} $$
+$$ l = \lim_{x\to+\infty} y(x)-kx = \frac{b}{a}\lim_{x\to+\infty} \frac{x^2 - a^2 - x^2}{\sqrt{x^2-a^2}} = 0 $$</p></div></p>
+<h3>Лемма о фокальных расстояниях</h3>
+<p><strong>Формулировка</strong><br/>
+<div class="spoiler-markdown"><p>
+Для точки $M(x,y)$ на правой ветви ($x &gt; 0$):
+$$
+\boxed{
+\begin{aligned}
+MF_1 &amp;= e x + a \\
+MF_2 &amp;= e x - a
+\end{aligned}
+}
+$$
+Для левой ветви ($x &lt; 0$):
+$$
+\boxed{
+\begin{aligned}
+MF_1 &amp;= - (e x + a) \\
+MF_2 &amp;= - (e x - a)
+\end{aligned}
+}
+$$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Для случая, если $M$ на правой ветке (для левой аналогично)
+$$MF_{1} = \sqrt{(x - c)^{2} + y^{2}} = \sqrt{x^{2} - 2cx + c^{2} + b^{2}\left( \dfrac{x^{2}}{a^{2}} - 1 \right)} = $$
+$$\sqrt{\dfrac{x^{2}(a^{2}+b^{2})}{a^{2}} - 2aex + c^{2} - b^{2}} = \sqrt{x^{2}e^{2} - 2aex + a^{2}} = |ex - a|$$
+так как $M$ на правой ветви модуль можно снять со знаком плюс.
+$\square$</p></div></p>
+<h3>Критерий принадлежности точки к гиперболе</h3>
+<p><strong>Формулировка:</strong><br/>
+<div class="spoiler-markdown"><p>
+Точка $M$ принадлежит гиперболе $\iff$ $|MF_1 - MF_2| = 2a$</p></div></p>
+<p><strong>Д-во:</strong><br/>
+<div class="spoiler-markdown"><p>
+$\Rightarrow$ из леммы
+$\Leftarrow$ $M(x, y)~|\sqrt{(x - c)^{2} + y ^{2}} - \sqrt{(x+c)^{2} + y^{2}}| = 2a$
+$$\sqrt{(x - c)^{2} + y^{2}} - \sqrt{(x + c)^{2} + y^{2}} = \pm 2a$$
+$$\sqrt{(x - c)^{2} + y^{2}} = \pm 2a + \sqrt{(x + c)^{2} + y^{2}} ~|\uparrow2$$
+$$x^{2} - 2cx + c^{2} + y^{2} = 4a^{2} \pm 4a \sqrt{(x + c)^{2} + y^{2}} + x^{2} + 2cx + c^{2} + y^{2} |\mathpunct{:}~4$$
+$$\pm a \sqrt{(x + c)^{2} + y^{2}} = a^{2} + cx | \uparrow 2$$
+$$a^{2}x^{2} + 2a^{2}cx + a^{2}c^{2} +a^{2}y^{2} = a^{4} + 2a^{2}cx + c^{2}x^{2}$$
+$$(c^{2} - a^{2})x^{2} - a^{2}y^{2} = a^{2}(c^{2}-a^{2})$$
+$c^{2} - a^{2} = b^{2}$
+$$b^{2}x^{2} - a^{2}y^{2} = a^{2}b^{2} |\mathpunct{:}~a^{2}b^{2}$$
+$$\dfrac{x^{2}}{a^{2}} - \dfrac{y^{2}}{b^{2}} = 1$$
+$\square$</p></div></p></div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Векторное и смешанное произведения в трехмерном пространстве. Теорема о смешанном произведении</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Векторное и смешанное произведения в трехмерном пространстве. Теорема о смешанном произведении</h1><h3>Определение: ориентация тройки векторов</h3>
+<p><div class="spoiler-markdown"><p>
+$(\vec{u}, \vec{v}, \vec{w})$ - правая, если из конца $\vec{w}$ поворот от $\vec{u}$ к $\vec{v}$ выглядит против часовой стрелки.
+$(\vec{u}, \vec{v}, \vec{w})$ - левая, если из конца $\vec{w}$ поворот от $\vec{u}$ к $\vec{v}$ выглядит по часовой стрелки.</p></div></p>
+<h3>Определение: векторное произведение</h3>
+<p><div class="spoiler-markdown"><p>
+Векторное произведение $\vec{a}$ и $\vec{b}$ - вектор $\vec{c}$ такой, что:
+1) $|\vec{c}| = |\vec{a}| \cdot |\vec{b}| \cdot \sin(\angle(\vec{a}, \vec{b}))$, т.е длина векторного произведения равна площади параллелограмма, построенного на неколлинеарных векторах
+2) $\vec{c} \perp \vec{a} \land \vec{c} \perp \vec{b}$
+3) Тройка $(\vec{a}, \vec{b}, \vec{c})$ - правая
+Если $\vec{a} \parallel \vec{b}$, то $\vec{c} = \vec{0}$
+Обозначение: $\vec{a} \times \vec{b}$ или $[\vec{a}, \vec{b}]$</p></div></p>
+<h3>Определение: Смешанное произведение</h3>
+<p><div class="spoiler-markdown"><p>
+$\vec{a}\vec{b}\vec{c} := (\vec{a} \times \vec{b})\vec{c}$</p></div></p>
+<h3>Теорема (геометрический смысл смешанного произведения)</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Объём параллелепипеда, построенного на трёх некомпланарных векторах, равен модулю их смешанного произведения.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\vec{a}, \vec{b}, \vec{c}$ - некомпланарны. Предположим, что $(\vec{a}, \vec{b}, \vec{c})$ - правая тройка.
+!<span>triple_prod.png</span>
+Отложим вектора $\vec{a}, \vec{b}, \vec{c}$ от точки $O$. Пусть $\overrightarrow{OC} = \vec{c}, D$ - проекция $C$ на плоскость векторов $\vec{a}$ и $\vec{b}$ - $\sigma$. Угол между $\vec{c}$ и $\sigma$ - $\alpha$, между $\vec{a} \times \vec{b}$ и $\vec{c}$ - $\beta$. Учитывая, что $\alpha + \beta = \dfrac{\pi}{2} \Rightarrow \sin\alpha = \cos\beta$ и используя геометрический смысл векторного произведения, имеем:
+$$V = S_{\text{осн}} \cdot h = |\vec{a} \times \vec{b}| \cdot |CD| = |\vec{a} \times \vec{b}| \cdot |\vec{c}| \cdot \sin\alpha = |\vec{a} \times \vec{b}| \cdot |\vec{c}| \cdot \cos\beta = (\vec{a} \times \vec{b})\vec{c} = \vec{a}\vec{b}\vec{c}$$
+Пусть $(\vec{a}, \vec{b}, \vec{c})$ - левая тройка. Тогда $\alpha = \beta - \dfrac{\pi}{2} \Rightarrow \sin\alpha = -\cos\beta \Rightarrow V = -\vec{a}\vec{b}\vec{c}$, а значит $V = |\vec{a}\vec{b}\vec{c}| ~~~\square$</p></div></p></div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Длина вектора. Неравенство Коши–Буняковского</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Длина вектора. Неравенство Коши–Буняковского</h1><h3>Длина вектора</h3>
+<p><div class="spoiler-markdown"><p>
+Длина вектора $x$ - неотрицательное действительное число $|x| := \sqrt{xx}$</p></div></p>
+<h5>Свойство про скаляр</h5>
+<p><div class="spoiler-markdown"><p>
+$$\forall{\alpha \in F}~~ |\alpha x| = |\alpha| \cdot |x|$$
+Д-во:
+$$|\alpha x| = \sqrt{(\alpha x)(\alpha x)} = \sqrt{\alpha\overline{\alpha}(xx)} = \sqrt{|\alpha|^{2}(xx)} = \sqrt{|\alpha|^{2}} \cdot \sqrt{xx} = |\alpha| \cdot |x|$$</p></div></p>
+<h3>Неравенство Коши-Буняковского</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $V$ - пространство со скалярным произведением и $x, y \in V$. Тогда:
+$$|xy| \leq |x| \cdot |y| ~~~~~(*)$$
+причём равенство достигается $\iff$ $x$ и $y$ линейно зависимы.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Для начала докажем первое утверждение.<br/>
+Если $y = 0$, то $|xy| = |x| \cdot |y| = 0$ и доказывать нечего. Поэтому $y \neq 0 \implies yy &gt; 0$.<br/>
+Рассмотрим вектор $x - \alpha y,~ \alpha \in F$. По <span>4 аксиоме</span>:<br/>
+$$(x-\alpha y)(x-\alpha y) \geq 0 \implies xx - \alpha yx - \alpha xy + \alpha\overline{\alpha}yy \geq 0$$<br/>
+Так как $\alpha$ - любой скаляр, подставим вместо него число $\dfrac{xy}{yy}$:<br/>
+$$\begin{align}<br/>
+0 &amp;\leq xx - \dfrac{xy}{yy} \cdot yx - \dfrac{\overline{xy}}{yy} \cdot xy + \dfrac{xy}{yy} \cdot \dfrac{\overline{xy}}{yy} \cdot yy = \<br/>
+&amp;= xx - \dfrac{xy \cdot \overline{xy}}{yy} = xx - \dfrac{|xy|^{2}}{yy}<br/>
+\end{align}$$<br/>
+Получаем:<br/>
+$$\begin{align}<br/>
+\dfrac{|xy|^{2}}{yy} &amp;\leq xx ~~\Huge|\normalsize \cdot yy &gt; 0 \<br/>
+|xy|^{2} &amp;\leq xx \cdot yy \<br/>
+|xy|^{2} &amp;\leq |x|^{2} \cdot |y|^{2} ~~\Huge|\normalsize \sqrt{} \<br/>
+|xy| &amp;\leq |x| \cdot |y|<br/>
+\end{align}$$</p>
+<p>Теперь докажем второе утверждение.<br/>
+Если $x$ и $y$ линейно независимы, то $x - \alpha y \neq 0$, поэтому верно строгое неравенство:<br/>
+$$(x - \alpha y)(x-\alpha y) &gt; 0$$<br/>
+Поэтому во всех выкладках выше нестрогий знак можно заменить на строгий. Таким образом, если в $(*)$ имеет место равенство, то $x$ и $y$ - линейно зависимы.</p>
+<p>Докажем обратное. Пусть $x$ и $y$ линейно зависимы. Так как $y \neq 0 \Rightarrow x = \gamma y$. Отсюда:<br/>
+$$|xy| = |(\gamma y)y| = |\gamma(yy)| = |\gamma| \cdot |yy| = |\gamma| \cdot |y| \cdot |y| = |\gamma y| \cdot |y| = |x| \cdot |y|$$<br/>
+Теорема доказана $~~~\square$<br/>
+</p></div></p>
+<h3>* Неравенство треугольника</h3>
+<p>Фомрулировка:<br/>
+<div class="spoiler-markdown"><p>
+Для произвольных $x$ и $y$ из пространства со скалярным произведением выполняется:
+$$|x + y| \leq |x| + |y|$$
+Если $x$ и $y$ линейно независимы, то неравенство строгое.</p></div></p>
+<p>Подсказка к д-ву (если будет на экзамене, то стоит расписать):<br/>
+<div class="spoiler-markdown"><p>
+Стоит преобразовать $|x + y|^{2}$, применить <span>неравенство треугольника для комплексных чисел</span>, $|yx| = |xy|$ и неравенство Коши-Буняковского.</p></div></p></div>
+</body>
+</html>

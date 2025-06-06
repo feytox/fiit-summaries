@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Ортогональные системы. Процесс ортогонализации Грама–Шмидта. Ортонормированный базис</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Ортогональные системы. Процесс ортогонализации Грама–Шмидта. Ортонормированный базис</h1><h3>Ортогональность</h3>
+<p><div class="spoiler-markdown"><p><br/>
+$x$ и $y$ из пространства со скалярным произведением называются <strong>ортогональными</strong>, если $xy = 0$. Обозначение: $x \perp y$</p>
+<p>Набор векторов называется <strong>ортогональным</strong>, если любые 2 различных вектора из этого набора ортогональны.</p>
+<p>Ортогональный набор называется <strong>ортонормированным</strong>, если длины всех векторов из него равны $1$.<br/>
+</p></div></p>
+<h4>Замечания по определению</h4>
+<p><div class="spoiler-markdown"><p>
+1. $\forall{x \in V}~~ \mathbf{0} \perp x$
+2. В евклидовом пространстве два ненулевых вектора ортогональны $\iff$ угол между ними прямой</p></div></p>
+<h3>Теорема Пифагора</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+$$a \perp b \implies |a + b|^{2} = |a|^{2} + |b|^{2}$$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+$$|a + b|^{2} = (a+b)(a+b) = aa + ab + ba + bb = aa + bb = |a|^{2} + |b|^{2} ~~~\square$$</p></div></p>
+<p>Верно ли обратное утверждение?<br/>
+<div class="spoiler-markdown"><p>
+"It depends" (С)</p></div></p>
+<h3>Теорема об ортогональности и линейной независимости</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Любой ортогональный набор ненулевых векторов линейно независим.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $A = \{a_{1}, a_{2}, \dots, a_{k}\}$ - такой набор. Предположим, что:
+$$\lambda_{1}a_{1} + \lambda_{2}a_{2} + \dots + \lambda_{k}a_{k} = 0,~~ \lambda_{i} \in F,~ i=\overline{1,k}$$
+Для каждого $i$ скалярно умножим обе части этого равенства на $a^{i}$:
+$$0 = (\lambda_{1}a_{1} + \dots \lambda_{k}a_{k})a_{i} = \lambda_{1}a_{1}a_{i} + \dots + \lambda_{i}a_{i}a_{i} + \dots + \lambda_{k}a_{k}a_{i} = \lambda_{i}a_{i}a_{i}$$
+в силу ортогональности $A$.
+$$a_{i} \neq 0 \Rightarrow a_{i}a_{i} \neq 0 \implies \lambda_{i}a_{i}a_{i} = 0 \Rightarrow \lambda_{i} = 0$$
+А значит $A$ - линейно независим. $~~~\square$</p></div></p>
+<h3>Определение: Орто- базис</h3>
+<p><div class="spoiler-markdown"><p>
+Ортогональный (ортонормированный) набор векторов, который является базисом, называется **ортогональным** (**ортонормированным**) **базисом**</p></div></p>
+<h3>* Скалярное произведение в ортонормированном базисе</h3>
+<p><div class="spoiler-markdown"><p>
+Пусть $P$ - ортонормированный базис пространства $V$ со скалярным произведением. Тогда:
+$$\forall{x, y \in V}~~ xy = [x]^{T}_{P} \cdot \overline{[y]_{P}}$$</p></div></p>
+<p>Подсказка к д-ву (если будет на экзамене, то стоит расписать):<br/>
+<div class="spoiler-markdown"><p>
+Стоит разложить $x$ и $y$ по базису, а затем расписать скалярное произведение, попреобразовывать и получить то, что нужно.</p></div></p>
+<h3>Процесс ортогонализации Грама-Шмидта</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $a_{1}, \dots , a_{n}$ - линейно независимая система векторов пространства $V$ со скалярным произведением. Тогда в $V$ существует ортогональная система ненулевых векторов $b_{1}, \dots, b_{n}$, линейная оболочка которой совпадает с линейной оболочкой системы $a_{1}, \dots, a_{n}$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Будем доказывать по индукции по $n$.<br/>
+База индукции:<br/>
+$n = 1 \implies$ положим $b_{1} = a_{1}$</p>
+<p>Шаг индукции:<br/>
+Пусть $1 \leq i &lt; n$ и уже найден ортогональный набор $b_{1}, \dots, b_{i}$, линейная оболочка которого совпадает с линейной оболочкой $a_{1}, \dots, a_{i}$. Ищем $b_{i+1}$ в виде:<br/>
+$$b_{i+1} = \alpha_{1}b_{1} + \dots + \alpha_{i}b_{i} + a_{i+1} ~~~~~(*)$$<br/>
+где $\alpha_{1}, \dots, \alpha_{i}$ - скаляры, которые нужно найти.</p>
+<p>Чтобы найти $\alpha_{k}$ сделаем следующее:<br/>
+$$\begin{align}<br/>
+b_{i+1} &amp;= \alpha_{1}b_{1} + \dots + \alpha_{i}b_{i} + a_{i+1} ~~\Huge|\normalsize \cdot b_{k}  ~~~~~(*) \<br/>
+b_{i+1}b_{k} &amp;= \alpha_{k}b_{k}b_{k} + a_{i+1}b_{k} \<br/>
+0 &amp;= \alpha_{k}b_{k}b_{k} + a_{i+1}b_{k} \<br/>
+\alpha_{k} &amp;= -\dfrac{a_{i+1}b_{k}}{b_{k}b_{k}}<br/>
+\end{align}$$<br/>
+При таких значениях $\alpha_{1}, \dots, \alpha_{i}$ вектор $b_{i+1}$ ортогонален всем векторам $b_{1}, \dots, b_{i}$, поэтому система $b_{1}, b_{2}, \dots, b_{i+1}$ - ортогональна.</p>
+<p>Так как $b_{1}, b_{2}, \dots, b_{i}$ - линейный комбинации $a_{1}, a_{2}, \dots, a_{i}$, имеем:<br/>
+$$b_{i+1} = \lambda_{1} a_{1} + \lambda_{2} a_{2} + \dots + \lambda_{i} a_{i} + a_{i+1}$$<br/>
+Иными словами, вектор $b_{i+1}$ равен некоторой нетривиальной линейной комбинации $a_{1}, a_{2}, \dots, a_{i+1}$. Так как эти вектора линейно независимы, $b_{i+1} \neq 0$</p>
+<p>Мы получили ортогональный набор ненулевых векторов $b_{1}, b_{2}, \dots, b_{i+1}$, который лежит в линейной оболочке $a_{1}, a_{2}, \dots, a_{i+1}$. С другой стороны, по предположению индукции $a_{1}, a_{2}, \dots, a_{i}$ лежат в линейной оболочке $b_{1}, b_{2}, \dots, b_{i}$, а вектор $a_{i+1}$ является линейной комбинацией $b_{1}, b_{2}, \dots, b_{i+1}$ в силу равенства $(*)$. Поэтому линейные оболочки $b_{1}, b_{2}, \dots, b_{i+1}$ и $a_{1}, a_{2}, \dots, a_{i+1}$ совпадают. $~~~\square$ <br/>
+</p></div></p>
+<h3>* Следствие об ортонормированном базисе</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+В любом конечномерном пространстве со скалярным произведением существует ортонормированный базис.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $V$ - такое пространство, $\mathrm{dim}~V = n$. Возьмём произвольный базис в $V$ и применим к нему <span>процесс Грама-Шмидта</span>. Получим ортогональную систему из $n$ векторов, порождающую $V$, а следовательно, - ортогональный базис в $V$. Разделим каждый вектор этого базиса на его длину, получим ортонормированный базис пространства $V$ $~~~\square$</p></div></p>
+<h3>* Следствие о дополнении до ортогонального базиса</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Любую ортогональную систему ненулевых векторов конечномерного пространства со скалярным произведением можно дополнить до ортогонального базиса этого пространства.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $V$ - такое пространство, $\mathrm{dim}~V = n$, $a_{1}, a_{2}, \dots, a_{k}$ - ортогональный набор ненулевых векторов из $V$. Тогда $a_{1}, a_{2}, \dots, a_{k}$ - линейно независимы, значит их можно дополнить векторами $a_{k+1}, a_{k+2}, \dots, a_{n}$ до базиса $V$. Применив к этому базису <span>процесс Грама-Шмидта</span>, получим ортогональный базис в $V$. Легко проверить, что на первых $k$ шагах мы будем получать именно $a_{1}, a_{2}, \dots, a_{k}$ $~~~\square$</p></div></p>
+<p>Комментарий:<br/>
+<div class="spoiler-markdown"><p>
+Достаточно очевидно, что данное следствие выполняется и для ортонормированных систем.</p></div></p></div>
+</body>
+</html>
