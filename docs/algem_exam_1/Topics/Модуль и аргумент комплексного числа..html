@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Модуль и аргумент комплексного числа.</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Модуль и аргумент комплексного числа.</h1><h3>Определение</h3>
+<p><div class="spoiler-markdown"><p>
+Пусть комплексное число $z=a+bi$ изображается на плоскости точкой $M(a,b)$. Длина отрезка $OM$ называется **модулем** числа $z$.
+Если $z\neq0$, то угол между положительным направлением действительной оси и отрезка $OM$ называется **аргументом** числа $z$.
+У числа $0$ аргумент не определен. Модуль комплексного числа $z$ обозначается через $|z|$, а аргумент - через $\text{arg}(z)$. Имеем $|z|=\sqrt{a^2+b^2}$.
+!<span>Модуль и аргумент комплексного числа.svg</span></p></div></p>
+<h3>Два замечания по определению</h3>
+<p><div class="spoiler-markdown"><p>
+- $z \in \mathbb{R} \Rightarrow z = a + 0i \Rightarrow |z| = \sqrt{a^{2} + 0^{2}} = |a|$
+- $\text{arg}(z) = \varphi + 2\pi k, k \in \mathbb{Z}$. Такое соглашение принимается, чтобы при непрерывном движении точки по комплексной плоскости ее аргумент изменялся непрерывно</p></div></p>
+<h3>Свойства модуля комплексного числа</h3>
+<p><div class="spoiler-markdown"><p>
+1. $|x|=|\overline{x}|$
+2. $x \cdot \overline{x}=|x|^{2}$
+3. $|x+y|\leq |x|+|y|$
+4. $|xy|=|x| \cdot |y|$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+<strong>Свойства 1 и 2:</strong><br/>
+Пусть $x=a+bi$. Тогда:<br/>
+$$|\overline{x}|=|a-bi|=\sqrt{a^{2}+(-b)^{2}}=\sqrt{a^{2}+b^{2}}=|x|$$<br/>
+$$x \cdot \overline{x}=(a+bi)(a-bi)=a^{2}+b^{2}=|x|^{2}$$</p>
+<p><strong>Свойство 3:</strong><br/>
+Обозначим через $A,B,C$ точки на плоскости, отвечающие числам $x,y$ и $x+y$ соответственно при геометрической интерпретации комплексных чисел. </p>
+<p>Если точки $A, B, O$ не лежат на одной прямой, то по неравенству треугольника имеем:<br/>
+$$|x+y|=|OC|&lt;|OA|+|AC|=|OA|+|OB|=|x|+|y|$$</p>
+<p>Пусть теперь точки $A,B,O$ лежат на одной прямой. Если $A,B$ лежат по одну сторону от точки $O$ (центральный рисунок), то очевидно:<br/>
+$$|x+y|=|OC|=|OA|+|OB|=|x|+|y|$$</p>
+<p>Пусть точки $A,B$ лежат по разные стороны от точки $O$ (правый рисунок). Б.О.О., $|x|\geq|y|$. Тогда точка $C \in OA$:<br/>
+$$|x+y| = |OC| \leq |OA| = |x| \leq |x|+|y|$$<br/>
+!<span>Модуль суммы комп.чисел.svg</span></p>
+<p><strong>Свойство 4:</strong><br/>
+Можно проверить прямыми вычислением, но проще вывести его из свойства 2).<br/>
+$$|xy|^{2} = xy \cdot \overline{xy} = xy \overline{xy} = x \overline{x}\ \cdot y \overline{y} = |x|^{2} \cdot |y|^{2} \Rightarrow$$<br/>
+$$\Rightarrow |xy|=|x| \cdot |y|$$<br/>
+Все свойства доказаны $\square$<br/>
+</p></div></p></div>
+</body>
+</html>

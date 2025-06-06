@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Интегрируемость сложной функции</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Интегрируемость сложной функции</h1><h2>Теорема</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
+Если:<br/>
+- $f(x)\mathpunct{:}~ [a, b] \to X$ - интегрируема на $[a, b]$<br/>
+- $g(y)\mathpunct{:}~ X \subset [c,d] \to \mathbb{R}$ - непрерывна на $[c, d]$</p>
+<p>Тогда: $g(f(x))$ - интегрируема на $[a, b]$<br/>
+</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Возьмём $\forall{\varepsilon &gt; 0}$. Так как $g(y)$ - <span>равномерно непрерывна</span>, получаем:<br/>
+$$\exists{\delta &gt; 0}\mathpunct{:}~~ [y' - y''] &lt; \delta \Rightarrow |g(y') - g(y'')| &lt; \dfrac{\varepsilon}{2(b-a)} ~~~(\dagger)$$<br/>
+Будем считать, что $\delta &lt; \dfrac{\varepsilon}{4M}$, где $M = \sup\limits_{y \in [c, d]} |g(y)|$</p>
+<p>Хотим доказать, что $\overline{S}(g(f(x))) - \underline{S}(g(f(x))) &lt; \varepsilon$. Так как $f(x)$ - интегрируема, то для $\delta ^{2}$ существует $\tau$ такое, что $\overline{S}{\tau}(f) - \underline{S}{\tau}(f) &lt; \delta ^{2}$. Тогда:<br/>
+$$\begin{align}<br/>
+\overline{S}(g(f(x))) - \underline{S}(g(f(x))) &amp;= \sum_{k=0}^{n-1} (M_{k}(g) - m_{k}(g))\Delta x_{k}  \<br/>
+&amp;= \sum_{k \in K_{1}}(M_{k}(g) - m_{k}(g))\Delta x_{k} + \sum_{k \in K_{2}}(M_{k}(g) - m_{k}(g))\Delta x_{k} ~~~(*)<br/>
+\end{align}$$<br/>
+где $\forall{k \in K_{1}}\mathpunct{:}~~ M_{k}(f) - m_{k}(f) &lt; \delta$ и $\forall{k \in K_{2}}\mathpunct{:}~~ M_{k}(f) - m_{k}(f) \geq \delta$. Каждый из этих случаев будем рассматривать по отдельности.</p>
+<p>$\Large{K_{1}}$<br/>
+Докажем, что $\sum\limits_{k \in K_{1}} \leq \dfrac{\varepsilon}{2}$:<br/>
+$$\forall{\alpha_{k}, \beta_{k} \in [x_{k}, x_{k+1}]}\mathpunct{:}~~ |f(\alpha_{k}) - f(\beta_{k})| \leq M_{k}(f) - m_{k}(f) &lt; \delta$$<br/>
+Из $(\dagger)$ получаем:<br/>
+$$|g(f(\alpha_{k})) - g(f(\beta_{k}))| &lt; \dfrac{\varepsilon}{2(b-a)}$$<br/>
+Тогда:<br/>
+$$M_{k}(g(f(x))) - m_{k}(g(f(x))) \leq \dfrac{\varepsilon}{2(b-a)}$$<br/>
+Значит:<br/>
+$$\begin{align}<br/>
+\sum_{k \in K_{1}}(M_{k}(g) - m_{k}(g))\Delta x_{k} &amp;\leq \dfrac{\varepsilon}{2(b-a)} \sum_{k \in K_{1}}\Delta x_{k} \leq \dfrac{\varepsilon}{2(b-a)} \sum_{k=0}^{n-1} \Delta x_{k} \<br/>
+&amp;= \dfrac{\varepsilon}{2(b-a)}(b-a) = \dfrac{\varepsilon}{2}<br/>
+\end{align}$$</p>
+<p>$\Large{K_{2}}$<br/>
+Теперь докажем, что $\sum\limits_{k \in K_{2}} &lt; \dfrac{\varepsilon}{2}$, не забывая, что $M_{k}(f) - m_{k}(f) \geq \delta$:<br/>
+$$\sum_{k \in K_{2}} \delta \Delta x_{k} \leq \sum\limits_{k \in K_{2}} (M_{k}(f) - m_{k}(f))\Delta x_{k} \leq \overline{S}(f) - \underline{S}(f) &lt; \delta ^{2}$$<br/>
+Сократим неравенство на $\delta$, получим: $\sum\limits_{k \in K_{2}}\Delta x_{k} &lt; \delta$. Тогда:<br/>
+$$\sum_{k \in K_{2}} (M_{k}(g(f(x))) - m_{k}(g(f(x))))\Delta x_{k} \leq \sum_{k \in K_{2}}2M\Delta x_{k} &lt; 2M \cdot \delta &lt; 2M \cdot \dfrac{\varepsilon}{4M} = \dfrac{\varepsilon}{2}$$</p>
+<p>Возвращаясь к $()$ получаем: $() &lt; \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon ~~~~\square$<br/>
+</p></div></p>
+<h2>Следствия: интегрируемость модуля, квадрата и произведения</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Если $f(x)$ и ${} h(x) {}$ - интегрируемы на $[a, b]$, то на $[a, b]$ также интегрируемы:
+1. Модуль - $|f(x)|$
+2. Квадрат - $f^{2}(x)$
+3. Произведение - $f(x) \cdot h(x)$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+1. $g(y) = |y|$ - непрерывна, значит $g(f(x)) = |f(x)|$ - интегрируема по теореме выше.</p>
+<ol>
+<li>
+<p>$g(y) = y^{2}$ - непрерывна, значит $g(f(x)) = f^{2}(x)$ - интегрируема по теореме выше.</p>
+</li>
+<li>
+<p>$f(x) \cdot h(x) = \dfrac{(f(x) + h(x))^{2}}{2} - \dfrac{f^{2}(x)}{2} - \dfrac{h^{2}(x)}{2}$<br/>
+   Так как по пункту 2 квадрат интегрируем, то и полученное выше тоже интегрируемо. $~~\square$<br/>
+</p></li></ol></div></p>
+
+</div>
+</body>
+</html>

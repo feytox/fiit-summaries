@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Рациональные</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Рациональные</h1><h2>Теорема об интегрируемости рациональной функции</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $P_{n}(x)$ и $Q_{m}(x)$ -  многочлены, где $n = \deg P(x)$, $m = \deg Q(x)$. Тогда $\int \dfrac{P_{n}(x)}{Q_{m}(x)} \, dx$ выражается через элементарные функции.</p></div></p>
+<p>Д-во:<br/>
+<code>``spoiler-markdown
+Если $n \geq m$ , разделим нацело:
+$$\dfrac{P_{n}(x)}{Q_{m}(x)} = R_{n - m}(x) + \dfrac{P^{</code>}{k}(x)}{Q{m}(x)}$$<br/>
+где $k &lt; m$.<br/>
+$\int R_{n - m} \, dx = \int (a_{0}x^{n - m} + \dots + a_{n - m}) \, dx$ - выражается через элементарные.</p>
+<p>Знаменатель дроби имеет вид:<br/>
+$$Q_{m}=(x - x_{1})^{k_{1}}\dots(x - x_{s})^{k_{s}}(x^{2} + b_{1}x + c_{1})^{j_{1}}\dots(x^{2} + b_{r}x + c_{r})^{j_{r}}$$</p>
+<p>Разложим $\dfrac{P^{`}{k}(x)}{Q{m}(x)}$ на простые дроби, получим 4 различных вида интегралов:<br/>
+1) $\int \dfrac{1}{x - x_{0}} dx = \ln |x - x_{0}| + C$ (табличный)<br/>
+2) $\int \dfrac{1}{(x - x_{0})^n}dx = \dfrac{(x - x_{0})^{-n + 1}}{-n + 1} + C$ (табличный)<br/>
+3) $\int \dfrac{x + B}{x^{2} + bx + c}$<br/>
+4) $\int \dfrac{x + B}{(x^{2} + bx + c)^{n}}$ </p>
+<p>Выразим 4-й интеграл:<br/>
+$$\int \dfrac{x + B}{(x^{2} + bx + c)^{n}} \, dx = \int \dfrac{x + \dfrac{b}{2} - \dfrac{b}{2} + B}{\left(\left(x + \dfrac{b}{2}\right)^{2} - \left(\dfrac{b}{2}\right)^{2} + c \right)^{n}} \, dx = \left[\begin{gathered} E = B - \dfrac{b}{2} \ Ъ = \sqrt{c - \left( \dfrac{b}{2} \right)^{2}} \end{gathered} \right] = $$По <a href="Линейность неопределенных интегралов.html">линейности неопределенных интегралов</a>:<br/>
+$$= \int \dfrac{x+\dfrac{b}{2}}{\left(\left(x+\dfrac{b}{2}\right)^{2}+Ъ^{2}\right)^n} \, dx + \int \dfrac{E}{\left(\left(x+\dfrac{b}{2}\right)^{2}+Ъ^{2}\right)^n} \, dx = A + EI_{n}$$<br/>
+Сделаем <span>замену переменной</span> в $A$ и в $I_{n}$:<br/>
+$$A = \left[ \begin{gathered} t = \left(x + \dfrac{b}{2} \right)^{2} \ dt = 2\left(x+\dfrac{b}{2} \right)dx \end{gathered} \right] = \dfrac{1}{2} \int \dfrac{dt}{(t+Ъ^{2})^{n}} = \dfrac{1}{2} \dfrac{(t + Ъ ^ {2})^{-n+1}}{1-n} + C$$<br/>
+$$I_{n} = \left[ \begin{gathered} t = x + \dfrac{b}{2} \ dt = dx \ \end{gathered} \right] = \int \dfrac{dt}{(t^{2} + Ъ^{2})^{n}} $$<br/>
+Тогда при $n = 1$:<br/>
+$$I_{1} = \int \dfrac{dt}{t^2 + Ъ^{2}} = \dfrac{1}{Ъ} \mathrm{arctg} \dfrac{t}{Ъ} + C$$<br/>
+<span>Интегрируем по частям</span> $I_{n}$: <br/>
+$$\begin{bmatrix}<br/>
+u = \dfrac{1}{(t^2 + Ъ^{2})^n} &amp; dv = dt \<br/>
+du = \dfrac{-2nt}{(t^{2} + Ъ^{2})^{n + 1}} \, dt &amp; v = t<br/>
+\end{bmatrix}$$<br/>
+$$\begin{align}<br/>
+I_{n} &amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + \int \dfrac{2n t^{2}}{(t^2 + Ъ{^2})^{n + 1}} \, dt = \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \int \dfrac{t^{2} + Ъ^{2} - Ъ^{2}}{(t^2 + Ъ{^2})^{n + 1}} \, dt = \ \<br/>
+&amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \int \dfrac{t^{2} + Ъ^{2}}{(t^{2} + Ъ^{2})^{n+1}} \, dt - 2nЪ^{2} \int \dfrac{dt}{(t^{2} + Ъ^{2})^{n+1}} = \<br/>
+&amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \cdot I_{n} - 2nЪ^{2} \cdot I_{n+1}<br/>
+\end{align}$$<br/>
+А значит можем выразить интеграл следующей степени через предыдущий:<br/>
+$$I_{n + 1}  = \dfrac{I_{n}(2n - 1) + \dfrac{t}{(t^{2}+Ъ^{2})^{n}}}{2nЪ^{2}}$$<br/>
+$\square$<br/>
+```</p>
+<h2>Метод Остроградского</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Любой интеграл от рациональной функции можно представить в виде:
+$$\int \dfrac{P(x)}{Q(x)} \, dx = \dfrac{P_{1}(x)}{Q_{1}(x)} + \int \dfrac{P_{2}(x)}{Q_{2}(x)} \, dx$$
+где:
+- $Q_{2}(x)$ - произведение простых неприводимых множителей многочлена $Q(x)$ 
+- $Q_{1}(x) = \dfrac{Q(x)}{Q_{2}(x)}$
+- Дробь $\dfrac{P_{2}(x)}{Q_{2}(x)}$  правильная.</p></div></p>
+<h2>Метод Остроградского для иррациональных</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+$$\int \dfrac{P_{n}(x)}{\sqrt{ax^{2} + bx + c}} \, dx = Q_{n-1}(x)\sqrt{ax^{2} + bx + c} + \int \dfrac{\lambda}{\sqrt{ax^{2} + bx + c}} \, dx $$
+(метод аналогичный методу неопределённых коэффициентов)</p></div></p></div>
+</body>
+</html>

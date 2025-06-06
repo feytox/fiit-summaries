@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>List of Theorems</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>List of Theorems</h1><ol>
+<li>◦ <a href="Definitions\Числовые ряды.html">Числовые ряды</a><br/>
+   ◦ <a href="Theorems\Критерий Коши, необходимое условие сходимости числовых рядов.html">Критерий Коши, необходимое условие сходимости числовых рядов</a><br/>
+   ◦ <a href="Theorems\Простейшие свойства числовых рядов.html">Простейшие свойства: линейность, группировка</a></li>
+<li>◦ <a href="Definitions\Знакопостоянные ряды.html">Знакопостоянные ряды</a><br/>
+   ◦ <a href="Theorems\Признаки сравнения.html">Признаки сравнения,</a><br/>
+   ◦ <a href="Theorems\Признак Даламбера.html">Даламбера,</a><br/>
+   ◦ <a href="Theorems\Признак Коши.html">Коши</a></li>
+<li>◦ <a href="Theorems\Интегральный признак сходимости.html">Интегральный признак сходимости</a><br/>
+   ◦  <a href="Theorems\Сходимость рядов.html">Сходимость рядов</a> $\sum_{k=1}^\infty \frac{1}{n^\alpha \ln^\beta n \ln \ln^\gamma n \dots}$  </li>
+<li>◦ <a href="Theorems\Знакопеременные ряды.html">Знакопеременные ряды</a><br/>
+   ◦ <a href="Theorems\Условная сходимость.html">Условная сходимость</a> $\dagger$<br/>
+   ◦ <a href="Theorems\Признаки Лейбница, Абеля и Дирихле.html">Признаки Лейбница, Абеля и Дирихле</a></li>
+<li>◦ <a href="Theorems\Теорема Римана о перестановках условно сходящихся рядов.html">Теорема Римана о перестановках условно сходящихся рядов</a> $\dagger$</li>
+<li>◦ <a href="Theorems\Теорема об абсолютной сходимости.html">Теорема об абсолютной сходимости</a><br/>
+   ◦ <a href="Theorems\Перестановки абсолютно сходящихся рядов.html">Перестановки абсолютно сходящихся рядов</a> <br/>
+   ◦ <a href="Theorems\Теорема о произведении абсолютно сходящихся рядов.html">Теорема о произведении абсолютно сходящихся рядов</a> $\dagger \dagger$</li>
+<li>◦ <a href="Definitions\Функциональные последовательности.html">Функциональные последовательности</a> $\dagger$<br/>
+   ◦ <a href="Definitions\Поточечная и равномерная сходимость.html">Поточечная и равномерная сходимость</a> $\dagger$<br/>
+   ◦ <a href="Theorems\Критерий равномерной сходимости.html">Критерий равномерной сходимости</a> $\dagger$<br/>
+   ◦ <a href="Theorems\Критерий Коши равномерной сходимости функциональных последовательностей.html">Критерий Коши равномерной сходимости функциональных последовательностей</a> $\dagger$</li>
+<li>∗(только формулировки)<br/>
+   ◦ <a href="Theorems\Необходимое условие равномерной сходимости функционального ряда.html">Необходимое условие равномерной сходимости функционального ряда</a><br/>
+   ◦ <a href="Theorems\Линейность, признак сравнения.html">Линейность, признак сравнения</a><br/>
+   ◦ <a href="Theorems\Признаки Абеля и Дирихле.html">Признаки Абеля и Дирихле</a></li>
+<li>◦<a href="Theorems\Теоремы о предельном переходе и непрерывности функциональных последовательностей и рядов.html">Теоремы о предельном переходе и непрерывности функциональных последовательностей и рядов</a> $\dagger$</li>
+<li>◦ <a href="Theorems\Теоремы об интегрировании функциональных последовательностей и рядов.html">Теоремы об интегрировании функциональных последовательностей и рядов</a> $\dagger$</li>
+<li>◦ <a href="Theorems\Теоремы о дифференцировании функциональных последовательностей и рядов.html">Теоремы о дифференцировании функциональных последовательностей и рядов</a> $\dagger$</li>
+<li>◦ <a href="Theorems\Алгебраическая теорема Вейерштрасса.html">Алгебраическая теорема Вейерштрасса</a> $\dagger$</li>
+<li>◦ Степенные ряды<br/>
+    ◦ Теорема Абеля о сходимости степенных рядов<br/>
+    ◦ Интервал и радиус сходимости степенного ряда<br/>
+    ◦ Формула Коши-Адамара</li>
+<li>◦ <a href="Theorems\Непрерывность, интегрируемость, дифференцируемость степенных рядов внутри интервала сходимости.html">Непрерывность, интегрируемость, дифференцируемость степенных рядов внутри интервала сходимости</a> $\dagger$<br/>
+    ◦ <a href="Theorems\Вторая теорема Абеля и суммирование рядов методом Абеля.html">Вторая теорема Абеля и суммирование рядов методом Абеля</a> $\dagger$</li>
+<li>◦ <a href="Theorems\Ряды Тейлора основных элементарных функций. Их сходимость.html">Ряды Тейлора основных элементарных функций. Их сходимость</a><br/>
+    ◦ <a href="Theorems\Единственность степенных рядов.html">Единственность степенных рядов</a> </li>
+<li>◦ Задача о наилучшем приближении<br/>
+    ◦ Экстремальное свойство частичных сумм ряда Фурье. </li>
+<li>◦ <a href="Theorems\Ряд Фурье по тригонометрической системе.html">Ряд Фурье по тригонометрической системе</a> $\dagger \dagger$<br/>
+    ◦ <a href="Theorems\Лемма Римана (необходимое условие сходимости ряда Фурье).html">Лемма Римана (необходимое условие сходимости ряда Фурье)</a></li>
+<li>◦ <a href="Theorems\Принцип локализации Римана и поточечная сходимость рядов Фурье (признак Дини).html">Принцип локализации Римана и поточечная сходимость рядов Фурье (признак Дини)</a></li>
+<li>◦ Эффект Гиббса</li>
+</ol></div>
+</body>
+</html>

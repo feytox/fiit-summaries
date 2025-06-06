@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>List of Topics</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>List of Topics</h1><p>$\Sigma$ - кажется мало, стоит перепроверить на материал<br/>
+  $\dagger$ - требуется рефакторинг<br/>
+$\dagger$$\dagger$ - необходимо дописать<br/>
+$\dagger\dagger\dagger$ - требуется проверить на правильность</p>
+<ol>
+<li>◦ <a href="theorems\Неприводимые многочлены над полем рациональных и целых чисел.html">Неприводимые многочлены над полем рациональных и целых чисел</a><br/>
+   ◦ <a href="theorems\Критерий Эйзенштейна.html">Критерий Эйзенштейна</a></li>
+<li>◦ <a href="theorems\Кольцо многочленов.html">Кольцо многочленов</a>  $\dagger$ и $\dagger$$\dagger$ определения<br/>
+   ◦ <a href="theorems\Простейшие свойства многочленов.html">Простейшие свойства многочленов</a><br/>
+   ◦ <a href="theorems\Деление многочленов с остатком.html">Деление многочленов с остатком</a></li>
+<li>◦ Делимость многочленов<br/>
+   ◦ Свойства отношения делимости<br/>
+   ◦ Отношение ассоциированности</li>
+<li>◦ <a href="definitions\Наибольший общий делитель многочленов.html">Наибольший общий делитель многочленов</a><br/>
+   ◦ <a href="theorems\Теорема существования.html">Теорема существования</a><br/>
+   ◦ Ассоциированность НОД</li>
+<li>◦ <a href="definitions\Выражение НОД через исходные многочлены.html">Выражение НОД через исходные многочлены</a> ${} \dagger\dagger\dagger$</li>
+<li>◦ <a href="theorems\Взаимно простые многочлены и их свойства.html">Взаимно простые многочлены и их свойства</a> ${} \dagger\dagger\dagger$</li>
+<li>◦ Алгебраически замкнутые поля<br/>
+   ◦ Разложение многочленов над алгебраически замкнутым полем.</li>
+<li>◦ Неприводимые многочлены и их свойства<br/>
+   ◦ Теорема о разложении в произведение неприводимых многочленов<br/>
+   ◦ Каноническое разложение</li>
+<li>◦ Многочлены над полем рациональных чисел и кольцом целых чисел<br/>
+   ◦ Примитивные многочлены и их свойства</li>
+<li>Значение многочлена<br/>
+    ◦ <a href="theorems\Корни многочлена.html">Корни многочлена</a> $\dagger\dagger\dagger$<br/>
+    ◦ <a href="theorems\Теорема Безу.html">Теорема Безу</a> $\dagger$<br/>
+    ◦ <a href="theorems\Равенство многочленов, совпадающих как функции.html">Равенство многочленов, совпадающих как функции</a> $\dagger$</li>
+<li>◦ <a href="theorems\Интерполяционный многочлен Лагранжа.html">Интерполяционный многочлен Лагранжа</a> $\dagger$</li>
+<li>◦ <a href="theorems\Алгоритм Кронекера.html">Алгоритм Кронекера</a> $\dagger\dagger\dagger$</li>
+<li>◦ <a href="theorems\Производная многочлена и ее свойства.html">Производная многочлена и ее свойства</a> $\dagger\dagger\dagger$<br/>
+    ◦ <a href="theorems\Кратные множители многочлена.html">Кратные множители многочлена</a> $\dagger\dagger\dagger$<br/>
+    ◦ <a href="theorems\Алгоритм выделения кратных множителей..html">Алгоритм выделения кратных множителей.</a> $\dagger\dagger\dagger$</li>
+<li>◦ Разложение многочленов на неприводимые множители над полем действительных чисел</li>
+<li>◦ Лексикографический порядок на множестве $\mathbb{N}^{k}$ и его свойства</li>
+<li>◦ <a href="theorems\Симметрические многочлены.html">Симметрические многочлены</a> $\dagger$<br/>
+    ◦ Представление симметрического многочлена через основные симметрические многочлены</li>
+<li>◦ <a href="theorems\Перестановки.html">Перестановки</a> $\dagger\dagger\dagger$<br/>
+    ◦ <a href="theorems\Инверсии и четность перестановки.html">Инверсии и четность перестановки</a> $\dagger\dagger\dagger$<br/>
+    ◦ <a href="theorems\Транспозиции в перестановках.html">Транспозиции в перестановках</a> $\dagger\dagger\dagger$<br/>
+    ◦ <a href="theorems\Подстановки.html">Подстановки</a> $\dagger\dagger\dagger$<br/>
+    ◦ <a href="theorems\Четность подстановки.html">Четность подстановки</a> $\dagger\dagger\dagger$</li>
+<li>◦ <a href="theorems\Определитель и его свойства.html">Определение определителя квадратной матрицы. Свойства определителя квадратной матрицы</a></li>
+<li>◦ <a href="theorems\Минорный ранг матрицы.html">Минорный ранг матрицы</a></li>
+<li>◦ <a href="theorems\Понятие минора матрицы.html">Понятие минора матрицы</a><br/>
+    ◦ <a href="theorems\Теорема Лапласа.html">Теорема Лапласа</a> $\dagger$</li>
+<li>◦ Полу-распавшиеся и распавшиеся матрицы<br/>
+    ◦ Определитель полу-распавшейся и квази-диагональной матриц</li>
+<li>◦ Определитель произведения квадратных матриц</li>
+<li>◦ Крамеровы системы линейных уравнений<br/>
+    ◦ Формулы Крамера</li>
+<li>◦ Критерий обратимости матрицы в терминах её определителя<br/>
+    ◦ Формула для обратной матрицы</li>
+<li>◦ <a href="theorems\Собственные числа и собственные векторы линейного преобразования.html">Собственные числа и собственные векторы линейного преобразования</a><br/>
+    ◦ <a href="theorems\Характеристический многочлен.html">Характеристический многочлен</a><br/>
+    ◦ <a href="theorems\Условия существования собственных векторов.html">Условия существования собственных векторов</a></li>
+<li>◦ <a href="theorems\Инвариантные подпространства линейного преобразования.html">Инвариантные подпространства линейного преобразования</a><br/>
+    ◦ <a href="theorems\Матрица линейного преобразования с инвариантными подпространствами.html">Матрица линейного преобразования с инвариантными подпространствами</a> $\Sigma$</li>
+<li>◦ <a href="theorems\Сопряженное отображение.html">Сопряжённое отображение. Его свойства и единственность</a></li>
+<li>◦ <a href="theorems\Дважды сопряженное отображение.html">Дважды сопряженное отображение. Существование сопряженного отображения</a></li>
+<li>◦ <a href="theorems\Взаимосвязь между инвариантными подпространствами линейного преобразования и сопряженного к нему.html">Взаимосвязь между инвариантными подпространствами линейного преобразования и сопряженного к нему</a><br/>
+    ◦ <a href="theorems\Нормальное преобразование и свойства его собственных векторов.html">Нормальное преобразование и свойства его собственных векторов</a></li>
+<li>◦ <a href="theorems\Теорема о структуре нормального оператора.html">Теорема о структуре нормального линейного преобразования (случай разложимости характеристического многочлена на линейные множители)</a> $\dagger \dagger$</li>
+<li>◦ Изометрические операторы и их свойства</li>
+<li>◦ Самосопряженные линейные преобразования<br/>
+    ◦ Строение их матрицы</li>
+<li>◦ Сингулярное представление линейного отображения</li>
+<li>◦ Билинейные и квадратичные функции и формы<br/>
+    ◦ Матрица билинейной формы<br/>
+    ◦ Эквивалентность форм.</li>
+<li>◦ Квадратичные функции и формы<br/>
+    ◦ Связь с симметричными билинейными функциями<br/>
+    ◦ Эквивалентность</li>
+<li>◦ Приведение вещественной квадратичной формы к главным осям</li>
+<li>◦ Канонический и нормальный виды квадратичной формы<br/>
+    ◦ Единственность нормального вида над $\mathbb{C}$</li>
+<li>◦ Закон инерции вещественных квадратичных форм</li>
+<li>◦ Знакоопределённые вещественные квадратичные формы<br/>
+    ◦ Критерий Сильвестра</li>
+<li>◦ <a href="theorems\Эллипс.html">Эллипс</a> $\dagger$</li>
+<li>◦ <a href="theorems\Директориальное свойство эллипса.html">Директориальное свойство эллипса</a> $\dagger$</li>
+<li>◦ <a href="theorems\Гипербола.html">Гипербола</a> $\dagger$</li>
+<li>◦ <a href="theorems\Директориальное свойство гиперболы.html">Директориальное свойство гиперболы</a> $\dagger$</li>
+<li>◦ <a href="theorems\Парабола.html">Парабола</a> $\dagger$</li>
+<li>◦ Приведение кривых второго порядка к каноническому виду</li>
+<li>◦ <a href="theorems\Цилиндрические поверхности.html">Цилиндрические поверхности</a> $\dagger$</li>
+<li>◦ <a href="theorems\Конические поверхности.html">Конические поверхности</a> $\dagger$</li>
+<li>◦ <a href="theorems\Параболоиды.html">Параболоиды</a> $\dagger$</li>
+<li>◦ <a href="theorems\Гиперболоиды.html">Гиперболоиды</a> $\dagger$</li>
+<li>◦ Приведение поверхностей второго порядка к каноническому виду</li>
+<li>◦ <a href="theorems\Эллипсоид.html">Эллипсоид</a> $\dagger$</li>
+<li>◦ Корневые подпространства</li>
+<li>◦ Существование жорданова базиса<br/>
+    ◦ Жорданова форма матрицы</li>
+</ol>
+<p>Неотсортированное:<br/>
+- <a href="theorems\Теорема Фредгольма.html">Теорема Фредгольма</a> $\dagger$ (темы такой нет)<br/>
+- <a href="theorems\Директориальное свойство параболы.html">Директориальное свойство параболы</a>  $\dagger$ (замёрджить в <a href="theorems\Парабола.html">Парабола</a>)<br/>
+- <a href="definitions\Квадрика.html">Квадрика</a> $\dagger$ (замёрджить куда-то)<br/>
+<a href="theorems\Классификация квадрик на плоскости.html">Классификация квадрик на плоскости</a> $\dagger$$\dagger$</p></div>
+</body>
+</html>

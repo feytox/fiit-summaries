@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Базис трехмерного пространства. Разложение вектора по базису. Координаты вектора</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Базис трехмерного пространства. Разложение вектора по базису. Координаты вектора</h1><h3>Определение: Базис плоскости</h3>
+<p><div class="spoiler-markdown"><p>
+**Базисом плоскости** называется произвольная упорядоченная пара неколлинеарных векторов, лежащих в этой плоскости.
+Базис из $\vec{a}, \vec{b}$ обозначим $(\vec{a}, \vec{b})$</p></div></p>
+<h3>Теорема о разложении вектора по базису на плоскости</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $(\vec{a}, \vec{b})$ - базис плоскости, $\vec{x}$ - вектор, лежащий в плоскости. Тогда существуют единственные числа $t_{1}, t_{2}$ такие, что:
+$$\vec{x} = t_{1}\vec{a} + t_{2}\vec{b}$$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Отложим $\vec{a}, \vec{b}, \vec{x}$ от некоторой точки $O$ на плоскости и обозначим концы полученных направленных отрезков $A, B, M$ (см. рисунок)<br/>
+!<span>basis_plane.png</span></p>
+<p><strong>Существование</strong>.<br/>
+Спроектируем $M$ на $OA$ параллельно $OB$ и на $OB$ параллельно $OA$. Полученные точки обозначим за $A', B'$ и положим $\vec{a}' := \overrightarrow{OA'},~ \vec{b}' := \overrightarrow{OB'}$. Ясно, что $\vec{a}' \parallel \vec{a}$ и $\vec{b}' \parallel \vec{b}$. Так как $\vec{a},\vec{b} \neq \vec{0}$, по <span>критерию коллинеарности</span>: $\vec{a}' = t_{1}\vec{a},~ \vec{b}' = t_{2}\vec{b}$. Тогда $\vec{x} = \vec{a}' + \vec{b}' = t_{1}\vec{a} + t_{2}\vec{b}$.</p>
+<p><strong>Единственность</strong>.<br/>
+Пусть $\vec{x} = s_{1}\vec{a} + s_{2}\vec{b}$. Вычтем это равенство из равенства $\vec{x} = t_{1}\vec{a} + t_{2}\vec{b}$, получим:<br/>
+$$(t_{1} - s_{1})\vec{a} + (t_{2} - s_{2})\vec{b} = \vec{0}$$<br/>
+Если $t_{1} - s_{1} \neq 0$, то $\vec{a} = - \dfrac{t_{2} - s_{2}}{t_{1} - s_{1}} \cdot \vec{b}$, а значит $\vec{a} \parallel \vec{b}$, противоречие. Следовательно $t_{1} = s_{1}$. Аналогично $t_{2} = s_{2}$ $~~~\square$<br/>
+</p></div></p>
+<h3>Определение: Базис трёхмерного пространства</h3>
+<p><div class="spoiler-markdown"><p>
+Базис трёхмерного пространства - упорядоченная тройка некомпланарных векторов.
+Базис из $\vec{a}, \vec{b}, \vec{c}$  обозначим как $(\vec{a}, \vec{b}, \vec{c})$</p></div></p>
+<h3>Теорема о разложении вектора по базису в пространстве</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $(\vec{a}, \vec{b}, \vec{c})$ - базис пространства, $\vec{x}$ - произвольный вектор. Тогда существуют, и притом единственные, числа $t_{1}, t_{2}, t_{3}$ такие, что: $\vec{x} = t_{1}\vec{a} + t_{2}\vec{b} + t_{3}\vec{c}$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p></p>
+<p>!<span>Доказательство теоремы о разложении вектора по базису.svg</span><br/>
+Существование:<br/>
+Отложим $\vec{a}, \vec{b}, \vec{c}, \vec{x}$ от $O$ и обозначим концы полученных отрезков через $A, B, C, M$<br/>
+$\vec{a} \nparallel \vec{b} \Rightarrow \exists{! \pi}~~ O, A, B \in \pi$. Спроектируем $M$ на $\pi$ параллельно прямой $OC$ и на прямую $OC$ параллельно $\pi$. Обозначим полученные точки через $M'$ и $C'$ и положим $\vec{x}' := \overrightarrow{OM'}, \vec{c} := \overrightarrow{OC'}$</p>
+<p>По теореме о разложении вектора по базису на плоскости $\vec{x}' = t_{1}\vec{a} + t_{2}\vec{b}$ для некоторых $t_{1}, t_{2}$.<br/>
+$\vec{c}' \parallel \vec{c} \neq \vec{0} \Rightarrow \vec{c}' = t_{3}\vec{c}$ для некоторого $t_{3}$. Тогда $\vec{x} = \vec{x}' + \vec{c}' = t_{1}\vec{a} + t_{2}\vec{b} + t_{3}\vec{c}$</p>
+<p>Единственность:<br/>
+От противного: пусть $\vec{x} = s_{1}\vec{a} + s_{2}\vec{b} + s_{3}\vec{c}$, тогда:<br/>
+$$(t_{1} - s_{1})\vec{a} + (t_{2} - s_{2})\vec{b} + (t_{3} - s_{3})\vec{c} = \vec{0}$$<br/>
+Если $t_{1} - s_{1} \neq 0$, то $\vec{a} = - \dfrac{t_{2} - s_{2}}{t_{1} - s_{1}} \cdot \vec{b} - \dfrac{t_{3} - s_{3}}{t_{1}-s_{1}} \cdot \vec{c}$. Но тогда $\vec{a}, \vec{b}, \vec{c}$ - компланарны, противоречие. Аналогично противоречие возникает и для $s_{2}, s_{3} ~~~\square$<br/>
+</p></div></p>
+<h3>Замечание о координатах суммы и произведения на число</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\vec{x} = (x_{1}, x_{2}, x_{3}), \vec{y} = (y_{1}, y_{2}, y_{3})$ в базисе $(\vec{a}, \vec{b}, \vec{c})$, $t$ - произвольное число. Тогда:
+$$\vec{x} + \vec{y} = (x_{1} + y_{1}, x_{2} + y_{2}, x_{3}+y_{3}),~ t\vec{x} = (t x_{1}, t x_{2}, t x_{3})$$
+Аналогичное справедливо для векторов на плоскости</p></div></p>
+<p>Подсказка к д-ву:<br/>
+<div class="spoiler-markdown"><p>
+Через разложение по базису и свойства операций.</p></div></p></div>
+</body>
+</html>

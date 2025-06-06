@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Производная многочлена и ее свойства</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Производная многочлена и ее свойства</h1><h2>Производная многочлена</h2>
+<p><strong>Определение:</strong><br/>
+Пусть $f(x) = \alpha_nx^n + \alpha_{n-1}x^{n-1} + \cdots + \alpha_0$ – многочлен над кольцом $R$.<br/>
+- Если $n &gt; 0$, то <strong>производной</strong> $f(x)$ называется многочлен:<br/>
+$$f'(x) = n\alpha_nx^{n-1} + (n-1)\alpha_{n-1}x^{n-2} + \cdots + \alpha_1$$<br/>
+- Если $n = 0$ (константа), то $f'(x) = 0$.</p>
+<hr/>
+<p><strong>Замечания:</strong><br/>
+а) Для любого многочлена $f$ над кольцом $R$:<br/>
+$$\deg f' \leq \deg f - 1$$<br/>
+б) Если $f$ – многочлен степени $&gt;0$ над полем характеристики $0$, то:<br/>
+$$\deg f' = \deg f - 1$$</p>
+<hr/>
+<h2>Лемма о свойствах производной</h2>
+<p><strong>Формулировка:</strong><br/>
+Если $f(x)$, $g(x)$ – многочлены над кольцом $R$, $\alpha \in R$, $m \in \mathbb{N}$, то:<br/>
+1. $(\alpha f)' = \alpha f'$<br/>
+2. $(f + g)' = f' + g'$<br/>
+3. $(fg)' = f'g + fg'$<br/>
+4. $(f^m)' = mf^{m-1}f'$  </p>
+<p><strong>Д-во:</strong> </p>
+<p><strong>1) $(\alpha f)' = \alpha f'$</strong><br/>
+Пусть $f(x) = \sum_{k=0}^n \alpha_k x^k$. Тогда:<br/>
+$$\alpha f(x) = \sum_{k=0}^n (\alpha \alpha_k) x^k$$<br/>
+Производная:<br/>
+$$(\alpha f)' = \sum_{k=1}^n k(\alpha \alpha_k) x^{k-1} = \alpha \sum_{k=1}^n k\alpha_k x^{k-1} = \alpha f'$$  </p>
+<p><strong>2) $(f + g)' = f' + g'$</strong><br/>
+Пусть $f(x) = \sum_{k=0}^n \alpha_k x^k$, $g(x) = \sum_{k=0}^m \beta_k x^k$. Тогда:<br/>
+$$(f + g)(x) = \sum_{k=0}^{\max(n,m)} (\alpha_k + \beta_k) x^k$$<br/>
+Производная:<br/>
+$$(f + g)' = \sum_{k=1}^{\max(n,m)} k(\alpha_k + \beta_k) x^{k-1} = \sum_{k=1}^n k\alpha_k x^{k-1} + \sum_{k=1}^m k\beta_k x^{k-1} = f' + g'$$  </p>
+<p><strong>3) $(fg)' = f'g + fg'$</strong><br/>
+Достаточно доказать для $f(x) = x^n$, $g(x) = x^m$ (в силу линейности 1 и 2):<br/>
+$$\begin{aligned} <br/>
+(fg)' &amp;= (x^{n+m})' = (n+m)x^{n+m-1} \ <br/>
+f'g + fg' &amp;= (nx^{n-1})x^m + x^n (mx^{m-1}) = nx^{n+m-1} + mx^{n+m-1} = (n+m)x^{n+m-1} <br/>
+\end{aligned}$$  </p>
+<p><strong>4) $(f^m)' = mf^{m-1}f'$</strong><br/>
+Индукция по $m$:<br/>
+- <strong>База ($m=1$):</strong><br/>
+$(f^1)' = f' = 1 \cdot f^0 \cdot f'$<br/>
+- <strong>Переход ($m \to m+1$):</strong><br/>
+Используем свойство 3:<br/>
+$$\begin{aligned} <br/>
+(f^{m+1})' &amp;= (f \cdot f^m)' = f' \cdot f^m + f \cdot (f^m)' \ <br/>
+&amp;= f'f^m + f \cdot (mf^{m-1}f') = f'f^m + mf^m f' = (m+1)f^m f' <br/>
+\end{aligned}$$<br/>
+$\square$  </p>
+<hr/>
+<h2>Неприводимые множители многочлена и его производной</h2>
+<h3>Лемма о производной неприводимого многочлена</h3>
+<p><strong>Формулировка:</strong><br/>
+Если $p$ – неприводимый многочлен и $p' \neq 0$, то $\text{НОД}(p, p') = 1$.  </p>
+<p><strong>Д-во:</strong><br/>
+Пусть $d = \text{НОД}(p, p')$. Тогда:<br/>
+$$p = d \cdot q \quad \text{и} \quad p' = d \cdot r$$<br/>
+для некоторых многочленов $q, r$.  </p>
+<ul>
+<li>Если $\deg q = 0$, то:<br/>
+  $$\deg p = \deg(dq) = \deg d \leq \deg p' \leq \deg p - 1$$<br/>
+  Противоречие ($\deg p \leq \deg p - 1$).  </li>
+<li>Следовательно, $\deg q &gt; 0$, и $q$ необратим.  </li>
+<li>Так как $p$ неприводим, $d$ должен быть обратим ($d \in F^\times$).  </li>
+<li>Значит, $d$ ассоциирован с $1$, т.е. $\text{НОД}(p, p') = 1$. $\square$  </li>
+</ul>
+<p><strong>Замечание:</strong><br/>
+Условие $p' \neq 0$ существенно. Пример:<br/>
+- Поле $F_2(y)$ (рациональные функции над $\mathbb{F}_2$).<br/>
+- Многочлен $p(x) = x^2 + y$ неприводим над $F_2(y)$ (обобщённый критерий Эйзенштейна).<br/>
+- Производная $p'(x) = 2x = 0$, так как $\text{char}\, F_2 = 2$.  </p>
+<hr/>
+<h3>Предложение о неприводимых множителях</h3>
+<p><strong>Формулировка:</strong><br/>
+Пусть $F$ – поле характеристики $0$, $p$ – неприводимый множитель кратности $k$ многочлена $f \in F[x]$. Тогда:<br/>
+1. Если $k = 1$, то $p \nmid f'$<br/>
+2. Если $k &gt; 1$, то $p$ – неприводимый множитель $f'$ кратности $k-1$.  </p>
+<p><strong>Д-во:</strong><br/>
+Пусть $f = p^k g$, где $p \nmid g$ (многочлен $g$ содержит остальные множители).  </p>
+<p><strong>1) Случай $k = 1$:</strong><br/>
+$f = pg$, тогда:<br/>
+$$f' = p'g + pg'$$<br/>
+Предположим $p \mid f'$. Так как $p \mid pg'$, то:<br/>
+$$p \mid (f' - pg') = p'g$$<br/>
+Но $\text{НОД}(p, p') = 1$ (по лемме), и $p \nmid g$, значит $p \nmid p'g$. Противоречие.  </p>
+<p><strong>2) Случай $k &gt; 1$:</strong><br/>
+$$f' = (p^k g)' = kp^{k-1}p'g + p^k g' = p^{k-1} \underbrace{(kp'g + pg')}_{h}$$<br/>
+а) $p^{k-1} \mid f'$ (очевидно).<br/>
+б) Докажем $p \nmid h$:<br/>
+Предположим $p \mid (kp'g + pg')$. Тогда:<br/>
+$$p \mid kp'g$$<br/>
+Так как $\text{char}\, F = 0$, элемент $k^{-1} \in F$ существует. Умножая на $k^{-1}$:<br/>
+$$p \mid p'g$$<br/>
+Но $\text{НОД}(p, p') = 1$ и $p \nmid g$, следовательно $p \nmid p'g$. Противоречие.<br/>
+Таким образом, $p$ имеет кратность $k-1$ в $f'$. $\square$  </p></div>
+</body>
+</html>

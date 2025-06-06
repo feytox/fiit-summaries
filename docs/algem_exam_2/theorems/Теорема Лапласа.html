@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Теорема Лапласа</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Теорема Лапласа</h1><h2>Лемма</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+$M_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}} \cdot A_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}}$ - часть слагаемых из определителя $n\times n$-матрицы $A$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+<strong>1 случай</strong>: минор находится в первых $k$ строках и столбцах. <br/>
+Тогда доп. минор будет в последних $n-k$ строках и столбцах, его элементы обозначим за $b_{ij} = a_{i+k ~ j+k}$. Тогда:<br/>
+$$M = \sum_{\rho \in S_{k}}(-1)^{\rho}a_{1\rho(1)} \dots a_{k\rho(k)}$$<br/>
+$$\overline{M} = \sum_{\tau \in S_{n-k}}(-1)^{\tau}b_{1 \tau(1)} \dots b_{n-k \tau(n-k)}$$<br/>
+$$A = (-1)^{1 + \dots + k + 1 + \dots + k} \cdot \overline{M} = \overline{M}$$<br/>
+Значит:<br/>
+$$MA = M\overline{M} = \sum_{\rho \in S_{k},~ \tau \in S_{n-k}} (-1)^{\tau + \rho} a_{1\rho(1)} \dots a_{k\rho(k)} b_{1\tau(1)} \dots b_{n-k \tau(n-k)}$$<br/>
+Восстановим $a$ по $b$:<br/>
+$$MA = \sum (-1)^{\tau + \rho} a_{1\rho(1)} \dots a_{k\rho(k)} a_{k+1 ~\tau(1)+k} \dots a_{n ~\tau(n-k)+k}$$<br/>
+Возьмём следующую подстановку $\sigma$:<br/>
+$$\sigma = \begin{pmatrix}<br/>
+1 &amp; 2 &amp; \dots &amp; k &amp; k+1 &amp; \dots &amp; n \<br/>
+\rho(1) &amp; \rho(2) &amp; \dots &amp; \rho(k) &amp; \tau(1)+k &amp; \dots &amp; \tau(n-k)+k<br/>
+\end{pmatrix}$$<br/>
+Её число инверсий равно сумме числа инверсий $\rho$ и $\tau$, так как между частями инверсии отсутствуют. Получаем:<br/>
+$$MA = \sum_{\rho \in S_{k},~ \tau \in S_{n-k}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \dots a_{n\sigma(n)}$$<br/>
+(важно, что суммирование не по $\sigma \in S_{n}$)</p>
+<p>Получаем, что число слагаемых ${} k!(n-k)!$</p>
+<p><strong>2 случай</strong>: произвольный минор.<br/>
+С помощью смежных транспозиций перенесём $i_{1}, \dots, i_{k}$ строки и $j_{1}, \dots, j_{k}$ столбцы на первые $k$ мест. Для этого потребуется $I = i_{1} - 1 + i_{2} - 2 + \dots i_{k} - k + \dots + j_{k} - k$ транспозиций. Получим матрицу $B$.</p>
+<p>Из-за количества транспозиций, получаем, что $\det A = (-1)^{I} \det B$. При этом $M(A) \cdot \overline{M}(A) = M(B) \cdot \overline{M}(B)$, так как столбцы и строки поменяли лишь свои места. Домножим равенство на $(-1)^{i_{1} + \dots + j_{k}}$ (я не знаю, куда из I делись числа), получим:<br/>
+$$(-1)^{i_{1} + \dots + j_{k}} \cdot M\overline{M} = MA$$<br/>
+Следовательно, опираясь на первый случай, получаем, что и при произвольном миноре $MA$ есть часть слагаемых из определителя матрица $A$. $~~\square$<br/>
+</p></div></p>
+<h2>Теорема Лапласа</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $A$ - квадратная $n \times n$ матрица и зафиксированы $k$ строк $i_{1}, \dots, i_{k}$. Тогда:
+$$\det A = \sum_{1 \leq j_{1} &lt; \dots &lt; j_{k} \leq n} M_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}} A_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}} = \sum (-1)^{i_{1} + \dots + j_{k}} M_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}} \overline{M_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}}}$$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Рассмотрим то, что необходимо доказать:<br/>
+$$\det A = \sum_{1 \leq j_{1} &lt; \dots &lt; j_{k} \leq n} M_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}} A_{i_{1}, \dots, i_{k}}^{j_{1}, \dots, j_{k}}$$</p>
+<p>Мы выбираем различные наборы столбцов, следовательно каждое слагаемое суммы различно. При этом количество этих слагаемых равно $C_{n}^{k}$, а количество слагаемых в каждом произведении равно $k!(n-k)$, опираясь на доказанную выше лемму. Следовательно общее число слагаемых в сумме равно:<br/>
+$$C_{n}^{k} \cdot k! (n-k)! = \dfrac{n!}{k!(n-k)!} \cdot k!(n-k)! = n!$$<br/>
+что в точности равно количеству слагаемых в $\det A$. $~~\square$<br/>
+</p></div></p></div>
+</body>
+</html>

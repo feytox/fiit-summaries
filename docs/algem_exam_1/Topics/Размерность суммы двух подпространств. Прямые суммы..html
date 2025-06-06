@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Размерность суммы двух подпространств. Прямые суммы.</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Размерность суммы двух подпространств. Прямые суммы.</h1><h3>Размерность суммы двух подпространств</h3>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Если $M_{1}$ и $M_{2}$ подпространства в $V$, то размерность их суммы равна сумме размерностей этих пространств минус размерность пересечения
+$$\mathrm{dim}(M_{1}+M_{2})=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}-\mathrm{dim}(M_{1}\cap M_{2})$$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Из предложения о <span>размерности подпространств</span>: <br/>
+$$\mathrm{dim}(M_{1}\cap M_{2})\leq \mathrm{dim}~M_{1} \land \mathrm{dim}~(M_{1}\cap M_{2})\leq \mathrm{dim}~M_{2}$$</p>
+<p>Пусть:<br/>
+$$\mathrm{dim}(M_{1}\cap M_{2}) = k,~~ \mathrm{dim}~M_{1} = k+l,~~ \mathrm{dim}~M_{2}=k+m$$<br/>
+Если $M_{1} = {\mathbf{0}}$, то $M_{1}+M_{2}=M_{2}$ и $M_{1}\cap M_{2}={\mathbf{0}}$ и поэтому утверждение теоремы верно. Аналогично для $M_{2}$. Поэтому будем считать, что $M_{1}$ и $M_{2}$ ненулевые.</p>
+<p>Если $M_{1}\cap M_{2}$ нулевое, то во всех дальнейших рассуждения $a_{1},a_{2},...,a_{k}$ нужно заменить на нулевой набор векторов.<br/>
+Пусть $a_{1},a_{2},...,a_{k}$ - базис $M_{1}\cap M_{2}$. По теореме о продолжении базис пересечения можно дополнить до базиса и $M_{1}$, и $M_2$. Пусть $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$ базис $M_{1}$, a $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$ базис $M_{2}$<br/>
+Докажем, что<br/>
+$$a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l},c_{1},c_{2},...,c_{m}~~~(1)$$<br/>
+базис $M_{1}+M_{2}$. Этого достаточно для доказательства теоремы, так как число векторов в наборе равно <br/>
+$$k+l+m=(k+l)+(k+m)-k=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}-\mathrm{dim}(M_{1}\cap M_{2})$$<br/>
+Пусть $x \in M_{1}+M_{2}$, $x = x_{1} + x_{2}$. <br/>
+$x_{1}$ является линейной комбинацией $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$.<br/>
+$x_{2}$ является линейной комбинацией $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$. <br/>
+Отсюда $x$ является линейной комбинацией $(1) \implies$ $(1)$ - система образующих в пространстве $M_{1}+M_{2}$. </p>
+<p>Осталось доказать, что $(1)$ линейно независима. Предположим, что<br/>
+$$\alpha {1}a{1}+\alpha {2}a{2}+...+\alpha {k}a{k}+\beta_{1}b_{1}+\beta_{2}b_{2}+...\beta_{l}b_{l}+\gamma {1}c{1}+\gamma {2}c{2}+...+\gamma {m}c{m}=\mathbf{0}~~~(2)$$<br/>
+для некоторых скаляров $\alpha {1},\alpha {2},...,\alpha {k},\beta{1},\beta_{2},...,\beta_{l},\gamma {1},\gamma {2},...,\gamma {m}$. Необходимо доказать, что все они равны 0.<br/>
+Возьмем $$y=\beta{1}b_{1}+\beta_{2}b_{2}+...\beta_{l}b_{l}$$Понятно, что $y\in M_1$. С другой стороны из равенства $(2)$ следует, что<br/>
+$$y=-\alpha {1}a{1}-\alpha {2}a{2}-...-\alpha {k}a{k}-\gamma {1}c{1}-\gamma {2}c{2}-...-\gamma {m}c{m}$$<br/>
+Значит $y \in M_{2}$. Тогда $y \in M_{1}\cap M_{2}$, а значит для некоторых $\lambda {1},\lambda {2}\dots \lambda {k}$ <br/>
+$y=\lambda {1}a_{1}+\lambda {2}a{2}+\dots+\lambda {k}a{k}$ Следовательно, если приравнять это и первое разложение:<br/>
+$$\lambda {1}a{1}+\lambda {2}a{2}+\dots+\lambda {k}a{k}-\beta_{1}b_{1}-\beta_{2}b_{2}-...-\beta_{l}b_{l}=\mathbf{0}~~~(3)$$<br/>
+Поскольку вектора $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$  образуют базис пространства $M_{1}$, они линейно независимы. Поэтому линейная комбинация в левой части $(3)$ тривиальна. В частности, $\beta_{1}=\beta_{2}=\dots=\beta_{l}=0$. Тогда выражение $(1)$ принимает вид <br/>
+$$\alpha {1}a{1}+\alpha {2}a{2}+\dots+\alpha_{k}a_{k}+\gamma {1}c{1}+\gamma {2}c{2}+...+\gamma {m}c{m}=\mathbf{0}~~~(2)$$<br/>
+Учитывая, что вектора $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$ образуют базис пространства $M_{2}$ (и, в частности, линейно независимы), мы получаем, что $\alpha {1} = \alpha {2} = \dots = \alpha {k} = \gamma {1} = \gamma 2 = \dots  = \gamma _{m} = 0$ Итак, все коэффициенты в левой части равенства $(2)$ равны $0$, что и требовалось доказать.<br/>
+</p></div></p>
+<h3>Прямая сумма</h3>
+<p><div class="spoiler-markdown"><p>
+Пусть $V$ – векторное пространство, а $M_{1}$ и $M_{2}$ – его подпространства. Говорят, что сумма подпространств $M_{1}$ и $M_{2}$ является их ***прямой суммой***, если $M_{1} \cap M_{2} = \{\mathbf{0}\}$. 
+Прямая сумма подпространств $M_{1}$ и $M_{2}$ обозначается через $M_{1} ⊕ M_{2}$.</p></div></p>
+<h3>Замечание о прямой сумме</h3>
+<p><div class="spoiler-markdown"><p>
+Если $V=M_{1}\oplus M_{2}$, $b_{1},b_{2},...,b_{l}$ - базис $M_{1}$, $c_{1},c_{2},...,c_{m}$ - базис $M_{2}$, то  $b_{1},b_{2},...,b_{l},c_{1},c_{2},...,c_{m}$ - базис $V$ (по теореме о <span>размерности суммы и пересечения</span>)</p></div></p>
+<h3>Теорема о прямой сумме</h3>
+<p><div class="spoiler-markdown"><p>
+Пусть $V$ - векторное пространство, а $M_{1}$ и $M_{2}$ - его подпространства.
+Следующие утверждения эквивалентны:
+1) $M_{1}+M_{2}$ - прямая сумма $M_{1}$ и $M_{2}$;
+2) $\mathrm{dim}(M_{1}+M_{2})=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}$;
+3) любой вектор из $M_{1}+M_{2}$ единственным образом представим в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$;
+4) нулевой вектор пространства $V$ единственным образом представим в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Эквивалентность условий 1) и 2) непосредственно вытекает из теоремы о <span>размерности суммы и пересечения</span> и того факта, что размерность нулевого пространства равна 0. 3) $\Rightarrow$ 4) очевидно. Поэтому достаточно доказать импликации 1) $\Rightarrow$ 3) и 4) $\Rightarrow$ 1).</p>
+<p>1 $\Rightarrow$ 3. <br/>
+Пусть $x \in M_{1} + M_{2},~ x = x_{1} + x_{2},~ x_{1} \in M_{1}, x_{2} \in M_{2}$. Остается доказать, что такое представление вектора $x$ единственно. Предположим, что $x = y_{1} + y_{2}$, где $y_{1} \in M_{1}$ и $y_{2} \in M_{2}$. Из равенств<br/>
+$$x = x_{1} + x_{2} = y_{1} + y_{2}$$<br/>
+имеем $x_{1} − y_{1} = y_{2} − x_{2}$. Ясно, что $x_{1} − y_{1} \in M_{1}$, а $y_{2} − x_{2} \in M_{2}$. Следовательно, $x_{1} − y_{1} = y_{2} − x_{2} \in M_{1} \cap M_{2}$. Но $M_{1} \cap M_{2} =$ {$\mathbf{0}$}. Поэтому $x_{1} − y_{1} = y_{2} − x_{2} = \mathbf{0}$, откуда $x_{1} = y_{1}$ и $x_{2} = y_{2}$. </p>
+<p>4 $\Rightarrow$ 1. <br/>
+Предположим, что $M_{1} \cap M_{2} \neq {\mathbf{0}}$, т. е. существует ненулевой вектор $x \in M_{1} \cap M_{2}$. Тогда вектор $\mathbf{0}$ может быть двумя различными способами представлен в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$: $\mathbf{0}= x + (−x)$ и $\mathbf{0} = \mathbf{0} + \mathbf{0}$. Мы получили противоречие с условием 4.<br/>
+$\square$<br/>
+</p></div></p></div>
+</body>
+</html>
