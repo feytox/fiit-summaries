@@ -43,7 +43,7 @@ jobs:
       - name: Commit site
         run: |
           git add .
-          git --amend --no-edit
+          git commit --amend --no-edit
 
       - name: Push site
         run: |
