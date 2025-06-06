@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Эффект Гиббса</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Эффект Гиббса</h1><p><strong>Исходная функция:</strong><br/>
+$$ \varphi(x) = \dfrac{\pi - x}{2}, \quad x \in [0, 2\pi] $$<br/>
+с периодическим продолжением. Имеет разрыв в точках $x = 2\pi k$ ($k \in \mathbb{Z}$) со скачком $\pi$.</p>
+<h3>Коэффициенты Фурье</h3>
+<ul>
+<li>${} a_{k} = \dfrac{1}{\pi} \int\limits_{0}^{2\pi}  \dfrac{\pi-x}{2} \cos(kx)\, dx = 0$  </li>
+<li>$b_{k} = \dfrac{2}{\pi} \int\limits_{0}^{2\pi}  \dfrac{\pi-x}{2} \sin(kx)\, dx = \dfrac{2}{\pi}\left( \dfrac{\pi-x}{2} - \dfrac{\cos(kx)}{k} \Bigg|{0}^{\pi} - \dfrac{1}{2k} \int\limits{0}^{\pi} \cos(kx)  \, dx  \right) =\dfrac{1}{k}$ </li>
+</ul>
+<p><strong>Ряд Фурье:</strong><br/>
+$$ \varphi(x) = \sum_{k=1}^{\infty} \dfrac{\sin(kx)}{k} $$</p>
+<h3>Частичная сумма $S_n(x)$</h3>
+<p>$S_{n}(x) = \sum_{k=1}^{\infty} \dfrac{\sin(kx)}{k} = \int\limits_{0}^{x}\left( \sum_{k=1}^{\infty} \cos(kt) \right)  \, dt = \int\limits_{0}^{x} \left( D_{n}(t) - \dfrac{1}{2} \right) \, dt  =$<br/>
+$= \int\limits_{0}^{x} \dfrac{\sin\left( n + \dfrac{1}{2} \right)t}{2 \sin\left( \dfrac{t}{2} \right)} \, dt - \dfrac{x}{2}=$<br/>
+$= \int\limits_{0}^{x}  \dfrac{\sin(nt)}{2\sin\left( \dfrac{t}{2} \right)}\cos\left( \dfrac{t}{2} \right)\, dt + \int\limits_{0}^{x}  \dfrac{\cos(t)}{2}\, dt - \dfrac{x}{2}$<br/>
+где $D_n(t) = \dfrac{\sin\left( n + \frac{1}{2} \right)t}{2 \sin \frac{t}{2}}$ — ядро Дирихле.  </p>
+<h3>Анализ эффекта Гиббса</h3>
+<ol>
+<li><strong>Поведение вблизи разрыва ($x = 0$):</strong> </li>
+<li>Предельное значение функции: $\varphi(0^+) = \dfrac{\pi}{2} \approx 1.5708$.  </li>
+<li>Первый максимум $S_n(x)$ при $x_n = \dfrac{\pi}{n + \frac{1}{2}}$:<br/>
+     $$ S_n(x_n) \approx \int\limits_{0}^{\pi} \dfrac{\sin u}{u}  du = \text{Si}(\pi) \approx 1.85194 $$  </li>
+<li>Превышение над $\varphi(0^+)$:<br/>
+     $$ S_n(x_n) - \dfrac{\pi}{2} \approx 0.28114 $$  </li>
+<li>
+<p>Относительное превышение: $\dfrac{0.28114}{\pi} \cdot 100\% \approx 8.95\%$ от величины скачка $\pi$.</p>
+</li>
+<li>
+<p><strong>Асимптотика:</strong><br/>
+   При $n \to \infty$:  </p>
+</li>
+<li>Точка максимума $x_n \to 0$.  </li>
+<li>Величина превышения стремится к $\text{Si}(\pi) - \dfrac{\pi}{2}$.  </li>
+<li>Эффект сохраняется для любых кусочно-гладких функций с разрывами.</li>
+</ol>
+<h3>Геометрическая интерпретация</h3>
+<ul>
+<li>Частичные суммы $S_n(x)$ осциллируют вблизи разрыва.  </li>
+<li>Амплитуда первого "выброса" составляет $\approx 109\%$ от $\varphi(0^+)$ (или $8.95\%$ от величины скачка).  </li>
+<li>Явление обусловлено медленной сходимостью ряда из-за $\dfrac{1}{k}$-закона убывания коэффициентов.</li>
+</ul>
+<h2>$S_n(x) - \varphi(x)$</h2>
+<p>Разность частичной суммы и функции раскладывается как:<br/>
+$$ S_n(x) - \varphi(x) = \int\limits_{0}^{x} \dfrac{\sin(nt)}{t}  dt - \dfrac{\pi}{2} + \tilde{r}_n(x) $$<br/>
+где $\tilde{r}_n(x)$ — остаточный член.</p>
+<h3>Преобразование интеграла</h3>
+<p>Основной интеграл преобразуется заменой $u = nt$:<br/>
+$$ \int\limits_{0}^{x} \dfrac{\sin(nt)}{t}  dt = \int\limits_{0}^{nx} \dfrac{\sin u}{u}  du $$</p>
+<p>Введём <strong>функцию отклонения</strong>:<br/>
+$$ g(u) = \int\limits_{0}^{u} \dfrac{\sin t}{t}  dt - \dfrac{\pi}{2} $$</p>
+<h3>Анализ функции $g(u)$</h3>
+<ol>
+<li>
+<p><strong>Производная:</strong><br/>
+   $$ g'(u) = \dfrac{\sin u}{u} $$<br/>
+   Критические точки: $g'(u) = 0 \iff u = k\pi$ ($k \in \mathbb{Z}$).</p>
+</li>
+<li>
+<p><strong>Экстремумы:</strong></p>
+</li>
+<li>Максимум при $u = \pi$: <br/>
+     $$ g(\pi) = \int\limits_{0}^{\pi} \dfrac{\sin t}{t}  dt - \dfrac{\pi}{2} \approx 1.85194 - 1.57080 = 0.28114 $$</li>
+<li>
+<p>Минимум при $u = 2\pi$: <br/>
+     $$ g(2\pi) \approx 1.41815 - 1.57080 = -0.15265 $$</p>
+</li>
+<li>
+<p><strong>Асимптотика:</strong><br/>
+   $$ \lim_{u \to \infty} g(u) = 0, \quad \sup_{u &gt; 0} |g(u)| = g(\pi) \approx 0.28114 $$</p>
+</li>
+</ol></div>
+</body>
+</html>

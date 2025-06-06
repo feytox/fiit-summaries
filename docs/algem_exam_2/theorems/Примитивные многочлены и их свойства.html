@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Принцип локализации Римана и поточечная сходимость рядов Фурье (признак Дини)</title>
+<title>Примитивные многочлены и их свойства</title>
 <script>
        MathJax = {
         tex: {
@@ -165,42 +165,26 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Принцип локализации Римана и поточечная сходимость рядов Фурье (признак Дини)</h1><h2>Принцип локализации Римана</h2>
-<p>Формулировка:<br/>
-Сходимость ряда Фурье и его сумма в точке $x$ зависят только от значений $f$ в сколь угодно малой окрестности $x$.<br/>
-Точнее: $\forall \delta \in (0, \pi)$ частичная сумма $S_n(x)$ допускает представление:<br/>
-$$ S_n(x) = \dfrac{1}{\pi} \int\limits_{-\delta}^{\delta} f(x + t) D_n(t)  dt + r_n(x), $$<br/>
-где $r_n(x) \xrightarrow{n \to \infty} 0$. Здесь $D_n(t) = \dfrac{\sin\left( n + \frac{1}{2} \right)t}{2 \sin \frac{t}{2}}$ — ядро Дирихле.  </p>
-<p>Д-во:<br/>
-Определим функцию:<br/>
-$$ g(t) = <br/>
-\begin{cases} <br/>
-0, &amp; |t| &lt; \delta \ <br/>
-\dfrac{f(x+t)}{2 \sin \frac{t}{2}}, &amp; \delta &lt; |t| &lt; \pi <br/>
-\end{cases} $$<br/>
-Тогда:<br/>
-$$ r_n(x) = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi} g(t) \sin\left( n + \frac{1}{2} \right)t  dt. $$<br/>
-Функция $g(t)$ интегрируема на $[-\pi, \pi]$ (так как $f$ интегрируема, а ${} \dfrac{1}{\sin \dfrac{t}{2}} {}$ ограничена при $|t| \geq \delta$). По лемме Римана:<br/>
-$$ \lim_{n \to \infty} \int\limits_{-\pi}^{\pi} g(t) \sin\left( n + \frac{1}{2} \right)t  dt = 0 \implies r_n(x) \to 0. $$<br/>
-$\square$  </p>
-<h2>Поточечная сходимость рядов Фурье(признак Дини)</h2>
-<p>Формулировка:<br/>
-Пусть $f(x)$ интегрируема на $[-\pi, \pi],$ $\exists{M,\delta &gt; 0}~~~\forall{|t| &lt; \delta}$<br/>
-$$|f(x+t) - A| &lt; M|t|,~~~|f(x-t) - B| &lt; M|t|,~~~~~~t&gt;0$$<br/>
-тогда $S_{n}(x) \to_{n \to \infty} \dfrac{A+B}{2}$<br/>
-<strong>Частные случаи</strong><br/>
-Пусть $f(x)$ непрерывны в $X,$ то $A = B = f(x)$<br/>
-- Если $f(x)$ монотонно возрастает, то <br/>
-$$\lim_{\widetilde{x} \to x^{+}} f(\widetilde{x}) = A,~~~\lim_{\widetilde{x} \to x^{-}} f(\widetilde{x}) = B$$<br/>
-- Если $f(x)$ дифференцируема , то <br/>
-$$|f(x+t) - f(x)| = |f^{'}(c) * t| \leq Mt$$</p>
-<p>Д-во:<br/>
-$$S_{n} = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x+t)D_{n}(t) \, dt  = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x + t)D_{n}(t)\, dt =$$<br/>
-$$=[t = -t] = \dfrac{1}{\pi}\left( \int\limits_{0}^{\pi}  f(x+t)D_{n}(t)\, dt + \int\limits_{0}^{\pi}  f(x - t)D_{n}(t)\, dt   \right) =$$<br/>
-$$= \dfrac{1}{\pi} \int\limits_{0}^{\pi}  (f(x+t) + f(x-t))D_{n}(t)\, dt$$<br/>
-Рассмотрим <br/>
-$\dfrac{1}{\pi} \int\limits_{0}^{\pi}  D_{n}(t)\, dt = \dfrac{1}{\pi} \int\limits_{0}^{\pi} \left( \dfrac{1}{2} + \sum_{k=1}^{n} \cos(kt)  \right) \, dt  = \dfrac{A+B}{2}$<br/>
-$$S_{n}(x) = \dfrac{A+B}{2} = \dfrac{1}{\pi} \int\limits_{0}^{\pi}  (f(x+t) + f(x - t) - (A+B))D_{n}(t)\, dt =$$<br/>
-$$\dfrac{1}{\pi}\left( \int\limits_{-\pi}^{\pi}  \dfrac{f(x+t)-A}{2\sin\left( \dfrac{t}{2} \right)} * \sin\left( n + \dfrac{1}{2} \right)t \, dt + \int\limits_{-\pi}^{\pi}  \dfrac{f(x-t)-B}{2\sin\left( \dfrac{t}{2} \right)} * \sin\left( n + \dfrac{1}{2} \right)t \, dt \right )$$</p></div>
+<div class="content"><h1>Примитивные многочлены и их свойства</h1><h2>Определение: примитивный многочлен над $Z$</h2>
+<p><strong>Формулировка</strong><br/>
+<div class="spoiler-markdown"><p>
+Многочлен над $Z$ является примитивным, если НОД всех коэффициентов равен 1</p></div></p>
+<h2>Лемма Гаусса</h2>
+<p><strong>Формулировка</strong><br/>
+<div class="spoiler-markdown"><p>
+Произведение примитивных многочленов - примитивный многочлен</p></div></p>
+<p><strong>Д-во</strong><br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $f(x)$ и $g(x)$ - примитивные многочлены<br/>
+$$ f(x) = a_n x^n + ... + a_0 $$<br/>
+$$ g(x) = b_n x^m + ... + b_0 $$</p>
+<p>о/п<br/>
+$f(x)g(x)$ непримитивный: найдется простое число p, которое делит все коэффициенты $f(x)g(x)$</p>
+<p>Пусть $l$ - наименьший индекс такой, что $p \nmid a_{l}$ и при этом $p \mid a_{i}$ для $0 &lt;= i &lt; l - 1$ (иначе если такого $l$ не существует, что все коэфф. $f(x)$ делятся на $p$ и $f(x)$ не примитивный)</p>
+<p>Рассмотрим коэффициенты при степени $k + l$ многочлена $f(x)g(x)$<br/>
+$$ c_k+l = a_l b_k + (a_{l-1} b_{k+1} + ...) + (a_{l+1} b_{k-1} + a_{l+2} b_{k-2} + ...)$$<br/>
+скобки и левая часть делятся на $p$, значит $p$ должно делить и $a_l b_k$<br/>
+$\square$<br/>
+</p></div></p></div>
 </body>
 </html>

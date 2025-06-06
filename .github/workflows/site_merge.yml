@@ -22,11 +22,11 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Merge main into quartz
+      - name: Merge main into site
         run: |
-          git switch quartz
+          git switch site
           git merge origin/main --no-edit
 
-      - name: Push rebased quartz
+      - name: Push rebased site
         run: |
           git push --force
