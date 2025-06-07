@@ -3,6 +3,9 @@ from pathlib import Path
 import re
 from bs4 import BeautifulSoup
 
+# Get the absolute path of the directory where the script is located
+SCRIPT_DIR = Path(__file__).resolve().parent
+
 class StructureNode:
     def __init__(self, path=Path(), parent=None):
         self.title : str = path.stem
@@ -79,8 +82,9 @@ class Structure:
 
 class App:
     def __init__(self):
-        self.folder_content = Path("content\\")
-        self.folder_result = Path("docs\\")
+        # Use absolute paths based on the script's location
+        self.folder_content = SCRIPT_DIR / "content"
+        self.folder_result = SCRIPT_DIR / "docs"
         self.folder_result.mkdir(exist_ok=True)
         self.structure = Structure(self.folder_content, self.folder_result)
 
