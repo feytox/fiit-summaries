@@ -3,7 +3,6 @@ from pathlib import Path
 import re
 from bs4 import BeautifulSoup
 
-# Get the absolute path of the directory where the script is located
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 class StructureNode:
@@ -130,7 +129,8 @@ class App:
         result_path = self.structure.get_absolute_path_result(node.path)
         html_path = result_path.with_suffix(".html")
 
-        with open("code_assets/mdtemplate.html", encoding="utf-8") as f:
+        template_file_path = SCRIPT_DIR / "code_assets/mdtemplate.html"
+        with open(template_file_path, encoding="utf-8") as f:
             template_html = f.read()
         with open(source_path, encoding="utf-8") as f:
             md_text = f.read()
@@ -165,8 +165,6 @@ class App:
 
         soup.body.div.append(BeautifulSoup(context_html, features="html.parser"))
         soup.body.div.append(BeautifulSoup(markdown_html, features="html.parser"))
-
-
 
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(str(soup))
