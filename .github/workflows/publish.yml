@@ -37,8 +37,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run main.py to generate HTML
-        run: python main.py
+      - name: Generate HTML from .md
+        run: python build_html.py
 
       - name: Commit site
         run: |
