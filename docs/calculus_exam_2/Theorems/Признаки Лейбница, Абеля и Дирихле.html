@@ -168,24 +168,26 @@
 <div class="content"><h1>Признаки Лейбница, Абеля и Дирихле</h1><h2>Признак Лейбница</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Если $a_{n} &gt; 0,~$ $a_{n} \to 0$ монотонно, тогда $\sum_{n=1}^{\infty} (-1)^{n} a_{n}$ причем $|R_{n}| = |S - s_{n}| \leq a_{n+1}$</p></div></p>
+Если $a_{n} &gt; 0,~$ $a_{n} \to 0$ монотонно, тогда $\sum_{n=1}^{\infty} (-1)^{n} a_{n}$ причем $|R_{n}| = |S - S_{n}| \leq a_{n+1}$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
 $S_{2n-1} = a_{1} - a_{2} + a_{3} - a_{4} +a_{5} -\dots+ a_{2n-1}$
 $S_{2n+1} - S_{2n-1} = a_{2n+1} - a_{2n} &lt; 0,~~~~\{S_{2n-1}\}~-$ убывает
 $\Rightarrow \{S_{2n-1}\}^{\infty}_{n = 1}~-$ сходиться $\Rightarrow$ $S_{2n-1} \rightarrow_{n \to \infty} S$
-$S_{2n} = S_{2n-1} - a_{2n} \to_{n \to \infty} S\mathpunct{:}~~S_{n} \to_{n \to \infty} S$ т.е ряд сходиться</p></div></p>
+$S_{2n} = S_{2n-1} - a_{2n} \to_{n \to \infty} S\mathpunct{:}~~S_{n} \to_{n \to \infty} S$ т.е ряд сходиться 
+$\square$</p></div></p>
 <h2>Признак Абеля</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Если $\sum_{n=1}^{\infty} a_{n}~-$ сходится, $b_{n} \to_{n \to \infty} b$ монотонно, тогда $\sum a_{n} b_{n}~-$ сходиться</p></div></p>
+Если $\sum_{n=1}^{\infty} a_{n}~-$ сходится, $b_{n} \to_{n \to \infty} b$ монотонно, тогда $\sum_{n=1}^{\infty} a_{n} b_{n}~-$ сходиться</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
 $c_{n} = b_{n} - b \to 0$ монотонно 
 $\sum_{n=1}^{\infty} a_{n} \Rightarrow A_{n} = \sum_{k=1}^{n} a_{k}~-$ ограниченна
 $\Rightarrow \sum_{n=1}^{\infty} a_{n}b_{n} = \sum_{n=1}^{\infty} a_{n}(b_{n} - b) + \sum_{n=1}^{\infty} a_{n}b$
 $\sum_{n=1}^{\infty} a_{n}(b_{n} - b)~-$ сходится по признаку Дирихле
-$\sum_{n=1}^{\infty} a_{n}b~-$ сходится по монотонности</p></div></p>
+$\sum_{n=1}^{\infty} a_{n}b~-$ сходится по монотонности
+$\square$</p></div></p>
 <h2>Признак Дирихле</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
@@ -193,7 +195,7 @@ $\sum_{n=1}^{\infty} a_{n}b~-$ сходится по монотонности</p
 $b_{n} \to_{n \to \infty} 0$ монотонно, то $\sum_{n=1}^{\infty} a_{n}b_{n}~-$ сходится</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
-$\tilde{A}_{n} = \sum_{k=m+1}^{n} a_{k},~~n&gt;m,~~\tilde{A}_{m} = 0$
+$\tilde{A}_{n} = \sum_{k=m+1}^{n} a_{k},~~n&gt;m,~~m = 0~\tilde{A}_{m} = 0$
 $a_{n} = \tilde{A}_{n} - \tilde{A}_{n-1}$
 $$\sum_{k = m+1}^{n} a_{k}b_{k} = \sum_{k = m+1}^{n} (\tilde{A}_{k} - \tilde{A}_{k+1})b_{k} = \sum_{k = m+1}^{n} \tilde{A}_{k} b_{k} - \sum_{k = m+1}^{n} \tilde{A}_{k+1}b_{k}=$$
 $$\sum_{k = m+1}^{n} \tilde{A}_{k}b_{k} - \sum_{k = m+1}^{n} \tilde{A}_{k}b_{k+1} + \tilde{A}_{n}b_{n} =$$

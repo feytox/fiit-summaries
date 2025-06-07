@@ -166,21 +166,24 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Теорема о произведении абсолютно сходящихся рядов</h1><p>Формулировка:<br/>
-Если $\sum\limits_{n=1}^{\infty} a_{n}$ и $\sum\limits_{n=1}^{\infty} b_{n}$ сходятся абсолютно, то $\sum\limits_{n=1}^{\infty} c_{n}$ - сходится абсолютно, где $c_{n} = a_{i}b_{j}$ - всевозможные произведения. Причём $\sum\limits_{n=1}^{\infty} c_{n} = \sum\limits_{n=1}^{\infty} a_{n} \cdot \sum\limits_{n=1}^{\infty} b_{n}$</p>
+<div class="spoiler-markdown"><p>
+Если $\sum\limits_{n=1}^{\infty} a_{n}$ и $\sum\limits_{n=1}^{\infty} b_{n}$ сходятся абсолютно, то $\sum\limits_{n=1}^{\infty} c_{n}$ - сходится абсолютно, где $c_{n} = a_{i}b_{j}$ - всевозможные произведения. Причём $\sum\limits_{n=1}^{\infty} c_{n} = \sum\limits_{n=1}^{\infty} a_{n} \cdot \sum\limits_{n=1}^{\infty} b_{n}$</p></div></p>
 <p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
 Заметим, что:<br/>
 $$\sum_{k=1}^{n^{2}} |c_{k}^{}| = \left(\sum_{i=1}^{n} |a_{i}|\right) \cdot \left(\sum_{j=1}^{n} |b_{j}|\right)$$<br/>
 где ряд $\sum\limits_{k=1}^{\infty} c_{k}^{}$ является перестановкой ряда $\sum\limits_{k=1}^{\infty} c_{k}$, полученного путём суммирования по квадратам элементов бесконечной матрицы:<br/>
-$$\begin{matrix}<br/>
+$$\begin{pmatrix}<br/>
 a_{1}b_{1} &amp; a_{1}b_{2} &amp; a_{1}b_{3} &amp; \dots \<br/>
 a_{2}b_{1} &amp; a_{2}b_{2} &amp; a_{2}b_{3} &amp; \dots \<br/>
 a_{3}b_{1} &amp; a_{3}b_{2} &amp; a_{3}b_{3} &amp; \dots \<br/>
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots<br/>
-\end{matrix}$$<br/>
+\end{pmatrix}$$<br/>
 Пусть $A = \sum\limits_{n=1}^{\infty} |a_{n}|$ и $B = \sum\limits_{n=1}^{\infty} |b_{n}|$. По условию $A, B &lt; \infty$.<br/>
 Любая конечная сумма $\sum\limits_{k=1}^{N} |c_k|$ содержится в некоторой сумме по квадрату $\sum\limits_{i=1}^{M}\sum\limits_{j=1}^{M} |a_i b_j| = \left(\sum\limits_{i=1}^{M} |a_i|\right)\left(\sum\limits_{j=1}^{M} |b_j|\right) \le A \cdot B$.<br/>
 Частичные суммы ряда $\sum |c_k|$ с неотрицательными членами ограничены сверху, значит ряд сходится, т.е. $\sum c_k$ сходится абсолютно.</p>
 <p>В силу абсолютной сходимости, сумма ряда не зависит от порядка членов, поэтому её можно вычислить суммированием по квадратам:<br/>
-$$\sum_{k=1}^{\infty} c_{k} = \lim_{n \to \infty} \sum_{k=1}^{n^{2}} c_{k}^{*} = \lim_{n \to \infty} \left( \left(\sum_{i=1}^{n} a_{i}\right) \left(\sum_{j=1}^{n} b_{j}\right) \right) = \left(\sum_{n=1}^{\infty} a_{n}\right) \left(\sum_{n=1}^{\infty} b_{n}\right).~~~\square$$</p></div>
+$$\sum_{k=1}^{\infty} c_{k} = \lim_{n \to \infty} \sum_{k=1}^{n^{2}} c_{k}^{*} = \lim_{n \to \infty} \left( \left(\sum_{i=1}^{n} a_{i}\right) \left(\sum_{j=1}^{n} b_{j}\right) \right) = \left(\sum_{n=1}^{\infty} a_{n}\right) \left(\sum_{n=1}^{\infty} b_{n}\right).~~~\square$$<br/>
+</p></div></p></div>
 </body>
 </html>

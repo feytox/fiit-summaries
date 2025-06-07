@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Теоремы о предельном переходе и непрерывности функциональных последовательностей и рядов</title>
+<title>Корневые подпространства</title>
 <script>
        MathJax = {
         tex: {
@@ -165,37 +165,47 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Теоремы о предельном переходе и непрерывности функциональных последовательностей и рядов</h1><h2>Теорема о предельном переходе в функциональных последовательности</h2>
-<p>Формулировка: <br/>
+<div class="content"><h1>Корневые подпространства</h1><h2>Определение: Нильпотентный оператор</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Пусть $f_{n}(x) \rightrightarrows_{n\to \inf}^{x} f(x),~x_{0} \in X^{'}~(предельная)$
-$\forall{n}\in \mathbb{N}~~\exists{\lim_{x \to x} f_{n}(x) =A_{n}},$ тогда $\exists{\lim_{x \to \infty } A_{n}}$ и $\lim_{x \to \infty} A_{n} = \lim_{x \to x_{0}} f(x),$ т.е $\lim_{x \to \infty} \lim_{x \to x_{0}} f_{n}(x) = \lim_{x \to x_{0}}\lim_{x \to \infty} f_{n}(x)$</p></div></p>
-<p>Д-во:<br/>
+Оператор $\mathcal{A}:V \to V$ называется нильпотентным, если $\exists{s}~~$такое, что $\mathcal{A}^{s}$ - нулевой оператор.
+Минимальное такое $s$ называется ступенью нильпотентности.</p></div></p>
+<h2>Определение: 1 и 0 компоненты оператора</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-$\forall{\varepsilon}&gt;0, \exists{N}~~\forall{n,m} &gt; N(\varepsilon)~~~\forall{x} \in X \mathpunct{:} |f_{n}(x) - f_{m}(x)| &lt; \dfrac{\varepsilon}{2}$
-$\lim_{x \to x_{0}} |f_{n}(x) - f_{m}(x)| \leq \dfrac{\varepsilon}{2} \Rightarrow |A_{n}- A_{m}| \leq \dfrac{\varepsilon}{2} &lt; \varepsilon \Rightarrow \{A_{n}\}~-$ фундаментальна $\Rightarrow$ по к. Коши $\exists{A} =\lim_{x \to \infty} A_{n}$ 
-Надо доказать, что $$\forall{\varepsilon}&gt;0~~\exists{\delta}~~\forall{x \in X}\mathpunct{:}~~0&lt;|x-x_{0}|&lt;\delta \Rightarrow |f(x) - A| \leq |f(x) - f_{n}(x)|+|f_{n}(x) -A_{n}| +|A_{n} -A| &lt; \dfrac{\varepsilon}{3} + \dfrac{\varepsilon}{3} + \dfrac{\varepsilon}{3} = \varepsilon {}$$
-$\exists{M}~~|f_{n}(x) - f(x)| &lt; \dfrac{\varepsilon}{3}$
-$N_{2} |A_{n} - A| &lt; \dfrac{\varepsilon}{3}$
-$n &gt; \max \{N_{1}, N_{2}\}$</p></div></p>
-<h2>Непрерывность функциональных последовательностей</h2>
-<p>Формулировка: <br/>
+$U_{k}$ -  называется 1-компонентной $\mathcal{A}$
+$V_{k}$ - называется 0-компонентной $\mathcal{A}$</p></div><br/>
+Построение:<br/>
+<div class="spoiler-markdown"><p><br/>
+$$\begin{align}U_{1} &amp;= {u \mid \mathcal{A}u \in \mathrm{Im}~\mathcal{A}} \ U_{2} &amp;= {u \mid \mathcal{A}^{2}u \in \mathrm{Im}~\mathcal{A}^{2}} \ &amp;\dots \ U_{k} &amp;= {u \mid \mathcal{A}^{k}u \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
+$$U_{1}\supseteq U_{2} \supseteq \dots \supseteq U_{k}~~(1)$$</p>
+<p>$$\begin{align}V_{1} &amp;= {v \mid \mathcal{A}v \in \mathrm{Im}~\mathcal{A}} \ V_{2} &amp;= {v \mid \mathcal{A}^{2}v \in \mathrm{Im}~\mathcal{A}^{2}} \ &amp;\dots \ V_{k} &amp;= {v \mid \mathcal{A}^{k}v \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
+$$V_{1} \subseteq V_{2} \subseteq \dots \subseteq V_{k}~~(1)$$</p>
+<p>$(1)$ Eсли какие-то вектора передут в $0$, то они в нем и останутся для всех последующих степеней операторов: $$\mathcal{A}^{i}x = 0 ~\Rightarrow~\mathcal{A}^{i+1}x = \mathcal{A}(\mathcal{A}^{i}x) = \mathcal{A}(0) = 0$$<br/>
+Таким образом, если в какой-то момент $V_{k-1} = V_{k}$, равенство будет выполнятся для всех последующих $V_{j},~j\geq k - 1$. Аналогично для $U_{k}$. Причем из теоремы <span>о сумме ранга и дефекта</span><br/>
+для подпространств $V_{k}$ и $U_{k}$ это произойдет для одной и той же степени оператора.<br/>
+По определению <span>ядра и образа</span> эти два подпространства будут $\mathcal{A}^{k}$ - инвариантны.</p>
+<p></p></div></p>
+<h2>Разложение Фиттинга</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Если $f_{n}(x)~-$ непрерывна в точке $x_{0} \in X,~\forall{n \in \mathbb{N}}~$ и $f_{n}(x) \rightrightarrows _{n \to \infty}^{x} f(x),$ тогда $f(x)$ непрерывна в точке $x_{0}$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-$$\lim_{x \to x_{0}} f(x) = \lim_{x \to x_{0}} \lim_{n \to \infty} f_{n}(x) = \lim_{x \to \infty} \lim_{n \to x_{0}} f_{m}(x) = \lim_{n \to \infty} f_{n}(x_{0}) = f(x_{0}) {}$$</p></div></p>
-<h2>Непрерывность функциональных рядов</h2>
-<p>Формулировка: <br/>
-<div class="spoiler-markdown"><p>
-Пусть $\sum_{n=1}^{\infty} a_{n}(x) \rightrightarrows S(x)~на~X, x_{0} \in X!$ (предельная точка)
-$\forall{n \in \mathbb{N}}~~\lim_{x \to x_{0}} a_{n}(x) = \alpha_{n},$ тогда $\sum_{n=1}^{\infty} \alpha_{n}~-$ сходиться и $\lim_{x \to x_{0}} S(x) = \lim \sum_{n=1}^{\infty} a_{n}(x) = \sum_{n=1}^{\infty} \lim_{x \to x_{0}} a_{n}(x) = \sum_{n=1}^{\infty} \alpha_{n}$</p></div><br/>
+Для любого оператора $\mathcal{A}$ конечномерного пространства $V$ существуют $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ такие, что
+1) $V = N_{\mathcal{A}} \oplus U_{\mathcal{A}}$
+2) $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$ - инвариантны
+3) $\mathcal{A}|_{N_{\mathcal{A}}}$ - <span>нильпотентный оператор</span>
+4) $\mathcal{A}|_{U_{\mathcal{A}}}$ - <span>обратимый оператор</span></p></div><br/>
 Д-во:<br/>
 <div class="spoiler-markdown"><p>
-$f_{n}(x) = S_{n}(x) = \sum_{n=1}^{\infty} a_{k}(x)$</p></div></p>
-<h2>Следствие о непрерывности функциональных рядов</h2>
-<p>Формулировка<br/>
-<div class="spoiler-markdown"><p>
-Если $a_{n}(x)$ непрерывна и $\sum_{n=1}^{\infty} a_{n}(x) \rightrightarrows S(x),$ то $S(x)~-$ непрерывна</p></div></p></div>
+В качестве $U_{\mathcal{A}}$ и $N_{\mathcal{A}}$ возьмем <span>1 и 0 компоненты</span> оператора $\mathcal{A}$ соответственно.
+1) $\mathrm{dim}~N_{\mathcal{A}} + \mathrm{dim}~ U_{\mathcal{A}} = \mathrm{dim}~V$ из их построения. Поэтому для прямой суммы достаточно показать, что $N_{\mathcal{A}}~\cap~U_{\mathcal{A}} = 0$ 
+   $x \in N_{\mathcal{A}}~\Rightarrow~\mathcal{A}^{k}x = 0$ 
+   $\exists{y} \in V~~x = \mathcal{A}^{k}y~ \Rightarrow \mathcal{A}^{2k}y = 0~\Rightarrow y \in V_{2k}$
+   $N_{\mathcal{A}}=V_{k} = \dots =V_{2k}~\Rightarrow y \in N_{\mathcal{A}}~\Rightarrow x = \mathcal{A}^{k}y = 0$ 
+2) Очевидно из построения компонент
+3) $N_{\mathcal{A}} = V_{k} = \{x~|~\mathcal{A}^{k}x = 0 \}$
+   $\mathcal{A}^{k}|_{N_{\mathcal{A}}} = 0 = (\mathcal{A}|_{N_{\mathcal{A}}})^{k}$ т.e. оператор нильпотентен с степенью нильпотентности равной $k$
+4) $\exists{x}~\in~U_{\mathcal{A}}\mathpunct{:}~~\mathcal{A}x = 0,~x \neq 0$
+   $\exists{y}~\in~V\mathpunct{:}~~x = \mathcal{A}^{k}y \Rightarrow  \mathcal{A}^{k+1} y = 0$, но $V_{k} = V_{k + 1} \Rightarrow x = \mathcal{A}^{k}y = 0$
+$\square$</p></div></p></div>
 </body>
 </html>

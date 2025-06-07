@@ -166,12 +166,14 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Единственность степенных рядов</h1><p>Формулировка: <br/>
-${} {X_{n} \notin 0},~x_{n} \to 0 \mathpunct{:}~~ A(x) = \sum_{k=0}^{\infty} a_{k}x^{k}\mathpunct{;}~~B(x) = \sum_{k=0}^{\infty} b_{k}x^{k} {}$<br/>
-Пусть $A(x_{n}) = B(x_{n})\mathpunct{:}~~\forall{n \in \mathbb{N}}~~$тогда $a_{k} = b_{k}~~\forall{k \in \mathbb{N}}~~$</p>
+<div class="spoiler-markdown"><p>
+${} \{X_{n} \notin 0\},~x_{n} \to 0 \mathpunct{:}~~ A(x) = \sum_{k=0}^{\infty} a_{k}x^{k}\mathpunct{;}~~B(x) = \sum_{k=0}^{\infty} b_{k}x^{k} {}$
+Пусть $A(x_{n}) = B(x_{n})\mathpunct{:}~~\forall{n \in \mathbb{N}}~~$тогда $a_{k} = b_{k}~~\forall{k \in \mathbb{N}}~~$</p></div></p>
 <p>Д-во:<br/>
-$$\lim_{n \to \infty} \sum_{k=0}^{\infty} a_{k} x_{n}^{k} = \lim_{n \to \infty} \sum_{k=0}^{\infty} b_{k} x_{n}^{k} \Rightarrow a_{0} = b_{0}$$<br/>
-Если $x_{1} \neq 0$ и $A(x_{1})$ и $B(x_{1})$ сходится, то $R \geq |x_{1}|,$ тогда $\forall{|x_{n}| &lt; R}~~$сходится равномерно оба ряда<br/>
-$$a_{0} + \sum_{k=1}^{\infty} a_{k} x_{n}^{k} = b_{0} + \sum_{k=1}^{\infty} b_{k} x_{n}^{k}~| \mathpunct{:}x_{n} \neq 0$$<br/>
-$$\lim_{n \to \infty} \sum_{k=1}^{\infty} a_{k}x^{k-1}{n} = \lim{n \to \infty} \sum_{k=1}^{\infty} b_{k}x^{k-1}{n} \Rightarrow a{1} = b_{1}~~~~\square$$</p></div>
+<div class="spoiler-markdown"><p>
+$$\lim_{n \to \infty} \sum_{k=0}^{\infty} a_{k} x_{n}^{k} = \lim_{n \to \infty} \sum_{k=0}^{\infty} b_{k} x_{n}^{k} \Rightarrow a_{0} = b_{0}$$
+Если $x_{1} \neq 0$ и $A(x_{1})$ и $B(x_{1})$ сходится, то $R \geq |x_{1}|,$ тогда $\forall{|x_{n}| &lt; R}~~$сходится равномерно оба ряда
+$$a_{0} + \sum_{k=1}^{\infty} a_{k} x_{n}^{k} = b_{0} + \sum_{k=1}^{\infty} b_{k} x_{n}^{k}~| \mathpunct{:}x_{n} \neq 0$$
+$$\lim_{n \to \infty} \sum_{k=1}^{\infty} a_{k}x^{k-1}_{n} = \lim_{n \to \infty} \sum_{k=1}^{\infty} b_{k}x^{k-1}_{n} \Rightarrow a_{1} = b_{1}~~~~\square$$</p></div></p></div>
 </body>
 </html>

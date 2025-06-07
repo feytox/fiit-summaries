@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Изометрические операторы и их свойства</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<style>
+        :root {
+            --obsidian-background: #1a1a1a;
+            --obsidian-text-color: #e0e0e0;
+            --obsidian-link-color: #7da9e2;
+            --obsidian-heading-color: #ffffff;
+            --obsidian-border-color: #444444;
+            --obsidian-code-background: #2b2b2b;
+            --obsidian-code-text: #c7254e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--obsidian-text-color);
+            background-color: var(--obsidian-background);
+            margin: 1px;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #262626;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--obsidian-border-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--obsidian-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        a {
+            color: var(--obsidian-link-color);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #92bce6;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .spoiler-markdown {
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-background);
+        }
+
+        .spoiler-markdown:hover {
+            color: var(--obsidian-text-background);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        pre {
+            background-color: var(--obsidian-code-background);
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            color: var(--obsidian-code-text);
+            background-color: var(--obsidian-code-background);
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--obsidian-border-color);
+            margin: 1.5em 0;
+            padding: 0.5em 20px;
+            color: #aaaaaa;
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--obsidian-border-color);
+            margin: 3em 0;
+        }
+
+        strong, b {
+            font-weight: 600;
+        }
+
+        em, i {
+            font-style: italic;
+        }
+
+        #back-button {
+            font-size: 1.2em;
+            height: 1.4em;
+            display: none;
+            cursor: pointer;
+            background-color: var(--obsidian-code-background);
+            color: var(--obsidian-code-color);
+            border: var(--obsidian-border-color);
+            border-radius: 5px;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content"><h1>Изометрические операторы и их свойства</h1><h2>Определение: Изометрический оператор</h2>
+<p><div class="spoiler-markdown"><p>
+Пусть $V_1$ и $V_2$ — унитарные (евклидовые) пространства. Линейный оператор $\mathcal{A}\colon V_1 \to V_2$ называется ***изометрией***, если для любого вектора $v \in V_1$:
+$$ |\mathcal{A} v| = |v| $$</p></div></p>
+<h2>Теорема: Критерий изометрии</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Линейный оператор $\mathcal{A}\colon V_1 \to V_2$ является изометрией $\iff$ для всех $v_1, v_2 \in V_1$:
+$$ (v_1, v_2) = (\mathcal{A} v_1, \mathcal{A} v_2) $$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+$\Large\implies$<br/>
+Пусть $\mathcal{A}$ — изометрия. Возьмем $x, y \in V_1$.<br/>
+Рассмотрим $|x + y|^2$ и $|\mathcal{A}(x + y)|^2$:<br/>
+$$ |x + y|^2 = |x|^2 + |y|^2 + (x, y) + (y, x) $$<br/>
+$$ |\mathcal{A} x + \mathcal{A} y|^2 = |\mathcal{A} x|^2 + |\mathcal{A} y|^2 + (\mathcal{A} x, \mathcal{A} y) + (\mathcal{A} y, \mathcal{A} x) $$<br/>
+Поскольку $|\mathcal{A}(x + y)| = |x + y|$ и $|\mathcal{A} x| = |x|$, $|\mathcal{A} y| = |y|$, то:<br/>
+$$ (x, y) + (y, x) = (\mathcal{A} x, \mathcal{A} y) + (\mathcal{A} y, \mathcal{A} x) \qquad (1) $$<br/>
+В евклидовом случае дальше доказывать нечего.<br/>
+В комплексном случае рассмотрим следующее:<br/>
+$$ |x + i y|^2 - |x - i y|^2 = 2i[(x, y) - (y, x)] $$<br/>
+$$ |\mathcal{A} x + i\mathcal{A} y|^2 - |\mathcal{A} x - i\mathcal{A} y|^2 = 2i[(\mathcal{A} x, \mathcal{A} y) - (\mathcal{A} y, \mathcal{A} x)] $$<br/>
+Отсюда:<br/>
+$$ (x, y) - (y, x) = (\mathcal{A} x, \mathcal{A} y) - (\mathcal{A} y, \mathcal{A} x) \qquad (2) $$<br/>
+Решая систему уравнений (1) и (2), получаем $(x, y) = (\mathcal{A} x, \mathcal{A} y)$.</p>
+<p>$\Large\impliedby$<br/>
+Если скалярное произведение сохраняется, то для любого $v \in V_1$:<br/>
+$$ |\mathcal{A} v|^2 = (\mathcal{A} v, \mathcal{A} v) = (v, v) = |v|^2 \implies |\mathcal{A} v| = |v| $$<br/>
+А значит $\mathcal{A}$ по определению является изометрией<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Следствия: тождественность произведения и обратимость</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $V_{1}$ и $V_{2}$ - унитарные (евклидовы) пространства, $\mathcal{A}\mathpunct{:}~~ V_{1} \to V_{2}$. Тогда:
+1. $\mathcal{A}$ - изометрия $\iff$ $\mathcal{A}\mathcal{A}^{*} = \mathcal{E}$
+2. Если $V_{1} = V_{2}$, то $\mathcal{A}^{*} = \mathcal{A}^{-1}$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+<strong>Следствие 1</strong><br/>
+$\Large\implies$<br/>
+По теореме для любых $x, y \in V_{1}$:<br/>
+$$(x, y) = (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{}\mathcal{A}y)$$<br/>
+$$(x, y - \mathcal{A}^{}\mathcal{A}y) = 0 \overbrace{ \implies }^{ * } y(\mathcal{E} - \mathcal{A}^{}\mathcal{A}) = 0 \overbrace{ \implies }^{ * } \mathcal{A}^{}\mathcal{A} = \mathcal{E}$$<br/>
+$*$ - так как $x$ и $y$ - любые.</p>
+<p>Аналогично, $\mathcal{A}\mathcal{A}^{} = \mathcal{E}$, а значит $\mathcal{A}^{}\mathcal{A} = \mathcal{A}\mathcal{A}^{*}$.</p>
+<p>$\Large\impliedby$<br/>
+$$\forall{x, y \in V_{1}}\mathpunct{:}~~ (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{*}\mathcal{A}y) = (x, y)$$<br/>
+а значит $\mathcal{A}$ - изометрия.</p>
+<p><strong>Следствие 2</strong><br/>
+Так как $V_{1} = V_{2}$:<br/>
+$$\mathcal{A}^{}\mathcal{A} = \mathcal{A}\mathcal{A}^{} = \mathcal{E} \implies \mathcal{A}^{*} = \mathcal{A}^{-1}$$<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Лемма: Собственные значения изометрии</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\mathcal{A}\colon V \to V$ — изометрия. Если $\lambda$ — собственное значение $\mathcal{A}$, то $|\lambda| = 1$.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $x$ — собственный вектор: $\mathcal{A} x = \lambda x$. Тогда:
+$$ |\mathcal{A} x| = |\lambda x| = |\lambda| \cdot |x| $$
+Поскольку $\mathcal{A}$ — изометрия, $|\mathcal{A} x| = |x|$, следовательно:
+$$ |\lambda| \cdot |x| = |x| $$
+Так как $x \neq 0$, то $|\lambda| = 1$.
+$\square$</p></div></p>
+<h2>Лемма: Изометрия и ОНБ</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+1. Если $\mathcal{A}\colon V \to V$ — изометрия, то $\mathcal{A}$ переводит любой ОНБ $V$ в ОНБ.
+2. Если $\mathcal{A}$ переводит некоторый ОНБ в ОНБ, то $\mathcal{A}$ — изометрия.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+<strong>Часть 1</strong>:<br/>
+Пусть $e_1, \dots, e_n$ — ОНБ. Так как $\mathcal{A}$ сохраняет скалярное произведение (по теореме об изометрии):<br/>
+$$ (\mathcal{A} e_i, \mathcal{A} e_j) = (e_i, e_j) = \delta_{ij} $$<br/>
+где $\delta_{ij}$ - символ Кронекера.</p>
+<p>Следовательно, $\mathcal{A} e_1, \dots, \mathcal{A} e_n$ — ОНБ.</p>
+<p><strong>Часть 2</strong>:<br/>
+Пусть $\mathcal{A}$ переводит ОНБ $e_1, \dots, e_n$ в ОНБ. Для произвольного $v = \sum\limits_{k=1}^n c_k e_k$:<br/>
+$$ \mathcal{A} v = \sum_{k=1}^n c_k \mathcal{A} e_k $$<br/>
+Заметим, что квадраты длин равны:<br/>
+$$ |v|^2 = \sum_{k=1}^n |c_k|^2, \quad |\mathcal{A} v|^2 = \sum_{k=1}^n |c_k|^2 $$<br/>
+Следовательно, $|\mathcal{A} v| = |v|$ для всех $v \in V$, то есть $\mathcal{A}$ — изометрия.<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Теорема: Матрица изометрии в унитарном пространстве</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $V$ — унитарное пространство. Оператор $\mathcal{A}\colon V \to V$ является унитарным (изометрией) $\iff$ существует ОНБ, в котором матрица $\mathcal{A}$ диагональна с собственными значениями $|\lambda_i| = 1$.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+$\Large\implies$<br/>
+Пусть $\mathcal{A}$ унитарен (изометрия). Тогда $\mathcal{A}$ нормален ($\mathcal{A}^* \mathcal{A} = \mathcal{E}$). По <a href="Теорема о структуре нормального оператора.html">теореме о структуре</a> для нормальных операторов: $\mathcal{A}$ диагонализируем в ОНБ, на диагонали стоят собственные значения $\lambda_{i}$, для которых по лемме $|\lambda_i| = 1$</p>
+<p>$\Large\impliedby$<br/>
+Пусть в ОНБ $e_1, \dots, e_n$ оператор $\mathcal{A}$ диагонален: $\mathcal{A} e_j = \lambda_j e_j$ с $|\lambda_j| = 1$. <br/>
+Возьмем $x = \sum\limits_{k=1}^{n} x_k e_k$ и $y = \sum\limits_{m=1}^{n} y_m e_m$. Тогда:<br/>
+$$ (\mathcal{A} x, \mathcal{A} y) = \left( \sum_{k=1}^{n} x_k \lambda_k e_k, \sum_{m=1}^{n} y_m \lambda_m e_m \right) $$<br/>
+В силу ортонормированности базиса $(e_k, e_m) = \delta_{km}$, поэтому:<br/>
+$$ = \sum_{k=1}^{n} \sum_{m=1}^{n} x_k \bar{y}m \lambda_k \bar{\lambda}_m (e_k, e_m) = \sum{k=1}^{n} x_k \bar{y}k \lambda_k \bar{\lambda}_k $$<br/>
+Так как $|\lambda_k| = 1$, то $\lambda_k \bar{\lambda}_k = 1$:<br/>
+$$ = \sum{k=1}^{n} x_k \bar{y}_k \cdot 1 = (x, y) $$<br/>
+Следовательно, $\mathcal{A}$ унитарен (изометрия).<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Теорема: Матриц изометрии в евклидовом пространстве</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $V$ - евклидово пространство. Оператор $\mathcal{A}\colon V \to V$ является изометрией $\iff$ существует ОНБ, в котором матрица $\mathcal{A}$ блочно-диагональна, причём:
+1. Блоки $1 \times 1$ содержат $\pm 1$  
+2. Блоки $2 \times 2$ имеют вид:
+$$
+\begin{pmatrix} 
+\cos\varphi &amp; \sin\varphi \\ 
+-\sin\varphi &amp; \cos\varphi 
+\end{pmatrix}
+$$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+$\Large\implies$<br/>
+Поскольку $\mathcal{A}$ — изометрия, $\mathcal{A}$ нормален, а значит по <a href="Теорема о структуре нормального оператора.html">теореме о структуре</a> в некотором ОНБ его матрица состоит из блоков:<br/>
+1) $1\times 1$ блок из $\lambda$. Так как $|\lambda| = 1 \implies$ блок $1 \times 1$, содержащий $\pm 1$<br/>
+2) $2 \times 2$  блок вида $\rho \begin{pmatrix} \cos\varphi &amp; \sin\varphi \ -\sin\varphi &amp; \cos\varphi \end{pmatrix}$<br/>
+Рассмотрим второй блок на месте $k, k+1$: (на $k+1$ аналогично)<br/>
+$$\mathcal{A} e_k = \rho (\cos\alpha\, e_k - \sin\alpha\, e_{k+1})$$<br/>
+Тогда:<br/>
+$$|\mathcal{A} e_k|^2 = \rho^2 \cos^2\alpha + \rho^2 \sin^2\alpha = \rho^2 (\cos^2\alpha + \sin^2\alpha) = \rho^2$$<br/>
+Поскольку $|e_k|^2 = 1$, получаем:<br/>
+$$|\mathcal{A} e_k|^2 = |e_k|^2 = 1 \implies \rho^2 = 1 \implies \rho = \pm 1$$<br/>
+А значит блок $2 \times 2$ имеет вид:<br/>
+$$\begin{pmatrix} <br/>
+\cos\varphi &amp; \sin\varphi \ <br/>
+-\sin\varphi &amp; \cos\varphi <br/>
+\end{pmatrix}$$</p>
+<p>$\Large\impliedby$ (очев.)<br/>
+Воспользуемся <span>леммой-критерием</span>: возьмём ОНБ и покажем, что применение оператора переводит ОНБ в ОНБ.<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Определение: ортогональная/унитарная матрица</h2>
+<p><div class="spoiler-markdown"><p>
+Матрица $A$ называется **ортогональной** (над $\mathbb{R}$) или **унитарной** (над $\mathbb{C}$), если $AA^{*} = A^{*}A = E$</p></div></p>
+<h2>Теорема: Эквивалентные условия ортогональности (унитарности) матрицы</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $A$ — квадратная матрица над $\mathbb{R}$ (ортогональность) или $\mathbb{C}$ (унитарность). Эквивалентны:
+1. $A$ ортогональна (унитарна): $AA^{*} = A^{*}A = E$  
+2. Столбцы $A$ образуют ортонормированный базис  
+3. Строки $A$ образуют ортонормированный базис</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+<strong>$(1) \implies (2)$</strong><br/>
+Так как $A$ унитарна, то по определению ${} A^{}A = E {}$. Нетрудно заметить, что элемент $(i,j)$ произведения ${} A^{}A {}$ есть скалярное произведение $i$-го и $j$-го столбцов $A$. Равенство ${} E$ означает $\delta_{ij}$, то есть столбцы ортонормированы.</p>
+<p><strong>$(2) \implies (1)$</strong><br/>
+Рассмотрим оператор $\mathcal{A}$ с матрицей $A$. Ясно, что под действием $\mathcal{A}$ ОНБ переходит в ОНБ, а значит $\mathcal{A}$ - изометрия и $A$ - ортогональная (унитарна)</p>
+<p><strong>$(1) \iff (3)$</strong><br/>
+Применяем $(1) \iff (2)$ к $A^{}$:<br/>
+$AA^{} = E \iff$ столбцы $A^{}$ образуют ОНБ.<br/>
+Столбцы $A^{}$ суть сопряжённые строки $A$, что эквивалентно ортонормированности строк $A$.<br/>
+$\square$<br/>
+</p></div></p></div>
+</body>
+</html>

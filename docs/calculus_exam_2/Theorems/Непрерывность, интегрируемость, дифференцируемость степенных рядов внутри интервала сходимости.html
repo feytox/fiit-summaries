@@ -167,23 +167,30 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Непрерывность, интегрируемость, дифференцируемость степенных рядов внутри интервала сходимости</h1><h2>Непрерывность степенных рядов</h2>
 <p>Формулировка:<br/>
-${} S(x) = \sum_{n=0}^{\infty} a_{n} x^{n} {}$ непрерывна на $(-R,R),$ где $R~-~$ радиус сходимости </p>
+<div class="spoiler-markdown"><p>
+${} S(x) = \sum_{n=0}^{\infty} a_{n} x^{n} {}$ непрерывна на $(-R,R),$ где $R~-~$ радиус сходимости</p></div></p>
 <p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
 Если $R&gt;0,$ то $\forall{r&lt;R}~~$<br/>
 $\sum_{n=0}^{\infty} a_{n}x^{n}$ сходиться равномерно $[-r,r]$<br/>
 по признаку Вейерштрасса: $|a_{n}x^{n}|\leq |a_{n}|r^{n}$<br/>
 по первой теореме Абеля $\sum_{n=0}^{\infty} a_{n}r^{n}$ сходится абсолютно<br/>
-$a_{n}x^{n}$ непрерывна ${} \forall{n \in N}~~\Rightarrow_{по~т.о.непр.функ.ряда} S(x) {}$ непрерывна на $[-r,r],~[-r,r]=(-R,R)~~~~~~~~~~~~~\square$</p>
+$a_{n}x^{n}$ непрерывна ${} \forall{n \in N}~~\Rightarrow_{по~т.о.непр.функ.ряда} S(x) {}$ непрерывна на $[-r,r],~[-r,r]=(-R,R)$<br/>
+$\square$</p>
+<p></p></div></p>
 <h2>Следствие</h2>
 <p>Формулировка:<br/>
-$S(x)$ интегрируема на $\forall{[a,b] \subset (-R,R)},$ причем: $\int\limits_{a}^{b} S(x)  \, dx = \sum_{n=0}^{\infty} \dfrac{a_{n}}{n+1} x_{n-1} |^{b}_{a}$</p>
+<div class="spoiler-markdown"><p>
+$S(x)$ интегрируема на $\forall{[a,b] \subset (-R,R)},$ причем: $\int\limits_{a}^{b} S(x)  \, dx = \sum_{n=0}^{\infty} \dfrac{a_{n}}{n+1} x_{n-1} |^{b}_{a}$</p></div></p>
 <h2>Дифференцируемости степенных рядов</h2>
 <p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
 $S(x)$ бесконечно дифференцируема на $[-R, R],$ причем:<br/>
-$$S^{'}(x) = \sum_{n=1}^{\infty} na_{n}x^{n-1}$$<br/>
-Д-во:<br/>
+$$S^{'}(x) = \sum_{n=1}^{\infty} na_{n}x^{n-1}$$</p>
+<p><code>Д-во:</code>spoiler-markdown<br/>
 Заметим, что $\sum a_{n}x^{n}$ и $\sum na_{n}x^{n-1}$ имеют одинаковый радиус сходимости:<br/>
 $$A = \varlimsup_{n \to \infty} \sqrt{a_{n}}^{n},~~A^{'}=\varlimsup_{n \to \infty} \sqrt{a_{n}n}^{n} = \varlimsup_{n \to \infty} \sqrt{a_{n}}^{n} \varlimsup_{n \to \infty} \sqrt{n}^{n} = A*1$$<br/>
-По теореме о дифференцировании рядов $S(x)$ дифференцируема, причем $S^{'}(x) = \sum_{n=1}^{\infty} na_{n}x^{n-1}$</p></div>
+По теореме о дифференцировании рядов $S(x)$ дифференцируема, причем $S^{'}(x) = \sum_{n=1}^{\infty} na_{n}x^{n-1}$<br/>
+</p></div></p></div>
 </body>
 </html>

@@ -166,19 +166,19 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Ряды Тейлора основных элементарных функций. Их сходимость</h1><p>Формулировка:<br/>
-- $e^{x} = \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!},~~(- \infty ; +\infty)$<br/>
-- $\sin x = \sum_{n=0}^{\infty} \dfrac{x^{2n+1}}{(2n+1)!}(-1)^{n},~~(- \infty ; +\infty)$<br/>
-- $\cos x =  \sum_{n=0}^{\infty} \dfrac{x^{2n}}{(2n)!}(-1)^{n},~~(- \infty ; +\infty)$<br/>
-- $\ln(x+1) = \sum_{n=1}^{\infty} \dfrac{x^{n}}{n}(-1)^{n+1},~~(-1 ; 1]$<br/>
-- $(1+x)^{\alpha} = \sum_{n=0}^{\infty} \dfrac{\alpha (\alpha - 1) \dots (\alpha - n + 1)}{n!} x^{n},~~(-1 ; 1)$</p>
+<div class="spoiler-markdown"><p>
+- $e^{x} = \sum_{n=0}^{\infty} \dfrac{x^{n}}{n!},~~(- \infty ; +\infty)$
+- $\sin x = \sum_{n=0}^{\infty} \dfrac{x^{2n+1}}{(2n+1)!}(-1)^{n},~~(- \infty ; +\infty)$
+- $\cos x =  \sum_{n=0}^{\infty} \dfrac{x^{2n}}{(2n)!}(-1)^{n},~~(- \infty ; +\infty)$
+- $\ln(x+1) = \sum_{n=1}^{\infty} \dfrac{x^{n}}{n}(-1)^{n+1},~~(-1 ; 1]$
+- $(1+x)^{\alpha} = \sum_{n=0}^{\infty} \dfrac{\alpha (\alpha - 1) \dots (\alpha - n + 1)}{n!} x^{n},~~(-1 ; 1)$</p></div></p>
 <h2>Найдем область сходимости последовательности рядов</h2>
-<ul>
-<li>
-<p>Для $(1+x)^{\alpha} \mathpunct{:}~~$<br/>
+<p><div class="spoiler-markdown"><p><br/>
+- Для $(1+x)^{\alpha} \mathpunct{:}~~$<br/>
 $(1-x)^{\alpha} =a x^{n},$ где $a = \dfrac{\alpha (\alpha - 1) \dots (\alpha - n + 1)}{n!}$<br/>
 $| \dfrac{a_{n+1}}{a_{n}} | = | \dfrac{\alpha-n}{n+1} x | \to |x|$ по признаку Даламбера<br/>
 Если $|x| &lt; 1~-$ ряд сходится, $|x| &gt; 1~-$ расходится </p>
-</li>
+<ul>
 <li>
 <p>Для $e^{x} \mathpunct{:}~~$<br/>
 $a_n = \dfrac{x^n}{n!}$<br/>
@@ -204,6 +204,7 @@ $a_n = \dfrac{x^n}{n}(-1)^{n+1}$, $\left|\dfrac{a_{n+1}}{a_n}\right| = \left|\df
 <li>При $x = 1$: знакочередующийся гармонический ряд $\sum_{n=1}^{\infty} \dfrac{(-1)^{n+1}}{n}$ сходится условно</li>
 <li>При $x = -1$: гармонический ряд $-\sum_{n=1}^{\infty} \dfrac{1}{n}$ расходится<br/>
 Область сходимости: $(-1; 1]$.</li>
-</ul></div>
+</ul>
+<p></p></div></p></div>
 </body>
 </html>

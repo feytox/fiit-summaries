@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Ряд Фурье по тригонометрической системе</title>
+<title>Теорема Абеля о сходимости степенных рядов</title>
 <script>
        MathJax = {
         tex: {
@@ -165,18 +165,43 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Ряд Фурье по тригонометрической системе</h1><p>Формулировка:<br/>
+<div class="content"><h1>Теорема Абеля о сходимости степенных рядов</h1><p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Пусть $f(x)$ интегрируема на $[-\pi,\pi]$
-$$a_{0} = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\, dx$$
-$$a_{k}=\dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\cos(kx)\, dx ~;~~b_{k}=-\dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\sin(kx)\, dx$$
-тогда: $\dfrac{a_{0}}{2} + \sum_{k=1}^{\infty} (a_{k}\cos(kx) + b_{k}\sin(kx)) = f(x)$
-$f(x)~-$называется рядом Фурье по тригонометрической системе</p></div></p>
-<h2>Пояснение</h2>
-<p><div class="spoiler-markdown"><p>
-$f(x) = \sum_{k=1}^{\infty} (a_{k}\cos(kx) + b_{k}\sin(kx))$
-$$\int\limits_{-\pi}^{\pi}  f(x)\, dx  = \int\limits_{-\pi}^{\pi}  a_{0}\, dx = 2\pi a_{0} \Rightarrow a_{0}=\dfrac{1}{2\pi}\int\limits_{-\pi}^{\pi}  f(x)\, dx$$
-$$\int\limits_{-\pi}^{\pi}  f(x)\cos(nx)\, dx = \int\limits_{-\pi}^{\pi}  a_{n}\cos(nx) * \cos(nx)\, dx = \pi a_{n} \Rightarrow$$
-$$\Rightarrow a_{n} = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\cos(nx)\, dx$$</p></div></p></div>
+- Если $\sum_{n=o}^{\infty} a_{n}x^{n}$ сходится в $x_{0},$ тогда:
+$$\forall{x}\mathpunct{:}~~|x|&lt;|x_{0}| \Rightarrow \sum_{n=1}^{\infty} a_{n}x^{n}~-~сх-ся~абс,~~A\Rightarrow(B\Rightarrow C)$$
+- Если $\sum_{n=0}^{\infty} a_{n}x^{n}$ расходится в $x_{0},$ тогда:
+$$\forall{x}\mathpunct{:}~~|x|\geq|x_{0}|\Rightarrow \sum_{n=1}^{\infty} a_{n}x^{n}~-~расх-ся$$</p></div><br/>
+Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+$1)$<br/>
+Если $|x| &lt; |x_{0}|,$ то:<br/>
+$|a_{n}x^{n}| = |a_{n}x_{0}^{n}| * \dfrac{|x|^{n}}{|x_{0}|^{n}},~~~\sum_{n=1}^{\infty} a_{n}x^{n}~-$ сходится <br/>
+${} \Rightarrow a_{n}x_{0}^{n} \to 0 \Rightarrow |a_{n}x_{0}^{n}| \leq M \Rightarrow |a_{n}x^{n}|\leq Mq^{n},~~~~~~~~~~~~q = |\dfrac{x}{x_{0}}|&lt;1 {}$<br/>
+$\sum Mq^{n}~-$ сходится $\Rightarrow$ $[$ признаку сравнения $]$ $\sum a_{n}x^{n}~-$ сходится </p>
+<p>$2)$ О/П<br/>
+$\exists{|x|&gt;|x_{0}|}~~ \sum a_{n}x^{n}~-$ сходится, то $\sum a_{n}x_{0}^{n}~-$ сходится, противоречие<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Теорема Абеля о сходимости степенных рядов</h2>
+<p>Формулировка: <br/>
+<div class="spoiler-markdown"><p>
+Пусть степенной ряд $\sum_{n=0}^{\infty} a_n x^n$ имеет радиус сходимости $R \in [0, +\infty]$. Тогда:  
+1. Если ряд сходится в точке $x_0 \neq 0$, то  
+   $$\forall x \text{ с } |x| &lt; |x_0| \implies \sum_{n=0}^{\infty} |a_n x^n| \text{ сходится}.$$  
+2. Если ряд расходится в точке $x_0$, то  
+   $$\forall x \text{ с } |x| \geq |x_0| \implies \sum_{n=0}^{\infty} a_n x^n \text{ расходится}.$$</p></div><br/>
+Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+<strong>1.</strong> $\sum a_n x_0^n$ сходится $\implies \lim_{n \to \infty} a_n x_0^n = 0$.<br/>
+Следовательно, $\exists M &gt; 0$ такое, что $\forall n\ |a_n x_0^n| \leq M$.<br/>
+Для $|x| &lt; |x_0|$ положим $q = \left|\dfrac{x}{x_0}\right| &lt; 1$. Тогда:<br/>
+$$ |a_n x^n| = |a_n x_0^n| \cdot \left|\dfrac{x}{x_0}\right|^n \leq M q^n. $$<br/>
+Ряд $\sum M q^n$ (геометрическая прогрессия) сходится ($q&lt;1$).<br/>
+По признаку сравнения $\sum |a_n x^n|$ сходится.  </p>
+<p><strong>2.</strong> От противного. Пусть $\exists x_1$ с $|x_1| &gt; |x_0|$, для которого $\sum a_n x_1^n$ сходится.<br/>
+Тогда по п.1 для $x_0$ (т.к. $|x_0| &lt; |x_1|$) ряд $\sum a_n x_0^n$ должен сходиться — противоречие.<br/>
+Расходимость при $|x| = |x_0|$ следует из произвольности выбора $x_0$ и расходимости в $x_0$.<br/>
+$\square$<br/>
+</p></div></p></div>
 </body>
 </html>

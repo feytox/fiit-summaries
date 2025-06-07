@@ -167,11 +167,13 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Теоремы о дифференцировании функциональных последовательностей и рядов</h1><h2>Теорема о дифференцировании функциональных последовательностей</h2>
 <p>Формулировка:<br/>
-$f_{n}(x) \to_{n \to \infty} f(x) ;~f_{n}^{'}(x)$ сходится равномерно на $[a,b],$ тогда :<br/>
-1. $f_{n}(x) \rightrightarrows_{n \to \infty}^{[a,b]} f(x)$<br/>
-2. $f(x)~-$ дифференцируема <br/>
-3. $f^{'}(x)=(\lim_{x \to \infty} f_{n}(x))^{'}=\lim_{x \to \infty} f_{n}^{'}(x)$</p>
+<div class="spoiler-markdown"><p>
+$f_{n}(x) \to_{n \to \infty} f(x) ;~f_{n}^{'}(x)$ сходится равномерно на $[a,b],$ тогда :
+1. $f_{n}(x) \rightrightarrows_{n \to \infty}^{[a,b]} f(x)$
+2. $f(x)~-$ дифференцируема 
+3. $f^{'}(x)=(\lim_{x \to \infty} f_{n}(x))^{'}=\lim_{x \to \infty} f_{n}^{'}(x)$</p></div></p>
 <p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
 ${} 1) {}$ Пусть $x_{0} \in [a,b]$<br/>
 $\forall{\varepsilon&gt;0}~~\exists{N(\varepsilon)}~~\forall{n&gt;\mathbb{N}}\mathpunct{:}~~|f_{n}(x_{0}) - f_{m}(x_{0})|&lt; \dfrac{\varepsilon}{2}$<br/>
 $\exists{\tilde{N}(\varepsilon)}~~\forall{n&gt;\tilde{N}},\forall{m&gt;\tilde{N}}~~\forall{x \in X}\mathpunct{:}~~|f_{n}^{'}(x) - f_{m}^{'}(x)| &lt; \dfrac{\varepsilon}{2(b-a)}$<br/>
@@ -185,11 +187,14 @@ $g_{n}(x)~-$ сходится равномерно<br/>
 $|g_{n}(x) - g_{m}(x)| = \dfrac{1}{|x-x_{0}|}|f_{n}(x) - f_{n}(x_{0}) - (f_{m}(x) - f_{m}(x_{0})| =$<br/>
 $=\dfrac{1}{|x-x_{0}|}|f_{n}^{'}(c) - f_{m}^{'}(c)||x-x_{0}|&lt;\varepsilon \Rightarrow g(x)$ сходится равномерно</p>
 <p>$2)~f^{'}(x) = \lim_{x \to x_{0}} g(x) = \lim_{x \to x_{0}} \lim_{n \to \infty} g_{n}(x) = [по~т. о.пред.перес]$<br/>
-$= = \lim_{n \to \infty} \lim_{x \to x_{0}} g_{n}(x) = \lim_{n \to \infty} f_{n}^{'}(x_{0})~~~\square$</p>
+$= = \lim_{n \to \infty} \lim_{x \to x_{0}} g_{n}(x) = \lim_{n \to \infty} f_{n}^{'}(x_{0})~~~\square$<br/>
+</p></div></p>
 <h2>Теорема  о дифференцировании функциональных рядов</h2>
 <p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
 $\sum_{n=1}^{\infty} a_{n}(x) = S(x)~~~~~~\sum_{n=1}^{\infty} a_{n}^{'}(x) \rightrightarrows_{n \to \infty}$</p>
 <p>Д-во:<br/>
-$\sum_{n=1}^{\infty} a_{n}(x)$ сходится равномерно, $S(x)~-$ дифференцируема и $S^{'}(x) = \left( \sum_{n=1}^{\infty} a_{n}(x)  \right)^{'} = \sum_{n=1}^{\infty} a^{'}_{n}(x)$</p></div>
+$\sum_{n=1}^{\infty} a_{n}(x)$ сходится равномерно, $S(x)~-$ дифференцируема и $S^{'}(x) = \left( \sum_{n=1}^{\infty} a_{n}(x)  \right)^{'} = \sum_{n=1}^{\infty} a^{'}_{n}(x)$</p>
+<p></p></div></p></div>
 </body>
 </html>

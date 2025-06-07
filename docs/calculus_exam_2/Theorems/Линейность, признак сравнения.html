@@ -167,20 +167,25 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Линейность, признак сравнения</h1><h2>Линейность</h2>
 <p>Формулировка:<br/>
-Если $\sum a_{n}(x)$ и $\sum b_{n}(x)$ сходится равномерно, то<br/>
-$\forall{~ОГР~\alpha(x), \beta(x)}~~\sum(\alpha(x) a_{n}(x) + \beta(x)b_{n}(x))~-$ сходится равномерно</p>
+<div class="spoiler-markdown"><p>
+Если $\sum a_{n}(x)$ и $\sum b_{n}(x)$ сходится равномерно, то
+$\forall{~ОГР~\alpha(x), \beta(x)}~~\sum(\alpha(x) a_{n}(x) + \beta(x)b_{n}(x))~-$ сходится равномерно</p></div></p>
 <p>Д-во:<br/>
-$|\alpha(x)| \leq A,~~~|\beta(x)|\leq B$<br/>
-$$|\sum_{k=m+1}^{n} \alpha(x)a_{n}(x) + \beta(x)b_{n}(x)| \leq$$<br/>
-$$\leq A|\sum_{k=m+1}^{n} a_{k}(x)|+ \beta|\sum_{k=m+1}^{n} b_{k}(x)|&lt;$$<br/>
-$$&lt; \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon$$</p>
+<div class="spoiler-markdown"><p>
+$|\alpha(x)| \leq A,~~~|\beta(x)|\leq B$
+$$|\sum_{k=m+1}^{n} \alpha(x)a_{n}(x) + \beta(x)b_{n}(x)| \leq$$
+$$\leq A|\sum_{k=m+1}^{n} a_{k}(x)|+ \beta|\sum_{k=m+1}^{n} b_{k}(x)|&lt;$$
+$$&lt; \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon$$</p></div></p>
 <h2>Признак сравнения</h2>
 <p>Формулировка: <br/>
-$|a_{n}(x)| \leq b_{n}(x),~~~\forall{n \in N}~~\forall{x \in X}~~$<br/>
-- Если $\sum_{n=1}^{\infty} b_{n}(x)$ сходится равномерно $\Rightarrow$ $\sum_{n=1}^{\infty} a_{n}(x)$ сходится равномерно и абсолютно <br/>
-- Если $\sum_{n=1}^{\infty} a_{n}(x)$ не сходится равномерно и абсолютно $\Rightarrow$ $\sum_{n=1}^{\infty} b_{n}(x)$ не сходится равномерно </p>
-<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+$|a_{n}(x)| \leq b_{n}(x),~~~\forall{n \in N}~~\forall{x \in X}~~$
+- Если $\sum_{n=1}^{\infty} b_{n}(x)$ сходится равномерно $\Rightarrow$ $\sum_{n=1}^{\infty} a_{n}(x)$ сходится равномерно и абсолютно 
+- Если $\sum_{n=1}^{\infty} a_{n}(x)$ не сходится равномерно и абсолютно $\Rightarrow$ $\sum_{n=1}^{\infty} b_{n}(x)$ не сходится равномерно</p></div><br/>
+Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
 $1) |\sum_{k=m+1}^{n} a_{k}(x) | \leq \sum_{k = m+1}^{n} |a_{k}(x)| \leq \sum_{k=m+1}^{n} b_{k}(x) &lt; \varepsilon$<br/>
-$2) \sum_{n=1}^{\infty} b_{n}(x)$ сходится равномерно $\Rightarrow \sum_{n=1}^{\infty} a_{n}(x)$ сходится равномерно $\Rightarrow$ противоречие</p></div>
+$2) \sum_{n=1}^{\infty} b_{n}(x)$ сходится равномерно $\Rightarrow \sum_{n=1}^{\infty} a_{n}(x)$ сходится равномерно $\Rightarrow$ противоречие</p>
+<p></p></div></p></div>
 </body>
 </html>

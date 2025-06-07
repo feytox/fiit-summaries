@@ -167,19 +167,22 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Теоремы об интегрировании функциональных последовательностей и рядов</h1><h2>Теорема о интегрировании функциональных последовательностей</h2>
 <p>Формулировка:<br/>
-Если $f_{n}(x) \rightrightarrows_{n \to \infty}^{[a,b]} f(x)$ и $f_{n}(x)$ интегрируема на $[a,b]~~\forall{n \in \mathbb{N}},$ тогда $f(x)~-$ интегрируема на $[a,b]$ и $\int\limits_{a}^{b} f(x) \, dx = \int\limits_{a}^{b} \lim_{n \to \infty} f_{n}(x)  \, dx = \lim_{x \to \infty} \int\limits_{a}^{b} f_{n}(x) \, dx$<br/>
+<div class="spoiler-markdown"><p>
+Если $f_{n}(x) \rightrightarrows_{n \to \infty}^{[a,b]} f(x)$ и $f_{n}(x)$ интегрируема на $[a,b]~~\forall{n \in \mathbb{N}},$ тогда $f(x)~-$ интегрируема на $[a,b]$ и $\int\limits_{a}^{b} f(x) \, dx = \int\limits_{a}^{b} \lim_{n \to \infty} f_{n}(x)  \, dx = \lim_{x \to \infty} \int\limits_{a}^{b} f_{n}(x) \, dx$</p></div><br/>
 Д-во:<br/>
-$|f_{n}(x) - f(x)| &lt; \dfrac{\varepsilon}{4(b-a)}$<br/>
-$f(x) - \dfrac{\varepsilon}{4(b-a)} &lt; f(x) &lt;f_{n}(x) \dfrac{+\varepsilon}{4(b-a)}$<br/>
-$\overline{S}(t) \leq \overline{S}(f_{n})+ \dfrac{\varepsilon}{4(b-a)}(b-a)~\textlangle~\underline{S}(f) \geq \underline{S}(f_{n}) - \dfrac{\varepsilon}{4(b-a)}(b-a)$<br/>
-1. $$\sum_{k=0}^{n-1} \sup_{x \in [x_{k}, x_{k+1}]} f(x) \leq \sum_{k=0}^{n-1} \sup\left( f_{n}(x) + \dfrac{\varepsilon}{4(b-a)} \right) \Delta x_{k} = \overline{S}(f_{n}) +\sum_{k=0}^{n-1} \dfrac{\varepsilon}{4(b-a)} \Delta x_{k} {}$$<br/>
-2. $$\overline{S}(f) - \underline{S}(f) \leq \overline{S}(f_{n}) - \underline{S}(f_{n}) + \dfrac{\varepsilon}{2} &lt; \varepsilon {}$$<br/>
-$|\int\limits_{a}^{b} f(x) \, dx - \int\limits_{a}^{b} f_{n}(x) \, dx | &lt; \varepsilon ,$ потому что $f_{n}(x) - \dfrac{\varepsilon}{4(b-a)} &lt; f(x) &lt; f_{n}(x)+  \dfrac{\varepsilon}{4(b-a)},$ по теореме об инт пер.<br/>
-$\int\limits_{a}^{b} f_{n}(x) \, dx - \dfrac{\varepsilon}{4} \leq \int\limits_{a}^{b} f(x)  \, dx \leq \int\limits_{a}^{b} f_{n}(x) \, dx + \dfrac{\varepsilon}{4}$<br/>
-$\lim_{x \to \infty} \int\limits_{a}^{b} f_{n}(x) \, dx = \int\limits_{a}^{b} f(x) \, dx~~~~~~~~~~~~~\square$</p>
+<div class="spoiler-markdown"><p>
+$|f_{n}(x) - f(x)| &lt; \dfrac{\varepsilon}{4(b-a)}$
+$f(x) - \dfrac{\varepsilon}{4(b-a)} &lt; f(x) &lt;f_{n}(x) \dfrac{+\varepsilon}{4(b-a)}$
+$\overline{S}(t) \leq \overline{S}(f_{n})+ \dfrac{\varepsilon}{4(b-a)}(b-a)~\textlangle~\underline{S}(f) \geq \underline{S}(f_{n}) - \dfrac{\varepsilon}{4(b-a)}(b-a)$
+1. $$\sum_{k=0}^{n-1} \sup_{x \in [x_{k}, x_{k+1}]} f(x) \leq \sum_{k=0}^{n-1} \sup\left( f_{n}(x) + \dfrac{\varepsilon}{4(b-a)} \right) \Delta x_{k} = \overline{S}(f_{n}) +\sum_{k=0}^{n-1} \dfrac{\varepsilon}{4(b-a)} \Delta x_{k} {}$$
+2. $$\overline{S}(f) - \underline{S}(f) \leq \overline{S}(f_{n}) - \underline{S}(f_{n}) + \dfrac{\varepsilon}{2} &lt; \varepsilon {}$$
+$|\int\limits_{a}^{b} f(x) \, dx - \int\limits_{a}^{b} f_{n}(x) \, dx | &lt; \varepsilon ,$ потому что $f_{n}(x) - \dfrac{\varepsilon}{4(b-a)} &lt; f(x) &lt; f_{n}(x)+  \dfrac{\varepsilon}{4(b-a)},$ по теореме об инт пер.
+$\int\limits_{a}^{b} f_{n}(x) \, dx - \dfrac{\varepsilon}{4} \leq \int\limits_{a}^{b} f(x)  \, dx \leq \int\limits_{a}^{b} f_{n}(x) \, dx + \dfrac{\varepsilon}{4}$
+$\lim_{x \to \infty} \int\limits_{a}^{b} f_{n}(x) \, dx = \int\limits_{a}^{b} f(x) \, dx~~~~~~~~~~~~~\square$</p></div></p>
 <h2>Теорема об интегрируемости функциональных рядов</h2>
-<p>$a_{n}(x)~-$ интегрируема на $[a,b]$<br/>
-$\sum_{n=1}^{\infty} a_{n}(x) \rightrightarrows S(x),$ тогда $S(x)~-$ интегрируема на $[a,b]$<br/>
-$\int\limits_{a}^{b} S(x)  \, dx = \int\limits_{a}^{b} \sum_{n=1}^{\infty} a_{n}(x)  \, dx = \sum_{n=1}^{\infty} \int\limits_{a}^{b}  a_{n}(x)\, dx$</p></div>
+<p><div class="spoiler-markdown"><p>
+$a_{n}(x)~-$ интегрируема на $[a,b]$
+$\sum_{n=1}^{\infty} a_{n}(x) \rightrightarrows S(x),$ тогда $S(x)~-$ интегрируема на $[a,b]$
+$\int\limits_{a}^{b} S(x)  \, dx = \int\limits_{a}^{b} \sum_{n=1}^{\infty} a_{n}(x)  \, dx = \sum_{n=1}^{\infty} \int\limits_{a}^{b}  a_{n}(x)\, dx$</p></div></p></div>
 </body>
 </html>

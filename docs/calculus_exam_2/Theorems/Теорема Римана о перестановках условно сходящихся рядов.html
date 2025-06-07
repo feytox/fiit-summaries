@@ -167,25 +167,31 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Теорема Римана о перестановках условно сходящихся рядов</h1><h2>Теорема Римана</h2>
 <p>Формулировка:<br/>
-Если $\sum a_{n}$ сходиться условно, то $\forall{}~A \in \mathbb{R} \cup { \pm \infty },$ $\exists{}$ перестановка $\sum_{n=1}^{\infty} a_{n}^{x}= A$</p>
+<div class="spoiler-markdown"><p>
+Если $\sum a_{n}$ сходиться условно, то $\forall{}~A \in \mathbb{R} \cup \{ \pm \infty \},$ $\exists{}$ перестановка $\sum_{n=1}^{\infty} a_{n}^{*}= A$</p></div></p>
 <p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
 Пусть<br/>
-$$a_{n}^{+} = \begin{cases} a_{n} &amp; ,~a_{n} \geq 0 \ 0 &amp; ,~a_{n} &lt; 0 \end{cases} ,~~~~~~~a_{n}^{-} = \begin{cases} |a_{n}| &amp; ,~a_{n} &lt; 0 \ 0 &amp; ,~a_{n} \geq 0 \end{cases}$$<br/>
+$$a_{n}^{+} = \begin{cases} a_{n} &amp; ,~a_{n} \geq 0 \ 0 &amp; ,~a_{n} &lt; 0 \end{cases} ~~,~~~~~a_{n}^{-} = \begin{cases} |a_{n}| &amp; ,~a_{n} &lt; 0 \ 0 &amp; ,~a_{n} \geq 0 \end{cases}$$<br/>
 $a_{n} = a_{n}^{+} - a_{n}^{-}$<br/>
-Пусть $\sum b_{n}$ и $\sum c_{n}~\mathpunct{:}~~\sum a_{n}^{+},~\sum a_{n}^{-}$  у которых нет 0<br/>
-$n_{1}-min~\mathpunct{:}~~b_{1}+b_{2}+\dots+b_{n_{1}}&gt;A$<br/>
-$m_{1}-min~\mathpunct{:}~~b_{1}+\dots+b_{n_{1}}-c_{1}-c_{2}-\dots-c_{m_{1}}\leq A$<br/>
-$n_{2}-min~\mathpunct{:}~~b_{1}+\dots+b_{n}-c_{1}-\dots-c_{m_{1}}+b_{n_{1}+1}+\dots+b_{n_{2}} &gt; A$<br/>
-${} m_{2}-min~\mathpunct{:}~~b_{1}+\dots+b_{n}-c_{1}-\dots-c_{m_{1}}+b_{n_{1}+1}+\dots+b_{n_{2}}-c_{m_{1}+1}-\dots-c_{m_{2}}\leq A$<br/>
-$j \in {n_{k}+M_{k}+1,\dots,n_{k+1}+m_{k} }$<br/>
-Заметим, что $|S_{j}-A|\leq \max{b_{n_{k+1}},c_{m_{k}}} \to 0$ из необходимого условия $\square$</p>
-<h2>Свойство</h2>
-<p>Формулировка:<br/>
 $\sum a_{n}^{+}$ и $\sum a_{n}^{-}~-$ знакопостоянные  и расходятся </p>
-<p>Д-во:<br/>
-От противного.<br/>
+<hr/>
+<p>От противного.<br/>
 $\sum a_{n}^{+}$ сходиться $\Rightarrow \left[\sum_{n=1}^{\infty} a_{n} =  \sum_{n=1}^{\infty} a_{n}^{+} - \sum_{n=1}^{\infty} a_{n}^{-} \right] \Rightarrow \sum a_{n}^{-} ~-$ сходиться<br/>
-$\sum_{n=1}^{\infty} |a_{n}| = \sum_{n=1}^{\infty} (a_{n}^{+} +a_{n}^{-}) = \sum_{n=1}^{\infty} a_{n}^{+} + \sum_{n=1}^{\infty} a_{n}^{-} \Rightarrow \sum_{n=1}^{\infty} a_{n}$ сходится абсолютно<br/>
-$$\sum a_{n}~-сходится \Rightarrow a_{n} \to 0$$</p></div>
+$\sum_{n=1}^{\infty} |a_{n}| = \sum_{n=1}^{\infty} (a_{n}^{+} +a_{n}^{-}) = \sum_{n=1}^{\infty} a_{n}^{+} + \sum_{n=1}^{\infty} a_{n}^{-} \Rightarrow \sum_{n=1}^{\infty} a_{n}$ сходится абсолютно</p>
+<hr/>
+<p>$\sum a_{n}~-сходится \Rightarrow a_{n} \to 0$<br/>
+Пусть $\sum b_{n}$ и $\sum c_{n}~\mathpunct{:}~~\sum a_{n}^{+},~\sum a_{n}^{-}$  у которых нет 0<br/>
+$n_{1}-min~index\mathpunct{:}~~b_{1}+b_{2}+\dots+b_{n_{1}}&gt;A$<br/>
+$m_{1}-min~index\mathpunct{:}~~b_{1}+\dots+b_{n_{1}}-c_{1}-c_{2}-\dots-c_{m_{1}}\leq A$<br/>
+$n_{2}-min~index\mathpunct{:}~~b_{1}+\dots+b_{n}-c_{1}-\dots-c_{m_{1}}+b_{n_{1}+1}+\dots+b_{n_{2}} &gt; A$<br/>
+${} m_{2}-min~index\mathpunct{:}~~b_{1}+\dots+b_{n}-c_{1}-\dots-c_{m_{1}}+b_{n_{1}+1}+\dots+b_{n_{2}}-c_{m_{1}+1}-\dots-c_{m_{2}}\leq A$</p>
+<p>$j \in {n_{k}+m_{k}+1,\dots,n_{k+1}+m_{k} }$<br/>
+$|S_{j}-A|\leq \max{b_{n_{k}},c_{m_{k}}} \to 0$ $()$<br/>
+$j \in {n_{k+1}+m_{k}+1,\dots,n_{k+1}+m_{k} }$<br/>
+$|S_{j}-A|\leq \max{b_{n_{k+1}},c_{m_{k+1}}} \to 0$  $()$<br/>
+ $(*)$ - по необходимому условию.<br/>
+ $\square$<br/>
+</p></div></p></div>
 </body>
 </html>

@@ -167,11 +167,12 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Алгебраическая теорема Вейерштрасса</h1><h2>Алгебраическая теорема Вейерштрасса</h2>
 <p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
 $\forall{f(x)}~-$ непрерывна на $[a,b]$<br/>
 $\exists{{P_{n}(x)}}{n=1}^{\infty}~~P{m}(x) = \sum_{k=1}^{n} a_{k}x^{k}~~~~~P_{n}(x) \rightrightarrows_{n \to \infty}^{[a,b]} f(x)$<br/>
 $\forall{\varepsilon&gt;0}~~\exists{N}~~\forall{n&gt;N}~~\forall{x \in [a,b]}\mathpunct{:}$<br/>
-$$|P_{n}(x)-f(x)|&lt;\varepsilon$$<br/>
-Д-во (Бернштейна):<br/>
+$$|P_{n}(x)-f(x)|&lt;\varepsilon$$</p>
+<p><code>Д-во (Бернштейна):</code>spoiler-markdown<br/>
 $b_{n,k} = x^{k}(1-x)^{n-k},~~~~n \in N, k = 0,1,2,3\dots n$<br/>
 $b^{'}{n,k} = x^{k-1}(1-x)^{n-k-1}$<br/>
 $(k(1-x) - (1-x))^{n-k-1}$<br/>
@@ -179,22 +180,26 @@ $x = 0,~x=1~-min$<br/>
 $k-kx-xn-kx=k-xn=0,~~~x=\dfrac{k}{n}~- \max$<br/>
 $1.$ Пусть $[a,b] = [0,1]$<br/>
 $B{n}(x) = \sum_{k=0}^{n} C_{n}^{k} x^{k}(1-x)^{n-k}$<br/>
-$P_{n}(x) = \sum_{k=0}^{n} f\left( \dfrac{k}{n} \right) * b_{n,k} (x)$</p>
+$P_{n}(x) = \sum_{k=0}^{n} f\left( \dfrac{k}{n} \right) * b_{n,k} (x)$<br/>
+</p></div></p>
 <h2>Лемма</h2>
 <p>Формулировка:<br/>
-1) $\sum_{k=1}^{n} b_{n,k}(x)=1$<br/>
-2) $\sum_{k=1}^{n} \dfrac{k}{n} b_{n,k} (x) = x$<br/>
-3) $\sum_{k=1}^{n} \left( \dfrac{k}{n}  - x \right)^{2} - b_{n,k}(x) = \dfrac{x(1-x)}{n}$</p>
+<div class="spoiler-markdown"><p>
+1) $\sum_{k=1}^{n} b_{n,k}(x)=1$
+2) $\sum_{k=1}^{n} \dfrac{k}{n} b_{n,k} (x) = x$
+3) $\sum_{k=1}^{n} \left( \dfrac{k}{n}  - x \right)^{2} - b_{n,k}(x) = \dfrac{x(1-x)}{n}$</p></div></p>
 <p>Д-во:<br/>
-${} 1.~ {}$$\sum_{k=-0}^{n} C_{n}^{k} x^{k} (1-x)^{n-k} = (x+(1-x))^{n} = 1^{n} = 1$<br/>
-$2.~$$\sum_{k=-0}^{n} \dfrac{k}{n} C_{n}^{k} x^{k} (1-x)^{n-k}=$<br/>
-$=\sum_{k=0}^{n} \dfrac{k}{n} * \dfrac{n!}{k!(n-k)!} x^{k}(1-x)^{n-k}$<br/>
-$= x \sum_{k=0}^{n} \dfrac{(n-1)!}{(k-1)!(n-k)!} x^{k-1}(1-x)^{n-k}=$<br/>
-$= x \sum_{k=0}^{n} \dfrac{(n-1)!}{k!(n-1-k)!} x^{k}(1-x)^{n-1-k} =$<br/>
-$= x \sum_{k=0}^{n} C^{k}{n} x^{k} (1-x)^{n-1-k}$<br/>
-$3.~$$\left( \sum{k=0}^{n} \left( \dfrac{k}{n} -x \right) b_{n,k}(x) \right) = 0$<br/>
-$-\sum_{k=0}^{n} b_{n,k}(x) + \sum_{k=0}^{n} \left( \dfrac{k}{n} - x \right)^{2} b_{n,k}(x) \dfrac{n}{x(1-x)} = 0$<br/>
-Что такое $b_{n,k}\mathpunct{:}~~$<br/>
-$$b_{n,k} = C_{n}^{k} (k-nx)x^{k-1}(1-x)^{n-k-1} = C_{n}^{k} x^{k}(1-x)^{n-k} \left( \dfrac{k}{n} -x \right) \dfrac{n}{x(1-x)}$$</p></div>
+<div class="spoiler-markdown"><p>
+${} 1.~ {}$$\sum_{k=-0}^{n} C_{n}^{k} x^{k} (1-x)^{n-k} = (x+(1-x))^{n} = 1^{n} = 1$
+$2.~$$\sum_{k=-0}^{n} \dfrac{k}{n} C_{n}^{k} x^{k} (1-x)^{n-k}=$
+$=\sum_{k=0}^{n} \dfrac{k}{n} * \dfrac{n!}{k!(n-k)!} x^{k}(1-x)^{n-k}$
+$= x \sum_{k=0}^{n} \dfrac{(n-1)!}{(k-1)!(n-k)!} x^{k-1}(1-x)^{n-k}=$
+$= x \sum_{k=0}^{n} \dfrac{(n-1)!}{k!(n-1-k)!} x^{k}(1-x)^{n-1-k} =$
+$= x \sum_{k=0}^{n} C^{k}_{n} x^{k} (1-x)^{n-1-k}$
+$3.~$$\left( \sum_{k=0}^{n} \left( \dfrac{k}{n} -x \right) b_{n,k}(x) \right) = 0$
+$-\sum_{k=0}^{n} b_{n,k}(x) + \sum_{k=0}^{n} \left( \dfrac{k}{n} - x \right)^{2} b_{n,k}(x) \dfrac{n}{x(1-x)} = 0$
+Что такое $b_{n,k}\mathpunct{:}~~$
+$$b_{n,k} = C_{n}^{k} (k-nx)x^{k-1}(1-x)^{n-k-1} = C_{n}^{k} x^{k}(1-x)^{n-k} \left( \dfrac{k}{n} -x \right) \dfrac{n}{x(1-x)}$$
+$\square$</p></div></p></div>
 </body>
 </html>

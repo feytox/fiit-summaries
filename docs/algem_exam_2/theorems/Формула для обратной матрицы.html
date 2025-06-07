@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Ряд Фурье по тригонометрической системе</title>
+<title>Формула для обратной матрицы</title>
 <script>
        MathJax = {
         tex: {
@@ -165,18 +165,30 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Ряд Фурье по тригонометрической системе</h1><p>Формулировка:<br/>
+<div class="content"><h1>Формула для обратной матрицы</h1><h2>Определение: Присоединенная матрица</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Пусть $f(x)$ интегрируема на $[-\pi,\pi]$
-$$a_{0} = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\, dx$$
-$$a_{k}=\dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\cos(kx)\, dx ~;~~b_{k}=-\dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\sin(kx)\, dx$$
-тогда: $\dfrac{a_{0}}{2} + \sum_{k=1}^{\infty} (a_{k}\cos(kx) + b_{k}\sin(kx)) = f(x)$
-$f(x)~-$называется рядом Фурье по тригонометрической системе</p></div></p>
-<h2>Пояснение</h2>
-<p><div class="spoiler-markdown"><p>
-$f(x) = \sum_{k=1}^{\infty} (a_{k}\cos(kx) + b_{k}\sin(kx))$
-$$\int\limits_{-\pi}^{\pi}  f(x)\, dx  = \int\limits_{-\pi}^{\pi}  a_{0}\, dx = 2\pi a_{0} \Rightarrow a_{0}=\dfrac{1}{2\pi}\int\limits_{-\pi}^{\pi}  f(x)\, dx$$
-$$\int\limits_{-\pi}^{\pi}  f(x)\cos(nx)\, dx = \int\limits_{-\pi}^{\pi}  a_{n}\cos(nx) * \cos(nx)\, dx = \pi a_{n} \Rightarrow$$
-$$\Rightarrow a_{n} = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\cos(nx)\, dx$$</p></div></p></div>
+ $A_{ij} = (-1)^{i + j}M_{ij}$ - <span>алгебраическое дополнение</span>.
+ $$\widetilde{A} = \begin{pmatrix}
+A_{11} &amp; A_{12} &amp; \dots &amp; A_{1n} \\
+A_{21} &amp; A_{22} &amp; \dots &amp; A_{2n} \\
+\dots  &amp; ... &amp; \dots &amp; \dots \\
+A_{n1} &amp; A_{n2} &amp; \dots &amp; A_{nn}
+\end{pmatrix} ^{T}$$
+называется присоединенной матрицей.</p></div></p>
+<h2>Утверждение</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+$$A\widetilde{A} = |A|E$$</p></div><br/>
+Следствие (формула для обратной матрицы):<br/>
+<div class="spoiler-markdown"><p>
+$$A^{-1} = \dfrac{\widetilde{A}}{|A|}$$
+(умножить на $A^{-1}$ слева и поделить на $|A|$)</p></div><br/>
+Д-во:<br/>
+<div class="spoiler-markdown"><p>
+$$B = A\widetilde{A}$$
+$$b_{ij} = \sum_{k=1}^{n} a_{ik}A_{kj} = \begin{cases} |A|, &amp; i = j \\ 0,  &amp; i \neq j~~ ~~(1)\end{cases}$$
+$(1)$ - <span>фальшивое разложение</span>
+$\square$</p></div></p></div>
 </body>
 </html>

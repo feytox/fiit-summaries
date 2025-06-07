@@ -166,10 +166,12 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Теорема об абсолютной сходимости</h1><p>Формулировка:<br/>
- Если ряд $\sum_{n=1}^{\infty} |a_n|$ сходится, то ряд $\sum_{n=1}^{\infty} a_n$ также сходится.</p>
+<div class="spoiler-markdown"><p>
+ Если ряд $\sum_{n=1}^{\infty} |a_n|$ сходится, то ряд $\sum_{n=1}^{\infty} a_n$ также сходится.</p></div></p>
 <p>Д-во:<br/>
-Пусть ряд $\sum_{n=1}^{\infty} |a_n|$ сходится. По <strong>критерию Коши</strong>  $\forall{\varepsilon &gt; 0}~~\exists{N}~~$ $m &gt; k \ge N$:<br/>
-$$|a_{k+1}| + |a_{k+2}| + \dots + |a_m| &lt; \varepsilon$$Тогда для частичных сумм ряда $\sum_{n=1}^{\infty} a_n$:$$|S_m - S_k| = |a_{k+1} + a_{k+2} + \dots + a_m| \le |a_{k+1}| + |a_{k+2}| + \dots + |a_m| &lt; \varepsilon$$<br/>
-Это означает, что последовательность частичных сумм ряда $\sum_{n=1}^{\infty} a_n$ удовлетворяет <strong>критерию Коши</strong>, а значит, ряд $\sum_{n=1}^{\infty} a_n$ сходится. $~~~ \square$</p></div>
+<div class="spoiler-markdown"><p>
+Пусть ряд $\sum_{n=1}^{\infty} |a_n|$ сходится. По **критерию Коши**  $\forall{\varepsilon &gt; 0}~~\exists{N}~~$ $m &gt; k \ge N$:
+$$|a_{k+1}| + |a_{k+2}| + \dots + |a_m| &lt; \varepsilon$$Тогда для частичных сумм ряда $\sum_{n=1}^{\infty} a_n$:$$|S_m - S_k| = |a_{k+1} + a_{k+2} + \dots + a_m| \le |a_{k+1}| + |a_{k+2}| + \dots + |a_m| &lt; \varepsilon$$
+Это означает, что последовательность частичных сумм ряда $\sum_{n=1}^{\infty} a_n$ удовлетворяет **критерию Коши**, а значит, ряд $\sum_{n=1}^{\infty} a_n$ сходится. $~~~ \square$</p></div></p></div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Ряд Фурье по тригонометрической системе</title>
+<title>Задача о наилучшем приближении</title>
 <script>
        MathJax = {
         tex: {
@@ -165,18 +165,38 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Ряд Фурье по тригонометрической системе</h1><p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $f(x)$ интегрируема на $[-\pi,\pi]$
-$$a_{0} = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\, dx$$
-$$a_{k}=\dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\cos(kx)\, dx ~;~~b_{k}=-\dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\sin(kx)\, dx$$
-тогда: $\dfrac{a_{0}}{2} + \sum_{k=1}^{\infty} (a_{k}\cos(kx) + b_{k}\sin(kx)) = f(x)$
-$f(x)~-$называется рядом Фурье по тригонометрической системе</p></div></p>
-<h2>Пояснение</h2>
-<p><div class="spoiler-markdown"><p>
-$f(x) = \sum_{k=1}^{\infty} (a_{k}\cos(kx) + b_{k}\sin(kx))$
-$$\int\limits_{-\pi}^{\pi}  f(x)\, dx  = \int\limits_{-\pi}^{\pi}  a_{0}\, dx = 2\pi a_{0} \Rightarrow a_{0}=\dfrac{1}{2\pi}\int\limits_{-\pi}^{\pi}  f(x)\, dx$$
-$$\int\limits_{-\pi}^{\pi}  f(x)\cos(nx)\, dx = \int\limits_{-\pi}^{\pi}  a_{n}\cos(nx) * \cos(nx)\, dx = \pi a_{n} \Rightarrow$$
-$$\Rightarrow a_{n} = \dfrac{1}{\pi} \int\limits_{-\pi}^{\pi}  f(x)\cos(nx)\, dx$$</p></div></p></div>
+<div class="content"><h1>Задача о наилучшем приближении</h1><h2>Из конспекта</h2>
+<p>$X~-$ минимальное пространство над $F,~~E \subset X$<br/>
+${l_{k}}{k = 1}^{n}~-$ ОНБ $E$<br/>
+$P \in E, x \in X,$ тогда $P = \sum{k=1}^{n} \alpha_{k}e_{k}$<br/>
+$\inf_{P \in E} ||x-P||~-~?$<br/>
+$\inf_{a,b \in \mathbb{R}} ||x^{2} - (ax + b)||{\infty} = ||x^{2} - \dfrac{1}{2}||{\infty}$ на отрезке $[-1,1]$<br/>
+$\inf||x^{2} - (ax + b)||{1} = ||x^{2} - \dfrac{1}{4}||{1}$<br/>
+$\inf||x^{2} - (ax+b)||{2} = ||x^{2} - \dfrac{1}{3}||{2}$</p>
+<hr/>
+<h2>(ИИ) Задача о наилучшем приближении элемента в подпространстве</h2>
+<p><strong>Дано:</strong><br/>
+- $X$ — векторное пространство над полем $F$ с нормой $\|\cdot\|$,<br/>
+- $E \subset X$ — конечномерное подпространство ($\dim E = n$),<br/>
+- ${e_k}_{k=1}^n$ — базис $E$ (в случае евклидова пространства — ортонормированный базис),<br/>
+- $x \in X$ — произвольный элемент.  </p>
+<p><strong>Постановка задачи:</strong><br/>
+Найти величину $$ \inf_{P \in E} \|x - P\| $$<br/>
+где $P = \sum_{k=1}^n \alpha_k e_k$, $\alpha_k \in F$.  </p>
+<hr/>
+<h2>Теорема: Решение для евклидовой нормы</h2>
+<p><strong>Условия:</strong><br/>
+$X$ — евклидово пространство ($F = \mathbb{R}$ или $\mathbb{C}$) со скалярным произведением $(\cdot,\cdot)$, $\|u\| = \sqrt{(u,u)}$, ${e_k}$ — ортонормированный базис $E$.  </p>
+<p><strong>Утверждение:</strong><br/>
+Инфимум достигается при $$ P^ = \sum_{k=1}^n c_k e_k, \quad c_k = (x, e_k) $$<br/>
+и выполняется:<br/>
+$$ \min_{P \in E} \|x - P\| = \|x - P^\| $$  </p>
+<p><strong>Доказательство:</strong><br/>
+Для произвольного $P = \sum_{k=1}^n \alpha_k e_k$:<br/>
+$$ \|x - P\|^2 = (x - P, x - P) = \|x\|^2 - 2\operatorname{Re}\sum_{k=1}^n \bar{\alpha}k c_k + \sum{k=1}^n |\alpha_k|^2. $$<br/>
+Добавление $\sum_{k=1}^n |c_k|^2 - \sum_{k=1}^n |c_k|^2$ дает:<br/>
+$$ \|x\|^2 - \sum_{k=1}^n |c_k|^2 + \sum_{k=1}^n |\alpha_k - c_k|^2 \geq \|x\|^2 - \sum_{k=1}^n |c_k|^2. $$<br/>
+Равенство $\iff \alpha_k = c_k$ $\forall k$ $\iff P = P^*$.<br/>
+$\square$  </p></div>
 </body>
 </html>
