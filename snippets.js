@@ -32,6 +32,8 @@
 	{trigger: "babs", replacement: "\\left| $0 \\right| $1", options: "mA"}, // типо big abs
 	{trigger: "u->", replacement: "\\underset{$0}{\\longrightarrow} $1", options: "mA"}, // типо under arrow - под стрелочкой
 	{trigger: "dag", replacement: "\\dagger", options: "mA"},
+	{trigger: "l==>", replacement: "\\Large\\implies", options: "mA"},
+	{trigger: "l==<", replacement: "\\Large\\impliedby", options: "mA"},
 
 
     // algem
