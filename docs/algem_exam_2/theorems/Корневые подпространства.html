@@ -166,15 +166,15 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Корневые подпространства</h1><h2>Определение: Нильпотентный оператор</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Оператор $\mathcal{A}:V \to V$ называется нильпотентным, если $\exists{s}~~$такое, что $\mathcal{A}^{s}$ - нулевой оператор.
+<p><div class="spoiler-markdown"><p>
+Оператор $\mathcal{A}:V \to V$ называется **нильпотентным**, если $\exists{s}~~$такое, что $\mathcal{A}^{s}$ - нулевой оператор.
 Минимальное такое $s$ называется ступенью нильпотентности.</p></div></p>
 <h2>Определение: 1 и 0 компоненты оператора</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-$U_{k}$ -  называется 1-компонентной $\mathcal{A}$
-$V_{k}$ - называется 0-компонентной $\mathcal{A}$</p></div><br/>
+$U_{k} = \mathrm{Im}~\mathcal{A}^{k}$  -  называется 1-компонентной $\mathcal{A}$
+$V_{k} = \mathrm{Ker}~\mathcal{A}^{k}$ - называется 0-компонентной $\mathcal{A}$
+где $k$ - ступень стабилизации.</p></div><br/>
 Построение:<br/>
 <div class="spoiler-markdown"><p><br/>
 $$\begin{align}U_{1} &amp;= {u \mid \mathcal{A}u \in \mathrm{Im}~\mathcal{A}} \ U_{2} &amp;= {u \mid \mathcal{A}^{2}u \in \mathrm{Im}~\mathcal{A}^{2}} \ &amp;\dots \ U_{k} &amp;= {u \mid \mathcal{A}^{k}u \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
@@ -182,8 +182,7 @@ $$U_{1}\supseteq U_{2} \supseteq \dots \supseteq U_{k}~~(1)$$</p>
 <p>$$\begin{align}V_{1} &amp;= {v \mid \mathcal{A}v \in \mathrm{Im}~\mathcal{A}} \ V_{2} &amp;= {v \mid \mathcal{A}^{2}v \in \mathrm{Im}~\mathcal{A}^{2}} \ &amp;\dots \ V_{k} &amp;= {v \mid \mathcal{A}^{k}v \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
 $$V_{1} \subseteq V_{2} \subseteq \dots \subseteq V_{k}~~(1)$$</p>
 <p>$(1)$ Eсли какие-то вектора передут в $0$, то они в нем и останутся для всех последующих степеней операторов: $$\mathcal{A}^{i}x = 0 ~\Rightarrow~\mathcal{A}^{i+1}x = \mathcal{A}(\mathcal{A}^{i}x) = \mathcal{A}(0) = 0$$<br/>
-Таким образом, если в какой-то момент $V_{k-1} = V_{k}$, равенство будет выполнятся для всех последующих $V_{j},~j\geq k - 1$. Аналогично для $U_{k}$. Причем из теоремы <span>о сумме ранга и дефекта</span><br/>
-для подпространств $V_{k}$ и $U_{k}$ это произойдет для одной и той же степени оператора.<br/>
+Таким образом, если в какой-то момент $V_{k-1} = V_{k}$, равенство будет выполнятся для всех последующих $V_{j},~j\geq k - 1$. Аналогично для $U_{k}$. Причем из теоремы <span>о сумме ранга и дефекта</span> для подпространств $V_{k}$ и $U_{k}$ это произойдет для одной и той же степени оператора.<br/>
 По определению <span>ядра и образа</span> эти два подпространства будут $\mathcal{A}^{k}$ - инвариантны.</p>
 <p></p></div></p>
 <h2>Разложение Фиттинга</h2>
@@ -206,6 +205,34 @@ $$V_{1} \subseteq V_{2} \subseteq \dots \subseteq V_{k}~~(1)$$</p>
    $\mathcal{A}^{k}|_{N_{\mathcal{A}}} = 0 = (\mathcal{A}|_{N_{\mathcal{A}}})^{k}$ т.e. оператор нильпотентен с степенью нильпотентности равной $k$
 4) $\exists{x}~\in~U_{\mathcal{A}}\mathpunct{:}~~\mathcal{A}x = 0,~x \neq 0$
    $\exists{y}~\in~V\mathpunct{:}~~x = \mathcal{A}^{k}y \Rightarrow  \mathcal{A}^{k+1} y = 0$, но $V_{k} = V_{k + 1} \Rightarrow x = \mathcal{A}^{k}y = 0$
-$\square$</p></div></p></div>
+$\square$</p></div></p>
+<h2>Определение: корневое подпространство</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\lambda$ - собственное значение оператора $\mathcal{A}$, тогда **корневым подпространством** называется 0-компонента оператора $\mathcal{A} - \lambda E$.</p></div></p>
+<h2>Наблюдение: о корневом подпространстве</h2>
+<p><div class="spoiler-markdown"><p>
+$U \subseteq V$, $U$ - $\mathcal{A}$ - инвариантно $\iff$ $U$ - $(\mathcal{A} - \lambda E)$ - инвариантно (следует и замкнутости пространства относительно умножения на скаляр) $(1)$
+Из разложения Фиттинга и $(1)$ $\Rightarrow$ $$V = N_{\mathcal{A} - \lambda E} \oplus U_{\mathcal{A} - \lambda E}$$</p></div></p>
+<h2>Корневое разложение</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+$\mathcal{A}$ - оператор пространства $V$, у которого <span>характеристический многочлен</span> раскладывается на линейные сомножители. Тогда:
+$$V = \mathop{\bigoplus}\limits_{i=1}^{k} K_{\mathcal{A}}(\lambda_{i})$$
+где $\lambda_{i}~~~i=1\dots k$  - <span>собственные числа</span> $\mathcal{A}$ 
+$K_{\mathcal{A}}(\lambda_{i})$ - корневое подпространство, размерность которого соответсвует кратности корня характерестического многочлена.</p></div><br/>
+Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Индукция по $n = \mathrm{dim}~V$<br/>
+<strong>База индукции</strong>: очевидна.<br/>
+<strong>Шаг индукции</strong>: Рассмотрим $\lambda_{1}$ и $K(\lambda_{1})$ <br/>
+$$V = K_{\mathcal{A}}(\lambda_{1}) + V^{'}$$<br/>
+$$A = \left(\begin{array}{c|c} B &amp; 0 \ \hline 0 &amp; C  \\end{array}\right),~~B = [A|{K(\lambda{1})}],~~C = [A|{V^{'}}]$$<br/>
+$$\chi{A}(\lambda) = \begin{vmatrix}B - \lambda E &amp; 0 \ 0 &amp; C - \lambda E\end{vmatrix} = (B - \lambda E)(C - \lambda E) = \chi_{A|{K(\lambda{1})}}(\lambda) \cdot \chi_{A|_{V^{'}}}(\lambda)$$</p>
+<p>Из <span>разложения Фиттинга</span> $\mathcal{A} - \lambda_{1}E$ обратим на $V^{{'}}~\Rightarrow~ \lambda_{1}$ не является собственным для $\mathcal{A}|{V^{'}}$ <br/>
+Пусть $\mu$ собственное для $\mathcal{A}|{K(\lambda_{1})}$. <br/>
+Из нильпотентности $(\mathcal{A} - \lambda_{1})^{k}v = 0,~v \neq 0~\Rightarrow~(B - \lambda E) = (-1)^{k}(\lambda - \lambda_{1})^{k}$ <br/>
+Размерность $V^{{'}}$ меньше $V$ и в $V^{'}$ нет векторов отвечающих $\lambda_{1} ~\Rightarrow$ по предположению индукции $\square$<br/>
+</p></div></p></div>
 </body>
 </html>
