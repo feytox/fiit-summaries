@@ -39,8 +39,10 @@
     {trigger: "baar", replacement: "\\bar{\\bar{$0}}$1", options: "mA"},
     {trigger: "ang", replacement: "\\angle{($0, $1)}$2", options: "mA"},
     {trigger: "([a-zA-Z])cl", replacement: "\\mathcal{[[0]]}", options: "rmA"},
+    {trigger: "([a-zA-Z])cst", replacement: "\\mathcal{[[0]]}^{*}", options: "rmA"},
     {trigger: "([a-zA-Z0])bf", replacement: "\\mathbf{[[0]]}", options: "rmA"},
     {trigger: "cl", replacement: "\\mathcal{$0}$1", options: "mA"},
+    {trigger: "cst", replacement: "\\mathcal{$0}^{*}$1", options: "mA"},
     {trigger: "Ker", replacement: "\\mathrm{Ker}~", options: "mA"},
     {trigger: "dim", replacement: "\\mathrm{dim}~", options: "mA"},
     {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "mA"}, // для векторов из двух букв
