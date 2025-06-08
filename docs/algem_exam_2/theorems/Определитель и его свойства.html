@@ -194,10 +194,10 @@ $B = A^\top$, тогда $b_{i j} = a_{j i}$
 $$
 \begin{aligned}
 \det A &amp;= \sum_{\sigma \in S_n} (-1)^\sigma \prod_{i=1}^n a_{i,\sigma(i)} \\\\
-&amp;= \sum_{\sigma \in S_n} (-1)^\sigma \prod_{i=1}^n a_{\sigma^{-1}(i),i} 
+&amp;= \sum_{\sigma \in S_n} (-1)^\sigma \prod_{j=1}^n a_{\sigma^{-1}(j),j} 
 \quad \text{(замена } j = \sigma(i)) \\\\
-&amp;= \sum_{\sigma \in S_n} (-1)^{\sigma ^{-1}} \prod_{i=1}^n a_{\sigma^{-1}(i),i} \\\\
-&amp;= \sum_{\sigma \in S_n} (-1)^{^{\tau}} \prod_{i=1}^n b_{i,\tau(i)} \\\\
+&amp;= \sum_{\sigma \in S_n} (-1)^{\sigma ^{-1}} \prod_{j=1}^n a_{\sigma^{-1}(j),j} \\\\
+&amp;= \sum_{\sigma \in S_n} (-1)^{^{\sigma ^{-1}}} \prod_{j=1}^n b_{j,\sigma^{-1}(j)} \\\\
 &amp;= \det A^\top
 \end{aligned}
 $$
@@ -319,14 +319,20 @@ $\square$</p></div></p>
 <div class="spoiler-markdown"><p>
 Если $A$ — верхне-треугольная матрица порядка $n$, то $\det A = \prod\limits_{i=1}^{n} a_{ii}$.</p></div></p>
 <p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-По определению:
-$$\begin{align}
-\det A &amp;= \sum_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} \\\\
-&amp;= \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) = 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) \neq 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\\\
-&amp;= \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) = 1 \\\\ \sigma(2) = 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) = 1 \\\\ \sigma(2) \neq 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\\\
-&amp;= \dots = \prod_{i = 1}^{n} a_{ii}
-\end{align}$$
-$\square$</p></div></p></div>
+<div class="spoiler-markdown"><p><br/>
+По определению:<br/>
+$$\begin{align}<br/>
+\det A &amp;= \sum_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} \\<br/>
+&amp;= \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) \neq 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }{ \Large 0} \\<br/>
+&amp;= \sum{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) = 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) \neq 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }{ \Large 0} \\<br/>
+&amp;= \dots = \prod{i = 1}^{n} a_{ii}<br/>
+\end{align}$$<br/>
+$\square$<br/>
+По Заметим что: (пусть нули ниже диагонали)</p>
+<p>Заметим что чтобы слагаемое не было нулем в 1 столбце нужно выбрать первую строку (иначе 0 и остальные множители не важны)<br/>
+Аналогично нужно выбирать 2 столбец 2 строку так как 1 строка занята, а остальные 0, и т.д получается произведение из элементов на диагонали, а если что-то выбрать другое то слагаемое обнулиться</p>
+<p>Также заметим, что так мы можем сделать только 1 раз, а значит других слагаемых нет<br/>
+$\square$<br/>
+</p></div></p></div>
 </body>
 </html>
