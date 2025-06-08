@@ -177,9 +177,9 @@ $V_{k} = \mathrm{Ker}~\mathcal{A}^{k}$ - называется 0-компонен
 где $k$ - ступень стабилизации.</p></div><br/>
 Построение:<br/>
 <div class="spoiler-markdown"><p><br/>
-$$\begin{align}U_{1} &amp;= {u \mid \mathcal{A}u \in \mathrm{Im}~\mathcal{A}} \ U_{2} &amp;= {u \mid \mathcal{A}^{2}u \in \mathrm{Im}~\mathcal{A}^{2}} \ &amp;\dots \ U_{k} &amp;= {u \mid \mathcal{A}^{k}u \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
+$$\begin{align}U_{1} &amp;= {u \mid \mathcal{A}u \in \mathrm{Im}~\mathcal{A}} \\ U_{2} &amp;= {u \mid \mathcal{A}^{2}u \in \mathrm{Im}~\mathcal{A}^{2}} \\ &amp;\dots \\ U_{k} &amp;= {u \mid \mathcal{A}^{k}u \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
 $$U_{1}\supseteq U_{2} \supseteq \dots \supseteq U_{k}~~(1)$$</p>
-<p>$$\begin{align}V_{1} &amp;= {v \mid \mathcal{A}v \in \mathrm{Im}~\mathcal{A}} \ V_{2} &amp;= {v \mid \mathcal{A}^{2}v \in \mathrm{Im}~\mathcal{A}^{2}} \ &amp;\dots \ V_{k} &amp;= {v \mid \mathcal{A}^{k}v \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
+<p>$$\begin{align}V_{1} &amp;= {v \mid \mathcal{A}v \in \mathrm{Im}~\mathcal{A}} \\ V_{2} &amp;= {v \mid \mathcal{A}^{2}v \in \mathrm{Im}~\mathcal{A}^{2}} \\ &amp;\dots \\ V_{k} &amp;= {v \mid \mathcal{A}^{k}v \in \mathrm{Im}~\mathcal{A}^{k}}\end{align}$$<br/>
 $$V_{1} \subseteq V_{2} \subseteq \dots \subseteq V_{k}~~(1)$$</p>
 <p>$(1)$ Eсли какие-то вектора передут в $0$, то они в нем и останутся для всех последующих степеней операторов: $$\mathcal{A}^{i}x = 0 ~\Rightarrow~\mathcal{A}^{i+1}x = \mathcal{A}(\mathcal{A}^{i}x) = \mathcal{A}(0) = 0$$<br/>
 Таким образом, если в какой-то момент $V_{k-1} = V_{k}$, равенство будет выполнятся для всех последующих $V_{j},~j\geq k - 1$. Аналогично для $U_{k}$. Причем из теоремы <span>о сумме ранга и дефекта</span> для подпространств $V_{k}$ и $U_{k}$ это произойдет для одной и той же степени оператора.<br/>
@@ -227,8 +227,8 @@ $K_{\mathcal{A}}(\lambda_{i})$ - корневое подпространство
 <strong>База индукции</strong>: очевидна.<br/>
 <strong>Шаг индукции</strong>: Рассмотрим $\lambda_{1}$ и $K(\lambda_{1})$ <br/>
 $$V = K_{\mathcal{A}}(\lambda_{1}) + V^{'}$$<br/>
-$$A = \left(\begin{array}{c|c} B &amp; 0 \ \hline 0 &amp; C  \\end{array}\right),~~B = [A|{K(\lambda{1})}],~~C = [A|{V^{'}}]$$<br/>
-$$\chi{A}(\lambda) = \begin{vmatrix}B - \lambda E &amp; 0 \ 0 &amp; C - \lambda E\end{vmatrix} = (B - \lambda E)(C - \lambda E) = \chi_{A|{K(\lambda{1})}}(\lambda) \cdot \chi_{A|_{V^{'}}}(\lambda)$$</p>
+$$A = \left(\begin{array}{c|c} B &amp; 0 \\ \hline 0 &amp; C  \\\end{array}\right),~~B = [A|{K(\lambda{1})}],~~C = [A|{V^{'}}]$$<br/>
+$$\chi{A}(\lambda) = \begin{vmatrix}B - \lambda E &amp; 0 \\ 0 &amp; C - \lambda E\end{vmatrix} = (B - \lambda E)(C - \lambda E) = \chi_{A|{K(\lambda{1})}}(\lambda) \cdot \chi_{A|_{V^{'}}}(\lambda)$$</p>
 <p>Из <span>разложения Фиттинга</span> $\mathcal{A} - \lambda_{1}E$ обратим на $V^{{'}}~\Rightarrow~ \lambda_{1}$ не является собственным для $\mathcal{A}|{V^{'}}$ <br/>
 Пусть $\mu$ собственное для $\mathcal{A}|{K(\lambda_{1})}$. <br/>
 Из нильпотентности $(\mathcal{A} - \lambda_{1})^{k}v = 0,~v \neq 0~\Rightarrow~(B - \lambda E) = (-1)^{k}(\lambda - \lambda_{1})^{k}$ <br/>

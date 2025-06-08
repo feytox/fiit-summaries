@@ -184,7 +184,7 @@ $$\mathcal{A}\mathcal{B}(\mathbf{x}) = \mathcal{B}(\mathcal{A}(\mathbf{x}))~~ \f
 Ассоциативность - свойство композиции произвольных отображений.</p>
 <p>Свойство 3.<br/>
 $$\begin{align}<br/>
-((\mathcal{A} + \mathcal{B})\mathcal{C})(\mathbf{x}) &amp;= \mathcal{C}((\mathcal{A} + \mathcal{B})(\mathbf{x})) = \mathcal{C}(\mathcal{A}(\mathbf{x}) + \mathcal{B}(\mathbf{x})) = \mathcal{C}(\mathcal{A}(\mathbf{x})) + \mathcal{C}(\mathcal{B}(\mathbf{x})) = \<br/>
+((\mathcal{A} + \mathcal{B})\mathcal{C})(\mathbf{x}) &amp;= \mathcal{C}((\mathcal{A} + \mathcal{B})(\mathbf{x})) = \mathcal{C}(\mathcal{A}(\mathbf{x}) + \mathcal{B}(\mathbf{x})) = \mathcal{C}(\mathcal{A}(\mathbf{x})) + \mathcal{C}(\mathcal{B}(\mathbf{x})) = \\<br/>
 &amp;= \mathcal{A}\mathcal{C}(\mathbf{x}) + \mathcal{B}\mathcal{C}(\mathbf{x}) = (\mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C})(\mathbf{x}) ~~~~~\square<br/>
 \end{align}$$</p>
 <p>Свойство 4.<br/>
@@ -212,9 +212,9 @@ $$[\mathcal{A}\mathcal{B}]_{P,R} = [\mathcal{B}]_{Q,R}[\mathcal{A}]_{P,Q}$$
 $$C[\mathbf{x}]{P} = [\mathcal{A}\mathcal{B}(\mathbf{x})]{R} = [\mathcal{B}(\mathcal{A}(\mathbf{x}))]{R} = B[\mathcal{A}(\mathbf{x})]{Q} = B(A[\mathbf{x}]{P})$$<br/>
 Возьмём $\mathbf{x} = \mathbf{p}{1}$ в равенстве $C[\mathbf{x}]{P} = B(A[\mathbf{x}]{P})$. Так как:<br/>
 $$[\mathbf{p}{1}]{P} = \begin{bmatrix}<br/>
-1 \<br/>
-0 \<br/>
-\vdots \<br/>
+1 \\<br/>
+0 \\<br/>
+\vdots \\<br/>
 0<br/>
 \end{bmatrix}$$<br/>
 получаем, что $A[\mathbf{p}{1}]{P}$ - первый столбец матрицы $A$, а $C[\mathbf{p}{1}]_{P}$ - первый столбец матрицы $C$. Значит первый столбец матрицы $C$ - произведение матрицы $B$ на первый столбец матрицы $A$.</p>
@@ -274,35 +274,35 @@ $$[\mathcal{A}\mathcal{A}^{-1}] = [\mathcal{A}^{-1}\mathcal{A}] = E \implies [\m
 Пусть $A = (a_{ij})_{k\times n}$ - произвольная матрица. Для каждого элементарного преобразования над столбцами (строками) $A$ построим матрицу, умножение на которую справа (слева) даёт тот же результат.</p>
 <p>Э/п 1 рода: перестановка $i$-го и $j$-го столбцов (строк) матрицы $A$.<br/>
 $$\begin{pmatrix}<br/>
-1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 \<br/>
+1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 \\<br/>
 \end{pmatrix}$$<br/>
 Т.е. перестановка $i$-й и $j$-й столбцов (строк) в единичной матрице.</p>
 <p>Э/п 2 рода: добавление к $i$-му столбцу матрицы $A$ её $j$-й столбец (аналогично для строк).<br/>
 $$\begin{pmatrix}<br/>
-1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 1 &amp; \dots &amp; 1 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 \<br/>
+1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 1 &amp; \dots &amp; 1 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 \\<br/>
 \end{pmatrix}$$<br/>
 Т.е. прибавление к $i$-му столбцу $j$-го столбца (аналогично для строк).</p>
 <p>Э/п 3 рода: умножение $i$-го столбца (строки) матрицы $A$ на скаляр $\lambda \neq 0$.<br/>
 $$\begin{pmatrix}<br/>
-1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; \lambda &amp; \dots &amp; 0 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 \<br/>
+1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; \lambda &amp; \dots &amp; 0 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+0 &amp; \dots &amp; 0 &amp; \dots &amp; 0 &amp; \dots &amp; 1 \\<br/>
 \end{pmatrix}$$<br/>
 Т.е. умножение $i$-ого столбца (строки) на $\lambda$.</p>
 <p>То, что такие матрицы дают необходимый результат, проверяется прямыми подсчётами. $\square$<br/>
@@ -317,19 +317,19 @@ $$\begin{pmatrix}<br/>
 <p>Шаг 1.<br/>
 Поскольку ранг матрицы $A$ равен $n$, её столбцы линейно независимы. Поэтому в первом столбце есть ненулевой элемент, перестановкой строк переставим его на место $(1,1)$, домножим его на обратный элемент (теперь он равен $1$), а затем обнулим остальные элементы первого столбца. Продолжая эту процедуру для всех столбцов, получаем:<br/>
 $$\begin{pmatrix}<br/>
-1 &amp; a_{12} &amp; \dots &amp; a_{1n} \<br/>
-a_{21} &amp; a_{22} &amp; \dots &amp; a_{2n} \<br/>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
+1 &amp; a_{12} &amp; \dots &amp; a_{1n} \\<br/>
+a_{21} &amp; a_{22} &amp; \dots &amp; a_{2n} \\<br/>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nn}<br/>
 \end{pmatrix} \to \begin{pmatrix}<br/>
-1 &amp; a_{12} &amp; \dots &amp; a_{1n} \<br/>
-0 &amp; b_{22} &amp; \dots &amp; b_{2n} \<br/>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
+1 &amp; a_{12} &amp; \dots &amp; a_{1n} \\<br/>
+0 &amp; b_{22} &amp; \dots &amp; b_{2n} \\<br/>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 0 &amp; b_{n2} &amp; \dots &amp; b_{nn}<br/>
 \end{pmatrix} \to \begin{pmatrix}<br/>
-1 &amp; 0 &amp; \dots &amp; 0 \<br/>
-0 &amp; 1 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
+1 &amp; 0 &amp; \dots &amp; 0 \\<br/>
+0 &amp; 1 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 0 &amp; 0 &amp; \dots &amp; 1<br/>
 \end{pmatrix}$$</p>
 <p>Шаг 2.<br/>
@@ -337,7 +337,7 @@ a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nn}<br/>
 $$E|A \xrightarrow{\varepsilon_{1}} \dots \xrightarrow{\varepsilon_{s}} B|E$$<br/>
 Пусть $T_{1}, \dots, T_{s}$ - такие $n\times n$-матрицы, соответствующие элементарным преобразованиям $\varepsilon_{1}, \dots, \varepsilon_{s}$. Тогда по <span>лемме</span>:<br/>
 $$\begin{align}<br/>
-T_{s} \dots T_{1}E &amp;= B \<br/>
+T_{s} \dots T_{1}E &amp;= B \\<br/>
 T_{s} \dots T_{1}A &amp;= E<br/>
 \end{align}$$<br/>
 В силу второго равенства $T_{s}\dots T_{1} = A^{-1}$, а в силу первого $T_{s} \dots T_{1} = B$. А значит $B|E = A^{-1}|E$ $~~~~~ \square$<br/>

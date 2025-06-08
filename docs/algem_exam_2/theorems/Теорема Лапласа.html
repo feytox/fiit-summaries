@@ -177,16 +177,16 @@ $$M = \sum_{\rho \in S_{k}}(-1)^{\rho}a_{1\rho(1)} \dots a_{k\rho(k)}$$<br/>
 $$\overline{M} = \sum_{\tau \in S_{n-k}}(-1)^{\tau}b_{1 \tau(1)} \dots b_{n-k \tau(n-k)}$$<br/>
 $$A = (-1)^{1 + \dots + k + 1 + \dots + k} \cdot \overline{M} = \overline{M}$$<br/>
 Значит:<br/>
-$$MA = M\overline{M} = \sum_{\substack{\rho \in S_{k} \ \tau \in S_{n-k}}} (-1)^{\tau + \rho} a_{1\rho(1)} \dots a_{k\rho(k)} b_{1\tau(1)} \dots b_{n-k \tau(n-k)}$$<br/>
+$$MA = M\overline{M} = \sum_{\substack{\rho \in S_{k} \\ \tau \in S_{n-k}}} (-1)^{\tau + \rho} a_{1\rho(1)} \dots a_{k\rho(k)} b_{1\tau(1)} \dots b_{n-k \tau(n-k)}$$<br/>
 Выполним обратную замену $b_{ij} = a_{i+k ~ j+k}$:<br/>
-$$MA = \sum_{\substack{\rho \in S_{k} \ \tau \in S_{n-k}}} (-1)^{\tau + \rho} a_{1\rho(1)} \dots a_{k\rho(k)} a_{k+1 ~\tau(1)+k} \dots a_{n ~\tau(n-k)+k}$$<br/>
+$$MA = \sum_{\substack{\rho \in S_{k} \\ \tau \in S_{n-k}}} (-1)^{\tau + \rho} a_{1\rho(1)} \dots a_{k\rho(k)} a_{k+1 ~\tau(1)+k} \dots a_{n ~\tau(n-k)+k}$$<br/>
 Возьмём следующую подстановку $\sigma$:<br/>
 $$\sigma = \begin{pmatrix}<br/>
-1 &amp; 2 &amp; \dots &amp; k &amp; k+1 &amp; \dots &amp; n \<br/>
+1 &amp; 2 &amp; \dots &amp; k &amp; k+1 &amp; \dots &amp; n \\<br/>
 \rho(1) &amp; \rho(2) &amp; \dots &amp; \rho(k) &amp; \tau(1)+k &amp; \dots &amp; \tau(n-k)+k<br/>
 \end{pmatrix}$$<br/>
 Её число инверсий равно сумме числа инверсий $\rho$ и $\tau$, так как между частями инверсии отсутствуют. Получаем:<br/>
-$$MA = \sum_{\substack{\rho \in S_{k} \ \tau \in S_{n-k}}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \dots a_{n\sigma(n)}$$<br/>
+$$MA = \sum_{\substack{\rho \in S_{k} \\ \tau \in S_{n-k}}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \dots a_{n\sigma(n)}$$<br/>
 (важно, что суммирование не по $\sigma \in S_{n}$)</p>
 <p>Получаем, что число слагаемых $k!(n-k)!$</p>
 <p><strong>2 случай</strong>: произвольный минор.<br/>

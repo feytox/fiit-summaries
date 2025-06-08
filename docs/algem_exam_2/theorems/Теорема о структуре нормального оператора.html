@@ -200,7 +200,7 @@ $\square$</p></div></p>
 <div class="spoiler-markdown"><p>
 Пусть $V$ - евклидово пространство, ${} \mathcal{A} {}$ - оператор на $V$.  
 Тогда $\mathcal{A}$ - нормальный $\iff$ в некотором ОНБ его матрица имеет блочно-диагональный вид. Каждый блок либо размера 1, либо размера 2 и имеет вид:
-$$\beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \\ \sin \alpha &amp; \cos \alpha \end{pmatrix}$$</p></div></p>
+$$\beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \\\\ \sin \alpha &amp; \cos \alpha \end{pmatrix}$$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 $\Large\implies$<br/>
@@ -210,14 +210,14 @@ $\Large\implies$<br/>
 <p><strong>Шаг индукции</strong> ($k = n$).<br/>
 Аналогично доказательству теоремы в унитарном случае</p>
 <p>$\Large\impliedby$<br/>
-Пусть $A$ - матрица $\mathcal{A}$ и в некотором ОНБ она имеет блочно-диагональный вид из двух типов блоков: $[\lambda]$ или $R = \beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \ \sin \alpha &amp; \cos \alpha \end{pmatrix}$</p>
+Пусть $A$ - матрица $\mathcal{A}$ и в некотором ОНБ она имеет блочно-диагональный вид из двух типов блоков: $[\lambda]$ или $R = \beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \\ \sin \alpha &amp; \cos \alpha \end{pmatrix}$</p>
 <p>В евклидовом пространстве справедливо: $[\mathcal{A}^{}] = A^{} = A^{T}$. Так как $A$ и $A^{T}$ - блочно-диагональные, произведения этих матриц это матрица, составленная из произведений блоков в соответствующем порядке.</p>
 <p>Проверим нормальность для каждого блока:<br/>
 - Для блока $1\times1$: $[\lambda][\lambda]^T = \lambda \cdot \lambda = \lambda^2 = [\lambda]^T[\lambda]$.<br/>
-- Для блока $2\times2$: $R R^T = \beta^2 \begin{pmatrix} 1 &amp; 0 \ 0 &amp; 1 \end{pmatrix} = R^T R$ (см. вычисления ниже).<br/>
+- Для блока $2\times2$: $R R^T = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = R^T R$ (см. вычисления ниже).<br/>
 Вычисления для $R$:<br/>
-$$R R^T = \beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \ \sin \alpha &amp; \cos \alpha \end{pmatrix} \beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \ -\sin \alpha &amp; \cos \alpha \end{pmatrix} = \beta^2 \begin{pmatrix} 1 &amp; 0 \ 0 &amp; 1 \end{pmatrix}$$<br/>
-Аналогично $R^T R = \beta^2 \begin{pmatrix} 1 &amp; 0 \ 0 &amp; 1 \end{pmatrix}$.</p>
+$$R R^T = \beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \\ \sin \alpha &amp; \cos \alpha \end{pmatrix} \beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix} = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$$<br/>
+Аналогично $R^T R = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$.</p>
 <p>Следовательно $\mathcal{A}\mathcal{A}^ = \mathcal{A}^\mathcal{A}$. Значит, $\mathcal{A}$ нормален.<br/>
 $\square$<br/>
 </p></div></p></div>

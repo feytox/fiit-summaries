@@ -178,31 +178,31 @@ $$Ax + By + Cz + D = 0,~~~ A \neq 0 \lor B \neq 0 \lor C \neq 0$$
 <p>$M \in \sigma \iff \overrightarrow{M_{0}M} \parallel \sigma$. $\vec{a_{1}}, \vec{a_{2}}$ - базис $\sigma$. Если $\overrightarrow{M_{0}M} \parallel \sigma$, то по теореме о разложении вектора по базису плоскости: $\exists{u, v}~~ \overrightarrow{M_{0}M} = u\vec{a_{1}} + v\vec{a_{2}}$ (очевидно и обратное). Поскольку $\vec{r} = \vec{r_{0}} + \overrightarrow{M_{0}M}$, получаем: $M \in \sigma \iff \vec{r} = \vec{r_{0}} + u\vec{a_{1}} + v \vec{a_{2}}$ (векторное уравнение плоскости)</p>
 <p>Расписав $\vec{r} = \vec{r_{0}} + u \vec{a_{1}} + v \vec{a_{2}}$ в координатах, получаем уравнение:<br/>
 $$\begin{cases}<br/>
-x = x_{0} + q_{1}u + q_{2}v \<br/>
-y = y_{0} + r_{1}u + r_{2}v \<br/>
+x = x_{0} + q_{1}u + q_{2}v \\<br/>
+y = y_{0} + r_{1}u + r_{2}v \\<br/>
 z = z_{0} + s_{1}u + s_{2}v<br/>
 \end{cases}$$<br/>
 (параметрическое уравнение плоскости)</p>
 <p>Точка $M(x, y, z) \in \sigma \iff$ $\overrightarrow{M_{0}M} = (x-x_{0}, y-y_{0}, z-z_{0}), \vec{a_{1}}, \vec{a_{2}}$ компланарны. Из замечания о координатах компланарных векторов вытекает, что это условие эквивалентно следующему:<br/>
 $$\begin{vmatrix}<br/>
-x-x_{0} &amp; y-y_{0} &amp; z-z_{0} \<br/>
-q_{1} &amp; r_{1} &amp; s_{1} \<br/>
+x-x_{0} &amp; y-y_{0} &amp; z-z_{0} \\<br/>
+q_{1} &amp; r_{1} &amp; s_{1} \\<br/>
 q_{2} &amp; r_{2} &amp; s_{2}<br/>
 \end{vmatrix} = 0$$<br/>
 (каноническое уравнение плоскости)</p>
 <p>Разложим по первой строке:<br/>
 $$\begin{vmatrix}<br/>
-r_{1} &amp; s_{1} \<br/>
+r_{1} &amp; s_{1} \\<br/>
 r_{2} &amp; s_{2}<br/>
 \end{vmatrix} \cdot (x - x_{0}) - \begin{vmatrix}<br/>
-q_{1} &amp; s_{1} \<br/>
+q_{1} &amp; s_{1} \\<br/>
 q_{2} &amp; s_{2}<br/>
 \end{vmatrix} \cdot (y - y_{0}) + \begin{vmatrix}<br/>
-q_{1} &amp; r_{1} \<br/>
+q_{1} &amp; r_{1} \\<br/>
 q_{2} &amp; r_{2}<br/>
 \end{vmatrix} \cdot (z - z_{0}) = 0$$<br/>
 Если обозначить:<br/>
-$$A := \begin{vmatrix} r_{1} &amp; s_{1} \ r_{2} &amp; s_{2}\end{vmatrix},~~~ B := -\begin{vmatrix} q_{1} &amp; s_{1} \ q_{2} &amp; s_{2}\end{vmatrix},~~~ C := \begin{vmatrix} q_{1} &amp; r_{1} \ q_{2} &amp; r_{2}\end{vmatrix},~~~ D := -Ax_{0} - By_{0} - Cz_{0}$$<br/>
+$$A := \begin{vmatrix} r_{1} &amp; s_{1} \\ r_{2} &amp; s_{2}\end{vmatrix},~~~ B := -\begin{vmatrix} q_{1} &amp; s_{1} \\ q_{2} &amp; s_{2}\end{vmatrix},~~~ C := \begin{vmatrix} q_{1} &amp; r_{1} \\ q_{2} &amp; r_{2}\end{vmatrix},~~~ D := -Ax_{0} - By_{0} - Cz_{0}$$<br/>
 то можем переписать это равенство в виде:<br/>
 $$Ax + By + Cz + D = 0$$</p>
 <p>Если $A = B = C = 0$, то $\dfrac{q_{1}}{q_{2}} = \dfrac{r_{1}}{r_{2}} = \dfrac{s_{1}}{s_{2}}$, что в силу критерия коллинеарности означает, что $\vec{a_{1}} \parallel \vec{a_{2}}$ вопреки их выбору. $\square$<br/>
@@ -213,8 +213,8 @@ $$Ax + By + Cz + D = 0$$</p>
 <p>Пусть $(x_{0}, y_{0}, z_{0})$ - произвольное решение уравнения, $\vec{a_{1}} := (-B, A, 0), \vec{a_{2}} := (-C, 0, A)$. Так как $A \neq 0 \Rightarrow \vec{a_{1}} \nparallel \vec{a_{2}}$. Обозначим через $\sigma$ плоскость, проходящую через точку $M_{0}(x_{0}, y_{0}, z_{0})$ коллинеарно $\vec{a_{1}}, \vec{a_{2}}$. Докажем, что $\sigma$ задаётся уравнением $Ax + By + Cz + D = 0$. <br/>
 Запишем каноническое уравнение плоскости $\sigma$:<br/>
 $$\begin{vmatrix}<br/>
-x-x_{0} &amp; y-y_{0} &amp; z-z_{0} \<br/>
--B &amp; A &amp; 0 \<br/>
+x-x_{0} &amp; y-y_{0} &amp; z-z_{0} \\<br/>
+-B &amp; A &amp; 0 \\<br/>
 -C &amp; 0 &amp; A<br/>
 \end{vmatrix} = 0 ~~~~~~~~~~~()$$<br/>
 Раскрываем определитель по первой строке:<br/>

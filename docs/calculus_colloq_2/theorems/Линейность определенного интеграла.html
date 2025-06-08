@@ -172,15 +172,15 @@ $$\int_{a}^{b} \alpha f(x) + \beta g(x) \, dx = \alpha \int_{a}^{b} f(x) \, dx +
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 $$\begin{align}<br/>
-S(\alpha f + \beta g) &amp;= \sum_{k=0}^{n-1} (\alpha f(\xi_{k}) + \beta g(\xi_{k}))\Delta x_{k} = \alpha \sum_{k=0}^{n-1} f(\xi_{k})\Delta x_{k} + \beta \sum_{k=0}^{n-1} g(\xi_{k})\Delta x_{k} \<br/>
+S(\alpha f + \beta g) &amp;= \sum_{k=0}^{n-1} (\alpha f(\xi_{k}) + \beta g(\xi_{k}))\Delta x_{k} = \alpha \sum_{k=0}^{n-1} f(\xi_{k})\Delta x_{k} + \beta \sum_{k=0}^{n-1} g(\xi_{k})\Delta x_{k} \\<br/>
 &amp;= \alpha S(f) + \beta S(g)<br/>
 \end{align}$$<br/>
 Возьмём $\forall{\varepsilon &gt; 0}~~ \exists{\delta}~~ \forall{\tau}\mathpunct{:}~~ \lambda(\tau) &lt; \delta$, тогда:<br/>
 $$|S(f) - I_{f}| &lt; \dfrac{\varepsilon}{|\alpha| + |\beta| + 1},~~~~~ |S(g) - I_{g}| &lt; \dfrac{\varepsilon}{|\alpha| + |\beta| + 1}$$</p>
 <p>Значит:<br/>
 $$\begin{align}<br/>
-|S(\alpha f + \beta g) - (\alpha I_{f} + \beta I_{g})| &amp;= |\alpha S(f) + \beta S(g) - (\alpha I_{f} + \beta I(g))| \<br/>
-&amp;\leq |\alpha| |S(f) - I_{f}| + |\beta| |S(g) - I_{g}| \<br/>
+|S(\alpha f + \beta g) - (\alpha I_{f} + \beta I_{g})| &amp;= |\alpha S(f) + \beta S(g) - (\alpha I_{f} + \beta I(g))| \\<br/>
+&amp;\leq |\alpha| |S(f) - I_{f}| + |\beta| |S(g) - I_{g}| \\<br/>
 &amp;&lt; \dfrac{|\alpha| + |\beta|}{|\alpha| + |\beta| + 1} \cdot \varepsilon &lt; \varepsilon<br/>
 \end{align}$$<br/>
 $\square$<br/>

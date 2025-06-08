@@ -170,8 +170,8 @@
 Пусть задана система координат с началом $O$, $l$ - прямая в пространстве, $M_{0}(x_{0}, y_{0}, z_{0}) \in l, \vec{a} = (q,r,s)$ - направляющий вектор прямой. Ясно, что эти данные однозначно определяют прямую.</p>
 <p>Пусть $M(x,y,z)$ - точка пространства, $\vec{r}$ - радиус-вектор $M$, $\vec{r_{0}}$ - радиус вектор $M_{0}$. Тогда $M \in l \iff \overrightarrow{M_{0}M} \parallel \vec{a} \iff \overrightarrow{M_{0}M} = t\vec{a}$. Так как $\vec{r} = \vec{r_{0}} + \overrightarrow{M_{0}M}$, тогда $M \in l \iff \vec{r} = \vec{r_{0}} + t\vec{a}$. Тогда получаем:<br/>
 $$\begin{cases}<br/>
-x = x_{0} + qt \<br/>
-y = y_{0} + rt \<br/>
+x = x_{0} + qt \\<br/>
+y = y_{0} + rt \\<br/>
 z = z_{0} + st<br/>
 \end{cases}$$<br/>
 (параметрическое уравнение прямой в пространстве)<br/>
@@ -190,7 +190,7 @@ $$\dfrac{x-x_{0}}{x_{1}-x_{0}} = \dfrac{y-y_{0}}{y_{1}-y_{0}} = \dfrac{z-z_{0}}{
 Всякую прямую в пространстве можно рассматривать, как пересечение двух плоскостей.<br/>
 Пусть $l$ - прямая на пересечении $\sigma_{1}: A_{1}x + B_{1}y + C_{1}z + D_{1} = 0,~~ \sigma_{2}: A_{2}x + B_{2}y + C_{2}z + D_{2} = 0$. Тогда:<br/>
 $$\begin{cases}<br/>
-A_{1}x + B_{1}y + C_{1}z + D_{1} = 0 \<br/>
+A_{1}x + B_{1}y + C_{1}z + D_{1} = 0 \\<br/>
 A_{2}x + B_{2}y + C_{2}z + D_{2} = 0<br/>
 \end{cases}$$<br/>
 (общие уравнения прямой в пространстве)</p>
@@ -200,38 +200,38 @@ A_{2}x + B_{2}y + C_{2}z + D_{2} = 0<br/>
 <p><div class="spoiler-markdown"><p><br/>
 Пусть $l$ задана уравнениями<br/>
 $$\begin{cases}<br/>
-A_{1}x + B_{1}y + C_{1}z + D_{1} = 0 \<br/>
+A_{1}x + B_{1}y + C_{1}z + D_{1} = 0 \\<br/>
 A_{2}x + B_{2}y + C_{2}z + D_{2} = 0<br/>
 \end{cases}$$</p>
 <p>Чтобы найти $M_{0}(x_{0}, y_{0}, z_{0}) \in l$, если, например, $\dfrac{A_{1}}{A_{2}} \neq \dfrac{B_{1}}{B_{2}}$ положим, что $z_{0} = 0$, тогда $x_{0}$ и $y_{0}$ найдём из системы:</p>
 <p>$$\begin{cases}<br/>
-A_{1}x + B_{1}y = -D_{1} \<br/>
+A_{1}x + B_{1}y = -D_{1} \\<br/>
 A_{2}x + B_{2}y = -D_{2}<br/>
 \end{cases}$$</p>
 <p>Чтобы найти направляющий вектор $l$, допустим сначала, что система координат декартова, тогда $\vec{n_{1}} = (A_{1},B_{1},C_{1}), \vec{n_{2}}$ - нормальные векторы плоскостей. Положим $\vec{b} := \vec{n_{1}} \times \vec{n_{2}} \Rightarrow \vec{b} \perp \vec{n_{1}}$. Так как $\vec{n_{1}} \perp \sigma_{1} \Rightarrow \vec{b} \parallel \sigma_{1}$, аналогично $\vec{b} \parallel \sigma_{2}$, а значит $\vec{b}$ коллинеарен прямой пересечения плоскостей $\sigma_{1}, \sigma_{2}$, т.е. прямой $l$. Так как $\sigma_{1} \nparallel \sigma_{2} \Rightarrow \vec{n_{1}} \nparallel \vec{n_{2}} \Rightarrow \vec{b} = \vec{n_{1}} \times  \vec{n_{2}} \neq \vec{0}$, а значит $\vec{b}$ является направляющим вектором прямой $l$. Получаем, что координаты направляющего вектора равны:<br/>
 $$\vec{s} = \left(\begin{vmatrix}<br/>
-B_{1} &amp; C_{1} \<br/>
+B_{1} &amp; C_{1} \\<br/>
 B_{2} &amp; C_{2}<br/>
 \end{vmatrix}, - \begin{vmatrix}<br/>
-A_{1} &amp; C_{1} \<br/>
+A_{1} &amp; C_{1} \\<br/>
 A_{2} &amp; C_{2}<br/>
 \end{vmatrix}, \begin{vmatrix}<br/>
-A_{1} &amp; B_{1} \<br/>
+A_{1} &amp; B_{1} \\<br/>
 A_{2} &amp; B_{2}<br/>
 \end{vmatrix} \right)$$</p>
 <p>Теперь, как следствие <span>теоремы о взаимном расположении прямой и плоскости</span>, обоснуем выбор такого вектора для произвольной системы координат. Пусть $l'$ - прямая, проведённая через $M_{0} \in l$ параллельно $\vec{s}$. Рассмотрим, как расположена $l'$ относительно $\sigma_{1}$:<br/>
 $$A_{1} \begin{vmatrix}<br/>
-B_{1} &amp; C_{1} \<br/>
+B_{1} &amp; C_{1} \\<br/>
 B_{2} &amp; C_{2}<br/>
 \end{vmatrix} - B_{1} \begin{vmatrix}<br/>
-A_{1} &amp; C_{1} \<br/>
+A_{1} &amp; C_{1} \\<br/>
 A_{2} &amp; C_{2}<br/>
 \end{vmatrix} + C_{1} \begin{vmatrix}<br/>
-A_{1} &amp; B_{1} \<br/>
+A_{1} &amp; B_{1} \\<br/>
 A_{2} &amp; B_{2}<br/>
 \end{vmatrix} = \begin{vmatrix}<br/>
-A_{1} &amp; B_{1} &amp; C_{1} \<br/>
-A_{1} &amp; B_{1} &amp; C_{1} \<br/>
+A_{1} &amp; B_{1} &amp; C_{1} \\<br/>
+A_{1} &amp; B_{1} &amp; C_{1} \\<br/>
 A_{2} &amp; B_{2} &amp; C_{2}<br/>
 \end{vmatrix} = 0$$<br/>
 $$A_{1}x_{0} + B_{1}y_{0} + C_{1}z_{0} + D_{1} = 0$$<br/>

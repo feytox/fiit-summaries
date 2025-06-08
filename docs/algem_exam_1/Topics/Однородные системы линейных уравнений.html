@@ -169,9 +169,9 @@
 <p><div class="spoiler-markdown"><p>
 Система линейных уравнений называется **однородной**, если свободные члены всех уравнений системы нулевые:
 $$\begin{cases}
-a_{11}x_{1} + a_{12}x_{2} + \dots a_{1n}x_{n} = 0 \\
-a_{21}x_{1} + a_{22}x_{2} + \dots a_{2n}x_{n} = 0 \\
-\dots\dots\dots\dots\dots\dots\dots\dots\dots \\
+a_{11}x_{1} + a_{12}x_{2} + \dots a_{1n}x_{n} = 0 \\\\
+a_{21}x_{1} + a_{22}x_{2} + \dots a_{2n}x_{n} = 0 \\\\
+\dots\dots\dots\dots\dots\dots\dots\dots\dots \\\\
 a_{k1}x_{1} + a_{k2}x_{2} + \dots a_{kn}x_{n} = 0
 \end{cases}$$
 По <span>теореме Кронекера-Капелли</span> однородная система всегда совместна.</p></div></p>
@@ -221,54 +221,54 @@ $$\mathbf{y} = c_{1} \mathbf{y}_{1} + c_{2} \mathbf{y}_{2} + \dots + c_{d} \math
 <p><div class="spoiler-markdown"><p><br/>
 Рассмотрим произвольную однородную систему:<br/>
 $$\begin{cases}<br/>
-a_{11} x_{1} + a_{12} x_{2} + \dots + a_{1n} x_{n} = 0 \<br/>
-a_{21} x_{1} + a_{22} x_{2} + \dots + a_{2n} x_{n} = 0 \<br/>
-\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \<br/>
+a_{11} x_{1} + a_{12} x_{2} + \dots + a_{1n} x_{n} = 0 \\<br/>
+a_{21} x_{1} + a_{22} x_{2} + \dots + a_{2n} x_{n} = 0 \\<br/>
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \\<br/>
 a_{k1} x_{1} + a_{k2} x_{2} + \dots + a_{kn} x_{n} = 0<br/>
 \end{cases}$$<br/>
 Если ранг её матрицы $A$ $r = n$, то размерность пространства решений равна $0$, а значит фундаментальной системы решений нет (единственное решение - $0$). Поэтому будем рассматривать случай $r &lt; n$</p>
 <p>В силу <span>теоремы о ранге</span> в $A$ есть $r$ линейно независимых строк. Переставим уравнения так, чтобы первые $r$ строк были линейно независимы, а последующие, так как они линейно выражаются через предыдущие, вычеркнем, получим:<br/>
 $$\begin{cases}<br/>
-a_{11} x_{1} + a_{12} x_{2} + \dots + a_{1n} x_{n} = 0 \<br/>
-a_{21} x_{1} + a_{22} x_{2} + \dots + a_{2n} x_{n} = 0 \<br/>
-\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \<br/>
+a_{11} x_{1} + a_{12} x_{2} + \dots + a_{1n} x_{n} = 0 \\<br/>
+a_{21} x_{1} + a_{22} x_{2} + \dots + a_{2n} x_{n} = 0 \\<br/>
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \\<br/>
 a_{r1} x_{1} + a_{r2} x_{2} + \dots + a_{rn} x_{n} = 0<br/>
 \end{cases}$$<br/>
 Обозначим матрицу этой системы через $A'$. Ясно, что $r(A') = r$, поэтому у $A'$ есть $r$ линейно независимых столбцов. <strong>Переименуем переменные</strong> и перенесём линейно зависимые столбцы в правую часть, получим:<br/>
 $$\begin{cases}<br/>
-b_{11} y_{1} + b_{12} y_{2} + \dots + b_{1r} y_{r} = -b_{1~r+1} y_{r+1} - b_{1~r+2} y_{r+2} - \dots - b_{1n} y_{n} \<br/>
-b_{21} y_{1} + b_{22} y_{2} + \dots + b_{2r} y_{r} = -b_{2~r+1} y_{r+1} - b_{2~r+2} y_{r+2} - \dots - b_{2n} y_{n} \<br/>
-\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \<br/>
+b_{11} y_{1} + b_{12} y_{2} + \dots + b_{1r} y_{r} = -b_{1~r+1} y_{r+1} - b_{1~r+2} y_{r+2} - \dots - b_{1n} y_{n} \\<br/>
+b_{21} y_{1} + b_{22} y_{2} + \dots + b_{2r} y_{r} = -b_{2~r+1} y_{r+1} - b_{2~r+2} y_{r+2} - \dots - b_{2n} y_{n} \\<br/>
+\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \\<br/>
 b_{r1} y_{1} + b_{r2} y_{2} + \dots + b_{rr} y_{r} = -b_{r~r+1} y_{r+1} - b_{r~r+2} y_{r+2} - \dots - b_{rn} y_{n}<br/>
 \end{cases} ~~~~~(\dagger)$$<br/>
 Неизвестные $y_{r+1}, \dots, y_{n}$ называются <strong>свободными</strong>, а неизвестные $y_{1}, y_{2}, \dots, y_{r}$ - <strong>связанными</strong>.</p>
 <p>В матричном виде систему $(\dagger)$ можно записать как $B\mathbf{y} = \mathbf{c}$, где $B = (b_{ij}){r\times r}$ - матрица при неизвестных $y{1}, \dots, y_{r}$ и<br/>
-$$\mathbf{y} := \begin{pmatrix}y_{1}\\vdots\y_{r}\end{pmatrix},~~~ c := \begin{pmatrix}<br/>
--b_{1~r+1}y_{r+1} - \dots - b_{1n}y_{n} \<br/>
-\vdots \<br/>
+$$\mathbf{y} := \begin{pmatrix}y_{1}\\\vdots\\y_{r}\end{pmatrix},~~~ c := \begin{pmatrix}<br/>
+-b_{1~r+1}y_{r+1} - \dots - b_{1n}y_{n} \\<br/>
+\vdots \\<br/>
 -b_{r~r+1}y_{r+1} - \dots - b_{rn}y_{n}<br/>
 \end{pmatrix}$$<br/>
 Из построений матрицы $B$ ясно, что она обратима. Умножая $B\mathbf{y} = \mathbf{c}$ слева на $B^{-1}$, получаем единственное решение системы $()$ в виде $\mathbf{y} = B^{-1}\mathbf{c}$. Переходя к координатам, имеем:<br/>
 $$\begin{cases}<br/>
-y_{1} = c_{1~r+1}y_{r+1} + \dots + c_{1n}y_{n} \<br/>
-y_{2} = c_{2~r+1}y_{r+1} + \dots + c_{2n}y_{n} \<br/>
-\dots\dots\dots\dots\dots\dots\dots\dots\dots \<br/>
+y_{1} = c_{1~r+1}y_{r+1} + \dots + c_{1n}y_{n} \\<br/>
+y_{2} = c_{2~r+1}y_{r+1} + \dots + c_{2n}y_{n} \\<br/>
+\dots\dots\dots\dots\dots\dots\dots\dots\dots \\<br/>
 y_{r} = c_{r~r+1}y_{r+1} + \dots + c_{rn}y_{n}<br/>
 \end{cases} ~~~~~()$$<br/>
 Для $i = \overline{r+1, n}$ придадим свободной переменной $y_{i}$ значение $1$, а всем остальным неизвестным - $0$. Вычислив по $(*)$ значения связанных переменных, получим $n-r$ решений:<br/>
 $$\mathbf{y}{1} := \begin{pmatrix}<br/>
-c{1~r+1} \<br/>
-\vdots \<br/>
-c_{r~r+1} \<br/>
-1 \<br/>
-\vdots \<br/>
+c{1~r+1} \\<br/>
+\vdots \\<br/>
+c_{r~r+1} \\<br/>
+1 \\<br/>
+\vdots \\<br/>
 0<br/>
 \end{pmatrix}, \dots,~ \mathbf{y}{n-r} := \begin{pmatrix}<br/>
-c{1n} \<br/>
-\vdots \<br/>
-c_{rn} \<br/>
-0 \<br/>
-\vdots \<br/>
+c{1n} \\<br/>
+\vdots \\<br/>
+c_{rn} \\<br/>
+0 \\<br/>
+\vdots \\<br/>
 1<br/>
 \end{pmatrix}$$<br/>
 Утверждается, что эти решения образуют фундаментальную систему решений для системы $(\dagger)$.<br/>
@@ -276,13 +276,13 @@ c_{rn} \<br/>
 $$~~~~~~~\mathbf{y}{1}~~~~~~~~ \mathbf{y}{2}~~~~~ \dots~~~~~ \mathbf{y}{n-r}<br/>
 \atop<br/>
 \begin{pmatrix}<br/>
-c{1~r+1} &amp; c_{1~r+2} &amp; \dots &amp; c_{1n} \<br/>
-c_{2~r+1} &amp; c_{2~r+2} &amp; \dots &amp; c_{2n} \<br/>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
-c_{r~r+1} &amp; c_{r~r+2} &amp; \dots &amp; c_{rn} \<br/>
-1 &amp; 0 &amp; \dots &amp; 0 \<br/>
-0 &amp; 1 &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
+c{1~r+1} &amp; c_{1~r+2} &amp; \dots &amp; c_{1n} \\<br/>
+c_{2~r+1} &amp; c_{2~r+2} &amp; \dots &amp; c_{2n} \\<br/>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
+c_{r~r+1} &amp; c_{r~r+2} &amp; \dots &amp; c_{rn} \\<br/>
+1 &amp; 0 &amp; \dots &amp; 0 \\<br/>
+0 &amp; 1 &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 0 &amp; 0 &amp; \dots &amp; 1<br/>
 \end{pmatrix}$$<br/>
 Переход к исходным неизвестным $x_{1}, \dots, x_{n}$ означает перестановку строк данной матрицы. При этом столбцы останутся линейно независимыми и потому образуют фундаментальную систему решений для исходной системы.<br/>

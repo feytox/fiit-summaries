@@ -183,21 +183,21 @@ $$Q_{m}=(x - x_{1})^{k_{1}}\dots(x - x_{s})^{k_{s}}(x^{2} + b_{1}x + c_{1})^{j_{
 3) $\int \dfrac{x + B}{x^{2} + bx + c}$<br/>
 4) $\int \dfrac{x + B}{(x^{2} + bx + c)^{n}}$ </p>
 <p>Выразим 4-й интеграл:<br/>
-$$\int \dfrac{x + B}{(x^{2} + bx + c)^{n}} \, dx = \int \dfrac{x + \dfrac{b}{2} - \dfrac{b}{2} + B}{\left(\left(x + \dfrac{b}{2}\right)^{2} - \left(\dfrac{b}{2}\right)^{2} + c \right)^{n}} \, dx = \left[\begin{gathered} E = B - \dfrac{b}{2} \ Ъ = \sqrt{c - \left( \dfrac{b}{2} \right)^{2}} \end{gathered} \right] = $$По <a href="Линейность неопределенных интегралов.html">линейности неопределенных интегралов</a>:<br/>
+$$\int \dfrac{x + B}{(x^{2} + bx + c)^{n}} \, dx = \int \dfrac{x + \dfrac{b}{2} - \dfrac{b}{2} + B}{\left(\left(x + \dfrac{b}{2}\right)^{2} - \left(\dfrac{b}{2}\right)^{2} + c \right)^{n}} \, dx = \left[\begin{gathered} E = B - \dfrac{b}{2} \\ Ъ = \sqrt{c - \left( \dfrac{b}{2} \right)^{2}} \end{gathered} \right] = $$По <a href="Линейность неопределенных интегралов.html">линейности неопределенных интегралов</a>:<br/>
 $$= \int \dfrac{x+\dfrac{b}{2}}{\left(\left(x+\dfrac{b}{2}\right)^{2}+Ъ^{2}\right)^n} \, dx + \int \dfrac{E}{\left(\left(x+\dfrac{b}{2}\right)^{2}+Ъ^{2}\right)^n} \, dx = A + EI_{n}$$<br/>
 Сделаем <span>замену переменной</span> в $A$ и в $I_{n}$:<br/>
-$$A = \left[ \begin{gathered} t = \left(x + \dfrac{b}{2} \right)^{2} \ dt = 2\left(x+\dfrac{b}{2} \right)dx \end{gathered} \right] = \dfrac{1}{2} \int \dfrac{dt}{(t+Ъ^{2})^{n}} = \dfrac{1}{2} \dfrac{(t + Ъ ^ {2})^{-n+1}}{1-n} + C$$<br/>
-$$I_{n} = \left[ \begin{gathered} t = x + \dfrac{b}{2} \ dt = dx \ \end{gathered} \right] = \int \dfrac{dt}{(t^{2} + Ъ^{2})^{n}} $$<br/>
+$$A = \left[ \begin{gathered} t = \left(x + \dfrac{b}{2} \right)^{2} \\ dt = 2\left(x+\dfrac{b}{2} \right)dx \end{gathered} \right] = \dfrac{1}{2} \int \dfrac{dt}{(t+Ъ^{2})^{n}} = \dfrac{1}{2} \dfrac{(t + Ъ ^ {2})^{-n+1}}{1-n} + C$$<br/>
+$$I_{n} = \left[ \begin{gathered} t = x + \dfrac{b}{2} \\ dt = dx \\ \end{gathered} \right] = \int \dfrac{dt}{(t^{2} + Ъ^{2})^{n}} $$<br/>
 Тогда при $n = 1$:<br/>
 $$I_{1} = \int \dfrac{dt}{t^2 + Ъ^{2}} = \dfrac{1}{Ъ} \mathrm{arctg} \dfrac{t}{Ъ} + C$$<br/>
 <span>Интегрируем по частям</span> $I_{n}$: <br/>
 $$\begin{bmatrix}<br/>
-u = \dfrac{1}{(t^2 + Ъ^{2})^n} &amp; dv = dt \<br/>
+u = \dfrac{1}{(t^2 + Ъ^{2})^n} &amp; dv = dt \\<br/>
 du = \dfrac{-2nt}{(t^{2} + Ъ^{2})^{n + 1}} \, dt &amp; v = t<br/>
 \end{bmatrix}$$<br/>
 $$\begin{align}<br/>
-I_{n} &amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + \int \dfrac{2n t^{2}}{(t^2 + Ъ{^2})^{n + 1}} \, dt = \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \int \dfrac{t^{2} + Ъ^{2} - Ъ^{2}}{(t^2 + Ъ{^2})^{n + 1}} \, dt = \ \<br/>
-&amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \int \dfrac{t^{2} + Ъ^{2}}{(t^{2} + Ъ^{2})^{n+1}} \, dt - 2nЪ^{2} \int \dfrac{dt}{(t^{2} + Ъ^{2})^{n+1}} = \<br/>
+I_{n} &amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + \int \dfrac{2n t^{2}}{(t^2 + Ъ{^2})^{n + 1}} \, dt = \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \int \dfrac{t^{2} + Ъ^{2} - Ъ^{2}}{(t^2 + Ъ{^2})^{n + 1}} \, dt = \\ \\<br/>
+&amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \int \dfrac{t^{2} + Ъ^{2}}{(t^{2} + Ъ^{2})^{n+1}} \, dt - 2nЪ^{2} \int \dfrac{dt}{(t^{2} + Ъ^{2})^{n+1}} = \\<br/>
 &amp;= \dfrac{t}{(t^{2}+Ъ^{2})^{n}} + 2n \cdot I_{n} - 2nЪ^{2} \cdot I_{n+1}<br/>
 \end{align}$$<br/>
 А значит можем выразить интеграл следующей степени через предыдущий:<br/>

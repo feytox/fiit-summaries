@@ -202,9 +202,9 @@ $$\vec{a} \times (\vec{b} + \vec{c}) = -(\vec{b} + \vec{c}) \times \vec{a} = -(\
 <p>В произвольном базисе $(\vec{e_{1}}, \vec{e_{2}}, \vec{e_{3}})$:<br/>
 $$<br/>
 \begin{matrix}<br/>
-\vec{x} \times \vec{y} = (x_{1}\vec{e_{1}} + x_{2}\vec{e_{2}} + x_{3}\vec{e_{3}}) \times (y_{1}\vec{e_{1}} + y_{2}\vec{e_{2}} + y_{3}\vec{e_{3}}) =  \<br/>
-= (x_{1}y_{1}) \cdot \vec{e_{1}} \times \vec{e_{1}} + (x_{1}y_{2}) \cdot \vec{e_{1}} \times \vec{e_{2}} + (x_{1}y_{3}) \cdot \vec{e_{1}} \times \vec{e_{3}} + \<br/>
-+ (x_{2}y_{1}) \cdot \vec{e_{2}} \times \vec{e_{1}} + (x_{2}y_{2}) \cdot \vec{e_{2}} \times \vec{e_{2}} + (x_{2}y_{3}) \cdot \vec{e_{2}} \times \vec{e_{3}} + \<br/>
+\vec{x} \times \vec{y} = (x_{1}\vec{e_{1}} + x_{2}\vec{e_{2}} + x_{3}\vec{e_{3}}) \times (y_{1}\vec{e_{1}} + y_{2}\vec{e_{2}} + y_{3}\vec{e_{3}}) =  \\<br/>
+= (x_{1}y_{1}) \cdot \vec{e_{1}} \times \vec{e_{1}} + (x_{1}y_{2}) \cdot \vec{e_{1}} \times \vec{e_{2}} + (x_{1}y_{3}) \cdot \vec{e_{1}} \times \vec{e_{3}} + \\<br/>
++ (x_{2}y_{1}) \cdot \vec{e_{2}} \times \vec{e_{1}} + (x_{2}y_{2}) \cdot \vec{e_{2}} \times \vec{e_{2}} + (x_{2}y_{3}) \cdot \vec{e_{2}} \times \vec{e_{3}} + \\<br/>
 + (x_{3}y_{1}) \cdot \vec{e_{3}} \times \vec{e_{1}} + (x_{3}y_{2}) \cdot \vec{e_{3}} \times \vec{e_{2}} + (x_{3}y_{3}) \cdot \vec{e_{3}} \times \vec{e_{3}}<br/>
 \end{matrix}<br/>
 $$<br/>
@@ -212,32 +212,32 @@ $$<br/>
 $$\vec{x} \times \vec{y} = (x_{1}y_{2} - x_{2}y_{1}) \cdot \vec{e_{1}} \times \vec{e_{2}} + (x_{1}y_{3} - x_{3}y_{1}) \cdot \vec{e_{1}} \times \vec{e_{3}} + (x_{2}y_{3} - x_{3}y_{2}) \cdot \vec{e_{2}} \times \vec{e_{3}}$$<br/>
 Запись в виде псевдо-определителя:<br/>
 $$\vec{x} \times \vec{y} = \begin{vmatrix}<br/>
-\vec{e}{2} \times \vec{e}{3} &amp; -\vec{e}{1}\times \vec{e}{3} &amp; \vec{e}{1} \times \vec{e}{2} \<br/>
-x_{1} &amp; x_{2} &amp; x_{3} \<br/>
+\vec{e}{2} \times \vec{e}{3} &amp; -\vec{e}{1}\times \vec{e}{3} &amp; \vec{e}{1} \times \vec{e}{2} \\<br/>
+x_{1} &amp; x_{2} &amp; x_{3} \\<br/>
 y_{1} &amp; y_{2} &amp; y_{3}<br/>
 \end{vmatrix}$$</p>
 <p>В правом ортонормированном базисе:<br/>
 $$\vec{x} \times \vec{y} = \begin{vmatrix}<br/>
-\vec{e_{1}} &amp; \vec{e_{2}} &amp; \vec{e_{3}} \<br/>
-x_{1} &amp; x_{2} &amp; x_{3} \<br/>
+\vec{e_{1}} &amp; \vec{e_{2}} &amp; \vec{e_{3}} \\<br/>
+x_{1} &amp; x_{2} &amp; x_{3} \\<br/>
 y_{1} &amp; y_{2} &amp; y_{3}<br/>
 \end{vmatrix}$$</p>
 <h3>Вычисление смешанного произведения</h3>
 <p><div class="spoiler-markdown"><p>
 В произвольном базисе $(\vec{b_{1}}, \vec{b_{2}}, \vec{b_{3}})$:
 $$\begin{matrix}
-\vec{x}\vec{y}\vec{z} = (x_{1}\vec{b_{1}} + x_{2}\vec{b_{2}} + x_{3}\vec{b_{3}})(y_{1}\vec{b_{1}} + y_{2}\vec{b_{2}} + y_{3}\vec{b_{3}})(z_{1}\vec{b_{1}} + z_{2}\vec{b_{2}} + z_{3}\vec{b_{3}}) = \\
+\vec{x}\vec{y}\vec{z} = (x_{1}\vec{b_{1}} + x_{2}\vec{b_{2}} + x_{3}\vec{b_{3}})(y_{1}\vec{b_{1}} + y_{2}\vec{b_{2}} + y_{3}\vec{b_{3}})(z_{1}\vec{b_{1}} + z_{2}\vec{b_{2}} + z_{3}\vec{b_{3}}) = \\\\
 = (x_{1}y_{2}z_{3} + x_{2}y_{3}z_{1} + x_{3}y_{1}z_{2} - x_{1}y_{3}z_{2} - x_{2}y_{1}z_{3} - x_{3}y_{2}z_{1}) \cdot \vec{b_{1}}\vec{b_{2}}\vec{b_{3}}
 \end{matrix}$$
 $$\vec{x}\vec{y}\vec{z} = \begin{vmatrix}
-x_{1} &amp; x_{2} &amp; x_{3} \\
-y_{1} &amp; y_{2} &amp; y_{3} \\
+x_{1} &amp; x_{2} &amp; x_{3} \\\\
+y_{1} &amp; y_{2} &amp; y_{3} \\\\
 z_{1} &amp; z_{2} &amp; z_{3}
 \end{vmatrix} \cdot \vec{b_{1}}\vec{b_{2}}\vec{b_{3}}$$
 В правом ортонормированном базисе:
 $$\vec{x}\vec{y}\vec{z} = \begin{vmatrix}
-x_{1} &amp; x_{2} &amp; x_{3} \\
-y_{1} &amp; y_{2} &amp; y_{3} \\
+x_{1} &amp; x_{2} &amp; x_{3} \\\\
+y_{1} &amp; y_{2} &amp; y_{3} \\\\
 z_{1} &amp; z_{2} &amp; z_{3}
 \end{vmatrix}$$</p></div></p>
 <h3>* Свойства смешанного произведения</h3>

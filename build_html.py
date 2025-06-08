@@ -134,7 +134,8 @@ class App:
             template_html = f.read()
         with open(source_path, encoding="utf-8") as f:
             md_text = f.read()
-
+        
+        md_text = md_text.replace(r"\\", r"\\\\")
         markdown_html = markdown.markdown(md_text, extensions=['nl2br'])
         markdown_html = (markdown_html
                          .replace("<em>", "")

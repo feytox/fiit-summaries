@@ -199,7 +199,7 @@ $$(f + g)' = \sum_{k=1}^{\max(n,m)} k(\alpha_k + \beta_k) x^{k-1} = \sum_{k=1}^n
 <p><strong>3) $(fg)' = f'g + fg'$</strong><br/>
 Достаточно доказать для $f(x) = x^n$, $g(x) = x^m$ (в силу линейности 1 и 2):<br/>
 $$\begin{aligned} <br/>
-(fg)' &amp;= (x^{n+m})' = (n+m)x^{n+m-1} \ <br/>
+(fg)' &amp;= (x^{n+m})' = (n+m)x^{n+m-1} \\ <br/>
 f'g + fg' &amp;= (nx^{n-1})x^m + x^n (mx^{m-1}) = nx^{n+m-1} + mx^{n+m-1} = (n+m)x^{n+m-1} <br/>
 \end{aligned}$$  </p>
 <p><strong>4) $(f^m)' = mf^{m-1}f'$</strong><br/>
@@ -209,7 +209,7 @@ $(f^1)' = f' = 1 \cdot f^0 \cdot f'$<br/>
 - <strong>Переход ($m \to m+1$):</strong><br/>
 Используем свойство 3:<br/>
 $$\begin{aligned} <br/>
-(f^{m+1})' &amp;= (f \cdot f^m)' = f' \cdot f^m + f \cdot (f^m)' \ <br/>
+(f^{m+1})' &amp;= (f \cdot f^m)' = f' \cdot f^m + f \cdot (f^m)' \\ <br/>
 &amp;= f'f^m + f \cdot (mf^{m-1}f') = f'f^m + mf^m f' = (m+1)f^m f' <br/>
 \end{aligned}$$<br/>
 $\square$  </p>

@@ -173,7 +173,7 @@ $$d = \dfrac{|Ax' + By' + C|}{\sqrt{A^{2} + B^{2}}}$$</p></div></p>
 <div class="spoiler-markdown"><p><br/>
 Возьмём $M_{0}(x_{0}, y_{0}) \in l$:</p>
 <p>!<span>distance_plane.png</span></p>
-<p>Так как система прямоугольная декартова, $\vec{n} = \begin{pmatrix}A \ B\end{pmatrix}, \vec{n} \perp l$. Поэтому $d$ равно модулю проекции $\overrightarrow{M_{0}M}$ на ось вектора $\vec{n}$, отсюда:<br/>
+<p>Так как система прямоугольная декартова, $\vec{n} = \begin{pmatrix}A \\ B\end{pmatrix}, \vec{n} \perp l$. Поэтому $d$ равно модулю проекции $\overrightarrow{M_{0}M}$ на ось вектора $\vec{n}$, отсюда:<br/>
 $$d = |\text{пр}{\vec{n}}\overrightarrow{M{0}M}| = \left|\dfrac{\vec{n}\overrightarrow{M_{0}M}}{|\vec{n}|}\right| = \dfrac{|A(x'-x_{0}) + B(y' - y_{0})|}{\sqrt{A^{2}+B^{2}}}$$<br/>
 Так как $M_{0} \in l \Rightarrow Ax_{0} + By_{0} + C = 0$:<br/>
 $$d = \dfrac{|Ax' + By' + C|}{\sqrt{A^{2} + B^{2}}} ~~~~~\square$$<br/>
@@ -182,12 +182,12 @@ $$d = \dfrac{|Ax' + By' + C|}{\sqrt{A^{2} + B^{2}}} ~~~~~\square$$<br/>
 <p><div class="spoiler-markdown"><p>
 Пусть $M(x_{1}, y_{1}, z_{1})$ - произвольная точка пространства и:
 $$l: \begin{cases}
-x = x_{0} + qt \\
-y = y_{0} + rt \\
+x = x_{0} + qt \\\\
+y = y_{0} + rt \\\\
 z = z_{0} + st
 \end{cases}~~~~~~~ M_{0}(x_{0}, y_{0}, z_{0}) \in l,~~~ \vec{a} := \begin{pmatrix}
-q \\
-r \\
+q \\\\
+r \\\\
 s
 \end{pmatrix}, ~~~ \vec{c}:=\overrightarrow{M_{0}M}$$
 Тогда расстояние от $M$ до $l$ равно:

@@ -181,7 +181,7 @@ $$\det A = \sum_{\sigma \in S_{n}} (-1)^{\sigma} \prod_{i=1}^{n} a_{i,\sigma(i)}
 4. При перестановке 2 строк меняется знак определителя
 5. Если две строки $A$ равны, то $\det A = 0$
 6. Определитель не меняется, если прибавить к одной строке другую, умноженную на $\lambda$
-7. $\begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ b_{i} + c_{i} \\ \dots \end{vmatrix} = \begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ b_{i} \\ \dots \end{vmatrix} + \begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ c_{i} \\ \dots \end{vmatrix}$
+7. $\begin{vmatrix}a_{1} \\\\ a_{2} \\\\ \dots \\\\ b_{i} + c_{i} \\\\ \dots \end{vmatrix} = \begin{vmatrix}a_{1} \\\\ a_{2} \\\\ \dots \\\\ b_{i} \\\\ \dots \end{vmatrix} + \begin{vmatrix}a_{1} \\\\ a_{2} \\\\ \dots \\\\ c_{i} \\\\ \dots \end{vmatrix}$
 8. Если в $A$ есть пропорциональные строки, то $\det A = 0$ (свойства 2 + 6)
 9. Если $A$ - верхне-треугольная, то $\det A = \prod\limits_{i = 1}^{n} a_{ii}$</p></div></p>
 <h2>1. Транспонирование</h2>
@@ -193,11 +193,11 @@ $$\det A = \det A^\top$$</p></div></p>
 $B = A^\top$, тогда $b_{i j} = a_{j i}$
 $$
 \begin{aligned}
-\det A &amp;= \sum_{\sigma \in S_n} (-1)^\sigma \prod_{i=1}^n a_{i,\sigma(i)} \\
+\det A &amp;= \sum_{\sigma \in S_n} (-1)^\sigma \prod_{i=1}^n a_{i,\sigma(i)} \\\\
 &amp;= \sum_{\sigma \in S_n} (-1)^\sigma \prod_{i=1}^n a_{\sigma^{-1}(i),i} 
-\quad \text{(замена } j = \sigma(i)) \\
-&amp;= \sum_{\sigma \in S_n} (-1)^{\sigma ^{-1}} \prod_{i=1}^n a_{\sigma^{-1}(i),i} \\
-&amp;= \sum_{\sigma \in S_n} (-1)^{^{\tau}} \prod_{i=1}^n b_{i,\tau(i)} \\
+\quad \text{(замена } j = \sigma(i)) \\\\
+&amp;= \sum_{\sigma \in S_n} (-1)^{\sigma ^{-1}} \prod_{i=1}^n a_{\sigma^{-1}(i),i} \\\\
+&amp;= \sum_{\sigma \in S_n} (-1)^{^{\tau}} \prod_{i=1}^n b_{i,\tau(i)} \\\\
 &amp;= \det A^\top
 \end{aligned}
 $$
@@ -208,12 +208,12 @@ $\square$</p></div></p>
 Умножение всех элементов строки или столбца на $\alpha$ равносильно умножению определителя на $\alpha$:</p>
 <p>$$<br/>
 \begin{vmatrix}<br/>
-\alpha a_{11} &amp; \cdots &amp; \alpha a_{1n} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
+\alpha a_{11} &amp; \cdots &amp; \alpha a_{1n} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
 a_{n1} &amp; \cdots &amp; a_{nn}<br/>
 \end{vmatrix} = \alpha \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
+a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
 a_{n1} &amp; \cdots &amp; a_{nn}<br/>
 \end{vmatrix}<br/>
 $$<br/>
@@ -257,27 +257,27 @@ $\square$</p></div></p>
 <p>Тогда:<br/>
 $$<br/>
 \det A' = \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
-a_{i1} + \lambda a_{k1} &amp; \cdots &amp; a_{in} + \lambda a_{kn} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
+a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
+a_{i1} + \lambda a_{k1} &amp; \cdots &amp; a_{in} + \lambda a_{kn} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
 a_{n1} &amp; \cdots &amp; a_{nn}<br/>
 \end{vmatrix}<br/>
 $$</p>
 <p>По линейности определителя по строке (свойство 7):<br/>
 $$<br/>
 \det A' = \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
-a_{i1} &amp; \cdots &amp; a_{in} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
+a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
+a_{i1} &amp; \cdots &amp; a_{in} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
 a_{n1} &amp; \cdots &amp; a_{nn}<br/>
 \end{vmatrix}<br/>
 + \lambda \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
-a_{k1} &amp; \cdots &amp; a_{kn} \<br/>
-\vdots &amp; \ddots &amp; \vdots \<br/>
+a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
+a_{k1} &amp; \cdots &amp; a_{kn} \\<br/>
+\vdots &amp; \ddots &amp; \vdots \\<br/>
 a_{n1} &amp; \cdots &amp; a_{nn}<br/>
 \end{vmatrix}<br/>
 $$</p>
@@ -299,8 +299,8 @@ $$
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
 $$\begin{align}
-\det A &amp;= \sum_{\sigma \in S_{n}} (-1)^{\sigma} \prod_{j=1}^{n} a_{j,\sigma(j)} \\
-&amp;= \sum_{\sigma \in S_{n}} (-1)^{\sigma} (b_{i,\sigma(i)} + c_{i,\sigma(i)}) \prod_{j=1, j\neq i}^{n} a_{j,\sigma(j)} \\
+\det A &amp;= \sum_{\sigma \in S_{n}} (-1)^{\sigma} \prod_{j=1}^{n} a_{j,\sigma(j)} \\\\
+&amp;= \sum_{\sigma \in S_{n}} (-1)^{\sigma} (b_{i,\sigma(i)} + c_{i,\sigma(i)}) \prod_{j=1, j\neq i}^{n} a_{j,\sigma(j)} \\\\
 &amp;= \det B + \det C
 \end{align}$$
 $\square$</p></div></p>
@@ -322,9 +322,9 @@ $\square$</p></div></p>
 <div class="spoiler-markdown"><p>
 По определению:
 $$\begin{align}
-\det A &amp;= \sum_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} \\
-&amp;= \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) \neq 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\
-&amp;= \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) = 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) \neq 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\
+\det A &amp;= \sum_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} \\\\
+&amp;= \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) = 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) \neq 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\\\
+&amp;= \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) = 1 \\\\ \sigma(2) = 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\\\ \sigma(1) = 1 \\\\ \sigma(2) \neq 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\\\
 &amp;= \dots = \prod_{i = 1}^{n} a_{ii}
 \end{align}$$
 $\square$</p></div></p></div>

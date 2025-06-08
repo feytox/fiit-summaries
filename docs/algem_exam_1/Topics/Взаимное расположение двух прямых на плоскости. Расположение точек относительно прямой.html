@@ -177,7 +177,7 @@
 $\large{\impliedby}$<br/>
 Рассмотрим систему линейных уравнений:<br/>
 $$\begin{cases}<br/>
-A_{1}x + B_{1}y = -C_{1} \<br/>
+A_{1}x + B_{1}y = -C_{1} \\<br/>
 A_{2}x + B_{2}y = -C_{2}<br/>
 \end{cases} ~~~~~~~~ (1)$$<br/>
 $l_{1}$ и $l_{2}$ пересекаются $\iff$ единственное решение,<br/>
@@ -185,14 +185,14 @@ $l_{1}$ и $l_{2}$ параллельны $\iff$ система не имеет 
 $l_{1}$ и $l_{2}$ совпадают $\iff$ бесконечно много решений.</p>
 <p>Случай 1: <br/>
 $$\dfrac{A_{1}}{A_{2}} \neq \dfrac{B_{1}}{B_{2}} \iff \begin{vmatrix}<br/>
-A_{1} &amp; B_{1} \<br/>
+A_{1} &amp; B_{1} \\<br/>
 A_{2} &amp; B_{2}<br/>
 \end{vmatrix} \neq 0$$<br/>
 Тогда по теореме Крамера система (1) имеет единственное решение, т.е. прямые пересекаются.</p>
 <p>Случай 2: $\dfrac{A_{1}}{A_{2}} = \dfrac{B_{1}}{B_{2}} \neq \dfrac{C_{1}}{C_{2}}$<br/>
 Убедимся, что прямые параллельны. Положим $\dfrac{A_{1}}{A_{2}} = \dfrac{B_{1}}{B_{2}} = t \Rightarrow A_{1} = tA_{2}, B_{1} = tB_{2}$. Предположим, что система (1) имеет решение $(x_{0}, y_{0})$, т.е.:<br/>
 $$\begin{cases}<br/>
-tA_{2}x_{0} + tB_{2}y_{0} + C_{1} = 0 \<br/>
+tA_{2}x_{0} + tB_{2}y_{0} + C_{1} = 0 \\<br/>
 A_{2}x_{0} + B_{2}y_{0} + C_{2} = 0<br/>
 \end{cases}$$<br/>
 Умножим второе равенство на $-t$ и сложим с первым. Получим $C_{1} - C_{2}t = 0 \Rightarrow \dfrac{C_{1}}{C_{2}} = t$, что противоречит $\dfrac{B_{1}}{B_{2}} \neq \dfrac{C_{1}}{C_{2}}$</p>
@@ -206,22 +206,22 @@ A_{2}x_{0} + B_{2}y_{0} + C_{2} = 0<br/>
 <div class="spoiler-markdown"><p>
 Пусть $M(x', y')$ - точка плоскости, $\lambda$ и $\mu$ - полуплоскости. Тогда:
 $$\begin{align}
-M \in \lambda &amp;\iff Ax' + By' + C &gt; 0 \\
+M \in \lambda &amp;\iff Ax' + By' + C &gt; 0 \\\\
 M \in \mu &amp;\iff Ax' + By' + C &lt; 0
 \end{align}$$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
 Пусть $M \in \lambda$. Через точку $M$ проведём прямую, коллинеарную главному вектору $\vec{n}$. Так как $\vec{n} \nparallel l$, эта прямая пересечёт $l$. Обозначим точку пересечения через $N(x'', y'')$. Очевидно $Ax'' + By'' + C = 0$. $\overrightarrow{NM} \uparrow\uparrow \vec{n} \Rightarrow \overrightarrow{NM} = t \vec{n}, t&gt;0$. Запишем в координатах:
 $$\begin{cases}
-x' - x'' = tA \\
+x' - x'' = tA \\\\
 y' - y'' = tB
 \end{cases} \iff \begin{cases}
-x' = x'' + tA \\
+x' = x'' + tA \\\\
 y' = y'' + tB
 \end{cases}$$
 А значит:
 $$\begin{gather}
-Ax' + By' + C = A(x'' + tA) + B(y'' + tB) + C = \\
+Ax' + By' + C = A(x'' + tA) + B(y'' + tB) + C = \\\\
 = Ax'' + By'' + C + t(A^{2} + B^{2}) = t(A^{2} + B^{2}) &gt; 0
 \end{gather}$$
 Второе утверждение доказывается аналогично, только $t &lt; 0$

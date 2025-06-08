@@ -169,7 +169,7 @@
 <p><div class="spoiler-markdown"><p><br/>
 Матрица $A$ называется <strong>блочно-диагональной</strong> или <strong>(верхней) полураспавшейся</strong>, если она имеет вид:<br/>
 $$A = \begin{pmatrix}<br/>
-B &amp; C \<br/>
+B &amp; C \\<br/>
 0 &amp; D<br/>
 \end{pmatrix}$$<br/>
 где $B$ - $k\times k$-матрица, $D$ - $(n-k)\times(n-k)$-матрица.</p>
@@ -179,9 +179,9 @@ B &amp; C \<br/>
 <p><div class="spoiler-markdown"><p><br/>
 Матрица $A$ называется (верхней) <strong>квазитреугольной</strong>, если она имеет вид:<br/>
 $$A = \begin{pmatrix}<br/>
-B &amp; C &amp; \dots &amp; Z_{1} \<br/>
-0 &amp; D &amp; \dots &amp; Z_{2} \<br/>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
+B &amp; C &amp; \dots &amp; Z_{1} \\<br/>
+0 &amp; D &amp; \dots &amp; Z_{2} \\<br/>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 0 &amp; 0 &amp; \dots &amp; Z_{n}<br/>
 \end{pmatrix}$$<br/>
 где в клетках стоят матрицы.</p>
@@ -192,7 +192,7 @@ B &amp; C &amp; \dots &amp; Z_{1} \<br/>
 <div class="spoiler-markdown"><p>
 Пусть матрица $A$ является полураспавшейся, то есть имеет вид:
 $$A = \begin{pmatrix}
-B &amp; C \\
+B &amp; C \\\\
 0 &amp; D
 \end{pmatrix}$$
 Тогда:
@@ -210,10 +210,10 @@ $\square$<br/>
 <div class="spoiler-markdown"><p>
 Пусть матрица $A$ является квазидиагональной, то есть имеет вид:
 $$A = \begin{pmatrix}
-B_{1} &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
-0 &amp; B_{2} &amp; 0 &amp; \dots &amp; 0 \\
-0 &amp; 0 &amp; B_{3} &amp; \dots &amp; 0 \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+B_{1} &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\\\
+0 &amp; B_{2} &amp; 0 &amp; \dots &amp; 0 \\\\
+0 &amp; 0 &amp; B_{3} &amp; \dots &amp; 0 \\\\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\\
 0 &amp; 0 &amp; 0 &amp; \dots &amp; B_{n}
 \end{pmatrix}$$
 Тогда:
@@ -227,14 +227,14 @@ $$\det A = \prod_{k=1}^{n} \det B_{k}$$</p></div></p>
 Предположим, что утверждение верно для $n-1$ блоков, где $n-1 \ge 1$. То есть, для квазидиагональной матрицы $A'$ с $n-1$ блоками $B'1, \dots, B'{n-1}$, выполнено $\det A' = \prod\limits_{k=1}^{n-1} \det B'{k}$.<br/>
 Рассмотрим квазидиагональную матрицу $A$ с $n$ блоками $B_1, \dots, B_n$:<br/>
 $$A = \begin{pmatrix}<br/>
-B{1} &amp; 0 &amp; \dots &amp; 0 \<br/>
-0 &amp; B_{2} &amp; \dots &amp; 0 \<br/>
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br/>
+B{1} &amp; 0 &amp; \dots &amp; 0 \\<br/>
+0 &amp; B_{2} &amp; \dots &amp; 0 \\<br/>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 0 &amp; 0 &amp; \dots &amp; B_{n}<br/>
 \end{pmatrix}$$<br/>
 Представим $A$ в виде блочной $2 \times 2$ матрицы:<br/>
 $$A = \begin{pmatrix}<br/>
-B_1 &amp; \mathbf{0} \<br/>
+B_1 &amp; \mathbf{0} \\<br/>
 \mathbf{0} &amp; \widetilde{B}<br/>
 \end{pmatrix}$$<br/>
 где $\mathbf{0}$ - нулевые блоки, $\widetilde{B}$ - квазидиагональная матрица из блоков $B_{2}, B_{3}, \dots, B_{n}$.</p>
