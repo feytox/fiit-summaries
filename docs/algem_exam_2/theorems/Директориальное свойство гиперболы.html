@@ -165,21 +165,27 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Директориальное свойство гиперболы</h1><p>Формулировка:<br/>
+<div class="content"><h1>Директориальное свойство гиперболы</h1><h2>Теорема: Директориальное свойство гиперболы</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Точка $M$ лежит на гиперболе $\Leftrightarrow$ отношение расстояния от точки до директрисы равно эксцентриситету.</p></div></p>
+Точка $M$ лежит на гиперболе $\iff$ отношение расстояния от $M$ до фокуса к расстоянию до соответствующей директрисы равно эксцентриситету $e$.
+$$\dfrac{|FM|}{d(M, \text{директриса})} = e$$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-$\Rightarrow$ <br/>
-$$\dfrac{MF_{1}}{|x - \dfrac{a}{e}|} = \dfrac{\sqrt{(x-c)^{2} + y^{2}}}{|x - \dfrac{a}{e}|} = \dfrac{\sqrt{x^{2} - 2cx + c^{2} + b^{2}\left( \dfrac{x^{2}}{a^{2}} - 1 \right)}}{|x - \dfrac{a}{e}|} =$$<br/>
-$$= \dfrac{\sqrt{\dfrac{x^{2}(a^{2}+b^{2})}{a^{2}} - 2aex + c^{2} - b^{2}}}{|x - \dfrac{a}{e}|} = \dfrac{\sqrt{x^{2}e^{2} - 2aex + a^{2}}}{|x - \dfrac{a}{e}|} =  \dfrac{e|x - \dfrac{a}{e}|}{|x - \dfrac{a}{e}|} = e$$</p>
-<p>$\Leftarrow$ <br/>
-$e = \dfrac{MF_{1}}{l(M, d)},$ $M(x,y)$, $d$ - директриса.<br/>
-$$\sqrt{(x - c)^{2} + y^{2}} = e \left( x - \dfrac{a}{e} \right) | \uparrow 2$$<br/>
-$$x^{2} - 2cx + c^{2} + y^{2} = a^{2} - 2aex + e^{2}x^{2}$$<br/>
-$$(e^{2} - 1 )x^{2} - y^{2} = b^{2}$$<br/>
-$$(\dfrac{c^{2} - a^{2}}{a^{2}})x^{2} - y^{2} = b^{2} |\mathpunct{:}~b^{2}$$<br/>
-$$\dfrac{x^{2}}{a^{2}} - \dfrac{y^{2}}{b^{2}} = 1$$<br/>
+$\Large\implies$<br/>
+Пусть $M(x,y)$ на гиперболе. Для фокуса $F_2(c,0)$ и директрисы $x = \dfrac{a}{e}$:<br/>
+$$MF_2 = \sqrt{(x - c)^2 + y^2} = |e x - a| \quad$$<br/>
+Расстояние до директрисы: $d_1 = \left|x - \dfrac{a}{e}\right|$. Тогда:<br/>
+$$\dfrac{MF_2}{d_1} = \dfrac{|e x - a|}{\left|x - \dfrac{a}{e}\right|} = e$$</p>
+<p>$\Large\impliedby$<br/>
+Пусть $\dfrac{MF_2}{d_1} = e$ ($F_2(c,0)$, директриса $x = \dfrac{a}{e}$). Для ${} x &gt; \dfrac{a}{e} {}$:<br/>
+$$ \sqrt{(x - c)^2 + y^2} = e\left(x - \dfrac{a}{e}\right) $$<br/>
+Возведём в квадрат:<br/>
+$$ (x - c)^2 + y^2 = e^2 \left(x - \dfrac{a}{e}\right)^2 $$<br/>
+Подставим $c = ae$ и упростим:<br/>
+$$ x^2 (1 - e^2) + y^2 = a^2 (1 - e^2) $$<br/>
+Используя $b^2 = a^2(e^2 - 1) = -a^2(1 - e^2)$:<br/>
+$$ \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1 $$<br/>
 $\square$<br/>
 </p></div></p></div>
 </body>
