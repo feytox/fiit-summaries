@@ -165,12 +165,11 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Эллипс</h1><p><strong>Определение:</strong><br/>
+<div class="content"><h1>Эллипс</h1><h2>Определение: Эллипс</h2>
+<p><strong>Определение:</strong><br/>
 <div class="spoiler-markdown"><p><br/>
-ℰ называется <strong>эллипсом</strong>, если ∃ декартова система координат, в которой его уравнение имеет вид:  </p>
-<p>$$<br/>
-\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \quad (a \geq b &gt; 0)<br/>
-$$  </p>
+Кривая называется эллипсом, если в подходящей системе координат её уравнение имеет вид:</p>
+<p>$$  \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \quad (a \geq b &gt; 0)  $$  </p>
 <p><strong>Границы:</strong><br/>
 - По оси $x$: $|x| \leq a$<br/>
 - По оси $y$: $|y| \leq b$  </p>
@@ -192,120 +191,83 @@ $$</p></div></p>
 <p><strong>Эксцентриситет:</strong> <br/>
 <div class="spoiler-markdown"><p>
 $$  
-e = \frac{c}{a} \quad (0 \leq e &lt; 1)  
+e = \dfrac{c}{a} \quad (0 \leq e &lt; 1)  
 $$</p></div></p>
 <p><strong>Директрисы:</strong><br/>
 <div class="spoiler-markdown"><p>
-Прямые, параллельные малой оси и отстоящие от центра на расстояние $\frac{a}{e}$:  
-$$  
-x = \pm \frac{a}{e}  
+Прямые, параллельные малой оси и отстоящие от центра на расстояние $\dfrac{a}{e}$:
+$$
+x = \pm \dfrac{a}{e}  
 $$</p></div></p>
-<h3>Лемма о фокальных расстояниях эллипса</h3>
+<h2>Лемма: Фокальные радиусы</h2>
 <p><strong>Формулировка:</strong><br/>
 <div class="spoiler-markdown"><p>
-Для произвольной точки $M(x, y)$, лежащей на эллипсе $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$, расстояния до фокусов выражаются формулами:
+Для произвольной точки $M(x, y)$, лежащей на эллипсе $\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$, расстояния до фокусов выражаются формулами:
 $$
-\boxed{
 \begin{aligned}
 MF_1 &amp;= a + e x \\\\
 MF_2 &amp;= a - e x
 \end{aligned}
-}
 $$
-где:
-- $F_1(-c, 0)$, $F_2(c, 0)$ - фокусы эллипса
-- $c = \sqrt{a^2 - b^2}$ - фокальное расстояние
-- $e = \frac{c}{a}$ - эксцентриситет ($0 \leq e &lt; 1$)</p></div></p>
+где $F_1(-c, 0)$, $F_2(c, 0)$ - фокусы</p></div></p>
 <p><strong>Д-во:</strong><br/>
 <div class="spoiler-markdown"><p><br/>
 Выразим $y^2$ из уравнения эллипса:<br/>
-   $$ y^2 = b^2\left(1 - \frac{x^2}{a^2}\right) $$</p>
+$$ y^2 = b^2\left(1 - \dfrac{x^2}{a^2}\right) $$</p>
 <p>Вычислим $MF_1$ через координаты:<br/>
-   $$<br/>
-   \begin{aligned}<br/>
+$$\begin{aligned}<br/>
    MF_1 &amp;= \sqrt{(x + c)^2 + y^2} =\\<br/>
-        &amp;= \sqrt{x^2 + 2c x + c^2 + b^2 - \frac{b^2 x^2}{a^2}} =\\<br/>
-        &amp;= \sqrt{\left(1 - \frac{b^2}{a^2}\right)x^2 + 2c x + (c^2 + b^2)} =<br/>
-   \end{aligned}<br/>
-   $$</p>
+        &amp;= \sqrt{x^2 + 2c x + c^2 + b^2 - \dfrac{b^2 x^2}{a^2}} =\\<br/>
+        &amp;= \sqrt{\left(1 - \dfrac{b^2}{a^2}\right)x^2 + 2c x + (c^2 + b^2)} =<br/>
+   \end{aligned}$$</p>
 <p>Подставим $c^2 = a^2 - b^2$:<br/>
-   $$<br/>
-   = \sqrt{\frac{c^2}{a^2}x^2 + 2c x + a^2} = \sqrt{(e x + a)^2} = a + e x<br/>
-   $$</p>
-<p>Аналогично доказывается для $MF_2$ (только минус появится перед с).<br/>
+$$= \sqrt{\dfrac{c^2}{a^2}x^2 + 2c x + a^2} = \sqrt{(e x + a)^2} = a + e x$$</p>
+<p>Аналогично доказывается для $MF_2$ (только минус появится перед $c$).<br/>
+$\square$<br/>
 </p></div></p>
-<h3>Критерий принадлежности точки к эллипсу</h3>
+<h2>Теорема: Фокальное свойство эллипса</h2>
 <p><strong>Формулировка:</strong><br/>
 <div class="spoiler-markdown"><p>
-Точка $M$ принадлежит эллипсу $\mathcal{E}$ с фокусами $F_1$, $F_2$ и большой полуосью $a$ **тогда и только тогда**, когда выполняется:
-$$
-\boxed{MF_1 + MF_2 = 2a}
-$$</p></div></p>
+Точка $M$ принадлежит эллипсу с фокусами $F_1$, $F_2$ и большой полуосью $a$ $\iff$ $MF_1 + MF_2 = 2a$</p></div></p>
 <p><strong>Д-во:</strong><br/>
+<div class="spoiler-markdown"><p><br/>
+$\Large\implies$<br/>
+Следует из леммы выше.</p>
+<p>$\Large\impliedby$<br/>
+Пусть для точки $M(x,y)$ выполняется $MF_1 + MF_2 = 2a$. Покажем, что $M$ лежит на эллипсе:<br/>
+Запишем условие через координаты:<br/>
+$$\sqrt{(x+c)^2+y^2} + \sqrt{(x-c)^2+y^2} = 2a$$<br/>
+Перенесём второй корень вправо и возведём в квадрат:<br/>
+$$(x+c)^2 + y^2 = 4a^2 - 4a\sqrt{(x-c)^2+y^2} + (x-c)^2 + y^2$$<br/>
+Сократим $y^{2}$, раскроем скобки, сократим $x^{2} + c^{2}$, поделим на $4$ и перенесём, получим:<br/>
+$$a\sqrt{(x-c)^2+y^2} = a^2 - cx$$<br/>
+Повторно возведём в квадрат:<br/>
+$$a^2x^2 - 2a^2cx + a^2c^2 + a^2y^2 = a^4 - 2a^2cx + c^2x^2$$<br/>
+Приводим к виду:<br/>
+$$(a^2-c^2)x^2 + a^2y^2 = a^2(a^2-c^2)$$<br/>
+Делим на $a^2(a^2-c^2) = a^2b^2$:<br/>
+$$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$<br/>
+А значит точка $M(x, y)$ лежит на эллипсе.<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Теорема: Площадь эллипса</h2>
+<p>Формула:<br/>
 <div class="spoiler-markdown"><p>
-$\Rightarrow$
-Следует из леммы выше
-$\Leftarrow$
-Пусть для точки $M$ выполняется $MF_1 + MF_2 = 2a$. Покажем, что $M \in \mathcal{E}$:
-Запишем условие через координаты:
-   $$
-   \sqrt{(x+c)^2+y^2} + \sqrt{(x-c)^2+y^2} = 2a
-   $$
-Перенесём второй корень вправо и возведём в квадрат:
-   $$
-   (x+c)^2 + y^2 = 4a^2 - 4a\sqrt{(x-c)^2+y^2} + (x-c)^2 + y^2
-   $$
-После упрощения (сократили $y^2$, раскрыли скобки, сократили $x^2 + c^2$, поделили на 4 и перенесли):
-   $$
-   a\sqrt{(x-c)^2+y^2} = a^2 - cx
-   $$
-Повторное возведение в квадрат даёт:
-   $$
-   a^2x^2 - 2a^2cx + a^2c^2 + a^2y^2 = a^4 - 2a^2cx + c^2x^2
-   $$
-Приводим к виду:
-   $$
-   (a^2-c^2)x^2 + a^2y^2 = a^2(a^2-c^2)
-   $$
-Делим на $a^2(a^2-c^2) = a^2b^2$:
-   $$
-   \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \quad \square
-   $$</p></div></p>
-<h3>Площадь эллипса</h3>
-<p><strong>Теорема:</strong><br/>
+$$S = \pi a b$$</p></div></p>
+<p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
-$$
-\boxed{S = \pi a b}
-$$</p></div><br/>
-<strong>Д-во:</strong><br/>
-<div class="spoiler-markdown"><p>
-   Из уравнения эллипса получаем две функции:
-   $$
-   y = \pm b\sqrt{1 - \frac{x^2}{a^2}} = \pm \frac{b}{a}\sqrt{a^2 - x^2}
-   $$
-**Вычислим площадь четверти эллипса:**
-   Рассмотрим первую четверть ($x \in [0,a]$, $y \geq 0$):
-   $$
-   S_{\frac{1}{4}} = \int_{0}^{a} \frac{b}{a}\sqrt{a^2 - x^2} \, dx
-   $$
-**Сделаем тригонометрическую замену:**
-   Положим $x = a\sin t$, тогда:
-   - $dx = a\cos t \, dt$
-   - Пределы: при $x=0$ → $t=0$; при $x=a$ → $t=\pi/2$
-   - Подынтегральное выражение: $\sqrt{a^2 - x^2} = a\cos t$
-**Преобразуем интеграл:**
-   $$
-   S_{\frac{1}{4}} = \frac{b}{a} \int_{0}^{\pi/2} a\cos t \cdot a\cos t \, dt = a b \int_{0}^{\pi/2} \cos^2 t \, dt
-   $$
-**Вычислим интеграл:**
-   Используем тождество $\cos^2 t = \frac{1 + \cos 2t}{2}$:
-   $$
-   S_{\frac{1}{4}} = a b \int_{0}^{\pi/2} \frac{1 + \cos 2t}{2} dt = \frac{a b}{2} \left[ t + \frac{\sin 2t}{2} \right]_0^{\pi/2} = \frac{a b}{2} \cdot \frac{\pi}{2} = \frac{\pi a b}{4}
-   $$
-**Найдем полную площадь:**
-   Умножаем на 4:
-   $$
-   S = 4 \cdot S_{\frac{1}{4}} = 4 \cdot \frac{\pi a b}{4} = \pi a b \quad \square
-   $$</p></div></p></div>
+Из уравнения эллипса получаем:
+$$y = \pm b \sqrt{1 - \dfrac{x^{2}}{a^{2}}} = \pm \dfrac{b}{a}\sqrt{a^{2} - x^{2}}$$
+По симметрии вычислим площадь четверти эллипса ($x \geq 0, y \geq 0$):
+$$ S_{\frac{1}{4}} = \int_0^a \dfrac{b}{a} \sqrt{a^2 - x^2} dx $$
+Сделаем замену:
+$$S_{\frac{1}{4}} = \begin{bmatrix}
+x = a\sin t &amp; 0 \to 0 \\\\
+dx = a\cos t \, dt &amp; a \to \dfrac{\pi}{2}
+\end{bmatrix} = \dfrac{b}{a} \int_0^{\pi/2} a \cos t \cdot a \cos t  dt = ab \int_0^{\pi/2} \cos^2 t  dt$$
+Воспользуемся формулой понижения степени $\cos^2 t = \dfrac{1 + \cos 2t}{2}$:
+$$ S_{\frac{1}{4}} = ab \int_0^{\pi/2} \frac{1}{2} (1 + \cos 2t) dt = \frac{ab}{2} \left(t + \frac{\sin 2t}{2}\right)\Bigg|_0^{\pi/2} = \frac{\pi ab}{4} $$
+Полная площадь: $S = 4S_{\frac{1}{4}} = \pi ab$.
+$\square$</p></div></p></div>
 </body>
 </html>
