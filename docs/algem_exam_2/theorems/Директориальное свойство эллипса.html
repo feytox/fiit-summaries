@@ -165,25 +165,32 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Директориальное свойство эллипса</h1><p>Формулировка:<br/>
+<div class="content"><h1>Директориальное свойство эллипса</h1><h2>Утверждение: Директориальное свойство эллипса</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Точка $M$ лежит на эллипсе $\Leftrightarrow$ отношение расстояния от точки до <span>фокуса</span> к расстоянию до соответствующей <span>директрисы</span> равно <span>эксцентриситету</span>.</p></div><br/>
-Д-во:<br/>
+Точка $M$ лежит на эллипсе $\iff$ отношение расстояния от $M$ до фокуса к расстоянию до соответствующей директрисы равно эксцентриситету $e$:
+$$\dfrac{|FM|}{d(M, \text{директриса})} = e$$</p></div></p>
+<p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-$\Rightarrow$ $M(x,y)$<br/>
-Знаем, что $M$ принадлежит эллипсу, тогда по <span>лемме</span> $MF_{1} = a - ex$ <br/>
-$d = |\dfrac{a}{e} - x|$ (расстояние от $M$ до директрисы). Модуль можно снять, так как точка принадлежит эллипсу $x \leq a$, $\dfrac{a}{e} &gt; a$.<br/>
-Тогда<br/>
-$$\dfrac{MF_{1}}{d} = \dfrac{a - ex}{\dfrac{a}{e}-x} = e$$</p>
-<p>$\Leftarrow$ <br/>
-$F_{1}(c,0)~$ $x = \dfrac{a}{e}$ <br/>
-$$e = \dfrac{MF_{1}}{d} = \dfrac{\sqrt{(x - c)^{2} + y^{2}}}{|\dfrac{a}{e} - x|} |\uparrow2$$<br/>
-$$e^{2} = \dfrac{x^{2} - 2cx + c^{2} + y^{2}}{\dfrac{a^{2}}{e^{2}} - 2\dfrac{a}{e}x + x^{2}} |\mathpunct{:}e^{2}$$<br/>
-$$1 = \dfrac{x^{2} - 2cx + c^{2} + y^{2}}{a^{2} - 2aex + e^{2}x^{2}}|(a^{2} - 2aex + e^{2}x^{2})$$<br/>
-$$x^{2} - 2cx + c^{2} + y^{2} = a^{2} - 2aex + e^{2}x^{2}|+2cx$$<br/>
-$$(1-e^{2})x^{2} + y^{2} = b^{2}|\mathpunct{:}b^{2}$$<br/>
-$1-e^{2} = 1 - \dfrac{a^{2}-b^{2}}{a^{2}} = \dfrac{b^{2}}{a^{2}}$<br/>
-$$\dfrac{x^{2}}{a^{2}}+ \dfrac{y^{2}}{b^{2}} = 1$$<br/>
+$\Large\implies$<br/>
+Пусть $M(x,y)$ принадлежит эллипсу. Тогда для фокуса $F_2(c,0)$:<br/>
+$$MF_2 = a - ex, \quad d\left(M, ~x=\dfrac{a}{e}\right) = \dfrac{a}{e} - x$$<br/>
+Значит:<br/>
+$$\dfrac{MF_2}{d} = \dfrac{a - ex}{\dfrac{a}{e} - x} = e \cdot \dfrac{\dfrac{a}{e} - x}{\dfrac{a}{e} - x} = e$$</p>
+<p>Аналогично для $F_1(-c,0)$ и $x = -\dfrac{a}{e}$.</p>
+<p>$\Large\impliedby$<br/>
+Пусть для $F_2(c,0)$ и директрисы $x = \dfrac{a}{e}$ выполняется:<br/>
+$$\dfrac{MF_2}{d} = e \iff \dfrac{\sqrt{(x - c)^2 + y^2}}{\dfrac{a}{e} - x} = e$$<br/>
+Домножим на знаменатель и возведём в квадрат:<br/>
+$$(x - c)^2 + y^2 = e^2 \left( \dfrac{a}{e} - x \right)^2$$<br/>
+Подставим $c = ae$:<br/>
+$$(x - ae)^2 + y^2 = e^2 \left( \dfrac{a}{e} - x \right)^2$$<br/>
+Раскроем скобки:<br/>
+$$x^2 - 2aex + a^2e^2 + y^2 = a^2 - 2aex + e^2x^2$$<br/>
+Упростим:<br/>
+$$x^2(1 - e^2) + y^2 = a^2(1 - e^2)$$<br/>
+Используя $b^2 = a^2(1 - e^2)$, получим:<br/>
+$$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$$<br/>
 $\square$<br/>
 </p></div></p></div>
 </body>
