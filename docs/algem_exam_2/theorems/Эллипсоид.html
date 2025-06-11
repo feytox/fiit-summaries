@@ -165,17 +165,18 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Эллипсоид</h1><p><strong>Определение:</strong><br/>
-<div class="spoiler-markdown"><p>
-$$ \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 $$
-где $$|x| \leq a, \quad |y| \leq b, \quad |z| \leq c $$</p></div></p>
-<h3>А что в сечении?</h3>
+<div class="content"><h1>Эллипсоид</h1><h2>Определение: Эллипсоид</h2>
 <p><div class="spoiler-markdown"><p><br/>
-Рассечем плоскостью $z=\alpha$ (вместо $z$ подставляем $h$ и переносим)</p>
-<p>$$ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 - \frac{h^2}{c^2} $$ <br/>
-$|h| &lt; c$, правая часть &gt; 0</p>
-<p>$$\frac{x^2}{a^2\left(1-\frac{h^2}{c^2}\right)} + \frac{y^2}{b^2\left(1-\frac{h^2}{c^2}\right)} = 1$$<br/>
- т.е. в сечении эллипс<br/>
-</p></div></p></div>
+$$ \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} + \dfrac{z^2}{c^2} = 1 $$<br/>
+где $|x| \leq a$, $|y| \leq b$, $|z| \leq c$</p>
+<p><a href="https://www.desmos.com/3d/gehymqlkzr">Эллипсоид в Desmos</a><br/>
+</p></div></p>
+<h2>Сечения эллипсоида</h2>
+<p><div class="spoiler-markdown"><p>
+Рассечем плоскостью $z = h$:
+$$\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} + \dfrac{h^2}{c^2} = 1 \implies \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 - \dfrac{h^2}{c^2} $$
+При $|h| &lt; c$ правая часть положительна, поэтому поделив:
+$$\dfrac{x^2}{a^2\left(1-\dfrac{h^2}{c^2}\right)} + \dfrac{y^2}{b^2\left(1-\dfrac{h^2}{c^2}\right)} = 1$$
+получим в сечении эллипс. Аналогично и с $x = h$ и $y = h$</p></div></p></div>
 </body>
 </html>
