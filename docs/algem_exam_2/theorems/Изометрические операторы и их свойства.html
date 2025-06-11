@@ -184,10 +184,10 @@ $$ |\mathcal{A} x + \mathcal{A} y|^2 = |\mathcal{A} x|^2 + |\mathcal{A} y|^2 + (
 Поскольку $|\mathcal{A}(x + y)| = |x + y|$ и $|\mathcal{A} x| = |x|$, $|\mathcal{A} y| = |y|$, то:<br/>
 $$ (x, y) + (y, x) = (\mathcal{A} x, \mathcal{A} y) + (\mathcal{A} y, \mathcal{A} x) \qquad (1) $$<br/>
 В евклидовом случае дальше доказывать нечего.<br/>
-В комплексном случае рассмотрим следующее:<br/>
-$$ |x + i y|^2 - |x - i y|^2 = 2i[(x, y) - (y, x)] $$<br/>
-$$ |\mathcal{A} x + i\mathcal{A} y|^2 - |\mathcal{A} x - i\mathcal{A} y|^2 = 2i[(\mathcal{A} x, \mathcal{A} y) - (\mathcal{A} y, \mathcal{A} x)] $$<br/>
-Отсюда:<br/>
+В комплексном случае сделаем подстановку $x = ix$:<br/>
+$$ (ix, y) + (y, ix) = (\mathcal{A} ix, \mathcal{A} y) + (\mathcal{A} y, \mathcal{A}ix)$$<br/>
+По св-вам скалярного произведения:<br/>
+$$ i(x, y) - i(y, x) = i(\mathcal{A} x, \mathcal{A} y) - i(\mathcal{A} y, \mathcal{A}x) |\mathpunct{:}i$$<br/>
 $$ (x, y) - (y, x) = (\mathcal{A} x, \mathcal{A} y) - (\mathcal{A} y, \mathcal{A} x) \qquad (2) $$<br/>
 Решая систему уравнений (1) и (2), получаем $(x, y) = (\mathcal{A} x, \mathcal{A} y)$.</p>
 <p>$\Large\impliedby$<br/>
