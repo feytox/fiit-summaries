@@ -165,27 +165,38 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Парабола</h1><p><strong>Определение:</strong><br/>
-<div class="spoiler-markdown"><p><br/>
+<div class="content"><h1>Парабола</h1><h2>Определение: Парабола</h2>
+<p><div class="spoiler-markdown"><p><br/>
+Парабола задаётся уравнением:<br/>
 $$ y^2 = 2px $$<br/>
-$e$ = 1</p>
-<p>Директрисса<br/>
-$x = -\frac{p}{2}$<br/>
+где $p &gt; 0$</p>
+<p><strong>Фокус:</strong> $F\left( \dfrac{p}{2}, 0 \right)$<br/>
+<strong>Директриса:</strong> $x = -\dfrac{p}{2}$<br/>
+<strong>Эксцентриситет:</strong> $e = 1$<br/>
 </p></div></p>
-<h3>Критерий принадлежности точки к параболе</h3>
-<p><strong>Формулировка:</strong><br/>
+<h2>Теорема: Директориальное свойство параболы</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Точка $M$ лежит на параболе $\Leftrightarrow$ $d(M, l) = MF$, где $l$ - директриса параболы, $F$ - фокус.</p></div></p>
-<p><strong>Д-во:</strong><br/>
-<div class="spoiler-markdown"><p>
-$\Rightarrow$
-$M(x, y),~y^{2} = 2px$
-$$MF = \sqrt{(x - \dfrac{p}{2})^{2} + y^{2}} = \sqrt{x^{2} - px + \dfrac{p^{2}}{4} + 2px} = \sqrt{(x + \dfrac{p}{2})^{2}} = |x + \dfrac{p}{2}| = x + \dfrac{p}{2}$$
-$\Leftarrow$
-$MF = d(M, l)$
-$$\sqrt{(x - \dfrac{p}{2})^{2} + y^{2}} = |x +\dfrac{p}{2}|$$
-$$x^{2} - px + \dfrac{p^{2}}{4} + y^{2} = x^{2} + px + \dfrac{p^{2}}{4}$$
-$$y^{2} = 2px$$
-$\square$</p></div></p></div>
+Точка $M$ лежит на параболе $\iff$ $d(M, l) = MF$, где $l$ — директриса, $F$ — фокус.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+$\Large\implies$<br/>
+Пусть $M(x,y)$ лежит на параболе ($y^2 = 2px$):<br/>
+$$ MF = \sqrt{\left(x - \dfrac{p}{2}\right)^2 + y^2} = \sqrt{\left(x - \dfrac{p}{2}\right)^2 + 2px} = \sqrt{\left(x + \dfrac{p}{2}\right)^2} = \left|x + \dfrac{p}{2}\right| $$<br/>
+Так как $x \geq 0$ для параболы, раскроем модуль с плюсом: $MF = x + \dfrac{p}{2}$.<br/>
+Расстояние до директрисы: ${} d(M, l) = x + \dfrac{p}{2} {}$. Следовательно, $MF = d(M, l)$.</p>
+<p>$\Large\impliedby$<br/>
+Пусть $MF = d(M, l)$. Распишем утверждение по стандартной формуле:<br/>
+$$ \sqrt{\left(x - \dfrac{p}{2}\right)^2 + y^2} = \left|x + \dfrac{p}{2}\right| $$<br/>
+Возведём в квадрат: <br/>
+$$ \left(x - \dfrac{p}{2}\right)^2 + y^2 = \left(x + \dfrac{p}{2}\right)^2 $$<br/>
+Упростим:<br/>
+$$ y^2 = \left(x + \dfrac{p}{2}\right)^2 - \left(x - \dfrac{p}{2}\right)^2 = 2px $$<br/>
+$\square$<br/>
+</p></div></p>
+<h3>Примечание от авторов</h3>
+<p><div class="spoiler-markdown"><p>
+По сути в эллипсе, гиперболе и параболе мы вводим фокальное расстояние $c$ так, чтобы эксцентриситет $e$ всегда был что-то типо $\dfrac{c}{a}$, а директориальное свойство: 
+$$\dfrac{|FM|}{d(M, \text{директриса})} = e$$</p></div></p></div>
 </body>
 </html>
