@@ -165,46 +165,53 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Гиперболоиды</h1><h2>Однополостный гиперболоид</h2>
-<p><strong>Определение</strong>:<br/>
-<div class="spoiler-markdown"><p>
- $$ \frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1 $$</p></div></p>
-<p><strong>Сечение</strong><br/>
-<div class="spoiler-markdown"><p><br/>
-$z = h$ - сечение плоскостью, тогда <br/>
-$$ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 + \frac{h^2}{c^2} $$ <br/>
-И понятно что если поделим на правую часть то получим эллипс<br/>
-Исследуем его:</p>
-<p>$$c^2 = a^2(1 + \frac{h^2}{c^2}) - b^2(1 + \frac{h^2}{c^2}) = $$<br/>
-$$= (a^2 - b^2)(1 + \frac{h^2}{c^2})$$</p>
-<p>Фокусы лежат на кривой заданной параметрически <br/>
-$$~~ \begin{cases}<br/>
-x^2 = (a^2 - b^2)(1 + \frac{h^2}{c^2}) \\<br/>
-z = h<br/>
-\end{cases}$$</p>
-<p>Вершины:<br/>
--$(\pm a \sqrt{1 + \frac{h^2}{c^2}}, 0, h)$<br/>
--$(0, \pm b \sqrt{1 + \frac{h^2}{c^2}}, h)$</p>
-<p></p></div></p>
-<h2>Двухполостный гиперболоид</h2>
-<p><strong>Определение</strong>:<br/>
-<div class="spoiler-markdown"><p>
- $$ \frac{x^2}{a^2} - \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1 $$</p></div></p>
-<p><strong>Сечения</strong><br/>
-<div class="spoiler-markdown"><p><br/>
-$z = h$ - сечение плоскостью, тогда <br/>
-$$ \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 + \frac{h^2}{c^2} $$ <br/>
-И понятно что если поделим на правую часть то получим гиперболу</p>
-<p>Если $y = h$:<br/>
-$$ \frac{x^2}{a^2} - \frac{z^2}{c^2} = 1 + \frac{h^2}{b^2} $$<br/>
-тоже гипербола<br/>
-Если $x = h$:<br/>
-$$ -\frac{y^2}{b^2} - \frac{z^2}{c^2} = 1 - \frac{h^2}{a^2} | (-1)$$ <br/>
-$$ \frac{y^2}{b^2} + \frac{z^2}{c^2} = \frac{h^2}{a^2} - 1$$ </p>
-<p>Тогда возможны случаи:<br/>
-- Если |h| &lt; a то пустое множество<br/>
-- Если |h| = a, то прямая $x=\pm a$, $y=z=0$<br/>
-- Если |h| &gt; a, то эллипс<br/>
+<div class="content"><h1>Гиперболоиды</h1><h1>Однополостный гиперболоид</h1>
+<h3>Определение</h3>
+<p><div class="spoiler-markdown"><p>
+$$ \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} - \dfrac{z^2}{c^2} = 1 $$
+[Desmos](https://www.desmos.com/3d/fgfuf0yagp)</p></div></p>
+<h3>Сечения однополостного гиперболоида</h3>
+<p><div class="spoiler-markdown"><p><br/>
+Для плоскостей, проходящих через $Oz$, сечением будет гипербола.</p>
+<p>Для плоскости $z = h$ уравнение сечения:<br/>
+$$ \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 + \dfrac{h^2}{c^2} $$</p>
+<p><strong>Свойства сечения:</strong><br/>
+1. Получаемая кривая — эллипс с полуосями:<br/>
+   - $A = a\sqrt{1 + \dfrac{h^2}{c^2}}$ по оси $Ox$<br/>
+   - $B = b\sqrt{1 + \dfrac{h^2}{c^2}}$ по оси $Oy$  </p>
+<ol>
+<li>
+<p>Вершины эллипса:<br/>
+$$ \left( \pm a\sqrt{1 + \dfrac{h^2}{c^2}},\  0,\  h \right), \quad \left( 0,\  \pm b\sqrt{1 + \dfrac{h^2}{c^2}},\  h \right) $$</p>
+</li>
+<li>
+<p>Квадрат фокального расстояния (при $a &gt; b$):<br/>
+$$ c_{\text{ф}}^2 = (A^2 - B^2) = (a^2 - b^2)\left(1 + \dfrac{h^2}{c^2}\right) $$</p>
+</li>
+<li>
+<p>Фокусы эллипса (при ${} a &gt; b$):<br/>
+$$ \left( \pm \sqrt{(a^2 - b^2)\left(1 + \dfrac{h^2}{c^2}\right)},\  0,\  h \right) $$<br/>
+</p></li></ol></div></p>
+
+
+<h1>Двуполостный гиперболоид</h1>
+<h3>Определение</h3>
+<p><div class="spoiler-markdown"><p>
+$$ \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} - \dfrac{z^2}{c^2} = 1 $$
+[Desmos](https://www.desmos.com/3d/yvk0qzxgoo)</p></div></p>
+<h3>Сечения двуполостного гиперболоида</h3>
+<p><div class="spoiler-markdown"><p><br/>
+<strong>Сечение плоскостью $z = h$:</strong><br/>
+$$ \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1 + \dfrac{h^2}{c^2} $$<br/>
+Гипербола.</p>
+<p><strong>Сечение плоскостью $y = h$:</strong><br/>
+$$ \dfrac{x^2}{a^2} - \dfrac{z^2}{c^2} = 1 + \dfrac{h^2}{b^2} $$<br/>
+Гипербола.</p>
+<p><strong>Сечение плоскостью $x = h$:</strong><br/>
+$$ \dfrac{y^2}{b^2} + \dfrac{z^2}{c^2} = \dfrac{h^2}{a^2} - 1 $$<br/>
+- Если $|h| &lt; a$: пустое множество.<br/>
+- Если $|h| = a$: точка $(h, 0, 0)$.<br/>
+- Если $|h| &gt; a$: эллипс<br/>
 </p></div></p></div>
 </body>
 </html>
