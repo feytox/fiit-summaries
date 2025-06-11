@@ -165,27 +165,58 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Конические поверхности</h1><p><strong>Определение:</strong><br/>
-<div class="spoiler-markdown"><p><br/>
-Кривая $\gamma$ - направляющая<br/>
-Точка $O$ - вершина</p>
-<p>Коническая поверхность образована всевозможными прямым $OM$, где $M \in \gamma$</p>
-<p>Направляющая задана $$\begin{cases}<br/>
-F(x, y, z) = 0 \\<br/>
-G(x, y, z) = 0<br/>
-\end{cases}$$</p>
-<p>$O(x_0, y_0, z_0)$<br/>
-$M' = \gamma \cap OM$<br/>
-$M'(x', y', z')$<br/>
+<div class="content"><h1>Конические поверхности</h1><h2>Определение: Коническая поверхность</h2>
+<p><div class="spoiler-markdown"><p><br/>
+Пусть:<br/>
+- Кривая $\gamma$ - <strong>направляющая</strong><br/>
+- Точка $O$ - <strong>вершина</strong></p>
+<p>Тогда поверхность, образованная всевозможными прямыми $OM$, где $M \in \gamma$, называется <strong>конической</strong><br/>
 </p></div></p>
-<p><strong>Утверждение</strong><br/>
-<div class="spoiler-markdown"><p>
-$M(x, y, z)$ лежит в конической поверхности $\iff OM$ пересекает направляющую</p></div></p>
-<p><strong>Д-во:</strong><br/>
-<div class="spoiler-markdown"><p>
-$\Rightarrow$
-   Если $M$ лежит на конусе, то она принадлежит образующей $OP$, где $P \in \gamma$. Значит, $OM$ проходит через $P$.  
-$\Leftarrow$
-   Если $OM$ пересекает $\gamma$ в точке $P$, то $M$ лежит на образующей $OP$, т.е. принадлежит конусу.</p></div></p></div>
+<h2>Построение уравнения конической поверхности</h2>
+<p><div class="spoiler-markdown"><p>
+Пусть направляющая задана системой:
+$$\begin{cases}
+F(x, y, z) = 0 \\\\
+G(x, y, z) = 0
+\end{cases}$$
+Ясно, что $M(x, y, z)$ лежит на поверхности $\iff$ $OM$ пересекается с направляющей.
+Пусть $O(x_{0}, y_{0}, z_{0})$, $M' = \gamma \cap OM$ и $M'(x', y', z')$, тогда:
+$$\underbrace{ \begin{pmatrix}
+x' \\\\
+y' \\\\
+z'
+\end{pmatrix}  }_{ M' }= \underbrace{ \begin{pmatrix}
+x_{0} \\\\
+y_{0} \\\\
+z_{0}
+\end{pmatrix} }_{ O } + \underbrace{ \alpha \begin{pmatrix}
+x - x_{0} \\\\
+y - y_{0} \\\\
+z - z_{0}
+\end{pmatrix} }_{ \alpha \overrightarrow{OM} }$$
+Получаем уравнение конической поверхности:
+$$\begin{cases}
+F(x_{0} + \alpha(x - x_{0}), y_{0} + \alpha(y - y_{0}), z_{0} + \alpha(z - z_{0})) = 0 \\\\
+G(x_{0} + \alpha(x - x_{0}), y_{0} + \alpha(y - y_{0}), z_{0} + \alpha(z - z_{0})) = 0
+\end{cases}$$</p></div></p>
+<h2>Приведение конической поверхности в канонический вид</h2>
+<p><div class="spoiler-markdown"><p><br/>
+Ортогональными преобразованиями приведём коническую поверхность к виду:<br/>
+- $O(0, 0, 0)$ - вершина лежит в начале координат<br/>
+- Направляющая лежит в плоскости $z = 1$</p>
+<p>Тогда, если $F(x, y, z)$ - уравнение конической поверхности, то уравнение направляющей имеет вид:<br/>
+$$\begin{cases}<br/>
+F(x, y, z) = 0 \\<br/>
+z = 1<br/>
+\end{cases}$$</p>
+<p>Пусть $H(x, y) = F(x, y, 1)$, $M(x, y, z)$ лежит на поверхности, $M'(x', y', z') = OM \cap \gamma$.<br/>
+Составим уравнение прямой $OM$. Тогда:<br/>
+$$M' \in (OM) \iff \dfrac{x' - 0}{x} = \dfrac{y' - 0}{y} = \dfrac{z' - 0}{z}$$<br/>
+Тогда:<br/>
+$$x' = z' \dfrac{x}{z}, \qquad y' = z' \dfrac{y}{z}$$<br/>
+Подставляя полученное и $z' = 1$ в $H(x, y)$, получаем:<br/>
+$$H\left( \dfrac{x}{z}, \dfrac{y}{z} \right) = 0$$<br/>
+Поэтому любая коническая поверхность в подходящей системе координат задаётся данным уравнением.<br/>
+</p></div></p></div>
 </body>
 </html>
