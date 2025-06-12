@@ -81,6 +81,12 @@ class Structure:
         return None
 
 
+class DisableAsteriskExtension(markdown.Extension):
+    def extendMarkdown(self, md):
+        md.inlinePatterns.deregister('em_strong')
+        md.inlinePatterns.deregister('escape')
+
+
 class App:
     def __init__(self):
         # Use absolute paths based on the script's location
@@ -137,18 +143,13 @@ class App:
             md_text = f.read()
 
         # Нужно это чудо по-нормальному написать, но мне лень писать через расширения
-        md_text = md_text.replace(r"\\", r"\\\\")
         md_text = re.sub(r"(?<!#\s)([0-9]+?\.)", r"\n\1", md_text)
-        markdown_html = markdown.markdown(md_text, extensions=['nl2br'])
+        markdown_html = markdown.markdown(md_text, extensions=[DisableAsteriskExtension(), 'nl2br'])
         markdown_html = re.sub(
             r'\*\*(.*?)\*\*',
             r'<b>\1</b>',
             markdown_html, flags=re.DOTALL
         )
-        markdown_html = (markdown_html
-                         .replace("<em>", "")
-                         .replace("</em>", "")
-                         )
 
         markdown_html = re.sub(
             r'<code>spoiler-markdown(.*?)</code>',
@@ -183,6 +184,7 @@ class App:
 
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(str(soup))
+
 
 if __name__ == "__main__":
     app = App()
