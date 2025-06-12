@@ -5,13 +5,14 @@ from bs4 import BeautifulSoup
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
+
 class StructureNode:
     def __init__(self, path=Path(), parent=None):
-        self.title : str = path.stem
-        self.dirs : dict[str, StructureNode] = dict()
-        self.markdown_files : dict[str, StructureNode] = dict()
-        self.path : Path = path
-        self.parent : StructureNode = parent
+        self.title: str = path.stem
+        self.dirs: dict[str, StructureNode] = dict()
+        self.markdown_files: dict[str, StructureNode] = dict()
+        self.path: Path = path
+        self.parent: StructureNode = parent
 
 
 class Structure:
@@ -79,6 +80,7 @@ class Structure:
                 return directory.path.name / path
         return None
 
+
 class App:
     def __init__(self):
         # Use absolute paths based on the script's location
@@ -113,7 +115,6 @@ class App:
             return f'<a href="{relative_path}">{name}</a>'
         return f"<span>{name}</span>"
 
-
     def replace_manual(self, text, pattern, node):
         result_parts = []
         last_end = 0
@@ -134,18 +135,27 @@ class App:
             template_html = f.read()
         with open(source_path, encoding="utf-8") as f:
             md_text = f.read()
-        
+
+        # Нужно это чудо по-нормальному написать, но мне лень писать через расширения
         md_text = md_text.replace(r"\\", r"\\\\")
+        md_text = re.sub(r"(?<!#\s)([0-9]+?\.)", r"\n\1", md_text)
         markdown_html = markdown.markdown(md_text, extensions=['nl2br'])
+        markdown_html = re.sub(
+            r'\*\*(.*?)\*\*',
+            r'<b>\1</b>',
+            markdown_html, flags=re.DOTALL
+        )
         markdown_html = (markdown_html
                          .replace("<em>", "")
                          .replace("</em>", "")
                          )
+
         markdown_html = re.sub(
             r'<code>spoiler-markdown(.*?)</code>',
             r'<div class="spoiler-markdown"><p>\1</p></div>',
             markdown_html, flags=re.DOTALL
         )
+
         markdown_html = re.sub(
             r'```spoiler-markdown(.*?)```',
             r'<div class="spoiler-markdown"><p>\1</p></div>',
@@ -157,6 +167,7 @@ class App:
             r'\[\[(.*?)\|(.*?)\]\]|\[\[(.*?)\]\]',
             node
         )
+
         soup = BeautifulSoup(template_html, features="html.parser")
         context_html = f"<h1>{source_path.stem}</h1>"
         soup.find("title").string = source_path.stem
@@ -166,7 +177,7 @@ class App:
 
         if context_html:
             soup.body.div.append(BeautifulSoup(context_html, features="html.parser"))
-        
+
         if markdown_html:
             soup.body.div.append(BeautifulSoup(markdown_html, features="html.parser"))
 
