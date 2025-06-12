@@ -150,6 +150,8 @@ class App:
             r'<b>\1</b>',
             markdown_html, flags=re.DOTALL
         )
+        markdown_html = markdown_html.replace('<em>', '').replace('</em>', '')
+        markdown_html = markdown_html.replace('<strong>', '').replace('</strong>', '')
 
         markdown_html = re.sub(
             r'<code>spoiler-markdown(.*?)</code>',
