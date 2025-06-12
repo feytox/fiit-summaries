@@ -177,10 +177,10 @@ $$\forall{\varepsilon&gt;0}~~ \exists{\delta&gt;0}~~ \forall{x \in X}~~ 0&lt;|x-
 <div class="spoiler-markdown"><p><br/>
 Коши $\Large\implies$ Гейне:<br/>
 По определению предела по Коши:<br/>
-$$\forall{\varepsilon &gt; 0}~~ \exists{\delta &gt; 0}~~ 0&lt;|x-a|&lt;\delta \Rightarrow |f(x) - A| &lt; \varepsilon~~~~()$$<br/>
-Возьмём произвольную ${x_{n}}$, сходящуюся к $a$, тогда по определению:<br/>
+$$\forall{\varepsilon &gt; 0}~~ \exists{\delta &gt; 0}~~ 0&lt;|x-a|&lt;\delta \Rightarrow |f(x) - A| &lt; \varepsilon~~~~(*)$$<br/>
+Возьмём произвольную $\{x_{n}\}$, сходящуюся к $a$, тогда по определению:<br/>
 $$\forall{\delta(\varepsilon)}~~ \exists{N(\delta(\varepsilon))}~~ \forall{n&gt;N}~~ |x_{n}-a|&lt;\delta$$<br/>
-Но тогда из $()$ следует, что $|f(x_{n}) - A| &lt; \varepsilon$. Собираем всё вместе, получаем определение по Гейне.</p>
+Но тогда из $(*)$ следует, что $|f(x_{n}) - A| &lt; \varepsilon$. Собираем всё вместе, получаем определение по Гейне.</p>
 <p>Гейне $\Large\implies$ Коши:<br/>
 От противного: отрицание определения по Коши:<br/>
 $$\exists{\varepsilon &gt; 0}~~ \forall{\delta &gt; 0}~~ \exists{x \in X}~~ 0 &lt; |x-a|&lt;\delta \land |f(x) - A| \geq \varepsilon_{0}$$<br/>
@@ -190,7 +190,7 @@ $$\delta = \dfrac{1}{2} \Rightarrow \exists{x_{2} \in X}~~ 0 &lt; |x_{2}-a|&lt; 
 $$\delta = \dfrac{1}{3} \Rightarrow \exists{x_{3} \in X}~~ 0 &lt; |x_{3}-a|&lt; \dfrac{1}{3} \land |f(x) - A| \geq \varepsilon_{0}$$<br/>
 $$\dots \dots \dots \dots \dots \dots \dots \dots \dots$$<br/>
 $$\delta = \dfrac{1}{n} \Rightarrow \exists{x_{n} \in X}~~ 0 &lt; |x_{n}-a|&lt; \dfrac{1}{n} \land |f(x) - A| \geq \varepsilon_{0}$$<br/>
-Получаем ${x_{n}}$ такую, что $x_{n} \neq a, x_{n} \to a$, но $f(x_{n}) \cancel{ \to } A$ - противоречие с определением по Гейне. $\square$<br/>
+Получаем $\{x_{n}\}$ такую, что $x_{n} \neq a, x_{n} \to a$, но $f(x_{n}) \cancel{ \to } A$ - противоречие с определением по Гейне. $\square$<br/>
 </p></div></p></div>
 </body>
 </html>

@@ -177,7 +177,7 @@ $$\left| \int_{a}^{b} f(x) \, dx - \sum_{k=0}^{n-1} f(x_{k})\Delta x_{k} \right|
 </p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-$$\left| \int_{a}^{b} f(x) \, dx - \sum_{k=0}^{n-1} f(x_{k})\Delta x_{k} \right| =^{} \left| \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} f(x) \, dx - \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} f(x_{k}) \, dx \right| = \left| \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} f(x) - f(x_{k}) \, dx  \right| ~~~~()$$<br/>
+$$\left| \int_{a}^{b} f(x) \, dx - \sum_{k=0}^{n-1} f(x_{k})\Delta x_{k} \right| =^{*} \left| \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} f(x) \, dx - \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} f(x_{k}) \, dx \right| = \left| \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} f(x) - f(x_{k}) \, dx  \right| ~~~~(*)$$<br/>
 $*$ - воспользовались <a href="Аддитивность интеграла по множеству.html">аддитивностью</a> и тем, что $\Delta x_{k} = \int\limits_{x_{k}}^{x_{k+1}} dx$</p>
 <p>По <span>теореме Лагранжа</span> $\exists{c}$ такая, что:<br/>
 $$\begin{align}<br/>
@@ -204,7 +204,7 @@ $$(*) = \left| \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} f(c_{k}) + f'(c_{k})(x-c_
 $$\int_{x_{k}}^{x_{k+1}} f'(c_{k})(x-c_{k}) \, dx = f'(c_{k}) \dfrac{(x-c_{k})^{2}}{2} \Bigg|_{x_{k}}^{x_{k+1}} = 0$$
 А зная из условия, что $M_{2} = \sup\limits_{x \in [a, b]} |f''(x)|$, получаем:
 $$\begin{align}
-(\dagger) &amp;\leq \dfrac{M_{2}}{2} \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} (x-c_{k})^{2} \, dx = \dfrac{M_{2}}{6} \sum_{k=0}^{n-1} (x-c_{k})^{3} \Bigg|_{x_{k}}^{x_{k+1}} =^{1} \dfrac{M_{2}}{6} \sum_{k=0}^{n-1} \left( \left( \dfrac{b-a}{2n} \right)^{3} - \left( \dfrac{a-b}{2n} \right)^{3} \right) = \\\\
+(\dagger) &amp;\leq \dfrac{M_{2}}{2} \sum_{k=0}^{n-1} \int_{x_{k}}^{x_{k+1}} (x-c_{k})^{2} \, dx = \dfrac{M_{2}}{6} \sum_{k=0}^{n-1} (x-c_{k})^{3} \Bigg|_{x_{k}}^{x_{k+1}} =^{1} \dfrac{M_{2}}{6} \sum_{k=0}^{n-1} \left( \left( \dfrac{b-a}{2n} \right)^{3} - \left( \dfrac{a-b}{2n} \right)^{3} \right) = \\
 &amp;= \dfrac{M_{2}}{6} \cdot 2n \left( \dfrac{b-a}{2n} \right)^{3} = \dfrac{M_{2}(b-a)^{3}}{24n^{2}} = \dfrac{c_{2}}{n^{2}}
 \end{align}$$
 $1$ - пользуемся тем, что $c_{k}$ - середина отрезка, а каждый отрезок длины $\dfrac{b-a}{n}$

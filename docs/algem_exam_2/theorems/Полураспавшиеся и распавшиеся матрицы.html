@@ -167,17 +167,17 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Полураспавшиеся и распавшиеся матрицы</h1><h2>Определение: Полураспавшиеся и распавшиеся матрицы</h2>
 <p><div class="spoiler-markdown"><p><br/>
-Матрица $A$ называется <strong>блочно-диагональной</strong> или <strong>(верхней) полураспавшейся</strong>, если она имеет вид:<br/>
+Матрица $A$ называется <b>блочно-диагональной</b> или <b>(верхней) полураспавшейся</b>, если она имеет вид:<br/>
 $$A = \begin{pmatrix}<br/>
 B &amp; C \\<br/>
 0 &amp; D<br/>
 \end{pmatrix}$$<br/>
 где $B$ - $k\times k$-матрица, $D$ - $(n-k)\times(n-k)$-матрица.</p>
-<p>Если $C = 0$, то такая матрица называется <strong>распавшейся</strong>.<br/>
+<p>Если $C = 0$, то такая матрица называется <b>распавшейся</b>.<br/>
 </p></div></p>
 <h2>Определение: квази- матрицы</h2>
 <p><div class="spoiler-markdown"><p><br/>
-Матрица $A$ называется (верхней) <strong>квазитреугольной</strong>, если она имеет вид:<br/>
+Матрица $A$ называется (верхней) <b>квазитреугольной</b>, если она имеет вид:<br/>
 $$A = \begin{pmatrix}<br/>
 B &amp; C &amp; \dots &amp; Z_{1} \\<br/>
 0 &amp; D &amp; \dots &amp; Z_{2} \\<br/>
@@ -185,14 +185,14 @@ B &amp; C &amp; \dots &amp; Z_{1} \\<br/>
 0 &amp; 0 &amp; \dots &amp; Z_{n}<br/>
 \end{pmatrix}$$<br/>
 где в клетках стоят матрицы.</p>
-<p>Если все матрицы вне диагонали равны $0$, то такая матрица называется <strong>квазидиагональной</strong><br/>
+<p>Если все матрицы вне диагонали равны $0$, то такая матрица называется <b>квазидиагональной</b><br/>
 </p></div></p>
 <h2>Следствие теоремы Лапласа: Определитель полураспавшейся матрицы</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
 Пусть матрица $A$ является полураспавшейся, то есть имеет вид:
 $$A = \begin{pmatrix}
-B &amp; C \\\\
+B &amp; C \\
 0 &amp; D
 \end{pmatrix}$$
 Тогда:
@@ -210,10 +210,10 @@ $\square$<br/>
 <div class="spoiler-markdown"><p>
 Пусть матрица $A$ является квазидиагональной, то есть имеет вид:
 $$A = \begin{pmatrix}
-B_{1} &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\\\
-0 &amp; B_{2} &amp; 0 &amp; \dots &amp; 0 \\\\
-0 &amp; 0 &amp; B_{3} &amp; \dots &amp; 0 \\\\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\\
+B_{1} &amp; 0 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; B_{2} &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; 0 &amp; B_{3} &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 0 &amp; 0 &amp; 0 &amp; \dots &amp; B_{n}
 \end{pmatrix}$$
 Тогда:
@@ -221,9 +221,9 @@ $$\det A = \prod_{k=1}^{n} \det B_{k}$$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 Индукция по числу блоков $n$</p>
-<p><strong>База индукции:</strong> $n=1$.<br/>
+<p><b>База индукции:</b> $n=1$.<br/>
 Тривиально.</p>
-<p><strong>Шаг индукции:</strong><br/>
+<p><b>Шаг индукции:</b><br/>
 Предположим, что утверждение верно для $n-1$ блоков, где $n-1 \ge 1$. То есть, для квазидиагональной матрицы $A'$ с $n-1$ блоками $B'1, \dots, B'{n-1}$, выполнено $\det A' = \prod\limits_{k=1}^{n-1} \det B'{k}$.<br/>
 Рассмотрим квазидиагональную матрицу $A$ с $n$ блоками $B_1, \dots, B_n$:<br/>
 $$A = \begin{pmatrix}<br/>

@@ -173,22 +173,22 @@ $$\mathrm{Ker}~ \mathcal{A}^{*} = (\mathrm{Im}~\mathcal{A})^{\perp}$$
 $$\mathrm{Im}~ \mathcal{A}^{*} = (\mathrm{Ker}~ \mathcal{A})^{\perp}$$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Утверждение 1</strong><br/>
-Покажем, что $\mathrm{Ker}~\mathcal{A^{}} \subseteq (\mathrm{Im}~\mathcal{A})^{\perp}$ <br/>
-Для любых $y \in \mathrm{\mathrm{Ker}}~\mathcal{A^{}}$ и $x \in U$:<br/>
+<b>Утверждение 1</b><br/>
+Покажем, что $\mathrm{Ker}~\mathcal{A^{*}} \subseteq (\mathrm{Im}~\mathcal{A})^{\perp}$ <br/>
+Для любых $y \in \mathrm{\mathrm{Ker}}~\mathcal{A^{*}}$ и $x \in U$:<br/>
 $$(\mathcal{A}x,y) =^{1} (x,\mathcal{A}^{*}y) =^{2} (x, 0) = 0$$<br/>
 Значит $y \perp \mathcal{A}x \implies y \in (\mathrm{Im}~ \mathcal{A})^{\perp}$</p>
-<p>Покажем, что $(\mathrm{Im}~\mathcal{A})^{\perp} \subseteq \mathrm{Ker}~\mathcal{A}^{}$ <br/>
+<p>Покажем, что $(\mathrm{Im}~\mathcal{A})^{\perp} \subseteq \mathrm{Ker}~\mathcal{A}^{*}$ <br/>
 Для любых $y \in (\mathrm{Im}~\mathcal{A})^{\perp}$ и $x \in U$:<br/>
-$$(x, \mathcal{A}^{}y) =^{1} (\mathcal{A}x, y) =^{2} 0$$<br/>
-Так как $\forall{ x \in U}\mathpunct{:}~~ x \perp \mathcal{A}^{}y$, то $\mathcal{A}^{}y \perp \mathcal{A}^{}y \implies \mathcal{A}^{}y = 0$, а значит $y \in \mathrm{Ker}~ \mathcal{A}^{*}$</p>
+$$(x, \mathcal{A}^{*}y) =^{1} (\mathcal{A}x, y) =^{2} 0$$<br/>
+Так как $\forall{ x \in U}\mathpunct{:}~~ x \perp \mathcal{A}^{*}y$, то $\mathcal{A}^{*}y \perp \mathcal{A}^{*}y \implies \mathcal{A}^{*}y = 0$, а значит $y \in \mathrm{Ker}~ \mathcal{A}^{*}$</p>
 <p>Пояснения:<br/>
 1 - определение сопряженного оператора<br/>
 2 - выбор $y$</p>
-<p><strong>Утверждение 2</strong><br/>
-$$\mathrm{Im}~ \mathcal{A}^{} = ((\mathrm{Im}~ \mathcal{A}^{})^{\perp})^{\perp} = (\mathrm{Ker}~ \mathcal{A}^{**})^{\perp} = (\mathrm{Ker}~ \mathcal{A})^{\perp}$$<br/>
+<p><b>Утверждение 2</b><br/>
+$$\mathrm{Im}~ \mathcal{A}^{*} = ((\mathrm{Im}~ \mathcal{A}^{*})^{\perp})^{\perp} = (\mathrm{Ker}~ \mathcal{A}^{<b>})^{\perp} = (\mathrm{Ker}~ \mathcal{A})^{\perp}$$<br/>
 $\square$<br/>
-</p></div></p>
+</b></p></div></p>
 <h2>Утверждение: Биекция ограничения</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p><br/>
@@ -198,36 +198,36 @@ $\square$<br/>
 </p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Инъективность</strong><br/>
+Инъективность<b><br/>
 Пусть $x_{1}, x_{2} \in U_{0}$ и $\mathcal{A}x_{1} = \mathcal{A}x_{2}$. Тогда $\mathcal{A}(x_{1} - x_{2}) = 0$, а значит:<br/>
 $$\left. \begin{array} \\<br/>
 x_{1} - x_{2} \in \mathrm{Ker}~ \mathcal{A} \\<br/>
 x_{1} - x_{2} \in U_{0} = (\mathrm{Ker}~ \mathcal{A})^{\perp}<br/>
-\end{array} \right| \implies x_{1} - x_{2} = 0 \implies x_{1} = x_{2}$$</p>
-<p><strong>Сюръективность</strong><br/>
+\end{array} \right| \implies x_{1} - x_{2} = 0 \implies x_{1} = x_{2}$$</b></p>
+<p>Сюръективность<b><br/>
 Пусть $z \in V_{0} = \mathrm{Im}~ \mathcal{A}$, тогда по определению $\exists{x \in U}\mathpunct{:}~~ \mathcal{A}x = z$.<br/>
 Ортогонально разложим $x \in U$: $x = x_{0} + x_{1}$, где $x_{0} \in U_{0} = (\mathrm{Ker}~ \mathcal{A})^{\perp}$, $x_{1} \in \mathrm{Ker}~ \mathcal{A}$.<br/>
 Но тогда:<br/>
 $$\mathcal{A}x = \mathcal{A}(x_{0} + x_{1}) = \mathcal{A}x_{0} + \mathcal{A}x_{1} = \mathcal{A}x_{0}$$<br/>
 А значит $\forall{z \in V_{0}}~~ \exists{x_{0} \in U_{0}}\mathpunct{:}~~ Ax_{0} = z$, что и есть определением сюръективности.<br/>
 $\square$<br/>
-</p></div></p>
+</b></p></div></p>
 <h2>Лемма: 2 свойства $\mathcal{A}\mathcal{A}^{*}$</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
 Для оператора $\mathcal{A}\mathpunct{:}~ U \to V$ оператор $\mathcal{A}\mathcal{A}^{*}$ самосопряжён и имеет неотрицательные вещественные собственные значения.</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Самосопряжённость</strong><br/>
-$(\mathcal{A}^{}\mathcal{A}x, y) = (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{}\mathcal{A}y)$ для любых $x,y \in U$ $\implies$ $\mathcal{A}\mathcal{A}^{} = (\mathcal{A}\mathcal{A}^{})^*$</p>
-<p><strong>Неотрицательность</strong><br/>
+Самосопряжённость<b><br/>
+$(\mathcal{A}^{*}\mathcal{A}x, y) = (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{*}\mathcal{A}y)$ для любых $x,y \in U$ $\implies$ $\mathcal{A}\mathcal{A}^{*} = (\mathcal{A}\mathcal{A}^{*})^*$</b></p>
+<p>Неотрицательность<b><br/>
 Пусть $x$ — собственный вектор с $\lambda$. Тогда:<br/>
-$$(\mathcal{A}^{}\mathcal{A}x, x) = \lambda (x, x)$$<br/>
+$$(\mathcal{A}^{*}\mathcal{A}x, x) = \lambda (x, x)$$<br/>
 В то же время:<br/>
-$$(\mathcal{A}^{}\mathcal{A}x, x) = (\mathcal{A}x, \mathcal{A}x) \geq 0$$<br/>
+$$(\mathcal{A}^{*}\mathcal{A}x, x) = (\mathcal{A}x, \mathcal{A}x) \geq 0$$<br/>
 Поскольку $(x,x) &gt; 0$, получаем $\lambda \geq 0$.<br/>
 $\square$<br/>
-</p></div></p>
+</b></p></div></p>
 <h2>Лемма: 0 как собственное число</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
@@ -235,7 +235,7 @@ $0$ - собственное значение $\mathcal{A}$ $\iff$ $\mathrm{Ker}
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 $\Large\implies$<br/>
-$v \neq 0$ и $\mathcal{A}v = 0 \cdot v = 0$, а значит $v \in \mathrm{Ker}~ \mathcal{A}$ и $\mathrm{Ker}~ \mathcal{A} \neq {0}$</p>
+$v \neq 0$ и $\mathcal{A}v = 0 \cdot v = 0$, а значит $v \in \mathrm{Ker}~ \mathcal{A}$ и $\mathrm{Ker}~ \mathcal{A} \neq \{0\}$</p>
 <p>$\Large\impliedby$<br/>
 $0 \neq v \in \mathrm{Ker}~ \mathcal{A}$, а значит $\mathcal{A}v = 0 = 0 \cdot v$ и $0$ - собственное значение $\mathcal{A}$<br/>
 $\square$<br/>
@@ -246,26 +246,26 @@ $\square$<br/>
 $\mathrm{Ker}~ \mathcal{A} = \mathrm{Ker}~ \mathcal{A}\mathcal{A}^{*}$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Включение</strong> $\mathrm{Ker}~ \mathcal{A} \subseteq \mathrm{Ker}~ \mathcal{A}\mathcal{A}^{}$:<br/>
+Включение<b> $\mathrm{Ker}~ \mathcal{A} \subseteq \mathrm{Ker}~ \mathcal{A}\mathcal{A}^{*}$:<br/>
 Пусть $v \in \mathrm{Ker}~ \mathcal{A}$, то есть $\mathcal{A}v = 0$. Тогда:<br/>
-$$ \mathcal{A}^{}(\mathcal{A}v) = \mathcal{A}^{}(0) = 0 \implies v \in \mathrm{Ker}~ \mathcal{A}\mathcal{A}^{} $$</p>
-<p><strong>Включение</strong> $\mathrm{Ker}~ \mathcal{A}\mathcal{A}^{} \subseteq \mathrm{Ker}~ \mathcal{A}$:<br/>
-Пусть $v \in \mathrm{Ker}~ \mathcal{A}\mathcal{A}^{}$, то есть $\mathcal{A}^{}\mathcal{A}v = 0$. Тогда:<br/>
-$$ 0 = (\mathcal{A}^{}\mathcal{A}v, v) = (\mathcal{A}v, \mathcal{A}v) \implies \mathcal{A}v = 0 \implies v \in \mathrm{Ker}~ \mathcal{A} $$<br/>
+$$ \mathcal{A}^{*}(\mathcal{A}v) = \mathcal{A}^{*}(0) = 0 \implies v \in \mathrm{Ker}~ \mathcal{A}\mathcal{A}^{*} $$</b></p>
+<p>Включение<b> $\mathrm{Ker}~ \mathcal{A}\mathcal{A}^{*} \subseteq \mathrm{Ker}~ \mathcal{A}$:<br/>
+Пусть $v \in \mathrm{Ker}~ \mathcal{A}\mathcal{A}^{*}$, то есть $\mathcal{A}^{*}\mathcal{A}v = 0$. Тогда:<br/>
+$$ 0 = (\mathcal{A}^{*}\mathcal{A}v, v) = (\mathcal{A}v, \mathcal{A}v) \implies \mathcal{A}v = 0 \implies v \in \mathrm{Ker}~ \mathcal{A} $$<br/>
 $\square$<br/>
-</p></div></p>
+</b></p></div></p>
 <h2>Наблюдение: Сингулярные числа и векторы</h2>
 <p><div class="spoiler-markdown"><p><br/>
-Пусть $\mathcal{A}\mathpunct{:}~ U \to V$, $U_{0} = (\mathrm{Ker}~ \mathcal{A})^{\perp} = \mathrm{Im}~ \mathcal{A}^{}$, $V_{0} = (\mathrm{Ker}~ \mathcal{A}^{})^{\perp} = \mathrm{Im}~ \mathcal{A}$.<br/>
+Пусть $\mathcal{A}\mathpunct{:}~ U \to V$, $U_{0} = (\mathrm{Ker}~ \mathcal{A})^{\perp} = \mathrm{Im}~ \mathcal{A}^{*}$, $V_{0} = (\mathrm{Ker}~ \mathcal{A}^{*})^{\perp} = \mathrm{Im}~ \mathcal{A}$.<br/>
 Из взаимной однозначности:<br/>
-$$\mathrm{Ker}~(\mathcal{A}\mathcal{A}^{})|{U{0}} = \mathrm{Ker}~ \mathcal{A}|{U{0}} = {0}$$<br/>
-а значит все собственные числа $\mathcal{A}\mathcal{A}^{}|{U{0}}$ не просто неотрицательны, а положительны. Обозначим их $\sigma_{1}^{2}, \sigma_{2}^{2}, \dots \sigma_{k}^{2}$. <br/>
-$\sigma_{i}$ называют <strong>сингулярными числами</strong></p>
-<p>Пусть $u_1, \dots, u_k$ - ОНБ $U_0$ из собственных векторов $\mathcal{A}\mathcal{A}^{}$:  $\mathcal{A}^\mathcal{A}u_j = \sigma_j^2 u_j$<br/>
-Векторы $u = {u_{1}, \dots, u_{k}}$ называют <strong>левыми сингулярными векторами</strong></p>
+$$\mathrm{Ker}~(\mathcal{A}\mathcal{A}^{*})|{U{0}} = \mathrm{Ker}~ \mathcal{A}|{U{0}} = \{0\}$$<br/>
+а значит все собственные числа $\mathcal{A}\mathcal{A}^{*}|{U{0}}$ не просто неотрицательны, а положительны. Обозначим их $\sigma_{1}^{2}, \sigma_{2}^{2}, \dots \sigma_{k}^{2}$. <br/>
+$\sigma_{i}$ называют сингулярными числами<b></b></p>
+<p>Пусть $u_1, \dots, u_k$ - ОНБ $U_0$ из собственных векторов $\mathcal{A}\mathcal{A}^{*}$:  $\mathcal{A}^*\mathcal{A}u_j = \sigma_j^2 u_j$<br/>
+Векторы $u = \{u_{1}, \dots, u_{k}\}$ называют левыми сингулярными векторами<b></b></p>
 <p>Определим векторы $v_j \in V$:<br/>
 $$ v_j = \dfrac{1}{\sigma_j} \mathcal{A}u_j $$<br/>
-Векторы ${} v = {v_{1}, \dots, v_{k}}$ называют <strong>правыми сингулярными векторами</strong>.</p>
+Векторы ${} v = \{v_{1}, \dots, v_{k}\}$ называют правыми сингулярными векторами<b>.</b></p>
 <p>Так как $\mathrm{dim}~ U_{0} = \mathrm{dim}~ V_{0}$, заметим, что правые сингулярные векторы образуют ОНБ:<br/>
 $$ (v_i, v_j) = \dfrac{1}{\sigma_i \sigma_j} (\mathcal{A}u_i, \mathcal{A}u_j) = \dfrac{1}{\sigma_i \sigma_j} (u_i, \mathcal{A}^*\mathcal{A}u_j) = \dfrac{\sigma_{j}^{2}}{\sigma_i \sigma_j} (u_i, u_j) = \delta_{ij} $$<br/>
 где $\delta_{ij}$ - символ Кронекера.</p>
@@ -283,36 +283,36 @@ $$[A|{U{0}}] = \begin{pmatrix}<br/>
 Для линейного оператора $\mathcal{A}: U \to V$ существуют ОНБ в $U$ и $V$, в которых матрица $\mathcal{A}$ имеет блочно-диагональный вид:
 $$
 [\mathcal{A}] = \begin{pmatrix} 
-D &amp; \mathbf{0} \\\\ 
+D &amp; \mathbf{0} \\ 
 \mathbf{0} &amp; \mathbf{0} 
 \end{pmatrix}, \quad D = \begin{pmatrix}
-\sigma_{1} &amp; 0 &amp; \dots &amp; 0 \\\\
-0 &amp; \sigma_{2} &amp; \dots &amp; 0 \\\\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\\\
+\sigma_{1} &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; \sigma_{2} &amp; \dots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 0 &amp; 0 &amp; \dots &amp; \sigma_{k}
 \end{pmatrix}
 $$
 где $\mathbf{0}$ - нулевые блоки, а $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_k &gt; 0$ — сингулярные числа $\mathcal{A}$, определённые однозначно.</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-По построению из <strong>Наблюдения</strong>:</p>
+По построению из Наблюдения<b>:</b></p>
 <ol>
 <li>
-<p>$U_0 = (\mathrm{Ker}~ \mathcal{A})^\perp$ имеет ОНБ ${u_i}$ из собственных векторов $\mathcal{A}\mathcal{A}^*$</p>
+<p>$U_0 = (\mathrm{Ker}~ \mathcal{A})^\perp$ имеет ОНБ $\{u_i\}$ из собственных векторов $\mathcal{A}\mathcal{A}^*$</p>
 </li>
 <li>
 <p>Векторы $v_j = \dfrac{1}{\sigma_j} \mathcal{A}u_j$ образуют ОНБ в $V_0 = \mathrm{Im}~\mathcal{A}$.</p>
 </li>
 <li>
-<p>Матрица ограничения $\mathcal{A}|{U_0}$ в базисах ${u_i}$, ${v_i}$: $[\mathcal{A}|{U_0}] = \mathrm{diag}(\sigma_1,\dots,\sigma_k)$.</p>
+<p>Матрица ограничения $\mathcal{A}|{U_0}$ в базисах $\{u_i\}$, $\{v_i\}$: $[\mathcal{A}|{U_0}] = \mathrm{diag}(\sigma_1,\dots,\sigma_k)$.</p>
 </li>
 </ol>
 <p>Так как $U = U_{0} \oplus {U_{0}}^{\perp}$, дополним ОНБ $U_{0}$ ортонормированным базисом ${U_{0}}^{\perp} = \mathrm{Ker}~ \mathcal{A}$. Аналогично дополним $V_{0}$ с помощью $\mathrm{Ker}~ \mathcal{A}^{*}$. В этих базисах матрица $\mathcal{A}$ принимает указанный вид.</p>
-<p><strong>Единственность $\sigma_i$:</strong><br/>
+<p>Единственность $\sigma_i$:**<br/>
 Пусть:<br/>
-- $[\mathcal{A}]{uv} = \Sigma \implies [\mathcal{A}^{}]{uv} = {\Sigma}^{T}$<br/>
-- $[\mathcal{A}]{u'v'} = \Sigma' \implies [\mathcal{A}^{}]{u'v'} = {\Sigma ^{'}}^{T}$</p>
-<p>$$[\mathcal{A}\mathcal{A}^{}]{uv} = {\Sigma}^{T}\Sigma = \begin{pmatrix}<br/>
+- $[\mathcal{A}]{uv} = \Sigma \implies [\mathcal{A}^{*}]{uv} = {\Sigma}^{T}$<br/>
+- $[\mathcal{A}]{u'v'} = \Sigma' \implies [\mathcal{A}^{*}]{u'v'} = {\Sigma ^{'}}^{T}$</p>
+<p>$$[\mathcal{A}\mathcal{A}^{*}]{uv} = {\Sigma}^{T}\Sigma = \begin{pmatrix}<br/>
 \sigma{1}^{2} &amp; 0 &amp; \dots &amp; 0 &amp; 0 &amp; \dots \\<br/>
 0 &amp; \sigma_{2}^{2} &amp; \dots &amp; 0 &amp; 0 &amp; \dots \\<br/>
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; \dots \\<br/>
@@ -320,7 +320,7 @@ $$
 0 &amp; 0 &amp; \dots &amp; 0 &amp; 0 &amp; \dots \\<br/>
 \vdots &amp; \vdots &amp; \dots &amp; \vdots &amp; \vdots &amp; \ddots<br/>
 \end{pmatrix}$$<br/>
-Аналогично для $[\mathcal{A}\mathcal{A}^{}]{u'v'}$ (но с ${\sigma{i}}'$).<br/>
+Аналогично для $[\mathcal{A}\mathcal{A}^{*}]{u'v'}$ (но с ${\sigma{i}}'$).<br/>
 Из строения самосопряжённого оператора знаем, что на диагонали в полученной матрице стоят собственные числа, а значит $\sigma_{i} = {\sigma_{i}}'$ и $\sigma_{i}$ определено однозначно.<br/>
 $\square$<br/>
 </p></div></p>
@@ -332,15 +332,15 @@ $$ A = U \Sigma V^{T} $$
 где $\Sigma \in M_{m \times n}(\mathbb{R})$ — блочно-диагональная матрица:
 $$
 \Sigma = \begin{pmatrix} 
-D &amp; \mathbf{0} \\\\ 
+D &amp; \mathbf{0} \\ 
 \mathbf{0} &amp; \mathbf{0} 
 \end{pmatrix}, \quad D = \mathrm{diag}(\sigma_1, \sigma_2, \dots, \sigma_k)
 $$
 с сингулярными числами $\sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_k &gt; 0$.</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Рассмотрим оператор $\mathcal{A}: \mathbb{R}^n \to \mathbb{R}^m$ с матрицей $A$ в стандартных базисах. По теореме о сингулярном разложении оператора существуют ОНБ ${v_j}$ в $\mathbb{R}^n$ и ${u_i}$ в $\mathbb{R}^m$ такие, что матрица $\mathcal{A}$ в этих базисах есть $\Sigma$. </p>
-<p>Пусть $U$ и $V$ — матрицы перехода к ${u_i}$ и ${v_j}$ соответственно. Так как базисы ортонормированы, $U$ и $V$ ортогональны, поэтому:<br/>
+Рассмотрим оператор $\mathcal{A}: \mathbb{R}^n \to \mathbb{R}^m$ с матрицей $A$ в стандартных базисах. По теореме о сингулярном разложении оператора существуют ОНБ $\{v_j\}$ в $\mathbb{R}^n$ и $\{u_i\}$ в $\mathbb{R}^m$ такие, что матрица $\mathcal{A}$ в этих базисах есть $\Sigma$. </p>
+<p>Пусть $U$ и $V$ — матрицы перехода к $\{u_i\}$ и $\{v_j\}$ соответственно. Так как базисы ортонормированы, $U$ и $V$ ортогональны, поэтому:<br/>
 $$ A = U\Sigma V^{-1} = U \Sigma V^{T} $$<br/>
 $\square$<br/>
 </p></div></p></div>

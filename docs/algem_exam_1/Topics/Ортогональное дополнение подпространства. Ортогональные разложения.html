@@ -199,7 +199,7 @@ ax &amp;= (\lambda_{1} a_{1} + \lambda_{2} a_{2} + \dots + \lambda_{k} a_{k})x =
 Если $V$ - пространство со скалярным произведением, а $S$ - подпространство в $V$, то $V = S \oplus S^{\perp}$ (<b>ортогональное разложение</b>)</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Если $x \in S \cap S^{\perp}$, то $xx = 0 \Rightarrow x = 0$. А значит $S \cap S^{\perp} = {0}$, а значит $S + S^{\perp}$ - прямая. Осталось проверить, что $S + S^{\perp} = V$.</p>
+Если $x \in S \cap S^{\perp}$, то $xx = 0 \Rightarrow x = 0$. А значит $S \cap S^{\perp} = \{0\}$, а значит $S + S^{\perp}$ - прямая. Осталось проверить, что $S + S^{\perp} = V$.</p>
 <p>Положим $\mathrm{dim}~V = n, \mathrm{dim}~S = k$. Возьмём ортонормированный базис $a_{1}, a_{2}, \dots, a_{k}$ подпространства $S$ и дополним этот базис до ортонормированного базиса пространства $V$. Пусть $a_{k+1},\dots,a_{n}$ - вектора, использованные для дополнения. Так как каждый из этих $n-k$ векторов ортогонален $a_{1}, a_{2}, \dots, a_{k}$, по <span>предложению</span>: $a_{k+1}, \dots, a_{n} \in S^{\perp}$.</p>
 <p>Итак, $S + S^{\perp}$ содержит все вектора $a_{1}, a_{2}, \dots, a_{n}$, составляющие базис $V$, откуда $S + S^{\perp} = V$ $\square$<br/>
 </p></div></p>
@@ -213,23 +213,23 @@ ax &amp;= (\lambda_{1} a_{1} + \lambda_{2} a_{2} + \dots + \lambda_{k} a_{k})x =
 4) $(S_{1} + S_{2})^{\perp} = S_{1}^{\perp} \cap S_{2}^{\perp},~~ (S_{1} \cap S_{2})^{\perp} = S_{1}^{\perp} + S_{2}^{\perp}$
 5) $V = S_{1} \oplus S_{2} \Rightarrow V = S_{1}^{\perp} \oplus S_{2}^{\perp}$</p></div></p>
 <p>Д-во:<br/>
-<strong>Свойство <br/>
-1.</strong><br/>
+<b>Свойство <br/>
+1.</b><br/>
 <div class="spoiler-markdown"><p>
 Если $x \in V^{\perp}$, то $\forall{y \in V}~~ xy = 0$, в частности $xx = 0$, а значит по <span>4 аксиоме</span> $x = 0$. Следовательно, $V^{\perp} = \{0\}$.
 Равенство $\{0\}^{\perp} = V$ вытекает из <span>замечания о нулевом векторе и ортогональности</span>.</p></div></p>
-<p><strong>Свойство <br/>
-2.</strong><br/>
+<p><b>Свойство <br/>
+2.</b><br/>
 <div class="spoiler-markdown"><p>
 Из <span>определения ортогонального дополнения</span> вытекает, что если $x \in S$, то $\forall{a \in S^{\perp}}~~ a\perp x$. Следовательно, $S \subseteq (S^{\perp})^{\perp}$. Пусть $\mathrm{dim}~S = k, \mathrm{dim}~V = n$. В силу <span>теоремы об ортогональном разложении</span>:
 $$\mathrm{dim}~(S^{\perp})^{\perp} = n - \mathrm{dim}~S^{\perp} = n - (n - k) = k = \mathrm{dim}~S$$
 Итак, $S$ - подпространство $(S^{\perp})^{\perp}, \mathrm{dim}~S = \mathrm{dim}~(S^{\perp})^{\perp}$. Отсюда $S = (S^{\perp})^{\perp}$</p></div></p>
-<p><strong>Свойство <br/>
-3.</strong><br/>
+<p><b>Свойство <br/>
+3.</b><br/>
 <div class="spoiler-markdown"><p>
 Пусть $S_{1} \subseteq S_{2}, x \in S_{2}^{\perp}$. Тогда $\forall{a \in S_{2}}~~ x \perp a$, а значит и $\forall{a \in S_{1}}$. Следовательно, $x \in S^{\perp}_{1}$ и потому $S_{2}^{\perp} \subseteq S_{1}^{\perp}$</p></div></p>
-<p><strong>Свойство <br/>
-4.</strong><br/>
+<p><b>Свойство <br/>
+4.</b><br/>
 <div class="spoiler-markdown"><p><br/>
 Пусть $x \in S_{1}^{\perp} \cap S_{2}^{\perp},~~ y \in S_{1} + S_{2}$. Тогда $y = y_{1} + y_{2},~ y_{1} \in S_{1}, y_{2} \in S_{2}$. В силу выбора $x$ имеем:<br/>
 $$xy_{1} = xy_{2} = 0$$<br/>
@@ -239,8 +239,8 @@ $$xy = x(y_{1} + y_{2}) = xy_{1} + xy_{2} = 0 + 0 = 0$$<br/>
 <p>Мы проверили, что $(S_{1} + S_{2})^{\perp} = S_{1}^{\perp} \cap S_{2}^{\perp}$. Используя свойство 2, получаем:<br/>
 $$S_{1}^{\perp} + S_{2}^{\perp} = ((S_{1}^{\perp} + S_{2}^{\perp})^{\perp})^{\perp} = ((S_{1}^{\perp})^{\perp} \cap (S_{2}^{\perp})^{\perp})^{\perp} = (S_{1} \cap S_{2})^{\perp}$$<br/>
 </p></div></p>
-<p><strong>Свойство <br/>
-5.</strong><br/>
+<p><b>Свойство <br/>
+5.</b><br/>
 <div class="spoiler-markdown"><p>
 $S_{1} \cap S_{2} = \{0\}$. Используя свойства 1 и 4, имеем:
 $$S_{1}^{\perp} + S_{2}^{\perp} = (S_{1} \cap S_{2})^{\perp} = \{0\}^{\perp} = V$$
@@ -250,10 +250,10 @@ $$S_{1}^{\perp} \cap S_{2}^{\perp} = (S_{1} + S_{2})^{\perp} = V^{\perp} = \{0\}
 <h3>Определения про ортогональное разложение</h3>
 <p><div class="spoiler-markdown"><p><br/>
 Пусть $V$ - пространство со скалярным произведением, $S$ - его подпространство и $\mathbf{x} \in V$. В силу <span>теоремы об ортогональном разложении</span> $\exists{\mathbf{y} \in S, \mathbf{z} \in S^{\perp}}~~ \mathbf{x} = \mathbf{y} + \mathbf{z}$.</p>
-<p>Вектор $\mathbf{y} \in S$ в этом разложении называется <strong>ортогональной проекцией</strong> вектора $\mathbf{x}$ на подпространство $S$. Обозначается $\mathbf{x}_{S}$</p>
-<p>Вектор $\mathbf{z} \in S^{\perp}$ в этом разложении называется <strong>ортогональной составляющей</strong> вектора $\mathbf{x}$ относительно $S$. Обозначается $\mathbf{x}^{\perp}$</p>
-<p>Длина ортогональной составляющей называется <strong>расстоянием</strong> от $\mathbf{x}$ до $S$. Обозначается $d(\mathbf{x}, S)$.</p>
-<p>Если $V$ - евклидово, $S \neq {0}$ и $\mathbf{x}{S} \neq 0$, то <strong>углом</strong> между $\mathbf{x}$ и $S$ называется угол между $\mathbf{x}$ и $\mathbf{x}{S}$. Если $S \neq {0}$ и $\mathbf{x}_{S} = 0$, то угол равен $\dfrac{\pi}{2}$, что естественно, так как тогда $\mathbf{x} = \mathbf{x}^{\perp}$. Если же $S = {0}$, то угол не определён. Обозначается $(\widehat{x, S})$<br/>
+<p>Вектор $\mathbf{y} \in S$ в этом разложении называется <b>ортогональной проекцией</b> вектора $\mathbf{x}$ на подпространство $S$. Обозначается $\mathbf{x}_{S}$</p>
+<p>Вектор $\mathbf{z} \in S^{\perp}$ в этом разложении называется <b>ортогональной составляющей</b> вектора $\mathbf{x}$ относительно $S$. Обозначается $\mathbf{x}^{\perp}$</p>
+<p>Длина ортогональной составляющей называется <b>расстоянием</b> от $\mathbf{x}$ до $S$. Обозначается $d(\mathbf{x}, S)$.</p>
+<p>Если $V$ - евклидово, $S \neq \{0\}$ и $\mathbf{x}{S} \neq 0$, то <b>углом</b> между $\mathbf{x}$ и $S$ называется угол между $\mathbf{x}$ и $\mathbf{x}{S}$. Если $S \neq \{0\}$ и $\mathbf{x}_{S} = 0$, то угол равен $\dfrac{\pi}{2}$, что естественно, так как тогда $\mathbf{x} = \mathbf{x}^{\perp}$. Если же $S = \{0\}$, то угол не определён. Обозначается $(\widehat{x, S})$<br/>
 </p></div></p>
 <h3>Замечание об ортогональной проекции</h3>
 <p>Формулировка:<br/>

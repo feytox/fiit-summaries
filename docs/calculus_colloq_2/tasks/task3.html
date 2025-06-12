@@ -169,10 +169,10 @@
 <p>Условие:<br/>
 Пусть функция $f(x)$ непрерывна на отрезке $[a, b]$ за исключением конечного числа точек $x_{1}, x_{2}, \dots, x_{n}$. Докажите, что функция $f(x)$ интегрируема на $[a, b]$.</p>
 <p>Д-во:<br/>
-Пусть $X = [a, b] \setminus {x_{1}, \dots, x_{n}}$. Непрерывность $f(x)$:<br/>
+Пусть $X = [a, b] \setminus \{x_{1}, \dots, x_{n}\}$. Непрерывность $f(x)$:<br/>
 $$\forall{\varepsilon &gt; 0}~~ \exists{\delta(\varepsilon)}~~ \forall{x \in X}\mathpunct{:}~~ |x - x_{0}| &lt; \delta \Rightarrow |f(x) - f(x_{0})| &lt; \varepsilon$$<br/>
-Пусть $\mu = \min {x_{i} - x_{j} | i,j \in \overline{0, n} \land i \neq j}$ - минимальное расстояние, между точками, а ${} \eta = \sup\limits_{x \in {x_{1}, \dots, x_{n}}} |f(x)| {}$<br/>
-Возьмём разбиение $\tau = {a = t_{0} &lt; t_{1} &lt; \dots &lt; t_{n} = b}$ такое, что ${} \lambda(\tau) &lt; \min \left{\dfrac{\varepsilon}{4\eta}, \mu\right} {}$. <br/>
+Пусть $\mu = \min \{x_{i} - x_{j} | i,j \in \overline{0, n} \land i \neq j\}$ - минимальное расстояние, между точками, а ${} \eta = \sup\limits_{x \in \{x_{1}, \dots, x_{n}\}} |f(x)| {}$<br/>
+Возьмём разбиение $\tau = \{a = t_{0} &lt; t_{1} &lt; \dots &lt; t_{n} = b\}$ такое, что ${} \lambda(\tau) &lt; \min \left\{\dfrac{\varepsilon}{4\eta}, \mu\right\} {}$. <br/>
 Распишем разность сумм Дарбу:<br/>
 $$\overline{S}{\tau} - \underline{S}{\tau} = \sum_{k=0}^{n-1} (M_{k} - m_{k})\Delta t_{k} = \sum_{k \in K_{1}} (M_{k} - m_{k})\Delta t_{k} + \sum_{k \in K_{2}} (M_{k} - m_{k})\Delta t_{k}$$<br/>
 где $K_{1}$ - отрезки, содержащие точку $x_{1}, x_{2}, \dots, x_{n}$ (одну из выбора диаметра разибиения), $K_{2}$ - все остальные.</p>

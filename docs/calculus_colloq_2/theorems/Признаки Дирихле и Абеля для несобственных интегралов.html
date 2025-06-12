@@ -179,14 +179,14 @@
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 Проверим условия <a href="Формула Ньютона-Лейбница, интегрирование по частям в несобственных интегралах.html">интегрирования по частям</a>:</p>
-<p><strong>Условие 1</strong><br/>
+<p><b>Условие 1</b><br/>
 $\lim_{x \to b-0} F(x)g(x) = 0$, так как $F(x)$ - ограничена, а $g(x) \to 0$</p>
-<p><strong>Условие 2</strong><br/>
+<p><b>Условие 2</b><br/>
 $$\begin{align}<br/>
-\int_{a}^{b} |F(x)g'(x)| \, dx  &amp;\leq M \int_{a}^{b} |g'(x)| \, dx =^{} M \left| \int_{a}^{b} g'(x) \, dx  \right| = \\<br/>
+\int_{a}^{b} |F(x)g'(x)| \, dx  &amp;\leq M \int_{a}^{b} |g'(x)| \, dx =^{*} M \left| \int_{a}^{b} g'(x) \, dx  \right| = \\<br/>
 &amp;= M \left|\lim_{x \to b-0} g(x) - g(a) \right| = M|g(a)| <br/>
 \end{align} $$<br/>
-$$ - можем убрать модуль из монотонности $g(x)$.<br/>
+$*$ - можем убрать модуль из монотонности $g(x)$.<br/>
 Следовательно $\int\limits_{a}^{b} F(x)g'(x) \, dx$ - сходится.</p>
 <p>Значит: $\int\limits_{a}^{b} f(x)g(x) \, dx$ - сходится. <br/>
 $\square$<br/>

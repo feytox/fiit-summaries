@@ -169,7 +169,7 @@
 <div class="spoiler-markdown"><p>
 $$\exists{\lim_{x \to a} f(x)} \iff \forall{\varepsilon &gt; 0}\mathpunct{:}~~ \exists{\delta}\mathpunct{:}~~ \forall{x', x''}~~
 \begin{cases}
-0 &lt; |x'-a| &lt; \delta \\\\
+0 &lt; |x'-a| &lt; \delta \\
 0 &lt; |x''-a| &lt; \delta
 \end{cases} \Rightarrow |f(x') - f(x'')| &lt; \varepsilon$$</p></div></p>
 <p>Д-во:<br/>
@@ -179,12 +179,12 @@ $\Large{\implies}$<br/>
 $$|f(x') - f(x'')| = |f(x') - A + A - f(x'')| \leq |f(x') - A| + |f(x'') - A| &lt; \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon$$</p>
 <p>$\Large{\impliedby}$<br/>
 Рассмотрим следующую последовательность: <br/>
-$$\underbrace{ {x_{n}} }{ \forall{\varepsilon &gt; 0}~~ \exists{N(\varepsilon)}} \neq {a}\mathpunct{:}~~ x{n} \to a \Rightarrow \underbrace{ |x_{n} - a| &lt; \delta \land |x_{m} - a| &lt; \delta }{ \forall{n,m &gt; N(\varepsilon)}}$$<br/>
+$$\underbrace{ \{x_{n}\} }{ \forall{\varepsilon &gt; 0}~~ \exists{N(\varepsilon)}} \neq \{a\}\mathpunct{:}~~ x{n} \to a \Rightarrow \underbrace{ |x_{n} - a| &lt; \delta \land |x_{m} - a| &lt; \delta }{ \forall{n,m &gt; N(\varepsilon)}}$$<br/>
 Тогда получаем, что <br/>
 $$\forall{\varepsilon &gt; 0}~~ \exists{N(\varepsilon)}~~ \forall{n,m &gt; N(\varepsilon)}~~ |f(x{n}) - f(x_{m})| &lt; \varepsilon$$<br/>
-Получаем, что ${f(x_{n})}$ - <span>фундаментальная последовательность</span>, а значит по <span>критерию Коши</span>: $f(x_{n}) \to A$<br/>
+Получаем, что $\{f(x_{n})\}$ - <span>фундаментальная последовательность</span>, а значит по <span>критерию Коши</span>: $f(x_{n}) \to A$<br/>
 Пусть $y_{n} \to a$. Проведём аналогичные действия и получим: $f(y_{n}) \to B$<br/>
-Рассмотрим ${t_{n}}\mathpunct{:}~ x_{1}, y_{1}, x_{2}, y_{2},\dots \to a$. Вновь проведём действия и получим: $f(t_{n}) \to C$<br/>
+Рассмотрим $\{t_{n}\}\mathpunct{:}~ x_{1}, y_{1}, x_{2}, y_{2},\dots \to a$. Вновь проведём действия и получим: $f(t_{n}) \to C$<br/>
 Но так как $f(t_{n}) \to C$, то и <br/>
 $$\lim_{n \to \infty} f(x_{n}) = \lim_{x \to \infty} f(y_{n}) = A = B = C$$<br/>
 А значит по Гейне: $\exists{\lim_{x \to a} } f(x)~~~\square$<br/>

@@ -165,7 +165,7 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Формула Коши-Адамара</h1><p><strong>Формулировка:</strong><br/>
+<div class="content"><h1>Формула Коши-Адамара</h1><p><b>Формулировка:</b><br/>
 Пусть степенной ряд $\sum_{n=0}^{\infty} a_n x^n$ и $A = \overline{\lim_{n \to \infty}} \sqrt[\leftroot{-1}\uproot{1}n]{|a_n|}$.<br/>
 Тогда радиус сходимости $R$ ряда вычисляется по формуле:<br/>
 $$ R = \dfrac{1}{A} $$<br/>
@@ -187,14 +187,14 @@ $r~\overline{\lim_{n \to \infty}} \sqrt[n]{|a_{n}|} \geq 1$<br/>
 $r \geq \dfrac{1}{A} \Rightarrow R = \inf_{r &gt; R} r \geq \dfrac{1}{A}$</p>
 <hr/>
 <h2>Формула Коши-Адамара для радиуса сходимости степенного ряда (ИИ)</h2>
-<p><strong>Формулировка:</strong><br/>
+<p><b>Формулировка:</b><br/>
 Пусть степенной ряд $\sum_{n=0}^{\infty} a_n x^n$ и $A = \varlimsup_{n \to \infty} \sqrt[\leftroot{-1}\uproot{1}n]{|a_n|}$.<br/>
 Тогда радиус сходимости $R$ ряда определяется как:<br/>
 $$ R = \dfrac{1}{A} $$<br/>
 (с $R = +\infty$ при $A = 0$ и $R = 0$ при $A = +\infty$).</p>
-<p><strong>Д-во:</strong><br/>
-<strong><br/>
-1. Докажем $R \leq \dfrac{1}{A}$:</strong><br/>
+<p><b>Д-во:</b><br/>
+<b><br/>
+1. Докажем $R \leq \dfrac{1}{A}$:</b><br/>
 - Пусть $R &gt; 0$ (при $R = 0$ неравенство очевидно).<br/>
 - По определению $R$, для любого $r \in (0, R)$ ряд $\sum a_n r^n$ сходится.<br/>
 - Из сходимости следует: $a_n r^n \to 0$ $\implies \exists M &gt; 0$ такое, что $\forall n \, |a_n r^n| \leq M$.<br/>
@@ -204,7 +204,7 @@ $$ R = \dfrac{1}{A} $$<br/>
   $$ r \cdot \varlimsup_{n \to \infty} \sqrt[\leftroot{-1}\uproot{1}n]{|a_n|} \leq \varlimsup_{n \to \infty} \sqrt[\leftroot{-1}\uproot{1}n]{M} = 1 $$<br/>
   Так как $\sqrt[\leftroot{-1}\uproot{1}n]{M} \to 1$.<br/>
 - Получаем $r \cdot A \leq 1$ $\implies r \leq \dfrac{1}{A}$.<br/>
-- Поскольку $r$ произвольно из $(0, R)$, то $R = \sup{ r \mid |x|&lt;R \implies \text{сходится} } \leq \dfrac{1}{A}$.  </p>
+- Поскольку $r$ произвольно из $(0, R)$, то $R = \sup\{ r \mid |x|&lt;R \implies \text{сходится} \} \leq \dfrac{1}{A}$.  </p>
 <p><b><br/>
 2. Докажем $R \geq \dfrac{1}{A}$:</b><br/>
 - Фиксируем $R$ (из определения радиуса сходимости).<br/>
@@ -217,10 +217,10 @@ $$ R = \dfrac{1}{A} $$<br/>
   (по свойствам верхнего предела).<br/>
 - Отсюда $r \geq \dfrac{1}{A}$.<br/>
 - Поскольку $r$ произвольно из $(R, +\infty)$, то<br/>
-  $$ R = \inf { r \mid |x| \geq r \implies \text{расходится} } \geq \dfrac{1}{A} $$  </p>
-<p><strong>Итог:</strong> Из $R \leq \dfrac{1}{A}$ и $R \geq \dfrac{1}{A}$ следует $R = \dfrac{1}{A}$.<br/>
+  $$ R = \inf \{ r \mid |x| \geq r \implies \text{расходится} \} \geq \dfrac{1}{A} $$  </p>
+<p><b>Итог:</b> Из $R \leq \dfrac{1}{A}$ и $R \geq \dfrac{1}{A}$ следует $R = \dfrac{1}{A}$.<br/>
 $\square$  </p>
-<p><strong>Пояснение ключевых моментов:</strong><br/>
+<p><b>Пояснение ключевых моментов:</b><br/>
 - $\varlimsup\limits_{n \to \infty} b_n = \lim\limits_{n \to \infty} \big( \sup\limits_{k \geq n} b_k \big)$ — верхний предел.<br/>
 - В пункте 1: $r &lt; R$ гарантирует сходимость ряда $\sum a_n r^n$ по определению радиуса сходимости.<br/>
 - В пункте 2: $r &gt; R$ гарантирует расходимость ряда.<br/>
