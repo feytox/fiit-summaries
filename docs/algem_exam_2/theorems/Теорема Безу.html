@@ -166,17 +166,24 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Теорема Безу</h1><h2>Теорема Безу</h2>
-<p><b>Формулировка:</b><br/>
-Пусть $f(x)$ – многочлен над полем $F$ и $\alpha \in F$. Остаток от деления $f(x)$ на $(x - \alpha)$ равен $f(\alpha)$:<br/>
-$$r = f(\alpha)$$  </p>
-<p><b>Д-во:</b><br/>
-Обозначим частное и остаток от деления $f(x)$ на $(x - \alpha)$ через $q(x)$ и $r(x)$ соответственно. Тогда:<br/>
-$$f(x) = q(x)(x - \alpha) + r(x),$$<br/>
-где $\deg r(x) &lt; \deg(x - \alpha)$. Так как $\deg(x - \alpha) = 1$, то $\deg r(x) \leq 0$, т.е. $r(x) \in F$ (константа).  </p>
-<p>Подставим $x = \alpha$ в равенство:<br/>
-$$f(\alpha) = q(\alpha) \cdot (\alpha - \alpha) + r = q(\alpha) \cdot 0 + r.$$<br/>
-Отсюда получаем:<br/>
-$$r = f(\alpha).$$<br/>
-$\square$  </p></div>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Для многочлена $f(x)$ над полем $F$ и любого $c \in F$:
+$$ f(x) = q(x)(x - c) + f(c) $$
+где $q(x)$ — некоторый многочлен.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+При делении многочлена $f(x)$ на $(x-c)$, остаток $r$ является константой:
+$$ f(x) = q(x)(x - c) + r $$
+Подставим $x=c$:
+$$ f(c) = q(c)(c - c) + r \implies f(c) = 0 + r \implies r = f(c) $$
+$\square$</p></div></p>
+<h2>Следствие: Критерий корня</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+$c$ - корень многочлена $f(x)$ $\iff$ $(x - c) \mid f(x)$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+Очевидное следствие по теореме.</p></div></p></div>
 </body>
 </html>

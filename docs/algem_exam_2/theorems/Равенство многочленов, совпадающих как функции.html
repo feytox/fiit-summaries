@@ -167,13 +167,14 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Равенство многочленов, совпадающих как функции</h1><p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Пусть $\mathbb{F}$ - бесконечное поле и $f, g \in \mathbb{F}[x]$. Если $\forall{x} \in \mathbb{F} ~~ f(x) = g(x)$, тогда $f$ и $g$ равны как многочлены.</p></div><br/>
-Д-во:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $\deg{f} \geq \deg{g}$. 
-$\deg{f} = -\infty \Rightarrow$ $f$ и $g$ нулевые и совпадают.
-$\deg{f} = n \geq 0$   
-$x_{1}, x_{2}, \dots, x_{n+1} \in \mathbb{F} \mathpunct{:}~~f(x_{i}) = g(x_{i}) \Rightarrow$  $f$ и $g$ интерполяционные многочлены для набора из $n + 1$ точек $\Rightarrow$ $f$ и $g$ совпадают из <a href="Интерполяционный многочлен Лагранжа.html">единственности интерполяционного многочлена</a> степени не выше $n$.
-$\square$</p></div></p></div>
+Пусть $\mathbb{F}$ - бесконечное поле и $f, g \in \mathbb{F}[x]$. Если $\forall{x} \in \mathbb{F}\mathpunct{:}~~ f(x) = g(x)$, тогда $f$ и $g$ равны как многочлены.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $\deg{f} \geq \deg{g}$. <br/>
+Если $\deg{f} = -\infty$, то $f$ и $g$ нулевые и совпадают.</p>
+<p>Пусть $\deg{f} = n \geq 0$<br/>
+Выберем точки $x_{1}, x_{2}, \dots, x_{n+1} \in \mathbb{F}$, тогда $f(x_{i}) = g(x_{i})$. Значит $f$ и $g$ интерполяционные многочлены для набора из $n + 1$ точек, следовательно $f$ и $g$ совпадают из <a href="Интерполяционный многочлен Лагранжа.html">единственности интерполяционного многочлена</a> степени не выше $n$.<br/>
+$\square$<br/>
+</p></div></p></div>
 </body>
 </html>
