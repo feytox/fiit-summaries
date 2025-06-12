@@ -211,19 +211,19 @@ $\square$<br/>
 
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Следствие 1</strong><br/>
+<b>Следствие 1</b><br/>
 $\Large\implies$<br/>
 По теореме для любых $x, y \in V_{1}$:<br/>
-$$(x, y) = (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{}\mathcal{A}y)$$<br/>
-$$(x, y - \mathcal{A}^{}\mathcal{A}y) = 0 \overbrace{ \implies }^{ * } y(\mathcal{E} - \mathcal{A}^{}\mathcal{A}) = 0 \overbrace{ \implies }^{ * } \mathcal{A}^{}\mathcal{A} = \mathcal{E}$$<br/>
+$$(x, y) = (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{*}\mathcal{A}y)$$<br/>
+$$(x, y - \mathcal{A}^{*}\mathcal{A}y) = 0 \overbrace{ \implies }^{ * } y(\mathcal{E} - \mathcal{A}^{*}\mathcal{A}) = 0 \overbrace{ \implies }^{ * } \mathcal{A}^{*}\mathcal{A} = \mathcal{E}$$<br/>
 $*$ - так как $x$ и $y$ - любые.</p>
-<p>Аналогично, $\mathcal{A}\mathcal{A}^{} = \mathcal{E}$, а значит $\mathcal{A}^{}\mathcal{A} = \mathcal{A}\mathcal{A}^{*}$.</p>
+<p>Аналогично, $\mathcal{A}\mathcal{A}^{*} = \mathcal{E}$, а значит $\mathcal{A}^{*}\mathcal{A} = \mathcal{A}\mathcal{A}^{*}$.</p>
 <p>$\Large\impliedby$<br/>
 $$\forall{x, y \in V_{1}}\mathpunct{:}~~ (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{*}\mathcal{A}y) = (x, y)$$<br/>
 а значит $\mathcal{A}$ - изометрия.</p>
-<p><strong>Следствие 2</strong><br/>
+<p><b>Следствие 2</b><br/>
 Так как $V_{1} = V_{2}$:<br/>
-$$\mathcal{A}^{}\mathcal{A} = \mathcal{A}\mathcal{A}^{} = \mathcal{E} \implies \mathcal{A}^{*} = \mathcal{A}^{-1}$$<br/>
+$$\mathcal{A}^{*}\mathcal{A} = \mathcal{A}\mathcal{A}^{*} = \mathcal{E} \implies \mathcal{A}^{*} = \mathcal{A}^{-1}$$<br/>
 $\square$<br/>
 </p></div></p>
 <h2>Лемма: Собственные значения изометрии</h2>
@@ -252,12 +252,12 @@ $\square$</p></div></p>
 
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Часть 1</strong>:<br/>
+<b>Часть 1</b>:<br/>
 Пусть $e_1, \dots, e_n$ — ОНБ. Так как $\mathcal{A}$ сохраняет скалярное произведение (по теореме об изометрии):<br/>
 $$ (\mathcal{A} e_i, \mathcal{A} e_j) = (e_i, e_j) = \delta_{ij} $$<br/>
 где $\delta_{ij}$ - символ Кронекера.</p>
 <p>Следовательно, $\mathcal{A} e_1, \dots, \mathcal{A} e_n$ — ОНБ.</p>
-<p><strong>Часть 2</strong>:<br/>
+<p><b>Часть 2</b>:<br/>
 Пусть $\mathcal{A}$ переводит ОНБ $e_1, \dots, e_n$ в ОНБ. Для произвольного $v = \sum\limits_{k=1}^n c_k e_k$:<br/>
 $$ \mathcal{A} v = \sum_{k=1}^n c_k \mathcal{A} e_k $$<br/>
 Заметим, что квадраты длин равны:<br/>
@@ -278,9 +278,9 @@ $\Large\implies$<br/>
 Возьмем $x = \sum\limits_{k=1}^{n} x_k e_k$ и $y = \sum\limits_{m=1}^{n} y_m e_m$. Тогда:<br/>
 $$ (\mathcal{A} x, \mathcal{A} y) = \left( \sum_{k=1}^{n} x_k \lambda_k e_k, \sum_{m=1}^{n} y_m \lambda_m e_m \right) $$<br/>
 В силу ортонормированности базиса $(e_k, e_m) = \delta_{km}$, поэтому:<br/>
-$$ = \sum_{k=1}^{n} \sum_{m=1}^{n} x_k \bar{y}m \lambda_k \bar{\lambda}_m (e_k, e_m) = \sum{k=1}^{n} x_k \bar{y}k \lambda_k \bar{\lambda}_k $$<br/>
+$$ = \sum_{k=1}^{n} \sum_{m=1}^{n} x_k \bar{y}<em>m \lambda_k \bar{\lambda}_m (e_k, e_m) = \sum</em>{k=1}^{n} x_k \bar{y}<em>k \lambda_k \bar{\lambda}_k $$<br/>
 Так как $|\lambda_k| = 1$, то $\lambda_k \bar{\lambda}_k = 1$:<br/>
-$$ = \sum{k=1}^{n} x_k \bar{y}_k \cdot 1 = (x, y) $$<br/>
+$$ = \sum</em>{k=1}^{n} x_k \bar{y}_k \cdot 1 = (x, y) $$<br/>
 Следовательно, $\mathcal{A}$ унитарен (изометрия).<br/>
 $\square$<br/>
 </p></div></p>
@@ -333,7 +333,7 @@ $\square$<br/>
 Пусть $A$ — квадратная матрица над $\mathbb{R}$ (ортогональность) или $\mathbb{C}$ (унитарность). Эквивалентны:</p>
 <ol>
 <li>
-<p>$A$ ортогональна (унитарна): $AA^{} = A^{}A = E$  </p>
+<p>$A$ ортогональна (унитарна): $AA^{*} = A^{*}A = E$  </p>
 </li>
 <li>
 <p>Столбцы $A$ образуют ортонормированный базис  </p>
@@ -345,14 +345,14 @@ $\square$<br/>
 
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>$(1) \implies (2)$</strong><br/>
-Так как $A$ унитарна, то по определению ${} A^{}A = E {}$. Нетрудно заметить, что элемент $(i,j)$ произведения ${} A^{}A {}$ есть скалярное произведение $i$-го и $j$-го столбцов $A$. Равенство ${} E$ означает $\delta_{ij}$, то есть столбцы ортонормированы.</p>
-<p><strong>$(2) \implies (1)$</strong><br/>
+<b>$(1) \implies (2)$</b><br/>
+Так как $A$ унитарна, то по определению ${} A^{*}A = E {}$. Нетрудно заметить, что элемент $(i,j)$ произведения ${} A^{*}A {}$ есть скалярное произведение $i$-го и $j$-го столбцов $A$. Равенство ${} E$ означает $\delta_{ij}$, то есть столбцы ортонормированы.</p>
+<p><b>$(2) \implies (1)$</b><br/>
 Рассмотрим оператор $\mathcal{A}$ с матрицей $A$. Ясно, что под действием $\mathcal{A}$ ОНБ переходит в ОНБ, а значит $\mathcal{A}$ - изометрия и $A$ - ортогональная (унитарна)</p>
-<p><strong>$(1) \iff (3)$</strong><br/>
-Применяем $(1) \iff (2)$ к $A^{}$:<br/>
-$AA^{} = E \iff$ столбцы $A^{}$ образуют ОНБ.<br/>
-Столбцы $A^{}$ суть сопряжённые строки $A$, что эквивалентно ортонормированности строк $A$.<br/>
+<p><b>$(1) \iff (3)$</b><br/>
+Применяем $(1) \iff (2)$ к $A^{*}$:<br/>
+$AA^{*} = E \iff$ столбцы $A^{*}$ образуют ОНБ.<br/>
+Столбцы $A^{*}$ суть сопряжённые строки $A$, что эквивалентно ортонормированности строк $A$.<br/>
 $\square$<br/>
 </p></div></p></div>
 </body>

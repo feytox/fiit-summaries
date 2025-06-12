@@ -166,51 +166,51 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Эллипс</h1><h2>Определение: Эллипс</h2>
-<p><strong>Определение:</strong><br/>
+<p><b>Определение:</b><br/>
 <div class="spoiler-markdown"><p><br/>
 Кривая называется эллипсом, если в подходящей системе координат её уравнение имеет вид:</p>
 <p>$$  \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \quad (a \geq b &gt; 0)  $$  </p>
-<p><strong>Границы:</strong><br/>
+<p><b>Границы:</b><br/>
 - По оси $x$: $|x| \leq a$<br/>
 - По оси $y$: $|y| \leq b$  </p>
-<p><strong>Параметры:</strong><br/>
+<p><b>Параметры:</b><br/>
 - $a$ — большая полуось<br/>
 - $b$ — малая полуось<br/>
 </p></div></p>
-<p><strong>Фокальное расстояние</strong>:<br/>
+<p><b>Фокальное расстояние</b>:<br/>
 <div class="spoiler-markdown"><p>
 $$
 c = \sqrt{a^2 - b^2} 
 $$</p></div></p>
-<p><strong>Фокусы:</strong><br/>
+<p><b>Фокусы:</b><br/>
 <div class="spoiler-markdown"><p>
 Расположены на большой оси в точках:  
 $$  
 F_1 = (-c, 0), \quad F_2 = (c, 0)  
 $$</p></div></p>
-<p><strong>Эксцентриситет:</strong> <br/>
+<p><b>Эксцентриситет:</b> <br/>
 <div class="spoiler-markdown"><p>
 $$  
 e = \dfrac{c}{a} \quad (0 \leq e &lt; 1)  
 $$</p></div></p>
-<p><strong>Директрисы:</strong><br/>
+<p><b>Директрисы:</b><br/>
 <div class="spoiler-markdown"><p>
 Прямые, параллельные малой оси и отстоящие от центра на расстояние $\dfrac{a}{e}$:
 $$
 x = \pm \dfrac{a}{e}  
 $$</p></div></p>
 <h2>Лемма: Фокальные радиусы</h2>
-<p><strong>Формулировка:</strong><br/>
+<p><b>Формулировка:</b><br/>
 <div class="spoiler-markdown"><p>
 Для произвольной точки $M(x, y)$, лежащей на эллипсе $\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$, расстояния до фокусов выражаются формулами:
 $$
 \begin{aligned}
-MF_1 &amp;= a + e x \\\\
+MF_1 &amp;= a + e x \\
 MF_2 &amp;= a - e x
 \end{aligned}
 $$
 где $F_1(-c, 0)$, $F_2(c, 0)$ - фокусы</p></div></p>
-<p><strong>Д-во:</strong><br/>
+<p><b>Д-во:</b><br/>
 <div class="spoiler-markdown"><p><br/>
 Выразим $y^2$ из уравнения эллипса:<br/>
 $$ y^2 = b^2\left(1 - \dfrac{x^2}{a^2}\right) $$</p>
@@ -226,10 +226,10 @@ $$= \sqrt{\dfrac{c^2}{a^2}x^2 + 2c x + a^2} = \sqrt{(e x + a)^2} = a + e x$$</p>
 $\square$<br/>
 </p></div></p>
 <h2>Теорема: Фокальное свойство эллипса</h2>
-<p><strong>Формулировка:</strong><br/>
+<p><b>Формулировка:</b><br/>
 <div class="spoiler-markdown"><p>
 Точка $M$ принадлежит эллипсу с фокусами $F_1$, $F_2$ и большой полуосью $a$ $\iff$ $MF_1 + MF_2 = 2a$</p></div></p>
-<p><strong>Д-во:</strong><br/>
+<p><b>Д-во:</b><br/>
 <div class="spoiler-markdown"><p><br/>
 $\Large\implies$<br/>
 Следует из леммы выше.</p>
@@ -262,7 +262,7 @@ $$y = \pm b \sqrt{1 - \dfrac{x^{2}}{a^{2}}} = \pm \dfrac{b}{a}\sqrt{a^{2} - x^{2
 $$ S_{\frac{1}{4}} = \int_0^a \dfrac{b}{a} \sqrt{a^2 - x^2} dx $$
 Сделаем замену:
 $$S_{\frac{1}{4}} = \begin{bmatrix}
-x = a\sin t &amp; 0 \to 0 \\\\
+x = a\sin t &amp; 0 \to 0 \\
 dx = a\cos t \, dt &amp; a \to \dfrac{\pi}{2}
 \end{bmatrix} = \dfrac{b}{a} \int_0^{\pi/2} a \cos t \cdot a \cos t  dt = ab \int_0^{\pi/2} \cos^2 t  dt$$
 Воспользуемся формулой понижения степени $\cos^2 t = \dfrac{1 + \cos 2t}{2}$:

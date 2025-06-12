@@ -183,15 +183,15 @@ $f(x)$ - интегрируема $\iff$ $\forall{\varepsilon &gt; 0}~~ \exists{
 $\Large\implies$ <br/>
 очевидно, из <a href="Критерий интегрируемости через суммы Дарбу.html">критерия интегрируемости для всех разбиений</a></p>
 <p>$\Large\impliedby$<br/>
-Пусть $M = \sup\limits_{x \in [a, b]}|f(x)|$. Возьмём $\tau_{1}$ такое, что $\overline{S}{\tau{1}} - \underline{S}{\tau{1}} &lt; \varepsilon_{1} = \dfrac{\varepsilon}{2}$. Также возьмём все $\tau_{2}$ такие, что $\forall{\varepsilon &gt; 0}~~ \exists{\delta}~~ \forall{\tau_{2}}\mathpunct{:}~~ \lambda(\tau_{2}) &lt; \delta$</p>
-<p>Пусть $\tau_{3} = \tau_{1} \cup \tau_{2}$, тогда $\overline{S}{\tau{3}} \leq \overline{S}{\tau{1}}$ и $\underline{S}{\tau{3}} \geq \underline{S}{\tau{1}}$<br/>
+Пусть $M = \sup\limits_{x \in [a, b]}|f(x)|$. Возьмём $\tau_{1}$ такое, что $\overline{S}<em>{\tau</em>{1}} - \underline{S}<em>{\tau</em>{1}} &lt; \varepsilon_{1} = \dfrac{\varepsilon}{2}$. Также возьмём все $\tau_{2}$ такие, что $\forall{\varepsilon &gt; 0}~~ \exists{\delta}~~ \forall{\tau_{2}}\mathpunct{:}~~ \lambda(\tau_{2}) &lt; \delta$</p>
+<p>Пусть $\tau_{3} = \tau_{1} \cup \tau_{2}$, тогда $\overline{S}<em>{\tau</em>{3}} \leq \overline{S}<em>{\tau</em>{1}}$ и $\underline{S}<em>{\tau</em>{3}} \geq \underline{S}<em>{\tau</em>{1}}$<br/>
 Скажем, что $|\tau_{3}| - |\tau_{2}| = n$, тогда из замечания выше следует, что:<br/>
-- $\overline{S}{\tau{2}} \leq \overline{S}{\tau{3}} + 2M \cdot \lambda(\tau_{2}) \cdot n$<br/>
-- $\underline{S}{\tau{2}} \geq \underline{S}{\tau{3}} - 2M \cdot \lambda(\tau_{2}) \cdot n$</p>
+- $\overline{S}<em>{\tau</em>{2}} \leq \overline{S}<em>{\tau</em>{3}} + 2M \cdot \lambda(\tau_{2}) \cdot n$<br/>
+- $\underline{S}<em>{\tau</em>{2}} \geq \underline{S}<em>{\tau</em>{3}} - 2M \cdot \lambda(\tau_{2}) \cdot n$</p>
 <p>Возьмём $\delta = \dfrac{\varepsilon}{8Mn}$, тогда:<br/>
 $$\begin{align}<br/>
-\overline{S}{\tau{2}} - \underline{S}{\tau{2}} &amp;\leq (\overline{S}{\tau{3}} + 2M \lambda(\tau_{2})n) - (\underline{S}{\tau{3}} - 2M \lambda(\tau_{2})n)  \\<br/>
-&amp;&lt; \overline{S}{\tau{3}} - \underline{S}{\tau{3}} + 4Mn \cdot \delta \leq \overline{S}{\tau{1}} - \underline{S}{\tau{1}} + \dfrac{\varepsilon}{2}  \\<br/>
+\overline{S}<em>{\tau</em>{2}} - \underline{S}<em>{\tau</em>{2}} &amp;\leq (\overline{S}<em>{\tau</em>{3}} + 2M \lambda(\tau_{2})n) - (\underline{S}<em>{\tau</em>{3}} - 2M \lambda(\tau_{2})n)  \\<br/>
+&amp;&lt; \overline{S}<em>{\tau</em>{3}} - \underline{S}<em>{\tau</em>{3}} + 4Mn \cdot \delta \leq \overline{S}<em>{\tau</em>{1}} - \underline{S}<em>{\tau</em>{1}} + \dfrac{\varepsilon}{2}  \\<br/>
 &amp;&lt; \dfrac{\varepsilon}{2} + \dfrac{\varepsilon}{2} = \varepsilon<br/>
 \end{align}$$<br/>
 $\square$<br/>

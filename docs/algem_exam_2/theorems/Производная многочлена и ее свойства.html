@@ -166,20 +166,20 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Производная многочлена и ее свойства</h1><h2>Производная многочлена</h2>
-<p><strong>Определение:</strong><br/>
+<p><b>Определение:</b><br/>
 Пусть $f(x) = \alpha_nx^n + \alpha_{n-1}x^{n-1} + \cdots + \alpha_0$ – многочлен над кольцом $R$.<br/>
-- Если $n &gt; 0$, то <strong>производной</strong> $f(x)$ называется многочлен:<br/>
+- Если $n &gt; 0$, то <b>производной</b> $f(x)$ называется многочлен:<br/>
 $$f'(x) = n\alpha_nx^{n-1} + (n-1)\alpha_{n-1}x^{n-2} + \cdots + \alpha_1$$<br/>
 - Если $n = 0$ (константа), то $f'(x) = 0$.</p>
 <hr/>
-<p><strong>Замечания:</strong><br/>
+<p><b>Замечания:</b><br/>
 а) Для любого многочлена $f$ над кольцом $R$:<br/>
 $$\deg f' \leq \deg f - 1$$<br/>
 б) Если $f$ – многочлен степени $&gt;0$ над полем характеристики $0$, то:<br/>
 $$\deg f' = \deg f - 1$$</p>
 <hr/>
 <h2>Лемма о свойствах производной</h2>
-<p><strong>Формулировка:</strong><br/>
+<p><b>Формулировка:</b><br/>
 Если $f(x)$, $g(x)$ – многочлены над кольцом $R$, $\alpha \in R$, $m \in \mathbb{N}$, то:  </p>
 <ol>
 <li>
@@ -195,28 +195,28 @@ $$\deg f' = \deg f - 1$$</p>
 <p>$(f^m)' = mf^{m-1}f'$  </p>
 </li>
 </ol>
-<p><strong>Д-во:</strong> </p>
-<p><strong>1) $(\alpha f)' = \alpha f'$</strong><br/>
+<p><b>Д-во:</b> </p>
+<p><b>1) $(\alpha f)' = \alpha f'$</b><br/>
 Пусть $f(x) = \sum_{k=0}^n \alpha_k x^k$. Тогда:<br/>
 $$\alpha f(x) = \sum_{k=0}^n (\alpha \alpha_k) x^k$$<br/>
 Производная:<br/>
 $$(\alpha f)' = \sum_{k=1}^n k(\alpha \alpha_k) x^{k-1} = \alpha \sum_{k=1}^n k\alpha_k x^{k-1} = \alpha f'$$  </p>
-<p><strong>2) $(f + g)' = f' + g'$</strong><br/>
+<p><b>2) $(f + g)' = f' + g'$</b><br/>
 Пусть $f(x) = \sum_{k=0}^n \alpha_k x^k$, $g(x) = \sum_{k=0}^m \beta_k x^k$. Тогда:<br/>
 $$(f + g)(x) = \sum_{k=0}^{\max(n,m)} (\alpha_k + \beta_k) x^k$$<br/>
 Производная:<br/>
 $$(f + g)' = \sum_{k=1}^{\max(n,m)} k(\alpha_k + \beta_k) x^{k-1} = \sum_{k=1}^n k\alpha_k x^{k-1} + \sum_{k=1}^m k\beta_k x^{k-1} = f' + g'$$  </p>
-<p><strong>3) $(fg)' = f'g + fg'$</strong><br/>
-Достаточно доказать для $f(x) = x^n$, $g(x) = x^m$ (в силу линейности 1 и 2):<br/>
+<p><b>3) $(fg)' = f'g + fg'$</b><br/>
+*Достаточно доказать для $f(x) = x^n$, $g(x) = x^m$ (в силу линейности 1 и 2):*<br/>
 $$\begin{aligned} <br/>
 (fg)' &amp;= (x^{n+m})' = (n+m)x^{n+m-1} \\ <br/>
 f'g + fg' &amp;= (nx^{n-1})x^m + x^n (mx^{m-1}) = nx^{n+m-1} + mx^{n+m-1} = (n+m)x^{n+m-1} <br/>
 \end{aligned}$$  </p>
-<p><strong>4) $(f^m)' = mf^{m-1}f'$</strong><br/>
-Индукция по $m$:<br/>
-- <strong>База ($m=1$):</strong><br/>
+<p><b>4) $(f^m)' = mf^{m-1}f'$</b><br/>
+*Индукция по $m$:*<br/>
+- <b>База ($m=1$):</b><br/>
 $(f^1)' = f' = 1 \cdot f^0 \cdot f'$<br/>
-- <strong>Переход ($m \to m+1$):</strong><br/>
+- <b>Переход ($m \to m+1$):</b><br/>
 Используем свойство 3:<br/>
 $$\begin{aligned} <br/>
 (f^{m+1})' &amp;= (f \cdot f^m)' = f' \cdot f^m + f \cdot (f^m)' \\ <br/>
@@ -226,9 +226,9 @@ $\square$  </p>
 <hr/>
 <h2>Неприводимые множители многочлена и его производной</h2>
 <h3>Лемма о производной неприводимого многочлена</h3>
-<p><strong>Формулировка:</strong><br/>
+<p><b>Формулировка:</b><br/>
 Если $p$ – неприводимый многочлен и $p' \neq 0$, то $\text{НОД}(p, p') = 1$.  </p>
-<p><strong>Д-во:</strong><br/>
+<p><b>Д-во:</b><br/>
 Пусть $d = \text{НОД}(p, p')$. Тогда:<br/>
 $$p = d \cdot q \quad \text{и} \quad p' = d \cdot r$$<br/>
 для некоторых многочленов $q, r$.  </p>
@@ -240,14 +240,14 @@ $$p = d \cdot q \quad \text{и} \quad p' = d \cdot r$$<br/>
 <li>Так как $p$ неприводим, $d$ должен быть обратим ($d \in F^\times$).  </li>
 <li>Значит, $d$ ассоциирован с $1$, т.е. $\text{НОД}(p, p') = 1$. $\square$  </li>
 </ul>
-<p><strong>Замечание:</strong><br/>
+<p><b>Замечание:</b><br/>
 Условие $p' \neq 0$ существенно. Пример:<br/>
 - Поле $F_2(y)$ (рациональные функции над $\mathbb{F}_2$).<br/>
 - Многочлен $p(x) = x^2 + y$ неприводим над $F_2(y)$ (обобщённый критерий Эйзенштейна).<br/>
 - Производная $p'(x) = 2x = 0$, так как $\text{char}\, F_2 = 2$.  </p>
 <hr/>
 <h3>Предложение о неприводимых множителях</h3>
-<p><strong>Формулировка:</strong><br/>
+<p><b>Формулировка:</b><br/>
 Пусть $F$ – поле характеристики $0$, $p$ – неприводимый множитель кратности $k$ многочлена $f \in F[x]$. Тогда:  </p>
 <ol>
 <li>
@@ -257,15 +257,15 @@ $$p = d \cdot q \quad \text{и} \quad p' = d \cdot r$$<br/>
 <p>Если $k &gt; 1$, то $p$ – неприводимый множитель $f'$ кратности $k-1$.  </p>
 </li>
 </ol>
-<p><strong>Д-во:</strong><br/>
+<p><b>Д-во:</b><br/>
 Пусть $f = p^k g$, где $p \nmid g$ (многочлен $g$ содержит остальные множители).  </p>
-<p><strong>1) Случай $k = 1$:</strong><br/>
+<p><b>1) Случай $k = 1$:</b><br/>
 $f = pg$, тогда:<br/>
 $$f' = p'g + pg'$$<br/>
 Предположим $p \mid f'$. Так как $p \mid pg'$, то:<br/>
 $$p \mid (f' - pg') = p'g$$<br/>
 Но $\text{НОД}(p, p') = 1$ (по лемме), и $p \nmid g$, значит $p \nmid p'g$. Противоречие.  </p>
-<p><strong>2) Случай $k &gt; 1$:</strong><br/>
+<p><b>2) Случай $k &gt; 1$:</b><br/>
 $$f' = (p^k g)' = kp^{k-1}p'g + p^k g' = p^{k-1} \underbrace{(kp'g + pg')}_{h}$$<br/>
 а) $p^{k-1} \mid f'$ (очевидно).<br/>
 б) Докажем $p \nmid h$:<br/>

@@ -169,9 +169,9 @@
 <p><div class="spoiler-markdown"><p>
 Система линейных уравнений называется <b>однородной</b>, если свободные члены всех уравнений системы нулевые:
 $$\begin{cases}
-a_{11}x_{1} + a_{12}x_{2} + \dots a_{1n}x_{n} = 0 \\\\
-a_{21}x_{1} + a_{22}x_{2} + \dots a_{2n}x_{n} = 0 \\\\
-\dots\dots\dots\dots\dots\dots\dots\dots\dots \\\\
+a_{11}x_{1} + a_{12}x_{2} + \dots a_{1n}x_{n} = 0 \\
+a_{21}x_{1} + a_{22}x_{2} + \dots a_{2n}x_{n} = 0 \\
+\dots\dots\dots\dots\dots\dots\dots\dots\dots \\
 a_{k1}x_{1} + a_{k2}x_{2} + \dots a_{kn}x_{n} = 0
 \end{cases}$$
 По <span>теореме Кронекера-Капелли</span> однородная система всегда совместна.</p></div></p>
@@ -182,13 +182,13 @@ a_{k1}x_{1} + a_{k2}x_{2} + \dots a_{kn}x_{n} = 0
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 $\Large\implies$<br/>
-$\mathbf{x}{1}$ - решение системы $A\mathbf{x} = \mathbf{b}$, положим $\mathbf{y} := \mathbf{x}{1} - \mathbf{x}{0}$. Тогда:<br/>
-$$A\mathbf{y} = A(\mathbf{x}{1} - \mathbf{x}{0}) = A\mathbf{x}{1} - A\mathbf{x}{0} = \mathbf{b} - \mathbf{b} = \mathbf{0}$$<br/>
-Значит $\mathbf{y}$ - решение однородной системы $A\mathbf{x} = 0$ и $\mathbf{x}{1} = \mathbf{x}_{0} + \mathbf{y}$.</p>
+$\mathbf{x}<em>{1}$ - решение системы $A\mathbf{x} = \mathbf{b}$, положим $\mathbf{y} := \mathbf{x}</em>{1} - \mathbf{x}<em>{0}$. Тогда:<br/>
+$$A\mathbf{y} = A(\mathbf{x}</em>{1} - \mathbf{x}<em>{0}) = A\mathbf{x}</em>{1} - A\mathbf{x}<em>{0} = \mathbf{b} - \mathbf{b} = \mathbf{0}$$<br/>
+Значит $\mathbf{y}$ - решение однородной системы $A\mathbf{x} = 0$ и $\mathbf{x}</em>{1} = \mathbf{x}_{0} + \mathbf{y}$.</p>
 <p>$\Large\impliedby$<br/>
-$\mathbf{x}{1} = \mathbf{x}{0} + \mathbf{y}$, где $\mathbf{y}$ - решение $A\mathbf{x} = \mathbf{0}$. Тогда:<br/>
-$$A\mathbf{x}{1} = A(\mathbf{x}{0} + \mathbf{y}) = A\mathbf{x}{0} + A\mathbf{y} = \mathbf{b} + \mathbf{0} = \mathbf{b}$$<br/>
-Отсюда $\mathbf{x}{1}$ - решение системы $A\mathbf{x} = \mathbf{b}$ $~~~\square$<br/>
+$\mathbf{x}<em>{1} = \mathbf{x}</em>{0} + \mathbf{y}$, где $\mathbf{y}$ - решение $A\mathbf{x} = \mathbf{0}$. Тогда:<br/>
+$$A\mathbf{x}<em>{1} = A(\mathbf{x}</em>{0} + \mathbf{y}) = A\mathbf{x}<em>{0} + A\mathbf{y} = \mathbf{b} + \mathbf{0} = \mathbf{b}$$<br/>
+Отсюда $\mathbf{x}</em>{1}$ - решение системы $A\mathbf{x} = \mathbf{b}$ $~~~\square$<br/>
 </p></div></p>
 <h4>"Следствие" об общем решении системы</h4>
 <p><div class="spoiler-markdown"><p>
@@ -234,37 +234,37 @@ a_{21} x_{1} + a_{22} x_{2} + \dots + a_{2n} x_{n} = 0 \\<br/>
 \dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \\<br/>
 a_{r1} x_{1} + a_{r2} x_{2} + \dots + a_{rn} x_{n} = 0<br/>
 \end{cases}$$<br/>
-Обозначим матрицу этой системы через $A'$. Ясно, что $r(A') = r$, поэтому у $A'$ есть $r$ линейно независимых столбцов. <strong>Переименуем переменные</strong> и перенесём линейно зависимые столбцы в правую часть, получим:<br/>
+Обозначим матрицу этой системы через $A'$. Ясно, что $r(A') = r$, поэтому у $A'$ есть $r$ линейно независимых столбцов. <b>Переименуем переменные</b> и перенесём линейно зависимые столбцы в правую часть, получим:<br/>
 $$\begin{cases}<br/>
 b_{11} y_{1} + b_{12} y_{2} + \dots + b_{1r} y_{r} = -b_{1~r+1} y_{r+1} - b_{1~r+2} y_{r+2} - \dots - b_{1n} y_{n} \\<br/>
 b_{21} y_{1} + b_{22} y_{2} + \dots + b_{2r} y_{r} = -b_{2~r+1} y_{r+1} - b_{2~r+2} y_{r+2} - \dots - b_{2n} y_{n} \\<br/>
 \dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots\dots \\<br/>
 b_{r1} y_{1} + b_{r2} y_{2} + \dots + b_{rr} y_{r} = -b_{r~r+1} y_{r+1} - b_{r~r+2} y_{r+2} - \dots - b_{rn} y_{n}<br/>
 \end{cases} ~~~~~(\dagger)$$<br/>
-Неизвестные $y_{r+1}, \dots, y_{n}$ называются <strong>свободными</strong>, а неизвестные $y_{1}, y_{2}, \dots, y_{r}$ - <strong>связанными</strong>.</p>
-<p>В матричном виде систему $(\dagger)$ можно записать как $B\mathbf{y} = \mathbf{c}$, где $B = (b_{ij}){r\times r}$ - матрица при неизвестных $y{1}, \dots, y_{r}$ и<br/>
+Неизвестные $y_{r+1}, \dots, y_{n}$ называются <b>свободными</b>, а неизвестные $y_{1}, y_{2}, \dots, y_{r}$ - <b>связанными</b>.</p>
+<p>В матричном виде систему $(\dagger)$ можно записать как $B\mathbf{y} = \mathbf{c}$, где $B = (b_{ij})<em>{r\times r}$ - матрица при неизвестных $y</em>{1}, \dots, y_{r}$ и<br/>
 $$\mathbf{y} := \begin{pmatrix}y_{1}\\\vdots\\y_{r}\end{pmatrix},~~~ c := \begin{pmatrix}<br/>
 -b_{1~r+1}y_{r+1} - \dots - b_{1n}y_{n} \\<br/>
 \vdots \\<br/>
 -b_{r~r+1}y_{r+1} - \dots - b_{rn}y_{n}<br/>
 \end{pmatrix}$$<br/>
-Из построений матрицы $B$ ясно, что она обратима. Умножая $B\mathbf{y} = \mathbf{c}$ слева на $B^{-1}$, получаем единственное решение системы $()$ в виде $\mathbf{y} = B^{-1}\mathbf{c}$. Переходя к координатам, имеем:<br/>
+Из построений матрицы $B$ ясно, что она обратима. Умножая $B\mathbf{y} = \mathbf{c}$ слева на $B^{-1}$, получаем единственное решение системы $(*)$ в виде $\mathbf{y} = B^{-1}\mathbf{c}$. Переходя к координатам, имеем:<br/>
 $$\begin{cases}<br/>
 y_{1} = c_{1~r+1}y_{r+1} + \dots + c_{1n}y_{n} \\<br/>
 y_{2} = c_{2~r+1}y_{r+1} + \dots + c_{2n}y_{n} \\<br/>
 \dots\dots\dots\dots\dots\dots\dots\dots\dots \\<br/>
 y_{r} = c_{r~r+1}y_{r+1} + \dots + c_{rn}y_{n}<br/>
-\end{cases} ~~~~~()$$<br/>
+\end{cases} ~~~~~(*)$$<br/>
 Для $i = \overline{r+1, n}$ придадим свободной переменной $y_{i}$ значение $1$, а всем остальным неизвестным - $0$. Вычислив по $(*)$ значения связанных переменных, получим $n-r$ решений:<br/>
-$$\mathbf{y}{1} := \begin{pmatrix}<br/>
-c{1~r+1} \\<br/>
+$$\mathbf{y}<em>{1} := \begin{pmatrix}<br/>
+c</em>{1~r+1} \\<br/>
 \vdots \\<br/>
 c_{r~r+1} \\<br/>
 1 \\<br/>
 \vdots \\<br/>
 0<br/>
-\end{pmatrix}, \dots,~ \mathbf{y}{n-r} := \begin{pmatrix}<br/>
-c{1n} \\<br/>
+\end{pmatrix}, \dots,~ \mathbf{y}<em>{n-r} := \begin{pmatrix}<br/>
+c</em>{1n} \\<br/>
 \vdots \\<br/>
 c_{rn} \\<br/>
 0 \\<br/>
@@ -273,10 +273,10 @@ c_{rn} \\<br/>
 \end{pmatrix}$$<br/>
 Утверждается, что эти решения образуют фундаментальную систему решений для системы $(\dagger)$.<br/>
 Действительно, их число равно размерности $n-r$ пространства решений системы, а сами эти решения линейно независимы, что легко увидеть, если записать их в матрицу:<br/>
-$$~~~~~~~\mathbf{y}{1}~~~~~~~~ \mathbf{y}{2}~~~~~ \dots~~~~~ \mathbf{y}{n-r}<br/>
+$$~~~~~~~\mathbf{y}<em>{1}~~~~~~~~ \mathbf{y}</em>{2}~~~~~ \dots~~~~~ \mathbf{y}<em>{n-r}<br/>
 \atop<br/>
 \begin{pmatrix}<br/>
-c{1~r+1} &amp; c_{1~r+2} &amp; \dots &amp; c_{1n} \\<br/>
+c</em>{1~r+1} &amp; c_{1~r+2} &amp; \dots &amp; c_{1n} \\<br/>
 c_{2~r+1} &amp; c_{2~r+2} &amp; \dots &amp; c_{2n} \\<br/>
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 c_{r~r+1} &amp; c_{r~r+2} &amp; \dots &amp; c_{rn} \\<br/>
@@ -299,10 +299,10 @@ c_{r~r+1} &amp; c_{r~r+2} &amp; \dots &amp; c_{rn} \\<br/>
 <p>Если ранг $r$ матрицы $A$ меньше ранга матрицы $A|b$, система $A\mathbf{x} = \mathbf{b}$ несовместна. Если ранги равны, находим частное решение $\mathbf{x}_{0}$ этой системы</p>
 </li>
 <li>
-<p>Находим фундаментальную систему решений $\mathbf{x}{1}, \dots, \mathbf{x}{n-r}$ соответствующей однородной системы $A\mathbf{x} = 0$</p>
+<p>Находим фундаментальную систему решений $\mathbf{x}<em>{1}, \dots, \mathbf{x}</em>{n-r}$ соответствующей однородной системы $A\mathbf{x} = 0$</p>
 </li>
 <li>
-<p>Выражение $\mathbf{x} = \mathbf{x}{0} + c{1} \mathbf{x}{1} + c{2} \mathbf{x}{2} + \dots + c{n-r} \mathbf{x}{n-r}$, где $c{1}, c_{2}, \dots, c_{n-r}$ - произвольные скаляры, даёт <strong>общее решение</strong> системы $A\mathbf{x} = \mathbf{b}$. Каждое решение системы получается из общего при некотором (однозначно определяемом) наборе $c_{1}, c_{2}, \dots, c_{n-r}$</p>
+<p>Выражение $\mathbf{x} = \mathbf{x}<em>{0} + c</em>{1} \mathbf{x}<em>{1} + c</em>{2} \mathbf{x}<em>{2} + \dots + c</em>{n-r} \mathbf{x}<em>{n-r}$, где $c</em>{1}, c_{2}, \dots, c_{n-r}$ - произвольные скаляры, даёт <b>общее решение</b> системы $A\mathbf{x} = \mathbf{b}$. Каждое решение системы получается из общего при некотором (однозначно определяемом) наборе $c_{1}, c_{2}, \dots, c_{n-r}$</p>
 </li>
 </ol>
 <p>Сложность такой процедуры $O(n^{3})$, где $n$ - число уравнений.<br/>

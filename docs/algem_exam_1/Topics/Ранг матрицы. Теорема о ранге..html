@@ -168,7 +168,7 @@
 <div class="content"><h1>Ранг матрицы. Теорема о ранге.</h1><h3>Ранг матрицы</h3>
 <p><div class="spoiler-markdown"><p>
 Пусть $A$ - произвольная $k\times n$-матрица.
-$$A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1i} &amp; \cdots &amp; a_{1n} \\\\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2i} &amp; \cdots &amp; a_{2n} \\\\ a_{31} &amp; a_{32} &amp; \cdots &amp; a_{3i} &amp; \cdots &amp; a_{3n} \\\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\\\ a_{k1} &amp; a_{k2} &amp; \cdots &amp; a_{ki} &amp; \cdots &amp; a_{kn} \end{pmatrix}$$
+$$A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1i} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2i} &amp; \cdots &amp; a_{2n} \\ a_{31} &amp; a_{32} &amp; \cdots &amp; a_{3i} &amp; \cdots &amp; a_{3n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{k1} &amp; a_{k2} &amp; \cdots &amp; a_{ki} &amp; \cdots &amp; a_{kn} \end{pmatrix}$$
 - <b>Рангом матрицы по столбцам</b> - размерность подпространства, порождённого набором столбцов матрицы $A$, в пространстве всех столбцов высоты $k$ над полем $F$.
 - <b>Рангом матрицы по строкам</b> - размерность подпространства. порождённого набором строк матрицы $A$, в пространстве всех строк длины $n$ над полем $F$.</p></div></p>
 <h3>Теорема о ранге матрицы</h3>
@@ -207,7 +207,7 @@ $$A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1j} &amp; \cdots
 c номерами $i_{1},\dots, i_{s}$ линейно зависимы, обозначим их $R_{i_{1}}, \dots, R_{i_{s}}$. Существуют $\gamma_{1}, . . . , \gamma_{s}$, не все равные 0, что выполнена система равенств:<br/>
 $$\gamma_{1} R_{i_{1}} + \gamma_{2} R_{i_{2}} + \dots + \gamma_{s} R_{i_{s}} = 0$$<br/>
 Запишем каждую из строк по столбцам:<br/>
-$$\gamma {1}a{i_{1}j} +\dots+ \gamma {s}a{i_{s}j} = 0 ~~~~ \forall{j=\overline{1,n}} ~~~~~(*)$$</p>
+$$\gamma <em>{1}a</em>{i_{1}j} +\dots+ \gamma <em>{s}a</em>{i_{s}j} = 0 ~~~~ \forall{j=\overline{1,n}} ~~~~~(*)$$</p>
 <p>Если переставить местами $j_{1}$-й и $j_{2}$-й столбцы, то в системе $(*)$ просто поменяются местами $j_{1}$-е и $i_{2}$-е равенства, т.е система не изменится. Значит в преобразованной матрице строки $i_{1},\dots,i_{s}$ остаются линейно зависимыми. </p>
 <p>Если прибавить к $j_{1}$-й столбцу матрицы $A$ её $j_{2}$-й столбец, то все равенства системы $(*)$ кроме $j_{1}$-го, не изменится, но и равенство, соответствующее $j_{1}$-му столбцу, остается верным, поскольку: <br/>
 $$\gamma_1 (a_{i_1 j_1} + a_{i_1 j_2}) + \cdots + \gamma_s (a_{i_s j_1} + a_{i_s j_2}) =$$<br/>

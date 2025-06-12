@@ -171,16 +171,16 @@
 $$\forall{q \in \mathbb{Q} \cap (0,1]}~~ a^{q} - 1 &lt; 2(a-1)q$$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Случай <br/>
-1.</strong> $q = \dfrac{1}{n}, n \in \mathbb{N}$<br/>
+<b>Случай <br/>
+1.</b> $q = \dfrac{1}{n}, n \in \mathbb{N}$<br/>
 Тогда:<br/>
 $$a = (a^{1/n})^{n} = ((a^{1/n} - 1) + 1)^{n} \overbrace{ \geq }^{ \Delta } 1 + (a^{1/n} - 1)n \implies$$<br/>
 $$\implies a^{1/n} - 1 \leq  \dfrac{a-1}{n} = (a-1) \cdot \dfrac{1}{n} = (a-1)q &lt; 2(a-1)q$$<br/>
 $\Delta$ - по неравенству Бернулли: $(1+x)^{n} \geq 1 + nx,~~ n \in \mathbb{N}$</p>
-<p><strong>Случай 2</strong>. $q \in (0, 1) \cap \mathbb{Q} \setminus \left{ \dfrac{1}{n} \right}$<br/>
+<p><b>Случай 2</b>. $q \in (0, 1) \cap \mathbb{Q} \setminus \left\{ \dfrac{1}{n} \right\}$<br/>
 По <span>принципу Архимеда</span>: $\exists{n}~~ \dfrac{1}{n+1} &lt; q &lt; \dfrac{1}{n}$, а значит:<br/>
-$$a^{q} - 1 &lt; a^{1/n} - 1 &lt; \dfrac{a-1}{n} = \dfrac{a-1}{n} \cdot \dfrac{n+1}{n+1} \leq ^{} 2(a-1)\dfrac{1}{n+1} &lt; 2(a-1)q ~~~~\square$$<br/>
-$$: $\dfrac{n + 1}{n} \leq 2$<br/>
+$$a^{q} - 1 &lt; a^{1/n} - 1 &lt; \dfrac{a-1}{n} = \dfrac{a-1}{n} \cdot \dfrac{n+1}{n+1} \leq ^{*} 2(a-1)\dfrac{1}{n+1} &lt; 2(a-1)q ~~~~\square$$<br/>
+$*$: $\dfrac{n + 1}{n} \leq 2$<br/>
 </p></div></p>
 <h3>Теорема о непрерывности показательной функции</h3>
 <p>Формулировка:<br/>
@@ -200,7 +200,7 @@ q - p &lt; 2(v - u) &lt; 1<br/>
 $$a^{v}-a^{u} \leq a^{q} - a^{p} = a^{p}(a^{q-p} - 1) \underbrace{ &lt; }_{ \Delta } 2a^{p}(a-1)(q-p) &lt; 2a^{u}(a-1)2(v-u) = 4a^{u}(a-1)(v-u)$$<br/>
 $\Delta$: из <span>неравенства Бернулли</span></p>
 <p>Возьмём $\delta = \dfrac{\varepsilon}{4a^{x_{0}}(a-1)}$, тогда:<br/>
-$$|a^{x} - a^{x_{0}}| \leq 4a^{\min{x,x_{0}}}(a-1)|x-x_{0}| &lt; \dfrac{4a^{\min{x,x_{0}}} (a-1) \varepsilon}{4a^{x_{0}}(a-1)} = \varepsilon \cdot \dfrac{a^{\min{x,x_{0}}}}{a^{x_{0}}} &lt; \varepsilon ~~~\square$$<br/>
+$$|a^{x} - a^{x_{0}}| \leq 4a^{\min\{x,x_{0}\}}(a-1)|x-x_{0}| &lt; \dfrac{4a^{\min\{x,x_{0}\}} (a-1) \varepsilon}{4a^{x_{0}}(a-1)} = \varepsilon \cdot \dfrac{a^{\min\{x,x_{0}\}}}{a^{x_{0}}} &lt; \varepsilon ~~~\square$$<br/>
 </p></div></p></div>
 </body>
 </html>

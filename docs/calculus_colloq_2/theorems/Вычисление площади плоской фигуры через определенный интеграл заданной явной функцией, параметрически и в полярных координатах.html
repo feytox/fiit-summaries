@@ -178,7 +178,7 @@ $$\mu(\Omega) = \int_{a}^{b} f(x) \, dx $$</p></div></p>
 $$\mu(\sigma ^{*}) - \mu(\sigma_{*}) &lt; \varepsilon$$
 Значит и $\mu(\Omega)$, и $\int\limits_{a}^{b} f(x) \, dx$ "зажаты" между $\overline{S}$ и $\underline{S}$:
 $$\begin{cases}
-\underline{S}_{\tau} \leq \int\limits_{a}^{b} f(x) \, dx \leq \overline{S}_{\tau} \\\\
+\underline{S}_{\tau} \leq \int\limits_{a}^{b} f(x) \, dx \leq \overline{S}_{\tau} \\
 \underline{S}_{\tau} \leq \mu(\Omega) \leq \overline{S}_{\tau}
 \end{cases}$$
 И тогда при ${} \lambda(\tau) \to 0 {}$:
@@ -192,7 +192,7 @@ $$\mu(\Omega) = \int_{a}^{b} (g(x) - f(x)) \, dx $$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 Пусть:<br/>
-- $m = \min\limits_{x \in [a, b]} {\inf g(x), \inf f(x) }$<br/>
+- $m = \min\limits_{x \in [a, b]} \{\inf g(x), \inf f(x) \}$<br/>
 - $f_{1}(x) = f(x) - m \geq 0$<br/>
 - $g_{1}(x) = g(x) - m \geq 0$</p>
 <p>Тогда разнице площадей под $f_{1}$ и $g_{1}$ в геометрическом смысле будет соответствовать:<br/>
@@ -202,7 +202,7 @@ $\square$<br/>
 <h2>Площадь, ограниченная кривой, заданной параметрически</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Если $\Omega$ ограничена кривой $\gamma\mathpunct{:}~ \begin{cases} x = x(t) \\\\ y = y(t) \end{cases}, t \in [a, b]$, то:
+Если $\Omega$ ограничена кривой $\gamma\mathpunct{:}~ \begin{cases} x = x(t) \\ y = y(t) \end{cases}, t \in [a, b]$, то:
 $$\mu(\Omega) = \left|\int_{a}^{b} y(t)x'(t) \, dt \right|$$</p></div></p>
 <p>"Д-во":<br/>
 <div class="spoiler-markdown"><p>

@@ -167,10 +167,10 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Линейные операторы</h1><h3>Определение: Линейный оператор</h3>
 <p><div class="spoiler-markdown"><p><br/>
-Пусть $V$ и $W$ - векторные пространства над одним и тем же полем $F$. Отображение $\mathcal{A}: V \to W$ называется <strong>линейным оператором</strong> если:<br/>
-$$\forall{\mathbf{x}{1}, \mathbf{x}{2} \in V, t \in F}~~ \begin{cases}<br/>
-\mathcal{A}(\mathbf{x}{1} + \mathbf{x}{2}) = \mathcal{A}(\mathbf{x}{1}) + \mathcal{A}(\mathbf{x}{2}) \\<br/>
-\mathcal{A}(t \mathbf{x}{1}) = t\mathcal{A}(\mathbf{x}{1})<br/>
+Пусть $V$ и $W$ - векторные пространства над одним и тем же полем $F$. Отображение $\mathcal{A}: V \to W$ называется <b>линейным оператором</b> если:<br/>
+$$\forall{\mathbf{x}<em>{1}, \mathbf{x}</em>{2} \in V, t \in F}~~ \begin{cases}<br/>
+\mathcal{A}(\mathbf{x}<em>{1} + \mathbf{x}</em>{2}) = \mathcal{A}(\mathbf{x}<em>{1}) + \mathcal{A}(\mathbf{x}</em>{2}) \\<br/>
+\mathcal{A}(t \mathbf{x}<em>{1}) = t\mathcal{A}(\mathbf{x}</em>{1})<br/>
 \end{cases}$$</p>
 <p>Множество всех линейных операторов из $V$ в $W$ обозначается $\mathrm{Hom}(V, W)$<br/>
 </p></div></p>
@@ -182,17 +182,17 @@ $$\forall{\mathbf{x}{1}, \mathbf{x}{2} \in V, t \in F}~~ \begin{cases}<br/>
 <p>$\mathcal{A}(\mathbf{0}) = \mathbf{0}$</p>
 </li>
 <li>
-<p>$\mathcal{A}(\lambda_{1} \mathbf{v}{1} + \lambda{2} \mathbf{v}{2} + \dots + \lambda{m} \mathbf{v}{m}) = \lambda{1}\mathcal{A}(\mathbf{v}{1}) + \lambda{2}\mathcal{A}(\mathbf{v}{2}) + \dots + \lambda{m}\mathcal{A}(\mathbf{v}_{m})$<br/>
+<p>$\mathcal{A}(\lambda_{1} \mathbf{v}<em>{1} + \lambda</em>{2} \mathbf{v}<em>{2} + \dots + \lambda</em>{m} \mathbf{v}<em>{m}) = \lambda</em>{1}\mathcal{A}(\mathbf{v}<em>{1}) + \lambda</em>{2}\mathcal{A}(\mathbf{v}<em>{2}) + \dots + \lambda</em>{m}\mathcal{A}(\mathbf{v}_{m})$<br/>
 </p></li></ol></div></p>
 
 
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Свойство <br/>
-1.</strong><br/>
+<b>Свойство <br/>
+1.</b><br/>
 $$\mathcal{A}(\mathbf{0}) = \mathcal{A}(0 \cdot \mathbf{0}) = 0 \cdot \mathcal{A}(\mathbf{0}) = \mathbf{0}$$</p>
-<p><strong>Свойство <br/>
-2.</strong><br/>
+<p><b>Свойство <br/>
+2.</b><br/>
 По индукции. $~~~\square$<br/>
 </p></div></p>
 <h3>Теорема существования и единственности линейного оператора</h3>
@@ -205,21 +205,21 @@ $$\mathcal{A}(\mathbf{p}_{i}) = \mathbf{w}_{i} ~~~\forall{i = \overline{1, n}}$$
 Пусть $\mathbf{x} \in V, (x_{1}, x_{2}, \dots, x_{n})$ - координаты $\mathbf{x}$ в базисе $P$.</p>
 <p>Существование.<br/>
 Определим оператор $\mathcal{A}$ правилом:<br/>
-$$\mathcal{A}(\mathbf{x}) := x_{1} \mathbf{w}{1} + x{2} \mathbf{w}{2} + \dots + x{n} \mathbf{w}{n}$$<br/>
-В силу единственности координат вектора в базисе это определение корректно (т.е. образ $\mathbf{x}$ под действием $\mathcal{A}$ определён однозначно). Из свойств координат суммы векторов и произведения на скаляр вытекает, что $\mathcal{A}$ линеен. Осталось заметить, что для всякого $i = \overline{1, n}$ вектор $\mathbf{p}{i}$ имеет в базисе $P$ координаты $(0, \dots, 0, 1, 0, \dots, 0)$, где $1$ стоит на $i$-м месте, и потому $\mathcal{A}(\mathbf{p}{i}) = \mathbf{w}{i}$</p>
+$$\mathcal{A}(\mathbf{x}) := x_{1} \mathbf{w}<em>{1} + x</em>{2} \mathbf{w}<em>{2} + \dots + x</em>{n} \mathbf{w}<em>{n}$$<br/>
+В силу единственности координат вектора в базисе это определение корректно (т.е. образ $\mathbf{x}$ под действием $\mathcal{A}$ определён однозначно). Из свойств координат суммы векторов и произведения на скаляр вытекает, что $\mathcal{A}$ линеен. Осталось заметить, что для всякого $i = \overline{1, n}$ вектор $\mathbf{p}</em>{i}$ имеет в базисе $P$ координаты $(0, \dots, 0, 1, 0, \dots, 0)$, где $1$ стоит на $i$-м месте, и потому $\mathcal{A}(\mathbf{p}<em>{i}) = \mathbf{w}</em>{i}$</p>
 <p>Единственность.<br/>
 Пусть $\mathcal{B}: V \to W$ - линейный оператор удовлетворяющий формулировке теоремы. В силу <span>свойств линейного оператора</span> имеем:<br/>
 $$\begin{align}<br/>
-\mathcal{B}(\mathbf{x}) &amp;= \mathcal{B}(x_{1} \mathbf{p}{1} + x{2} \mathbf{p}{2} + \dots + x{n} \mathbf{p}{n}) = x{1}\mathcal{B}(\mathbf{p}{1}) + x{2}\mathcal{B}(\mathbf{p}{2}) + \dots + x{n}\mathcal{B}(\mathbf{p}{n}) = \\<br/>
-&amp;= x{1} \mathbf{w}{1} + x{2} \mathbf{w}{2} + \dots + x{n} \mathbf{w}_{n} = \mathcal{A}(\mathbf{x})<br/>
+\mathcal{B}(\mathbf{x}) &amp;= \mathcal{B}(x_{1} \mathbf{p}<em>{1} + x</em>{2} \mathbf{p}<em>{2} + \dots + x</em>{n} \mathbf{p}<em>{n}) = x</em>{1}\mathcal{B}(\mathbf{p}<em>{1}) + x</em>{2}\mathcal{B}(\mathbf{p}<em>{2}) + \dots + x</em>{n}\mathcal{B}(\mathbf{p}<em>{n}) = \\<br/>
+&amp;= x</em>{1} \mathbf{w}<em>{1} + x</em>{2} \mathbf{w}<em>{2} + \dots + x</em>{n} \mathbf{w}_{n} = \mathcal{A}(\mathbf{x})<br/>
 \end{align}$$<br/>
 Следовательно, $\mathcal{B} = \mathcal{A}$ $~~~\square$<br/>
 </p></div></p>
 <h3>Операции над линейными операторами</h3>
 <p><div class="spoiler-markdown"><p><br/>
 Пусть $V, W$ - векторные пространства над $F$, $\mathcal{A}$ и $\mathcal{B}$ - линейные операторы $V \to W$, $t \in F$.</p>
-<p><strong>Суммой</strong> операторов $\mathcal{A}$ и $\mathcal{B}$ называется оператор $\mathcal{A} + \mathcal{B}: V \to W$, задаваемый правилом $(\mathcal{A} + \mathcal{B})(\mathbf{x}) := \mathcal{A}(\mathbf{x}) + \mathcal{B}(\mathbf{x}) ~~~\forall{x \in V}$<br/>
-<strong>Произведением</strong> оператора $\mathcal{A}$ на скаляр $t$ называется оператор $t\mathcal{A}: V \to W$, задаваемый правилом $(t\mathcal{A})(\mathbf{x}) := t\mathcal{A}(\mathbf{x})$<br/>
+<p><b>Суммой</b> операторов $\mathcal{A}$ и $\mathcal{B}$ называется оператор $\mathcal{A} + \mathcal{B}: V \to W$, задаваемый правилом $(\mathcal{A} + \mathcal{B})(\mathbf{x}) := \mathcal{A}(\mathbf{x}) + \mathcal{B}(\mathbf{x}) ~~~\forall{x \in V}$<br/>
+<b>Произведением</b> оператора $\mathcal{A}$ на скаляр $t$ называется оператор $t\mathcal{A}: V \to W$, задаваемый правилом $(t\mathcal{A})(\mathbf{x}) := t\mathcal{A}(\mathbf{x})$<br/>
 </p></div></p>
 <h3>Предложение о свойствах суммы операторов</h3>
 <p>Формулировка:<br/>
@@ -249,12 +249,12 @@ $$\begin{align}<br/>
 </p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Зафиксируем в $V$ базис $P = {\mathbf{p}{1}, \mathbf{p}{2}, \dots, \mathbf{p}{n}}$, а в $W$ - базис $Q = {\mathbf{q}{1}, \mathbf{q}{2}, \dots, \mathbf{q}{n}}$. Определим отображение $\varphi: \mathrm{Hom}(V, W) \to F^{k\times n}$ правилом: если $\mathcal{A}: V \to W$ - линейный оператор, то $\varphi(\mathcal{A})$ - матрица оператора $A$ в базисах $P$ и $Q$. Пусть $\mathcal{A}, \mathcal{B} \in \mathrm{Hom}(V, W),~ t \in F$. Надо проверить, что $\varphi$ - биективно и выполнены равенства:<br/>
-$$\varphi(\mathcal{A} + \mathcal{B}) = \varphi(\mathcal{A}) + \varphi(\mathcal{B}) \land \varphi(t\mathcal{A}) = t\varphi(\mathcal{A}) ~~~~~()$$<br/>
-В матрице $\varphi(\mathcal{A} + \mathcal{B})$ по столбцам записаны координаты векторов $(\mathcal{A} + \mathcal{B})(\mathbf{p}{i})$ в базисе $Q$, а в матрицах $\varphi(\mathcal{A})$ и $\varphi(\mathcal{B})$ - координаты $\mathcal{A}(\mathbf{p}{i})$ и $\mathcal{B}(\mathbf{p}{i})$ соответственно в том же базисе. Поскольку $(\mathcal{A} + \mathcal{B})(\mathbf{p}{i}) = \mathcal{A}(\mathbf{p}{i}) + \mathcal{B}(\mathbf{p}{i})$, координаты вектора $(\mathcal{A} + \mathcal{B})(\mathbf{p}{i})$ равны сумме координат векторов $\mathcal{A}(\mathbf{p}{i})$ и $\mathcal{B}(\mathbf{p}_{i})$. Первое из равенств $()$ доказано. Второе проверяется аналогично.</p>
+Зафиксируем в $V$ базис $P = \{\mathbf{p}<em>{1}, \mathbf{p}</em>{2}, \dots, \mathbf{p}<em>{n}\}$, а в $W$ - базис $Q = \{\mathbf{q}</em>{1}, \mathbf{q}<em>{2}, \dots, \mathbf{q}</em>{n}\}$. Определим отображение $\varphi: \mathrm{Hom}(V, W) \to F^{k\times n}$ правилом: если $\mathcal{A}: V \to W$ - линейный оператор, то $\varphi(\mathcal{A})$ - матрица оператора $A$ в базисах $P$ и $Q$. Пусть $\mathcal{A}, \mathcal{B} \in \mathrm{Hom}(V, W),~ t \in F$. Надо проверить, что $\varphi$ - биективно и выполнены равенства:<br/>
+$$\varphi(\mathcal{A} + \mathcal{B}) = \varphi(\mathcal{A}) + \varphi(\mathcal{B}) \land \varphi(t\mathcal{A}) = t\varphi(\mathcal{A}) ~~~~~(*)$$<br/>
+В матрице $\varphi(\mathcal{A} + \mathcal{B})$ по столбцам записаны координаты векторов $(\mathcal{A} + \mathcal{B})(\mathbf{p}<em>{i})$ в базисе $Q$, а в матрицах $\varphi(\mathcal{A})$ и $\varphi(\mathcal{B})$ - координаты $\mathcal{A}(\mathbf{p}</em>{i})$ и $\mathcal{B}(\mathbf{p}<em>{i})$ соответственно в том же базисе. Поскольку $(\mathcal{A} + \mathcal{B})(\mathbf{p}</em>{i}) = \mathcal{A}(\mathbf{p}<em>{i}) + \mathcal{B}(\mathbf{p}</em>{i})$, координаты вектора $(\mathcal{A} + \mathcal{B})(\mathbf{p}<em>{i})$ равны сумме координат векторов $\mathcal{A}(\mathbf{p}</em>{i})$ и $\mathcal{B}(\mathbf{p}_{i})$. Первое из равенств $(*)$ доказано. Второе проверяется аналогично.</p>
 <p>Проверим, что отображение $\varphi$ биективно. <br/>
 Если $\mathcal{A}, \mathcal{B} \in \mathrm{Hom}(V, W)$ и $\varphi(\mathcal{A}) = \varphi(\mathcal{B})$, то из определения матрицы линейного оператора вытекает, что операторы $\mathcal{A}$ и $\mathcal{B}$ одинаково действуют на базисных векторах пространства $V$. Но тогда $\mathcal{A} = \mathcal{B}$, так как линейный оператор однозначно определяется своим действием на базисных векторах. Следовательно, $\varphi$ - инъективно.</p>
-<p>Пусть $A = (a_{ij}){k\times n}$. Для $\forall{j = \overline{1,n}}$ положим $\mathbf{w}{j} = a_{1j} \mathbf{q}{1} + a{2j} \mathbf{q}{2} + \dots + a{kj} \mathbf{q}{k}$. В силу <span>теоремы существования и единственности линейного оператора</span> существует линейный оператор $\mathcal{A}$ такой, что $\mathcal{A}(\mathbf{p}{i}) = \mathbf{w}{i} ~~\forall{i = \overline{1,n}}$. Из определения матрицы оператора вытекает, что $A{P,Q} = A$, т.е. $\varphi(\mathcal{A}) = A$. Следовательно, $\varphi$ - сюръективно. $~~~\square$<br/>
+<p>Пусть $A = (a_{ij})<em>{k\times n}$. Для $\forall{j = \overline{1,n}}$ положим $\mathbf{w}</em>{j} = a_{1j} \mathbf{q}<em>{1} + a</em>{2j} \mathbf{q}<em>{2} + \dots + a</em>{kj} \mathbf{q}<em>{k}$. В силу <span>теоремы существования и единственности линейного оператора</span> существует линейный оператор $\mathcal{A}$ такой, что $\mathcal{A}(\mathbf{p}</em>{i}) = \mathbf{w}<em>{i} ~~\forall{i = \overline{1,n}}$. Из определения матрицы оператора вытекает, что $A</em>{P,Q} = A$, т.е. $\varphi(\mathcal{A}) = A$. Следовательно, $\varphi$ - сюръективно. $~~~\square$<br/>
 </p></div></p>
 <h3>Следствие о размерности пространства линейных операторов</h3>
 <p>Формулировка:<br/>

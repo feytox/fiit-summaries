@@ -190,43 +190,43 @@ $$a_{11}x^{2} + 2a_{12}xy + a_{22}y^{2} + a_{1}x + a_{2}y + a_{3} = 0$$</p>
 1) Устранить слагаемое $xy$<br/>
 2) Устранить линейные слагаемые (собирая полные квадраты)<br/>
 3) Разобраться со знаками</p>
-<p><strong>Шаг 1</strong><br/>
+<p><b>Шаг 1</b><br/>
 Приведём квадратичную часть $q(x, y) = a_{11}x^2 + 2a_{12}xy + a_{22}y^2$ к главным осям заменой $T$. Используем именно этот метод, чтобы декартова система координат перешла в декартову.<br/>
 $$\begin{pmatrix} x \\ y \end{pmatrix} = T \begin{pmatrix} x' \\ y' \end{pmatrix} $$<br/>
 После замены:<br/>
 $$ q = A{x'}^2 + B{y'}^2 $$<br/>
 и уравнение принимает вид:<br/>
 $$ A{x'}^2 + B{y'}^2 + Cx' + Dy' + E = 0 $$</p>
-<p><strong>Шаг 2 и 3</strong><br/>
-<strong>Случай 1</strong>: $A \neq 0, B \neq 0$<br/>
+<p><b>Шаг 2 и 3</b><br/>
+<b>Случай 1</b>: $A \neq 0, B \neq 0$<br/>
 Без ограничения общности, $A &gt; 0$ (иначе домножим на $-1$)</p>
 <p>Выделяем полные квадраты:<br/>
 $$A\left( {x'}^{2} + \dfrac{C}{A}x' \right) + B\left( {y'}^{2} + \dfrac{D}{B}y' \right) = -E$$<br/>
 $$ A\left(x' + \dfrac{C}{2A}\right)^2 + B\left(y' + \dfrac{D}{2B}\right)^2 = \dfrac{C^2}{4A} + \dfrac{D^2}{4B} - E$$<br/>
 Заменой $x'' = x' + \dfrac{C}{2A}$, $y'' = y' + \dfrac{D}{2B}$, $E' = \dfrac{C^2}{4A} + \dfrac{D^2}{4B} - E$ упрощаем:<br/>
 $$ A{x''}^2 + B{y''}^2 = E' $$</p>
-<p><strong>Подслучаи</strong>:<br/>
+<p><b>Подслучаи</b>:<br/>
 - $E' = 0$:<br/>
-  - $B &gt; 0$: ${} A{x''}^{2} + B{y''}^{2} = 0 {}$ $\implies$ $x'' = y'' = 0$ (<strong>точка</strong>)<br/>
-  - $B &lt; 0$: $A{x''}^{2} - (-B){y''}^{2} = 0$ ${} \implies {}$ $\sqrt{A}|x''| = \sqrt{-B}|y''|$ (<strong>две пересекающиеся прямые</strong>)<br/>
+  - $B &gt; 0$: ${} A{x''}^{2} + B{y''}^{2} = 0 {}$ $\implies$ $x'' = y'' = 0$ (<b>точка</b>)<br/>
+  - $B &lt; 0$: $A{x''}^{2} - (-B){y''}^{2} = 0$ ${} \implies {}$ $\sqrt{A}|x''| = \sqrt{-B}|y''|$ (<b>две пересекающиеся прямые</b>)<br/>
 - $E' &gt; 0$: <br/>
-  - $B &gt; 0$: <strong>эллипс</strong> ${} \dfrac{{x''}^2}{\frac{E'}{A}} + \dfrac{{y''}^2}{\frac{E'}{B}} = 1 {}$<br/>
-  - $B &lt; 0$: <strong>гипербола</strong> $\dfrac{{x''}^2}{\frac{E'}{A}} - \dfrac{{y''}^2}{\frac{-E'}{B}} = 1$<br/>
+  - $B &gt; 0$: <b>эллипс</b> ${} \dfrac{{x''}^2}{\frac{E'}{A}} + \dfrac{{y''}^2}{\frac{E'}{B}} = 1 {}$<br/>
+  - $B &lt; 0$: <b>гипербола</b> $\dfrac{{x''}^2}{\frac{E'}{A}} - \dfrac{{y''}^2}{\frac{-E'}{B}} = 1$<br/>
 - $E' &lt; 0$:<br/>
   - $B &gt; 0$: $A{x''}^{2} + B{y''}^{2} &lt; 0$ $\implies$ $\varnothing$<br/>
-  - $B &lt; 0$: <strong>гипербола</strong>, но с заменой осей</p>
-<p><strong>Случай 2</strong>: Без ограничения общности: ${} A &gt; 0, B = 0 {}$:<br/>
+  - $B &lt; 0$: <b>гипербола</b>, но с заменой осей</p>
+<p><b>Случай 2</b>: Без ограничения общности: ${} A &gt; 0, B = 0 {}$:<br/>
 $$ A{x'}^2 + Cx' + Dy' + E = 0 $$<br/>
 Выделяем полный квадрат:<br/>
 $$A\left( {x'}^{2} + \dfrac{C}{A}x' \right) + Dy' + E = 0$$<br/>
 $$A\left( x' + \dfrac{C}{2A} \right)^{2} + Dy' + E - \dfrac{C^{2}}{4A^{2}} = 0$$<br/>
 Заменой $x'' = x' + \dfrac{C}{2A}$ и $E' = E - \dfrac{C^{2}}{4A^{2}}$ получаем:<br/>
 $$ A{x''}^2 + Dy' + E' = 0 $$<br/>
-<strong>Подслучаи</strong>:<br/>
-- $D \neq 0$: <strong>парабола</strong> $y' = -\dfrac{A}{D}{x''}^2 - E'$<br/>
+<b>Подслучаи</b>:<br/>
+- $D \neq 0$: <b>парабола</b> $y' = -\dfrac{A}{D}{x''}^2 - E'$<br/>
 - $D = 0$:<br/>
-  - $E' &lt; 0$: <strong>пара параллельных прямых</strong> ${} x'' = \pm \sqrt{\dfrac{-E'}{A}} {}$<br/>
-  - $E' = 0$: <strong>совпадающие прямые</strong> $x'' = 0$<br/>
+  - $E' &lt; 0$: <b>пара параллельных прямых</b> ${} x'' = \pm \sqrt{\dfrac{-E'}{A}} {}$<br/>
+  - $E' = 0$: <b>совпадающие прямые</b> $x'' = 0$<br/>
   - $E' &gt; 0$: $\varnothing$  </p>
 <p>$\square$<br/>
 </p></div></p></div>

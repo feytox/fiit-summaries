@@ -168,8 +168,8 @@
 <div class="content"><h1>Ядро и образ линейного оператора. Теорема о сумме ранга и дефекта. Алгоритм одновременного вычисления ядра и образа</h1><h3>Определение: Образ и ядро</h3>
 <p><div class="spoiler-markdown"><p><br/>
 Пусть $V$ и $W$ - векторные пространства над $F, \mathcal{A}: V \to W$ - линейный оператор</p>
-<p>Образ $\mathcal{A}$ - множество $\mathrm{Im} \mathcal{A} = {\mathbf{y} \in W ~|~ \mathcal{A}(\mathbf{x}) = \mathbf{y},~~ \mathbf{x} \in V}$<br/>
-Ядро $\mathcal{A}$ - множество $\mathrm{Ker}\mathcal{A} = {\mathbf{x} \in V ~|~ \mathcal{A}(\mathbf{x}) = \mathbf{0}}$<br/>
+<p>Образ $\mathcal{A}$ - множество $\mathrm{Im} \mathcal{A} = \{\mathbf{y} \in W ~|~ \mathcal{A}(\mathbf{x}) = \mathbf{y},~~ \mathbf{x} \in V\}$<br/>
+Ядро $\mathcal{A}$ - множество $\mathrm{Ker}\mathcal{A} = \{\mathbf{x} \in V ~|~ \mathcal{A}(\mathbf{x}) = \mathbf{0}\}$<br/>
 </p></div></p>
 <h3>Замечание об образе и ядре</h3>
 <p>Формулировка:<br/>
@@ -177,14 +177,14 @@
 Пусть $V$ и $W$ - векторные пространства над $F$, $\mathcal{A}: V \to W$ - линейный оператор. Тогда $\mathrm{Im}~\mathcal{A}$ - подпространство в $W$, а $\mathrm{Ker}~\mathcal{A}$ - подпространство в $V$.</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Пусть $\mathbf{y}{1}, \mathbf{y}{2} \in \mathrm{Im}~\mathcal{A},~ t \in F$. Тогда:<br/>
-$$\exists{\mathbf{x}{1}, \mathbf{x}{2} \in V}~~ \mathcal{A}(\mathbf{x}{1}) = \mathbf{y}{1} \land \mathcal{A}(\mathbf{x}{2}) = \mathbf{y}{2}$$<br/>
+Пусть $\mathbf{y}<em>{1}, \mathbf{y}</em>{2} \in \mathrm{Im}~\mathcal{A},~ t \in F$. Тогда:<br/>
+$$\exists{\mathbf{x}<em>{1}, \mathbf{x}</em>{2} \in V}~~ \mathcal{A}(\mathbf{x}<em>{1}) = \mathbf{y}</em>{1} \land \mathcal{A}(\mathbf{x}<em>{2}) = \mathbf{y}</em>{2}$$<br/>
 Следовательно:<br/>
-$$\mathbf{y}{1} + \mathbf{y}{2} = \mathcal{A}(\mathbf{x}{1}) + \mathcal{A}(\mathbf{x}{2}) = \mathcal{A}(\mathbf{x}{1} + \mathbf{x}{2}) \land t\mathbf{y}{1} = t\mathcal{A}(\mathbf{x}{1}) = \mathcal{A}(t \mathbf{x}{1})$$<br/>
-А значит $\mathbf{y}{1} + \mathbf{y}{2}, t\mathbf{y}{1} \in \mathrm{Im}~\mathcal{A}$ и потому $\mathrm{Im}~\mathcal{A}$ - подпространство.</p>
-<p>Пусть $\mathbf{x}{1}, \mathbf{x}{2} \in \mathrm{Ker}~\mathcal{A}, t \in F$. Тогда:<br/>
-$$\mathcal{A}(\mathbf{x}{1} + \mathbf{x}{2}) = \mathcal{A}(\mathbf{x}{1}) + \mathcal{A}(\mathbf{x}{2}) = \mathbf{0} + \mathbf{0} = \mathbf{0} \land \mathcal{A}(t \mathbf{x}{1}) = t\mathcal{A}(\mathbf{x}{1}) = t \cdot \mathbf{0} = \mathbf{0}$$<br/>
-Отсюда $\mathbf{x}{1} + \mathbf{x}{2}, t \mathbf{x}_{1} \in \mathrm{Ker}~\mathcal{A}$ и потому $\mathrm{Ker}~\mathcal{A}$ - подпространство. $\square$<br/>
+$$\mathbf{y}<em>{1} + \mathbf{y}</em>{2} = \mathcal{A}(\mathbf{x}<em>{1}) + \mathcal{A}(\mathbf{x}</em>{2}) = \mathcal{A}(\mathbf{x}<em>{1} + \mathbf{x}</em>{2}) \land t\mathbf{y}<em>{1} = t\mathcal{A}(\mathbf{x}</em>{1}) = \mathcal{A}(t \mathbf{x}<em>{1})$$<br/>
+А значит $\mathbf{y}</em>{1} + \mathbf{y}<em>{2}, t\mathbf{y}</em>{1} \in \mathrm{Im}~\mathcal{A}$ и потому $\mathrm{Im}~\mathcal{A}$ - подпространство.</p>
+<p>Пусть $\mathbf{x}<em>{1}, \mathbf{x}</em>{2} \in \mathrm{Ker}~\mathcal{A}, t \in F$. Тогда:<br/>
+$$\mathcal{A}(\mathbf{x}<em>{1} + \mathbf{x}</em>{2}) = \mathcal{A}(\mathbf{x}<em>{1}) + \mathcal{A}(\mathbf{x}</em>{2}) = \mathbf{0} + \mathbf{0} = \mathbf{0} \land \mathcal{A}(t \mathbf{x}<em>{1}) = t\mathcal{A}(\mathbf{x}</em>{1}) = t \cdot \mathbf{0} = \mathbf{0}$$<br/>
+Отсюда $\mathbf{x}<em>{1} + \mathbf{x}</em>{2}, t \mathbf{x}_{1} \in \mathrm{Ker}~\mathcal{A}$ и потому $\mathrm{Ker}~\mathcal{A}$ - подпространство. $\square$<br/>
 </p></div></p>
 <h3>Замечание об образе конечномерного пространства</h3>
 <p>Формулировка:<br/>
@@ -212,8 +212,8 @@ $\forall{\mathbf{c}_{i}}~~ \exists{\mathbf{b}_{i} \in V}~~ \mathcal{A}(\mathbf{b
 $$\mathcal{A}(\mathbf{x}) = t_{1}\mathbf{c}_{1} + t_{2}\mathbf{c}_{2} + \dots + t_{r}\mathbf{c}_{r}$$
 Положим $\mathbf{x}' := t_{1}\mathbf{b}_{1} + t_{2}\mathbf{b}_{2} + \dots + t_{r}\mathbf{b}_{r}$, тогда 
 $$\begin{matrix}
-\mathcal{A}(\mathbf{x}) = \mathcal{A}(\mathbf{x}') \Rightarrow \mathcal{A}(\mathbf{x} - \mathbf{x}') = \mathbf{0} \Rightarrow \mathbf{x} - \mathbf{x}' \in \mathrm{Ker}~\mathcal{A} \Rightarrow \\\\
-\Rightarrow \mathbf{x} - \mathbf{x}' = s_{1}\mathbf{a}_{1} + s_{2}\mathbf{a}_{2} + \dots + s_{d}\mathbf{a}_{d} \Rightarrow \\\\
+\mathcal{A}(\mathbf{x}) = \mathcal{A}(\mathbf{x}') \Rightarrow \mathcal{A}(\mathbf{x} - \mathbf{x}') = \mathbf{0} \Rightarrow \mathbf{x} - \mathbf{x}' \in \mathrm{Ker}~\mathcal{A} \Rightarrow \\
+\Rightarrow \mathbf{x} - \mathbf{x}' = s_{1}\mathbf{a}_{1} + s_{2}\mathbf{a}_{2} + \dots + s_{d}\mathbf{a}_{d} \Rightarrow \\
 \Rightarrow \mathbf{x} = (\mathbf{x} - \mathbf{x}') + \mathbf{x}' = s_{1}\mathbf{a}_{1} + s_{2}\mathbf{a}_{2} + \dots + s_{d}\mathbf{a}_{d} + t_{1}\mathbf{b}_{1} + t_{2}\mathbf{b}_{2} + \dots + t_{r}\mathbf{b}_{r}
 \end{matrix}$$
 Теперь докажем линейную независимость $(*)$. Пусть
@@ -231,7 +231,7 @@ $$s_{1}\mathbf{a}_{1} + s_{2}\mathbf{a}_{2} + \dots + s_{d}\mathbf{a}_{d} = \mat
 2) строки матрицы $B$ c нулевыми продолжениями в $C$ - координаты базисных векторов $\mathrm{Ker}~\mathcal{A}$ в базисе $P$</p></div></p>
 <p>Обоснование алгоритма:<br/>
 <div class="spoiler-markdown"><p><br/>
-Строки $A^{T}$ - столбцы $A$, т.е. координаты (в базисе $Q$) образов векторов $\mathbf{p}{i}$ из базиса $P$. Строки единичной матрицы - координаты <strong>самих векторов</strong> $\mathbf{p}{i}$ в базисе $P$. Итак в $n \times (n+k)$-матрице $E|A^{T}$: слева от черты - $\mathbf{p}{i}$ в $P$, справа - $\mathcal{A}(\mathbf{p}{i})$ в $Q$. Линейные операции сохраняют сложение и умножение на скаляры, поэтому элементарные преобразования сохраняют указанное свойство. </p>
+Строки $A^{T}$ - столбцы $A$, т.е. координаты (в базисе $Q$) образов векторов $\mathbf{p}<em>{i}$ из базиса $P$. Строки единичной матрицы - координаты <b>самих векторов</b> $\mathbf{p}</em>{i}$ в базисе $P$. Итак в $n \times (n+k)$-матрице $E|A^{T}$: слева от черты - $\mathbf{p}<em>{i}$ в $P$, справа - $\mathcal{A}(\mathbf{p}</em>{i})$ в $Q$. Линейные операции сохраняют сложение и умножение на скаляры, поэтому элементарные преобразования сохраняют указанное свойство. </p>
 <p>Значит ненулевые строки $C$ - линейно независимые вектора из $\mathrm{Im}~\mathcal{A}$, их число $r' \leq r(\mathcal{A})$. Так как изначально $B$ - $E$ и её строки линейно независимы, то строки $B$ с нулевыми продолжениями - линейно независимые вектора из $\mathrm{Ker}~\mathcal{A}$, их число $d' \leq d(\mathcal{A})$. Тогда по <span>теореме о сумме ранга и дефекта</span>:<br/>
 $$n = r' + d' \leq r(\mathcal{A}) + d(\mathcal{A}) = n$$<br/>
 Поэтому $r' = r(\mathcal{A}), d' = d(\mathcal{A})$, а значит полученные вектора, действительно, являются базисами ядра и образа. $\square$<br/>

@@ -184,7 +184,7 @@ $$S(L) = \sum_{k=0}^{n-1} \sqrt{(x'(\xi_{k}))^{2} (\Delta t_{k})^{2} + (y'(\eta_
 $$S(L) = \sum_{k=0}^{n-1} \Delta t_{k} \sqrt{(x'(\xi_{k}))^{2} + (y'(\xi_{k}))^{2}} + o(1)  = S\left(\sqrt{(x'(t))^{2} + (y'(t))^{2}}, \tau, \xi\right) + o(1)$$<br/>
 Так как функция под интегральной суммой непрерывна, то она интегрируема, значит:<br/>
 $$S(\gamma) = \lim_{\lambda(\tau) \to 0} S(L) = \int_{a}^{b} \sqrt{(x'(t))^{2} + (y'(t))^{2}} \, dt$$</p>
-<p><strong>Почему из $\lim$ следует $\sup$?</strong><br/>
+<p><b>Почему из $\lim$ следует $\sup$?</b><br/>
 По определению точной верхней необходимо проверить:</p>
 <ol>
 <li>
@@ -195,10 +195,10 @@ $$S(\gamma) = \lim_{\lambda(\tau) \to 0} S(L) = \int_{a}^{b} \sqrt{(x'(t))^{2} +
 </li>
 </ol>
 <p>где $I = \int\limits_{a}^{b} \sqrt{(x'(t))^{2} + (y'(t))^{2}} \, dt$</p>
-<p><strong>Утверждение 1</strong><br/>
+<p><b>Утверждение 1</b><br/>
 Из основной части доказательства теоремы:<br/>
 $$|S_{\tau}(L) - I| &lt; \varepsilon \implies I - \varepsilon &lt; S_{\tau}(L) &lt; I + \varepsilon$$</p>
-<p><strong>Утверждение 2</strong><br/>
+<p><b>Утверждение 2</b><br/>
 От противного: $\exists{\tau, \varepsilon}\mathpunct{:}~~ S_{\tau}(L) \geq I + \varepsilon$<br/>
 Пусть $\tau_{1} = \tau \cup \tau_{2}$, такое, что $\lambda(\tau_{1}) &lt; \delta$<br/>
 По геометрическому неравенству треугольника: $S_{\tau_{1}}(L) \geq S_{\tau}(L)$<br/>
@@ -217,10 +217,10 @@ $$S(\gamma) = \int_{a}^{b} \sqrt{(r'(\varphi))^{2} + (r(\varphi))^{2}} \, dx $$<
 <div class="spoiler-markdown"><p>
 Запишем $r = r(\varphi)$ по определению:
 $$\begin{cases}
-x = r(\varphi) \cos\varphi \\\\
+x = r(\varphi) \cos\varphi \\
 y = r(\varphi) \sin\varphi
 \end{cases} \implies \begin{cases}
-x' = r'(\varphi)\cos\varphi - r(\varphi)\sin\varphi \\\\
+x' = r'(\varphi)\cos\varphi - r(\varphi)\sin\varphi \\
 y' = r'(\varphi)\sin\varphi - r(\varphi)\cos\varphi
 \end{cases}$$
 Воспользуемся вышедоказанной формулой и тригонометрическими формулами, получим:

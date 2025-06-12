@@ -175,16 +175,16 @@ $$\int_{a}^{b} f(x) \, dx = \int_{a}^{c} f(x) \, dx + \int_{c}^{b} f(x) \, dx$$<
 <div class="spoiler-markdown"><p><br/>
 $\Large\implies$<br/>
 Рассмотрим: <br/>
-$$\tau = {a = x_{0} &lt; x_{1} &lt; \dots &lt; x_{k-1} &lt; x_{k} = c &lt; x_{k+1} &lt; \dots &lt; x_{n} = b}$$</p>
+$$\tau = \{a = x_{0} &lt; x_{1} &lt; \dots &lt; x_{k-1} &lt; x_{k} = c &lt; x_{k+1} &lt; \dots &lt; x_{n} = b\}$$</p>
 <p>Тогда: <br/>
-- $\tau_{1} = {a = x_{0} &lt; x_{1} &lt; \dots &lt; x_{k} = c}$ - разбиение $[a, c]$<br/>
-- $\tau_{2} = {c = x_{k} &lt; x_{k+1} &lt; \dots &lt; x_{n} = b}$ - разбиение $[c, b]$</p>
-<p>Так как $\overline{S}{\tau} = \overline{S}{\tau_{1}} + \overline{S}{\tau{2}}$ (аналогично с нижней суммой) и по <a href="Критерий интегрируемости через суммы Дарбу.html">критерию интегрируемости</a> $\overline{S}{\tau} - \underline{S}{\tau} &lt; \varepsilon$, значит:<br/>
-$$(\overline{S}{\tau{1}} + \overline{S}{\tau{2}}) - (\underline{S}{\tau{1}} + \underline{S}{\tau{2}}) = (\overline{S}{\tau{1}} - \underline{S}{\tau{1}}) + (\overline{S}{\tau{2}} - \underline{S}{\tau{2}}) &lt; \varepsilon$$<br/>
+- $\tau_{1} = \{a = x_{0} &lt; x_{1} &lt; \dots &lt; x_{k} = c\}$ - разбиение $[a, c]$<br/>
+- $\tau_{2} = \{c = x_{k} &lt; x_{k+1} &lt; \dots &lt; x_{n} = b\}$ - разбиение $[c, b]$</p>
+<p>Так как $\overline{S}<em>{\tau} = \overline{S}</em>{\tau_{1}} + \overline{S}<em>{\tau</em>{2}}$ (аналогично с нижней суммой) и по <a href="Критерий интегрируемости через суммы Дарбу.html">критерию интегрируемости</a> $\overline{S}<em>{\tau} - \underline{S}</em>{\tau} &lt; \varepsilon$, значит:<br/>
+$$(\overline{S}<em>{\tau</em>{1}} + \overline{S}<em>{\tau</em>{2}}) - (\underline{S}<em>{\tau</em>{1}} + \underline{S}<em>{\tau</em>{2}}) = (\overline{S}<em>{\tau</em>{1}} - \underline{S}<em>{\tau</em>{1}}) + (\overline{S}<em>{\tau</em>{2}} - \underline{S}<em>{\tau</em>{2}}) &lt; \varepsilon$$<br/>
 Следовательно $f(x)$ - интегрируема на $[a, c]$ и $[c, b]$ по <a href="Критерий интегрируемости через суммы Дарбу.html">критерию интегрируемости</a>.</p>
 <p>$\Large\impliedby$<br/>
 Аналогично, но в обратную сторону.</p>
-<p><strong>Разбиение интеграла на сумму</strong>.<br/>
+<p><b>Разбиение интеграла на сумму</b>.<br/>
 Пусть $I = \int\limits_{a}^{b} f(x) \, dx$, ${} I_{1} = \int\limits_{a}^{c} f(x) \, dx {}$, $I_{2} = \int\limits_{c}^{b} f(x) dx$. Тогда:<br/>
 $$\begin{align}<br/>
 \forall{\varepsilon &gt; 0}\mathpunct{:}~~ |I - (I_{1} + I_{2})| &amp;= |I - S(f, \tau, \xi) + S(f, \tau_{1}, \xi) + S(f, \tau_{2}, \xi) - I_{1} - I_{2}|  \\<br/>

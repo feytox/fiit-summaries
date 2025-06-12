@@ -165,15 +165,15 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Эффект Гиббса</h1><p><strong>Исходная функция:</strong><br/>
+<div class="content"><h1>Эффект Гиббса</h1><p><b>Исходная функция:</b><br/>
 $$ \varphi(x) = \dfrac{\pi - x}{2}, \quad x \in [0, 2\pi] $$<br/>
 с периодическим продолжением. Имеет разрыв в точках $x = 2\pi k$ ($k \in \mathbb{Z}$) со скачком $\pi$.</p>
 <h3>Коэффициенты Фурье</h3>
 <ul>
 <li>${} a_{k} = \dfrac{1}{\pi} \int\limits_{0}^{2\pi}  \dfrac{\pi-x}{2} \cos(kx)\, dx = 0$  </li>
-<li>$b_{k} = \dfrac{2}{\pi} \int\limits_{0}^{2\pi}  \dfrac{\pi-x}{2} \sin(kx)\, dx = \dfrac{2}{\pi}\left( \dfrac{\pi-x}{2} - \dfrac{\cos(kx)}{k} \Bigg|{0}^{\pi} - \dfrac{1}{2k} \int\limits{0}^{\pi} \cos(kx)  \, dx  \right) =\dfrac{1}{k}$ </li>
+<li>$b_{k} = \dfrac{2}{\pi} \int\limits_{0}^{2\pi}  \dfrac{\pi-x}{2} \sin(kx)\, dx = \dfrac{2}{\pi}\left( \dfrac{\pi-x}{2} - \dfrac{\cos(kx)}{k} \Bigg|<em>{0}^{\pi} - \dfrac{1}{2k} \int\limits</em>{0}^{\pi} \cos(kx)  \, dx  \right) =\dfrac{1}{k}$ </li>
 </ul>
-<p><strong>Ряд Фурье:</strong><br/>
+<p><b>Ряд Фурье:</b><br/>
 $$ \varphi(x) = \sum_{k=1}^{\infty} \dfrac{\sin(kx)}{k} $$</p>
 <h3>Частичная сумма $S_n(x)$</h3>
 <p>$S_{n}(x) = \sum_{k=1}^{\infty} \dfrac{\sin(kx)}{k} = \int\limits_{0}^{x}\left( \sum_{k=1}^{\infty} \cos(kt) \right)  \, dt = \int\limits_{0}^{x} \left( D_{n}(t) - \dfrac{1}{2} \right) \, dt  =$<br/>
@@ -182,7 +182,7 @@ $= \int\limits_{0}^{x}  \dfrac{\sin(nt)}{2\sin\left( \dfrac{t}{2} \right)}\cos\l
 где $D_n(t) = \dfrac{\sin\left( n + \frac{1}{2} \right)t}{2 \sin \frac{t}{2}}$ — ядро Дирихле.  </p>
 <h3>Анализ эффекта Гиббса</h3>
 <ol>
-<li><strong>Поведение вблизи разрыва ($x = 0$):</strong> </li>
+<li><b>Поведение вблизи разрыва ($x = 0$):</b> </li>
 <li>Предельное значение функции: $\varphi(0^+) = \dfrac{\pi}{2} \approx <br/>
 1.5708$.  </li>
 <li>Первый максимум $S_n(x)$ при $x_n = \dfrac{\pi}{n + \frac{1}{2}}$:<br/>
@@ -197,7 +197,7 @@ $= \int\limits_{0}^{x}  \dfrac{\sin(nt)}{2\sin\left( \dfrac{t}{2} \right)}\cos\l
 8.95\%$ от величины скачка $\pi$.</p>
 </li>
 <li>
-<p><strong>Асимптотика:</strong><br/>
+<p><b>Асимптотика:</b><br/>
    При $n \to \infty$:  </p>
 </li>
 <li>Точка максимума $x_n \to 0$.  </li>
@@ -218,17 +218,17 @@ $$ S_n(x) - \varphi(x) = \int\limits_{0}^{x} \dfrac{\sin(nt)}{t}  dt - \dfrac{\p
 <h3>Преобразование интеграла</h3>
 <p>Основной интеграл преобразуется заменой $u = nt$:<br/>
 $$ \int\limits_{0}^{x} \dfrac{\sin(nt)}{t}  dt = \int\limits_{0}^{nx} \dfrac{\sin u}{u}  du $$</p>
-<p>Введём <strong>функцию отклонения</strong>:<br/>
+<p>Введём <b>функцию отклонения</b>:<br/>
 $$ g(u) = \int\limits_{0}^{u} \dfrac{\sin t}{t}  dt - \dfrac{\pi}{2} $$</p>
 <h3>Анализ функции $g(u)$</h3>
 <ol>
 <li>
-<p><strong>Производная:</strong><br/>
+<p><b>Производная:</b><br/>
    $$ g'(u) = \dfrac{\sin u}{u} $$<br/>
    Критические точки: $g'(u) = 0 \iff u = k\pi$ ($k \in \mathbb{Z}$).</p>
 </li>
 <li>
-<p><strong>Экстремумы:</strong></p>
+<p><b>Экстремумы:</b></p>
 </li>
 <li>Максимум при $u = \pi$: <br/>
      $$ g(\pi) = \int\limits_{0}^{\pi} \dfrac{\sin t}{t}  dt - \dfrac{\pi}{2} \approx <br/>
@@ -243,7 +243,7 @@ $$ g(u) = \int\limits_{0}^{u} \dfrac{\sin t}{t}  dt - \dfrac{\pi}{2} $$</p>
 0.15265 $$</p>
 </li>
 <li>
-<p><strong>Асимптотика:</strong><br/>
+<p><b>Асимптотика:</b><br/>
    $$ \lim_{u \to \infty} g(u) = 0, \quad \sup_{u &gt; 0} |g(u)| = g(\pi) \approx <br/>
 0.28114 $$</p>
 </li>

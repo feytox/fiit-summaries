@@ -183,8 +183,8 @@ $$\forall{\alpha \in V}~~\alpha \cdot \mathbf{0} = \mathbf{0}$$</p></div><br/>
 Д-во:<br/>
 <div class="spoiler-markdown"><p>
 $$\begin{align}
-\mathbf{0} &amp;=^3 \mathbf{0} + \mathbf{0} ~~\Huge{|}\normalsize \cdot\alpha \\\\
-\alpha \cdot\mathbf{0} &amp;= \alpha \cdot(\mathbf{0}+\mathbf{0})=^5\alpha\cdot\mathbf{0}+\alpha\cdot\mathbf{0} ~~\Huge{|}\normalsize +(-\alpha\mathbf{0}) \\\\
+\mathbf{0} &amp;=^3 \mathbf{0} + \mathbf{0} ~~\Huge{|}\normalsize \cdot\alpha \\
+\alpha \cdot\mathbf{0} &amp;= \alpha \cdot(\mathbf{0}+\mathbf{0})=^5\alpha\cdot\mathbf{0}+\alpha\cdot\mathbf{0} ~~\Huge{|}\normalsize +(-\alpha\mathbf{0}) \\
 \mathbf{0} &amp;= \alpha \mathbf{0}
 \end{align}$$</p></div></p>
 <p>$2^\bigtriangledown$ <br/>
@@ -193,7 +193,7 @@ $$\forall{\mathbf{x}\in V}~~ 0\mathbf{x}=\mathbf{0}$$</p></div><br/>
 Д-во:<br/>
 <div class="spoiler-markdown"><p>
 $$\begin{align}
-{0}\mathbf{x}+0\mathbf{x} &amp;=^6 (0+0)\mathbf{x} = 0\mathbf{x} ~~\Huge{|}\normalsize +(-0\mathbf{x}) \\\\
+{0}\mathbf{x}+0\mathbf{x} &amp;=^6 (0+0)\mathbf{x} = 0\mathbf{x} ~~\Huge{|}\normalsize +(-0\mathbf{x}) \\
 0\mathbf{x} &amp;= \mathbf{0}
 \end{align}$$</p></div></p>
 <p>$3^\bigtriangledown$ <br/>
@@ -209,17 +209,17 @@ $$\forall{\alpha \in F}~~\forall{\mathbf{x}\in V}~~(-\alpha)\mathbf{x}=-\alpha \
 Д-во:<br/>
 <div class="spoiler-markdown"><p>
 $$\begin{align}
-(-\alpha)\mathbf{x}+\alpha \mathbf{x} &amp;=^6 ((-\alpha)+\alpha)\mathbf{x}=0\cdot \mathbf{x}=^{2^{\bigtriangledown}}\mathbf{0} ~~\Huge|\normalsize +(-\alpha \mathbf{x}) \\\\
+(-\alpha)\mathbf{x}+\alpha \mathbf{x} &amp;=^6 ((-\alpha)+\alpha)\mathbf{x}=0\cdot \mathbf{x}=^{2^{\bigtriangledown}}\mathbf{0} ~~\Huge|\normalsize +(-\alpha \mathbf{x}) \\
 (-\alpha)\mathbf{x} &amp;= -\alpha \mathbf{x}
 \end{align}$$</p></div></p>
 <h3>Линейная зависимость</h3>
 <p><div class="spoiler-markdown"><p><br/>
 Пусть $a_{1}, a_{2},\dots,a_{k}$ - система векторов из векторного пространства $V$ над полем $F$. Вектор вида:<br/>
 $$\alpha_{1}a_{1}+\alpha_{2}a_{2}+\dots+\alpha_{k}a_{k}$$<br/>
-называется <strong>линейной комбинацией</strong> векторов $a_{1}, a_{2},\dots,a_{k}$</p>
-<p>Линейная комбинация называется <strong>тривиальной</strong>, если $\alpha_{1}=\alpha_{2}=\dots =\alpha_{k}=\mathbf{0}$, и <strong>нетривиальной</strong>, если хотя бы один из скаляров $\alpha_{1},\alpha_{2}\dots,\alpha_{k}$ неравен $0$. </p>
-<p>Если вектор $b$ является линейной комбинацией $a_{1}, a_{2},\dots,a_{k}$, говорят, что $b$ <strong>линейно выражается</strong> через вектора $a_{1}, a_{2},\dots,a_{k}$.</p>
-<p>Вектора $a_{1}, a_{2},\dots,a_{k}$ <strong>линейно зависимы</strong>, если некоторая нетривиальная линейная комбинация этих векторов равна нулевому вектору, и <strong>линейно независима</strong>, если никакая нетривиальная линейная комбинация этих векторов не равна нулевому вектору.<br/>
+называется <b>*линейной комбинацией</b>* векторов $a_{1}, a_{2},\dots,a_{k}$</p>
+<p>Линейная комбинация называется <b>тривиальной</b>, если $\alpha_{1}=\alpha_{2}=\dots =\alpha_{k}=\mathbf{0}$, и <b>*нетривиальной</b>*, если хотя бы один из скаляров $\alpha_{1},\alpha_{2}\dots,\alpha_{k}$ неравен $0$. </p>
+<p>Если вектор $b$ является линейной комбинацией $a_{1}, a_{2},\dots,a_{k}$, говорят, что $b$ <b>*линейно выражается</b>* через вектора $a_{1}, a_{2},\dots,a_{k}$.</p>
+<p>Вектора $a_{1}, a_{2},\dots,a_{k}$ <b>*линейно зависимы</b>*, если некоторая нетривиальная линейная комбинация этих векторов равна нулевому вектору, и <b>*линейно независима</b>*, если никакая нетривиальная линейная комбинация этих векторов не равна нулевому вектору.<br/>
 </p></div></p>
 <h3>Лемма о правом крайнем</h3>
 <p>Формулировка:<br/>
@@ -228,13 +228,13 @@ $$\alpha_{1}a_{1}+\alpha_{2}a_{2}+\dots+\alpha_{k}a_{k}$$<br/>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 По условию существуют $\alpha_{1},\alpha_{2}\dots,\alpha_{n}$, по крайней мере один из них не равен 0, такие что:<br/>
-$$\alpha_{1}\mathbf{a}{1}+\alpha{2}\mathbf{a}{2}+\dots+\alpha{n}\mathbf{a}{n} = \mathbf{0}$$Возьмем самый правый коэффициент отличный от <br/>
-0. Пусть это $\alpha{j}\neq0$. Тогда:<br/>
-$$\alpha_{1}\mathbf{a}{1}+\alpha{2}\mathbf{a}{2}+\dots+\alpha{j}\mathbf{a}{j}=0$$<br/>
+$$\alpha_{1}\mathbf{a}<em>{1}+\alpha</em>{2}\mathbf{a}<em>{2}+\dots+\alpha</em>{n}\mathbf{a}<em>{n} = \mathbf{0}$$Возьмем самый правый коэффициент отличный от <br/>
+0. Пусть это $\alpha</em>{j}\neq0$. Тогда:<br/>
+$$\alpha_{1}\mathbf{a}<em>{1}+\alpha</em>{2}\mathbf{a}<em>{2}+\dots+\alpha</em>{j}\mathbf{a}<em>{j}=0$$<br/>
 Откуда:<br/>
-$$\mathbf{a}{j}=-\frac{\alpha_{1}}{\alpha_{j}}\mathbf{a}{1}-\frac{\alpha{2}}{\alpha_{j}}\mathbf{a}{2}-\dots-\frac{\alpha{j-1}}{\alpha_{j}}\mathbf{a}{j-1}$$<br/>
-т.e. $\mathbf{a}{j}$ линейно выражается через предыдущие.</p>
-<p>Заметим, что $j\neq{1}$ т.к. тогда равенство сводится $\alpha_{1}\mathbf{a}{1}=\mathbf{0}$ откуда $a{1}=\mathbf{0}$ (противоречие)<br/>
+$$\mathbf{a}</em>{j}=-\frac{\alpha_{1}}{\alpha_{j}}\mathbf{a}<em>{1}-\frac{\alpha</em>{2}}{\alpha_{j}}\mathbf{a}<em>{2}-\dots-\frac{\alpha</em>{j-1}}{\alpha_{j}}\mathbf{a}<em>{j-1}$$<br/>
+т.e. $\mathbf{a}</em>{j}$ линейно выражается через предыдущие.</p>
+<p>Заметим, что $j\neq{1}$ т.к. тогда равенство сводится $\alpha_{1}\mathbf{a}<em>{1}=\mathbf{0}$ откуда $a</em>{1}=\mathbf{0}$ (противоречие)<br/>
 </p></div></p></div>
 </body>
 </html>
