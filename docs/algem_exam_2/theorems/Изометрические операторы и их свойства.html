@@ -167,7 +167,7 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Изометрические операторы и их свойства</h1><h2>Определение: Изометрический оператор</h2>
 <p><div class="spoiler-markdown"><p>
-Пусть $V_1$ и $V_2$ — унитарные (евклидовые) пространства. Линейный оператор $\mathcal{A}\colon V_1 \to V_2$ называется ***изометрией***, если для любого вектора $v \in V_1$:
+Пусть $V_1$ и $V_2$ — унитарные (евклидовые) пространства. Линейный оператор $\mathcal{A}\colon V_1 \to V_2$ называется <b>*изометрией</b>*, если для любого вектора $v \in V_1$:
 $$ |\mathcal{A} v| = |v| $$</p></div></p>
 <h2>Теорема: Критерий изометрии</h2>
 <p>Формулировка:<br/>
@@ -198,10 +198,17 @@ $\square$<br/>
 </p></div></p>
 <h2>Следствия: тождественность произведения и обратимость</h2>
 <p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $V_{1}$ и $V_{2}$ - унитарные (евклидовы) пространства, $\mathcal{A}\mathpunct{:}~~ V_{1} \to V_{2}$. Тогда:
-1. $\mathcal{A}$ - изометрия $\iff$ $\mathcal{A}\mathcal{A}^{*} = \mathcal{E}$
-2. Если $V_{1} = V_{2}$, то $\mathcal{A}^{*} = \mathcal{A}^{-1}$</p></div></p>
+<div class="spoiler-markdown"><p><br/>
+Пусть $V_{1}$ и $V_{2}$ - унитарные (евклидовы) пространства, $\mathcal{A}\mathpunct{:}~~ V_{1} \to V_{2}$. Тогда:</p>
+<ol>
+<li>
+<p>$\mathcal{A}$ - изометрия $\iff$ $\mathcal{A}\mathcal{A}^{*} = \mathcal{E}$</p>
+</li>
+<li>
+<p>Если $V_{1} = V_{2}$, то $\mathcal{A}^{*} = \mathcal{A}^{-1}$<br/>
+</p></li></ol></div></p>
+
+
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 <strong>Следствие 1</strong><br/>
@@ -233,9 +240,16 @@ $$ |\lambda| \cdot |x| = |x| $$
 $\square$</p></div></p>
 <h2>Лемма: Изометрия и ОНБ</h2>
 <p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-1. Если $\mathcal{A}\colon V \to V$ — изометрия, то $\mathcal{A}$ переводит любой ОНБ $V$ в ОНБ.
-2. Если $\mathcal{A}$ переводит некоторый ОНБ в ОНБ, то $\mathcal{A}$ — изометрия.</p></div></p>
+<div class="spoiler-markdown"><p></p>
+<ol>
+<li>
+<p>Если $\mathcal{A}\colon V \to V$ — изометрия, то $\mathcal{A}$ переводит любой ОНБ $V$ в ОНБ.</p>
+</li>
+<li>
+<p>Если $\mathcal{A}$ переводит некоторый ОНБ в ОНБ, то $\mathcal{A}$ — изометрия.<br/>
+</p></li></ol></div></p>
+
+
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 <strong>Часть 1</strong>:<br/>
@@ -272,16 +286,23 @@ $\square$<br/>
 </p></div></p>
 <h2>Теорема: Матриц изометрии в евклидовом пространстве</h2>
 <p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $V$ - евклидово пространство. Оператор $\mathcal{A}\colon V \to V$ является изометрией $\iff$ существует ОНБ, в котором матрица $\mathcal{A}$ блочно-диагональна, причём:
-1. Блоки $1 \times 1$ содержат $\pm 1$  
-2. Блоки $2 \times 2$ имеют вид:
-$$
-\begin{pmatrix} 
-\cos\varphi &amp; \sin\varphi \\\\ 
--\sin\varphi &amp; \cos\varphi 
-\end{pmatrix}
-$$</p></div></p>
+<div class="spoiler-markdown"><p><br/>
+Пусть $V$ - евклидово пространство. Оператор $\mathcal{A}\colon V \to V$ является изометрией $\iff$ существует ОНБ, в котором матрица $\mathcal{A}$ блочно-диагональна, причём:</p>
+<ol>
+<li>
+<p>Блоки $1 \times 1$ содержат $\pm 1$  </p>
+</li>
+<li>
+<p>Блоки $2 \times 2$ имеют вид:<br/>
+$$<br/>
+\begin{pmatrix} <br/>
+\cos\varphi &amp; \sin\varphi \\ <br/>
+-\sin\varphi &amp; \cos\varphi <br/>
+\end{pmatrix}<br/>
+$$<br/>
+</p></li></ol></div></p>
+
+
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 $\Large\implies$<br/>
@@ -305,14 +326,23 @@ $\square$<br/>
 </p></div></p>
 <h2>Определение: ортогональная/унитарная матрица</h2>
 <p><div class="spoiler-markdown"><p>
-Матрица $A$ называется **ортогональной** (над $\mathbb{R}$) или **унитарной** (над $\mathbb{C}$), если $AA^{*} = A^{*}A = E$</p></div></p>
+Матрица $A$ называется <b>ортогональной</b> (над $\mathbb{R}$) или <b>унитарной</b> (над $\mathbb{C}$), если $AA^{*} = A^{*}A = E$</p></div></p>
 <h2>Теорема: Эквивалентные условия ортогональности (унитарности) матрицы</h2>
 <p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $A$ — квадратная матрица над $\mathbb{R}$ (ортогональность) или $\mathbb{C}$ (унитарность). Эквивалентны:
-1. $A$ ортогональна (унитарна): $AA^{*} = A^{*}A = E$  
-2. Столбцы $A$ образуют ортонормированный базис  
-3. Строки $A$ образуют ортонормированный базис</p></div></p>
+<div class="spoiler-markdown"><p><br/>
+Пусть $A$ — квадратная матрица над $\mathbb{R}$ (ортогональность) или $\mathbb{C}$ (унитарность). Эквивалентны:</p>
+<ol>
+<li>
+<p>$A$ ортогональна (унитарна): $AA^{} = A^{}A = E$  </p>
+</li>
+<li>
+<p>Столбцы $A$ образуют ортонормированный базис  </p>
+</li>
+<li>
+<p>Строки $A$ образуют ортонормированный базис<br/>
+</p></li></ol></div></p>
+
+
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 <strong>$(1) \implies (2)$</strong><br/>

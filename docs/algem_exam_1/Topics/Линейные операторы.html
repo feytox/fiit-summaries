@@ -175,15 +175,24 @@ $$\forall{\mathbf{x}{1}, \mathbf{x}{2} \in V, t \in F}~~ \begin{cases}<br/>
 <p>Множество всех линейных операторов из $V$ в $W$ обозначается $\mathrm{Hom}(V, W)$<br/>
 </p></div></p>
 <h3>Свойства линейного оператора</h3>
-<p><div class="spoiler-markdown"><p>
-Пусть $V, W$ - векторные пространства над $F$, а $\mathcal{A}: V \to W$ - линейный оператор. Тогда:
-1. $\mathcal{A}(\mathbf{0}) = \mathbf{0}$
-2. $\mathcal{A}(\lambda_{1} \mathbf{v}_{1} + \lambda_{2} \mathbf{v}_{2} + \dots + \lambda_{m} \mathbf{v}_{m}) = \lambda_{1}\mathcal{A}(\mathbf{v}_{1}) + \lambda_{2}\mathcal{A}(\mathbf{v}_{2}) + \dots + \lambda_{m}\mathcal{A}(\mathbf{v}_{m})$</p></div></p>
+<p><div class="spoiler-markdown"><p><br/>
+Пусть $V, W$ - векторные пространства над $F$, а $\mathcal{A}: V \to W$ - линейный оператор. Тогда:</p>
+<ol>
+<li>
+<p>$\mathcal{A}(\mathbf{0}) = \mathbf{0}$</p>
+</li>
+<li>
+<p>$\mathcal{A}(\lambda_{1} \mathbf{v}{1} + \lambda{2} \mathbf{v}{2} + \dots + \lambda{m} \mathbf{v}{m}) = \lambda{1}\mathcal{A}(\mathbf{v}{1}) + \lambda{2}\mathcal{A}(\mathbf{v}{2}) + \dots + \lambda{m}\mathcal{A}(\mathbf{v}_{m})$<br/>
+</p></li></ol></div></p>
+
+
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-<strong>Свойство 1.</strong><br/>
+<strong>Свойство <br/>
+1.</strong><br/>
 $$\mathcal{A}(\mathbf{0}) = \mathcal{A}(0 \cdot \mathbf{0}) = 0 \cdot \mathcal{A}(\mathbf{0}) = \mathbf{0}$$</p>
-<p><strong>Свойство 2.</strong><br/>
+<p><strong>Свойство <br/>
+2.</strong><br/>
 По индукции. $~~~\square$<br/>
 </p></div></p>
 <h3>Теорема существования и единственности линейного оператора</h3>
@@ -231,7 +240,7 @@ $$\begin{align}<br/>
 <h3>Матрица линейного оператора</h3>
 <p><div class="spoiler-markdown"><p>
 Пусть $V, W$ - векторные пространства над $F$, причём $\mathrm{dim}~V = n &gt; 0$, $\mathrm{dim}~W = k &gt; 0$. Пусть $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}$ - базис $V$, $Q = \{\mathbf{q}_{1}, \mathbf{q}_{2}, \dots, \mathbf{q}_{k}\}$ - базис $W$.
-**Матрицей линейного оператора** $\mathcal{A}: V \to W$ в базисах $P$ и $Q$ называется $k\times n$-матрица, $i$-й столбец которой состоит из координат вектора $\mathcal{A}(\mathbf{p}_{i})$ в базисе $Q$, $\forall{i = \overline{1,n}}$. Эта матрица обозначается $A_{P,Q}$ или просто $A$, если базисы зафиксированы.</p></div></p>
+<b>Матрицей линейного оператора</b> $\mathcal{A}: V \to W$ в базисах $P$ и $Q$ называется $k\times n$-матрица, $i$-й столбец которой состоит из координат вектора $\mathcal{A}(\mathbf{p}_{i})$ в базисе $Q$, $\forall{i = \overline{1,n}}$. Эта матрица обозначается $A_{P,Q}$ или просто $A$, если базисы зафиксированы.</p></div></p>
 <h3>Изоморфизм векторных пространств линейных операторов и матриц</h3>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p><br/>

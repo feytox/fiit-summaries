@@ -166,11 +166,20 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Арифметические свойства дифференцируемых функций</h1><p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $f(x), g(x)$ - дифференцируемы в точке $x$, то:
-1. $(f(x) \pm g(x))' = f'(x) \pm g'(x)$
-2. $(f(x) \cdot g(x))' = f'(x)g(x) + f(x)g'(x)$
-3. $\left( \dfrac{f(x)}{g(x)} \right)' = \dfrac{f'(x)g(x) - f(x)g'(x)}{g^{2}(x)},~~ g(x) \neq 0$</p></div></p>
+<div class="spoiler-markdown"><p><br/>
+Пусть $f(x), g(x)$ - дифференцируемы в точке $x$, то:</p>
+<ol>
+<li>
+<p>$(f(x) \pm g(x))' = f'(x) \pm g'(x)$</p>
+</li>
+<li>
+<p>$(f(x) \cdot g(x))' = f'(x)g(x) + f(x)g'(x)$</p>
+</li>
+<li>
+<p>$\left( \dfrac{f(x)}{g(x)} \right)' = \dfrac{f'(x)g(x) - f(x)g'(x)}{g^{2}(x)},~~ g(x) \neq 0$<br/>
+</p></li></ol></div></p>
+
+
 <p>Д-во 1:<br/>
 <div class="spoiler-markdown"><p>
 $$\lim_{x \to x_{0}} \dfrac{(f(x)\pm g(x)) - (f(x_{0}) \pm g(x_{0}))}{x-x_{0}} = \lim_{x \to x_{0}} \left( \dfrac{f(x) - f(x_{0})}{x-x_{0}} \pm \dfrac{g(x) - g(x_{0})}{x-x_{0}} \right) = f'(x_{0}) \pm g'(x_{0}) ~~~~\square$$</p></div></p>

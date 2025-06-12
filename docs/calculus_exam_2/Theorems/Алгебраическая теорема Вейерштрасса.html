@@ -178,7 +178,8 @@ $b^{'}{n,k} = x^{k-1}(1-x)^{n-k-1}$<br/>
 $(k(1-x) - (1-x))^{n-k-1}$<br/>
 $x = 0,~x=1~-min$<br/>
 $k-kx-xn-kx=k-xn=0,~~~x=\dfrac{k}{n}~- \max$<br/>
-$1.$ Пусть $[a,b] = [0,1]$<br/>
+$<br/>
+1.$ Пусть $[a,b] = [0,1]$<br/>
 $B{n}(x) = \sum_{k=0}^{n} C_{n}^{k} x^{k}(1-x)^{n-k}$<br/>
 $P_{n}(x) = \sum_{k=0}^{n} f\left( \dfrac{k}{n} \right) * b_{n,k} (x)$<br/>
 </p></div></p>
@@ -190,13 +191,16 @@ $P_{n}(x) = \sum_{k=0}^{n} f\left( \dfrac{k}{n} \right) * b_{n,k} (x)$<br/>
 3) $\sum_{k=1}^{n} \left( \dfrac{k}{n}  - x \right)^{2} - b_{n,k}(x) = \dfrac{x(1-x)}{n}$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
-${} 1.~ {}$$\sum_{k=-0}^{n} C_{n}^{k} x^{k} (1-x)^{n-k} = (x+(1-x))^{n} = 1^{n} = 1$
-$2.~$$\sum_{k=-0}^{n} \dfrac{k}{n} C_{n}^{k} x^{k} (1-x)^{n-k}=$
+${} 
+1.~ {}$$\sum_{k=-0}^{n} C_{n}^{k} x^{k} (1-x)^{n-k} = (x+(1-x))^{n} = 1^{n} = 1$
+$
+2.~$$\sum_{k=-0}^{n} \dfrac{k}{n} C_{n}^{k} x^{k} (1-x)^{n-k}=$
 $=\sum_{k=0}^{n} \dfrac{k}{n} * \dfrac{n!}{k!(n-k)!} x^{k}(1-x)^{n-k}$
 $= x \sum_{k=0}^{n} \dfrac{(n-1)!}{(k-1)!(n-k)!} x^{k-1}(1-x)^{n-k}=$
 $= x \sum_{k=0}^{n} \dfrac{(n-1)!}{k!(n-1-k)!} x^{k}(1-x)^{n-1-k} =$
 $= x \sum_{k=0}^{n} C^{k}_{n} x^{k} (1-x)^{n-1-k}$
-$3.~$$\left( \sum_{k=0}^{n} \left( \dfrac{k}{n} -x \right) b_{n,k}(x) \right) = 0$
+$
+3.~$$\left( \sum_{k=0}^{n} \left( \dfrac{k}{n} -x \right) b_{n,k}(x) \right) = 0$
 $-\sum_{k=0}^{n} b_{n,k}(x) + \sum_{k=0}^{n} \left( \dfrac{k}{n} - x \right)^{2} b_{n,k}(x) \dfrac{n}{x(1-x)} = 0$
 Что такое $b_{n,k}\mathpunct{:}~~$
 $$b_{n,k} = C_{n}^{k} (k-nx)x^{k-1}(1-x)^{n-k-1} = C_{n}^{k} x^{k}(1-x)^{n-k} \left( \dfrac{k}{n} -x \right) \dfrac{n}{x(1-x)}$$

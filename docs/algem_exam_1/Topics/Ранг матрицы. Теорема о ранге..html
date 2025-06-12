@@ -169,8 +169,8 @@
 <p><div class="spoiler-markdown"><p>
 Пусть $A$ - произвольная $k\times n$-матрица.
 $$A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1i} &amp; \cdots &amp; a_{1n} \\\\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2i} &amp; \cdots &amp; a_{2n} \\\\ a_{31} &amp; a_{32} &amp; \cdots &amp; a_{3i} &amp; \cdots &amp; a_{3n} \\\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\\\ a_{k1} &amp; a_{k2} &amp; \cdots &amp; a_{ki} &amp; \cdots &amp; a_{kn} \end{pmatrix}$$
-- **Рангом матрицы по столбцам** - размерность подпространства, порождённого набором столбцов матрицы $A$, в пространстве всех столбцов высоты $k$ над полем $F$.
-- **Рангом матрицы по строкам** - размерность подпространства. порождённого набором строк матрицы $A$, в пространстве всех строк длины $n$ над полем $F$.</p></div></p>
+- <b>Рангом матрицы по столбцам</b> - размерность подпространства, порождённого набором столбцов матрицы $A$, в пространстве всех столбцов высоты $k$ над полем $F$.
+- <b>Рангом матрицы по строкам</b> - размерность подпространства. порождённого набором строк матрицы $A$, в пространстве всех строк длины $n$ над полем $F$.</p></div></p>
 <h3>Теорема о ранге матрицы</h3>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
@@ -237,7 +237,8 @@ $$\gamma_1 (\lambda a_{i_1~j_1}) + \cdots + \gamma_s (\lambda a_{i_s~j_1}) = \la
 <h3>Завершение доказательства теоремы</h3>
 <p><div class="spoiler-markdown"><p><br/>
 Теперь покажем, что с помощью элементарных преобразований любую матрицу $A$ можно привести к матрице, для которой равенство рангов по столбцам и строкам очевидно.</p>
-<p>Если все элементы матрицы $A$ равны $0$, то понятно, что ранги $A$ и по столбцам, и по строкам равны 0. Если в $A$ есть ненулевой элемент, то с помощью преобразований переставим этот элемент на место $(1,1)$, а затем с помощью преобразований 2-го рода сделаем его равным $1$. Теперь с помощью преобразований 2 и 3 родов "обнулим" все остальные элементы первой строки и первого столбца: <br/>
+<p>Если все элементы матрицы $A$ равны $0$, то понятно, что ранги $A$ и по столбцам, и по строкам равны <br/>
+0. Если в $A$ есть ненулевой элемент, то с помощью преобразований переставим этот элемент на место $(1,1)$, а затем с помощью преобразований 2-го рода сделаем его равным $1$. Теперь с помощью преобразований 2 и 3 родов "обнулим" все остальные элементы первой строки и первого столбца: <br/>
 $$\begin{pmatrix} 1 &amp; a_{12} &amp; \cdots &amp; a_{1j} &amp; \cdots \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2j} &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots \\ a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ij} &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots \end{pmatrix} \quad \longrightarrow \quad \begin{pmatrix} 1 &amp; 0 &amp; \cdots &amp; 0 &amp; \cdots \\ 0 &amp; b_{22} &amp; \cdots &amp; b_{2j} &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots \\ 0 &amp; b_{i2} &amp; \cdots &amp; b_{ij} &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \ddots \end{pmatrix}$$</p>
 <p>Продолжая описанный процесс, мы приведем матрицу $A$ к виду:<br/>
 $$\begin{pmatrix} 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; \ddots \\ 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 0 &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots &amp; \ddots \end{pmatrix}$$<br/>

@@ -167,28 +167,44 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Умножение операторов и матриц. Обратный оператор. Линейность оператора, обратного к линейному. Алгоритм вычисления обратной матрицы</h1><h3>Определение: Умножение линейных операторов</h3>
 <p><div class="spoiler-markdown"><p>
-Пусть $V_{1}, V_{2}, V_{3}$ - пространства над $F$. Если $\mathcal{A}: V_{1} \to V_{2}$ и $\mathcal{B}: V_{2} \to V_{3}$ - линейные операторы, то **произведение** этих операторов - композиция $\mathcal{A}\mathcal{B}: V_{1} \to V_{3}$, действующая по правилу:
+Пусть $V_{1}, V_{2}, V_{3}$ - пространства над $F$. Если $\mathcal{A}: V_{1} \to V_{2}$ и $\mathcal{B}: V_{2} \to V_{3}$ - линейные операторы, то <b>произведение</b> этих операторов - композиция $\mathcal{A}\mathcal{B}: V_{1} \to V_{3}$, действующая по правилу:
 $$\mathcal{A}\mathcal{B}(\mathbf{x}) = \mathcal{B}(\mathcal{A}(\mathbf{x}))~~ \forall{\mathbf{x} \in V_{1}}$$</p></div></p>
 <h3>Свойства произведения операторов</h3>
-<p><div class="spoiler-markdown"><p>
-Пусть $V_{1}, V_{2}, V_{3}, V_{4}$ - векторные пространства, $\mathcal{A}: V_{1} \to V_{2}$, $\mathcal{B}: V_{2} \to V_{3}$, $\mathcal{C}: V_{3} \to V_{4}$ - линейные операторы. Тогда:
-1. $\mathcal{A}\mathcal{B}$ - линейный оператор
-2. $(\mathcal{A}\mathcal{B})\mathcal{C} = \mathcal{A}(\mathcal{B}\mathcal{C})$ - ассоциативность
-3. $(\mathcal{A} + \mathcal{B})\mathcal{C} = \mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C}$ - дистрибутивность справа
-4. $\mathcal{A}(\mathcal{B} + \mathcal{C}) = \mathcal{A}\mathcal{B} + \mathcal{A}\mathcal{C}$ - дистрибутивность слева</p></div></p>
+<p><div class="spoiler-markdown"><p><br/>
+Пусть $V_{1}, V_{2}, V_{3}, V_{4}$ - векторные пространства, $\mathcal{A}: V_{1} \to V_{2}$, $\mathcal{B}: V_{2} \to V_{3}$, $\mathcal{C}: V_{3} \to V_{4}$ - линейные операторы. Тогда:</p>
+<ol>
+<li>
+<p>$\mathcal{A}\mathcal{B}$ - линейный оператор</p>
+</li>
+<li>
+<p>$(\mathcal{A}\mathcal{B})\mathcal{C} = \mathcal{A}(\mathcal{B}\mathcal{C})$ - ассоциативность</p>
+</li>
+<li>
+<p>$(\mathcal{A} + \mathcal{B})\mathcal{C} = \mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C}$ - дистрибутивность справа</p>
+</li>
+<li>
+<p>$\mathcal{A}(\mathcal{B} + \mathcal{C}) = \mathcal{A}\mathcal{B} + \mathcal{A}\mathcal{C}$ - дистрибутивность слева<br/>
+</p></li></ol></div></p>
+
+
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Свойство 1.<br/>
+Свойство <br/>
+1.<br/>
 Очевидно, необходимо проверить 2 аксиомы линейных операторов.</p>
-<p>Свойство 2.<br/>
+<p>Свойство <br/>
+2.<br/>
 Ассоциативность - свойство композиции произвольных отображений.</p>
-<p>Свойство 3.<br/>
+<p>Свойство <br/>
+3.<br/>
 $$\begin{align}<br/>
 ((\mathcal{A} + \mathcal{B})\mathcal{C})(\mathbf{x}) &amp;= \mathcal{C}((\mathcal{A} + \mathcal{B})(\mathbf{x})) = \mathcal{C}(\mathcal{A}(\mathbf{x}) + \mathcal{B}(\mathbf{x})) = \mathcal{C}(\mathcal{A}(\mathbf{x})) + \mathcal{C}(\mathcal{B}(\mathbf{x})) = \\<br/>
 &amp;= \mathcal{A}\mathcal{C}(\mathbf{x}) + \mathcal{B}\mathcal{C}(\mathbf{x}) = (\mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C})(\mathbf{x}) ~~~~~\square<br/>
 \end{align}$$</p>
-<p>Свойство 4.<br/>
-Аналогично свойству 3.<br/>
+<p>Свойство <br/>
+4.<br/>
+Аналогично свойству <br/>
+3.<br/>
 </p></div></p>
 <h3>* Следствие из свойств</h3>
 <p><div class="spoiler-markdown"><p>
@@ -204,7 +220,7 @@ $$f{ij} = \sum_{k = 1}^{l} g_{ik}h_{kj}$$</p>
 <div class="spoiler-markdown"><p>
 Пусть $\mathcal{A}: V_{1} \to V_{2}, \mathcal{B}: V_{2} \to V_{3}$ - линейные операторы, а пространства $V_{1}, V_{2}, V_{3}$ - конечномерны и имеют размерности $n, k, m$,. Зафиксируем базисы $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}, Q = \{\mathbf{q}_{1}, \mathbf{q}_{2}, \dots, \mathbf{q}_{k}\}, R = \{\mathbf{r}_{1}, \mathbf{r}_{2}, \dots, \mathbf{r}_{m}\}$ в $V_{1}, V_{2}, V_{3}$ соответственно. Тогда:
 $$[\mathcal{A}\mathcal{B}]_{P,R} = [\mathcal{B}]_{Q,R}[\mathcal{A}]_{P,Q}$$
-**Примечание:**
+<b>Примечание:</b>
 Матрицы операторов перемножаются в порядке, обратном тому, в котором записаны операторы.</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
@@ -221,16 +237,28 @@ $$[\mathbf{p}{1}]{P} = \begin{bmatrix}<br/>
 <p>Продолжая этот процесс, получаем, что каждый столбец матрицы $C$ есть произведение $B$ на столбец $A$ с тем же номером (правило "строка на столбец") $\square$<br/>
 </p></div></p>
 <h3>Свойства умножения матриц</h3>
-<p><div class="spoiler-markdown"><p>
-Пусть $A, B, C$ - матрицы. Тогда:
-1. $\exists{AB}~~ \exists{BC}~ \Rightarrow (AB)C = A(BC)$
-2. $A$ и $B$ одного размера и $\exists{AC}~ \Rightarrow (A+B)C = AC + BC$
-3. $B$ и $C$ одного размера и $\exists{AB}~ \Rightarrow A(B+C) = AB + AC$
-4. $\exists{AB}~ \Rightarrow (AB)^{T} = B^{T}A^{T}$</p></div></p>
+<p><div class="spoiler-markdown"><p><br/>
+Пусть $A, B, C$ - матрицы. Тогда:</p>
+<ol>
+<li>
+<p>$\exists{AB}~~ \exists{BC}~ \Rightarrow (AB)C = A(BC)$</p>
+</li>
+<li>
+<p>$A$ и $B$ одного размера и $\exists{AC}~ \Rightarrow (A+B)C = AC + BC$</p>
+</li>
+<li>
+<p>$B$ и $C$ одного размера и $\exists{AB}~ \Rightarrow A(B+C) = AB + AC$</p>
+</li>
+<li>
+<p>$\exists{AB}~ \Rightarrow (AB)^{T} = B^{T}A^{T}$<br/>
+</p></li></ol></div></p>
+
+
 <p>Подсказки к д-ву:<br/>
 <div class="spoiler-markdown"><p><br/>
 Свойства 1-3 следуют из свойств умножения линейных операторов. Либо можно провести прямые вычисления.</p>
-<p>Свойство 4.<br/>
+<p>Свойство <br/>
+4.<br/>
 Проверка прямыми вычислениями.<br/>
 </p></div></p>
 <h3>Предложение об обратном операторе</h3>
@@ -246,7 +274,7 @@ $$\mathcal{A}^{-1}(y_{1} + y_{2}) = x_{1} + x_{2} = \mathcal{A}^{-1}(y_{1}) + \m
 Аналогично проверяется и умножение на скаляр $\square$</p></div></p>
 <h3>Определение: Обратная матрица</h3>
 <p><div class="spoiler-markdown"><p>
-$A^{-1}$ называется **обратной** к матрице $A$, если $AA^{-1} = A^{-1}A = E$</p></div></p>
+$A^{-1}$ называется <b>обратной</b> к матрице $A$, если $AA^{-1} = A^{-1}A = E$</p></div></p>
 <p>"Обоснование":<br/>
 <div class="spoiler-markdown"><p>
 Так как $\mathcal{A}^{-1}(\mathcal{A}(\mathbf{x})) = \mathbf{x}$, получаем, что $\mathcal{A}\mathcal{A}^{-1}$ - единичный оператор. Переходя к матрицам имеем:
@@ -310,11 +338,12 @@ $$\begin{pmatrix}<br/>
 <h3>Алгоритм вычисления обратной матрицы</h3>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Припишем к обратимой $n \times n$-матрице $A$ слева единичную $n\times n$-матрицу и проделаем над **строками** $n \times 2n$-матрицы $E|A$ последовательность элементарных преобразований, которая приведёт $A$ к единичной матрице. Тогда левая половина получившейся матрицы будет равна $A^{-1}$</p></div></p>
+Припишем к обратимой $n \times n$-матрице $A$ слева единичную $n\times n$-матрицу и проделаем над <b>строками</b> $n \times 2n$-матрицы $E|A$ последовательность элементарных преобразований, которая приведёт $A$ к единичной матрице. Тогда левая половина получившейся матрицы будет равна $A^{-1}$</p></div></p>
 <p>Обоснование:<br/>
 <div class="spoiler-markdown"><p><br/>
 Чтобы обосновать предложенный алгоритм, нужно объяснить, почему эта процедура (1) заканчивается и (2) приводит именно к обратной матрице.</p>
-<p>Шаг 1.<br/>
+<p>Шаг <br/>
+1.<br/>
 Поскольку ранг матрицы $A$ равен $n$, её столбцы линейно независимы. Поэтому в первом столбце есть ненулевой элемент, перестановкой строк переставим его на место $(1,1)$, домножим его на обратный элемент (теперь он равен $1$), а затем обнулим остальные элементы первого столбца. Продолжая эту процедуру для всех столбцов, получаем:<br/>
 $$\begin{pmatrix}<br/>
 1 &amp; a_{12} &amp; \dots &amp; a_{1n} \\<br/>
@@ -332,7 +361,8 @@ a_{n1} &amp; a_{n2} &amp; \dots &amp; a_{nn}<br/>
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
 0 &amp; 0 &amp; \dots &amp; 1<br/>
 \end{pmatrix}$$</p>
-<p>Шаг 2.<br/>
+<p>Шаг <br/>
+2.<br/>
 Рассмотрим последовательность элементарных преобразований $\varepsilon_{1}, \dots, \varepsilon_{s}$ над строками $n\times 2n$-матрицы $E|A$ такую, что:<br/>
 $$E|A \xrightarrow{\varepsilon_{1}} \dots \xrightarrow{\varepsilon_{s}} B|E$$<br/>
 Пусть $T_{1}, \dots, T_{s}$ - такие $n\times n$-матрицы, соответствующие элементарным преобразованиям $\varepsilon_{1}, \dots, \varepsilon_{s}$. Тогда по <span>лемме</span>:<br/>

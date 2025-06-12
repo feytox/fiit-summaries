@@ -167,10 +167,18 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Теорема Коши о промежуточном значении</h1><p>Формулировка:<br/>
 <div class="spoiler-markdown"><p><br/>
-Если:<br/>
-1. $f(x)$ - непрерывна<br/>
-2. $f(x)\mathpunct{:}~ [a, b] \to \mathbb{R}$<br/>
-3. $f(a) &lt; f(b)$</p>
+Если:</p>
+<ol>
+<li>
+<p>$f(x)$ - непрерывна</p>
+</li>
+<li>
+<p>$f(x)\mathpunct{:}~ [a, b] \to \mathbb{R}$</p>
+</li>
+<li>
+<p>$f(a) &lt; f(b)$</p>
+</li>
+</ol>
 <p>То: <br/>
 $$\forall{C \in (f(a), f(b))}~~ \exists{c \in (a, b)}\mathpunct{:}~~ f(c) = C$$<br/>
 </p></div></p>
@@ -178,13 +186,27 @@ $$\forall{C \in (f(a), f(b))}~~ \exists{c \in (a, b)}\mathpunct{:}~~ f(c) = C$$<
 <div class="spoiler-markdown"><p><br/>
 <strong>1 случай:</strong> $C = 0$ <br/>
 Из условия 3 получаем, что $f(a) &lt; 0, f(b) &gt; 0$.<br/>
-Разделим отрезок $[a, b]$ пополам и возьмём $c_{1} = \dfrac{a+b}{2}$:<br/>
-1. $f(c_{1}) = 0 \implies c_{1}$ - искомое<br/>
-2. $f(c_{1}) &gt; 0 \implies [a_{1}, b_{1}] = [a, c_{1}]$<br/>
-3. $f(c_{1}) &lt; 0 \implies [a_{1}, b_{1}] = [c_{1}, b]$</p>
-<p>Продолжая данный процесс, получаем 2 возможные ситуации:<br/>
-1. $\exists{c_{n}}\mathpunct{:}~ f(c_{n}) = 0$, нужное $c$ найдено.<br/>
-2. $\forall{c_{n}}\mathpunct{:}~ f(c_{n}) \neq 0$</p>
+Разделим отрезок $[a, b]$ пополам и возьмём $c_{1} = \dfrac{a+b}{2}$:</p>
+<ol>
+<li>
+<p>$f(c_{1}) = 0 \implies c_{1}$ - искомое</p>
+</li>
+<li>
+<p>$f(c_{1}) &gt; 0 \implies [a_{1}, b_{1}] = [a, c_{1}]$</p>
+</li>
+<li>
+<p>$f(c_{1}) &lt; 0 \implies [a_{1}, b_{1}] = [c_{1}, b]$</p>
+</li>
+</ol>
+<p>Продолжая данный процесс, получаем 2 возможные ситуации:</p>
+<ol>
+<li>
+<p>$\exists{c_{n}}\mathpunct{:}~ f(c_{n}) = 0$, нужное $c$ найдено.</p>
+</li>
+<li>
+<p>$\forall{c_{n}}\mathpunct{:}~ f(c_{n}) \neq 0$</p>
+</li>
+</ol>
 <p>Рассмотрим вторую ситуацию.<br/>
 ${[a_{n}, b_{n}]}$ - последовательность вложенных стягивающихся отрезков, а значит по <span>принципу Кантора</span>: $\forall{n \in \mathbb{N}}~~ \exists!~{c}\mathpunct{:}~~ c \in [a_{n}, b_{n}]$</p>
 <p>Докажем, что $f(c) = 0$. <br/>
