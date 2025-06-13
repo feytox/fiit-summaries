@@ -165,38 +165,58 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Представление симметрического многочлена через основные симметрические многочлены</h1><h2>Основная теорема о симметрических многочленах</h2>
-<p><div class="spoiler-markdown"><p>
-$f(x_{1}, x_{2},\dots, x_{n})$ - симметрический многочлен, тогда $f$ - многочлен от <span>элементарных симметрических многочленов</span>.</p></div></p>
-<h2>Лемма</h2>
+<div class="content"><h1>Представление симметрического многочлена через основные симметрические многочлены</h1><h2>Лемма: Мультистепень и старший моном произведения</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p><br/>
-$$mdeg(f_{1}f_{2}) =mdeg(f_{1}) + mdeg(f_{2})$$<br/>
-$$lead(f_{1}f_{2}) = lead(f_{1}) \cdot lead(f_{2})$$<br/>
-- $mdeg⁡(f)$ — <span>мультистепень</span> старшего монома $f$,</p>
-<ul>
-<li>$lead⁡(f)$ — старший моном $f$ (моном максимальной <span>степени</span>).<br/>
-<code>Д-во: $\dagger \dagger$</code>spoiler-markdown<br/>
-$$f_{1} = A_{1}x_{1}^{a_{1}}x_{2}^{a_{2}}\dots x_{n}^{a_{n}} + \bar{f_{1}}$$<br/>
-$$f_{2} = B_{1}x_{1}^{b_{1}}x_{2}^{b_{2}}\dots x_{n}^{b_{n}} + \bar{f_{2}}$$<br/>
-$f_{1} \cdot f_{2} = A_{1}B_{1}x_{1}^{a_{1} + b_{1}}x_{2}^{a_{2} + b_{2}}\dots x_{n}^{a_{n} + b_{n}} +\dots$</li>
-</ul>
-<p>далее по индукции.<br/>
-$\square$<br/>
+Пусть $f_{1}$ и $f_{2}$ - ненулевые многочлены от нескольких переменных</p>
+<ol>
+<li>
+<p>$\operatorname{mdeg}(f_{1}f_{2}) =\operatorname{mdeg}(f_{1}) + \operatorname{mdeg}(f_{2})$</p>
+</li>
+<li>
+<p>$\operatorname{lead}(f_{1}f_{2}) = \operatorname{lead}(f_{1}) \cdot \operatorname{lead}(f_{2})$</p>
+</li>
+</ol>
+<p>Обозначения:<br/>
+- $\operatorname{mdeg}⁡(f)$ — <span>мультистепень</span> старшего монома $f$<br/>
+- $\operatorname{lead}⁡(f)$ — старший моном $f$ (моном максимальной <span>степени</span>)<br/>
 </p></div></p>
-<p>Д-во(теоремы):<br/>
+<p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Пусть $\mathcal{F} =$ $\{$симметрические многочлены, которые не выражаются через$~\sigma_{k} \}$.<br/>
-Предположим $\mathcal{F} \neq \varnothing$. Пусть $f \in \mathcal{F}$ с наименьшей мультистепенью.<br/>
-$mdeg{f} = (a_{1}, a_{2}, \dots, a_{n})$ и $a_{1} \geq a_{2} \geq \dots \geq a_{n}$ (из симметричности)<br/>
-Рассмотрим старший одночлен $f$ и выразим его через элементарные симметрические:<br/>
-$$Ax_{1}^{a_{1}}x_{2}^{a_{2}} \dots x_{n}^{a_{n}} = A \sigma_{1}^{a_{1}} \sigma_{2}^{a_{2}} \dots \sigma_{n}^{a_{n}} + \dots$$<br/>
-$mdeg{~A \sigma_{1}^{a_{1}} \sigma_{2}^{a_{2}} \dots \sigma_{n}^{a_{n}}} = \sum_{k=0}^{n} mdeg{~\sigma_{k}} = (s_{1},0,\dots,0) + (s_{2}, s_{2}, 0, \dots, 0) + \dots + (s_{n}, s_{n}, \dots, s_{n})$<br/>
-($m\deg{~\sigma_{k}} = \underbrace{(1, 1,\dots, 1)}{k}, \underbrace{(0, \dots,0)}{n-k}$ и далее по <span>лемме</span>)</p>
-<p>$\begin{cases}a_{1} = s_{1} + s_{2} + \dots s_{n}  &amp;  s_{1} = a_{1} - a_{2} \geq 0  \\ a_{2} = s_{2} + \dots s_{n}  &amp; s_{2} = a_{2} - a_{3} \geq 0 \\ \dots\dots\dots\dots\dots\dots... &amp; \dots\dots\dots\dots\dots \\ a_{n - 1} = s_{n - 1} + s_{n} &amp; s_{n - 1} = a_{n - 1} - a_{n} \geq 0 \\ a_{n} = s_{n}\end{cases}$<br/>
-$$g = f - A \sigma_{1}^{s_{1}} \sigma_{2}^{s_{2}} \dots \sigma_{n}^{s_{n}}$$<br/>
-$$mdeg{~g} &lt; mdeg{~f}$$ $g$ - симметрический степени меньше, чем наименьший, который не выражается через $\sigma_{k}$ $\Rightarrow$ <br/>
-$f$ - выражается через $\sigma_{k}$ противоречие. <br/>
+Для простоты обозначим $x_{1}^{k_{1}} x_{2}^{k_{2}}\dots x_{n}^{k_{n}}$ как $x^{a}$, где $a = k_{1} + \dots k_{n}$</p>
+<p>Пусть $\operatorname{lead}(f_1) = c_1 x^{\alpha}$, $\operatorname{lead}(f_2) = c_2 x^{\beta}$. Тогда $f_1$ и $f_2$ представимы как:<br/>
+$$f_1 = c_1 x^{\alpha} + \text{меньшие мономы}, \quad f_2 = c_2 x^{\beta} + \text{меньшие мономы}$$<br/>
+Их произведение:<br/>
+$$f_1 f_2 = \underbrace{c_1 c_2 x^{\alpha + \beta}}{\text{главный}} + \underbrace{\sum{\gamma &lt; \alpha} u_\gamma c_2 x^{\gamma + \beta} + \sum_{\delta &lt; \beta} c_1 v_\delta x^{\alpha + \delta} + \cdots}_{\text{меньшие}}$$<br/>
+Ясно, что $\alpha + \beta &gt; \gamma + \beta$ и $\alpha + \beta &gt; \alpha + \delta$, а значит:</p>
+<ol>
+<li>
+<p>$\operatorname{mdeg}(f_{1}f_{2}) = \operatorname{mdeg}(c_{1}c_{2}x^{\alpha + \beta}) = \operatorname{mdeg}f_{1} + \operatorname{mdeg}f_{2}$</p>
+</li>
+<li>
+<p>$\operatorname{lead} (f_{1}f_{2}) = c_{1}c_{2}x^{\alpha + \beta} = \operatorname{lead}f_{1} \cdot \operatorname{lead}f_{2}$</p>
+</li>
+</ol>
+<p>$\square$<br/>
+</p></div></p>
+<h2>Основная теорема о симметрических многочленах</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+$f(x_{1}, x_{2},\dots, x_{n})$ - симметрический многочлен, тогда $f$ - многочлен от <span>элементарных симметрических многочленов</span></p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $\mathcal{F}$ — множество симметрических многочленов, не выражающихся через $\sigma_k$. <br/>
+От противного: Предположим $\mathcal{F} \neq \varnothing$. </p>
+<p>Выберем $f \in \mathcal{F}$ с минимальной мультистепенью $\alpha = (a_1,\dots,a_n)$, где $a_1 \geq \dots \geq a_n$ (из симметричности). Пусть $\operatorname{lead} f = Ax_{1}^{a_{1}}\dots x_{n}^{a_{n}}$</p>
+<p>Построим многочлен:<br/>
+$$g = A \sigma_1^{s_1} \sigma_2^{s_2} \cdots \sigma_n^{s_n}$$<br/>
+где $s_k = a_k - a_{k+1}$ ($a_{n+1} = 0$). Рассмотрим его мультистепень:<br/>
+$$\operatorname{mdeg} g = \operatorname{mdeg} A \sigma_{1}^{s_{1}} \sigma_{2}^{s_{2}} \dots \sigma_{n}^{s_{n}} =^{*} \sum_{k=1}^{n}\sigma_{k}^{s_{k}} = (s_{1},0,\dots,0) + (s_{2}, s_{2}, 0, \dots, 0) + \dots + (s_{n}, s_{n}, \dots, s_{n}) \qquad (1)$$<br/>
+$*$ - по лемме выше.</p>
+<p>Так как мы определили $s_{k} = a_{k} - a_{k+1}$, то, продолжая $(1)$:<br/>
+$$\operatorname{mdeg} g = (a_{1}, a_{2}, \dots, a_{n}) = \alpha$$<br/>
+Т.е. $\operatorname{lead} f = \operatorname{lead} g$, поэтому, если рассмотреть $h = f - g$, получим, что $\operatorname{mdeg} h &lt; \alpha$, так как старшие мономы сократятся.</p>
+<p>Но $f$ был минимальным в $\mathcal{F}$, а значит $h$ выражается через элементарные. Но тогда и $f = h + g$ выражается через элементарные, противоречие.<br/>
 $\square$<br/>
 </p></div></p></div>
 </body>
