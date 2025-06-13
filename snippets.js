@@ -60,7 +60,10 @@
 	{trigger: "ndiv", replacement: "\\nmid", options: "mA"},
 	{trigger: "deg", replacement: "\\deg", options: "mA"},
 	{trigger: "tr", replacement: "\\mathrm{tr} ", options: "mA"},
+	{trigger: "nmid", replacement: "\\nmid ", options: "mA"},
+	{trigger: "oper", replacement: "\\operatorname{$0}$1", options: "mA"},
 	{trigger: "nod", replacement: "\\operatorname{НОД}($0, $1)$2", options: "mA"},
+	{trigger: "char", replacement: "\\operatorname{char} ", options: "mA"},
 
     // calculus
     {trigger: "fx", replacement: "f(x)", options: "mA"},
@@ -84,18 +87,18 @@
 	{trigger: "sls", replacement: "\\sum\\limits_{${0:n}=1}^{\\infty} $1", options: "mA"}, // как и предыдущее
 
     // russian trig and hyper notation
-    {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
-    {trigger: "arctg", replacement: "\\mathrm{arctg} ", options: "mA"},
-    {trigger: "ctg", replacement: "\\mathrm{ctg} ", options: "mA"},
-    {trigger: "arcctg", replacement: "\\mathrm{arcctg} ", options: "mA"},
-    {trigger: "sh", replacement: "\\mathrm{sh} ", options: "mA"},
-    {trigger: "arsh", replacement: "\\mathrm{arsh} ", options: "mA"},
-    {trigger: "ch", replacement: "\\mathrm{ch} ", options: "mA"},
-    {trigger: "arch", replacement: "\\mathrm{arch} ", options: "mA"},
-    {trigger: "th", replacement: "\\mathrm{th} ", options: "mA"},
-    {trigger: "arth", replacement: "\\mathrm{arth} ", options: "mA"},
-    {trigger: "cth", replacement: "\\mathrm{cth} ", options: "mA"},
-    {trigger: "arcth", replacement: "\\mathrm{arcth} ", options: "mA"},
+    {trigger: "tan", replacement: "\\mathrm{tg} ", options: "mA"},
+    {trigger: "artan", replacement: "\\mathrm{arctg} ", options: "mA"},
+    {trigger: "cot", replacement: "\\mathrm{ctg} ", options: "mA"},
+    {trigger: "arcot", replacement: "\\mathrm{arcctg} ", options: "mA"},
+    {trigger: "sinh", replacement: "\\mathrm{sh} ", options: "mA"},
+    {trigger: "arsinh", replacement: "\\mathrm{arsh} ", options: "mA"},
+    {trigger: "cosh", replacement: "\\mathrm{ch} ", options: "mA"},
+    {trigger: "arcosh", replacement: "\\mathrm{arch} ", options: "mA"},
+    {trigger: "tanh", replacement: "\\mathrm{th} ", options: "mA"},
+    {trigger: "artanh", replacement: "\\mathrm{arth} ", options: "mA"},
+    {trigger: "coth", replacement: "\\mathrm{cth} ", options: "mA"},
+    {trigger: "arcoth", replacement: "\\mathrm{arcth} ", options: "mA"},
     
     // Greek letters
     {trigger: "eps", replacement: "\\varepsilon", options: "mA"},
