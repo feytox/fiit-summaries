@@ -46,8 +46,8 @@
     {trigger: "([a-zA-Z0])bf", replacement: "\\mathbf{[[0]]}", options: "rmA"},
     {trigger: "cl", replacement: "\\mathcal{$0}$1", options: "mA"},
     {trigger: "cst", replacement: "\\mathcal{$0}^{*}$1", options: "mA"},
-    {trigger: "Ker", replacement: "\\mathrm{Ker}~", options: "mA"},
-    {trigger: "dim", replacement: "\\mathrm{dim}~", options: "mA"},
+    {trigger: "Ker", replacement: "\\operatorname{Ker} ", options: "mA"},
+    {trigger: "dim", replacement: "\\operatorname{dim} ", options: "mA"},
     {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "mA"}, // для векторов из двух букв
     {trigger: "sys", replacement: "${0:a}_{1}, ${0:a}_{2}, \\dots, ${0:a}_{${1:n}}$2", options: "mA"},
     {trigger: "rsys", replacement: "${0:\\alpha}_{1} ${1:a}_{1} + ${0:\\alpha}_{2} ${1:a}_{2} + \\dots + ${0:\\alpha}_{${2:n}} ${1:a}_{${2:n}}$3", options: "mA"},
@@ -135,8 +135,8 @@
 
     {trigger: /([^\\])(exp|log|ln)/, replacement: "[[0]]\\[[1]]", options: "rmA"},
     {trigger: "conj", replacement: "^{*}", options: "mA"},
-    {trigger: "Re", replacement: "\\mathrm{Re}~", options: "mA"},
-	{trigger: "Im", replacement: "\\mathrm{Im}~", options: "mA"},
+    {trigger: "Re", replacement: "\\operatorname{Re} ", options: "mA"},
+	{trigger: "Im", replacement: "\\operatorname{Im} ", options: "mA"},
     {trigger: "bf", replacement: "\\mathbf{$0}", options: "mA"},
 	{trigger: "rm", replacement: "\\mathrm{$0}$1", options: "mA"},
 
