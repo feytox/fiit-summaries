@@ -166,29 +166,40 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content"><h1>Формула для обратной матрицы</h1><h2>Определение: Присоединенная матрица</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
- $A_{ij} = (-1)^{i + j}M_{ij}$ - <span>алгебраическое дополнение</span>.
- $$\widetilde{A} = \begin{pmatrix}
+<p><div class="spoiler-markdown"><p>
+Пусть $A_{ij} = (-1)^{i + j}M_{ij}$ - <span>алгебраическое дополнение</span>
+Тогда <b>присоединённой матрицей</b> называется:
+$$\widetilde{A} = \begin{pmatrix}
 A_{11} &amp; A_{12} &amp; \dots &amp; A_{1n} \\
 A_{21} &amp; A_{22} &amp; \dots &amp; A_{2n} \\
 \dots  &amp; ... &amp; \dots &amp; \dots \\
 A_{n1} &amp; A_{n2} &amp; \dots &amp; A_{nn}
-\end{pmatrix} ^{T}$$
-называется присоединенной матрицей.</p></div></p>
-<h2>Утверждение</h2>
+\end{pmatrix} ^{T} = \begin{pmatrix}
+A_{11} &amp; A_{21} &amp; \dots &amp; A_{n1} \\
+A_{12} &amp; A_{22} &amp; \dots &amp; A_{n2} \\
+\dots &amp; \dots &amp; \dots &amp; \dots \\
+A_{1n} &amp; A_{2n} &amp; \dots &amp; A_{nn}
+\end{pmatrix}$$</p></div></p>
+<h2>Утверждение: Произведение матрицы и присоединённой</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-$$A\widetilde{A} = |A|E$$</p></div><br/>
-Следствие (формула для обратной матрицы):<br/>
+$$A\widetilde{A} = \det A \cdot E$$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $B = (b_{ij}) = A\widetilde{A}$, тогда:<br/>
+$$b_{ij} = \sum_{k=1}^{n} a_{ik}\widetilde{a}{kj} = \sum{k=1}^{n} a_{ik}A_{jk} = \begin{cases} \det A, &amp; i = j \\ 0,  &amp; i \neq j &amp; (*)\end{cases} = \det A \cdot \delta_{ij}$$<br/>
+$(*)$ - <span>фальшивое разложение</span></p>
+<p>Следовательно, $B = \det A \cdot E$<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Следствие: Формула обратной матрицы</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-$$A^{-1} = \dfrac{\widetilde{A}}{|A|}$$
-(умножить на $A^{-1}$ слева и поделить на $|A|$)</p></div><br/>
-Д-во:<br/>
+$$A^{-1} = \dfrac{\widetilde{A}}{\det A}$$</p></div></p>
+<p>Д-во (очев):<br/>
 <div class="spoiler-markdown"><p>
-$$B = A\widetilde{A}$$
-$$b_{ij} = \sum_{k=1}^{n} a_{ik}A_{jk} = \begin{cases} |A|, &amp; i = j \\ 0,  &amp; i \neq j~~ ~~(1)\end{cases}$$
-$(1)$ - <span>фальшивое разложение</span>
+Умножим, полученное выше произведение, слева на $A^{-1}$:
+$$A\widetilde{A} = \det A \cdot E \implies \widetilde{A} = \det A \cdot A^{-1} \implies A^{-1} = \dfrac{\widetilde{A}}{\det A}$$
 $\square$</p></div></p></div>
 </body>
 </html>
