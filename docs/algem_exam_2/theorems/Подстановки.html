@@ -165,9 +165,42 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Подстановки</h1><h2>Определение</h2>
-<p>Подстановка на множестве ${1,\dots, n}$ - взаимно-однозначное отображение <br/>
-$1,2,\dots,n$<br/>
-$i_{1}, i_{2}, i_{n}$</p></div>
+<div class="content"><h1>Подстановки</h1><h2>Определение: Подстановка</h2>
+<p><div class="spoiler-markdown"><p>
+<b>Подстановка</b> на множестве $\{1, 2, \dots, n\}$ это взаимно однозначное отображение на себя:
+$$\begin{pmatrix}
+1 &amp; 2 &amp; \dots &amp; n \\
+s_{1} &amp; s_{2} &amp; \dots &amp; s_{n}
+\end{pmatrix}$$</p></div></p>
+<h2>Определение: Инверсии и чётность подстановки</h2>
+<p><div class="spoiler-markdown"><p>
+Запишем подстановку в виде:
+$$\begin{pmatrix}
+1 &amp; 2 &amp; \dots &amp; n \\
+s_{1} &amp; s_{2} &amp; \dots &amp; s_{n}
+\end{pmatrix}$$
+тогда <b>число инверсий</b> это число инверсий в нижней строке.
+<b>Чётность подстановки</b> - чётность числа инверсий. Обозначение: $(-1)^{\sigma}$</p></div></p>
+<h2>Утверждение: Чётность произвольной подстановки</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть подстановка $\sigma$ записана в произвольном виде:<br/>
+$$\begin{pmatrix}<br/>
+i_{1} &amp; i_{2} &amp; \dots &amp; i_{n} \\<br/>
+s_{1} &amp; s_{2} &amp; \dots &amp; s_{n}<br/>
+\end{pmatrix}$$<br/>
+и $\sigma_{1} = (i_{1}, \dots, i_{n})$, $\sigma_{2} = (s_{1}, \dots, s_{n})$.</p>
+<p>Тогда <b>чётность подстановки</b> равна: $(-1)^{\sigma} = (-1)^{\sigma_{1}} \cdot (-1)^{\sigma_{2}}$<br/>
+</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Приведём $\sigma_{1}$ с помощью $k$ транспозиций к виду $\varepsilon = (1, 2, \dots, n)$, вместе с этим совершая транспозиции в нижней строке.</p>
+<p>Так как $(-1)^{\varepsilon} = (-1)^{\sigma_{1}} \cdot (-1)^{k}$, то $(-1)^{k} = (-1)^{\sigma_{1}}$. Но так как транспозиции были и в нижней строке, то: <br/>
+$$(-1)^{\sigma} = (-1)^{\sigma_{2}} \cdot (-1)^{k} = (-1)^{\sigma_{1}} \cdot (-1)^{\sigma_{2}}$$<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Замечание: Аналогичные свойства</h2>
+<p><div class="spoiler-markdown"><p>
+Для подстановок верны аналогичные свойства <a href="Перестановки.html">перестановок</a></p></div></p></div>
 </body>
 </html>
