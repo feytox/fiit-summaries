@@ -202,13 +202,14 @@ $\square$<br/>
 Пусть $V_{1}$ и $V_{2}$ - унитарные (евклидовы) пространства, $\mathcal{A}\mathpunct{:}~~ V_{1} \to V_{2}$. Тогда:</p>
 <ol>
 <li>
-<p>$\mathcal{A}$ - изометрия $\iff$ $\mathcal{A}\mathcal{A}^{*} = \mathcal{E}$</p>
+<p>$\mathcal{A}$ - изометрия $\iff$ ${} \mathcal{A}\mathcal{A}^{*} = \mathcal{E}{V{1}} {}$ или $\mathcal{A}^{*}\mathcal{A} = \mathcal{E}{V{2}}$</p>
 </li>
 <li>
-<p>Если $V_{1} = V_{2}$, то $\mathcal{A}^{*} = \mathcal{A}^{-1}$<br/>
-</p></li></ol></div></p>
-
-
+<p>Если $V_{1} = V_{2}$, то $\mathcal{A}^{*} = \mathcal{A}^{-1}$</p>
+</li>
+</ol>
+<p>$\mathcal{E}{V{1}}$ - тождественный оператор на $V_{1}$, $\mathcal{E}{V{2}}$ - на $V_{2}$<br/>
+</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 <b>Следствие 1</b><br/>
@@ -216,10 +217,11 @@ $\Large\implies$<br/>
 По теореме для любых $x, y \in V_{1}$:<br/>
 $$(x, y) = (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{*}\mathcal{A}y)$$</p>
 <p>По ослабленному закону сокращения:<br/>
-$$(y - \mathcal{A}^{*}\mathcal{A}y) = 0 \overbrace{ \implies }^{ * } y(\mathcal{E} - \mathcal{A}^{*}\mathcal{A}) = 0 \overbrace{ \implies }^{ * } \mathcal{A}^{*}\mathcal{A} = \mathcal{E}$$<br/>
+$$(y - \mathcal{A}^{*}\mathcal{A}y) = 0 \overbrace{ \implies }^{ * } y(\mathcal{E} - \mathcal{A}\mathcal{A}^{*}) = 0 \overbrace{ \implies }^{ * } \mathcal{A}\mathcal{A}^{*} = \mathcal{E}{V{1}}$$<br/>
 $*$ - так как $x$ и $y$ - любые.</p>
-<p>Аналогично, $\mathcal{A}\mathcal{A}^{*} = \mathcal{E}$, а значит $\mathcal{A}^{*}\mathcal{A} = \mathcal{A}\mathcal{A}^{*}$.</p>
+<p>Аналогично, $\mathcal{A}^{*}\mathcal{A} = \mathcal{E}{V{2}}$</p>
 <p>$\Large\impliedby$<br/>
+Пусть $\mathcal{A}\mathcal{A}^{*} = \mathcal{E}{V{1}}$, тогда:<br/>
 $$\forall{x, y \in V_{1}}\mathpunct{:}~~ (\mathcal{A}x, \mathcal{A}y) = (x, \mathcal{A}^{*}\mathcal{A}y) = (x, y)$$<br/>
 а значит $\mathcal{A}$ - изометрия.</p>
 <p><b>Следствие 2</b><br/>
