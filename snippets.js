@@ -35,6 +35,7 @@
 	{trigger: "l==>", replacement: "\\Large\\implies", options: "mA"},
 	{trigger: "l==<", replacement: "\\Large\\impliedby", options: "mA"},
 	{trigger: "span", replacement: "\\langle $0 \\rangle$1", options: "mA"},
+	{trigger: "sim", replacement: "\\sim", options: "mA"},
 
 
     // algem
