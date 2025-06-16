@@ -277,49 +277,64 @@ $$\mathcal{A}^{m-1}\left( \sum \alpha_{ij}v_{ij} \right) = \sum \alpha_{i1} \mat
 Продолжая действия, пройдём все столбцы и получим, что $\forall{\alpha_{ij} = 0}$, противоречие. <br/>
 $\square$<br/>
 </p></div></p>
+<h2>Теорема: Жорданова форма для нильпотентного оператора</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\mathcal{A}$ - нильпотентный оператор. Тогда существует базис, в котором его матрица имеет блочно-диагональный вид:
+$$[\mathcal{A}] = \begin{pmatrix}
+J_{1}(0) &amp; O &amp; O &amp; \dots &amp; O \\
+O &amp; J_{2}(0) &amp; O &amp; \dots &amp; O \\
+O &amp; O &amp; J_{3}(0) &amp; \dots &amp; O \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+O &amp; O &amp; O &amp; \dots &amp; J_{k}(0)
+\end{pmatrix}$$
+где $O$ - нулевые блоки, а $J_{i}(0)$ имеет вид:
+$$
+J_i(0) = \begin{pmatrix}
+0 &amp;        &amp;         &amp;         &amp;   \\
+1       &amp; 0 &amp;        &amp;         &amp;   \\
+        &amp; \ddots &amp; \ddots  &amp;         &amp;   \\
+        &amp;        &amp; 1       &amp; 0 &amp;   \\
+        &amp;        &amp;         &amp; 1       &amp; 0
+\end{pmatrix}
+$$
+Такой базис называется <b>жордановым</b></p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Жорданов базис строится с использованием <span>Жордановых таблиц</span> и <span>элементарных преобразований</span> над ними. Исходно таблица заполняется нильслоями, построенными из векторов некоторого базиса $V$. Преобразования выполняются до тех пор, пока векторы в правом столбце таблицы не станут линейно независимыми. Совокупность всех векторов $\{b_{ij}\}$ из итоговой таблицы образует жорданов базис.</p>
+<p>Рассмотрим одну строку (жорданову цепочку) из такой таблицы: $b_1, b_2, \dots, b_m$. По построению, $b_{j+1} = \mathcal{A}b_j$ для $j &lt; m$, и $\mathcal{A}b_m = 0$. Следовательно, ясно, что в базисе $(b_1, \dots, b_m)$ подпространства $W_{j} -= \langle b_1, \dots, b_m \rangle$, матрица ограничения $\mathcal{A}|_{W_j}$ является жордановой клеткой $J_m(0)$.</p>
+<p>Поскольку $V$ является прямой суммой таких $\mathcal{A}$-инвариантных подпространств $W_j$, объединение базисов этих подпространств (т.е. всех векторов из всех строк таблицы) образует жорданов базис для $V$. В этом базисе матрица оператора $\mathcal{A}$ будет блочно-диагональной с жордановыми клетками $J_{k_j}(0)$ на диагонали.<br/>
+$\square$<br/>
+</p></div></p>
 <h2>Теорема Жордана</h2>
 <p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\mathcal{A}\mathpunct{:}~~ V \to V$ линейный оператор и характеристический многочлен раскладывается на линейные множители. Тогда существует базис, в котором его матрица имеет блочно-диагональный вид:
+$$[\mathcal{A}] = \begin{pmatrix}
+J_{1}(\lambda) &amp; O &amp; O &amp; \dots &amp; O \\
+O &amp; J_{2}(\lambda) &amp; O &amp; \dots &amp; O \\
+O &amp; O &amp; J_{3}(\lambda) &amp; \dots &amp; O \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+O &amp; O &amp; O &amp; \dots &amp; J_{k}(\lambda)
+\end{pmatrix}$$
+где $O$ - нулевые блоки, а $J_{i}(\lambda)$ имеет вид:
+$$
+J_i(\lambda) = \begin{pmatrix}
+\lambda &amp;        &amp;         &amp;         &amp;   \\
+1       &amp; \lambda &amp;        &amp;         &amp;   \\
+        &amp; \ddots &amp; \ddots  &amp;         &amp;   \\
+        &amp;        &amp; 1       &amp; \lambda &amp;   \\
+        &amp;        &amp;         &amp; 1       &amp; \lambda
+\end{pmatrix}
+$$
+Причём собственные числа между блоками могут совпадать.</p></div></p>
+<p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Пусть $\mathcal{A}$ - нильпотентный оператор. Тогда существует базис, в котором его матрица имеет блочно-диагональный вид:<br/>
-$$[\mathcal{A}] = \begin{pmatrix}<br/>
-J_{1}(\lambda) &amp; O &amp; O &amp; \dots &amp; O \\<br/>
-O &amp; J_{2}(\lambda) &amp; O &amp; \dots &amp; O \\<br/>
-O &amp; O &amp; J_{3}(\lambda) &amp; \dots &amp; O \\<br/>
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br/>
-O &amp; O &amp; O &amp; \dots &amp; J_{k}(\lambda)<br/>
-\end{pmatrix}$$<br/>
-где $O$ - нулевые блоки, а $J_{i}(\lambda)$ имеет вид:<br/>
-$$<br/>
-J_i(\lambda) = \begin{pmatrix}<br/>
-\lambda &amp;        &amp;         &amp;         &amp;   \\<br/>
-1       &amp; \lambda &amp;        &amp;         &amp;   \\<br/>
-        &amp; \ddots &amp; \ddots  &amp;         &amp;   \\<br/>
-        &amp;        &amp; 1       &amp; \lambda &amp;   \\<br/>
-        &amp;        &amp;         &amp; 1       &amp; \lambda<br/>
-\end{pmatrix}<br/>
-$$<br/>
-Причём собственные числа между блоками могут совпадать.</p>
-<p>Такой базис называется <b>жордановым</b><br/>
-</p></div></p>
-<p>Д-во (неполное):<br/>
-<div class="spoiler-markdown"><p>
-Пусть $e_{1}, e_{2}, \dots, e_{n}$ - базис $V$
-Из каждого вектора вытянем <span>нильслой</span> и запишем его в <span>Жорданову таблицу</span>.
-Будем делать над ней <span>элементарные преобразования</span> до того момента, пока правые вектора не станут линейно независимыми. Они и будут базисом, так как линейно независимые и являются системой образующих.</p></div></p>
-<p>Почему блоки имеют такой вид?<br/>
-<div class="spoiler-markdown"><p>
-Потому что
-‎ 
-‎ 
-‎ 
-‎ 
-‎ 
-‎ 
-‎ 
-‎ 
-‎ 
-‎ 
-‎ 
-На самом деле, потому что на лекции об этом не было сказано, так как, видимо, просто не успели.</p></div></p></div>
+Разложим пространство на сумму корневых, используя <span>корневое разложение</span>:<br/>
+$$V = \mathop{\bigoplus}\limits_{i=1}^{k} K_{\mathcal{A}}(\lambda_{i}) = K_{\mathcal{A}}(\lambda_{1}) \oplus K_{\mathcal{A}}(\lambda_{2}) \oplus \dots \oplus K_{\mathcal{A}}(\lambda_{k})$$<br/>
+Из доказательства теоремы знаем, что нильпотентным оператором является оператор $(\mathcal{A} - \lambda \mathcal{E})|{K{\mathcal{A}}(\lambda_{i})}$. Применим к нему <span>предыдущую теорему</span> и прибавим к полученной матрице $\lambda E$, чтобы получить матрицу $\mathcal{A}|{K{\mathcal{A}}(\lambda_{i})}$.</p>
+<p>Проделав эти действия над каждым корневым подпространством в разложении и собрав полученные блоки в матрицу, получим искомую матрицу.<br/>
+$\square$<br/>
+</p></div></p></div>
 </body>
 </html>
