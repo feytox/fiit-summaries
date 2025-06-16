@@ -172,18 +172,18 @@
 <h2>Теорема: Неприводимость над $\mathbb{Z}$ и $\mathbb{Q}$</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Многочлен $f \in \mathbb{Z}[x]$ неприводим над $\mathbb{Z}$ $\iff$ он неприводим над $\mathbb{Q}$</p></div></p>
+Пусть $f \in \mathbb{Z}[x]$. Тогда $f$ неприводим над $\mathbb{Z}$ $\iff$ он неприводим над $\mathbb{Q}$</p></div></p>
 <p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
 $\Large\implies$<br/>
-От противного: пусть $f$ неприводим над $\mathbb{Z}$, но приводим над $\mathbb{Q}$. Без ограничения общности, $f$ - примитивен (иначе вынесем НОД как множитель).<br/>
+От противного: пусть $f$ неприводим над $\mathbb{Z}$, но приводим над $\mathbb{Q}$<br/>
 То есть:<br/>
 $$f = g_{1}h_{1} \qquad g_{1}, h_{1} \in Q[x] \qquad 0 &lt; \deg g_{1}, \deg h_{1} &lt; \deg f$$<br/>
-Представим:<br/>
+Представим $g_{1}$ и $h_{1}$ по <span>свойству примитивных</span>:<br/>
 $$g_1 = \dfrac{a}{b} g_0, \quad h_1 = \dfrac{c}{d} h_0$$<br/>
 где $g_0, h_0 \in \mathbb{Z}[x]$ примитивны. Тогда:<br/>
 $$f = \dfrac{ac}{bd} g_0 h_0$$<br/>
-По <span>лемме Гаусса</span> $g_0 h_0$ примитивен. Так как $f$ примитивен, $\dfrac{ac}{bd} = \pm 1$. Следовательно, $f = \pm g_0 h_0$ — разложение в $\mathbb{Z}[x]$. Противоречие.  </p>
+По <span>лемме Гаусса</span> $g_0 h_0$ примитивен. Так как $f \in \mathbb{Z}[x]$, $\dfrac{ac}{bd} = q \in \mathbb{Z}$. Следовательно, $f = q g_0 h_0$ — разложение в $\mathbb{Z}[x]$. Противоречие.</p>
 <p>$\Large\impliedby$<br/>
 Если $f$ неприводим над $\mathbb{Q}$, то он неприводим над $\mathbb{Z}$, так как $\mathbb{Z} \subset \mathbb{Q}$.<br/>
 $\square$<br/>
