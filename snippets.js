@@ -35,6 +35,7 @@
 	{trigger: "l==>", replacement: "\\Large\\implies", options: "mA"},
 	{trigger: "l==<", replacement: "\\Large\\impliedby", options: "mA"},
 	{trigger: "span", replacement: "\\langle $0 \\rangle$1", options: "mA"},
+	{trigger: "sim", replacement: "\\sim", options: "mA"},
 
 
     // algem
@@ -46,8 +47,8 @@
     {trigger: "([a-zA-Z0])bf", replacement: "\\mathbf{[[0]]}", options: "rmA"},
     {trigger: "cl", replacement: "\\mathcal{$0}$1", options: "mA"},
     {trigger: "cst", replacement: "\\mathcal{$0}^{*}$1", options: "mA"},
-    {trigger: "Ker", replacement: "\\mathrm{Ker}~", options: "mA"},
-    {trigger: "dim", replacement: "\\mathrm{dim}~", options: "mA"},
+    {trigger: "Ker", replacement: "\\operatorname{Ker} ", options: "mA"},
+    {trigger: "dim", replacement: "\\operatorname{dim} ", options: "mA"},
     {trigger: "vcc", replacement: "\\overrightarrow{$0}$1", options: "mA"}, // для векторов из двух букв
     {trigger: "sys", replacement: "${0:a}_{1}, ${0:a}_{2}, \\dots, ${0:a}_{${1:n}}$2", options: "mA"},
     {trigger: "rsys", replacement: "${0:\\alpha}_{1} ${1:a}_{1} + ${0:\\alpha}_{2} ${1:a}_{2} + \\dots + ${0:\\alpha}_{${2:n}} ${1:a}_{${2:n}}$3", options: "mA"},
@@ -60,7 +61,10 @@
 	{trigger: "ndiv", replacement: "\\nmid", options: "mA"},
 	{trigger: "deg", replacement: "\\deg", options: "mA"},
 	{trigger: "tr", replacement: "\\mathrm{tr} ", options: "mA"},
+	{trigger: "nmid", replacement: "\\nmid ", options: "mA"},
+	{trigger: "oper", replacement: "\\operatorname{$0}$1", options: "mA"},
 	{trigger: "nod", replacement: "\\operatorname{НОД}($0, $1)$2", options: "mA"},
+	{trigger: "char", replacement: "\\operatorname{char} ", options: "mA"},
 
     // calculus
     {trigger: "fx", replacement: "f(x)", options: "mA"},
@@ -84,18 +88,18 @@
 	{trigger: "sls", replacement: "\\sum\\limits_{${0:n}=1}^{\\infty} $1", options: "mA"}, // как и предыдущее
 
     // russian trig and hyper notation
-    {trigger: "tg", replacement: "\\mathrm{tg} ", options: "mA"},
-    {trigger: "arctg", replacement: "\\mathrm{arctg} ", options: "mA"},
-    {trigger: "ctg", replacement: "\\mathrm{ctg} ", options: "mA"},
-    {trigger: "arcctg", replacement: "\\mathrm{arcctg} ", options: "mA"},
-    {trigger: "sh", replacement: "\\mathrm{sh} ", options: "mA"},
-    {trigger: "arsh", replacement: "\\mathrm{arsh} ", options: "mA"},
-    {trigger: "ch", replacement: "\\mathrm{ch} ", options: "mA"},
-    {trigger: "arch", replacement: "\\mathrm{arch} ", options: "mA"},
-    {trigger: "th", replacement: "\\mathrm{th} ", options: "mA"},
-    {trigger: "arth", replacement: "\\mathrm{arth} ", options: "mA"},
-    {trigger: "cth", replacement: "\\mathrm{cth} ", options: "mA"},
-    {trigger: "arcth", replacement: "\\mathrm{arcth} ", options: "mA"},
+    {trigger: "tan", replacement: "\\mathrm{tg} ", options: "mA"},
+    {trigger: "artan", replacement: "\\mathrm{arctg} ", options: "mA"},
+    {trigger: "cot", replacement: "\\mathrm{ctg} ", options: "mA"},
+    {trigger: "arcot", replacement: "\\mathrm{arcctg} ", options: "mA"},
+    {trigger: "sinh", replacement: "\\mathrm{sh} ", options: "mA"},
+    {trigger: "arsinh", replacement: "\\mathrm{arsh} ", options: "mA"},
+    {trigger: "cosh", replacement: "\\mathrm{ch} ", options: "mA"},
+    {trigger: "arcosh", replacement: "\\mathrm{arch} ", options: "mA"},
+    {trigger: "tanh", replacement: "\\mathrm{th} ", options: "mA"},
+    {trigger: "artanh", replacement: "\\mathrm{arth} ", options: "mA"},
+    {trigger: "coth", replacement: "\\mathrm{cth} ", options: "mA"},
+    {trigger: "arcoth", replacement: "\\mathrm{arcth} ", options: "mA"},
     
     // Greek letters
     {trigger: "eps", replacement: "\\varepsilon", options: "mA"},
@@ -132,8 +136,8 @@
 
     {trigger: /([^\\])(exp|log|ln)/, replacement: "[[0]]\\[[1]]", options: "rmA"},
     {trigger: "conj", replacement: "^{*}", options: "mA"},
-    {trigger: "Re", replacement: "\\mathrm{Re}~", options: "mA"},
-	{trigger: "Im", replacement: "\\mathrm{Im}~", options: "mA"},
+    {trigger: "Re", replacement: "\\operatorname{Re} ", options: "mA"},
+	{trigger: "Im", replacement: "\\operatorname{Im} ", options: "mA"},
     {trigger: "bf", replacement: "\\mathbf{$0}", options: "mA"},
 	{trigger: "rm", replacement: "\\mathrm{$0}$1", options: "mA"},
 

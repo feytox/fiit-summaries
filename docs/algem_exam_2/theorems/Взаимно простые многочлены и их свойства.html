@@ -165,37 +165,33 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Взаимно простые многочлены и их свойства</h1><h2>Взаимно простые многочлены</h2>
-<p><b>Определение:</b><br/>
-Многочлены $f$ и $g$ называются <b>взаимно простыми</b>, если их НОД равен $1$:<br/>
-$$\text{НОД}(f, g) = 1$$</p>
-<hr/>
-<h2>Предложение о взаимно простых многочленах</h2>
-<p>Пусть $f, g, h$ — многочлены над полем $F$:  </p>
+<div class="content"><h1>Взаимно простые многочлены и их свойства</h1><h2>Определение: Взаимно простые многочлены</h2>
+<p><div class="spoiler-markdown"><p>
+Многочлены $f$ и $g$ называются <b>взаимно простыми</b>, если их НОД равен $1$:  
+$$\operatorname{НОД}(f, g) = 1$$</p></div></p>
+<h2>Свойства взаимно простых многочленов</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $f, g, h \in F[x]$ и $f$ и $g$ взаимно просты, тогда:</p>
 <ol>
 <li>
-<p>Если $f$ и $g$ взаимно просты, $f \mid h$ и $g \mid h$, то $(fg) \mid h$.  </p>
+<p>$f \mid h ~\land~ g \mid h \implies (fg) \mid h$</p>
 </li>
 <li>
-<p>Если $f$ и $g$ взаимно просты и $f \mid (gh)$, то $f \mid h$.  </p>
-</li>
-</ol>
-<p><b>Д-во:</b> </p>
-<p><b>1)</b> Пусть $h = fp = gq$ для некоторых многочленов $p, q \in F[x]$.<br/>
-Так как $f$ и $g$ взаимно просты, существуют $u, v \in F[x]$, такие что:<br/>
-$$1 = uf + vg$$<br/>
-Умножая обе части равенства на $h$:<br/>
-$$h = huf + hvg$$<br/>
-Подставляя $h = gq$ и $h = fp$:<br/>
-$$h = gq \cdot uf + fp \cdot vg = fg(qu + pv)$$<br/>
-Следовательно, $(fg) \mid h$.  </p>
-<p><b>2)</b> По условию $gh = fp$ для некоторого $p \in F[x]$.<br/>
-Из взаимной простоты $f$ и $g$ следует:<br/>
-$$1 = uf + vg$$<br/>
-Умножая обе части на $h$:<br/>
-$$h = huf + hvg$$<br/>
-Подставляя $gh = fp$:<br/>
-$$h = huf + fp \cdot v = f(hu + pv)$$<br/>
-Таким образом, $f \mid h$. $~~~~~~~~~~~~~~\square$</p></div>
+<p>$f \mid (gh) \implies f \mid h$<br/>
+</p></li></ol></div></p>
+
+
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Так как $f$ и $g$ взаимно просты, то $\operatorname{НОД}(f, g) = 1$, а значит $uf + vg = 1$</p>
+<p><b>Свойство 1</b><br/>
+Из делимости: $h=fp_1,~ h=gp_2$. Тогда:<br/>
+$$h = h(uf+vg) = (gp_2)uf + (fp_1)vg = fg(p_2u+p_1v) \implies (fg) \mid h$$<br/>
+<b>Свойство 2</b><br/>
+Из делимости: $gh=fp_3$. Тогда:<br/>
+$$h = h(uf+vg) = huf + v(gh) = huf + v(fp_3) = f(hu+vp_3) \implies f \mid h$$<br/>
+$\square$<br/>
+</p></div></p></div>
 </body>
 </html>

@@ -165,9 +165,8 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Наибольший общий делитель многочленов</h1><h2>Наибольший общий делитель</h2>
-<p>Определение:<br/>
-<div class="spoiler-markdown"><p><br/>
+<div class="content"><h1>Наибольший общий делитель многочленов</h1><h2>Определение: Наибольший общий делитель</h2>
+<p><div class="spoiler-markdown"><p><br/>
 Пусть $F$ – поле и $f, g \in F[x]$. Многочлен $h \in F[x]$ называется <b>наибольшим общим делителем (НОД)</b> многочленов $f$ и $g$, если:  </p>
 <ol>
 <li>
@@ -178,6 +177,52 @@
 </li>
 </ol>
 <p>НОД многочленов определён с точностью до ассоциированности.<br/>
-</p></div></p></div>
+</p></div></p>
+<h2>Теорема: Существование наибольшего общего делителя</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
+Для любых ненулевых многочленов $f$ и $g$ над полем $F$:  </p>
+<ol>
+<li>
+<p>Существует наибольший общий делитель  </p>
+</li>
+<li>
+<p>Для некоторых многочленов $u, v \in F[x]$ выполняется равенство<br/>
+$$\operatorname{НОД}(f, g) = uf + vg$$<br/>
+</p></li></ol></div></p>
+
+
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Рассмотрим множество:<br/>
+$$I := \{ uf + vg \mid u, v \in F[x] \}$$<br/>
+Оно содержит ненулевые многочлены (например, $f$ и $g$). Пусть $d$ - ненулевой многочлен наименьшей степени в $I$. Покажем, что $I = \operatorname{НОД}(f, g)$</p>
+<p><b>Общий делитель:</b><br/>
+Поделим $f$ на $d$ с остатком:<br/>
+$$f = qd + r,~~~~~\deg r &lt; \deg d$$Так как $d = u_0f + v_0g$ для некоторых $u_0, v_0 \in F[x]$, то:<br/>
+$$r = f - qd = (1 - qu_0)f + (-qv_0)g \in I$$Из $\deg r &lt; \deg d$ и минимальности степени $d$ следует $r = 0$, т.е. $d \mid f$. Аналогично доказывается $d \mid g$.  </p>
+<p><b>Свойство НОД:</b><br/>
+Пусть $p \in F[x]$ делит $f$ и $g$. Тогда по свойствам делимости:<br/>
+$$p \mid (u_0f + v_0g) \implies p \mid d$$</p>
+<p>Таким образом, $d = \operatorname{НОД}(f, g)$, и представление $d = uf + vg$ следует из построения множества $I$. <br/>
+$\square$<br/>
+</p></div></p>
+<h2>Утверждение: Ассоциированность НОД</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $d_{1}, d_{2}$ - $\operatorname{НОД}(f, g)$. Тогда $d_{1} \sim d_{2}$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p>
+По определению НОД:
+$$\left. \begin{array} \\
+d_{1} \mid f ~\land~ d_{1} \mid g \\
+d_{2} \mid f ~\land~ d_{2} \mid g \\
+\forall{r}\mathpunct{:}~~ r \mid f ~\land~ r \mid g \implies r \mid d_{1}  \\
+\forall{r}\mathpunct{:}~~ r \mid f ~\land~ r \mid g \implies r \mid d_{2} 
+\end{array} \right| \implies \begin{cases}
+d_{1} \mid d_{2} \\
+d_{2} \mid d_{1}
+\end{cases} \iff d_{1} \sim d_{2}$$
+$\square$</p></div></p></div>
 </body>
 </html>

@@ -165,115 +165,63 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Производная многочлена и ее свойства</h1><h2>Производная многочлена</h2>
-<p><b>Определение:</b><br/>
-Пусть $f(x) = \alpha_nx^n + \alpha_{n-1}x^{n-1} + \cdots + \alpha_0$ – многочлен над кольцом $R$.<br/>
-- Если $n &gt; 0$, то <b>производной</b> $f(x)$ называется многочлен:<br/>
-$$f'(x) = n\alpha_nx^{n-1} + (n-1)\alpha_{n-1}x^{n-2} + \cdots + \alpha_1$$<br/>
-- Если $n = 0$ (константа), то $f'(x) = 0$.</p>
-<hr/>
-<p><b>Замечания:</b><br/>
-а) Для любого многочлена $f$ над кольцом $R$:<br/>
-$$\deg f' \leq \deg f - 1$$<br/>
-б) Если $f$ – многочлен степени $&gt;0$ над полем характеристики $0$, то:<br/>
-$$\deg f' = \deg f - 1$$</p>
-<hr/>
-<h2>Лемма о свойствах производной</h2>
-<p><b>Формулировка:</b><br/>
-Если $f(x)$, $g(x)$ – многочлены над кольцом $R$, $\alpha \in R$, $m \in \mathbb{N}$, то:  </p>
+<div class="content"><h1>Производная многочлена и ее свойства</h1><h2>Определение: Формальная производная многочлена</h2>
+<p><div class="spoiler-markdown"><p>
+Пусть:
+$$f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \dots + a_{1}x + a_{0} \in \mathbb{F}[x]$$
+Тогда <b>формальной производной</b> называется:
+$$f'(x) = na_{n}x^{n-1} + (n-1)a_{n-1}x^{n-2} + \dots + 2a_{2}x + a_{1}$$
+Ясно, что $\deg f' &lt; \deg f$. Если $\operatorname{char} \mathbb{F} = 0$ и $\deg f &gt; 0$, то $\deg f' = \deg f - 1$</p></div></p>
+<h2>Теорема: Свойства производной</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p><br/>
+Для $f, g \in F[x]$ и $\alpha \in F$:  </p>
 <ol>
 <li>
-<p>$(\alpha f)' = \alpha f'$  </p>
+<p>$(f + g)' = f' + g'$  </p>
 </li>
 <li>
-<p>$(f + g)' = f' + g'$  </p>
+<p>$(\alpha f)' = \alpha f'$  </p>
 </li>
 <li>
 <p>$(fg)' = f'g + fg'$  </p>
 </li>
 <li>
-<p>$(f^m)' = mf^{m-1}f'$  </p>
-</li>
-</ol>
-<p><b>Д-во:</b> </p>
-<p><b>1) $(\alpha f)' = \alpha f'$</b><br/>
-Пусть $f(x) = \sum_{k=0}^n \alpha_k x^k$. Тогда:<br/>
-$$\alpha f(x) = \sum_{k=0}^n (\alpha \alpha_k) x^k$$<br/>
-Производная:<br/>
-$$(\alpha f)' = \sum_{k=1}^n k(\alpha \alpha_k) x^{k-1} = \alpha \sum_{k=1}^n k\alpha_k x^{k-1} = \alpha f'$$  </p>
-<p><b>2) $(f + g)' = f' + g'$</b><br/>
-Пусть $f(x) = \sum_{k=0}^n \alpha_k x^k$, $g(x) = \sum_{k=0}^m \beta_k x^k$. Тогда:<br/>
-$$(f + g)(x) = \sum_{k=0}^{\max(n,m)} (\alpha_k + \beta_k) x^k$$<br/>
-Производная:<br/>
-$$(f + g)' = \sum_{k=1}^{\max(n,m)} k(\alpha_k + \beta_k) x^{k-1} = \sum_{k=1}^n k\alpha_k x^{k-1} + \sum_{k=1}^m k\beta_k x^{k-1} = f' + g'$$  </p>
-<p><b>3) $(fg)' = f'g + fg'$</b><br/>
-*Достаточно доказать для $f(x) = x^n$, $g(x) = x^m$ (в силу линейности 1 и 2):*<br/>
-$$\begin{aligned} <br/>
-(fg)' &amp;= (x^{n+m})' = (n+m)x^{n+m-1} \\ <br/>
-f'g + fg' &amp;= (nx^{n-1})x^m + x^n (mx^{m-1}) = nx^{n+m-1} + mx^{n+m-1} = (n+m)x^{n+m-1} <br/>
-\end{aligned}$$  </p>
-<p><b>4) $(f^m)' = mf^{m-1}f'$</b><br/>
-*Индукция по $m$:*<br/>
-- <b>База ($m=1$):</b><br/>
-$(f^1)' = f' = 1 \cdot f^0 \cdot f'$<br/>
-- <b>Переход ($m \to m+1$):</b><br/>
-Используем свойство 3:<br/>
-$$\begin{aligned} <br/>
-(f^{m+1})' &amp;= (f \cdot f^m)' = f' \cdot f^m + f \cdot (f^m)' \\ <br/>
-&amp;= f'f^m + f \cdot (mf^{m-1}f') = f'f^m + mf^m f' = (m+1)f^m f' <br/>
-\end{aligned}$$<br/>
-$\square$  </p>
-<hr/>
-<h2>Неприводимые множители многочлена и его производной</h2>
-<h3>Лемма о производной неприводимого многочлена</h3>
-<p><b>Формулировка:</b><br/>
-Если $p$ – неприводимый многочлен и $p' \neq 0$, то $\text{НОД}(p, p') = 1$.  </p>
-<p><b>Д-во:</b><br/>
-Пусть $d = \text{НОД}(p, p')$. Тогда:<br/>
-$$p = d \cdot q \quad \text{и} \quad p' = d \cdot r$$<br/>
-для некоторых многочленов $q, r$.  </p>
-<ul>
-<li>Если $\deg q = 0$, то:<br/>
-  $$\deg p = \deg(dq) = \deg d \leq \deg p' \leq \deg p - 1$$<br/>
-  Противоречие ($\deg p \leq \deg p - 1$).  </li>
-<li>Следовательно, $\deg q &gt; 0$, и $q$ необратим.  </li>
-<li>Так как $p$ неприводим, $d$ должен быть обратим ($d \in F^\times$).  </li>
-<li>Значит, $d$ ассоциирован с $1$, т.е. $\text{НОД}(p, p') = 1$. $\square$  </li>
-</ul>
-<p><b>Замечание:</b><br/>
-Условие $p' \neq 0$ существенно. Пример:<br/>
-- Поле $F_2(y)$ (рациональные функции над $\mathbb{F}_2$).<br/>
-- Многочлен $p(x) = x^2 + y$ неприводим над $F_2(y)$ (обобщённый критерий Эйзенштейна).<br/>
-- Производная $p'(x) = 2x = 0$, так как $\text{char}\, F_2 = 2$.  </p>
-<hr/>
-<h3>Предложение о неприводимых множителях</h3>
-<p><b>Формулировка:</b><br/>
-Пусть $F$ – поле характеристики $0$, $p$ – неприводимый множитель кратности $k$ многочлена $f \in F[x]$. Тогда:  </p>
-<ol>
-<li>
-<p>Если $k = 1$, то $p \nmid f'$  </p>
-</li>
-<li>
-<p>Если $k &gt; 1$, то $p$ – неприводимый множитель $f'$ кратности $k-1$.  </p>
-</li>
-</ol>
-<p><b>Д-во:</b><br/>
-Пусть $f = p^k g$, где $p \nmid g$ (многочлен $g$ содержит остальные множители).  </p>
-<p><b>1) Случай $k = 1$:</b><br/>
-$f = pg$, тогда:<br/>
-$$f' = p'g + pg'$$<br/>
-Предположим $p \mid f'$. Так как $p \mid pg'$, то:<br/>
-$$p \mid (f' - pg') = p'g$$<br/>
-Но $\text{НОД}(p, p') = 1$ (по лемме), и $p \nmid g$, значит $p \nmid p'g$. Противоречие.  </p>
-<p><b>2) Случай $k &gt; 1$:</b><br/>
-$$f' = (p^k g)' = kp^{k-1}p'g + p^k g' = p^{k-1} \underbrace{(kp'g + pg')}_{h}$$<br/>
-а) $p^{k-1} \mid f'$ (очевидно).<br/>
-б) Докажем $p \nmid h$:<br/>
-Предположим $p \mid (kp'g + pg')$. Тогда:<br/>
-$$p \mid kp'g$$<br/>
-Так как $\text{char}\, F = 0$, элемент $k^{-1} \in F$ существует. Умножая на $k^{-1}$:<br/>
-$$p \mid p'g$$<br/>
-Но $\text{НОД}(p, p') = 1$ и $p \nmid g$, следовательно $p \nmid p'g$. Противоречие.<br/>
-Таким образом, $p$ имеет кратность $k-1$ в $f'$. $\square$  </p></div>
+<p>$(f^k)' = kf^{k-1}f'$ для $k \in \mathbb{N}$<br/>
+</p></li></ol></div></p>
+
+
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+<b>Свойство 1</b><br/>
+Пусть $f = \sum_{i=0}^{n} a_i x^i$, $g = \sum_{j=0}^{m} b_j x^j$. Коэффициент $c_k$ для $(f+g)$ есть $a_k + b_k$. Тогда:<br/>
+$$(f + g)' = \sum_{k=1}^{\max(n,m)} k(a_k + b_k) x^{k-1} = f' + g'$$  </p>
+<p><b>Свойство 2</b><br/>
+$(\alpha f)' = \alpha f'\colon$<br/>
+$$(\alpha f)' = \sum_{k=1}^{n} k(\alpha a_k) x^{k-1} = \alpha \sum_{k=1}^{n} k a_k x^{k-1} = \alpha f'$$  </p>
+<p><b>Свойство 3</b><br/>
+По свойству 1, достаточно доказать утверждение для $f = x^{m},~ g = x^{n}$, тогда:<br/>
+$$\left. \begin{array} \\<br/>
+(fg)' = (x^{m+n})' = (m+n)x^{m+n-1} \\<br/>
+f'g + fg' = mx^{m-1}x^{n} + nx^{m}x^{n-1}<br/>
+\end{array} \right| \implies (fg)' = f'g + fg'$$</p>
+<p><b>Свойство 4</b><br/>
+Индукция по $k$. <br/>
+База ($k=1$): $(f^1)' = f' = 1 \cdot f^0 \cdot f'$.<br/>
+Шаг:<br/>
+$$ (f^{k+1})' = (f \cdot f^k)' = f' f^k + f \cdot (f^k)' = f' f^k + f \cdot (k f^{k-1} f') = (k+1) f^k f' $$<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Лемма: Взаимная простота неприводимого многочлена с его производной</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\operatorname{char} F = 0$ и $f \in F[x]$ — неприводимый многочлен. Тогда $\operatorname{НОД}(f, f') = 1$</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Пусть $d = \operatorname{НОД}(f, f')$ и $d \neq 0$. Тогда $d \mid f$ и $d \mid f'$. Поскольку $f$ неприводим, $d$ — либо константа, либо ассоциирован с $f$. </p>
+<p>Если $d$ ассоциирован с $f$, то $f \mid f'$. Но $\deg f' = \deg f - 1$ при $\operatorname{char} F = 0$, т.е. многочлен большей степени делит многочлен меньшей степени, что невозможно. </p>
+<p>Следовательно, $d$ — константа $\iff \operatorname{НОД}(f, f') = 1$.<br/>
+$\square$<br/>
+</p></div></p></div>
 </body>
 </html>

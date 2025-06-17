@@ -165,10 +165,35 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Делимость многочленов</h1><h2>Определение: делимость многочленов</h2>
-<p><b>Формулировка</b><br/>
-<div class="spoiler-markdown"><p>
-Ненулевой многочлен $f(x)$ делит $g(x)$, если существует такой многочлен $q$
-что $$g(x) = q(x)f(x)$$</p></div></p></div>
+<div class="content"><h1>Делимость многочленов</h1><h2>Определение: Делимость многочленов</h2>
+<p><div class="spoiler-markdown"><p>
+Ненулевой многочлен $g(x)$ делит ${} f(x)$, если существует такой многочлен $q$
+что: $f = qg$</p></div></p>
+<h2>Свойства делимости многочленов</h2>
+<p>Пусть $F$ — поле. Для $f, g, h, d, a, b \in F[x]$:</p>
+<p><b>Рефлексивность</b><br/>
+<div class="spoiler-markdown"><p><br/>
+$f \mid f$ для $f \neq 0$.</p>
+<p>Д-во:<br/>
+$f = f \cdot 1$. $\square$<br/>
+</p></div></p>
+<p><b>Транзитивность</b><br/>
+<div class="spoiler-markdown"><p><br/>
+Если $g \mid f$ и $h \mid g$, то $h \mid f$.</p>
+<p>Д-во:<br/>
+$f = g q_1 = (h q_2) q_1 = h (q_2 q_1)$. $\square$<br/>
+</p></div></p>
+<p><b>Линейность</b><br/>
+<div class="spoiler-markdown"><p><br/>
+Если $d \mid f$ и $d \mid g$, то $d \mid (af + bg)$.</p>
+<p>Д-во:<br/>
+$f = d q_1, g = d q_2 \implies af + bg = a(d q_1) + b(d q_2) = d(a q_1 + b q_2)$. $\square$<br/>
+</p></div></p>
+<p><b>Умножение на многочлен</b><br/>
+<div class="spoiler-markdown"><p><br/>
+Если $g \mid f$, то $g \mid (fh)$.</p>
+<p>Д-во:<br/>
+$f = gq \implies fh = (gq)h = g(qh)$. $\square$<br/>
+</p></div></p></div>
 </body>
 </html>

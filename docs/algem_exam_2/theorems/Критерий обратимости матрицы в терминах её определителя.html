@@ -165,14 +165,16 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Критерий обратимости матрицы в терминах её определителя</h1><p>Формулировка:<br/>
+<div class="content"><h1>Критерий обратимости матрицы в терминах её определителя</h1><h2>Теорема: Критерий обратимости матрицы</h2>
+<p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
-Квадратная матрица $A$ обратима $\iff |A|\neq 0$</p></div><br/>
-Д-во:<br/>
+Квадратная матрица $A$ обратима $\iff \det A \neq 0$</p></div></p>
+<p>Д-во:<br/>
 <div class="spoiler-markdown"><p>
-$A$ - обратима $\iff r(A) = n \overset{(1)}{\iff} r_{M} = n \iff |A| \neq 0$
-где $n$ - размер матрицы.
-$(1)$ - <span>теорема о минорном ранге</span>
+Пусть $n$ - размер матрицы. Тогда:
+$A$ - обратима $\iff r(A) = n \overset{1}{\iff} r_{M}(A) = n \overset{2}{\iff} \det A \neq 0$
+$1$ - <span>теорема о минорном ранге</span>
+$2$ - <span>определение минорного ранга</span>
 $\square$</p></div></p></div>
 </body>
 </html>

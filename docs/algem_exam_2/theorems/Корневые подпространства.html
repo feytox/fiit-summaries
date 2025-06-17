@@ -168,71 +168,134 @@
 <div class="content"><h1>Корневые подпространства</h1><h2>Определение: Нильпотентный оператор</h2>
 <p><div class="spoiler-markdown"><p>
 Оператор $\mathcal{A}:V \to V$ называется <b>нильпотентным</b>, если $\exists{s}~~$такое, что $\mathcal{A}^{s}$ - нулевой оператор.
-Минимальное такое $s$ называется ступенью нильпотентности.</p></div></p>
-<h2>Определение: 1 и 0 компоненты оператора</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-$U_{k} = \mathrm{Im}~\mathcal{A}^{k}$  -  называется 1-компонентной $\mathcal{A}$
-$V_{k} = \mathrm{Ker}~\mathcal{A}^{k}$ - называется 0-компонентной $\mathcal{A}$
-где $k$ - ступень стабилизации.</p></div><br/>
-Построение:<br/>
-<div class="spoiler-markdown"><p><br/>
-$$\begin{align*}U_{1} &amp;= \{u \mid \mathcal{A}u \in \mathrm{Im}~\mathcal{A}\} \\ U_{2} &amp;= \{u \mid \mathcal{A}^{2}u \in \mathrm{Im}~\mathcal{A}^{2}\} \\ &amp;\dots \\ U_{k} &amp;= \{u \mid \mathcal{A}^{k}u \in \mathrm{Im}~\mathcal{A}^{k}\}\end{align*}$$<br/>
-$$U_{1}\supseteq U_{2} \supseteq \dots \supseteq U_{k}~~(1)$$</p>
-<p>$$\begin{align*}V_{1} &amp;= \{v \mid \mathcal{A}v \in \mathrm{Im}~\mathcal{A}\} \\ V_{2} &amp;= \{v \mid \mathcal{A}^{2}v \in \mathrm{Im}~\mathcal{A}^{2}\} \\ &amp;\dots \\ V_{k} &amp;= \{v \mid \mathcal{A}^{k}v \in \mathrm{Im}~\mathcal{A}^{k}\}\end{align*}$$<br/>
-$$V_{1} \subseteq V_{2} \subseteq \dots \subseteq V_{k}~~(1)$$</p>
-<p>$(1)$ Eсли какие-то вектора передут в $0$, то они в нем и останутся для всех последующих степеней операторов: $$\mathcal{A}^{i}x = 0 ~\Rightarrow~\mathcal{A}^{i+1}x = \mathcal{A}(\mathcal{A}^{i}x) = \mathcal{A}(0) = 0$$<br/>
-Таким образом, если в какой-то момент $V_{k-1} = V_{k}$, равенство будет выполнятся для всех последующих $V_{j},~j\geq k - 1$. Аналогично для $U_{k}$. Причем из теоремы <span>о сумме ранга и дефекта</span> для подпространств $V_{k}$ и $U_{k}$ это произойдет для одной и той же степени оператора.<br/>
-По определению <span>ядра и образа</span> эти два подпространства будут $\mathcal{A}^{k}$ - инвариантны.</p>
-<p></p></div></p>
-<h2>Разложение Фиттинга</h2>
+Минимальное такое $s$ называется <b>ступенью нильпотентности</b></p></div></p>
+<h2>1 и 0 компонент оператора</h2>
+<h5>Построение</h5>
+<p><div class="spoiler-markdown"><p><br/>
+Построим $U_{i}$ следующим образом:<br/>
+$$\begin{align}<br/>
+U_{1} &amp;= \operatorname{Im} \mathcal{A} \\ <br/>
+U_{2} &amp;= \operatorname{Im} \mathcal{A}^{2} \\ <br/>
+&amp;\dots \\ <br/>
+U_{n} &amp;= \operatorname{Im} \mathcal{A^{n}} \\ <br/>
+&amp;\dots<br/>
+\end{align}$$<br/>
+И $N_{i}$ аналогично:<br/>
+$$\begin{align}<br/>
+N_{1} &amp;= \operatorname{Ker} \mathcal{A} \\ <br/>
+N_{2} &amp;= \operatorname{Ker} \mathcal{A}^{2} \\ <br/>
+&amp;\dots \\ <br/>
+N_{n} &amp;= \operatorname{Ker} \mathcal{A^{n}} \\<br/>
+&amp;\dots <br/>
+\end{align}$$<br/>
+Так как $\mathcal{A}(0) = 0$, то если какие-то векторы перейдут в ${} 0$, то в нуле они и останутся для последующих степеней:<br/>
+$$\mathcal{A}^{i}x = 0 \implies \mathcal{A}^{i+1}x = \mathcal{A}(\mathcal{A}^{i}x) = \mathcal{A}(0) = 0$$<br/>
+По определению <span>ядра и образа</span> $U_{i}$ и ${} N_{i}$ будут $\mathcal{A}^{i}$-инвариантны. (если не очевидно, то <span>объяснение</span> ниже)</p>
+<p>А значит:<br/>
+$$\begin{align}<br/>
+U_{1} &amp;\supseteq U_{2} \supseteq \dots \supseteq U_{n} \\<br/>
+N_{1} &amp;\subseteq N_{2} \subseteq \dots \subseteq N_{n}<br/>
+\end{align}$$<br/>
+Так как пространство конечномерно, в какой-то момент получим $U_{k} = U_{k+1}$ и $N_{k} = N_{k + 1}$. Ясно, что равенство будет выполняться и для $U_{k+2}, U_{k+3}, \dots$ и $N_{k+2}, N_{k+3}, \dots$</p>
+<p>Из теоремы <span>о сумме ранга и дефекта</span> для подпространств $U_{k}$ и ${} N_{k}$ это произойдет для одной и той же степени оператора.<br/>
+</p></div></p>
+<h5>Определение</h5>
+<p><div class="spoiler-markdown"><p>
+Наименьший $k$, при котором $U_{k} = U_{k+1}$, называют <b>ступенью стабилизации</b>
+$U_{k} = \operatorname{Im}\mathcal{A}^{k}$  называют <b>1-компонентой</b> $\mathcal{A}$
+$N_{k} = \operatorname{Ker} \mathcal{A}^{k}$ называют <b>0-компонентой</b> $\mathcal{A}$</p></div></p>
+<h2>Теорема: Разложение Фиттинга</h2>
 <p>Формулировка:<br/>
 <div class="spoiler-markdown"><p>
 Для любого оператора $\mathcal{A}$ конечномерного пространства $V$ существуют $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ такие, что
 1) $V = N_{\mathcal{A}} \oplus U_{\mathcal{A}}$
-2) $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$ - инвариантны
+2) $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$-инвариантны
 3) $\mathcal{A}|_{N_{\mathcal{A}}}$ - <span>нильпотентный оператор</span>
-4) $\mathcal{A}|_{U_{\mathcal{A}}}$ - <span>обратимый оператор</span></p></div><br/>
-Д-во:<br/>
-<div class="spoiler-markdown"><p>
-В качестве $U_{\mathcal{A}}$ и $N_{\mathcal{A}}$ возьмем <span>1 и 0 компоненты</span> оператора $\mathcal{A}$ соответственно.
-1) $\mathrm{dim}~N_{\mathcal{A}} + \mathrm{dim}~ U_{\mathcal{A}} = \mathrm{dim}~V$ из их построения. Поэтому для прямой суммы достаточно показать, что $N_{\mathcal{A}}~\cap~U_{\mathcal{A}} = 0$ 
-   $x \in N_{\mathcal{A}}~\Rightarrow~\mathcal{A}^{k}x = 0$ 
-   $\exists{y} \in V~~x = \mathcal{A}^{k}y~ \Rightarrow \mathcal{A}^{2k}y = 0~\Rightarrow y \in V_{2k}$
-   $N_{\mathcal{A}}=V_{k} = \dots =V_{2k}~\Rightarrow y \in N_{\mathcal{A}}~\Rightarrow x = \mathcal{A}^{k}y = 0$ 
-2) Очевидно из построения компонент
-3) $N_{\mathcal{A}} = V_{k} = \{x~|~\mathcal{A}^{k}x = 0 \}$
-   $\mathcal{A}^{k}|_{N_{\mathcal{A}}} = 0 = (\mathcal{A}|_{N_{\mathcal{A}}})^{k}$ т.e. оператор нильпотентен с степенью нильпотентности равной $k$
-4) $\exists{x}~\in~U_{\mathcal{A}}\mathpunct{:}~~\mathcal{A}x = 0,~x \neq 0$
-   $\exists{y}~\in~V\mathpunct{:}~~x = \mathcal{A}^{k}y \Rightarrow  \mathcal{A}^{k+1} y = 0$, но $V_{k} = V_{k + 1} \Rightarrow x = \mathcal{A}^{k}y = 0$
-$\square$</p></div></p>
-<h2>Определение: корневое подпространство</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $\lambda$ - собственное значение оператора $\mathcal{A}$, тогда <b>корневым подпространством</b> называется 0-компонента оператора $\mathcal{A} - \lambda E$.</p></div></p>
-<h2>Наблюдение: о корневом подпространстве</h2>
-<p><div class="spoiler-markdown"><p>
-$U \subseteq V$, $U$ - $\mathcal{A}$ - инвариантно $\iff$ $U$ - $(\mathcal{A} - \lambda E)$ - инвариантно (следует и замкнутости пространства относительно умножения на скаляр) $(1)$
-Из разложения Фиттинга и $(1)$ $\Rightarrow$ $$V = N_{\mathcal{A} - \lambda E} \oplus U_{\mathcal{A} - \lambda E}$$</p></div></p>
-<h2>Корневое разложение</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-$\mathcal{A}$ - оператор пространства $V$, у которого <span>характеристический многочлен</span> раскладывается на линейные сомножители. Тогда:
-$$V = \mathop{\bigoplus}\limits_{i=1}^{k} K_{\mathcal{A}}(\lambda_{i})$$
-где $\lambda_{i}~~~i=1\dots k$  - <span>собственные числа</span> $\mathcal{A}$ 
-$K_{\mathcal{A}}(\lambda_{i})$ - корневое подпространство, размерность которого соответсвует кратности корня характерестического многочлена.</p></div><br/>
-Д-во:<br/>
+4) $\mathcal{A}|_{U_{\mathcal{A}}}$ - <span>обратимый оператор</span></p></div></p>
+<p>Д-во:<br/>
 <div class="spoiler-markdown"><p><br/>
-Индукция по $n = \mathrm{dim}~V$<br/>
-<b>База индукции</b>: очевидна.<br/>
-<b>Шаг индукции</b>: Рассмотрим $\lambda_{1}$ и $K(\lambda_{1})$ <br/>
-$$V = K_{\mathcal{A}}(\lambda_{1}) + V^{'}$$<br/>
-$$A = \left(\begin{array}{c|c} B &amp; 0 \\ \hline 0 &amp; C  \\\end{array}\right),~~B = [A|{K(\lambda{1})}],~~C = [A|{V^{'}}]$$<br/>
-$$\chi{A}(\lambda) = \begin{vmatrix}B - \lambda E &amp; 0 \\ 0 &amp; C - \lambda E\end{vmatrix} = (B - \lambda E)(C - \lambda E) = \chi_{A|{K(\lambda{1})}}(\lambda) \cdot \chi_{A|_{V^{'}}}(\lambda)$$</p>
-<p>Из <span>разложения Фиттинга</span> $\mathcal{A} - \lambda_{1}E$ обратим на $V^{{'}}~\Rightarrow~ \lambda_{1}$ не является собственным для $\mathcal{A}|{V^{'}}$ <br/>
-Пусть $\mu$ собственное для $\mathcal{A}|{K(\lambda_{1})}$. <br/>
-Из нильпотентности $(\mathcal{A} - \lambda_{1})^{k}v = 0,~v \neq 0~\Rightarrow~(B - \lambda E) = (-1)^{k}(\lambda - \lambda_{1})^{k}$ <br/>
-Размерность $V^{{'}}$ меньше $V$ и в $V^{'}$ нет векторов отвечающих $\lambda_{1} ~\Rightarrow$ по предположению индукции $\square$<br/>
+В качестве $U_{\mathcal{A}}$ и $N_{\mathcal{A}}$ возьмем <span>1 и 0 компоненты</span> оператора $\mathcal{A}$ соответственно<br/>
+(т.е. $U_{\mathcal{A}} = U_{k} = \operatorname{Im} \mathcal{A}^{k}$ и $N_{\mathcal{A}} = N_{k} = \operatorname{Ker} \mathcal{A}^{k}$)</p>
+<p><b>Утверждение 1</b><br/>
+Из построения знаем, что $\mathrm{dim}~N_{\mathcal{A}} + \mathrm{dim}~ U_{\mathcal{A}} = \mathrm{dim}~V$. Поэтому для прямой суммы достаточно показать, что $N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$</p>
+<p>Пусть $x \in N_{\mathcal{A}} \cap U_{\mathcal{A}}$, то есть $\mathcal{A}^{k}x = 0$ и $\exists{y \in V}\mathpunct{:}~~ x = \mathcal{A}^{k}y$. Тогда:<br/>
+$$\mathcal{A}^{k}x = \mathcal{A}^{k}(\mathcal{A}^{k}y) = \mathcal{A}^{2k}y = 0 \implies y \in N_{2k}$$<br/>
+Но так как ${} N_{\mathcal{A}} = N_{k} = N_{k+1} = \dots = N_{2k} {}$, то $y \in N_{\mathcal{A}}$, а значит $x = \mathcal{A}^{k}y = 0$. Следовательно сумма прямая.</p>
+<p><b>Утверждение 2</b><br/>
+$N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$-инварианты из построения.</p>
+<p><b>Утверждение 3</b><br/>
+$$(\mathcal{A}|{N{\mathcal{A}}})^{k} = (\mathcal{A}|{N{\mathcal{A}}})^{k}|{N{\mathcal{A}}} = \mathcal{A}^{k}|{N{\mathcal{A}}} = 0$$<br/>
+А значит оператор нильпотентен со ступенью нильпотентности $k$</p>
+<p><b>Утверждение 4</b><br/>
+Так как:<br/>
+$$\operatorname{Ker} \mathcal{A^{k}}|{U{\mathcal{A}}} = \operatorname{Ker} \mathcal{A}^{k} \cap \operatorname{Im} \mathcal{A}^{k} = N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$$<br/>
+А значит $\mathcal{A}^{k}|{U{\mathcal{A}}}$ - обратим. Но тогда и $\mathcal{A}|{U{\mathcal{A}}}$ обратим.<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Определение: Корневое подпространство</h2>
+<p><div class="spoiler-markdown"><p><br/>
+Пусть $\lambda$ - собственное значение оператора $\mathcal{A}$, тогда <b>корневым подпространством</b> называется 0-компонента оператора $\mathcal{A} - \lambda \mathcal{E}$. </p>
+<p>Обозначение: $K_{\mathcal{A}}(\lambda)$<br/>
+Иными словами: $K_{\mathcal{A}}(\lambda) = N_{\mathcal{A} - \lambda \mathcal{E}} = \operatorname{Ker} (\mathcal{A} - \lambda \mathcal{E})^{k}$<br/>
+</p></div></p>
+<h2>Наблюдение: Инвариантность подпространства</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $U \subseteq V$. Тогда $U$ является $\mathcal{A}$-инвариантным $\iff$ $U$ является $(\mathcal{A} - \lambda \mathcal{E})$-инвариантным.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+$\Large\implies$<br/>
+Пусть $x \in U$. Тогда: <br/>
+$$(\mathcal{A} - \lambda \mathcal{E})(x) = \mathcal{A}x - \lambda x$$<br/>
+$\mathcal{A}x \in U$ из $\mathcal{A}$-инвариантности, $\lambda x \in U$ по определению, а значит $U$ - $(\mathcal{A} - \lambda \mathcal{E})$-инвариантно.</p>
+<p>$\Large\impliedby$<br/>
+Аналогично.<br/>
+$\square$<br/>
+</p></div></p>
+<h2>Теорема: Корневое разложение</h2>
+<p>Формулировка:<br/>
+<div class="spoiler-markdown"><p>
+Пусть $\mathcal{A}\mathpunct{:}~~ V \to V$ и его <span>характеристический многочлен</span> раскладывается на линейные множители. Тогда:
+$$V = \mathop{\bigoplus}\limits_{i=1}^{k} K_{\mathcal{A}}(\lambda_{i}) = K_{\mathcal{A}}(\lambda_{1}) \oplus K_{\mathcal{A}}(\lambda_{2}) \oplus \dots \oplus K_{\mathcal{A}}(\lambda_{k})$$
+где $\lambda_i$ — собственные числа $\mathcal{A}$, $K_{\mathcal{A}}(\lambda_i)$ — корневые подпространства.
+Причём $\dim K_{\mathcal{A}}(\lambda_i) =$ кратности $\lambda_i$ в $\chi_{\mathcal{A}}(\lambda)$.</p></div></p>
+<p>Д-во:<br/>
+<div class="spoiler-markdown"><p><br/>
+Индукция по $n = \dim V$.</p>
+<p><b>База индукции ($n=1$)</b>: <br/>
+$\mathcal{A}x = \lambda_1 x$. Тогда $V = K_{\mathcal{A}}(\lambda_1)$. Утверждение верно.</p>
+<p><b>Шаг индукции</b>: <br/>
+Пусть утверждение верно для пространств размерности $&lt; n$.<br/>
+Пусть $\lambda_1$ — одно из собственных значений $\mathcal{A}$.<br/>
+По <span>разложению Фиттинга</span> для оператора $\mathcal{A} - \lambda_1 \mathcal{E}$:<br/>
+$$V = N_{\mathcal{A} - \lambda_{1}\mathcal{E}} \oplus U_{\mathcal{A} - \lambda_{1}\mathcal{E}} = K_{\mathcal{A}}(\lambda_1) \oplus V'$$<br/>
+По наблюдению, оба пространства $\mathcal{A}$-инвариантны. Поэтому матрица в базисе, согласованном с разложением, имеет вид:<br/>
+$$ A = \begin{pmatrix} B &amp; \mathbf{0} \\ \mathbf{0} &amp; C \end{pmatrix} \qquad B = [\mathcal{A}|{K{\mathcal{A}}(\lambda_1)}] \quad C = [\mathcal{A}|{V'}]$$<br/>
+Из вида матрицы получаем, что $\det (A - \lambda E) = \det(B - \lambda E) \cdot \det(C - \lambda E)$, а значит $\chi{\mathcal{A}}(\lambda) = \chi_B(\lambda) \cdot \chi_C(\lambda)$</p>
+<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|{V'}$ обратим. Значит $\lambda{1}$ не является собственным для $\mathcal{A}|{V'}$, так как иначе:<br/>
+$$\exists{x \neq 0}\mathpunct{:}~~ (\mathcal{A} - \lambda{1}\mathcal{E})|{V'}(x) = \lambda{1}x - \lambda_{1}x = 0 \implies \operatorname{Ker} (\mathcal{A} - \lambda_{1}\mathcal{E})|{V'} \neq \{0\}$$<br/>
+что противоречит обратимости. Следовательно, $\chi{C}(\lambda_{1}) \neq 0$</p>
+<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|{K{\mathcal{A}}(\lambda_{1})}$ - нильпотентен. Значит $\lambda_{1}$ - единственное собственное для $\mathcal{A}|{K{\mathcal{A}}(\lambda_{1})}$, так как иначе:<br/>
+$$\begin{align}<br/>
+\exists{\lambda_{2} \neq \lambda_{1}}~~ \exists{x \neq 0}\mathpunct{:}~~ &amp;(\mathcal{A} - \lambda_{1}\mathcal{E})(x) = \mathcal{A}x - \lambda_{1}x = (\lambda_{2} - \lambda_{1})x \neq 0 \\<br/>
+&amp;(\mathcal{A} - \lambda_{1}\mathcal{E})^{2}(x) = (\lambda_{2} - \lambda_{1})^{2}x \neq 0 \\<br/>
+&amp;\dots \\<br/>
+&amp;(\mathcal{A} - \lambda_{1}\mathcal{E})^{k}(x) = (\lambda_{2} - \lambda_{1})^{k}x \neq 0<br/>
+\end{align}$$<br/>
+что противоречит нильпотентности. Следовательно, $\chi_{B}(\lambda) = (\lambda_{1} - \lambda)^{m}$, где $m = \operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$. А значит $\operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$ равно кратности $\lambda_{1}$.</p>
+<p>Получаем, что $\chi_{A}(\lambda) = (\lambda_{1} - \lambda)^{m} \chi_{C}(\lambda)$, а значит $\chi_{C}(\lambda)$ раскладывается на линейные множители.</p>
+<p>Поскольку $\chi_{C}(\lambda)$ раскладывается, $\operatorname{dim} V' &lt; n$ и в $V'$ нет векторов, отвечающих $\lambda_{1}$, то для $V'$ справедливо предположение индукции:<br/>
+$$ V' = \bigoplus_{i=2}^{k} K_{\mathcal{A}|{V'}}(\lambda_i) $$<br/>
+Следовательно,<br/>
+$$ V = K{\mathcal{A}}(\lambda_1) \oplus \bigoplus_{i=2}^{k} K_{\mathcal{A}}(\lambda_i) = \bigoplus_{i=1}^{k} K_{\mathcal{A}}(\lambda_i) $$<br/>
+$\square$<br/>
+</p></div></p>
+<h2>* Почему $\operatorname{Im} \mathcal{A}$ и ${} \operatorname{Ker} \mathcal{A} {}$ - $\mathcal{A}$-инвариантны?</h2>
+<p><div class="spoiler-markdown"><p><br/>
+Если данный факт не очевиден, докажем его.<br/>
+Напомним, что $\mathcal{A}\mathpunct{:}~~ V \to V$</p>
+<p>Пусть $y \in \operatorname{Im} \mathcal{A} \implies \exists{x}\mathpunct{:}~~ \mathcal{A}x = y$. Так как $\mathcal{A}\mathpunct{:}~~ V \to V$, то $y \in V$, а значит $\mathcal{A}y \in \operatorname{Im} \mathcal{A}$ по определению образа, а значит $\mathcal{A}$-инвариантно.</p>
+<p>Пусть $y \in \operatorname{Ker} \mathcal{A} \implies \mathcal{A}y = 0$. Так как $\mathcal{A}(\mathcal{A}y) = \mathcal{A}(0) = 0$, то $\mathcal{A}y \in \operatorname{Ker} \mathcal{A}$, а значит $\mathcal{A}$-инвариантно.<br/>
 </p></div></p></div>
 </body>
 </html>
