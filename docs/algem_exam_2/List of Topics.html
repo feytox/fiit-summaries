@@ -14,147 +14,168 @@
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
 <style>
-        :root {
-            --obsidian-background: #1a1a1a;
-            --obsidian-text-color: #e0e0e0;
-            --obsidian-link-color: #7da9e2;
-            --obsidian-heading-color: #ffffff;
-            --obsidian-border-color: #444444;
-            --obsidian-code-background: #2b2b2b;
-            --obsidian-code-text: #c7254e;
-        }
+    :root {
+        /* Основные цвета */
+        --obsidian-background: #181818; /* Немного темнее */
+        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
+        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-heading-color: #ffffff;
+        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-code-background: #2a2a2a;
+        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
+        --obsidian-container-background: #222222; /* Темнее для контейнера */
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            line-height: 1.6;
-            color: var(--obsidian-text-color);
-            background-color: var(--obsidian-background);
-            margin: 1px;
-            justify-content: center;
-            min-height: 100vh;
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.7; /* Увеличил межстрочный интервал */
+        color: var(--obsidian-text-color);
+        background-color: var(--obsidian-background);
+        margin: 0; /* Убрал отступы по умолчанию */
+        display: flex; /* Используем flexbox для центрирования */
+        justify-content: center;
+        align-items: flex-start; /* Выравнивание по верху */
+        min-height: 100vh;
+        padding: 20px; /* Добавил небольшой отступ по всему краю */
+        box-sizing: border-box; /* Важно для padding */
+    }
 
-        .content {
-            margin-left: 20%;
-            margin-right: 20%;
-        }
+    .content {
+        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
+        width: 100%;
+        max-width: 1000px; /* Максимальная ширина для всего контента */
+        padding: 0 20px; /* Отступы по бокам */
+        box-sizing: border-box;
+    }
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background-color: #262626;
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--obsidian-border-color);
-        }
+    .container {
+        max-width: 800px;
+        width: 100%;
+        background-color: var(--obsidian-container-background);
+        padding: 40px; /* Увеличил padding */
+        border-radius: 10px; /* Слегка увеличил скругление */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        border: 1px solid var(--obsidian-border-color);
+    }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--obsidian-heading-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            line-height: 1.2;
-        }
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--obsidian-heading-color);
+        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-bottom: 1em;
+        line-height: 1.3;
+        font-weight: 600; /* Немного жирнее */
+    }
 
-        h1 { font-size: 2.2em; }
-        h2 { font-size: 1.8em; }
-        h3 { font-size: 1.5em; }
-        h4 { font-size: 1.2em; }
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    h4 { font-size: 1.3em; }
 
-        a {
-            color: var(--obsidian-link-color);
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
+    a {
+        color: var(--obsidian-link-color);
+        text-decoration: none;
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+    }
 
-        a:hover {
-            color: #92bce6;
-            text-decoration: underline;
-        }
+    a:hover {
+        color: #a0c4ff; /* Более светлый синий при наведении */
+        text-decoration: underline;
+    }
 
-        p {
-            margin-bottom: 1em;
-        }
+    p {
+        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+    }
 
-        .spoiler-markdown {
-            background-color: var(--obsidian-code-background);
-            color: var(--obsidian-code-background);
-        }
+    .spoiler-markdown {
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-code-background); /* Текст невидим */
+        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        padding: 2px 5px;
+        border-radius: 4px;
+        transition: color 0.3s ease-in-out;
+    }
 
-        .spoiler-markdown:hover {
-            color: var(--obsidian-text-background);
-        }
+    .spoiler-markdown:hover {
+        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+    }
 
-        ul, ol {
-            margin-bottom: 1em;
-            padding-left: 25px;
-        }
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 30px; /* Немного больше отступ для списков */
+    }
 
-        li {
-            margin-bottom: 0.5em;
-        }
+    li {
+        margin-bottom: 0.6em;
+    }
 
-        pre {
-            background-color: var(--obsidian-code-background);
-            border-radius: 5px;
-            padding: 15px;
-            overflow-x: auto;
-            margin-bottom: 1em;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            font-size: 0.9em;
-        }
+    pre {
+        background-color: var(--obsidian-code-background);
+        border-radius: 6px;
+        padding: 18px; /* Немного больше padding */
+        overflow-x: auto;
+        margin-bottom: 1.5em;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 0.95em; /* Немного крупнее шрифт */
+        line-height: 1.5;
+    }
 
-        code {
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            color: var(--obsidian-code-text);
-            background-color: var(--obsidian-code-background);
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
+    code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        color: var(--obsidian-code-text);
+        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
 
-        pre code {
-            background-color: transparent;
-            color: inherit;
-            padding: 0;
-        }
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
 
-        blockquote {
-            border-left: 4px solid var(--obsidian-border-color);
-            margin: 1.5em 0;
-            padding: 0.5em 20px;
-            color: #aaaaaa;
-            font-style: italic;
-        }
+    blockquote {
+        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
+        margin: 2em 0; /* Больше отступов */
+        padding: 0.8em 25px;
+        color: #b0b0b0; /* Немного светлее */
+        font-style: italic;
+        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        border-radius: 4px;
+    }
 
-        hr {
-            border: none;
-            border-top: 1px solid var(--obsidian-border-color);
-            margin: 3em 0;
-        }
+    hr {
+        border: none;
+        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
+        margin: 3.5em 0; /* Больше отступов */
+    }
 
-        strong, b {
-            font-weight: 600;
-        }
+    strong, b {
+        font-weight: 700; /* Более выраженное жирное начертание */
+    }
 
-        em, i {
-            font-style: italic;
-        }
+    em, i {
+        font-style: italic;
+    }
 
-        #back-button {
-            font-size: 1.2em;
-            height: 1.4em;
-            display: none;
-            cursor: pointer;
-            background-color: var(--obsidian-code-background);
-            color: var(--obsidian-code-color);
-            border: var(--obsidian-border-color);
-            border-radius: 5px;
-        }
+    #back-button {
+        font-size: 1.1em;
+        padding: 8px 15px; /* Добавил padding */
+        display: inline-block; /* Для корректного padding и margin */
+        cursor: pointer;
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        border: 1px solid var(--obsidian-border-color);
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        margin-top: 20px; /* Отступ сверху */
+    }
 
-        #back-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    #back-button:hover {
+        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        color: #ffffff;
+        border-color: var(--obsidian-link-color);
+    }
+</style>
 </head>
 <body>
 <script>
@@ -168,189 +189,189 @@
 <div class="content"><h1>List of Topics</h1><p>$\dagger$ - требуется рефакторинг</p>
 <ol>
 <li>
-<p>◦ <a href="theorems/Неприводимые многочлены над полем рациональных и целых чисел.html">Неприводимые многочлены над полем рациональных и целых чисел</a><br/>
-   ◦ <a href="theorems/Критерий Эйзенштейна.html">Критерий Эйзенштейна</a></p>
+<p>◦ <a href="theorems\Неприводимые многочлены над полем рациональных и целых чисел.html">Неприводимые многочлены над полем рациональных и целых чисел</a><br/>
+   ◦ <a href="theorems\Критерий Эйзенштейна.html">Критерий Эйзенштейна</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Кольцо многочленов.html">Кольцо многочленов</a><br/>
-   ◦ <a href="theorems/Простейшие свойства многочленов.html">Простейшие свойства многочленов</a><br/>
-   ◦ <a href="theorems/Деление многочленов с остатком.html">Деление многочленов с остатком</a></p>
+<p>◦ <a href="theorems\Кольцо многочленов.html">Кольцо многочленов</a><br/>
+   ◦ <a href="theorems\Простейшие свойства многочленов.html">Простейшие свойства многочленов</a><br/>
+   ◦ <a href="theorems\Деление многочленов с остатком.html">Деление многочленов с остатком</a></p>
 </li>
 <li>
-<p>◦ <a href="definitions/Делимость многочленов.html">Деление многочленов. Свойства отношения делимости</a><br/>
-   ◦ <a href="definitions/Отношение ассоциированности.html">Отношение ассоциированности</a></p>
+<p>◦ <a href="definitions\Делимость многочленов.html">Деление многочленов. Свойства отношения делимости</a><br/>
+   ◦ <a href="definitions\Отношение ассоциированности.html">Отношение ассоциированности</a></p>
 </li>
 <li>
-<p>◦ <a href="definitions/Наибольший общий делитель многочленов.html">Наибольший общий делитель многочленов. Теорема существования. Ассоциированность НОД</a></p>
+<p>◦ <a href="definitions\Наибольший общий делитель многочленов.html">Наибольший общий делитель многочленов. Теорема существования. Ассоциированность НОД</a></p>
 </li>
 <li>
-<p>◦ <a href="definitions/Выражение НОД через исходные многочлены.html">Выражение НОД через исходные многочлены</a></p>
+<p>◦ <a href="definitions\Выражение НОД через исходные многочлены.html">Выражение НОД через исходные многочлены</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Взаимно простые многочлены и их свойства.html">Взаимно простые многочлены и их свойства</a></p>
+<p>◦ <a href="theorems\Взаимно простые многочлены и их свойства.html">Взаимно простые многочлены и их свойства</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Алгебраически замкнутые поля.html">Алгебраически замкнутые поля. Разложение многочленов над алгебраически замкнутым полем</a></p>
+<p>◦ <a href="theorems\Алгебраически замкнутые поля.html">Алгебраически замкнутые поля. Разложение многочленов над алгебраически замкнутым полем</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Неприводимые многочлены и их свойства.html">Неприводимые многочлены и их свойства</a><br/>
-   ◦ <a href="theorems/Теорема о разложении в произведение неприводимых многочленов.html">Теорема о разложении в произведение неприводимых многочленов</a><br/>
-   ◦ <a href="definitions/Каноническое разложение.html">Каноническое разложение</a></p>
+<p>◦ <a href="theorems\Неприводимые многочлены и их свойства.html">Неприводимые многочлены и их свойства</a><br/>
+   ◦ <a href="theorems\Теорема о разложении в произведение неприводимых многочленов.html">Теорема о разложении в произведение неприводимых многочленов</a><br/>
+   ◦ <a href="definitions\Каноническое разложение.html">Каноническое разложение</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Неприводимые многочлены над полем рациональных и целых чисел.html">Многочлены над полем рациональных чисел и кольцом целых чисел</a><br/>
-   ◦ <a href="theorems/Примитивные многочлены и их свойства.html">Примитивные многочлены и их свойства</a></p>
+<p>◦ <a href="theorems\Неприводимые многочлены над полем рациональных и целых чисел.html">Многочлены над полем рациональных чисел и кольцом целых чисел</a><br/>
+   ◦ <a href="theorems\Примитивные многочлены и их свойства.html">Примитивные многочлены и их свойства</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Значение и корни многочлена.html">Значение многочлена. Корни многочлена</a><br/>
-    ◦ <a href="theorems/Теорема Безу.html">Теорема Безу</a><br/>
-    ◦ <a href="theorems/Равенство многочленов, совпадающих как функции.html">Равенство многочленов, совпадающих как функции</a></p>
+<p>◦ <a href="theorems\Значение и корни многочлена.html">Значение многочлена. Корни многочлена</a><br/>
+    ◦ <a href="theorems\Теорема Безу.html">Теорема Безу</a><br/>
+    ◦ <a href="theorems\Равенство многочленов, совпадающих как функции.html">Равенство многочленов, совпадающих как функции</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Интерполяционный многочлен Лагранжа.html">Интерполяционный многочлен Лагранжа</a></p>
+<p>◦ <a href="theorems\Интерполяционный многочлен Лагранжа.html">Интерполяционный многочлен Лагранжа</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Алгоритм Кронекера.html">Алгоритм Кронекера</a></p>
+<p>◦ <a href="theorems\Алгоритм Кронекера.html">Алгоритм Кронекера</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Производная многочлена и ее свойства.html">Производная многочлена и ее свойства</a><br/>
-    ◦ <a href="theorems/Кратные множители многочлена.html">Кратные множители многочлена. Алгоритм выделения кратных множителей</a></p>
+<p>◦ <a href="theorems\Производная многочлена и ее свойства.html">Производная многочлена и ее свойства</a><br/>
+    ◦ <a href="theorems\Кратные множители многочлена.html">Кратные множители многочлена. Алгоритм выделения кратных множителей</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Разложение многочленов на неприводимые множители над полем действительных чисел.html">Разложение многочленов на неприводимые множители над полем действительных чисел</a></p>
+<p>◦ <a href="theorems\Разложение многочленов на неприводимые множители над полем действительных чисел.html">Разложение многочленов на неприводимые множители над полем действительных чисел</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Лексикографический порядок на множестве и его свойства.html">Лексикографический порядок на множестве и его свойства</a></p>
+<p>◦ <a href="theorems\Лексикографический порядок на множестве и его свойства.html">Лексикографический порядок на множестве и его свойства</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Симметрические многочлены.html">Симметрические многочлены</a><br/>
-    ◦ <a href="theorems/Представление симметрического многочлена через основные симметрические многочлены.html">Представление симметрического многочлена через основные симметрические многочлены</a></p>
+<p>◦ <a href="theorems\Симметрические многочлены.html">Симметрические многочлены</a><br/>
+    ◦ <a href="theorems\Представление симметрического многочлена через основные симметрические многочлены.html">Представление симметрического многочлена через основные симметрические многочлены</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Перестановки.html">Перестановки. Инверсии и четность перестановки. Транспозиции в перестановках</a><br/>
-    ◦ <a href="theorems/Подстановки.html">Подстановки. Четность подстановки</a></p>
+<p>◦ <a href="theorems\Перестановки.html">Перестановки. Инверсии и четность перестановки. Транспозиции в перестановках</a><br/>
+    ◦ <a href="theorems\Подстановки.html">Подстановки. Четность подстановки</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Определитель и его свойства.html">Определение определителя квадратной матрицы. Свойства определителя квадратной матрицы</a></p>
+<p>◦ <a href="theorems\Определитель и его свойства.html">Определение определителя квадратной матрицы. Свойства определителя квадратной матрицы</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Минорный ранг матрицы.html">Минорный ранг матрицы</a></p>
+<p>◦ <a href="theorems\Минорный ранг матрицы.html">Минорный ранг матрицы</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Понятие минора матрицы.html">Понятие минора матрицы</a><br/>
-    ◦ <a href="theorems/Теорема Лапласа.html">Теорема Лапласа</a></p>
+<p>◦ <a href="theorems\Понятие минора матрицы.html">Понятие минора матрицы</a><br/>
+    ◦ <a href="theorems\Теорема Лапласа.html">Теорема Лапласа</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Полураспавшиеся и распавшиеся матрицы.html">Полураспавшиеся и распавшиеся матрицы. Определитель полураспавшейся и квазидиагональной матриц</a></p>
+<p>◦ <a href="theorems\Полураспавшиеся и распавшиеся матрицы.html">Полураспавшиеся и распавшиеся матрицы. Определитель полураспавшейся и квазидиагональной матриц</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Определитель произведения квадратных матриц.html">Определитель произведения квадратных матриц</a></p>
+<p>◦ <a href="theorems\Определитель произведения квадратных матриц.html">Определитель произведения квадратных матриц</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Формулы Крамера.html">Крамеровы системы линейных уравнений. Формулы Крамера</a></p>
+<p>◦ <a href="theorems\Формулы Крамера.html">Крамеровы системы линейных уравнений. Формулы Крамера</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Критерий обратимости матрицы в терминах её определителя.html">Критерий обратимости матрицы в терминах её определителя</a><br/>
-    ◦ <a href="theorems/Формула для обратной матрицы.html">Формула для обратной матрицы</a></p>
+<p>◦ <a href="theorems\Критерий обратимости матрицы в терминах её определителя.html">Критерий обратимости матрицы в терминах её определителя</a><br/>
+    ◦ <a href="theorems\Формула для обратной матрицы.html">Формула для обратной матрицы</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Собственные числа и собственные векторы линейного преобразования.html">Собственные числа и собственные векторы линейного преобразования</a><br/>
-    ◦ <a href="theorems/Характеристический многочлен.html">Характеристический многочлен. Условия существования собственных векторов</a></p>
+<p>◦ <a href="theorems\Собственные числа и собственные векторы линейного преобразования.html">Собственные числа и собственные векторы линейного преобразования</a><br/>
+    ◦ <a href="theorems\Характеристический многочлен.html">Характеристический многочлен. Условия существования собственных векторов</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Инвариантные подпространства линейного преобразования.html">Инвариантные подпространства линейного преобразования</a><br/>
-    ◦ <a href="theorems/Матрица линейного преобразования с инвариантными подпространствами.html">Матрица линейного преобразования с инвариантными подпространствами</a></p>
+<p>◦ <a href="theorems\Инвариантные подпространства линейного преобразования.html">Инвариантные подпространства линейного преобразования</a><br/>
+    ◦ <a href="theorems\Матрица линейного преобразования с инвариантными подпространствами.html">Матрица линейного преобразования с инвариантными подпространствами</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Сопряженное отображение.html">Сопряжённое отображение. Его свойства и единственность</a></p>
+<p>◦ <a href="theorems\Сопряженное отображение.html">Сопряжённое отображение. Его свойства и единственность</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Дважды сопряженное отображение.html">Дважды сопряженное отображение. Существование сопряженного отображения</a></p>
+<p>◦ <a href="theorems\Дважды сопряженное отображение.html">Дважды сопряженное отображение. Существование сопряженного отображения</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Взаимосвязь между инвариантными подпространствами линейного преобразования и сопряженного к нему.html">Взаимосвязь между инвариантными подпространствами линейного преобразования и сопряженного к нему</a><br/>
-    ◦ <a href="theorems/Нормальное преобразование и свойства его собственных векторов.html">Нормальное преобразование и свойства его собственных векторов</a></p>
+<p>◦ <a href="theorems\Взаимосвязь между инвариантными подпространствами линейного преобразования и сопряженного к нему.html">Взаимосвязь между инвариантными подпространствами линейного преобразования и сопряженного к нему</a><br/>
+    ◦ <a href="theorems\Нормальное преобразование и свойства его собственных векторов.html">Нормальное преобразование и свойства его собственных векторов</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Теорема о структуре нормального оператора.html">Теорема о структуре нормального линейного преобразования (случай разложимости характеристического многочлена на линейные множители)</a></p>
+<p>◦ <a href="theorems\Теорема о структуре нормального оператора.html">Теорема о структуре нормального линейного преобразования (случай разложимости характеристического многочлена на линейные множители)</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Изометрические операторы и их свойства.html">Изометрические операторы и их свойства</a></p>
+<p>◦ <a href="theorems\Изометрические операторы и их свойства.html">Изометрические операторы и их свойства</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Самосопряженные линейные преобразования.html">Самосопряженные линейные преобразования</a><br/>
-    ◦ <a href="theorems/Строение их матрицы.html">Строение их матрицы</a></p>
+<p>◦ <a href="theorems\Самосопряженные линейные преобразования.html">Самосопряженные линейные преобразования</a><br/>
+    ◦ <a href="theorems\Строение их матрицы.html">Строение их матрицы</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Сингулярное представление линейного отображения.html">Сингулярное представление линейного отображения</a></p>
+<p>◦ <a href="theorems\Сингулярное представление линейного отображения.html">Сингулярное представление линейного отображения</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Билинейные и квадратичные функции и формы.html">Билинейные и квадратичные функции. Билинейные и квадратичные формы. Матрица билинейной формы</a><br/>
-    ◦ <a href="theorems/Эквивалентные формы и матрицы.html">Эквивалентные формы и матрицы</a></p>
+<p>◦ <a href="theorems\Билинейные и квадратичные функции и формы.html">Билинейные и квадратичные функции. Билинейные и квадратичные формы. Матрица билинейной формы</a><br/>
+    ◦ <a href="theorems\Эквивалентные формы и матрицы.html">Эквивалентные формы и матрицы</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Квадратичные функции и формы.html">Квадратичные функции и формы</a><br/>
-    ◦ <a href="theorems/Эквивалентность квадратичных функций и форм.html">Связь с симметричными билинейными функциями и формами. Эквивалентность квадратичных функций и форм</a></p>
+<p>◦ <a href="theorems\Квадратичные функции и формы.html">Квадратичные функции и формы</a><br/>
+    ◦ <a href="theorems\Эквивалентность квадратичных функций и форм.html">Связь с симметричными билинейными функциями и формами. Эквивалентность квадратичных функций и форм</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Приведение вещественной квадратичной формы к главным осям.html">Приведение вещественной квадратичной формы к главным осям</a></p>
+<p>◦ <a href="theorems\Приведение вещественной квадратичной формы к главным осям.html">Приведение вещественной квадратичной формы к главным осям</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Канонический и нормальный виды квадратичной формы.html">Канонический и нормальный виды квадратичной формы</a><br/>
-    ◦ <a href="theorems/Приведение формы к каноническому виду.html">Приведение формы к каноническому виду</a><br/>
-    ◦ <a href="theorems/Единственность нормального вида над C.html">Единственность нормального вида над</a> $\mathbb{C}$</p>
+<p>◦ <a href="theorems\Канонический и нормальный виды квадратичной формы.html">Канонический и нормальный виды квадратичной формы</a><br/>
+    ◦ <a href="theorems\Приведение формы к каноническому виду.html">Приведение формы к каноническому виду</a><br/>
+    ◦ <a href="theorems\Единственность нормального вида над C.html">Единственность нормального вида над</a> $\mathbb{C}$</p>
 </li>
 <li>
-<p>◦ <a href="theorems/Закон инерции вещественных квадратичных форм.html">Закон инерции вещественных квадратичных форм</a></p>
+<p>◦ <a href="theorems\Закон инерции вещественных квадратичных форм.html">Закон инерции вещественных квадратичных форм</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Знакоопределённые формы и критерий Сильвестра.html">Знакоопределённые вещественные квадратичные формы. Критерий Сильвестра</a></p>
+<p>◦ <a href="theorems\Знакоопределённые формы и критерий Сильвестра.html">Знакоопределённые вещественные квадратичные формы. Критерий Сильвестра</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Эллипс.html">Эллипс</a></p>
+<p>◦ <a href="theorems\Эллипс.html">Эллипс</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Директориальное свойство эллипса.html">Директориальное свойство эллипса</a></p>
+<p>◦ <a href="theorems\Директориальное свойство эллипса.html">Директориальное свойство эллипса</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Гипербола.html">Гипербола</a></p>
+<p>◦ <a href="theorems\Гипербола.html">Гипербола</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Директориальное свойство гиперболы.html">Директориальное свойство гиперболы</a></p>
+<p>◦ <a href="theorems\Директориальное свойство гиперболы.html">Директориальное свойство гиперболы</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Парабола.html">Парабола</a></p>
+<p>◦ <a href="theorems\Парабола.html">Парабола</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Приведение кривых второго порядка к каноническому виду.html">Приведение кривых второго порядка к каноническому виду</a></p>
+<p>◦ <a href="theorems\Приведение кривых второго порядка к каноническому виду.html">Приведение кривых второго порядка к каноническому виду</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Цилиндрические поверхности.html">Цилиндрические поверхности</a></p>
+<p>◦ <a href="theorems\Цилиндрические поверхности.html">Цилиндрические поверхности</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Конические поверхности.html">Конические поверхности</a></p>
+<p>◦ <a href="theorems\Конические поверхности.html">Конические поверхности</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Параболоиды.html">Параболоиды</a></p>
+<p>◦ <a href="theorems\Параболоиды.html">Параболоиды</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Гиперболоиды.html">Гиперболоиды</a></p>
+<p>◦ <a href="theorems\Гиперболоиды.html">Гиперболоиды</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Приведение поверхностей второго порядка к каноническому виду.html">Приведение поверхностей второго порядка к каноническому виду</a></p>
+<p>◦ <a href="theorems\Приведение поверхностей второго порядка к каноническому виду.html">Приведение поверхностей второго порядка к каноническому виду</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Эллипсоид.html">Эллипсоид</a></p>
+<p>◦ <a href="theorems\Эллипсоид.html">Эллипсоид</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Корневые подпространства.html">Корневые подпространства</a></p>
+<p>◦ <a href="theorems\Корневые подпространства.html">Корневые подпространства</a></p>
 </li>
 <li>
-<p>◦ <a href="theorems/Существование жорданова базиса.html">Существование жорданова базиса. Жорданова форма матрицы</a></p>
+<p>◦ <a href="theorems\Существование жорданова базиса.html">Существование жорданова базиса. Жорданова форма матрицы</a></p>
 </li>
 </ol>
 <p>Дополнительная информация:<br/>
-- <a href="theorems/Матрицы перехода.html">Матрицы перехода</a><br/>
-- <a href="theorems/Теорема Виета.html">Теорема Виета</a></p></div>
+- <a href="theorems\Матрицы перехода.html">Матрицы перехода</a><br/>
+- <a href="theorems\Теорема Виета.html">Теорема Виета</a></p></div>
 </body>
 </html>

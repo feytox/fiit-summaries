@@ -2,7 +2,6 @@ import markdown
 from pathlib import Path
 import re
 from bs4 import BeautifulSoup
-import markdown.inlinepatterns as md_inl
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -151,7 +150,6 @@ class App:
             r'<b>\1</b>',
             markdown_html, flags=re.DOTALL
         )
-
 
         markdown_html = re.sub(
             r'<code>spoiler-markdown(.*?)</code>',

@@ -14,147 +14,168 @@
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
 <style>
-        :root {
-            --obsidian-background: #1a1a1a;
-            --obsidian-text-color: #e0e0e0;
-            --obsidian-link-color: #7da9e2;
-            --obsidian-heading-color: #ffffff;
-            --obsidian-border-color: #444444;
-            --obsidian-code-background: #2b2b2b;
-            --obsidian-code-text: #c7254e;
-        }
+    :root {
+        /* Основные цвета */
+        --obsidian-background: #181818; /* Немного темнее */
+        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
+        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-heading-color: #ffffff;
+        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-code-background: #2a2a2a;
+        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
+        --obsidian-container-background: #222222; /* Темнее для контейнера */
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-            line-height: 1.6;
-            color: var(--obsidian-text-color);
-            background-color: var(--obsidian-background);
-            margin: 1px;
-            justify-content: center;
-            min-height: 100vh;
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.7; /* Увеличил межстрочный интервал */
+        color: var(--obsidian-text-color);
+        background-color: var(--obsidian-background);
+        margin: 0; /* Убрал отступы по умолчанию */
+        display: flex; /* Используем flexbox для центрирования */
+        justify-content: center;
+        align-items: flex-start; /* Выравнивание по верху */
+        min-height: 100vh;
+        padding: 20px; /* Добавил небольшой отступ по всему краю */
+        box-sizing: border-box; /* Важно для padding */
+    }
 
-        .content {
-            margin-left: 20%;
-            margin-right: 20%;
-        }
+    .content {
+        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
+        width: 100%;
+        max-width: 1000px; /* Максимальная ширина для всего контента */
+        padding: 0 20px; /* Отступы по бокам */
+        box-sizing: border-box;
+    }
 
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background-color: #262626;
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--obsidian-border-color);
-        }
+    .container {
+        max-width: 800px;
+        width: 100%;
+        background-color: var(--obsidian-container-background);
+        padding: 40px; /* Увеличил padding */
+        border-radius: 10px; /* Слегка увеличил скругление */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        border: 1px solid var(--obsidian-border-color);
+    }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--obsidian-heading-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            line-height: 1.2;
-        }
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--obsidian-heading-color);
+        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-bottom: 1em;
+        line-height: 1.3;
+        font-weight: 600; /* Немного жирнее */
+    }
 
-        h1 { font-size: 2.2em; }
-        h2 { font-size: 1.8em; }
-        h3 { font-size: 1.5em; }
-        h4 { font-size: 1.2em; }
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    h4 { font-size: 1.3em; }
 
-        a {
-            color: var(--obsidian-link-color);
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
+    a {
+        color: var(--obsidian-link-color);
+        text-decoration: none;
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+    }
 
-        a:hover {
-            color: #92bce6;
-            text-decoration: underline;
-        }
+    a:hover {
+        color: #a0c4ff; /* Более светлый синий при наведении */
+        text-decoration: underline;
+    }
 
-        p {
-            margin-bottom: 1em;
-        }
+    p {
+        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+    }
 
-        .spoiler-markdown {
-            background-color: var(--obsidian-code-background);
-            color: var(--obsidian-code-background);
-        }
+    .spoiler-markdown {
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-code-background); /* Текст невидим */
+        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        padding: 2px 5px;
+        border-radius: 4px;
+        transition: color 0.3s ease-in-out;
+    }
 
-        .spoiler-markdown:hover {
-            color: var(--obsidian-text-background);
-        }
+    .spoiler-markdown:hover {
+        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+    }
 
-        ul, ol {
-            margin-bottom: 1em;
-            padding-left: 25px;
-        }
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 30px; /* Немного больше отступ для списков */
+    }
 
-        li {
-            margin-bottom: 0.5em;
-        }
+    li {
+        margin-bottom: 0.6em;
+    }
 
-        pre {
-            background-color: var(--obsidian-code-background);
-            border-radius: 5px;
-            padding: 15px;
-            overflow-x: auto;
-            margin-bottom: 1em;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            font-size: 0.9em;
-        }
+    pre {
+        background-color: var(--obsidian-code-background);
+        border-radius: 6px;
+        padding: 18px; /* Немного больше padding */
+        overflow-x: auto;
+        margin-bottom: 1.5em;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 0.95em; /* Немного крупнее шрифт */
+        line-height: 1.5;
+    }
 
-        code {
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            color: var(--obsidian-code-text);
-            background-color: var(--obsidian-code-background);
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
+    code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        color: var(--obsidian-code-text);
+        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
 
-        pre code {
-            background-color: transparent;
-            color: inherit;
-            padding: 0;
-        }
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
 
-        blockquote {
-            border-left: 4px solid var(--obsidian-border-color);
-            margin: 1.5em 0;
-            padding: 0.5em 20px;
-            color: #aaaaaa;
-            font-style: italic;
-        }
+    blockquote {
+        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
+        margin: 2em 0; /* Больше отступов */
+        padding: 0.8em 25px;
+        color: #b0b0b0; /* Немного светлее */
+        font-style: italic;
+        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        border-radius: 4px;
+    }
 
-        hr {
-            border: none;
-            border-top: 1px solid var(--obsidian-border-color);
-            margin: 3em 0;
-        }
+    hr {
+        border: none;
+        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
+        margin: 3.5em 0; /* Больше отступов */
+    }
 
-        strong, b {
-            font-weight: 600;
-        }
+    strong, b {
+        font-weight: 700; /* Более выраженное жирное начертание */
+    }
 
-        em, i {
-            font-style: italic;
-        }
+    em, i {
+        font-style: italic;
+    }
 
-        #back-button {
-            font-size: 1.2em;
-            height: 1.4em;
-            display: none;
-            cursor: pointer;
-            background-color: var(--obsidian-code-background);
-            color: var(--obsidian-code-color);
-            border: var(--obsidian-border-color);
-            border-radius: 5px;
-        }
+    #back-button {
+        font-size: 1.1em;
+        padding: 8px 15px; /* Добавил padding */
+        display: inline-block; /* Для корректного padding и margin */
+        cursor: pointer;
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        border: 1px solid var(--obsidian-border-color);
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        margin-top: 20px; /* Отступ сверху */
+    }
 
-        #back-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    #back-button:hover {
+        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        color: #ffffff;
+        border-color: var(--obsidian-link-color);
+    }
+</style>
 </head>
 <body>
 <script>
@@ -224,12 +245,12 @@ $$\mathcal{A}^{k}x = \mathcal{A}^{k}(\mathcal{A}^{k}y) = \mathcal{A}^{2k}y = 0 \
 <p><b>Утверждение 2</b><br/>
 $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$-инварианты из построения.</p>
 <p><b>Утверждение 3</b><br/>
-$$(\mathcal{A}|{N{\mathcal{A}}})^{k} = (\mathcal{A}|{N{\mathcal{A}}})^{k}|{N{\mathcal{A}}} = \mathcal{A}^{k}|{N{\mathcal{A}}} = 0$$<br/>
+$$(\mathcal{A}|_{N_{\mathcal{A}}})^{k} = (\mathcal{A}|_{N_{\mathcal{A}}})^{k}|_{N_{\mathcal{A}}} = \mathcal{A}^{k}|_{N_{\mathcal{A}}} = 0$$<br/>
 А значит оператор нильпотентен со ступенью нильпотентности $k$</p>
 <p><b>Утверждение 4</b><br/>
 Так как:<br/>
-$$\operatorname{Ker} \mathcal{A^{k}}|{U{\mathcal{A}}} = \operatorname{Ker} \mathcal{A}^{k} \cap \operatorname{Im} \mathcal{A}^{k} = N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$$<br/>
-А значит $\mathcal{A}^{k}|{U{\mathcal{A}}}$ - обратим. Но тогда и $\mathcal{A}|{U{\mathcal{A}}}$ обратим.<br/>
+$$\operatorname{Ker} \mathcal{A^{k}}|_{U_{\mathcal{A}}} = \operatorname{Ker} \mathcal{A}^{k} \cap \operatorname{Im} \mathcal{A}^{k} = N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$$<br/>
+А значит $\mathcal{A}^{k}|_{U_{\mathcal{A}}}$ - обратим. Но тогда и $\mathcal{A}|_{U_{\mathcal{A}}}$ обратим.<br/>
 $\square$<br/>
 </p></div></p>
 <h2>Определение: Корневое подпространство</h2>
@@ -270,12 +291,12 @@ $\mathcal{A}x = \lambda_1 x$. Тогда $V = K_{\mathcal{A}}(\lambda_1)$. Ут�
 По <span>разложению Фиттинга</span> для оператора $\mathcal{A} - \lambda_1 \mathcal{E}$:<br/>
 $$V = N_{\mathcal{A} - \lambda_{1}\mathcal{E}} \oplus U_{\mathcal{A} - \lambda_{1}\mathcal{E}} = K_{\mathcal{A}}(\lambda_1) \oplus V'$$<br/>
 По наблюдению, оба пространства $\mathcal{A}$-инвариантны. Поэтому матрица в базисе, согласованном с разложением, имеет вид:<br/>
-$$ A = \begin{pmatrix} B &amp; \mathbf{0} \\ \mathbf{0} &amp; C \end{pmatrix} \qquad B = [\mathcal{A}|{K{\mathcal{A}}(\lambda_1)}] \quad C = [\mathcal{A}|{V'}]$$<br/>
-Из вида матрицы получаем, что $\det (A - \lambda E) = \det(B - \lambda E) \cdot \det(C - \lambda E)$, а значит $\chi{\mathcal{A}}(\lambda) = \chi_B(\lambda) \cdot \chi_C(\lambda)$</p>
-<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|{V'}$ обратим. Значит $\lambda{1}$ не является собственным для $\mathcal{A}|{V'}$, так как иначе:<br/>
-$$\exists{x \neq 0}\mathpunct{:}~~ (\mathcal{A} - \lambda{1}\mathcal{E})|{V'}(x) = \lambda{1}x - \lambda_{1}x = 0 \implies \operatorname{Ker} (\mathcal{A} - \lambda_{1}\mathcal{E})|{V'} \neq \{0\}$$<br/>
-что противоречит обратимости. Следовательно, $\chi{C}(\lambda_{1}) \neq 0$</p>
-<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|{K{\mathcal{A}}(\lambda_{1})}$ - нильпотентен. Значит $\lambda_{1}$ - единственное собственное для $\mathcal{A}|{K{\mathcal{A}}(\lambda_{1})}$, так как иначе:<br/>
+$$ A = \begin{pmatrix} B &amp; \mathbf{0} \\ \mathbf{0} &amp; C \end{pmatrix} \qquad B = [\mathcal{A}|_{K_{\mathcal{A}}(\lambda_1)}] \quad C = [\mathcal{A}|_{V'}]$$<br/>
+Из вида матрицы получаем, что $\det (A - \lambda E) = \det(B - \lambda E) \cdot \det(C - \lambda E)$, а значит $\chi_{\mathcal{A}}(\lambda) = \chi_B(\lambda) \cdot \chi_C(\lambda)$</p>
+<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'}$ обратим. Значит $\lambda_{1}$ не является собственным для $\mathcal{A}|_{V'}$, так как иначе:<br/>
+$$\exists{x \neq 0}\mathpunct{:}~~ (\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'}(x) = \lambda_{1}x - \lambda_{1}x = 0 \implies \operatorname{Ker} (\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'} \neq \{0\}$$<br/>
+что противоречит обратимости. Следовательно, $\chi_{C}(\lambda_{1}) \neq 0$</p>
+<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|_{K_{\mathcal{A}}(\lambda_{1})}$ - нильпотентен. Значит $\lambda_{1}$ - единственное собственное для $\mathcal{A}|_{K_{\mathcal{A}}(\lambda_{1})}$, так как иначе:<br/>
 $$\begin{align}<br/>
 \exists{\lambda_{2} \neq \lambda_{1}}~~ \exists{x \neq 0}\mathpunct{:}~~ &amp;(\mathcal{A} - \lambda_{1}\mathcal{E})(x) = \mathcal{A}x - \lambda_{1}x = (\lambda_{2} - \lambda_{1})x \neq 0 \\<br/>
 &amp;(\mathcal{A} - \lambda_{1}\mathcal{E})^{2}(x) = (\lambda_{2} - \lambda_{1})^{2}x \neq 0 \\<br/>
@@ -285,9 +306,9 @@ $$\begin{align}<br/>
 что противоречит нильпотентности. Следовательно, $\chi_{B}(\lambda) = (\lambda_{1} - \lambda)^{m}$, где $m = \operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$. А значит $\operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$ равно кратности $\lambda_{1}$.</p>
 <p>Получаем, что $\chi_{A}(\lambda) = (\lambda_{1} - \lambda)^{m} \chi_{C}(\lambda)$, а значит $\chi_{C}(\lambda)$ раскладывается на линейные множители.</p>
 <p>Поскольку $\chi_{C}(\lambda)$ раскладывается, $\operatorname{dim} V' &lt; n$ и в $V'$ нет векторов, отвечающих $\lambda_{1}$, то для $V'$ справедливо предположение индукции:<br/>
-$$ V' = \bigoplus_{i=2}^{k} K_{\mathcal{A}|{V'}}(\lambda_i) $$<br/>
+$$ V' = \bigoplus_{i=2}^{k} K_{\mathcal{A}|_{V'}}(\lambda_i) $$<br/>
 Следовательно,<br/>
-$$ V = K{\mathcal{A}}(\lambda_1) \oplus \bigoplus_{i=2}^{k} K_{\mathcal{A}}(\lambda_i) = \bigoplus_{i=1}^{k} K_{\mathcal{A}}(\lambda_i) $$<br/>
+$$ V = K_{\mathcal{A}}(\lambda_1) \oplus \bigoplus_{i=2}^{k} K_{\mathcal{A}}(\lambda_i) = \bigoplus_{i=1}^{k} K_{\mathcal{A}}(\lambda_i) $$<br/>
 $\square$<br/>
 </p></div></p>
 <h2>* Почему $\operatorname{Im} \mathcal{A}$ и ${} \operatorname{Ker} \mathcal{A} {}$ - $\mathcal{A}$-инвариантны?</h2>
