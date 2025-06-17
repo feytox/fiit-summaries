@@ -2,6 +2,7 @@ import markdown
 from pathlib import Path
 import re
 from bs4 import BeautifulSoup
+import markdown.inlinepatterns as md_inl
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -84,8 +85,8 @@ class Structure:
 class DisableAsteriskExtension(markdown.Extension):
     def extendMarkdown(self, md):
         md.inlinePatterns.deregister('em_strong')
+        md.inlinePatterns.deregister('em_strong2')
         md.inlinePatterns.deregister('escape')
-
 
 class App:
     def __init__(self):
@@ -150,8 +151,7 @@ class App:
             r'<b>\1</b>',
             markdown_html, flags=re.DOTALL
         )
-        markdown_html = markdown_html.replace('<em>', '').replace('</em>', '')
-        markdown_html = markdown_html.replace('<strong>', '').replace('</strong>', '')
+
 
         markdown_html = re.sub(
             r'<code>spoiler-markdown(.*?)</code>',
