@@ -343,14 +343,18 @@ class A:
 - ○ <code>(?=...)</code><br/>
 - ○ <code>(?!...)</code><br/>
 - ○ другое<br/>
-- ○ <code>(?&gt;...)</code></p>
+- ○ <code>(?&gt;...)</code><br/>
+Ответ:<br/>
+<code>(?=...)</code></p>
 <h3>Задание 16</h3>
 <p>Каких режимов открытия файла не существует?<br/>
 - ☐ <code>rw</code><br/>
 - ☐ <code>ab</code><br/>
 - ☐ <code>r+b</code><br/>
 - ☐ <code>rb</code><br/>
-- ☐ <code>wb</code></p>
+- ☐ <code>wb</code><br/>
+Ответ:<br/>
+<code>rw</code></p>
 <h3>Задание 17</h3>
 <p>Как узнать имя функции <code>f</code>?<br/>
 - ○ <code>f.__name__</code><br/>
@@ -372,7 +376,9 @@ class A:
 - ○ <code>f.seek()</code><br/>
 - ○ другое<br/>
 - ○ <code>f.tell()</code><br/>
-- ○ никак</p>
+- ○ никак<br/>
+Ответ:<br/>
+<code>f.tell()</code></p>
 <h3>Задание 20</h3>
 <p>Как внутри метода <code>m</code> приведённого класса обратиться к полю <code>x</code> объекта?<br/>
 <code>python
@@ -384,7 +390,9 @@ class A:
 - ○ другое<br/>
 - ○ <code>this.x</code><br/>
 - ○ <code>x</code><br/>
-- ○ никак</p>
+- ○ никак<br/>
+Ответ:<br/>
+<code>obj.x</code></p>
 <h3>Задание 21</h3>
 <p>Какие из этих приведённых операций поддерживаются в Python?<br/>
 - ☐ //<br/>
@@ -394,7 +402,14 @@ class A:
 - ☐ /<br/>
 - ☐ %<br/>
 - ☐ +<br/>
-- ☐ </p>
+- ☐ <br/>
+Ответ:<br/>
+//<br/>
+*<br/>
+/<br/>
+%<br/>
++<br/>
+<b></b></p>
 <h3>Задание 22</h3>
 <p>Дан класс <code>A</code>. Как вызвать метод <code>__meth</code>?<br/>
 <code>python
@@ -406,12 +421,16 @@ class A:
 - ○ <code>A().__meth()</code><br/>
 - ○ никак<br/>
 - ○ <code>A()._A__meth()</code><br/>
-- ○ <code>A.__meth()</code></p>
+- ○ <code>A.__meth()</code><br/>
+Ответ:<br/>
+<code>A._A__meth()</code></p>
 <h3>Задание 23</h3>
 <p>Какая функция модуля <code>re</code> матчит соответствие только строки целиком?<br/>
 - ○ <code>re.fullmatch</code><br/>
 - ○ <code>re.match</code><br/>
-- ○ <code>re.search</code></p>
+- ○ <code>re.search</code><br/>
+Ответ:<br/>
+<code>re.fullmatch</code></p>
 <h3>Задание 24</h3>
 <p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?<br/>
 <code>python
@@ -422,12 +441,19 @@ def f(*x):
 - ☐ <code>f((1, 2))</code><br/>
 - ☐ <code>f({'x': 5})</code><br/>
 - ☐ <code>f(a=2, b=3)</code><br/>
-- ☐ <code>f({'a': 5})</code></p>
+- ☐ <code>f({'a': 5})</code><br/>
+Ответ:<br/>
+<code>f(*[1, 2, 3])</code><br/>
+<code>f((1, 2))</code><br/>
+<code>f({'x': 5})</code><br/>
+<code>f({'a': 5})</code></p>
 <h3>Задание 25</h3>
 <p>Что произойдёт, если в <code>set</code> добавить элемент, который уже содержится в нём?<br/>
 - ○ вылетит исключение<br/>
 - ○ элемент не добавится, метод добавления вернёт <code>False</code><br/>
-- ○ элемент не добавится, метод добавления вернёт <code>None</code></p>
+- ○ элемент не добавится, метод добавления вернёт <code>None</code><br/>
+Ответ:<br/>
+элемент не добавится, метод добавления вернёт <code>None</code></p>
 <h3>Задание 26</h3>
 <p>Что из перечисленного является встроенным типом в Python?<br/>
 - ☐ <code>str</code><br/>
@@ -450,9 +476,11 @@ def f(*x):
 - ☐ <code>a{1,1}</code><br/>
 - ☐ <code>a{0,1}</code></p>
 <h3>Задание 29</h3>
-<p>Чему эквивалентна запись <code>a<b>b</b>c</code>?<br/>
-- ○ <code>a<b>(b</b>c)</code><br/>
-- ○ <code>(a<b>b)</b>c</code></p>
+<p>Чему эквивалентна запись <code>ab<b>c</b></code>?<br/>
+- ○ <code>a(b<b>c)</b></code><br/>
+- ○ <code>(ab)<b>c</b></code><br/>
+Ответ:<br/>
+<code>a(b<b>c)</b></code></p>
 <h3>Задание 30</h3>
 <p>Можно ли класс объявить внутри класса / внутри функции?<br/>
 - ○ да / да<br/>
@@ -463,11 +491,11 @@ def f(*x):
 <p>Какие из указанных определений функции корректны?<br/>
 - ☐ <code>def f(x):</code><br/>
 - ☐ <code>def f(x, y=1):</code><br/>
-- ☐ <code>def f(x, <b>k, y):</b></code><br/>
+- ☐ <code>def f(x, k, y):</code><br/>
 - ☐ <code>def f(x=1, y):</code><br/>
 - ☐ <code>def f(x, *t):</code><br/>
 - ☐ <code>def f():</code><br/>
-- ☐ <code>def f(x, k):</code></p>
+- ☐ <code>def f(x, <b>k):</b></code></p>
 <h3>Задание 32</h3>
 <p>Какие из этих приведённых операций поддерживаются в Python?<br/>
 - ☐ //<br/>
@@ -477,7 +505,7 @@ def f(*x):
 - ☐ /<br/>
 - ☐ %<br/>
 - ☐ +<br/>
-- ☐ **</p>
+- ☐ </p>
 <h3>Задание 33</h3>
 <p>Чему эквивалентна запись <code>a*</code> в регулярных выражениях?<br/>
 - ☐ <code>a{1,}</code><br/>
