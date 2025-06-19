@@ -395,43 +395,6 @@ class A:
 - ☐ +<br/>
 - ☐ </p>
 <h3>Задание 22</h3>
-<p>Объекты каких классов может вернуть метод <code>read</code> у файла?<br/>
-- ☐ <code>bytes</code><br/>
-- ☐ <code>list</code><br/>
-- ☐ <code>int</code><br/>
-- ☐ <code>str</code></p>
-<h3>Задание 23</h3>
-<p>Каким образом задаётся заглядывание назад?<br/>
-- ○ <code>(?&lt;...)</code><br/>
-- ○ другое<br/>
-- ○ <code>(?!...)</code><br/>
-- ○ никак<br/>
-- ○ <code>(?:...)</code></p>
-<h3>Задание 24</h3>
-<p>Какой метод позволяет преобразовать объект типа <code>str</code> в объект типа <code>bytes</code>?<br/>
-- ○ другое<br/>
-- ○ <code>decode</code><br/>
-- ○ такого метода нет<br/>
-- ○ <code>encode</code></p>
-<h3>Задание 25</h3>
-<p>Выберите верное утверждение для приведённого кода:<br/>
-<code>python
-class A:
-    def f(self):
-        return 1
-    def f(self, x):
-        return x
-print(A().f())</code><br/>
-- ○ код напечатает 1<br/>
-- ○ класс <code>A</code> содержит синтаксическую ошибку, будет выброшено <code>SyntaxError</code><br/>
-- ○ при вызове <code>A.f</code> без параметров будет выброшено <code>TypeError</code></p>
-<h3>Задание 26</h3>
-<p>Что из перечисленного является <code>tuple</code>?<br/>
-- ☐ <code>(1)</code><br/>
-- ☐ <code>1,</code><br/>
-- ☐ <code>1, 2</code><br/>
-- ☐ <code>(1, 2)</code></p>
-<h3>Задание 27</h3>
 <p>Дан класс <code>A</code>. Как вызвать метод <code>__meth</code>?<br/>
 <code>python
 class A:
@@ -443,12 +406,12 @@ class A:
 - ○ никак<br/>
 - ○ <code>A()._A__meth()</code><br/>
 - ○ <code>A.__meth()</code></p>
-<h3>Задание 28</h3>
+<h3>Задание 23</h3>
 <p>Какая функция модуля <code>re</code> матчит соответствие только строки целиком?<br/>
 - ○ <code>re.fullmatch</code><br/>
 - ○ <code>re.match</code><br/>
 - ○ <code>re.search</code></p>
-<h3>Задание 29</h3>
+<h3>Задание 24</h3>
 <p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?<br/>
 <code>python
 def f(*x):
@@ -459,82 +422,141 @@ def f(*x):
 - ☐ <code>f({'x': 5})</code><br/>
 - ☐ <code>f(a=2, b=3)</code><br/>
 - ☐ <code>f({'a': 5})</code></p>
-<h3>Задание 30</h3>
-<p>Дан файловый объект <code>f</code>. Как получить текущую позицию в файле?<br/>
-- ○ <code>f.pos</code><br/>
-- ○ <code>f.seek()</code><br/>
-- ○ другое<br/>
-- ○ <code>f.tell()</code><br/>
-- ○ никак</p>
-<h3>Задание 31</h3>
+<h3>Задание 25</h3>
 <p>Что произойдёт, если в <code>set</code> добавить элемент, который уже содержится в нём?<br/>
 - ○ вылетит исключение<br/>
 - ○ элемент не добавится, метод добавления вернёт <code>False</code><br/>
 - ○ элемент не добавится, метод добавления вернёт <code>None</code></p>
+<h3>Задание 26</h3>
+<p>Что из перечисленного является встроенным типом в Python?<br/>
+- ☐ <code>str</code><br/>
+- ☐ <code>bytes</code><br/>
+- ☐ <code>unicode</code><br/>
+- ☐ <code>char</code><br/>
+- ☐ <code>bytearray</code></p>
+<h3>Задание 27</h3>
+<p>Объекты каких типов являются изменяемыми?<br/>
+- ☐ <code>tuple</code><br/>
+- ☐ <code>set</code><br/>
+- ☐ <code>frozenset</code><br/>
+- ☐ <code>dict</code><br/>
+- ☐ <code>list</code></p>
+<h3>Задание 28</h3>
+<p>Чему эквивалентна запись <code>a+</code> в регулярных выражениях?<br/>
+- ☐ <code>a{1,}</code><br/>
+- ☐ <code>a{0,}</code><br/>
+- ☐ <code>a{1}</code><br/>
+- ☐ <code>a{1,1}</code><br/>
+- ☐ <code>a{0,1}</code></p>
+<h3>Задание 29</h3>
+<p>Чему эквивалентна запись <code>a<b>b</b>c</code>?<br/>
+- ○ <code>a<b>(b</b>c)</code><br/>
+- ○ <code>(a<b>b)</b>c</code></p>
+<h3>Задание 30</h3>
+<p>Можно ли класс объявить внутри класса / внутри функции?<br/>
+- ○ да / да<br/>
+- ○ да / нет<br/>
+- ○ нет / нет<br/>
+- ○ нет / да</p>
+<h3>Задание 31</h3>
+<p>Какие из указанных определений функции корректны?<br/>
+- ☐ <code>def f(x):</code><br/>
+- ☐ <code>def f(x, y=1):</code><br/>
+- ☐ <code>def f(x, <b>k, y):</b></code><br/>
+- ☐ <code>def f(x=1, y):</code><br/>
+- ☐ <code>def f(x, *t):</code><br/>
+- ☐ <code>def f():</code><br/>
+- ☐ <code>def f(x, k):</code></p>
 <h3>Задание 32</h3>
-<p>Каких режимов открытия файла не существует?<br/>
-- ☐ <code>b</code><br/>
-- ☐ <code>rw</code><br/>
-- ☐ <code>wb</code><br/>
-- ☐ <code>r+</code><br/>
-- ☐ <code>x</code></p>
+<p>Какие из этих приведённых операций поддерживаются в Python?<br/>
+- ☐ //<br/>
+- ☐ *<br/>
+- ☐ %%<br/>
+- ☐ ++<br/>
+- ☐ /<br/>
+- ☐ %<br/>
+- ☐ +<br/>
+- ☐ **</p>
 <h3>Задание 33</h3>
-<p>Укажите все выражения, результатом которых является <code>1</code>.<br/>
+<p>Чему эквивалентна запись <code>a*</code> в регулярных выражениях?<br/>
+- ☐ <code>a{1,}</code><br/>
+- ☐ <code>a{0,1}</code><br/>
+- ☐ <code>a{1,1}</code><br/>
+- ☐ <code>a{0,}</code></p>
+<h3>Задание 34</h3>
+<p>Дана строка <code>s</code>. Как узнать её длину?<br/>
+- ○ <code>s.size</code><br/>
+- ○ <code>s.__len__</code><br/>
+- ○ <code>len(s)</code><br/>
+- ○ <code>length(s)</code><br/>
+- ○ <code>s.length</code></p>
+<h3>Задание 35</h3>
+<p>Есть ли различия между объявлениями классов <code>A</code>, <code>B</code> и <code>C</code>?<br/>
 <code>python
 class A:
-    @classmethod
-    def f(cls):
-        return 1</code><br/>
-- ☐ <code>A.f()</code><br/>
-- ☐ <code>A.f(A())</code><br/>
-- ☐ <code>A.f</code><br/>
-- ☐ <code>A().f()</code><br/>
-- ☐ <code>A::f()</code></p>
-<h3>Задание 34</h3>
-<p>Что возвращает метод <code>__new__</code> класса?<br/>
-- ○ созданный объект класса<br/>
-- ○ другое<br/>
-- ○ ничего</p>
-<h3>Задание 35</h3>
-<p>Какие из перечисленных объектов можно положить в <code>set</code>?<br/>
-- ☐ <code>None</code><br/>
-- ☐ <code>1j</code><br/>
-- ☐ <code>True</code><br/>
-- ☐ <code>()</code><br/>
-- ☐ <code>f'1'</code><br/>
-- ☐ <code>{1: 1}</code></p>
+    pass
+class B():
+    pass
+class C(object):
+    pass</code><br/>
+- ○ нет отличий<br/>
+- ○ отличается <code>B</code><br/>
+- ○ все различны<br/>
+- ○ отличается <code>A</code><br/>
+- ○ отличается <code>C</code></p>
 <h3>Задание 36</h3>
-<p>Является ли синтаксически корректным выражение <code>3 &gt; 2 &gt; 1</code>?<br/>
-- ○ да<br/>
-- ○ нет</p>
+<p>Какие фрагменты кода создадут словари?<br/>
+- ☐ <code>dict(['one', 'two', 'three'])</code><br/>
+- ☐ <code>{'one':1, 'two':2, 'three':3}</code><br/>
+- ☐ <code>{'one', 'two', 'three'}</code><br/>
+- ☐ <code>dict([('one':1), ('two':2), ('three':3)])</code><br/>
+- ☐ <code>dict([('one', 1), ('two', 2), ('three', 3)])</code></p>
 <h3>Задание 37</h3>
-<p>Что делает метод <code>replace</code> класса <code>str</code>?<br/>
-- ○ другое<br/>
-- ○ заменяет в строке вхождения подстроки на заданную<br/>
-- ○ создаёт новую строку, в которой заменены вхождения подстроки на заданную и возвращает её<br/>
-- ○ такого метода нет</p>
-<h3>Задание 38</h3>
-<p>Какая функция модуля <code>re</code> матчит соответствие где-то в строке?<br/>
+<p>Какая функция модуля <code>re</code> матчит соответствие только в начале строки?<br/>
 - ○ <code>re.fullmatch</code><br/>
 - ○ <code>re.search</code><br/>
 - ○ <code>re.match</code></p>
+<h3>Задание 38</h3>
+<p>Какие фрагменты кода создадут множество с одним элементом?<br/>
+- ☐ <code>set('aaa')</code><br/>
+- ☐ <code>set({1})</code><br/>
+- ☐ <code>{{1}}</code><br/>
+- ☐ <code>set('aaAAaaaAa')</code><br/>
+- ☐ <code>{1, 1}</code></p>
 <h3>Задание 39</h3>
-<p>Дан файловый объект <code>f</code>. Как получить текущую позицию в файле?<br/>
-- ○ <code>f.pos</code><br/>
-- ○ <code>f.seek()</code><br/>
-- ○ другое<br/>
-- ○ <code>f.tell()</code><br/>
-- ○ никак</p>
+<p>Что из перечисленного является <code>tuple</code>?<br/>
+- ☐ <code>(1)</code><br/>
+- ☐ <code>1,</code><br/>
+- ☐ <code>1, 2</code><br/>
+- ☐ <code>(1, 2)</code></p>
 <h3>Задание 40</h3>
-<p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?<br/>
-<code>python
-def f(x, *y, <b>z):
-    pass</b></code><br/>
-- ☐ <code>f({})</code><br/>
-- ☐ <code>f(10)</code><br/>
-- ☐ <code>f()</code><br/>
-- ☐ <code>f(**{10})</code><br/>
-- ☐ <code>f(*[10])</code><br/>
-- ☐ <code>f(10, a=10)</code></p></div>
+<p>Какие из перечисленных объектов можно положить в <code>set</code>?<br/>
+- ☐ <code>{1}</code><br/>
+- ☐ <code>1/1</code><br/>
+- ☐ <code>b''</code><br/>
+- ☐ <code>(1)</code><br/>
+- ☐ <code>([1], 1)</code><br/>
+- ☐ <code>'1'</code></p>
+<h3>Задание 41</h3>
+<p>Что делает метод <code>count</code> класса <code>str</code>?<br/>
+- ○ возвращает количество вхождений подстроки в строку<br/>
+- ○ такого метода нет<br/>
+- ○ возвращает количество символов строки<br/>
+- ○ возвращает количество непересекающихся вхождений подстроки в строку<br/>
+- ○ другое</p>
+<h3>Задание 42</h3>
+<p>Дан словарь <code>d</code>. Как пройтись по всем его ключам?<br/>
+- ☐ <code>for k in d.items:</code><br/>
+- ☐ <code>for k in d:</code><br/>
+- ☐ <code>for k in d.keys:</code><br/>
+- ☐ <code>for k in d.items():</code><br/>
+- ☐ <code>for k in d.keys():</code></p>
+<h3>Задание 43</h3>
+<p>Есть ли разница между значениями выражений: <code>s.split()</code>, <code>s.split(' ')</code>, <code>re.split(r'\s+', s)</code>?<br/>
+- ○ одинаковы 1 и 2<br/>
+- ○ разницы нет<br/>
+- ○ все различны<br/>
+- ○ одинаковы 1 и 3<br/>
+- ○ одинаковы 2 и 3</p></div>
 </body>
 </html>
