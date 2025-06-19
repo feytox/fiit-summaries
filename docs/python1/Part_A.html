@@ -188,8 +188,11 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>Part_A</h1><h1>ФАЙЛ В РАЗРАБОТКЕ</h1>
-<p>Примечание: в списке не представлены дубликаты заданий (возможно)</p>
+<h1>Part_A</h1><h2>Примечание</h2>
+<ul>
+<li>Могут быть ошибки, могут быть не все задания</li>
+<li>В списке не представлены дубликаты заданий (возможно)</li>
+</ul>
 <h3>Задание 1</h3>
 <p>Какие из перечисленных методов есть у класса <code>str</code>, но отсутствуют у <code>bytes</code>?<br/>
 ☐  <code>count</code><br/>
@@ -200,9 +203,9 @@
 ☐  <code>isdecimal</code><br/>
 ☐  <code>index</code><br/>
 Ответ:<br/>
-<code>casefold</code><br/>
-<code>isdecimal</code><br/>
-<code>encode</code></p>
+- <code>encode</code><br/>
+- <code>casefold</code><br/>
+- <code>isdecimal</code></p>
 <h3>Задание 2</h3>
 <p>Каких режимов открытия файла не существует?<br/>
 ☐  <code>b</code><br/>
@@ -211,8 +214,8 @@
 ☐  <code>r+</code><br/>
 ☐  <code>x</code><br/>
 Ответ:<br/>
-<code>b</code><br/>
-<code>rw</code></p>
+- <code>b</code><br/>
+- <code>rw</code></p>
 <h3>Задание 3</h3>
 <p>Объекты каких классов может вернуть метод <code>read</code> у файла?<br/>
 ☐  <code>bytes</code><br/>
@@ -220,18 +223,17 @@
 ☐  <code>int</code><br/>
 ☐  <code>str</code><br/>
 Ответ:<br/>
-<code>bytes</code><br/>
-<code>str</code></p>
+- <code>bytes</code><br/>
+- <code>str</code></p>
 <h3>Задание 4</h3>
 <p>Выберите верные утверждения. Остаток от деления...<br/>
 ☐  ... всегда положителен<br/>
 ☐  ... может быть больше делителя<br/>
 ☐  ... может быть больше делимого<br/>
-☐  ... всегда неположителен если делитель отрицатеelen<br/>
+☐  ... всегда неположителен если делитель отрицателен<br/>
 Ответ:<br/>
-может быть больше делителя<br/>
-может быть больше делимого<br/>
-всегда неположителен если делитель отрицатеelen</p>
+- может быть больше делимого<br/>
+- всегда неположителен если делитель отрицателен</p>
 <h3>Задание 5</h3>
 <p>Каким образом задаётся заглядывание назад?<br/>
 ○  <code>(?&lt;...)</code><br/>
@@ -240,7 +242,7 @@
 ○  никак<br/>
 ○  <code>(?:...)</code><br/>
 Ответ:<br/>
-другое</p>
+- другое: <code>(?&lt;=...)</code> положительное, <code>(?&lt;!...)</code> отрицательное</p>
 <h3>Задание 6</h3>
 <p>Какие из перечисленных объектов можно положить в <code>set</code>?<br/>
 ☐  <code>'1'</code><br/>
@@ -250,9 +252,9 @@
 ☐  <code>[1]</code><br/>
 ☐  <code>bytearray()</code><br/>
 Ответ:<br/>
-<code>'1'</code><br/>
-<code>r'1'</code><br/>
-<code>(1, 1)</code></p>
+- <code>'1'</code><br/>
+- <code>r'1'</code><br/>
+- <code>(1, 1)</code></p>
 <h3>Задание 7</h3>
 <p>Выберите верное утверждение для приведённого кода:</p>
 <pre><code class="language-python">class A:
@@ -266,7 +268,7 @@ print(A().f())
 ○  класс <code>A</code> содержит синтаксическую ошибку, будет выброшено <code>SyntaxError</code><br/>
 ○  при вызове <code>A.f</code> без параметров будет выброшено <code>TypeError</code><br/>
 Ответ:<br/>
-при вызове <code>A.f</code> без параметров будет выброшено <code>TypeError</code></p>
+- при вызове <code>A.f</code> без параметров будет выброшено <code>TypeError</code></p>
 <h3>Задание 8</h3>
 <p>Дан словарь <code>d</code> и ключ <code>k</code>. Какая разница между выражениями <code>d[k]</code> и <code>d.get(k)</code>?<br/>
 ○  разницы нет<br/>
@@ -275,7 +277,7 @@ print(A().f())
 ○  если ключ <code>k</code> отсутствует, второе выбросит исключение<br/>
 ○  если ключ <code>k</code> отсутствует, первое выбросит исключение, а второе вернёт <code>None</code><br/>
 Ответ: <br/>
-если ключ <code>k</code> отсутствует, первое выбросит исключение, а второе вернёт <code>None</code></p>
+- если ключ <code>k</code> отсутствует, первое выбросит исключение, а второе вернёт <code>None</code></p>
 <h3>Задание 9</h3>
 <p>Какой тип возвращаемого значения у <code>re.findall</code>?<br/>
 ○  кортеж<br/>
@@ -283,7 +285,7 @@ print(A().f())
 ○  список<br/>
 ○  генератор<br/>
 Ответ:<br/>
-список</p>
+- список</p>
 <h3>Задание 10</h3>
 <p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?</p>
 <pre><code class="language-python">def f(x, *y, **z):
@@ -296,9 +298,9 @@ print(A().f())
 ☐  <code>f(*[10])</code><br/>
 ☐  <code>f(10, a=10)</code><br/>
 Ответ:<br/>
-<code>f(10)</code><br/>
-<code>f(*[10])</code><br/>
-<code>f(10, a=10)</code></p>
+- <code>f(10)</code><br/>
+- <code>f(*[10])</code><br/>
+- <code>f(10, a=10)</code></p>
 <h3>Задание 11</h3>
 <p>Объектом какого класса является функция?<br/>
 ○  никаким<br/>
@@ -307,7 +309,7 @@ print(A().f())
 ○  <code>code</code><br/>
 ○  ничего из перечисленного<br/>
 Ответ:<br/>
-<code>function</code></p>
+- <code>function</code></p>
 <h3>Задание 12</h3>
 <p>Какой метод позволяет преобразовать объект типа <code>str</code> в объект типа <code>bytearray</code>?<br/>
 ○  <code>encode</code><br/>
@@ -315,7 +317,7 @@ print(A().f())
 ○  <code>decode</code><br/>
 ○  другое<br/>
 Ответ:<br/>
-такого метода нет</p>
+- такого метода нет (для этого используется конструктор: <code>bytearray(s, encoding)</code>, где <code>s</code> — строка.)</p>
 <h3>Задание 13</h3>
 <p>Укажите все выражения, результатом которых является <code>1</code>.</p>
 <pre><code class="language-python">class A:
@@ -328,18 +330,8 @@ print(A().f())
 ☐  <code>A::f()</code><br/>
 ☐  <code>A.f</code><br/>
 Ответ:<br/>
-<code>A.f()</code></p>
+- <code>A.f()</code></p>
 <h3>Задание 14</h3>
-<p>Выберите верные утверждения. Остаток от деления...<br/>
-☐  ... всегда положителен<br/>
-☐  ... может быть больше делителя<br/>
-☐  ... может быть больше делимого<br/>
-☐  ... всегда неположителен если делитель отрицателен<br/>
-Ответ:<br/>
-может быть больше делителя<br/>
-может быть больше делимого<br/>
-всегда неположителен если делитель отрицателен</p>
-<h3>Задание 15</h3>
 <p>Каким образом задаётся заглядывание вперёд?<br/>
 ○  никак<br/>
 ○  <code>(?=...)</code><br/>
@@ -347,8 +339,8 @@ print(A().f())
 ○  другое<br/>
 ○  <code>(?&gt;...)</code><br/>
 Ответ:<br/>
-<code>(?=...)</code></p>
-<h3>Задание 16</h3>
+- <code>(?=...)</code></p>
+<h3>Задание 15</h3>
 <p>Каких режимов открытия файла не существует?<br/>
 ☐  <code>rw</code><br/>
 ☐  <code>ab</code><br/>
@@ -356,23 +348,23 @@ print(A().f())
 ☐  <code>rb</code><br/>
 ☐  <code>wb</code><br/>
 Ответ:<br/>
-<code>rw</code></p>
-<h3>Задание 17</h3>
+- <code>rw</code></p>
+<h3>Задание 16</h3>
 <p>Как узнать имя функции <code>f</code>?<br/>
 ○  <code>f.__name__</code><br/>
 ○  другое<br/>
 ○  никак<br/>
 ○  <code>f.name</code><br/>
 Ответ:<br/>
-<code>f.__name__</code></p>
-<h3>Задание 18</h3>
+- <code>f.__name__</code></p>
+<h3>Задание 17</h3>
 <p>Как создать одноэлементный <code>tuple</code>?<br/>
 ○  <code>(1)</code><br/>
 ○  <code>(1,)</code><br/>
 ○  <code>tuple(1)</code><br/>
 Ответ:<br/>
-<code>(1,)</code></p>
-<h3>Задание 19</h3>
+- <code>(1,)</code></p>
+<h3>Задание 18</h3>
 <p>Дан файловый объект <code>f</code>. Как получить текущую позицию в файле?<br/>
 ○  <code>f.pos</code><br/>
 ○  <code>f.seek()</code><br/>
@@ -380,8 +372,8 @@ print(A().f())
 ○  <code>f.tell()</code><br/>
 ○  никак<br/>
 Ответ:<br/>
-<code>f.tell()</code></p>
-<h3>Задание 20</h3>
+- <code>f.tell()</code></p>
+<h3>Задание 19</h3>
 <p>Как внутри метода <code>m</code> приведённого класса обратиться к полю <code>x</code> объекта?</p>
 <pre><code class="language-python">class A:
     def m(obj):
@@ -394,8 +386,8 @@ print(A().f())
 ○  <code>x</code><br/>
 ○  никак<br/>
 Ответ:<br/>
-<code>obj.x</code></p>
-<h3>Задание 21</h3>
+- <code>obj.x</code></p>
+<h3>Задание 20</h3>
 <p>Какие из этих приведённых операций поддерживаются в Python?<br/>
 ☐  //<br/>
 ☐  *<br/>
@@ -406,13 +398,13 @@ print(A().f())
 ☐  +<br/>
 ☐  **<br/>
 Ответ:<br/>
-//<br/>
-*<br/>
-/<br/>
-%<br/>
-+<br/>
-**</p>
-<h3>Задание 22</h3>
+- //<br/>
+- *<br/>
+- /<br/>
+- %<br/>
+- +<br/>
+- **</p>
+<h3>Задание 21</h3>
 <p>Дан класс <code>A</code>. Как вызвать метод <code>__meth</code>?</p>
 <pre><code class="language-python">class A:
     def __meth(self):
@@ -425,15 +417,15 @@ print(A().f())
 ○  <code>A()._A__meth()</code><br/>
 ○  <code>A.__meth()</code><br/>
 Ответ:<br/>
-<code>A._A__meth()</code></p>
-<h3>Задание 23</h3>
+- <code>A()._A__meth()</code></p>
+<h3>Задание 22</h3>
 <p>Какая функция модуля <code>re</code> матчит соответствие только строки целиком?<br/>
 ○  <code>re.fullmatch</code><br/>
 ○  <code>re.match</code><br/>
 ○  <code>re.search</code><br/>
 Ответ:<br/>
-<code>re.fullmatch</code></p>
-<h3>Задание 24</h3>
+- <code>re.fullmatch</code></p>
+<h3>Задание 23</h3>
 <p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?</p>
 <pre><code class="language-python">def f(*x):
     pass
@@ -445,51 +437,63 @@ print(A().f())
 ☐  <code>f(a=2, b=3)</code><br/>
 ☐  <code>f({'a': 5})</code><br/>
 Ответ:<br/>
-<code>f(*[1, 2, 3])</code><br/>
-<code>f((1, 2))</code><br/>
-<code>f({'x': 5})</code><br/>
-<code>f({'a': 5})</code></p>
-<h3>Задание 25</h3>
+- <code>f(*[1, 2, 3])</code><br/>
+- <code>f((1, 2))</code><br/>
+- <code>f({'x': 5})</code><br/>
+- <code>f({'a': 5})</code></p>
+<h3>Задание 24</h3>
 <p>Что произойдёт, если в <code>set</code> добавить элемент, который уже содержится в нём?<br/>
 ○  вылетит исключение<br/>
 ○  элемент не добавится, метод добавления вернёт <code>False</code><br/>
 ○  элемент не добавится, метод добавления вернёт <code>None</code><br/>
 Ответ:<br/>
-элемент не добавится, метод добавления вернёт <code>None</code></p>
-<h3>Задание 26</h3>
+- элемент не добавится, метод добавления вернёт <code>None</code></p>
+<h3>Задание 25</h3>
 <p>Что из перечисленного является встроенным типом в Python?<br/>
 ☐  <code>str</code><br/>
 ☐  <code>bytes</code><br/>
 ☐  <code>unicode</code><br/>
 ☐  <code>char</code><br/>
-☐  <code>bytearray</code></p>
-<h3>Задание 27</h3>
+☐  <code>bytearray</code><br/>
+Ответ:<br/>
+- <code>str</code><br/>
+- <code>bytes</code><br/>
+- <code>bytearray</code></p>
+<h3>Задание 26</h3>
 <p>Объекты каких типов являются изменяемыми?<br/>
 ☐  <code>tuple</code><br/>
 ☐  <code>set</code><br/>
 ☐  <code>frozenset</code><br/>
 ☐  <code>dict</code><br/>
-☐  <code>list</code></p>
-<h3>Задание 28</h3>
+☐  <code>list</code><br/>
+Ответ:<br/>
+- <code>set</code><br/>
+- <code>dict</code><br/>
+- <code>list</code></p>
+<h3>Задание 27</h3>
 <p>Чему эквивалентна запись <code>a+</code> в регулярных выражениях?<br/>
 ☐  <code>a{1,}</code><br/>
 ☐  <code>a{0,}</code><br/>
 ☐  <code>a{1}</code><br/>
 ☐  <code>a{1,1}</code><br/>
-☐  <code>a{0,1}</code></p>
-<h3>Задание 29</h3>
+☐  <code>a{0,1}</code><br/>
+Ответ:<br/>
+- <code>a{1,}</code></p>
+<h3>Задание 28</h3>
 <p>Чему эквивалентна запись <code>a**b**c</code>?<br/>
 ○  <code>a**(b**c)</code><br/>
 ○  <code>(a**b)**c</code><br/>
 Ответ:<br/>
-<code>a**(b**c)</code></p>
-<h3>Задание 30</h3>
+- <code>a**(b**c)</code></p>
+<h3>Задание 29</h3>
 <p>Можно ли класс объявить внутри класса / внутри функции?<br/>
 ○  да / да<br/>
 ○  да / нет<br/>
 ○  нет / нет<br/>
-○  нет / да</p>
-<h3>Задание 31</h3>
+○  нет / да<br/>
+Ответ:<br/>
+- да / да</p>
+<h3>Задание 30</h3>
 <p>Какие из указанных определений функции корректны?<br/>
 ☐  <code>def f(x):</code><br/>
 ☐  <code>def f(x, y=1):</code><br/>
@@ -497,31 +501,31 @@ print(A().f())
 ☐  <code>def f(x=1, y):</code><br/>
 ☐  <code>def f(x, *t):</code><br/>
 ☐  <code>def f():</code><br/>
-☐  <code>def f(x, **k):</code></p>
-<h3>Задание 32</h3>
-<p>Какие из этих приведённых операций поддерживаются в Python?<br/>
-☐  //<br/>
-☐  *<br/>
-☐  \%%<br/>
-☐  ++<br/>
-☐  /<br/>
-☐  %<br/>
-☐  +<br/>
-☐  **</p>
-<h3>Задание 33</h3>
+☐  <code>def f(x, **k):</code><br/>
+Ответ:<br/>
+- <code>def f(x):</code><br/>
+- <code>def f(x, y=1):</code><br/>
+- <code>def f(x, *t):</code><br/>
+- <code>def f():</code><br/>
+- <code>def f(x, **k):</code></p>
+<h3>Задание 31</h3>
 <p>Чему эквивалентна запись <code>a*</code> в регулярных выражениях?<br/>
 ☐  <code>a{1,}</code><br/>
 ☐  <code>a{0,1}</code><br/>
 ☐  <code>a{1,1}</code><br/>
-☐  <code>a{0,}</code></p>
-<h3>Задание 34</h3>
+☐  <code>a{0,}</code><br/>
+Ответ:<br/>
+- <code>a{0,}</code></p>
+<h3>Задание 32</h3>
 <p>Дана строка <code>s</code>. Как узнать её длину?<br/>
 ○  <code>s.size</code><br/>
 ○  <code>s.__len__</code><br/>
 ○  <code>len(s)</code><br/>
 ○  <code>length(s)</code><br/>
-○  <code>s.length</code></p>
-<h3>Задание 35</h3>
+○  <code>s.length</code><br/>
+Ответ:<br/>
+- <code>len(s)</code></p>
+<h3>Задание 33</h3>
 <p>Есть ли различия между объявлениями классов <code>A</code>, <code>B</code> и <code>C</code>?</p>
 <pre><code class="language-python">class A:
     pass
@@ -534,60 +538,87 @@ class C(object):
 ○  отличается <code>B</code><br/>
 ○  все различны<br/>
 ○  отличается <code>A</code><br/>
-○  отличается <code>C</code></p>
-<h3>Задание 36</h3>
+○  отличается <code>C</code><br/>
+Ответ:<br/>
+- нет отличий</p>
+<h3>Задание 34</h3>
 <p>Какие фрагменты кода создадут словари?<br/>
 ☐  <code>dict(['one', 'two', 'three'])</code><br/>
 ☐  <code>{'one':1, 'two':2, 'three':3}</code><br/>
 ☐  <code>{'one', 'two', 'three'}</code><br/>
 ☐  <code>dict([('one':1), ('two':2), ('three':3)])</code><br/>
-☐  <code>dict([('one', 1), ('two', 2), ('three', 3)])</code></p>
-<h3>Задание 37</h3>
+☐  <code>dict([('one', 1), ('two', 2), ('three', 3)])</code><br/>
+Ответ:<br/>
+- <code>{'one':1, 'two':2, 'three':3}</code><br/>
+- <code>dict([('one', 1), ('two', 2), ('three', 3)])</code></p>
+<h3>Задание 35</h3>
 <p>Какая функция модуля <code>re</code> матчит соответствие только в начале строки?<br/>
 ○  <code>re.fullmatch</code><br/>
 ○  <code>re.search</code><br/>
-○  <code>re.match</code></p>
-<h3>Задание 38</h3>
+○  <code>re.match</code><br/>
+Ответ:<br/>
+- <code>re.match</code></p>
+<h3>Задание 36</h3>
 <p>Какие фрагменты кода создадут множество с одним элементом?<br/>
 ☐  <code>set('aaa')</code><br/>
 ☐  <code>set({1})</code><br/>
 ☐  <code>{{1}}</code><br/>
 ☐  <code>set('aaAAaaaAa')</code><br/>
-☐  <code>{1, 1}</code></p>
-<h3>Задание 39</h3>
+☐  <code>{1, 1}</code><br/>
+Ответ:<br/>
+- <code>set('aaa')</code><br/>
+- <code>set({1})</code><br/>
+- <code>{1, 1}</code></p>
+<h3>Задание 37</h3>
 <p>Что из перечисленного является <code>tuple</code>?<br/>
 ☐  <code>(1)</code><br/>
 ☐  <code>1,</code><br/>
 ☐  <code>1, 2</code><br/>
-☐  <code>(1, 2)</code></p>
-<h3>Задание 40</h3>
+☐  <code>(1, 2)</code><br/>
+Ответ:<br/>
+- <code>1,</code><br/>
+- <code>1, 2</code><br/>
+- <code>(1, 2)</code></p>
+<h3>Задание 38</h3>
 <p>Какие из перечисленных объектов можно положить в <code>set</code>?<br/>
 ☐  <code>{1}</code><br/>
 ☐  <code>1/1</code><br/>
 ☐  <code>b''</code><br/>
 ☐  <code>(1)</code><br/>
 ☐  <code>([1], 1)</code><br/>
+☐  <code>'1'</code><br/>
+Ответ:<br/>
+☐  <code>1/1</code><br/>
+☐  <code>b''</code><br/>
+☐  <code>(1)</code><br/>
 ☐  <code>'1'</code></p>
-<h3>Задание 41</h3>
+<h3>Задание 39</h3>
 <p>Что делает метод <code>count</code> класса <code>str</code>?<br/>
 ○  возвращает количество вхождений подстроки в строку<br/>
 ○  такого метода нет<br/>
 ○  возвращает количество символов строки<br/>
 ○  возвращает количество непересекающихся вхождений подстроки в строку<br/>
-○  другое</p>
-<h3>Задание 42</h3>
+○  другое<br/>
+Ответ:<br/>
+- возвращает количество непересекающихся вхождений подстроки в строку</p>
+<h3>Задание 40</h3>
 <p>Дан словарь <code>d</code>. Как пройтись по всем его ключам?<br/>
 ☐  <code>for k in d.items:</code><br/>
 ☐  <code>for k in d:</code><br/>
 ☐  <code>for k in d.keys:</code><br/>
 ☐  <code>for k in d.items():</code><br/>
-☐  <code>for k in d.keys():</code></p>
-<h3>Задание 43</h3>
+☐  <code>for k in d.keys():</code><br/>
+Ответ:<br/>
+- <code>for k in d:</code><br/>
+- <code>for k in d.keys():</code></p>
+<h3>Задание 41</h3>
 <p>Есть ли разница между значениями выражений: <code>s.split()</code>, <code>s.split(' ')</code>, <code>re.split(r'\s+', s)</code>?<br/>
 ○  одинаковы 1 и 2<br/>
 ○  разницы нет<br/>
 ○  все различны<br/>
 ○  одинаковы 1 и 3<br/>
-○  одинаковы 2 и 3</p></div>
+○  одинаковы 2 и 3<br/>
+Ответ:<br/>
+- одинаковы 1 и 3</p></div>
 </body>
 </html>
