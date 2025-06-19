@@ -144,21 +144,13 @@ class App:
 
         # Нужно это чудо по-нормальному написать, но мне лень писать через расширения
         md_text = re.sub(r"(?<!#\s)([0-9]+?\.)", r"\n\1", md_text)
-        markdown_html = markdown.markdown(md_text, extensions=[DisableAsteriskExtension(), 'nl2br'])
-        markdown_html = re.sub(
-            r'\*\*(.*?)\*\*',
-            r'<b>\1</b>',
-            markdown_html, flags=re.DOTALL
-        )
+        md_text = re.sub(r"-\s*?☐\s*?", "☐ ", md_text)
+        md_text = re.sub(r"-\s*?☑\s*?", "☑ ", md_text)
+        md_text = re.sub(r"-\s*?○\s*?", "○ ", md_text)
+        markdown_html = markdown.markdown(md_text, extensions=[DisableAsteriskExtension(), 'fenced_code', 'nl2br'])
 
         markdown_html = re.sub(
-            r'<code>spoiler-markdown(.*?)</code>',
-            r'<div class="spoiler-markdown"><p>\1</p></div>',
-            markdown_html, flags=re.DOTALL
-        )
-
-        markdown_html = re.sub(
-            r'```spoiler-markdown(.*?)```',
+            r'<pre><code class="language-spoiler-markdown">(.*?)</code></pre>',
             r'<div class="spoiler-markdown"><p>\1</p></div>',
             markdown_html, flags=re.DOTALL
         )
