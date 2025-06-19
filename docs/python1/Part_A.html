@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,378 +187,407 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Part_A</h1><h1>ФАЙЛ В РАЗРАБОТКЕ</h1>
+<div class="content">
+<h1>Part_A</h1><h1>ФАЙЛ В РАЗРАБОТКЕ</h1>
 <p>Примечание: в списке не представлены дубликаты заданий (возможно)</p>
 <h3>Задание 1</h3>
 <p>Какие из перечисленных методов есть у класса <code>str</code>, но отсутствуют у <code>bytes</code>?<br/>
-- ☐ <code>count</code><br/>
-- ☐ <code>encode</code><br/>
-- ☐ <code>casefold</code><br/>
-- ☐ <code>decode</code><br/>
-- ☐ <code>fromhex</code><br/>
-- ☐ <code>isdecimal</code><br/>
-- ☐ <code>index</code><br/>
+☐  <code>count</code><br/>
+☐  <code>encode</code><br/>
+☐  <code>casefold</code><br/>
+☐  <code>decode</code><br/>
+☐  <code>fromhex</code><br/>
+☐  <code>isdecimal</code><br/>
+☐  <code>index</code><br/>
 Ответ:<br/>
 <code>casefold</code><br/>
 <code>isdecimal</code><br/>
 <code>encode</code></p>
 <h3>Задание 2</h3>
 <p>Каких режимов открытия файла не существует?<br/>
-- ☐ <code>b</code><br/>
-- ☐ <code>rw</code><br/>
-- ☐ <code>wb</code><br/>
-- ☐ <code>r+</code><br/>
-- ☐ <code>x</code><br/>
+☐  <code>b</code><br/>
+☐  <code>rw</code><br/>
+☐  <code>wb</code><br/>
+☐  <code>r+</code><br/>
+☐  <code>x</code><br/>
 Ответ:<br/>
 <code>b</code><br/>
 <code>rw</code></p>
 <h3>Задание 3</h3>
 <p>Объекты каких классов может вернуть метод <code>read</code> у файла?<br/>
-- ☐ <code>bytes</code><br/>
-- ☐ <code>list</code><br/>
-- ☐ <code>int</code><br/>
-- ☐ <code>str</code><br/>
+☐  <code>bytes</code><br/>
+☐  <code>list</code><br/>
+☐  <code>int</code><br/>
+☐  <code>str</code><br/>
 Ответ:<br/>
 <code>bytes</code><br/>
 <code>str</code></p>
 <h3>Задание 4</h3>
 <p>Выберите верные утверждения. Остаток от деления...<br/>
-- ☐ ... всегда положителен<br/>
-- ☐ ... может быть больше делителя<br/>
-- ☐ ... может быть больше делимого<br/>
-- ☐ ... всегда неположителен если делитель отрицатеelen<br/>
+☐  ... всегда положителен<br/>
+☐  ... может быть больше делителя<br/>
+☐  ... может быть больше делимого<br/>
+☐  ... всегда неположителен если делитель отрицатеelen<br/>
 Ответ:<br/>
 может быть больше делителя<br/>
 может быть больше делимого<br/>
 всегда неположителен если делитель отрицатеelen</p>
 <h3>Задание 5</h3>
 <p>Каким образом задаётся заглядывание назад?<br/>
-- ○ <code>(?&lt;...)</code><br/>
-- ○ другое<br/>
-- ○ <code>(?!...)</code><br/>
-- ○ никак<br/>
-- ○ <code>(?:...)</code><br/>
+○  <code>(?&lt;...)</code><br/>
+○  другое<br/>
+○  <code>(?!...)</code><br/>
+○  никак<br/>
+○  <code>(?:...)</code><br/>
 Ответ:<br/>
 другое</p>
 <h3>Задание 6</h3>
 <p>Какие из перечисленных объектов можно положить в <code>set</code>?<br/>
-- ☐ <code>'1'</code><br/>
-- ☐ <code>r'1'</code><br/>
-- ☐ <code>frozenset(1)</code><br/>
-- ☐ <code>(1, 1)</code><br/>
-- ☐ <code>[1]</code><br/>
-- ☐ <code>bytearray()</code><br/>
+☐  <code>'1'</code><br/>
+☐  <code>r'1'</code><br/>
+☐  <code>frozenset(1)</code><br/>
+☐  <code>(1, 1)</code><br/>
+☐  <code>[1]</code><br/>
+☐  <code>bytearray()</code><br/>
 Ответ:<br/>
 <code>'1'</code><br/>
 <code>r'1'</code><br/>
 <code>(1, 1)</code></p>
 <h3>Задание 7</h3>
-<p>Выберите верное утверждение для приведённого кода:<br/>
-<code>python
-class A:
+<p>Выберите верное утверждение для приведённого кода:</p>
+<pre><code class="language-python">class A:
     def f(self):
         return 1
     def f(self, x):
         return x
-print(A().f())</code><br/>
-- ○ код напечатает 1<br/>
-- ○ класс <code>A</code> содержит синтаксическую ошибку, будет выброшено <code>SyntaxError</code><br/>
-- ○ при вызове <code>A.f</code> без параметров будет выброшено <code>TypeError</code><br/>
+print(A().f())
+</code></pre>
+<p>○  код напечатает 1<br/>
+○  класс <code>A</code> содержит синтаксическую ошибку, будет выброшено <code>SyntaxError</code><br/>
+○  при вызове <code>A.f</code> без параметров будет выброшено <code>TypeError</code><br/>
 Ответ:<br/>
 при вызове <code>A.f</code> без параметров будет выброшено <code>TypeError</code></p>
 <h3>Задание 8</h3>
 <p>Дан словарь <code>d</code> и ключ <code>k</code>. Какая разница между выражениями <code>d[k]</code> и <code>d.get(k)</code>?<br/>
-- ○ разницы нет<br/>
-- ○ разница есть, но другая<br/>
-- ○ если ключ <code>k</code> отсутствует, первое вернёт <code>None</code>, а второе выбросит исключение<br/>
-- ○ если ключ <code>k</code> отсутствует, второе выбросит исключение<br/>
-- ○ если ключ <code>k</code> отсутствует, первое выбросит исключение, а второе вернёт <code>None</code><br/>
+○  разницы нет<br/>
+○  разница есть, но другая<br/>
+○  если ключ <code>k</code> отсутствует, первое вернёт <code>None</code>, а второе выбросит исключение<br/>
+○  если ключ <code>k</code> отсутствует, второе выбросит исключение<br/>
+○  если ключ <code>k</code> отсутствует, первое выбросит исключение, а второе вернёт <code>None</code><br/>
 Ответ: <br/>
 если ключ <code>k</code> отсутствует, первое выбросит исключение, а второе вернёт <code>None</code></p>
 <h3>Задание 9</h3>
 <p>Какой тип возвращаемого значения у <code>re.findall</code>?<br/>
-- ○ кортеж<br/>
-- ○ итератор<br/>
-- ○ список<br/>
-- ○ генератор<br/>
+○  кортеж<br/>
+○  итератор<br/>
+○  список<br/>
+○  генератор<br/>
 Ответ:<br/>
 список</p>
 <h3>Задание 10</h3>
-<p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?<br/>
-<code>python
-def f(x, *y, <b>z):
-    pass</b></code><br/>
-- ☐ <code>f({})</code><br/>
-- ☐ <code>f(10)</code><br/>
-- ☐ <code>f()</code><br/>
-- ☐ <code>f(<b>{10})</b></code><br/>
-- ☐ <code>f(*[10])</code><br/>
-- ☐ <code>f(10, a=10)</code><br/>
+<p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?</p>
+<pre><code class="language-python">def f(x, *y, **z):
+    pass
+</code></pre>
+<p>☐  <code>f(**{})</code><br/>
+☐  <code>f(10)</code><br/>
+☐  <code>f()</code><br/>
+☐  <code>f(**{10})</code><br/>
+☐  <code>f(*[10])</code><br/>
+☐  <code>f(10, a=10)</code><br/>
 Ответ:<br/>
 <code>f(10)</code><br/>
 <code>f(*[10])</code><br/>
 <code>f(10, a=10)</code></p>
 <h3>Задание 11</h3>
 <p>Объектом какого класса является функция?<br/>
-- ○ никаким<br/>
-- ○ <code>function</code><br/>
-- ○ <code>Function</code><br/>
-- ○ <code>code</code><br/>
-- ○ ничего из перечисленного<br/>
+○  никаким<br/>
+○  <code>function</code><br/>
+○  <code>Function</code><br/>
+○  <code>code</code><br/>
+○  ничего из перечисленного<br/>
 Ответ:<br/>
 <code>function</code></p>
 <h3>Задание 12</h3>
 <p>Какой метод позволяет преобразовать объект типа <code>str</code> в объект типа <code>bytearray</code>?<br/>
-- ○ <code>encode</code><br/>
-- ○ такого метода нет<br/>
-- ○ <code>decode</code><br/>
-- ○ другое<br/>
+○  <code>encode</code><br/>
+○  такого метода нет<br/>
+○  <code>decode</code><br/>
+○  другое<br/>
 Ответ:<br/>
 такого метода нет</p>
 <h3>Задание 13</h3>
-<p>Укажите все выражения, результатом которых является <code>1</code>.<br/>
-<code>python
-class A:
+<p>Укажите все выражения, результатом которых является <code>1</code>.</p>
+<pre><code class="language-python">class A:
     def f():
-        return 1</code><br/>
-- ☐ <code>A.f()</code><br/>
-- ☐ <code>A.f(A())</code><br/>
-- ☐ <code>A().f()</code><br/>
-- ☐ <code>A::f()</code><br/>
-- ☐ <code>A.f</code><br/>
+        return 1
+</code></pre>
+<p>☐  <code>A.f()</code><br/>
+☐  <code>A.f(A())</code><br/>
+☐  <code>A().f()</code><br/>
+☐  <code>A::f()</code><br/>
+☐  <code>A.f</code><br/>
 Ответ:<br/>
 <code>A.f()</code></p>
 <h3>Задание 14</h3>
 <p>Выберите верные утверждения. Остаток от деления...<br/>
-- ☐ ... всегда положителен<br/>
-- ☐ ... может быть больше делителя<br/>
-- ☐ ... может быть больше делимого<br/>
-- ☐ ... всегда неположителен если делитель отрицателен<br/>
+☐  ... всегда положителен<br/>
+☐  ... может быть больше делителя<br/>
+☐  ... может быть больше делимого<br/>
+☐  ... всегда неположителен если делитель отрицателен<br/>
 Ответ:<br/>
 может быть больше делителя<br/>
 может быть больше делимого<br/>
 всегда неположителен если делитель отрицателен</p>
 <h3>Задание 15</h3>
 <p>Каким образом задаётся заглядывание вперёд?<br/>
-- ○ никак<br/>
-- ○ <code>(?=...)</code><br/>
-- ○ <code>(?!...)</code><br/>
-- ○ другое<br/>
-- ○ <code>(?&gt;...)</code></p>
+○  никак<br/>
+○  <code>(?=...)</code><br/>
+○  <code>(?!...)</code><br/>
+○  другое<br/>
+○  <code>(?&gt;...)</code><br/>
+Ответ:<br/>
+<code>(?=...)</code></p>
 <h3>Задание 16</h3>
 <p>Каких режимов открытия файла не существует?<br/>
-- ☐ <code>rw</code><br/>
-- ☐ <code>ab</code><br/>
-- ☐ <code>r+b</code><br/>
-- ☐ <code>rb</code><br/>
-- ☐ <code>wb</code></p>
+☐  <code>rw</code><br/>
+☐  <code>ab</code><br/>
+☐  <code>r+b</code><br/>
+☐  <code>rb</code><br/>
+☐  <code>wb</code><br/>
+Ответ:<br/>
+<code>rw</code></p>
 <h3>Задание 17</h3>
 <p>Как узнать имя функции <code>f</code>?<br/>
-- ○ <code>f.__name__</code><br/>
-- ○ другое<br/>
-- ○ никак<br/>
-- ○ <code>f.name</code><br/>
+○  <code>f.__name__</code><br/>
+○  другое<br/>
+○  никак<br/>
+○  <code>f.name</code><br/>
 Ответ:<br/>
 <code>f.__name__</code></p>
 <h3>Задание 18</h3>
 <p>Как создать одноэлементный <code>tuple</code>?<br/>
-- ○ <code>(1)</code><br/>
-- ○ <code>(1,)</code><br/>
-- ○ <code>tuple(1)</code><br/>
+○  <code>(1)</code><br/>
+○  <code>(1,)</code><br/>
+○  <code>tuple(1)</code><br/>
 Ответ:<br/>
 <code>(1,)</code></p>
 <h3>Задание 19</h3>
 <p>Дан файловый объект <code>f</code>. Как получить текущую позицию в файле?<br/>
-- ○ <code>f.pos</code><br/>
-- ○ <code>f.seek()</code><br/>
-- ○ другое<br/>
-- ○ <code>f.tell()</code><br/>
-- ○ никак</p>
+○  <code>f.pos</code><br/>
+○  <code>f.seek()</code><br/>
+○  другое<br/>
+○  <code>f.tell()</code><br/>
+○  никак<br/>
+Ответ:<br/>
+<code>f.tell()</code></p>
 <h3>Задание 20</h3>
-<p>Как внутри метода <code>m</code> приведённого класса обратиться к полю <code>x</code> объекта?<br/>
-<code>python
-class A:
+<p>Как внутри метода <code>m</code> приведённого класса обратиться к полю <code>x</code> объекта?</p>
+<pre><code class="language-python">class A:
     def m(obj):
-        ...</code><br/>
-- ○ <code>self.x</code><br/>
-- ○ <code>obj.x</code><br/>
-- ○ другое<br/>
-- ○ <code>this.x</code><br/>
-- ○ <code>x</code><br/>
-- ○ никак</p>
+        ...
+</code></pre>
+<p>○  <code>self.x</code><br/>
+○  <code>obj.x</code><br/>
+○  другое<br/>
+○  <code>this.x</code><br/>
+○  <code>x</code><br/>
+○  никак<br/>
+Ответ:<br/>
+<code>obj.x</code></p>
 <h3>Задание 21</h3>
 <p>Какие из этих приведённых операций поддерживаются в Python?<br/>
-- ☐ //<br/>
-- ☐ *<br/>
-- ☐ <code>%%</code><br/>
-- ☐ ++<br/>
-- ☐ /<br/>
-- ☐ %<br/>
-- ☐ +<br/>
-- ☐ </p>
+☐  //<br/>
+☐  *<br/>
+☐  <code>%%</code><br/>
+☐  ++<br/>
+☐  /<br/>
+☐  %<br/>
+☐  +<br/>
+☐  **<br/>
+Ответ:<br/>
+//<br/>
+*<br/>
+/<br/>
+%<br/>
++<br/>
+**</p>
 <h3>Задание 22</h3>
-<p>Дан класс <code>A</code>. Как вызвать метод <code>__meth</code>?<br/>
-<code>python
-class A:
+<p>Дан класс <code>A</code>. Как вызвать метод <code>__meth</code>?</p>
+<pre><code class="language-python">class A:
     def __meth(self):
-        return 1</code><br/>
-- ○ <code>A._A__meth()</code><br/>
-- ○ другое<br/>
-- ○ <code>A().__meth()</code><br/>
-- ○ никак<br/>
-- ○ <code>A()._A__meth()</code><br/>
-- ○ <code>A.__meth()</code></p>
+        return 1
+</code></pre>
+<p>○  <code>A._A__meth()</code><br/>
+○  другое<br/>
+○  <code>A().__meth()</code><br/>
+○  никак<br/>
+○  <code>A()._A__meth()</code><br/>
+○  <code>A.__meth()</code><br/>
+Ответ:<br/>
+<code>A._A__meth()</code></p>
 <h3>Задание 23</h3>
 <p>Какая функция модуля <code>re</code> матчит соответствие только строки целиком?<br/>
-- ○ <code>re.fullmatch</code><br/>
-- ○ <code>re.match</code><br/>
-- ○ <code>re.search</code></p>
+○  <code>re.fullmatch</code><br/>
+○  <code>re.match</code><br/>
+○  <code>re.search</code><br/>
+Ответ:<br/>
+<code>re.fullmatch</code></p>
 <h3>Задание 24</h3>
-<p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?<br/>
-<code>python
-def f(*x):
-    pass</code><br/>
-- ☐ <code>f(*[1, 2, 3])</code><br/>
-- ☐ <code>f(x=1)</code><br/>
-- ☐ <code>f((1, 2))</code><br/>
-- ☐ <code>f({'x': 5})</code><br/>
-- ☐ <code>f(a=2, b=3)</code><br/>
-- ☐ <code>f({'a': 5})</code></p>
+<p>Функция объявлена так, как показано ниже. Какие способы вызова функции корректны?</p>
+<pre><code class="language-python">def f(*x):
+    pass
+</code></pre>
+<p>☐  <code>f(*[1, 2, 3])</code><br/>
+☐  <code>f(x=1)</code><br/>
+☐  <code>f((1, 2))</code><br/>
+☐  <code>f({'x': 5})</code><br/>
+☐  <code>f(a=2, b=3)</code><br/>
+☐  <code>f({'a': 5})</code><br/>
+Ответ:<br/>
+<code>f(*[1, 2, 3])</code><br/>
+<code>f((1, 2))</code><br/>
+<code>f({'x': 5})</code><br/>
+<code>f({'a': 5})</code></p>
 <h3>Задание 25</h3>
 <p>Что произойдёт, если в <code>set</code> добавить элемент, который уже содержится в нём?<br/>
-- ○ вылетит исключение<br/>
-- ○ элемент не добавится, метод добавления вернёт <code>False</code><br/>
-- ○ элемент не добавится, метод добавления вернёт <code>None</code></p>
+○  вылетит исключение<br/>
+○  элемент не добавится, метод добавления вернёт <code>False</code><br/>
+○  элемент не добавится, метод добавления вернёт <code>None</code><br/>
+Ответ:<br/>
+элемент не добавится, метод добавления вернёт <code>None</code></p>
 <h3>Задание 26</h3>
 <p>Что из перечисленного является встроенным типом в Python?<br/>
-- ☐ <code>str</code><br/>
-- ☐ <code>bytes</code><br/>
-- ☐ <code>unicode</code><br/>
-- ☐ <code>char</code><br/>
-- ☐ <code>bytearray</code></p>
+☐  <code>str</code><br/>
+☐  <code>bytes</code><br/>
+☐  <code>unicode</code><br/>
+☐  <code>char</code><br/>
+☐  <code>bytearray</code></p>
 <h3>Задание 27</h3>
 <p>Объекты каких типов являются изменяемыми?<br/>
-- ☐ <code>tuple</code><br/>
-- ☐ <code>set</code><br/>
-- ☐ <code>frozenset</code><br/>
-- ☐ <code>dict</code><br/>
-- ☐ <code>list</code></p>
+☐  <code>tuple</code><br/>
+☐  <code>set</code><br/>
+☐  <code>frozenset</code><br/>
+☐  <code>dict</code><br/>
+☐  <code>list</code></p>
 <h3>Задание 28</h3>
 <p>Чему эквивалентна запись <code>a+</code> в регулярных выражениях?<br/>
-- ☐ <code>a{1,}</code><br/>
-- ☐ <code>a{0,}</code><br/>
-- ☐ <code>a{1}</code><br/>
-- ☐ <code>a{1,1}</code><br/>
-- ☐ <code>a{0,1}</code></p>
+☐  <code>a{1,}</code><br/>
+☐  <code>a{0,}</code><br/>
+☐  <code>a{1}</code><br/>
+☐  <code>a{1,1}</code><br/>
+☐  <code>a{0,1}</code></p>
 <h3>Задание 29</h3>
-<p>Чему эквивалентна запись <code>a<b>b</b>c</code>?<br/>
-- ○ <code>a<b>(b</b>c)</code><br/>
-- ○ <code>(a<b>b)</b>c</code></p>
+<p>Чему эквивалентна запись <code>a**b**c</code>?<br/>
+○  <code>a**(b**c)</code><br/>
+○  <code>(a**b)**c</code><br/>
+Ответ:<br/>
+<code>a**(b**c)</code></p>
 <h3>Задание 30</h3>
 <p>Можно ли класс объявить внутри класса / внутри функции?<br/>
-- ○ да / да<br/>
-- ○ да / нет<br/>
-- ○ нет / нет<br/>
-- ○ нет / да</p>
+○  да / да<br/>
+○  да / нет<br/>
+○  нет / нет<br/>
+○  нет / да</p>
 <h3>Задание 31</h3>
 <p>Какие из указанных определений функции корректны?<br/>
-- ☐ <code>def f(x):</code><br/>
-- ☐ <code>def f(x, y=1):</code><br/>
-- ☐ <code>def f(x, <b>k, y):</b></code><br/>
-- ☐ <code>def f(x=1, y):</code><br/>
-- ☐ <code>def f(x, *t):</code><br/>
-- ☐ <code>def f():</code><br/>
-- ☐ <code>def f(x, k):</code></p>
+☐  <code>def f(x):</code><br/>
+☐  <code>def f(x, y=1):</code><br/>
+☐  <code>def f(x, **k, y):</code><br/>
+☐  <code>def f(x=1, y):</code><br/>
+☐  <code>def f(x, *t):</code><br/>
+☐  <code>def f():</code><br/>
+☐  <code>def f(x, **k):</code></p>
 <h3>Задание 32</h3>
 <p>Какие из этих приведённых операций поддерживаются в Python?<br/>
-- ☐ //<br/>
-- ☐ *<br/>
-- ☐ %%<br/>
-- ☐ ++<br/>
-- ☐ /<br/>
-- ☐ %<br/>
-- ☐ +<br/>
-- ☐ **</p>
+☐  //<br/>
+☐  *<br/>
+☐  %%<br/>
+☐  ++<br/>
+☐  /<br/>
+☐  %<br/>
+☐  +<br/>
+☐  **</p>
 <h3>Задание 33</h3>
 <p>Чему эквивалентна запись <code>a*</code> в регулярных выражениях?<br/>
-- ☐ <code>a{1,}</code><br/>
-- ☐ <code>a{0,1}</code><br/>
-- ☐ <code>a{1,1}</code><br/>
-- ☐ <code>a{0,}</code></p>
+☐  <code>a{1,}</code><br/>
+☐  <code>a{0,1}</code><br/>
+☐  <code>a{1,1}</code><br/>
+☐  <code>a{0,}</code></p>
 <h3>Задание 34</h3>
 <p>Дана строка <code>s</code>. Как узнать её длину?<br/>
-- ○ <code>s.size</code><br/>
-- ○ <code>s.__len__</code><br/>
-- ○ <code>len(s)</code><br/>
-- ○ <code>length(s)</code><br/>
-- ○ <code>s.length</code></p>
+○  <code>s.size</code><br/>
+○  <code>s.__len__</code><br/>
+○  <code>len(s)</code><br/>
+○  <code>length(s)</code><br/>
+○  <code>s.length</code></p>
 <h3>Задание 35</h3>
-<p>Есть ли различия между объявлениями классов <code>A</code>, <code>B</code> и <code>C</code>?<br/>
-<code>python
-class A:
+<p>Есть ли различия между объявлениями классов <code>A</code>, <code>B</code> и <code>C</code>?</p>
+<pre><code class="language-python">class A:
     pass
 class B():
     pass
 class C(object):
-    pass</code><br/>
-- ○ нет отличий<br/>
-- ○ отличается <code>B</code><br/>
-- ○ все различны<br/>
-- ○ отличается <code>A</code><br/>
-- ○ отличается <code>C</code></p>
+    pass
+</code></pre>
+<p>○  нет отличий<br/>
+○  отличается <code>B</code><br/>
+○  все различны<br/>
+○  отличается <code>A</code><br/>
+○  отличается <code>C</code></p>
 <h3>Задание 36</h3>
 <p>Какие фрагменты кода создадут словари?<br/>
-- ☐ <code>dict(['one', 'two', 'three'])</code><br/>
-- ☐ <code>{'one':1, 'two':2, 'three':3}</code><br/>
-- ☐ <code>{'one', 'two', 'three'}</code><br/>
-- ☐ <code>dict([('one':1), ('two':2), ('three':3)])</code><br/>
-- ☐ <code>dict([('one', 1), ('two', 2), ('three', 3)])</code></p>
+☐  <code>dict(['one', 'two', 'three'])</code><br/>
+☐  <code>{'one':1, 'two':2, 'three':3}</code><br/>
+☐  <code>{'one', 'two', 'three'}</code><br/>
+☐  <code>dict([('one':1), ('two':2), ('three':3)])</code><br/>
+☐  <code>dict([('one', 1), ('two', 2), ('three', 3)])</code></p>
 <h3>Задание 37</h3>
 <p>Какая функция модуля <code>re</code> матчит соответствие только в начале строки?<br/>
-- ○ <code>re.fullmatch</code><br/>
-- ○ <code>re.search</code><br/>
-- ○ <code>re.match</code></p>
+○  <code>re.fullmatch</code><br/>
+○  <code>re.search</code><br/>
+○  <code>re.match</code></p>
 <h3>Задание 38</h3>
 <p>Какие фрагменты кода создадут множество с одним элементом?<br/>
-- ☐ <code>set('aaa')</code><br/>
-- ☐ <code>set({1})</code><br/>
-- ☐ <code>{{1}}</code><br/>
-- ☐ <code>set('aaAAaaaAa')</code><br/>
-- ☐ <code>{1, 1}</code></p>
+☐  <code>set('aaa')</code><br/>
+☐  <code>set({1})</code><br/>
+☐  <code>{{1}}</code><br/>
+☐  <code>set('aaAAaaaAa')</code><br/>
+☐  <code>{1, 1}</code></p>
 <h3>Задание 39</h3>
 <p>Что из перечисленного является <code>tuple</code>?<br/>
-- ☐ <code>(1)</code><br/>
-- ☐ <code>1,</code><br/>
-- ☐ <code>1, 2</code><br/>
-- ☐ <code>(1, 2)</code></p>
+☐  <code>(1)</code><br/>
+☐  <code>1,</code><br/>
+☐  <code>1, 2</code><br/>
+☐  <code>(1, 2)</code></p>
 <h3>Задание 40</h3>
 <p>Какие из перечисленных объектов можно положить в <code>set</code>?<br/>
-- ☐ <code>{1}</code><br/>
-- ☐ <code>1/1</code><br/>
-- ☐ <code>b''</code><br/>
-- ☐ <code>(1)</code><br/>
-- ☐ <code>([1], 1)</code><br/>
-- ☐ <code>'1'</code></p>
+☐  <code>{1}</code><br/>
+☐  <code>1/1</code><br/>
+☐  <code>b''</code><br/>
+☐  <code>(1)</code><br/>
+☐  <code>([1], 1)</code><br/>
+☐  <code>'1'</code></p>
 <h3>Задание 41</h3>
 <p>Что делает метод <code>count</code> класса <code>str</code>?<br/>
-- ○ возвращает количество вхождений подстроки в строку<br/>
-- ○ такого метода нет<br/>
-- ○ возвращает количество символов строки<br/>
-- ○ возвращает количество непересекающихся вхождений подстроки в строку<br/>
-- ○ другое</p>
+○  возвращает количество вхождений подстроки в строку<br/>
+○  такого метода нет<br/>
+○  возвращает количество символов строки<br/>
+○  возвращает количество непересекающихся вхождений подстроки в строку<br/>
+○  другое</p>
 <h3>Задание 42</h3>
 <p>Дан словарь <code>d</code>. Как пройтись по всем его ключам?<br/>
-- ☐ <code>for k in d.items:</code><br/>
-- ☐ <code>for k in d:</code><br/>
-- ☐ <code>for k in d.keys:</code><br/>
-- ☐ <code>for k in d.items():</code><br/>
-- ☐ <code>for k in d.keys():</code></p>
+☐  <code>for k in d.items:</code><br/>
+☐  <code>for k in d:</code><br/>
+☐  <code>for k in d.keys:</code><br/>
+☐  <code>for k in d.items():</code><br/>
+☐  <code>for k in d.keys():</code></p>
 <h3>Задание 43</h3>
 <p>Есть ли разница между значениями выражений: <code>s.split()</code>, <code>s.split(' ')</code>, <code>re.split(r'\s+', s)</code>?<br/>
-- ○ одинаковы 1 и 2<br/>
-- ○ разницы нет<br/>
-- ○ все различны<br/>
-- ○ одинаковы 1 и 3<br/>
-- ○ одинаковы 2 и 3</p></div>
+○  одинаковы 1 и 2<br/>
+○  разницы нет<br/>
+○  все различны<br/>
+○  одинаковы 1 и 3<br/>
+○  одинаковы 2 и 3</p></div>
 </body>
 </html>

@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,9 +187,9 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Существование жорданова базиса</h1><h2>Определение: Нильслой</h2>
-<p><div class="spoiler-markdown"><p>
-Система векторов $v_{1}, v_{2}, \dots, v_{k}$ называется <b>нильслоем</b>, если $$\begin{matrix}
+<div class="content">
+<h1>Существование жорданова базиса</h1><h2>Определение: Нильслой</h2>
+<div class="spoiler-markdown"><p>Система векторов $v_{1}, v_{2}, \dots, v_{k}$ называется **нильслоем**, если $$\begin{matrix}
 \mathcal{A}v_{1} = v_{2} \\
 \mathcal{A}v_{2} = v_{3} \\
 \dots\dots\dots \\
@@ -201,107 +202,96 @@ v_{1} &amp;= v_{1} \\
 v_{2} &amp;:= \mathcal{A}v_{1} \\
 &amp;\dots \\
 v_{k} &amp;:= \mathcal{A}v_{k - 1}
-\end{align} \right| \implies \mathcal{A}v_{k} = \mathcal{A}^{k}v_{1} = 0$$</p></div></p>
+\end{align} \right| \implies \mathcal{A}v_{k} = \mathcal{A}^{k}v_{1} = 0$$
+</p></div>
 <h2>Предложение: Линейная независимость нильслоя</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Нильслой - это линейно независимая система векторов.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Пусть $v_{1}, v_{2}, \dots, v_{k}$ - нильслой. Рассмотрим некоторую линейную комбинацию:<br/>
-$$\alpha_{1}v_{1} + \alpha_{2}v_{2} + \dots + \alpha_{k}v_{k} = 0 \qquad(1)$$<br/>
-От противного:  Система линейно зависима, то есть не все $\alpha_{i} = 0$<br/>
-Пусть $i$ - минимальный номер $\alpha_{i} \neq 0$, тогда $(1)$ имеет вид:<br/>
-$$\alpha_{i}v_{i} + \alpha_{i+1}v_{i+1} + \dots + \alpha_{k}v_{k} = 0 \qquad (2)$$<br/>
-Подействуем $\mathcal{A}^{k - i}$ на $(2)$:<br/>
-$$\mathcal{A}^{k-i}(\alpha_{i}v_{i} + \dots + \alpha_{k}v_{k}) =^{*} \alpha_{i}v_{k} =^{\dagger} 0$$<br/>
-$*$ - по определению нильслоя обратили в $0$ всё, что больше $i$<br/>
-$\dagger$ - из $(2)$ и того, что $\mathcal{A}^{k-i}(0) = 0$</p>
-<p>Так как $v_{k} \neq 0$, то $\alpha_{i} = 0$, что противоречит выбору $i$. <br/>
-$\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Нильслой - это линейно независимая система векторов.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Пусть $v_{1}, v_{2}, \dots, v_{k}$ - нильслой. Рассмотрим некоторую линейную комбинацию:
+$$\alpha_{1}v_{1} + \alpha_{2}v_{2} + \dots + \alpha_{k}v_{k} = 0 \qquad(1)$$
+От противного:  Система линейно зависима, то есть не все $\alpha_{i} = 0$
+Пусть $i$ - минимальный номер $\alpha_{i} \neq 0$, тогда $(1)$ имеет вид:
+$$\alpha_{i}v_{i} + \alpha_{i+1}v_{i+1} + \dots + \alpha_{k}v_{k} = 0 \qquad (2)$$
+Подействуем $\mathcal{A}^{k - i}$ на $(2)$:
+$$\mathcal{A}^{k-i}(\alpha_{i}v_{i} + \dots + \alpha_{k}v_{k}) =^{*} \alpha_{i}v_{k} =^{\dagger} 0$$
+$*$ - по определению нильслоя обратили в $0$ всё, что больше $i$
+$\dagger$ - из $(2)$ и того, что $\mathcal{A}^{k-i}(0) = 0$
+
+Так как $v_{k} \neq 0$, то $\alpha_{i} = 0$, что противоречит выбору $i$. 
+$\square$
+</p></div>
 <h2>Определение: Жорданова система и таблица</h2>
-<p><div class="spoiler-markdown"><p><br/>
-Система векторов называется <b>жордановой</b> относительно оператора $\mathcal{A}$, если состоит из нильслоев, следующих друг за другом.</p>
-<p><b>Жордановой таблицей</b> называется таблица, в строках которой стоят нильслои, выравненные по правому краю.<br/>
-$$\left(\begin{array}{c|c} v_{11} &amp; v_{12} &amp;  v_{13}&amp;  \dots  &amp;  v_{1k_{1}} \\  0 &amp; 0 &amp; v_{21} &amp; \dots  &amp; v_{2k_{2}}\\ \dots  &amp; \dots &amp; \dots &amp; \dots &amp; \dots\end{array}\right)$$<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Система векторов называется **жордановой** относительно оператора $\mathcal{A}$, если состоит из нильслоев, следующих друг за другом.
+
+**Жордановой таблицей** называется таблица, в строках которой стоят нильслои, выравненные по правому краю.
+$$\left(\begin{array}{c|c} v_{11} &amp; v_{12} &amp;  v_{13}&amp;  \dots  &amp;  v_{1k_{1}} \\  0 &amp; 0 &amp; v_{21} &amp; \dots  &amp; v_{2k_{2}}\\ \dots  &amp; \dots &amp; \dots &amp; \dots &amp; \dots\end{array}\right)$$
+</p></div>
 <h2>Определение: Элементарные преобразования жордановой таблицы</h2>
-<p><div class="spoiler-markdown"><p></p>
-<ol>
-<li>
-<p>Прибавить к строке фрагмент той же длины, взятые из строки не короче исходной, умножить на скаляр и при необходимости выровнять по правом краю</p>
-</li>
-<li>
-<p>Умножить все векторы строки на ненулевой скаляр</p>
-</li>
-<li>
-<p>Поменять две строки местами<br/>
-</p></li></ol></div></p>
+<div class="spoiler-markdown"><p>
+1. Прибавить к строке фрагмент той же длины, взятые из строки не короче исходной, умножить на скаляр и при необходимости выровнять по правом краю
 
+2. Умножить все векторы строки на ненулевой скаляр
 
+3. Поменять две строки местами
+</p></div>
 <h2>Предложение об элементарных преобразованиях</h2>
-<p><div class="spoiler-markdown"><p>
-Элементарные преобразования <b>сохраняют</b>: 
+<div class="spoiler-markdown"><p>Элементарные преобразования **сохраняют**: 
 - Свойство таблицы быть жордановой
-- Её линейную оболочку</p></div></p>
+- Её линейную оболочку
+</p></div>
 <h2>Предложение: линейная независимость элементов жордановой таблицы</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Жорданова система линейно независима $\iff$ векторы в правом столбце линейно независимы</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-$\Large\implies$<br/>
-Если линейно независима вся система, то ясно, что и правый столбец линейно независим.</p>
-<p>$\Large\impliedby$<br/>
-От противного: система линейно зависима. Тогда:<br/>
-$$\sum \alpha_{ij}v_{ij} = 0 \qquad \exists{\alpha_{ij} \neq 0}$$<br/>
-Пусть $m$ - длина самого длинного нильслоя, а $k$ - наименьшее такое, что $\alpha_{sk} \neq 0$ для какого-то $s$ </p>
-<p>Подействуем на систему оператором $\mathcal{A}^{m - k}$, получим:</p>
-<ol>
-<li>
-<p>Все векторы правее столбца $k$ перейдут в $0$ по определению нильслоя</p>
-</li>
-<li>
-<p>Все векторы левее столбца $k$ равны $0$ по выбору $k$</p>
-</li>
-<li>
-<p>Векторы в $k$ столбце перейдут в последний</p>
-</li>
-</ol>
-<p>То есть:<br/>
-$$\mathcal{A}^{m-k}\left( \sum \alpha_{ij}v_{ij} \right) = \sum \alpha_{ik} \mathcal{A}^{m-k}v_{ik} = \sum \alpha_{ik}v_{im} = 0$$<br/>
-Получили систему из векторов правого столбца, она линейно независима. Значит $\alpha_{ik} = 0$. Так как среди них есть $\alpha_{sk}$, то $\alpha_{sk} = 0$, противоречие.<br/>
-$\square$<br/>
-</p></div></p>
-<p>Д-во (альтернативное):<br/>
-<div class="spoiler-markdown"><p><br/>
-$\Large\implies$<br/>
-Если линейно независима вся система, то ясно, что и правый столбец линейно независим.</p>
-<p>$\Large\impliedby$<br/>
-От противного: система линейно зависима. Тогда:<br/>
-$$\sum \alpha_{ij}v_{ij} = 0 \qquad \exists{\alpha_{ij} \neq 0}$$<br/>
-Пусть $m$ - длина самого длинного нильслоя.<br/>
-Подействуем на систему оператором $\mathcal{A}^{m - 1}$, получим:</p>
-<ol>
-<li>
-<p>Все векторы правее первого столбца перейдут в $0$ по определению нильслоя</p>
-</li>
-<li>
-<p>Векторы в первом столбце перейдут в последний</p>
-</li>
-</ol>
-<p>То есть:<br/>
-$$\mathcal{A}^{m-1}\left( \sum \alpha_{ij}v_{ij} \right) = \sum \alpha_{i1} \mathcal{A}^{m-1}v_{i1} = \sum \alpha_{i1}v_{im} = 0$$<br/>
-Получили систему из векторов правого столбца, она линейно независима. Значит $\alpha_{i1} = 0$, то есть все коэффициенты в первом столбце равны нулю. Вычеркнем этот столбец</p>
-<p>Повторим процесс, применив оператор $\mathcal{A}^{m-2}$, получим $\alpha_{i2} = 0$ и т.д.<br/>
-Продолжая действия, пройдём все столбцы и получим, что $\forall{\alpha_{ij} = 0}$, противоречие. <br/>
-$\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Жорданова система линейно независима $\iff$ векторы в правом столбце линейно независимы
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$\Large\implies$
+Если линейно независима вся система, то ясно, что и правый столбец линейно независим.
+
+$\Large\impliedby$
+От противного: система линейно зависима. Тогда:
+$$\sum \alpha_{ij}v_{ij} = 0 \qquad \exists{\alpha_{ij} \neq 0}$$
+Пусть $m$ - длина самого длинного нильслоя, а $k$ - наименьшее такое, что $\alpha_{sk} \neq 0$ для какого-то $s$ 
+
+Подействуем на систему оператором $\mathcal{A}^{m - k}$, получим:
+
+1. Все векторы правее столбца $k$ перейдут в $0$ по определению нильслоя
+
+2. Все векторы левее столбца $k$ равны $0$ по выбору $k$
+
+3. Векторы в $k$ столбце перейдут в последний
+
+То есть:
+$$\mathcal{A}^{m-k}\left( \sum \alpha_{ij}v_{ij} \right) = \sum \alpha_{ik} \mathcal{A}^{m-k}v_{ik} = \sum \alpha_{ik}v_{im} = 0$$
+Получили систему из векторов правого столбца, она линейно независима. Значит $\alpha_{ik} = 0$. Так как среди них есть $\alpha_{sk}$, то $\alpha_{sk} = 0$, противоречие.
+$\square$
+</p></div>
+<p>Д-во (альтернативное):</p>
+<div class="spoiler-markdown"><p>$\Large\implies$
+Если линейно независима вся система, то ясно, что и правый столбец линейно независим.
+
+$\Large\impliedby$
+От противного: система линейно зависима. Тогда:
+$$\sum \alpha_{ij}v_{ij} = 0 \qquad \exists{\alpha_{ij} \neq 0}$$
+Пусть $m$ - длина самого длинного нильслоя.
+Подействуем на систему оператором $\mathcal{A}^{m - 1}$, получим:
+
+1. Все векторы правее первого столбца перейдут в $0$ по определению нильслоя
+
+2. Векторы в первом столбце перейдут в последний
+
+То есть:
+$$\mathcal{A}^{m-1}\left( \sum \alpha_{ij}v_{ij} \right) = \sum \alpha_{i1} \mathcal{A}^{m-1}v_{i1} = \sum \alpha_{i1}v_{im} = 0$$
+Получили систему из векторов правого столбца, она линейно независима. Значит $\alpha_{i1} = 0$, то есть все коэффициенты в первом столбце равны нулю. Вычеркнем этот столбец
+
+Повторим процесс, применив оператор $\mathcal{A}^{m-2}$, получим $\alpha_{i2} = 0$ и т.д.
+Продолжая действия, пройдём все столбцы и получим, что $\forall{\alpha_{ij} = 0}$, противоречие. 
+$\square$
+</p></div>
 <h2>Теорема: Жорданова форма для нильпотентного оператора</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $\mathcal{A}$ - нильпотентный оператор. Тогда существует базис, в котором его матрица имеет блочно-диагональный вид:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $\mathcal{A}$ - нильпотентный оператор. Тогда существует базис, в котором его матрица имеет блочно-диагональный вид:
 $$[\mathcal{A}] = \begin{pmatrix}
 J_{1}(0) &amp; O &amp; O &amp; \dots &amp; O \\
 O &amp; J_{2}(0) &amp; O &amp; \dots &amp; O \\
@@ -319,18 +309,19 @@ J_i(0) = \begin{pmatrix}
         &amp;        &amp;         &amp; 1       &amp; 0
 \end{pmatrix}
 $$
-Такой базис называется <b>жордановым</b></p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Жорданов базис строится с использованием <span>Жордановых таблиц</span> и <span>элементарных преобразований</span> над ними. Исходно таблица заполняется нильслоями, построенными из векторов некоторого базиса $V$. Преобразования выполняются до тех пор, пока векторы в правом столбце таблицы не станут линейно независимыми. Совокупность всех векторов $\{b_{ij}\}$ из итоговой таблицы образует жорданов базис.</p>
-<p>Рассмотрим одну строку (жорданову цепочку) из такой таблицы: $b_1, b_2, \dots, b_m$. По построению, $b_{j+1} = \mathcal{A}b_j$ для $j &lt; m$, и $\mathcal{A}b_m = 0$. Следовательно, ясно, что в базисе $(b_1, \dots, b_m)$ подпространства $W_{j} = \langle b_1, \dots, b_m \rangle$, матрица ограничения $\mathcal{A}|_{W_j}$ является жордановой клеткой $J_m(0)$.</p>
-<p>Поскольку $V$ является прямой суммой таких $\mathcal{A}$-инвариантных подпространств $W_j$, объединение базисов этих подпространств (т.е. всех векторов из всех строк таблицы) образует жорданов базис для $V$. В этом базисе матрица оператора $\mathcal{A}$ будет блочно-диагональной с жордановыми клетками $J_{k_j}(0)$ на диагонали.<br/>
-$\square$<br/>
-</p></div></p>
+Такой базис называется **жордановым**
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Жорданов базис строится с использованием <span>Жордановых таблиц</span> и <span>элементарных преобразований</span> над ними. Исходно таблица заполняется нильслоями, построенными из векторов некоторого базиса $V$. Преобразования выполняются до тех пор, пока векторы в правом столбце таблицы не станут линейно независимыми. Совокупность всех векторов $\{b_{ij}\}$ из итоговой таблицы образует жорданов базис.
+
+Рассмотрим одну строку (жорданову цепочку) из такой таблицы: $b_1, b_2, \dots, b_m$. По построению, $b_{j+1} = \mathcal{A}b_j$ для $j &lt; m$, и $\mathcal{A}b_m = 0$. Следовательно, ясно, что в базисе $(b_1, \dots, b_m)$ подпространства $W_{j} = \langle b_1, \dots, b_m \rangle$, матрица ограничения $\mathcal{A}|_{W_j}$ является жордановой клеткой $J_m(0)$.
+
+Поскольку $V$ является прямой суммой таких $\mathcal{A}$-инвариантных подпространств $W_j$, объединение базисов этих подпространств (т.е. всех векторов из всех строк таблицы) образует жорданов базис для $V$. В этом базисе матрица оператора $\mathcal{A}$ будет блочно-диагональной с жордановыми клетками $J_{k_j}(0)$ на диагонали.
+$\square$
+</p></div>
 <h2>Теорема Жордана</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $\mathcal{A}\mathpunct{:}~~ V \to V$ линейный оператор и характеристический многочлен раскладывается на линейные множители. Тогда существует базис, в котором его матрица имеет блочно-диагональный вид:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $\mathcal{A}\mathpunct{:}~~ V \to V$ линейный оператор и характеристический многочлен раскладывается на линейные множители. Тогда существует базис, в котором его матрица имеет блочно-диагональный вид:
 $$[\mathcal{A}] = \begin{pmatrix}
 J_{1}(\lambda) &amp; O &amp; O &amp; \dots &amp; O \\
 O &amp; J_{2}(\lambda) &amp; O &amp; \dots &amp; O \\
@@ -348,14 +339,15 @@ J_i(\lambda) = \begin{pmatrix}
         &amp;        &amp;         &amp; 1       &amp; \lambda
 \end{pmatrix}
 $$
-Причём собственные числа между блоками могут совпадать.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Разложим пространство на сумму корневых, используя <span>корневое разложение</span>:<br/>
-$$V = \mathop{\bigoplus}\limits_{i=1}^{k} K_{\mathcal{A}}(\lambda_{i}) = K_{\mathcal{A}}(\lambda_{1}) \oplus K_{\mathcal{A}}(\lambda_{2}) \oplus \dots \oplus K_{\mathcal{A}}(\lambda_{k})$$<br/>
-Из доказательства теоремы знаем, что нильпотентным оператором является оператор $(\mathcal{A} - \lambda \mathcal{E})|_{K_{\mathcal{A}}(\lambda_{i})}$. Применим к нему <span>предыдущую теорему</span> и прибавим к полученной матрице $\lambda E$, чтобы получить матрицу $\mathcal{A}|_{K_{\mathcal{A}}(\lambda_{i})}$.</p>
-<p>Проделав эти действия над каждым корневым подпространством в разложении и собрав полученные блоки в матрицу, получим искомую матрицу.<br/>
-$\square$<br/>
-</p></div></p></div>
+Причём собственные числа между блоками могут совпадать.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Разложим пространство на сумму корневых, используя <span>корневое разложение</span>:
+$$V = \mathop{\bigoplus}\limits_{i=1}^{k} K_{\mathcal{A}}(\lambda_{i}) = K_{\mathcal{A}}(\lambda_{1}) \oplus K_{\mathcal{A}}(\lambda_{2}) \oplus \dots \oplus K_{\mathcal{A}}(\lambda_{k})$$
+Из доказательства теоремы знаем, что нильпотентным оператором является оператор $(\mathcal{A} - \lambda \mathcal{E})|_{K_{\mathcal{A}}(\lambda_{i})}$. Применим к нему <span>предыдущую теорему</span> и прибавим к полученной матрице $\lambda E$, чтобы получить матрицу $\mathcal{A}|_{K_{\mathcal{A}}(\lambda_{i})}$.
+
+Проделав эти действия над каждым корневым подпространством в разложении и собрав полученные блоки в матрицу, получим искомую матрицу.
+$\square$
+</p></div></div>
 </body>
 </html>

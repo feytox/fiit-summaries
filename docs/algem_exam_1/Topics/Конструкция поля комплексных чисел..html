@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,66 +187,70 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Конструкция поля комплексных чисел.</h1><h3>Постановка задачи</h3>
-<p><div class="spoiler-markdown"><p>
-Для комплексных чисел мы поставили задачу: найти <b>поле</b>, которое:
+<div class="content">
+<h1>Конструкция поля комплексных чисел.</h1><h3>Постановка задачи</h3>
+<div class="spoiler-markdown"><p>Для комплексных чисел мы поставили задачу: найти **поле**, которое:
 1) содержит $\mathbb{R}$
 2) содержит $\sqrt{-a}$, где $a &gt; 0$
-3) и ничего больше</p></div></p>
+3) и ничего больше
+</p></div>
 <h3>Определение: Комплексные числа</h3>
-<p><div class="spoiler-markdown"><p><br/>
-Множество $\mathbb{C}$ комплексных чисел - это декартов квадрат $\mathbb{R}$ x $\mathbb{R}$ множества $\mathbb{R}$ действительных чисел. Комплексное число - это упорядоченная пара ($a,b$), $a,b \in \mathbb{R}$</p>
-<p>$\mathrm{Re}~z = a$ - действительная часть числа $z = (a, b)$<br/>
-$\mathrm{Im}~z = b$ - мнимая часть числа $z = (a, b)$ ($\mathrm{Im}~z \in \mathbb{R}$)</p>
-<p>Сумма комплексных чисел:<br/>
-$$z_{1} + z_{2} := (a + c, b + d)$$<br/>
-Произведение комплексных чисел:<br/>
-$$z_{1}z_{2} := (ac - bd, ad + bc)$$<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Множество $\mathbb{C}$ комплексных чисел - это декартов квадрат $\mathbb{R}$ x $\mathbb{R}$ множества $\mathbb{R}$ действительных чисел. Комплексное число - это упорядоченная пара ($a,b$), $a,b \in \mathbb{R}$
+
+$\mathrm{Re}~z = a$ - действительная часть числа $z = (a, b)$
+$\mathrm{Im}~z = b$ - мнимая часть числа $z = (a, b)$ ($\mathrm{Im}~z \in \mathbb{R}$)
+
+Сумма комплексных чисел:
+$$z_{1} + z_{2} := (a + c, b + d)$$
+Произведение комплексных чисел:
+$$z_{1}z_{2} := (ac - bd, ad + bc)$$
+</p></div>
 <h3>Аксиомы поля</h3>
-<p><div class="spoiler-markdown"><p><br/>
-Напомним что $\mathbb{F}$ - поле с операциями сложения $+$ и умножения $\cdot$, если:<br/>
-1) $\forall{a, b \in \mathbb{F}}~~ a + b = b + a$<br/>
-2) $\forall{a, b, c \in \mathbb{F}}~~ (a+b)+c = a+(b+c)$<br/>
-3) $\exists{0 \in \mathbb{F}}~~ \forall{a \in \mathbb{F}}~~ a + 0 = a$<br/>
-4) $\forall{ a \in \mathbb{F}}~~ \exists{b \in \mathbb{F}}~~ a + b = 0$<br/>
-5) $\forall{a,b \in \mathbb{F}}~~ ab = ba$<br/>
-6) $\forall{a, b, c \in \mathbb{F}}~~ (ab)c = a(bc)$<br/>
-7) $\exists{1 \in \mathbb{F}}~~ \forall{a \in \mathbb{F}}~~ a \cdot 1 = a$<br/>
-8) $\forall{a \in \mathbb{F} \setminus \{0\}}~~ \exists{b \in \mathbb{F}}~~ ab = 1$<br/>
-9) $\forall{a, b, c \in \mathbb{F}}~~ (a+b)c = ac + bc$<br/>
-10) $1 \neq 0$<br/>
-Простыми словами: поле - абелева группа по сложению и умножению с дистрибутивностью $\cdot$ относительно $+$ и неодноэлементностью ($1\neq0$)</p>
-<p>Первые 4 аксиомы очевидны, $0 = (0, 0)$<br/>
-5), 6), 9) - непосредственные вычисления<br/>
-7), 10) - $1 = (1, 0)$</p>
-<p>Аксиома 8:<br/>
-Положим $t := \left( \dfrac{a}{a^{2} + b^{2}}, \dfrac{-b}{a^{2} + b^{2}} \right)$, так как $z = (a, b) \neq 0 \Rightarrow a^{2} + b^{2} \neq 0$. Тогда:<br/>
-$$zt = (a, b)\left( \dfrac{a}{a^{2} + b^{2}}, \dfrac{-b}{a^{2} + b^{2}} \right) = \left( \dfrac{a^{2}}{a^{2} + b^{2}} + \dfrac{b^{2}}{a^{2} + b^{2}}, \dfrac{-ab}{a^{2} + b^{2}} + \dfrac{ab}{a^{2}+b^{2}} \right) = (1, 0)$$<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Напомним что $\mathbb{F}$ - поле с операциями сложения $+$ и умножения $\cdot$, если:
+1) $\forall{a, b \in \mathbb{F}}~~ a + b = b + a$
+2) $\forall{a, b, c \in \mathbb{F}}~~ (a+b)+c = a+(b+c)$
+3) $\exists{0 \in \mathbb{F}}~~ \forall{a \in \mathbb{F}}~~ a + 0 = a$
+4) $\forall{ a \in \mathbb{F}}~~ \exists{b \in \mathbb{F}}~~ a + b = 0$
+5) $\forall{a,b \in \mathbb{F}}~~ ab = ba$
+6) $\forall{a, b, c \in \mathbb{F}}~~ (ab)c = a(bc)$
+7) $\exists{1 \in \mathbb{F}}~~ \forall{a \in \mathbb{F}}~~ a \cdot 1 = a$
+8) $\forall{a \in \mathbb{F} \setminus \{0\}}~~ \exists{b \in \mathbb{F}}~~ ab = 1$
+9) $\forall{a, b, c \in \mathbb{F}}~~ (a+b)c = ac + bc$
+10) $1 \neq 0$
+Простыми словами: поле - абелева группа по сложению и умножению с дистрибутивностью $\cdot$ относительно $+$ и неодноэлементностью ($1\neq0$)
+
+Первые 4 аксиомы очевидны, $0 = (0, 0)$
+5), 6), 9) - непосредственные вычисления
+7), 10) - $1 = (1, 0)$
+
+Аксиома 8:
+Положим $t := \left( \dfrac{a}{a^{2} + b^{2}}, \dfrac{-b}{a^{2} + b^{2}} \right)$, так как $z = (a, b) \neq 0 \Rightarrow a^{2} + b^{2} \neq 0$. Тогда:
+$$zt = (a, b)\left( \dfrac{a}{a^{2} + b^{2}}, \dfrac{-b}{a^{2} + b^{2}} \right) = \left( \dfrac{a^{2}}{a^{2} + b^{2}} + \dfrac{b^{2}}{a^{2} + b^{2}}, \dfrac{-ab}{a^{2} + b^{2}} + \dfrac{ab}{a^{2}+b^{2}} \right) = (1, 0)$$
+</p></div>
 <h3>$\mathbb{R} \subset \mathbb{C}$</h3>
-<p><div class="spoiler-markdown"><p>
-Будем отождествлять $(a, 0)$ с действительным числом $a$, тогда $\mathbb{R} = \{(a, 0) ~|~ a \in \mathbb{R}\}$ и $\mathbb{R} \subset \mathbb{C}$</p></div></p>
+<div class="spoiler-markdown"><p>Будем отождествлять $(a, 0)$ с действительным числом $a$, тогда $\mathbb{R} = \{(a, 0) ~|~ a \in \mathbb{R}\}$ и $\mathbb{R} \subset \mathbb{C}$
+</p></div>
 <h3>Определение: Мнимая единица</h3>
-<p><div class="spoiler-markdown"><p>
-Мнимая единица - комплексное число $i := (0, 1)$</p></div></p>
+<div class="spoiler-markdown"><p>Мнимая единица - комплексное число $i := (0, 1)$
+</p></div>
 <h3>Квадратные корни из отрицательных чисел</h3>
-<p><div class="spoiler-markdown"><p>
-По определению:
+<div class="spoiler-markdown"><p>По определению:
 $$i^{2} = (0, 1)(0, 1) = (-1, 0) \implies i^{2} = -1$$
 Если $a &lt; 0, a \in \mathbb{R}$, то:
-$$(0, \sqrt{-a})(0, \sqrt{-a}) = (a, 0) = a \implies \sqrt{a} \in \mathbb{C}$$</p></div></p>
+$$(0, \sqrt{-a})(0, \sqrt{-a}) = (a, 0) = a \implies \sqrt{a} \in \mathbb{C}$$
+</p></div>
 <h3>Определение: Алгебраическая форма записи</h3>
-<p><div class="spoiler-markdown"><p>
-$a + bi$ - алгебраическая форма числа $(a, b)$</p></div></p>
+<div class="spoiler-markdown"><p>$a + bi$ - алгебраическая форма числа $(a, b)$
+</p></div>
 <h3>$\mathbb{C}$ - минимально возможная</h3>
-<p><div class="spoiler-markdown"><p><br/>
-Пусть $\mathbb{F}$ - произвольное поле, которое содержит $\mathbb{R}$ и квадратные корни из отрицательных действительных чисел. Зафиксируем $e \in \mathbb{F}, e^{2} = -1$</p>
-<p>Тогда $\mathbb{F}$ содержит все элементы вида $a + be$, где $a, b \in \mathbb{R}$. Эти элементы складываются и перемножаются в $\mathbb{F}$ по тем же правилам, что и комплексные числа.</p>
-<p>Сопоставим комплексному числу $a + bi \in \mathbb{C}$ элемент $a + be \in \mathbb{F}$. Легко проверить, что такое отображение взаимно однозначно и сохраняет операции сложения и умножения. А значит поле $\mathbb{C}$ вкладывается в поле $\mathbb{F}$, как и в любое другое поле, которое содержит $\mathbb{R}$ и квадратные корни из отрицательных чисел. А значит $\mathbb{C}$ - минимально возможная конструкция.<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Пусть $\mathbb{F}$ - произвольное поле, которое содержит $\mathbb{R}$ и квадратные корни из отрицательных действительных чисел. Зафиксируем $e \in \mathbb{F}, e^{2} = -1$
+
+Тогда $\mathbb{F}$ содержит все элементы вида $a + be$, где $a, b \in \mathbb{R}$. Эти элементы складываются и перемножаются в $\mathbb{F}$ по тем же правилам, что и комплексные числа.
+
+Сопоставим комплексному числу $a + bi \in \mathbb{C}$ элемент $a + be \in \mathbb{F}$. Легко проверить, что такое отображение взаимно однозначно и сохраняет операции сложения и умножения. А значит поле $\mathbb{C}$ вкладывается в поле $\mathbb{F}$, как и в любое другое поле, которое содержит $\mathbb{R}$ и квадратные корни из отрицательных чисел. А значит $\mathbb{C}$ - минимально возможная конструкция.
+</p></div>
 <h3>Геометрическая интерпретация</h3>
-<p><div class="spoiler-markdown"><p>
-!<span>complex_geometry.svg</span></p></div></p></div>
+<div class="spoiler-markdown"><p>!<span>complex_geometry.svg</span>
+</p></div></div>
 </body>
 </html>

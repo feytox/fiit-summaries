@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,26 +187,28 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Теорема о структуре нормального оператора</h1><h2>Теорема о структуре в унитарном случае</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Оператор $\mathcal{A}$ на конечномерном унитарном пространстве $V$ нормален $\iff$ существует ортонормированный базис пространства $V$, состоящий из собственных векторов оператора $\mathcal{A}$.</p></div></p>
-<p>Д-во ($\implies$): <br/>
-<div class="spoiler-markdown"><p><br/>
-Индукция по $\dim V$.<br/>
-<b>База индукции:</b> $\dim V = 1$. Утверждение тривиально. ($\mathcal{A}e_1 = \lambda e_1$ т.к. одномерно)<br/>
-<b>Шаг индукции:</b> $\dim V = k+1$. У нормального оператора существует собственный вектор $e_1$ (по основной теореме алгебры у характеристического многочлена есть комплексный корень). Более того, собственные векторы $\mathcal{A}$ являются собственными векторами $\mathcal{A}^*$. Пусть $e_1$ - нормированный собственный вектор $\mathcal{A}$ (и $\mathcal{A}^*$).</p>
-<p>Рассмотрим подпространство $V' = \langle e_1 \rangle^{\perp}$. Ясно, что $V'$ инвариантно относительно $\mathcal{A}$ и $\mathcal{A}^*$ и что $\mathrm{dim}~ V' = \mathrm{dim}~V - 1 = k$ </p>
-<p>Оператор $\mathcal{A}|_{V'}$ на пространстве $V'$ нормален, поскольку для любых $x, y \in V'$:<br/>
-$$((\mathcal{A}|_{V'}) x, y) = (\mathcal{A}x, y) = (x, \mathcal{A}^* y) = (x, (\mathcal{A}^*|_{V'}) y)$$<br/>
-то есть $(\mathcal{A}|_{V'})^{*} = \mathcal{A}^{*}|_{V'}$. И поскольку для любых $x, y \in V'$:<br/>
-$$(\mathcal{A}|_{V'})(\mathcal{A}^{*}|_{V'})x = (\mathcal{A}\mathcal{A}^{*})x = (\mathcal{A}^{*}\mathcal{A})x = (\mathcal{A}^{*}|_{V'})(\mathcal{A}|_{V'})x$$</p>
-<p>По предположению индукции, для ${} \mathcal{A}|_{V'} {}$ в $V'$ существует ортонормированный базис $e_2, \dots, e_k$, состоящий из собственных векторов $\mathcal{A}|_{V'}$. Эти векторы также являются собственными векторами $\mathcal{A}$. Базис $e_1, e_2, \dots, e_k$ является ортонормированным базисом $V$, состоящим из собственных векторов $\mathcal{A}$<br/>
-$\square$<br/>
-</p></div></p>
-<p>Д-во ($\impliedby$):<br/>
-<div class="spoiler-markdown"><p>
-Пусть $e_1, e_2, \dots, e_n$ - ортонормированный базис из собственных векторов оператора $\mathcal{A}$.
+<div class="content">
+<h1>Теорема о структуре нормального оператора</h1><h2>Теорема о структуре в унитарном случае</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Оператор $\mathcal{A}$ на конечномерном унитарном пространстве $V$ нормален $\iff$ существует ортонормированный базис пространства $V$, состоящий из собственных векторов оператора $\mathcal{A}$.
+</p></div>
+<p>Д-во ($\implies$): </p>
+<div class="spoiler-markdown"><p>Индукция по $\dim V$.
+**База индукции:** $\dim V = 1$. Утверждение тривиально. ($\mathcal{A}e_1 = \lambda e_1$ т.к. одномерно)
+**Шаг индукции:** $\dim V = k+1$. У нормального оператора существует собственный вектор $e_1$ (по основной теореме алгебры у характеристического многочлена есть комплексный корень). Более того, собственные векторы $\mathcal{A}$ являются собственными векторами $\mathcal{A}^*$. Пусть $e_1$ - нормированный собственный вектор $\mathcal{A}$ (и $\mathcal{A}^*$).
+
+Рассмотрим подпространство $V' = \langle e_1 \rangle^{\perp}$. Ясно, что $V'$ инвариантно относительно $\mathcal{A}$ и $\mathcal{A}^*$ и что $\mathrm{dim}~ V' = \mathrm{dim}~V - 1 = k$ 
+
+Оператор $\mathcal{A}|_{V'}$ на пространстве $V'$ нормален, поскольку для любых $x, y \in V'$:
+$$((\mathcal{A}|_{V'}) x, y) = (\mathcal{A}x, y) = (x, \mathcal{A}^* y) = (x, (\mathcal{A}^*|_{V'}) y)$$
+то есть $(\mathcal{A}|_{V'})^{*} = \mathcal{A}^{*}|_{V'}$. И поскольку для любых $x, y \in V'$:
+$$(\mathcal{A}|_{V'})(\mathcal{A}^{*}|_{V'})x = (\mathcal{A}\mathcal{A}^{*})x = (\mathcal{A}^{*}\mathcal{A})x = (\mathcal{A}^{*}|_{V'})(\mathcal{A}|_{V'})x$$
+
+По предположению индукции, для ${} \mathcal{A}|_{V'} {}$ в $V'$ существует ортонормированный базис $e_2, \dots, e_k$, состоящий из собственных векторов $\mathcal{A}|_{V'}$. Эти векторы также являются собственными векторами $\mathcal{A}$. Базис $e_1, e_2, \dots, e_k$ является ортонормированным базисом $V$, состоящим из собственных векторов $\mathcal{A}$
+$\square$
+</p></div>
+<p>Д-во ($\impliedby$):</p>
+<div class="spoiler-markdown"><p>Пусть $e_1, e_2, \dots, e_n$ - ортонормированный базис из собственных векторов оператора $\mathcal{A}$.
 Матрица оператора $\mathcal{A}$ в этом базисе является диагональной (т.к. $\mathcal{A}e_k = \lambda e_k$, т.е есть все слагаемые кроме $e_k$ нулевые):
 $$[A]_e = \mathrm{diag}(\lambda_1, \lambda_2, \dots, \lambda_n)$$
 Матрица сопряженного оператора $\mathcal{A}^*$ в этом базисе:
@@ -214,33 +217,39 @@ $$[A^*]_e = ([A]_e)^* = \mathrm{diag}(\overline{\lambda_1}, \overline{\lambda_2}
 $$[A]_e [A^*]_e = [A^*]_e [A]_e$$
 Поскольку матрицы операторов в некотором базисе коммутируют, то и сами операторы коммутируют: $\mathcal{A} \mathcal{A}^* = \mathcal{A}^* \mathcal{A}$.
 Таким образом, оператор $\mathcal{A}$ является нормальным. 
-$\square$</p></div></p>
+$\square$
+</p></div>
 <h2>Теорема о структуре в евклидовом случае</h2>
 <p>(при разложимости характеристического многочлена на линейные множители)</p>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $V$ - евклидово пространство, ${} \mathcal{A} {}$ - оператор на $V$.  
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $V$ - евклидово пространство, ${} \mathcal{A} {}$ - оператор на $V$.  
 Тогда $\mathcal{A}$ - нормальный $\iff$ в некотором ОНБ его матрица имеет блочно-диагональный вид. Каждый блок либо размера 1, либо размера 2 и имеет вид:
-$$\beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix}$$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-$\Large\implies$<br/>
-Так как мы рассматриваем случай разложимости характеристического многочлена на линейные множители, все собственные числа $\mathcal{A}$ - вещественные.</p>
-<p>Индукция по $k = \dim V$.<br/>
-<b>База индукции</b> ($k=1$): Матрица оператора в единственном ОНБ имеет вид $[\lambda]$, что соответствует блоку $1\times1$ (вещественное число).</p>
-<p><b>Шаг индукции</b> ($k = n$).<br/>
-Аналогично доказательству теоремы в унитарном случае. (получим онб а в нем диагональная матрица из собств значений)</p>
-<p>$\Large\impliedby$<br/>
-Пусть $A$ - матрица $\mathcal{A}$ и в некотором ОНБ она имеет блочно-диагональный вид из двух типов блоков: $[\lambda]$ или $R = \beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix}$</p>
-<p>В евклидовом пространстве справедливо: $[\mathcal{A}^{*}] = A^{*} = A^{T}$. Так как $A$ и $A^{T}$ - блочно-диагональные, произведения этих матриц это матрица, составленная из произведений блоков в соответствующем порядке.</p>
-<p>Проверим нормальность для каждого блока:<br/>
-- Для блока $1\times1$: $[\lambda][\lambda]^T = \lambda \cdot \lambda = \lambda^2 = [\lambda]^T[\lambda]$.<br/>
-- Для блока $2\times2$: $R R^T = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = R^T R$ (см. вычисления ниже).<br/>
-Вычисления для $R$:<br/>
-$$R R^T = \beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix} \beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \\ \sin \alpha &amp; \cos \alpha \end{pmatrix} = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$$<br/>
-Аналогично $R^T R = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$.</p>
-<p>Следовательно $\mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A}$. Значит, $\mathcal{A}$ нормален.<br/>
-$\square$<br/>
-</p></div></p></div>
+$$\beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix}$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$\Large\implies$
+Так как мы рассматриваем случай разложимости характеристического многочлена на линейные множители, все собственные числа $\mathcal{A}$ - вещественные.
+
+Индукция по $k = \dim V$.  
+**База индукции** ($k=1$): Матрица оператора в единственном ОНБ имеет вид $[\lambda]$, что соответствует блоку $1\times1$ (вещественное число).
+
+**Шаг индукции** ($k = n$).  
+Аналогично доказательству теоремы в унитарном случае. (получим онб а в нем диагональная матрица из собств значений)
+
+$\Large\impliedby$
+Пусть $A$ - матрица $\mathcal{A}$ и в некотором ОНБ она имеет блочно-диагональный вид из двух типов блоков: $[\lambda]$ или $R = \beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix}$
+
+В евклидовом пространстве справедливо: $[\mathcal{A}^{*}] = A^{*} = A^{T}$. Так как $A$ и $A^{T}$ - блочно-диагональные, произведения этих матриц это матрица, составленная из произведений блоков в соответствующем порядке.
+
+Проверим нормальность для каждого блока:  
+- Для блока $1\times1$: $[\lambda][\lambda]^T = \lambda \cdot \lambda = \lambda^2 = [\lambda]^T[\lambda]$.  
+- Для блока $2\times2$: $R R^T = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = R^T R$ (см. вычисления ниже).
+Вычисления для $R$:
+$$R R^T = \beta \begin{pmatrix} \cos \alpha &amp; \sin \alpha \\ -\sin \alpha &amp; \cos \alpha \end{pmatrix} \beta \begin{pmatrix} \cos \alpha &amp; -\sin \alpha \\ \sin \alpha &amp; \cos \alpha \end{pmatrix} = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$$
+Аналогично $R^T R = \beta^2 \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}$.
+
+Следовательно $\mathcal{A}\mathcal{A}^* = \mathcal{A}^*\mathcal{A}$. Значит, $\mathcal{A}$ нормален.  
+$\square$
+</p></div></div>
 </body>
 </html>

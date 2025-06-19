@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,53 +187,41 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Определитель и его свойства</h1><h2>Определение: Определитель квадратной матрицы</h2>
-<p><div class="spoiler-markdown"><p>
-Пусть $A$ - квадратная $n \times n$-матрица над полем $F$. Тогда её <b>определитель</b>:
+<div class="content">
+<h1>Определитель и его свойства</h1><h2>Определение: Определитель квадратной матрицы</h2>
+<div class="spoiler-markdown"><p>Пусть $A$ - квадратная $n \times n$-матрица над полем $F$. Тогда её **определитель**:
 $$\det A = \sum_{\sigma \in S_{n}} (-1)^{\sigma} \prod_{i=1}^{n} a_{i,\sigma(i)}$$
 Где:
 - $S_n$ — все перестановки степени $n$
-- $(-1)^{\sigma}$ — знак перестановки ($+1$ для чётных, $-1$ для нечётных)</p></div></p>
+- $(-1)^{\sigma}$ — знак перестановки ($+1$ для чётных, $-1$ для нечётных)
+</p></div>
 <h2>Свойства определителя</h2>
-<p>Список:<br/>
-<div class="spoiler-markdown"><p></p>
-<ol>
-<li>
-<p>$\det A = \det A^{T}$</p>
-</li>
-<li>
-<p>Если умножить строку $A$ на скаляр $\lambda$, то определитель полученной матрицы = $\lambda \cdot \det A$</p>
-</li>
-<li>
-<p>Если матрица содержит нулевую строку, $\det A = 0$</p>
-</li>
-<li>
-<p>При перестановке 2 строк меняется знак определителя</p>
-</li>
-<li>
-<p>Если две строки $A$ равны, то $\det A = 0$</p>
-</li>
-<li>
-<p>Определитель не меняется, если прибавить к одной строке другую, умноженную на $\lambda$</p>
-</li>
-<li>
-<p>$\begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ b_{i} + c_{i} \\ \dots \end{vmatrix} = \begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ b_{i} \\ \dots \end{vmatrix} + \begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ c_{i} \\ \dots \end{vmatrix}$</p>
-</li>
-<li>
-<p>Если в $A$ есть пропорциональные строки, то $\det A = 0$ (свойства 2 + 6)</p>
-</li>
-<li>
-<p>Если $A$ - верхне-треугольная, то $\det A = \prod\limits_{i = 1}^{n} a_{ii}$<br/>
-</p></li></ol></div></p>
+<p>Список:</p>
+<div class="spoiler-markdown"><p>
+1. $\det A = \det A^{T}$
 
+2. Если умножить строку $A$ на скаляр $\lambda$, то определитель полученной матрицы = $\lambda \cdot \det A$
 
+3. Если матрица содержит нулевую строку, $\det A = 0$
+
+4. При перестановке 2 строк меняется знак определителя
+
+5. Если две строки $A$ равны, то $\det A = 0$
+
+6. Определитель не меняется, если прибавить к одной строке другую, умноженную на $\lambda$
+
+7. $\begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ b_{i} + c_{i} \\ \dots \end{vmatrix} = \begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ b_{i} \\ \dots \end{vmatrix} + \begin{vmatrix}a_{1} \\ a_{2} \\ \dots \\ c_{i} \\ \dots \end{vmatrix}$
+
+8. Если в $A$ есть пропорциональные строки, то $\det A = 0$ (свойства 2 + 6)
+
+9. Если $A$ - верхне-треугольная, то $\det A = \prod\limits_{i = 1}^{n} a_{ii}$
+</p></div>
 <h2>1. Транспонирование</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-$$\det A = \det A^\top$$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-$B = A^\top$, тогда $b_{i j} = a_{j i}$
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$$\det A = \det A^\top$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$B = A^\top$, тогда $b_{i j} = a_{j i}$
 $$
 \begin{aligned}
 \det A &amp;= \sum_{\sigma \in S_n} (-1)^\sigma \prod_{i=1}^n a_{i,\sigma(i)} \\
@@ -243,187 +232,187 @@ $$
 &amp;= \det A^\top
 \end{aligned}
 $$
-$\square$</p></div></p>
+$\square$
+</p></div>
 <h2>2. Умножение на скаляр</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p><br/>
-Умножение всех элементов строки или столбца на $\alpha$ равносильно умножению определителя на $\alpha$:</p>
-<p>$$<br/>
-\begin{vmatrix}<br/>
-\alpha a_{11} &amp; \cdots &amp; \alpha a_{1n} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{n1} &amp; \cdots &amp; a_{nn}<br/>
-\end{vmatrix} = \alpha \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{n1} &amp; \cdots &amp; a_{nn}<br/>
-\end{vmatrix}<br/>
-$$<br/>
-</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-Рассмотрим определение определителя:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Умножение всех элементов строки или столбца на $\alpha$ равносильно умножению определителя на $\alpha$:
+
+$$
+\begin{vmatrix}
+\alpha a_{11} &amp; \cdots &amp; \alpha a_{1n} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; \cdots &amp; a_{nn}
+\end{vmatrix} = \alpha \begin{vmatrix}
+a_{11} &amp; \cdots &amp; a_{1n} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; \cdots &amp; a_{nn}
+\end{vmatrix}
+$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Рассмотрим определение определителя:
 $$\det A = \sum_{\sigma \in S_{n}} (-1)^{\sigma} \prod_{i=1}^{n} a_{i,\sigma(i)}$$
 Заметим, что в каждом слагаемом будет присутствовать единственный множитель с $\alpha$, вынесем его за сумму.
-$\square$</p></div></p>
+$\square$
+</p></div>
 <h2>3. Нулевая строка</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если в матрице есть нулевая строка (или столбец), то $\det A = 0$.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-Аналогично предыдущему свойству, в каждом слагаемом будет множитель $0$, а значит $\det A = 0$.
-$\square$</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если в матрице есть нулевая строка (или столбец), то $\det A = 0$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Аналогично предыдущему свойству, в каждом слагаемом будет множитель $0$, а значит $\det A = 0$.
+$\square$
+</p></div>
 <h2>4. Перестановка строк</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-При перестановке двух строк (столбцов) определитель меняет знак.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-Любая транспозиция изменяет четность перестановки, а значит каждое слагаемое в сумме изменит знак.
-$\square$</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>При перестановке двух строк (столбцов) определитель меняет знак.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Любая транспозиция изменяет четность перестановки, а значит каждое слагаемое в сумме изменит знак.
+$\square$
+</p></div>
 <h2>5. Равные строки</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если две строки (столбца) одинаковы, $\det A = 0$.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-При перестановке этих строк определитель не меняется, но по свойству 4 должен поменять знак. Следовательно, ${} \det A = -\det A \implies \det A = 0 {}$.</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если две строки (столбца) одинаковы, $\det A = 0$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>При перестановке этих строк определитель не меняется, но по свойству 4 должен поменять знак. Следовательно, ${} \det A = -\det A \implies \det A = 0 {}$.
+</p></div>
 <h2>6. Комбинация строк</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Определитель не меняется при добавлении к одной строке другой, умноженной на скаляр</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Пусть к $i$-й строке матрицы $A$ прибавляется $k$-я строка, умноженная на $\lambda$. Обозначим новую матрицу через $A'$.</p>
-<p>Тогда:<br/>
-$$<br/>
-\det A' = \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{i1} + \lambda a_{k1} &amp; \cdots &amp; a_{in} + \lambda a_{kn} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{n1} &amp; \cdots &amp; a_{nn}<br/>
-\end{vmatrix}<br/>
-$$</p>
-<p>По линейности определителя по строке (свойство 7):<br/>
-$$<br/>
-\det A' = \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{i1} &amp; \cdots &amp; a_{in} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{n1} &amp; \cdots &amp; a_{nn}<br/>
-\end{vmatrix}<br/>
-+ \lambda \begin{vmatrix}<br/>
-a_{11} &amp; \cdots &amp; a_{1n} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{k1} &amp; \cdots &amp; a_{kn} \\<br/>
-\vdots &amp; \ddots &amp; \vdots \\<br/>
-a_{n1} &amp; \cdots &amp; a_{nn}<br/>
-\end{vmatrix}<br/>
-$$</p>
-<p>Первый определитель - это $\det A$, а второй равен нулю, так как содержит две одинаковые строки ($i$-ю и $k$-ю). </p>
-<p>Следовательно:<br/>
-$$<br/>
-\det A' = \det A + \lambda \cdot 0 = \det A<br/>
-$$<br/>
-$\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Определитель не меняется при добавлении к одной строке другой, умноженной на скаляр
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Пусть к $i$-й строке матрицы $A$ прибавляется $k$-я строка, умноженная на $\lambda$. Обозначим новую матрицу через $A'$.
+
+Тогда:
+$$
+\det A' = \begin{vmatrix}
+a_{11} &amp; \cdots &amp; a_{1n} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{i1} + \lambda a_{k1} &amp; \cdots &amp; a_{in} + \lambda a_{kn} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; \cdots &amp; a_{nn}
+\end{vmatrix}
+$$
+
+По линейности определителя по строке (свойство 7):
+$$
+\det A' = \begin{vmatrix}
+a_{11} &amp; \cdots &amp; a_{1n} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{i1} &amp; \cdots &amp; a_{in} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; \cdots &amp; a_{nn}
+\end{vmatrix}
++ \lambda \begin{vmatrix}
+a_{11} &amp; \cdots &amp; a_{1n} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{k1} &amp; \cdots &amp; a_{kn} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; \cdots &amp; a_{nn}
+\end{vmatrix}
+$$
+
+Первый определитель - это $\det A$, а второй равен нулю, так как содержит две одинаковые строки ($i$-ю и $k$-ю). 
+
+Следовательно:
+$$
+\det A' = \det A + \lambda \cdot 0 = \det A
+$$
+$\square$
+</p></div>
 <h2>7. Сумма строк</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если элементы $i$-ой строки представлены как сумма $a_{ij} = b_{ij} + c_{ij}$, то:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если элементы $i$-ой строки представлены как сумма $a_{ij} = b_{ij} + c_{ij}$, то:
 $$
 \det A = \det B + \det C
 $$
-где $B$ и $C$ - матрицы с заменой этой строки на $\{b_{ij}\}$ и $\{c_{ij}\}$ соответственно.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-$$\begin{align}
+где $B$ и $C$ - матрицы с заменой этой строки на $\{b_{ij}\}$ и $\{c_{ij}\}$ соответственно.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$$\begin{align}
 \det A &amp;= \sum_{\sigma \in S_{n}} (-1)^{\sigma} \prod_{j=1}^{n} a_{j,\sigma(j)} \\
 &amp;= \sum_{\sigma \in S_{n}} (-1)^{\sigma} (b_{i,\sigma(i)} + c_{i,\sigma(i)}) \prod_{j=1, j\neq i}^{n} a_{j,\sigma(j)} \\
 &amp;= \det B + \det C
 \end{align}$$
-$\square$</p></div></p>
+$\square$
+</p></div>
 <h2>8. Пропорциональные строки</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если строки пропорциональны, $\det A = 0$</p></div></p>
-<p>Д-во (очев):<br/>
-<div class="spoiler-markdown"><p>
-Следует из свойств 2 и 
-6. $\square$</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если строки пропорциональны, $\det A = 0$
+</p></div>
+<p>Д-во (очев):</p>
+<div class="spoiler-markdown"><p>Следует из свойств 2 и 
+6. $\square$
+</p></div>
 <h2>Определение: верхне-треугольная матрица</h2>
-<p><div class="spoiler-markdown"><p>
-Матрица называется <b>верхней (нижней) треугольной</b>, если ниже (выше) главной диагонали стоят 
-0. Если вне главной диагонали стоят $0$, то матрица <b>диагональная</b>.</p></div></p>
+<div class="spoiler-markdown"><p>Матрица называется **верхней (нижней) треугольной**, если ниже (выше) главной диагонали стоят 
+0. Если вне главной диагонали стоят $0$, то матрица **диагональная**. 
+</p></div>
 <h2>9. Определитель верхне-треугольной матрицы</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если $A$ — верхне-треугольная матрица порядка $n$, то $\det A = \prod\limits_{i=1}^{n} a_{ii}$.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-По определению:<br/>
-$$\begin{align}<br/>
-\det A &amp;= \sum_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} \\<br/>
-&amp;= \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) \neq 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\<br/>
-&amp;= \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) = 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) \neq 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\<br/>
-&amp;= \dots = \prod_{i = 1}^{n} a_{ii}<br/>
-\end{align}$$<br/>
-$\square$<br/>
-По Заметим что: (пусть нули ниже диагонали)</p>
-<p>Заметим что чтобы слагаемое не было нулем в 1 столбце нужно выбрать первую строку (иначе 0 и остальные множители не важны)<br/>
-Аналогично нужно выбирать 2 столбец 2 строку так как 1 строка занята, а остальные 0, и т.д получается произведение из элементов на диагонали, а если что-то выбрать другое то слагаемое обнулиться</p>
-<p>Также заметим, что так мы можем сделать только 1 раз, а значит других слагаемых нет<br/>
-$\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если $A$ — верхне-треугольная матрица порядка $n$, то $\det A = \prod\limits_{i=1}^{n} a_{ii}$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>По определению:
+$$\begin{align}
+\det A &amp;= \sum_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} \\
+&amp;= \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) \neq 1}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\
+&amp;= \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) = 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} + \underbrace{ \sum_{\substack{\sigma \in S_n \\ \sigma(1) = 1 \\ \sigma(2) \neq 2}} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)} }_{ \Large 0} \\
+&amp;= \dots = \prod_{i = 1}^{n} a_{ii}
+\end{align}$$
+$\square$
+По Заметим что: (пусть нули ниже диагонали)
+
+Заметим что чтобы слагаемое не было нулем в 1 столбце нужно выбрать первую строку (иначе 0 и остальные множители не важны)
+Аналогично нужно выбирать 2 столбец 2 строку так как 1 строка занята, а остальные 0, и т.д получается произведение из элементов на диагонали, а если что-то выбрать другое то слагаемое обнулиться
+
+Также заметим, что так мы можем сделать только 1 раз, а значит других слагаемых нет
+$\square$
+</p></div>
 <h2>Утверждение: разложение определителя по строке/столбцу</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p></p>
-<ol>
-<li>
-<p>Разложение по строке $i$:<br/>
-$$ \det A = \sum_{j=1}^n a_{ij} (-1)^{i+j} M_{ij} = \sum_{j=1}^n a_{ij} A_{ij}$$</p>
-</li>
-<li>
-<p>Разложение по столбцу $j$:<br/>
-$$ \det A = \sum_{i=1}^n a_{ij} (-1)^{i+j} M_{ij} = \sum_{i=1}^n a_{ij} A_{ij}$$<br/>
-</p></li></ol></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>
+1. Разложение по строке $i$:
+$$ \det A = \sum_{j=1}^n a_{ij} (-1)^{i+j} M_{ij} = \sum_{j=1}^n a_{ij} A_{ij}$$
 
+2. Разложение по столбцу $j$:
+$$ \det A = \sum_{i=1}^n a_{ij} (-1)^{i+j} M_{ij} = \sum_{i=1}^n a_{ij} A_{ij}$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>**
+1. Случай первой строки ($i=1$):**
+Каждое слагаемое в $\det A = \sum\limits_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)}$ содержит элемент $a_{1j}$ для некоторого $j$. Для фиксированного $j$ слагаемые с $\sigma(1)=j$ имеют вид:
+$$ a_{1j} (-1)^{\sigma} \prod_{k=2}^{n} a_{k\sigma(k)} \quad{(\dagger)}$$
+Пусть $\tau$ — перестановка индексов столбцов строк $2,\dots,n$ в подматрице, полученной удалением первой строки и $j$-го столбца. Тогда $(-1)^{\sigma} = (-1)^{j-1} (-1)^{\tau}$, так как $\sigma(1)=j$ порождает $j-1$ инверсий.  
+В разложении минора $M_{1j}$ слагаемые имеют вид $(-1)^{\tau} \prod\limits_{k=2}^{n} a_{k\sigma(k)}$. Так как $(-1)^{j-1} = (-1)^{1+j}$ выражение преобразуется:
+$$(\dagger) =  a_{1j} \left( (-1)^{j-1} M_{1j} \right) = a_{1j} (-1)^{1+j} M_{1j}$$
+Суммируя по $j$, получаем:
+$$\det A = \sum_{j=1}^n a_{1j} (-1)^{1+j} M_{1j}$$
 
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-<b><br/>
-1. Случай первой строки ($i=1$):</b><br/>
-Каждое слагаемое в $\det A = \sum\limits_{\sigma \in S_n} (-1)^{\sigma} a_{1\sigma(1)} a_{2\sigma(2)} \cdots a_{n\sigma(n)}$ содержит элемент $a_{1j}$ для некоторого $j$. Для фиксированного $j$ слагаемые с $\sigma(1)=j$ имеют вид:<br/>
-$$ a_{1j} (-1)^{\sigma} \prod_{k=2}^{n} a_{k\sigma(k)} \quad{(\dagger)}$$<br/>
-Пусть $\tau$ — перестановка индексов столбцов строк $2,\dots,n$ в подматрице, полученной удалением первой строки и $j$-го столбца. Тогда $(-1)^{\sigma} = (-1)^{j-1} (-1)^{\tau}$, так как $\sigma(1)=j$ порождает $j-1$ инверсий.<br/>
-В разложении минора $M_{1j}$ слагаемые имеют вид $(-1)^{\tau} \prod\limits_{k=2}^{n} a_{k\sigma(k)}$. Так как $(-1)^{j-1} = (-1)^{1+j}$ выражение преобразуется:<br/>
-$$(\dagger) =  a_{1j} \left( (-1)^{j-1} M_{1j} \right) = a_{1j} (-1)^{1+j} M_{1j}$$<br/>
-Суммируя по $j$, получаем:<br/>
-$$\det A = \sum_{j=1}^n a_{1j} (-1)^{1+j} M_{1j}$$</p>
-<p><b><br/>
-2. Случай произвольной строки $i$:</b><br/>
-Пусть $A'$ — матрица, полученная из $A$ перестановкой $i$-й строки на первое место за $i-1$ транспозиций соседних строк. Тогда:<br/>
-$$ \det A = (-1)^{i-1} \det A'. $$<br/>
-Разложим $\det A'$ по первой строке ($i$-й строке $A$):<br/>
-$$ \det A' = \sum_{j=1}^n a_{ij} (-1)^{1+j} M'_{1j}, $$<br/>
-Заметим, что $M'_{1j}$ совпадает с минором $M_{ij}$ матрицы $A$, так как удаляемые строки/столбцы идентичны. Значит:<br/>
-$$ \det A = (-1)^{i-1} \sum_{j=1}^n a_{ij} (-1)^{1+j} M_{ij} = \sum_{j=1}^n a_{ij} (-1)^{i+j} M_{ij}. $$<br/>
-Аналогично доказывается разложение по столбцу.<br/>
-$\square$<br/>
-</p></div></p>
+**
+2. Случай произвольной строки $i$:**
+Пусть $A'$ — матрица, полученная из $A$ перестановкой $i$-й строки на первое место за $i-1$ транспозиций соседних строк. Тогда:
+$$ \det A = (-1)^{i-1} \det A'. $$
+Разложим $\det A'$ по первой строке ($i$-й строке $A$):
+$$ \det A' = \sum_{j=1}^n a_{ij} (-1)^{1+j} M'_{1j}, $$
+Заметим, что $M'_{1j}$ совпадает с минором $M_{ij}$ матрицы $A$, так как удаляемые строки/столбцы идентичны. Значит:
+$$ \det A = (-1)^{i-1} \sum_{j=1}^n a_{ij} (-1)^{1+j} M_{ij} = \sum_{j=1}^n a_{ij} (-1)^{i+j} M_{ij}. $$
+Аналогично доказывается разложение по столбцу.
+$\square$
+</p></div>
 <h2>Следствие: фальшивое разложение</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Используем формулу разложения по $i$-й строке, но вычёркивать будем $k$-й строку, тогда:
-$$\sum_{j=1}^n a_{ij} (-1)^{k+j} M_{kj} = 0$$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-Запишем в строку $k$ элементы из $i$-й строки (можем так делать т.к. мы её вычеркнем, а минор не изменится). По [[Определитель и его свойства#
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Используем формулу разложения по $i$-й строке, но вычёркивать будем $k$-й строку, тогда:
+$$\sum_{j=1}^n a_{ij} (-1)^{k+j} M_{kj} = 0$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Запишем в строку $k$ элементы из $i$-й строки (можем так делать т.к. мы её вычеркнем, а минор не изменится). По [[Определитель и его свойства#
 5. Равные строки|свойству 5]] такой определитель равен $0$. Значит:
 $$0 = \det A = \sum_{j=1}^n a_{kj} (-1)^{k+j} M_{kj} = \sum_{j=1}^n a_{ij} (-1)^{k+j} M_{kj}$$
-$\square$</p></div></p></div>
+$\square$
+</p></div></div>
 </body>
 </html>

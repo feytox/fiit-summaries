@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,100 +187,98 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Линейные операторы</h1><h3>Определение: Линейный оператор</h3>
-<p><div class="spoiler-markdown"><p><br/>
-Пусть $V$ и $W$ - векторные пространства над одним и тем же полем $F$. Отображение $\mathcal{A}: V \to W$ называется <b>линейным оператором</b> если:<br/>
-$$\forall{\mathbf{x}_{1}, \mathbf{x}_{2} \in V, t \in F}~~ \begin{cases}<br/>
-\mathcal{A}(\mathbf{x}_{1} + \mathbf{x}_{2}) = \mathcal{A}(\mathbf{x}_{1}) + \mathcal{A}(\mathbf{x}_{2}) \\<br/>
-\mathcal{A}(t \mathbf{x}_{1}) = t\mathcal{A}(\mathbf{x}_{1})<br/>
-\end{cases}$$</p>
-<p>Множество всех линейных операторов из $V$ в $W$ обозначается $\mathrm{Hom}(V, W)$<br/>
-</p></div></p>
+<div class="content">
+<h1>Линейные операторы</h1><h3>Определение: Линейный оператор</h3>
+<div class="spoiler-markdown"><p>Пусть $V$ и $W$ - векторные пространства над одним и тем же полем $F$. Отображение $\mathcal{A}: V \to W$ называется **линейным оператором** если:
+$$\forall{\mathbf{x}_{1}, \mathbf{x}_{2} \in V, t \in F}~~ \begin{cases}
+\mathcal{A}(\mathbf{x}_{1} + \mathbf{x}_{2}) = \mathcal{A}(\mathbf{x}_{1}) + \mathcal{A}(\mathbf{x}_{2}) \\
+\mathcal{A}(t \mathbf{x}_{1}) = t\mathcal{A}(\mathbf{x}_{1})
+\end{cases}$$
+
+Множество всех линейных операторов из $V$ в $W$ обозначается $\mathrm{Hom}(V, W)$
+</p></div>
 <h3>Свойства линейного оператора</h3>
-<p><div class="spoiler-markdown"><p><br/>
-Пусть $V, W$ - векторные пространства над $F$, а $\mathcal{A}: V \to W$ - линейный оператор. Тогда:</p>
-<ol>
-<li>
-<p>$\mathcal{A}(\mathbf{0}) = \mathbf{0}$</p>
-</li>
-<li>
-<p>$\mathcal{A}(\lambda_{1} \mathbf{v}_{1} + \lambda_{2} \mathbf{v}_{2} + \dots + \lambda_{m} \mathbf{v}_{m}) = \lambda_{1}\mathcal{A}(\mathbf{v}_{1}) + \lambda_{2}\mathcal{A}(\mathbf{v}_{2}) + \dots + \lambda_{m}\mathcal{A}(\mathbf{v}_{m})$<br/>
-</p></li></ol></div></p>
+<div class="spoiler-markdown"><p>Пусть $V, W$ - векторные пространства над $F$, а $\mathcal{A}: V \to W$ - линейный оператор. Тогда:
 
+1. $\mathcal{A}(\mathbf{0}) = \mathbf{0}$
 
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-<b>Свойство <br/>
-1.</b><br/>
-$$\mathcal{A}(\mathbf{0}) = \mathcal{A}(0 \cdot \mathbf{0}) = 0 \cdot \mathcal{A}(\mathbf{0}) = \mathbf{0}$$</p>
-<p><b>Свойство <br/>
-2.</b><br/>
-По индукции. $~~~\square$<br/>
-</p></div></p>
+2. $\mathcal{A}(\lambda_{1} \mathbf{v}_{1} + \lambda_{2} \mathbf{v}_{2} + \dots + \lambda_{m} \mathbf{v}_{m}) = \lambda_{1}\mathcal{A}(\mathbf{v}_{1}) + \lambda_{2}\mathcal{A}(\mathbf{v}_{2}) + \dots + \lambda_{m}\mathcal{A}(\mathbf{v}_{m})$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>**Свойство 
+1.**
+$$\mathcal{A}(\mathbf{0}) = \mathcal{A}(0 \cdot \mathbf{0}) = 0 \cdot \mathcal{A}(\mathbf{0}) = \mathbf{0}$$
+
+**Свойство 
+2.**
+По индукции. $~~~\square$
+</p></div>
 <h3>Теорема существования и единственности линейного оператора</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $V, W$ - векторные пространства над $F$, причём $\mathrm{dim}~V = n &gt; 0$. Пусть $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}$ - базис $V$, а $\mathbf{w}_{1}, \mathbf{w}_{2}, \dots, \mathbf{w}_{n}$ - произвольные вектора из $W$. Тогда существует единственный линейный оператор $\mathcal{A}: V \to W$ такой, что:
-$$\mathcal{A}(\mathbf{p}_{i}) = \mathbf{w}_{i} ~~~\forall{i = \overline{1, n}}$$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Пусть $\mathbf{x} \in V, (x_{1}, x_{2}, \dots, x_{n})$ - координаты $\mathbf{x}$ в базисе $P$.</p>
-<p>Существование.<br/>
-Определим оператор $\mathcal{A}$ правилом:<br/>
-$$\mathcal{A}(\mathbf{x}) := x_{1} \mathbf{w}_{1} + x_{2} \mathbf{w}_{2} + \dots + x_{n} \mathbf{w}_{n}$$<br/>
-В силу единственности координат вектора в базисе это определение корректно (т.е. образ $\mathbf{x}$ под действием $\mathcal{A}$ определён однозначно). Из свойств координат суммы векторов и произведения на скаляр вытекает, что $\mathcal{A}$ линеен. Осталось заметить, что для всякого $i = \overline{1, n}$ вектор $\mathbf{p}_{i}$ имеет в базисе $P$ координаты $(0, \dots, 0, 1, 0, \dots, 0)$, где $1$ стоит на $i$-м месте, и потому $\mathcal{A}(\mathbf{p}_{i}) = \mathbf{w}_{i}$</p>
-<p>Единственность.<br/>
-Пусть $\mathcal{B}: V \to W$ - линейный оператор удовлетворяющий формулировке теоремы. В силу <span>свойств линейного оператора</span> имеем:<br/>
-$$\begin{align}<br/>
-\mathcal{B}(\mathbf{x}) &amp;= \mathcal{B}(x_{1} \mathbf{p}_{1} + x_{2} \mathbf{p}_{2} + \dots + x_{n} \mathbf{p}_{n}) = x_{1}\mathcal{B}(\mathbf{p}_{1}) + x_{2}\mathcal{B}(\mathbf{p}_{2}) + \dots + x_{n}\mathcal{B}(\mathbf{p}_{n}) = \\<br/>
-&amp;= x_{1} \mathbf{w}_{1} + x_{2} \mathbf{w}_{2} + \dots + x_{n} \mathbf{w}_{n} = \mathcal{A}(\mathbf{x})<br/>
-\end{align}$$<br/>
-Следовательно, $\mathcal{B} = \mathcal{A}$ $~~~\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $V, W$ - векторные пространства над $F$, причём $\mathrm{dim}~V = n &gt; 0$. Пусть $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}$ - базис $V$, а $\mathbf{w}_{1}, \mathbf{w}_{2}, \dots, \mathbf{w}_{n}$ - произвольные вектора из $W$. Тогда существует единственный линейный оператор $\mathcal{A}: V \to W$ такой, что:
+$$\mathcal{A}(\mathbf{p}_{i}) = \mathbf{w}_{i} ~~~\forall{i = \overline{1, n}}$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Пусть $\mathbf{x} \in V, (x_{1}, x_{2}, \dots, x_{n})$ - координаты $\mathbf{x}$ в базисе $P$.
+
+Существование.
+Определим оператор $\mathcal{A}$ правилом:
+$$\mathcal{A}(\mathbf{x}) := x_{1} \mathbf{w}_{1} + x_{2} \mathbf{w}_{2} + \dots + x_{n} \mathbf{w}_{n}$$
+В силу единственности координат вектора в базисе это определение корректно (т.е. образ $\mathbf{x}$ под действием $\mathcal{A}$ определён однозначно). Из свойств координат суммы векторов и произведения на скаляр вытекает, что $\mathcal{A}$ линеен. Осталось заметить, что для всякого $i = \overline{1, n}$ вектор $\mathbf{p}_{i}$ имеет в базисе $P$ координаты $(0, \dots, 0, 1, 0, \dots, 0)$, где $1$ стоит на $i$-м месте, и потому $\mathcal{A}(\mathbf{p}_{i}) = \mathbf{w}_{i}$
+
+Единственность.
+Пусть $\mathcal{B}: V \to W$ - линейный оператор удовлетворяющий формулировке теоремы. В силу <span>свойств линейного оператора</span> имеем:
+$$\begin{align}
+\mathcal{B}(\mathbf{x}) &amp;= \mathcal{B}(x_{1} \mathbf{p}_{1} + x_{2} \mathbf{p}_{2} + \dots + x_{n} \mathbf{p}_{n}) = x_{1}\mathcal{B}(\mathbf{p}_{1}) + x_{2}\mathcal{B}(\mathbf{p}_{2}) + \dots + x_{n}\mathcal{B}(\mathbf{p}_{n}) = \\
+&amp;= x_{1} \mathbf{w}_{1} + x_{2} \mathbf{w}_{2} + \dots + x_{n} \mathbf{w}_{n} = \mathcal{A}(\mathbf{x})
+\end{align}$$
+Следовательно, $\mathcal{B} = \mathcal{A}$ $~~~\square$
+</p></div>
 <h3>Операции над линейными операторами</h3>
-<p><div class="spoiler-markdown"><p><br/>
-Пусть $V, W$ - векторные пространства над $F$, $\mathcal{A}$ и $\mathcal{B}$ - линейные операторы $V \to W$, $t \in F$.</p>
-<p><b>Суммой</b> операторов $\mathcal{A}$ и $\mathcal{B}$ называется оператор $\mathcal{A} + \mathcal{B}: V \to W$, задаваемый правилом $(\mathcal{A} + \mathcal{B})(\mathbf{x}) := \mathcal{A}(\mathbf{x}) + \mathcal{B}(\mathbf{x}) ~~~\forall{x \in V}$<br/>
-<b>Произведением</b> оператора $\mathcal{A}$ на скаляр $t$ называется оператор $t\mathcal{A}: V \to W$, задаваемый правилом $(t\mathcal{A})(\mathbf{x}) := t\mathcal{A}(\mathbf{x})$<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Пусть $V, W$ - векторные пространства над $F$, $\mathcal{A}$ и $\mathcal{B}$ - линейные операторы $V \to W$, $t \in F$.
+
+**Суммой** операторов $\mathcal{A}$ и $\mathcal{B}$ называется оператор $\mathcal{A} + \mathcal{B}: V \to W$, задаваемый правилом $(\mathcal{A} + \mathcal{B})(\mathbf{x}) := \mathcal{A}(\mathbf{x}) + \mathcal{B}(\mathbf{x}) ~~~\forall{x \in V}$
+**Произведением** оператора $\mathcal{A}$ на скаляр $t$ называется оператор $t\mathcal{A}: V \to W$, задаваемый правилом $(t\mathcal{A})(\mathbf{x}) := t\mathcal{A}(\mathbf{x})$
+</p></div>
 <h3>Предложение о свойствах суммы операторов</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Сумма линейных операторов - линейный оператор. Множество $\mathrm{Hom}(V, W)$ с операцией сложения - абелева группа.</p></div></p>
-<p>Подсказки к д-ву:<br/>
-<div class="spoiler-markdown"><p>
-Линейность очевидна: проверка прямыми подсчётами.
-Коммутативность и ассоциативность $\mathrm{Hom}(V, W)$ доказывается так же. Если взять в качестве нейтрального элемента $\mathcal{O}(\mathbf{x}) := \mathbf{0}$, а в качестве обратного по сложению $(-\mathcal{A})(\mathbf{x}) := -\mathcal{A}(\mathbf{x})$ и аналогичным образом проверить оставшиеся аксиомы, то получим, что $\mathrm{Hom}(V, W)$ - абелева группа. $\square$</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Сумма линейных операторов - линейный оператор. Множество $\mathrm{Hom}(V, W)$ с операцией сложения - абелева группа.
+</p></div>
+<p>Подсказки к д-ву:</p>
+<div class="spoiler-markdown"><p>Линейность очевидна: проверка прямыми подсчётами.
+Коммутативность и ассоциативность $\mathrm{Hom}(V, W)$ доказывается так же. Если взять в качестве нейтрального элемента $\mathcal{O}(\mathbf{x}) := \mathbf{0}$, а в качестве обратного по сложению $(-\mathcal{A})(\mathbf{x}) := -\mathcal{A}(\mathbf{x})$ и аналогичным образом проверить оставшиеся аксиомы, то получим, что $\mathrm{Hom}(V, W)$ - абелева группа. $\square$
+</p></div>
 <h3>Предложение о пространстве линейных операторов</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Произведение линейного оператора на скаляр - линейный оператор. $\mathrm{Hom}(V, W)$ с операциями сложения и умножения на скаляр - векторное пространство.</p></div></p>
-<p>Подсказки к д-ву:<br/>
-<div class="spoiler-markdown"><p>
-Линейность очевидна: проверка прямыми вычислениями.
-Аксиомы векторного пространства проверяются аналогично. $\square$</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Произведение линейного оператора на скаляр - линейный оператор. $\mathrm{Hom}(V, W)$ с операциями сложения и умножения на скаляр - векторное пространство.
+</p></div>
+<p>Подсказки к д-ву:</p>
+<div class="spoiler-markdown"><p>Линейность очевидна: проверка прямыми вычислениями.
+Аксиомы векторного пространства проверяются аналогично. $\square$
+</p></div>
 <h3>Матрица линейного оператора</h3>
-<p><div class="spoiler-markdown"><p>
-Пусть $V, W$ - векторные пространства над $F$, причём $\mathrm{dim}~V = n &gt; 0$, $\mathrm{dim}~W = k &gt; 0$. Пусть $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}$ - базис $V$, $Q = \{\mathbf{q}_{1}, \mathbf{q}_{2}, \dots, \mathbf{q}_{k}\}$ - базис $W$.
-<b>Матрицей линейного оператора</b> $\mathcal{A}: V \to W$ в базисах $P$ и $Q$ называется $k\times n$-матрица, $i$-й столбец которой состоит из координат вектора $\mathcal{A}(\mathbf{p}_{i})$ в базисе $Q$, $\forall{i = \overline{1,n}}$. Эта матрица обозначается $A_{P,Q}$ или просто $A$, если базисы зафиксированы.</p></div></p>
+<div class="spoiler-markdown"><p>Пусть $V, W$ - векторные пространства над $F$, причём $\mathrm{dim}~V = n &gt; 0$, $\mathrm{dim}~W = k &gt; 0$. Пусть $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}$ - базис $V$, $Q = \{\mathbf{q}_{1}, \mathbf{q}_{2}, \dots, \mathbf{q}_{k}\}$ - базис $W$.
+**Матрицей линейного оператора** $\mathcal{A}: V \to W$ в базисах $P$ и $Q$ называется $k\times n$-матрица, $i$-й столбец которой состоит из координат вектора $\mathcal{A}(\mathbf{p}_{i})$ в базисе $Q$, $\forall{i = \overline{1,n}}$. Эта матрица обозначается $A_{P,Q}$ или просто $A$, если базисы зафиксированы.
+</p></div>
 <h3>Изоморфизм векторных пространств линейных операторов и матриц</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p><br/>
-Если $V, W$ - векторные пространства над $F, \mathrm{dim}~V = n, \mathrm{dim}~W = k$, то векторные пространства $\mathrm{Hom}(V, W)$ и $F^{k\times n}$ изоморфны.</p>
-<p>$F^{k\times n}$ - пространство $k\times n$-матриц над $F$.<br/>
-</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Зафиксируем в $V$ базис $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}$, а в $W$ - базис $Q = \{\mathbf{q}_{1}, \mathbf{q}_{2}, \dots, \mathbf{q}_{n}\}$. Определим отображение $\varphi: \mathrm{Hom}(V, W) \to F^{k\times n}$ правилом: если $\mathcal{A}: V \to W$ - линейный оператор, то $\varphi(\mathcal{A})$ - матрица оператора $A$ в базисах $P$ и $Q$. Пусть $\mathcal{A}, \mathcal{B} \in \mathrm{Hom}(V, W),~ t \in F$. Надо проверить, что $\varphi$ - биективно и выполнены равенства:<br/>
-$$\varphi(\mathcal{A} + \mathcal{B}) = \varphi(\mathcal{A}) + \varphi(\mathcal{B}) \land \varphi(t\mathcal{A}) = t\varphi(\mathcal{A}) ~~~~~(*)$$<br/>
-В матрице $\varphi(\mathcal{A} + \mathcal{B})$ по столбцам записаны координаты векторов $(\mathcal{A} + \mathcal{B})(\mathbf{p}_{i})$ в базисе $Q$, а в матрицах $\varphi(\mathcal{A})$ и $\varphi(\mathcal{B})$ - координаты $\mathcal{A}(\mathbf{p}_{i})$ и $\mathcal{B}(\mathbf{p}_{i})$ соответственно в том же базисе. Поскольку $(\mathcal{A} + \mathcal{B})(\mathbf{p}_{i}) = \mathcal{A}(\mathbf{p}_{i}) + \mathcal{B}(\mathbf{p}_{i})$, координаты вектора $(\mathcal{A} + \mathcal{B})(\mathbf{p}_{i})$ равны сумме координат векторов $\mathcal{A}(\mathbf{p}_{i})$ и $\mathcal{B}(\mathbf{p}_{i})$. Первое из равенств $(*)$ доказано. Второе проверяется аналогично.</p>
-<p>Проверим, что отображение $\varphi$ биективно. <br/>
-Если $\mathcal{A}, \mathcal{B} \in \mathrm{Hom}(V, W)$ и $\varphi(\mathcal{A}) = \varphi(\mathcal{B})$, то из определения матрицы линейного оператора вытекает, что операторы $\mathcal{A}$ и $\mathcal{B}$ одинаково действуют на базисных векторах пространства $V$. Но тогда $\mathcal{A} = \mathcal{B}$, так как линейный оператор однозначно определяется своим действием на базисных векторах. Следовательно, $\varphi$ - инъективно.</p>
-<p>Пусть $A = (a_{ij})_{k\times n}$. Для $\forall{j = \overline{1,n}}$ положим $\mathbf{w}_{j} = a_{1j} \mathbf{q}_{1} + a_{2j} \mathbf{q}_{2} + \dots + a_{kj} \mathbf{q}_{k}$. В силу <span>теоремы существования и единственности линейного оператора</span> существует линейный оператор $\mathcal{A}$ такой, что $\mathcal{A}(\mathbf{p}_{i}) = \mathbf{w}_{i} ~~\forall{i = \overline{1,n}}$. Из определения матрицы оператора вытекает, что $A_{P,Q} = A$, т.е. $\varphi(\mathcal{A}) = A$. Следовательно, $\varphi$ - сюръективно. $~~~\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если $V, W$ - векторные пространства над $F, \mathrm{dim}~V = n, \mathrm{dim}~W = k$, то векторные пространства $\mathrm{Hom}(V, W)$ и $F^{k\times n}$ изоморфны.
+
+$F^{k\times n}$ - пространство $k\times n$-матриц над $F$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Зафиксируем в $V$ базис $P = \{\mathbf{p}_{1}, \mathbf{p}_{2}, \dots, \mathbf{p}_{n}\}$, а в $W$ - базис $Q = \{\mathbf{q}_{1}, \mathbf{q}_{2}, \dots, \mathbf{q}_{n}\}$. Определим отображение $\varphi: \mathrm{Hom}(V, W) \to F^{k\times n}$ правилом: если $\mathcal{A}: V \to W$ - линейный оператор, то $\varphi(\mathcal{A})$ - матрица оператора $A$ в базисах $P$ и $Q$. Пусть $\mathcal{A}, \mathcal{B} \in \mathrm{Hom}(V, W),~ t \in F$. Надо проверить, что $\varphi$ - биективно и выполнены равенства:
+$$\varphi(\mathcal{A} + \mathcal{B}) = \varphi(\mathcal{A}) + \varphi(\mathcal{B}) \land \varphi(t\mathcal{A}) = t\varphi(\mathcal{A}) ~~~~~(*)$$
+В матрице $\varphi(\mathcal{A} + \mathcal{B})$ по столбцам записаны координаты векторов $(\mathcal{A} + \mathcal{B})(\mathbf{p}_{i})$ в базисе $Q$, а в матрицах $\varphi(\mathcal{A})$ и $\varphi(\mathcal{B})$ - координаты $\mathcal{A}(\mathbf{p}_{i})$ и $\mathcal{B}(\mathbf{p}_{i})$ соответственно в том же базисе. Поскольку $(\mathcal{A} + \mathcal{B})(\mathbf{p}_{i}) = \mathcal{A}(\mathbf{p}_{i}) + \mathcal{B}(\mathbf{p}_{i})$, координаты вектора $(\mathcal{A} + \mathcal{B})(\mathbf{p}_{i})$ равны сумме координат векторов $\mathcal{A}(\mathbf{p}_{i})$ и $\mathcal{B}(\mathbf{p}_{i})$. Первое из равенств $(*)$ доказано. Второе проверяется аналогично.
+
+Проверим, что отображение $\varphi$ биективно. 
+Если $\mathcal{A}, \mathcal{B} \in \mathrm{Hom}(V, W)$ и $\varphi(\mathcal{A}) = \varphi(\mathcal{B})$, то из определения матрицы линейного оператора вытекает, что операторы $\mathcal{A}$ и $\mathcal{B}$ одинаково действуют на базисных векторах пространства $V$. Но тогда $\mathcal{A} = \mathcal{B}$, так как линейный оператор однозначно определяется своим действием на базисных векторах. Следовательно, $\varphi$ - инъективно.
+
+Пусть $A = (a_{ij})_{k\times n}$. Для $\forall{j = \overline{1,n}}$ положим $\mathbf{w}_{j} = a_{1j} \mathbf{q}_{1} + a_{2j} \mathbf{q}_{2} + \dots + a_{kj} \mathbf{q}_{k}$. В силу <span>теоремы существования и единственности линейного оператора</span> существует линейный оператор $\mathcal{A}$ такой, что $\mathcal{A}(\mathbf{p}_{i}) = \mathbf{w}_{i} ~~\forall{i = \overline{1,n}}$. Из определения матрицы оператора вытекает, что $A_{P,Q} = A$, т.е. $\varphi(\mathcal{A}) = A$. Следовательно, $\varphi$ - сюръективно. $~~~\square$
+</p></div>
 <h3>Следствие о размерности пространства линейных операторов</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если $V, W$ - векторные пространства над $F$, $\mathrm{dim}~V = n$ и $\mathrm{dim}~W = k$, то $\mathrm{dim}~\mathrm{Hom}(V, W) = kn$</p></div></p></div>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если $V, W$ - векторные пространства над $F$, $\mathrm{dim}~V = n$ и $\mathrm{dim}~W = k$, то $\mathrm{dim}~\mathrm{Hom}(V, W) = kn$
+</p></div></div>
 </body>
 </html>

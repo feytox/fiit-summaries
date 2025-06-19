@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,70 +187,74 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Размерность суммы двух подпространств. Прямые суммы.</h1><h3>Размерность суммы двух подпространств</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если $M_{1}$ и $M_{2}$ подпространства в $V$, то размерность их суммы равна сумме размерностей этих пространств минус размерность пересечения
-$$\mathrm{dim}(M_{1}+M_{2})=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}-\mathrm{dim}(M_{1}\cap M_{2})$$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Из предложения о <span>размерности подпространств</span>: <br/>
-$$\mathrm{dim}(M_{1}\cap M_{2})\leq \mathrm{dim}~M_{1} \land \mathrm{dim}~(M_{1}\cap M_{2})\leq \mathrm{dim}~M_{2}$$</p>
-<p>Пусть:<br/>
-$$\mathrm{dim}(M_{1}\cap M_{2}) = k,~~ \mathrm{dim}~M_{1} = k+l,~~ \mathrm{dim}~M_{2}=k+m$$<br/>
-Если $M_{1} = \{\mathbf{0}\}$, то $M_{1}+M_{2}=M_{2}$ и $M_{1}\cap M_{2}=\{\mathbf{0}\}$ и поэтому утверждение теоремы верно. Аналогично для $M_{2}$. Поэтому будем считать, что $M_{1}$ и $M_{2}$ ненулевые.</p>
-<p>Если $M_{1}\cap M_{2}$ нулевое, то во всех дальнейших рассуждения $a_{1},a_{2},...,a_{k}$ нужно заменить на нулевой набор векторов.<br/>
-Пусть $a_{1},a_{2},...,a_{k}$ - базис $M_{1}\cap M_{2}$. По теореме о продолжении базис пересечения можно дополнить до базиса и $M_{1}$, и $M_2$. Пусть $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$ базис $M_{1}$, a $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$ базис $M_{2}$<br/>
-Докажем, что<br/>
-$$a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l},c_{1},c_{2},...,c_{m}~~~(1)$$<br/>
-базис $M_{1}+M_{2}$. Этого достаточно для доказательства теоремы, так как число векторов в наборе равно <br/>
-$$k+l+m=(k+l)+(k+m)-k=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}-\mathrm{dim}(M_{1}\cap M_{2})$$<br/>
-Пусть $x \in M_{1}+M_{2}$, $x = x_{1} + x_{2}$. <br/>
-$x_{1}$ является линейной комбинацией $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$.<br/>
-$x_{2}$ является линейной комбинацией $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$. <br/>
-Отсюда $x$ является линейной комбинацией $(1) \implies$ $(1)$ - система образующих в пространстве $M_{1}+M_{2}$. </p>
-<p>Осталось доказать, что $(1)$ линейно независима. Предположим, что<br/>
-$$\alpha _{1}a_{1}+\alpha _{2}a_{2}+...+\alpha _{k}a_{k}+\beta_{1}b_{1}+\beta_{2}b_{2}+...\beta_{l}b_{l}+\gamma _{1}c_{1}+\gamma _{2}c_{2}+...+\gamma _{m}c_{m}=\mathbf{0}~~~(2)$$<br/>
-для некоторых скаляров $\alpha _{1},\alpha _{2},...,\alpha _{k},\beta_{1},\beta_{2},...,\beta_{l},\gamma _{1},\gamma _{2},...,\gamma _{m}$. Необходимо доказать, что все они равны <br/>
-0.<br/>
-Возьмем $$y=\beta_{1}b_{1}+\beta_{2}b_{2}+...\beta_{l}b_{l}$$Понятно, что $y\in M_1$. С другой стороны из равенства $(2)$ следует, что<br/>
-$$y=-\alpha _{1}a_{1}-\alpha _{2}a_{2}-...-\alpha _{k}a_{k}-\gamma _{1}c_{1}-\gamma _{2}c_{2}-...-\gamma _{m}c_{m}$$<br/>
-Значит $y \in M_{2}$. Тогда $y \in M_{1}\cap M_{2}$, а значит для некоторых $\lambda _{1},\lambda _{2}\dots \lambda _{k}$ <br/>
-$y=\lambda _{1}a_{1}+\lambda _{2}a_{2}+\dots+\lambda _{k}a_{k}$ Следовательно, если приравнять это и первое разложение:<br/>
-$$\lambda _{1}a_{1}+\lambda _{2}a_{2}+\dots+\lambda _{k}a_{k}-\beta_{1}b_{1}-\beta_{2}b_{2}-...-\beta_{l}b_{l}=\mathbf{0}~~~(3)$$<br/>
-Поскольку вектора $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$  образуют базис пространства $M_{1}$, они линейно независимы. Поэтому линейная комбинация в левой части $(3)$ тривиальна. В частности, $\beta_{1}=\beta_{2}=\dots=\beta_{l}=0$. Тогда выражение $(1)$ принимает вид <br/>
-$$\alpha _{1}a_{1}+\alpha _{2}a_{2}+\dots+\alpha_{k}a_{k}+\gamma _{1}c_{1}+\gamma _{2}c_{2}+...+\gamma _{m}c_{m}=\mathbf{0}~~~(2)$$<br/>
-Учитывая, что вектора $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$ образуют базис пространства $M_{2}$ (и, в частности, линейно независимы), мы получаем, что $\alpha _{1} = \alpha _{2} = \dots = \alpha _{k} = \gamma _{1} = \gamma 2 = \dots  = \gamma _{m} = 0$ Итак, все коэффициенты в левой части равенства $(2)$ равны $0$, что и требовалось доказать.<br/>
-</p></div></p>
+<div class="content">
+<h1>Размерность суммы двух подпространств. Прямые суммы.</h1><h3>Размерность суммы двух подпространств</h3>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если $M_{1}$ и $M_{2}$ подпространства в $V$, то размерность их суммы равна сумме размерностей этих пространств минус размерность пересечения
+$$\mathrm{dim}(M_{1}+M_{2})=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}-\mathrm{dim}(M_{1}\cap M_{2})$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Из предложения о <span>размерности подпространств</span>: 
+$$\mathrm{dim}(M_{1}\cap M_{2})\leq \mathrm{dim}~M_{1} \land \mathrm{dim}~(M_{1}\cap M_{2})\leq \mathrm{dim}~M_{2}$$
+
+Пусть:
+$$\mathrm{dim}(M_{1}\cap M_{2}) = k,~~ \mathrm{dim}~M_{1} = k+l,~~ \mathrm{dim}~M_{2}=k+m$$
+Если $M_{1} = \{\mathbf{0}\}$, то $M_{1}+M_{2}=M_{2}$ и $M_{1}\cap M_{2}=\{\mathbf{0}\}$ и поэтому утверждение теоремы верно. Аналогично для $M_{2}$. Поэтому будем считать, что $M_{1}$ и $M_{2}$ ненулевые.
+
+Если $M_{1}\cap M_{2}$ нулевое, то во всех дальнейших рассуждения $a_{1},a_{2},...,a_{k}$ нужно заменить на нулевой набор векторов.
+Пусть $a_{1},a_{2},...,a_{k}$ - базис $M_{1}\cap M_{2}$. По теореме о продолжении базис пересечения можно дополнить до базиса и $M_{1}$, и $M_2$. Пусть $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$ базис $M_{1}$, a $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$ базис $M_{2}$
+Докажем, что
+$$a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l},c_{1},c_{2},...,c_{m}~~~(1)$$
+базис $M_{1}+M_{2}$. Этого достаточно для доказательства теоремы, так как число векторов в наборе равно 
+$$k+l+m=(k+l)+(k+m)-k=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}-\mathrm{dim}(M_{1}\cap M_{2})$$
+Пусть $x \in M_{1}+M_{2}$, $x = x_{1} + x_{2}$. 
+$x_{1}$ является линейной комбинацией $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$.
+$x_{2}$ является линейной комбинацией $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$. 
+Отсюда $x$ является линейной комбинацией $(1) \implies$ $(1)$ - система образующих в пространстве $M_{1}+M_{2}$. 
+
+Осталось доказать, что $(1)$ линейно независима. Предположим, что
+$$\alpha _{1}a_{1}+\alpha _{2}a_{2}+...+\alpha _{k}a_{k}+\beta_{1}b_{1}+\beta_{2}b_{2}+...\beta_{l}b_{l}+\gamma _{1}c_{1}+\gamma _{2}c_{2}+...+\gamma _{m}c_{m}=\mathbf{0}~~~(2)$$
+для некоторых скаляров $\alpha _{1},\alpha _{2},...,\alpha _{k},\beta_{1},\beta_{2},...,\beta_{l},\gamma _{1},\gamma _{2},...,\gamma _{m}$. Необходимо доказать, что все они равны 
+0.
+Возьмем $$y=\beta_{1}b_{1}+\beta_{2}b_{2}+...\beta_{l}b_{l}$$Понятно, что $y\in M_1$. С другой стороны из равенства $(2)$ следует, что
+$$y=-\alpha _{1}a_{1}-\alpha _{2}a_{2}-...-\alpha _{k}a_{k}-\gamma _{1}c_{1}-\gamma _{2}c_{2}-...-\gamma _{m}c_{m}$$
+Значит $y \in M_{2}$. Тогда $y \in M_{1}\cap M_{2}$, а значит для некоторых $\lambda _{1},\lambda _{2}\dots \lambda _{k}$ 
+$y=\lambda _{1}a_{1}+\lambda _{2}a_{2}+\dots+\lambda _{k}a_{k}$ Следовательно, если приравнять это и первое разложение:
+$$\lambda _{1}a_{1}+\lambda _{2}a_{2}+\dots+\lambda _{k}a_{k}-\beta_{1}b_{1}-\beta_{2}b_{2}-...-\beta_{l}b_{l}=\mathbf{0}~~~(3)$$
+Поскольку вектора $a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{l}$  образуют базис пространства $M_{1}$, они линейно независимы. Поэтому линейная комбинация в левой части $(3)$ тривиальна. В частности, $\beta_{1}=\beta_{2}=\dots=\beta_{l}=0$. Тогда выражение $(1)$ принимает вид 
+$$\alpha _{1}a_{1}+\alpha _{2}a_{2}+\dots+\alpha_{k}a_{k}+\gamma _{1}c_{1}+\gamma _{2}c_{2}+...+\gamma _{m}c_{m}=\mathbf{0}~~~(2)$$
+Учитывая, что вектора $a_{1},a_{2},...,a_{k},c_{1},c_{2},...,c_{m}$ образуют базис пространства $M_{2}$ (и, в частности, линейно независимы), мы получаем, что $\alpha _{1} = \alpha _{2} = \dots = \alpha _{k} = \gamma _{1} = \gamma 2 = \dots  = \gamma _{m} = 0$ Итак, все коэффициенты в левой части равенства $(2)$ равны $0$, что и требовалось доказать.
+</p></div>
 <h3>Прямая сумма</h3>
-<p><div class="spoiler-markdown"><p>
-Пусть $V$ – векторное пространство, а $M_{1}$ и $M_{2}$ – его подпространства. Говорят, что сумма подпространств $M_{1}$ и $M_{2}$ является их <b>*прямой суммой</b>*, если $M_{1} \cap M_{2} = \{\mathbf{0}\}$. 
-Прямая сумма подпространств $M_{1}$ и $M_{2}$ обозначается через $M_{1} ⊕ M_{2}$.</p></div></p>
+<div class="spoiler-markdown"><p>Пусть $V$ – векторное пространство, а $M_{1}$ и $M_{2}$ – его подпространства. Говорят, что сумма подпространств $M_{1}$ и $M_{2}$ является их ***прямой суммой***, если $M_{1} \cap M_{2} = \{\mathbf{0}\}$. 
+Прямая сумма подпространств $M_{1}$ и $M_{2}$ обозначается через $M_{1} ⊕ M_{2}$.
+</p></div>
 <h3>Замечание о прямой сумме</h3>
-<p><div class="spoiler-markdown"><p>
-Если $V=M_{1}\oplus M_{2}$, $b_{1},b_{2},...,b_{l}$ - базис $M_{1}$, $c_{1},c_{2},...,c_{m}$ - базис $M_{2}$, то  $b_{1},b_{2},...,b_{l},c_{1},c_{2},...,c_{m}$ - базис $V$ (по теореме о <span>размерности суммы и пересечения</span>)</p></div></p>
+<div class="spoiler-markdown"><p>Если $V=M_{1}\oplus M_{2}$, $b_{1},b_{2},...,b_{l}$ - базис $M_{1}$, $c_{1},c_{2},...,c_{m}$ - базис $M_{2}$, то  $b_{1},b_{2},...,b_{l},c_{1},c_{2},...,c_{m}$ - базис $V$ (по теореме о <span>размерности суммы и пересечения</span>)
+</p></div>
 <h3>Теорема о прямой сумме</h3>
-<p><div class="spoiler-markdown"><p>
-Пусть $V$ - векторное пространство, а $M_{1}$ и $M_{2}$ - его подпространства.
+<div class="spoiler-markdown"><p>Пусть $V$ - векторное пространство, а $M_{1}$ и $M_{2}$ - его подпространства.
 Следующие утверждения эквивалентны:
 1) $M_{1}+M_{2}$ - прямая сумма $M_{1}$ и $M_{2}$;
 2) $\mathrm{dim}(M_{1}+M_{2})=\mathrm{dim}~M_{1}+\mathrm{dim}~M_{2}$;
 3) любой вектор из $M_{1}+M_{2}$ единственным образом представим в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$;
-4) нулевой вектор пространства $V$ единственным образом представим в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Эквивалентность условий 1) и 2) непосредственно вытекает из теоремы о <span>размерности суммы и пересечения</span> и того факта, что размерность нулевого пространства равна <br/>
-0. 3) $\Rightarrow$ 4) очевидно. Поэтому достаточно доказать импликации 1) $\Rightarrow$ 3) и 4) $\Rightarrow$ 1).</p>
-<p>1 $\Rightarrow$ <br/>
-3. <br/>
-Пусть $x \in M_{1} + M_{2},~ x = x_{1} + x_{2},~ x_{1} \in M_{1}, x_{2} \in M_{2}$. Остается доказать, что такое представление вектора $x$ единственно. Предположим, что $x = y_{1} + y_{2}$, где $y_{1} \in M_{1}$ и $y_{2} \in M_{2}$. Из равенств<br/>
-$$x = x_{1} + x_{2} = y_{1} + y_{2}$$<br/>
-имеем $x_{1} − y_{1} = y_{2} − x_{2}$. Ясно, что $x_{1} − y_{1} \in M_{1}$, а $y_{2} − x_{2} \in M_{2}$. Следовательно, $x_{1} − y_{1} = y_{2} − x_{2} \in M_{1} \cap M_{2}$. Но $M_{1} \cap M_{2} =$ {$\mathbf{0}$}. Поэтому $x_{1} − y_{1} = y_{2} − x_{2} = \mathbf{0}$, откуда $x_{1} = y_{1}$ и $x_{2} = y_{2}$. </p>
-<p>4 $\Rightarrow$ <br/>
-1. <br/>
-Предположим, что $M_{1} \cap M_{2} \neq \{\mathbf{0}\}$, т. е. существует ненулевой вектор $x \in M_{1} \cap M_{2}$. Тогда вектор $\mathbf{0}$ может быть двумя различными способами представлен в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$: $\mathbf{0}= x + (−x)$ и $\mathbf{0} = \mathbf{0} + \mathbf{0}$. Мы получили противоречие с условием <br/>
-4.<br/>
-$\square$<br/>
-</p></div></p></div>
+4) нулевой вектор пространства $V$ единственным образом представим в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Эквивалентность условий 1) и 2) непосредственно вытекает из теоремы о <span>размерности суммы и пересечения</span> и того факта, что размерность нулевого пространства равна 
+0. 3) $\Rightarrow$ 4) очевидно. Поэтому достаточно доказать импликации 1) $\Rightarrow$ 3) и 4) $\Rightarrow$ 1).
+
+1 $\Rightarrow$ 
+3. 
+Пусть $x \in M_{1} + M_{2},~ x = x_{1} + x_{2},~ x_{1} \in M_{1}, x_{2} \in M_{2}$. Остается доказать, что такое представление вектора $x$ единственно. Предположим, что $x = y_{1} + y_{2}$, где $y_{1} \in M_{1}$ и $y_{2} \in M_{2}$. Из равенств
+$$x = x_{1} + x_{2} = y_{1} + y_{2}$$
+имеем $x_{1} − y_{1} = y_{2} − x_{2}$. Ясно, что $x_{1} − y_{1} \in M_{1}$, а $y_{2} − x_{2} \in M_{2}$. Следовательно, $x_{1} − y_{1} = y_{2} − x_{2} \in M_{1} \cap M_{2}$. Но $M_{1} \cap M_{2} =$ {$\mathbf{0}$}. Поэтому $x_{1} − y_{1} = y_{2} − x_{2} = \mathbf{0}$, откуда $x_{1} = y_{1}$ и $x_{2} = y_{2}$. 
+
+4 $\Rightarrow$ 
+1. 
+Предположим, что $M_{1} \cap M_{2} \neq \{\mathbf{0}\}$, т. е. существует ненулевой вектор $x \in M_{1} \cap M_{2}$. Тогда вектор $\mathbf{0}$ может быть двумя различными способами представлен в виде суммы вектора из $M_{1}$ и вектора из $M_{2}$: $\mathbf{0}= x + (−x)$ и $\mathbf{0} = \mathbf{0} + \mathbf{0}$. Мы получили противоречие с условием 
+4.
+$\square$
+</p></div></div>
 </body>
 </html>

@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,50 +187,53 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Признаки Дирихле и Абеля для несобственных интегралов</h1><h2>Признак Дирихле</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p><br/>
-Если:<br/>
-- $f(x)$ и $g(x)$ интегрируемы на $[a, b'] ~~\forall{b' \in [a, b)}$<br/>
-- $f(x)$ - непрерывна, $F(x)$ - первообразная $f(x)$<br/>
-- $F(x)$ - ограничена<br/>
-- $g(x)$ - непрерывно дифференцируема<br/>
-- $g(x) \underset{x \to b-0}{\longrightarrow} 0$ монотонно</p>
-<p>Тогда $\int\limits_{a}^{b} f(x)g(x) \, dx$ - сходится.<br/>
-</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Проверим условия <a href="Формула Ньютона-Лейбница, интегрирование по частям в несобственных интегралах.html">интегрирования по частям</a>:</p>
-<p><b>Условие 1</b><br/>
-$\lim_{x \to b-0} F(x)g(x) = 0$, так как $F(x)$ - ограничена, а $g(x) \to 0$</p>
-<p><b>Условие 2</b><br/>
-$$\begin{align}<br/>
-\int_{a}^{b} |F(x)g'(x)| \, dx  &amp;\leq M \int_{a}^{b} |g'(x)| \, dx =^{*} M \left| \int_{a}^{b} g'(x) \, dx  \right| = \\<br/>
-&amp;= M \left|\lim_{x \to b-0} g(x) - g(a) \right| = M|g(a)| <br/>
-\end{align} $$<br/>
-$*$ - можем убрать модуль из монотонности $g(x)$.<br/>
-Следовательно $\int\limits_{a}^{b} F(x)g'(x) \, dx$ - сходится.</p>
-<p>Значит: $\int\limits_{a}^{b} f(x)g(x) \, dx$ - сходится. <br/>
-$\square$<br/>
-</p></div></p>
+<div class="content">
+<h1>Признаки Дирихле и Абеля для несобственных интегралов</h1><h2>Признак Дирихле</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если:
+- $f(x)$ и $g(x)$ интегрируемы на $[a, b'] ~~\forall{b' \in [a, b)}$
+- $f(x)$ - непрерывна, $F(x)$ - первообразная $f(x)$
+- $F(x)$ - ограничена
+- $g(x)$ - непрерывно дифференцируема
+- $g(x) \underset{x \to b-0}{\longrightarrow} 0$ монотонно
+
+Тогда $\int\limits_{a}^{b} f(x)g(x) \, dx$ - сходится.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Проверим условия <a href="Формула Ньютона-Лейбница, интегрирование по частям в несобственных интегралах.html">интегрирования по частям</a>:
+
+**Условие 1**
+$\lim_{x \to b-0} F(x)g(x) = 0$, так как $F(x)$ - ограничена, а $g(x) \to 0$
+
+**Условие 2**
+$$\begin{align}
+\int_{a}^{b} |F(x)g'(x)| \, dx  &amp;\leq M \int_{a}^{b} |g'(x)| \, dx =^{*} M \left| \int_{a}^{b} g'(x) \, dx  \right| = \\
+&amp;= M \left|\lim_{x \to b-0} g(x) - g(a) \right| = M|g(a)| 
+\end{align} $$
+$*$ - можем убрать модуль из монотонности $g(x)$.
+Следовательно $\int\limits_{a}^{b} F(x)g'(x) \, dx$ - сходится.
+
+Значит: $\int\limits_{a}^{b} f(x)g(x) \, dx$ - сходится. 
+$\square$
+</p></div>
 <h2>Признак Абеля</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p><br/>
-Если:<br/>
-- $f(x)$ - непрерывна на $[a, b)$, $F(x)$ - её первообразная<br/>
-- $F(x) \underset{x \to b-0}{\longrightarrow} A$<br/>
-- $g(x)$ - непрерывно дифференцируема<br/>
-- $g(x) \underset{x \to b-0}{\longrightarrow} \alpha$ монотонно</p>
-<p>Тогда $\int\limits_{a}^{b} f(x)g(x) \, dx$ сходится.<br/>
-</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p>
-Рассмотрим $h(x) = g(x) - \alpha {}$. Ясно, что $h(x) \underset{x \to b-0}{\longrightarrow} 0$ монотонно, а значит по признаку Дирихле сходится:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если:
+- $f(x)$ - непрерывна на $[a, b)$, $F(x)$ - её первообразная
+- $F(x) \underset{x \to b-0}{\longrightarrow} A$
+- $g(x)$ - непрерывно дифференцируема
+- $g(x) \underset{x \to b-0}{\longrightarrow} \alpha$ монотонно
+
+Тогда $\int\limits_{a}^{b} f(x)g(x) \, dx$ сходится.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Рассмотрим $h(x) = g(x) - \alpha {}$. Ясно, что $h(x) \underset{x \to b-0}{\longrightarrow} 0$ монотонно, а значит по признаку Дирихле сходится:
 $$\int_{a}^{b} f(x)h(x) \, dx = \int_{a}^{b} f(x)(g(x) - \alpha) \, dx$$
 Так как:
 $$\int_{a}^{b} \alpha f(x) \, dx = \alpha F(x) \Bigg|_{a}^{b} = \alpha(A - F(a))$$
 То по линейности сходится и:
 $$\int_{a}^{b} f(x)g(x) \, dx = \int_{a}^{b} f(x)h(x) \, dx + \int_{a}^{b} \alpha f(x) \, dx$$
-$\square$</p></div></p></div>
+$\square$
+</p></div></div>
 </body>
 </html>

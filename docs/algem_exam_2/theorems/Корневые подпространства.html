@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,137 +187,149 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Корневые подпространства</h1><h2>Определение: Нильпотентный оператор</h2>
-<p><div class="spoiler-markdown"><p>
-Оператор $\mathcal{A}:V \to V$ называется <b>нильпотентным</b>, если $\exists{s}~~$такое, что $\mathcal{A}^{s}$ - нулевой оператор.
-Минимальное такое $s$ называется <b>ступенью нильпотентности</b></p></div></p>
+<div class="content">
+<h1>Корневые подпространства</h1><h2>Определение: Нильпотентный оператор</h2>
+<div class="spoiler-markdown"><p>Оператор $\mathcal{A}:V \to V$ называется **нильпотентным**, если $\exists{s}~~$такое, что $\mathcal{A}^{s}$ - нулевой оператор.
+Минимальное такое $s$ называется **ступенью нильпотентности**
+</p></div>
 <h2>1 и 0 компонент оператора</h2>
 <h5>Построение</h5>
-<p><div class="spoiler-markdown"><p><br/>
-Построим $U_{i}$ следующим образом:<br/>
-$$\begin{align}<br/>
-U_{1} &amp;= \operatorname{Im} \mathcal{A} \\ <br/>
-U_{2} &amp;= \operatorname{Im} \mathcal{A}^{2} \\ <br/>
-&amp;\dots \\ <br/>
-U_{n} &amp;= \operatorname{Im} \mathcal{A^{n}} \\ <br/>
-&amp;\dots<br/>
-\end{align}$$<br/>
-И $N_{i}$ аналогично:<br/>
-$$\begin{align}<br/>
-N_{1} &amp;= \operatorname{Ker} \mathcal{A} \\ <br/>
-N_{2} &amp;= \operatorname{Ker} \mathcal{A}^{2} \\ <br/>
-&amp;\dots \\ <br/>
-N_{n} &amp;= \operatorname{Ker} \mathcal{A^{n}} \\<br/>
-&amp;\dots <br/>
-\end{align}$$<br/>
-Так как $\mathcal{A}(0) = 0$, то если какие-то векторы перейдут в ${} 0$, то в нуле они и останутся для последующих степеней:<br/>
-$$\mathcal{A}^{i}x = 0 \implies \mathcal{A}^{i+1}x = \mathcal{A}(\mathcal{A}^{i}x) = \mathcal{A}(0) = 0$$<br/>
-По определению <span>ядра и образа</span> $U_{i}$ и ${} N_{i}$ будут $\mathcal{A}^{i}$-инвариантны. (если не очевидно, то <span>объяснение</span> ниже)</p>
-<p>А значит:<br/>
-$$\begin{align}<br/>
-U_{1} &amp;\supseteq U_{2} \supseteq \dots \supseteq U_{n} \\<br/>
-N_{1} &amp;\subseteq N_{2} \subseteq \dots \subseteq N_{n}<br/>
-\end{align}$$<br/>
-Так как пространство конечномерно, в какой-то момент получим $U_{k} = U_{k+1}$ и $N_{k} = N_{k + 1}$. Ясно, что равенство будет выполняться и для $U_{k+2}, U_{k+3}, \dots$ и $N_{k+2}, N_{k+3}, \dots$</p>
-<p>Из теоремы <span>о сумме ранга и дефекта</span> для подпространств $U_{k}$ и ${} N_{k}$ это произойдет для одной и той же степени оператора.<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Построим $U_{i}$ следующим образом:
+$$\begin{align}
+U_{1} &amp;= \operatorname{Im} \mathcal{A} \\ 
+U_{2} &amp;= \operatorname{Im} \mathcal{A}^{2} \\ 
+&amp;\dots \\ 
+U_{n} &amp;= \operatorname{Im} \mathcal{A^{n}} \\ 
+&amp;\dots
+\end{align}$$
+И $N_{i}$ аналогично:
+$$\begin{align}
+N_{1} &amp;= \operatorname{Ker} \mathcal{A} \\ 
+N_{2} &amp;= \operatorname{Ker} \mathcal{A}^{2} \\ 
+&amp;\dots \\ 
+N_{n} &amp;= \operatorname{Ker} \mathcal{A^{n}} \\
+&amp;\dots 
+\end{align}$$
+Так как $\mathcal{A}(0) = 0$, то если какие-то векторы перейдут в ${} 0$, то в нуле они и останутся для последующих степеней:
+$$\mathcal{A}^{i}x = 0 \implies \mathcal{A}^{i+1}x = \mathcal{A}(\mathcal{A}^{i}x) = \mathcal{A}(0) = 0$$
+По определению <span>ядра и образа</span> $U_{i}$ и ${} N_{i}$ будут $\mathcal{A}^{i}$-инвариантны. (если не очевидно, то <span>объяснение</span> ниже)
+
+А значит:
+$$\begin{align}
+U_{1} &amp;\supseteq U_{2} \supseteq \dots \supseteq U_{n} \\
+N_{1} &amp;\subseteq N_{2} \subseteq \dots \subseteq N_{n}
+\end{align}$$
+Так как пространство конечномерно, в какой-то момент получим $U_{k} = U_{k+1}$ и $N_{k} = N_{k + 1}$. Ясно, что равенство будет выполняться и для $U_{k+2}, U_{k+3}, \dots$ и $N_{k+2}, N_{k+3}, \dots$
+
+Из теоремы <span>о сумме ранга и дефекта</span> для подпространств $U_{k}$ и ${} N_{k}$ это произойдет для одной и той же степени оператора.
+</p></div>
 <h5>Определение</h5>
-<p><div class="spoiler-markdown"><p>
-Наименьший $k$, при котором $U_{k} = U_{k+1}$, называют <b>ступенью стабилизации</b>
-$U_{k} = \operatorname{Im}\mathcal{A}^{k}$  называют <b>1-компонентой</b> $\mathcal{A}$
-$N_{k} = \operatorname{Ker} \mathcal{A}^{k}$ называют <b>0-компонентой</b> $\mathcal{A}$</p></div></p>
+<div class="spoiler-markdown"><p>Наименьший $k$, при котором $U_{k} = U_{k+1}$, называют **ступенью стабилизации**
+$U_{k} = \operatorname{Im}\mathcal{A}^{k}$  называют **1-компонентой** $\mathcal{A}$
+$N_{k} = \operatorname{Ker} \mathcal{A}^{k}$ называют **0-компонентой** $\mathcal{A}$
+</p></div>
 <h2>Теорема: Разложение Фиттинга</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Для любого оператора $\mathcal{A}$ конечномерного пространства $V$ существуют $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ такие, что
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Для любого оператора $\mathcal{A}$ конечномерного пространства $V$ существуют $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ такие, что
 1) $V = N_{\mathcal{A}} \oplus U_{\mathcal{A}}$
 2) $N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$-инвариантны
 3) $\mathcal{A}|_{N_{\mathcal{A}}}$ - <span>нильпотентный оператор</span>
-4) $\mathcal{A}|_{U_{\mathcal{A}}}$ - <span>обратимый оператор</span></p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-В качестве $U_{\mathcal{A}}$ и $N_{\mathcal{A}}$ возьмем <span>1 и 0 компоненты</span> оператора $\mathcal{A}$ соответственно<br/>
-(т.е. $U_{\mathcal{A}} = U_{k} = \operatorname{Im} \mathcal{A}^{k}$ и $N_{\mathcal{A}} = N_{k} = \operatorname{Ker} \mathcal{A}^{k}$)</p>
-<p><b>Утверждение 1</b><br/>
-Из построения знаем, что $\mathrm{dim}~N_{\mathcal{A}} + \mathrm{dim}~ U_{\mathcal{A}} = \mathrm{dim}~V$. Поэтому для прямой суммы достаточно показать, что $N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$</p>
-<p>Пусть $x \in N_{\mathcal{A}} \cap U_{\mathcal{A}}$, то есть $\mathcal{A}^{k}x = 0$ и $\exists{y \in V}\mathpunct{:}~~ x = \mathcal{A}^{k}y$. Тогда:<br/>
-$$\mathcal{A}^{k}x = \mathcal{A}^{k}(\mathcal{A}^{k}y) = \mathcal{A}^{2k}y = 0 \implies y \in N_{2k}$$<br/>
-Но так как ${} N_{\mathcal{A}} = N_{k} = N_{k+1} = \dots = N_{2k} {}$, то $y \in N_{\mathcal{A}}$, а значит $x = \mathcal{A}^{k}y = 0$. Следовательно сумма прямая.</p>
-<p><b>Утверждение 2</b><br/>
-$N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$-инварианты из построения.</p>
-<p><b>Утверждение 3</b><br/>
-$$(\mathcal{A}|_{N_{\mathcal{A}}})^{k} = (\mathcal{A}|_{N_{\mathcal{A}}})^{k}|_{N_{\mathcal{A}}} = \mathcal{A}^{k}|_{N_{\mathcal{A}}} = 0$$<br/>
-А значит оператор нильпотентен со ступенью нильпотентности $k$</p>
-<p><b>Утверждение 4</b><br/>
-Так как:<br/>
-$$\operatorname{Ker} \mathcal{A^{k}}|_{U_{\mathcal{A}}} = \operatorname{Ker} \mathcal{A}^{k} \cap \operatorname{Im} \mathcal{A}^{k} = N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$$<br/>
-А значит $\mathcal{A}^{k}|_{U_{\mathcal{A}}}$ - обратим. Но тогда и $\mathcal{A}|_{U_{\mathcal{A}}}$ обратим.<br/>
-$\square$<br/>
-</p></div></p>
+4) $\mathcal{A}|_{U_{\mathcal{A}}}$ - <span>обратимый оператор</span>
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>В качестве $U_{\mathcal{A}}$ и $N_{\mathcal{A}}$ возьмем <span>1 и 0 компоненты</span> оператора $\mathcal{A}$ соответственно
+(т.е. $U_{\mathcal{A}} = U_{k} = \operatorname{Im} \mathcal{A}^{k}$ и $N_{\mathcal{A}} = N_{k} = \operatorname{Ker} \mathcal{A}^{k}$)
+
+**Утверждение 1**
+Из построения знаем, что $\mathrm{dim}~N_{\mathcal{A}} + \mathrm{dim}~ U_{\mathcal{A}} = \mathrm{dim}~V$. Поэтому для прямой суммы достаточно показать, что $N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$
+
+Пусть $x \in N_{\mathcal{A}} \cap U_{\mathcal{A}}$, то есть $\mathcal{A}^{k}x = 0$ и $\exists{y \in V}\mathpunct{:}~~ x = \mathcal{A}^{k}y$. Тогда:
+$$\mathcal{A}^{k}x = \mathcal{A}^{k}(\mathcal{A}^{k}y) = \mathcal{A}^{2k}y = 0 \implies y \in N_{2k}$$
+Но так как ${} N_{\mathcal{A}} = N_{k} = N_{k+1} = \dots = N_{2k} {}$, то $y \in N_{\mathcal{A}}$, а значит $x = \mathcal{A}^{k}y = 0$. Следовательно сумма прямая.
+
+**Утверждение 2**
+$N_{\mathcal{A}}$ и $U_{\mathcal{A}}$ - $\mathcal{A}$-инварианты из построения.
+
+**Утверждение 3**
+$$(\mathcal{A}|_{N_{\mathcal{A}}})^{k} = (\mathcal{A}|_{N_{\mathcal{A}}})^{k}|_{N_{\mathcal{A}}} = \mathcal{A}^{k}|_{N_{\mathcal{A}}} = 0$$
+А значит оператор нильпотентен со ступенью нильпотентности $k$
+
+**Утверждение 4**
+Так как:
+$$\operatorname{Ker} \mathcal{A^{k}}|_{U_{\mathcal{A}}} = \operatorname{Ker} \mathcal{A}^{k} \cap \operatorname{Im} \mathcal{A}^{k} = N_{\mathcal{A}} \cap U_{\mathcal{A}} = \{0\}$$
+А значит $\mathcal{A}^{k}|_{U_{\mathcal{A}}}$ - обратим. Но тогда и $\mathcal{A}|_{U_{\mathcal{A}}}$ обратим.
+$\square$
+</p></div>
 <h2>Определение: Корневое подпространство</h2>
-<p><div class="spoiler-markdown"><p><br/>
-Пусть $\lambda$ - собственное значение оператора $\mathcal{A}$, тогда <b>корневым подпространством</b> называется 0-компонента оператора $\mathcal{A} - \lambda \mathcal{E}$. </p>
-<p>Обозначение: $K_{\mathcal{A}}(\lambda)$<br/>
-Иными словами: $K_{\mathcal{A}}(\lambda) = N_{\mathcal{A} - \lambda \mathcal{E}} = \operatorname{Ker} (\mathcal{A} - \lambda \mathcal{E})^{k}$<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Пусть $\lambda$ - собственное значение оператора $\mathcal{A}$, тогда **корневым подпространством** называется 0-компонента оператора $\mathcal{A} - \lambda \mathcal{E}$. 
+
+Обозначение: $K_{\mathcal{A}}(\lambda)$
+Иными словами: $K_{\mathcal{A}}(\lambda) = N_{\mathcal{A} - \lambda \mathcal{E}} = \operatorname{Ker} (\mathcal{A} - \lambda \mathcal{E})^{k}$
+</p></div>
 <h2>Наблюдение: Инвариантность подпространства</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $U \subseteq V$. Тогда $U$ является $\mathcal{A}$-инвариантным $\iff$ $U$ является $(\mathcal{A} - \lambda \mathcal{E})$-инвариантным.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-$\Large\implies$<br/>
-Пусть $x \in U$. Тогда: <br/>
-$$(\mathcal{A} - \lambda \mathcal{E})(x) = \mathcal{A}x - \lambda x$$<br/>
-$\mathcal{A}x \in U$ из $\mathcal{A}$-инвариантности, $\lambda x \in U$ по определению, а значит $U$ - $(\mathcal{A} - \lambda \mathcal{E})$-инвариантно.</p>
-<p>$\Large\impliedby$<br/>
-Аналогично.<br/>
-$\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $U \subseteq V$. Тогда $U$ является $\mathcal{A}$-инвариантным $\iff$ $U$ является $(\mathcal{A} - \lambda \mathcal{E})$-инвариантным.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$\Large\implies$
+Пусть $x \in U$. Тогда: 
+$$(\mathcal{A} - \lambda \mathcal{E})(x) = \mathcal{A}x - \lambda x$$
+$\mathcal{A}x \in U$ из $\mathcal{A}$-инвариантности, $\lambda x \in U$ по определению, а значит $U$ - $(\mathcal{A} - \lambda \mathcal{E})$-инвариантно.
+
+$\Large\impliedby$
+Аналогично.
+$\square$
+</p></div>
 <h2>Теорема: Корневое разложение</h2>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $\mathcal{A}\mathpunct{:}~~ V \to V$ и его <span>характеристический многочлен</span> раскладывается на линейные множители. Тогда:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $\mathcal{A}\mathpunct{:}~~ V \to V$ и его <span>характеристический многочлен</span> раскладывается на линейные множители. Тогда:
 $$V = \mathop{\bigoplus}\limits_{i=1}^{k} K_{\mathcal{A}}(\lambda_{i}) = K_{\mathcal{A}}(\lambda_{1}) \oplus K_{\mathcal{A}}(\lambda_{2}) \oplus \dots \oplus K_{\mathcal{A}}(\lambda_{k})$$
 где $\lambda_i$ — собственные числа $\mathcal{A}$, $K_{\mathcal{A}}(\lambda_i)$ — корневые подпространства.
-Причём $\dim K_{\mathcal{A}}(\lambda_i) =$ кратности $\lambda_i$ в $\chi_{\mathcal{A}}(\lambda)$.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Индукция по $n = \dim V$.</p>
-<p><b>База индукции ($n=1$)</b>: <br/>
-$\mathcal{A}x = \lambda_1 x$. Тогда $V = K_{\mathcal{A}}(\lambda_1)$. Утверждение верно.</p>
-<p><b>Шаг индукции</b>: <br/>
-Пусть утверждение верно для пространств размерности $&lt; n$.<br/>
-Пусть $\lambda_1$ — одно из собственных значений $\mathcal{A}$.<br/>
-По <span>разложению Фиттинга</span> для оператора $\mathcal{A} - \lambda_1 \mathcal{E}$:<br/>
-$$V = N_{\mathcal{A} - \lambda_{1}\mathcal{E}} \oplus U_{\mathcal{A} - \lambda_{1}\mathcal{E}} = K_{\mathcal{A}}(\lambda_1) \oplus V'$$<br/>
-По наблюдению, оба пространства $\mathcal{A}$-инвариантны. Поэтому матрица в базисе, согласованном с разложением, имеет вид:<br/>
-$$ A = \begin{pmatrix} B &amp; \mathbf{0} \\ \mathbf{0} &amp; C \end{pmatrix} \qquad B = [\mathcal{A}|_{K_{\mathcal{A}}(\lambda_1)}] \quad C = [\mathcal{A}|_{V'}]$$<br/>
-Из вида матрицы получаем, что $\det (A - \lambda E) = \det(B - \lambda E) \cdot \det(C - \lambda E)$, а значит $\chi_{\mathcal{A}}(\lambda) = \chi_B(\lambda) \cdot \chi_C(\lambda)$</p>
-<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'}$ обратим. Значит $\lambda_{1}$ не является собственным для $\mathcal{A}|_{V'}$, так как иначе:<br/>
-$$\exists{x \neq 0}\mathpunct{:}~~ (\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'}(x) = \lambda_{1}x - \lambda_{1}x = 0 \implies \operatorname{Ker} (\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'} \neq \{0\}$$<br/>
-что противоречит обратимости. Следовательно, $\chi_{C}(\lambda_{1}) \neq 0$</p>
-<p>По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|_{K_{\mathcal{A}}(\lambda_{1})}$ - нильпотентен. Значит $\lambda_{1}$ - единственное собственное для $\mathcal{A}|_{K_{\mathcal{A}}(\lambda_{1})}$, так как иначе:<br/>
-$$\begin{align}<br/>
-\exists{\lambda_{2} \neq \lambda_{1}}~~ \exists{x \neq 0}\mathpunct{:}~~ &amp;(\mathcal{A} - \lambda_{1}\mathcal{E})(x) = \mathcal{A}x - \lambda_{1}x = (\lambda_{2} - \lambda_{1})x \neq 0 \\<br/>
-&amp;(\mathcal{A} - \lambda_{1}\mathcal{E})^{2}(x) = (\lambda_{2} - \lambda_{1})^{2}x \neq 0 \\<br/>
-&amp;\dots \\<br/>
-&amp;(\mathcal{A} - \lambda_{1}\mathcal{E})^{k}(x) = (\lambda_{2} - \lambda_{1})^{k}x \neq 0<br/>
-\end{align}$$<br/>
-что противоречит нильпотентности. Следовательно, $\chi_{B}(\lambda) = (\lambda_{1} - \lambda)^{m}$, где $m = \operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$. А значит $\operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$ равно кратности $\lambda_{1}$.</p>
-<p>Получаем, что $\chi_{A}(\lambda) = (\lambda_{1} - \lambda)^{m} \chi_{C}(\lambda)$, а значит $\chi_{C}(\lambda)$ раскладывается на линейные множители.</p>
-<p>Поскольку $\chi_{C}(\lambda)$ раскладывается, $\operatorname{dim} V' &lt; n$ и в $V'$ нет векторов, отвечающих $\lambda_{1}$, то для $V'$ справедливо предположение индукции:<br/>
-$$ V' = \bigoplus_{i=2}^{k} K_{\mathcal{A}|_{V'}}(\lambda_i) $$<br/>
-Следовательно,<br/>
-$$ V = K_{\mathcal{A}}(\lambda_1) \oplus \bigoplus_{i=2}^{k} K_{\mathcal{A}}(\lambda_i) = \bigoplus_{i=1}^{k} K_{\mathcal{A}}(\lambda_i) $$<br/>
-$\square$<br/>
-</p></div></p>
+Причём $\dim K_{\mathcal{A}}(\lambda_i) =$ кратности $\lambda_i$ в $\chi_{\mathcal{A}}(\lambda)$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Индукция по $n = \dim V$.
+
+**База индукции ($n=1$)**: 
+$\mathcal{A}x = \lambda_1 x$. Тогда $V = K_{\mathcal{A}}(\lambda_1)$. Утверждение верно.
+
+**Шаг индукции**: 
+Пусть утверждение верно для пространств размерности $&lt; n$.
+Пусть $\lambda_1$ — одно из собственных значений $\mathcal{A}$.
+По <span>разложению Фиттинга</span> для оператора $\mathcal{A} - \lambda_1 \mathcal{E}$:
+$$V = N_{\mathcal{A} - \lambda_{1}\mathcal{E}} \oplus U_{\mathcal{A} - \lambda_{1}\mathcal{E}} = K_{\mathcal{A}}(\lambda_1) \oplus V'$$
+По наблюдению, оба пространства $\mathcal{A}$-инвариантны. Поэтому матрица в базисе, согласованном с разложением, имеет вид:
+$$ A = \begin{pmatrix} B &amp; \mathbf{0} \\ \mathbf{0} &amp; C \end{pmatrix} \qquad B = [\mathcal{A}|_{K_{\mathcal{A}}(\lambda_1)}] \quad C = [\mathcal{A}|_{V'}]$$
+Из вида матрицы получаем, что $\det (A - \lambda E) = \det(B - \lambda E) \cdot \det(C - \lambda E)$, а значит $\chi_{\mathcal{A}}(\lambda) = \chi_B(\lambda) \cdot \chi_C(\lambda)$
+
+По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'}$ обратим. Значит $\lambda_{1}$ не является собственным для $\mathcal{A}|_{V'}$, так как иначе:
+$$\exists{x \neq 0}\mathpunct{:}~~ (\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'}(x) = \lambda_{1}x - \lambda_{1}x = 0 \implies \operatorname{Ker} (\mathcal{A} - \lambda_{1}\mathcal{E})|_{V'} \neq \{0\}$$
+что противоречит обратимости. Следовательно, $\chi_{C}(\lambda_{1}) \neq 0$
+
+По Фиттингу, $(\mathcal{A} - \lambda_{1}\mathcal{E})|_{K_{\mathcal{A}}(\lambda_{1})}$ - нильпотентен. Значит $\lambda_{1}$ - единственное собственное для $\mathcal{A}|_{K_{\mathcal{A}}(\lambda_{1})}$, так как иначе:
+$$\begin{align}
+\exists{\lambda_{2} \neq \lambda_{1}}~~ \exists{x \neq 0}\mathpunct{:}~~ &amp;(\mathcal{A} - \lambda_{1}\mathcal{E})(x) = \mathcal{A}x - \lambda_{1}x = (\lambda_{2} - \lambda_{1})x \neq 0 \\
+&amp;(\mathcal{A} - \lambda_{1}\mathcal{E})^{2}(x) = (\lambda_{2} - \lambda_{1})^{2}x \neq 0 \\
+&amp;\dots \\
+&amp;(\mathcal{A} - \lambda_{1}\mathcal{E})^{k}(x) = (\lambda_{2} - \lambda_{1})^{k}x \neq 0
+\end{align}$$
+что противоречит нильпотентности. Следовательно, $\chi_{B}(\lambda) = (\lambda_{1} - \lambda)^{m}$, где $m = \operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$. А значит $\operatorname{dim} K_{\mathcal{A}}(\lambda_{1})$ равно кратности $\lambda_{1}$.
+
+Получаем, что $\chi_{A}(\lambda) = (\lambda_{1} - \lambda)^{m} \chi_{C}(\lambda)$, а значит $\chi_{C}(\lambda)$ раскладывается на линейные множители.
+
+Поскольку $\chi_{C}(\lambda)$ раскладывается, $\operatorname{dim} V' &lt; n$ и в $V'$ нет векторов, отвечающих $\lambda_{1}$, то для $V'$ справедливо предположение индукции:
+$$ V' = \bigoplus_{i=2}^{k} K_{\mathcal{A}|_{V'}}(\lambda_i) $$
+Следовательно,
+$$ V = K_{\mathcal{A}}(\lambda_1) \oplus \bigoplus_{i=2}^{k} K_{\mathcal{A}}(\lambda_i) = \bigoplus_{i=1}^{k} K_{\mathcal{A}}(\lambda_i) $$
+$\square$
+</p></div>
 <h2>* Почему $\operatorname{Im} \mathcal{A}$ и ${} \operatorname{Ker} \mathcal{A} {}$ - $\mathcal{A}$-инвариантны?</h2>
-<p><div class="spoiler-markdown"><p><br/>
-Если данный факт не очевиден, докажем его.<br/>
-Напомним, что $\mathcal{A}\mathpunct{:}~~ V \to V$</p>
-<p>Пусть $y \in \operatorname{Im} \mathcal{A} \implies \exists{x}\mathpunct{:}~~ \mathcal{A}x = y$. Так как $\mathcal{A}\mathpunct{:}~~ V \to V$, то $y \in V$, а значит $\mathcal{A}y \in \operatorname{Im} \mathcal{A}$ по определению образа, а значит $\mathcal{A}$-инвариантно.</p>
-<p>Пусть $y \in \operatorname{Ker} \mathcal{A} \implies \mathcal{A}y = 0$. Так как $\mathcal{A}(\mathcal{A}y) = \mathcal{A}(0) = 0$, то $\mathcal{A}y \in \operatorname{Ker} \mathcal{A}$, а значит $\mathcal{A}$-инвариантно.<br/>
-</p></div></p></div>
+<div class="spoiler-markdown"><p>Если данный факт не очевиден, докажем его.
+Напомним, что $\mathcal{A}\mathpunct{:}~~ V \to V$
+
+Пусть $y \in \operatorname{Im} \mathcal{A} \implies \exists{x}\mathpunct{:}~~ \mathcal{A}x = y$. Так как $\mathcal{A}\mathpunct{:}~~ V \to V$, то $y \in V$, а значит $\mathcal{A}y \in \operatorname{Im} \mathcal{A}$ по определению образа, а значит $\mathcal{A}$-инвариантно.
+
+Пусть $y \in \operatorname{Ker} \mathcal{A} \implies \mathcal{A}y = 0$. Так как $\mathcal{A}(\mathcal{A}y) = \mathcal{A}(0) = 0$, то $\mathcal{A}y \in \operatorname{Ker} \mathcal{A}$, а значит $\mathcal{A}$-инвариантно.
+</p></div></div>
 </body>
 </html>

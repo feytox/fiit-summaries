@@ -13,38 +13,39 @@
       };
     </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <style>
     :root {
-        /* Основные цвета */
-        --obsidian-background: #181818; /* Немного темнее */
-        --obsidian-text-color: #e2e2e2; /* Немного светлее для контраста */
-        --obsidian-link-color: #8bb0e0; /* Более насыщенный синий */
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
         --obsidian-heading-color: #ffffff;
-        --obsidian-border-color: #4a4a4a; /* Более заметный серый */
+        --obsidian-border-color: #4a4a4a;
         --obsidian-code-background: #2a2a2a;
-        --obsidian-code-text: #e06c75; /* Более мягкий красный для кода */
-        --obsidian-container-background: #222222; /* Темнее для контейнера */
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
     }
 
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        line-height: 1.7; /* Увеличил межстрочный интервал */
+        line-height: 1.7;
         color: var(--obsidian-text-color);
         background-color: var(--obsidian-background);
-        margin: 0; /* Убрал отступы по умолчанию */
-        display: flex; /* Используем flexbox для центрирования */
+        margin: 0;
+        display: flex;
         justify-content: center;
-        align-items: flex-start; /* Выравнивание по верху */
+        align-items: flex-start;
         min-height: 100vh;
-        padding: 20px; /* Добавил небольшой отступ по всему краю */
-        box-sizing: border-box; /* Важно для padding */
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .content {
-        /* Этот класс может быть полезен, если у вас есть контент вне контейнера */
         width: 100%;
-        max-width: 1000px; /* Максимальная ширина для всего контента */
-        padding: 0 20px; /* Отступы по бокам */
+        max-width: 1000px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -52,21 +53,21 @@
         max-width: 800px;
         width: 100%;
         background-color: var(--obsidian-container-background);
-        padding: 40px; /* Увеличил padding */
-        border-radius: 10px; /* Слегка увеличил скругление */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid var(--obsidian-border-color);
     }
 
     h1, h2, h3, h4, h5, h6 {
         color: var(--obsidian-heading-color);
-        margin-top: 1.8em; /* Больше отступ сверху */
+        margin-top: 1.8em;
         margin-bottom: 1em;
         line-height: 1.3;
-        font-weight: 600; /* Немного жирнее */
+        font-weight: 600;
     }
 
-    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; } /* Подчеркивание для H1 */
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
     h2 { font-size: 2em; }
     h3 { font-size: 1.6em; }
     h4 { font-size: 1.3em; }
@@ -74,34 +75,34 @@
     a {
         color: var(--obsidian-link-color);
         text-decoration: none;
-        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Более плавный переход */
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
     }
 
     a:hover {
-        color: #a0c4ff; /* Более светлый синий при наведении */
+        color: #a0c4ff;
         text-decoration: underline;
     }
 
     p {
-        margin-bottom: 1.2em; /* Увеличил отступ между параграфами */
+        margin-bottom: 1.2em;
     }
 
     .spoiler-markdown {
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-code-background); /* Текст невидим */
-        cursor: pointer; /* Указываем, что это интерактивный элемент */
+        color: var(--obsidian-code-background);
+        cursor: pointer;
         padding: 2px 5px;
         border-radius: 4px;
         transition: color 0.3s ease-in-out;
     }
 
     .spoiler-markdown:hover {
-        color: var(--obsidian-text-color); /* Показываем текст при наведении */
+        color: var(--obsidian-text-color);
     }
 
     ul, ol {
         margin-bottom: 1.2em;
-        padding-left: 30px; /* Немного больше отступ для списков */
+        padding-left: 30px;
     }
 
     li {
@@ -111,18 +112,18 @@
     pre {
         background-color: var(--obsidian-code-background);
         border-radius: 6px;
-        padding: 18px; /* Немного больше padding */
+        padding: 18px;
         overflow-x: auto;
         margin-bottom: 1.5em;
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 0.95em; /* Немного крупнее шрифт */
+        font-size: 0.95em;
         line-height: 1.5;
     }
 
     code {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        color: var(--obsidian-code-text);
-        background-color: rgba(60, 60, 60, 0.5); /* Более мягкий фон для inline кода */
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
         padding: 3px 6px;
         border-radius: 4px;
     }
@@ -134,23 +135,23 @@
     }
 
     blockquote {
-        border-left: 5px solid var(--obsidian-link-color); /* Цвет ссылки для border */
-        margin: 2em 0; /* Больше отступов */
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
         padding: 0.8em 25px;
-        color: #b0b0b0; /* Немного светлее */
+        color: #b0b0b0;
         font-style: italic;
-        background-color: rgba(40, 40, 40, 0.5); /* Слегка заметный фон */
+        background-color: rgba(40, 40, 40, 0.5);
         border-radius: 4px;
     }
 
     hr {
         border: none;
-        border-top: 1px dashed var(--obsidian-border-color); /* Пунктирная линия */
-        margin: 3.5em 0; /* Больше отступов */
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
     }
 
     strong, b {
-        font-weight: 700; /* Более выраженное жирное начертание */
+        font-weight: 700;
     }
 
     em, i {
@@ -159,19 +160,19 @@
 
     #back-button {
         font-size: 1.1em;
-        padding: 8px 15px; /* Добавил padding */
-        display: inline-block; /* Для корректного padding и margin */
+        padding: 8px 15px;
+        display: inline-block;
         cursor: pointer;
         background-color: var(--obsidian-code-background);
-        color: var(--obsidian-text-color); /* Цвет текста как основной */
+        color: var(--obsidian-text-color);
         border: 1px solid var(--obsidian-border-color);
         border-radius: 5px;
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-        margin-top: 20px; /* Отступ сверху */
+        margin-top: 20px;
     }
 
     #back-button:hover {
-        background-color: var(--obsidian-link-color); /* Цвет ссылки при наведении */
+        background-color: var(--obsidian-link-color);
         color: #ffffff;
         border-color: var(--obsidian-link-color);
     }
@@ -186,107 +187,113 @@
         };
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
-<div class="content"><h1>Ортогональное дополнение подпространства. Ортогональные разложения</h1><h3>Определение: Ортогональное дополнение</h3>
-<p><div class="spoiler-markdown"><p>
-Пусть $S$ - подпространство в $V$. Множество всех векторов, ортогональных каждому вектору из $S$, называется <b>ортогональным дополнением</b> (ортодоп)
-$$S^{\perp} = \{a \in V ~|~ \forall{x \in S}~~ a\perp x\}$$</p></div></p>
+<div class="content">
+<h1>Ортогональное дополнение подпространства. Ортогональные разложения</h1><h3>Определение: Ортогональное дополнение</h3>
+<div class="spoiler-markdown"><p>Пусть $S$ - подпространство в $V$. Множество всех векторов, ортогональных каждому вектору из $S$, называется **ортогональным дополнением** (ортодоп)
+$$S^{\perp} = \{a \in V ~|~ \forall{x \in S}~~ a\perp x\}$$
+</p></div>
 <h3>Предложение об ортогональном дополнении</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $S$ - подпространство пространства $V$ со скалярным произведением, а $S^{\perp}$ - ортогональное дополнение $S$. Тогда:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $S$ - подпространство пространства $V$ со скалярным произведением, а $S^{\perp}$ - ортогональное дополнение $S$. Тогда:
 1) $S^{\perp}$ - подпространство $V$
-2) Если $a_{1}, a_{2}, \dots, a_{k}$ - базис $S$, то $x \in S^{\perp} \iff xa_{1} = \dots = xa_{k} = 0$</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Пункт <br/>
-1.<br/>
-Проверим $S^{\perp}$ на <span>подпространство</span>, $x, y \in S^{\perp}, a \in S, \lambda \in F$:<br/>
-$$(x+y)a = xa + ya = 0 + 0 = 0 \Rightarrow (x+y) \perp a \Rightarrow x+y \in S^{\perp}$$<br/>
-$$(\lambda x)a = \lambda(xa) = \lambda \cdot 0 = 0 \Rightarrow \lambda x \perp a \Rightarrow \lambda x \in S^{\perp}$$</p>
-<p>Пункт <br/>
-2.<br/>
-Прямое утверждение следует из определения. <br/>
-Для доказательства обратного предположим, что $x \perp a_{1}, a_{2}, \dots, a_{k}$. Пусть $a \in S$, тогда:<br/>
-$$\begin{align}<br/>
-a &amp;= \lambda_{1} a_{1} + \lambda_{2} a_{2} + \dots + \lambda_{k} a_{k} \\<br/>
-ax &amp;= (\lambda_{1} a_{1} + \lambda_{2} a_{2} + \dots + \lambda_{k} a_{k})x = \lambda_{1} (a_{1}x) + \lambda_{2} (a_{2}x) + \dots + \lambda_{k} (a_{k}x) = \\<br/>
-&amp;= \lambda_{1} \cdot 0 + \lambda_{2} \cdot 0 + \dots + \lambda_{k} \cdot 0 = 0<br/>
-\end{align}$$<br/>
-и потому $x \in S^{\perp}$ $~~~\square$<br/>
-</p></div></p>
+2) Если $a_{1}, a_{2}, \dots, a_{k}$ - базис $S$, то $x \in S^{\perp} \iff xa_{1} = \dots = xa_{k} = 0$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Пункт 
+1.
+Проверим $S^{\perp}$ на <span>подпространство</span>, $x, y \in S^{\perp}, a \in S, \lambda \in F$:
+$$(x+y)a = xa + ya = 0 + 0 = 0 \Rightarrow (x+y) \perp a \Rightarrow x+y \in S^{\perp}$$
+$$(\lambda x)a = \lambda(xa) = \lambda \cdot 0 = 0 \Rightarrow \lambda x \perp a \Rightarrow \lambda x \in S^{\perp}$$
+
+Пункт 
+2.
+Прямое утверждение следует из определения. 
+Для доказательства обратного предположим, что $x \perp a_{1}, a_{2}, \dots, a_{k}$. Пусть $a \in S$, тогда:
+$$\begin{align}
+a &amp;= \lambda_{1} a_{1} + \lambda_{2} a_{2} + \dots + \lambda_{k} a_{k} \\
+ax &amp;= (\lambda_{1} a_{1} + \lambda_{2} a_{2} + \dots + \lambda_{k} a_{k})x = \lambda_{1} (a_{1}x) + \lambda_{2} (a_{2}x) + \dots + \lambda_{k} (a_{k}x) = \\
+&amp;= \lambda_{1} \cdot 0 + \lambda_{2} \cdot 0 + \dots + \lambda_{k} \cdot 0 = 0
+\end{align}$$
+и потому $x \in S^{\perp}$ $~~~\square$
+</p></div>
 <h3>Теорема об ортогональном разложении</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Если $V$ - пространство со скалярным произведением, а $S$ - подпространство в $V$, то $V = S \oplus S^{\perp}$ (<b>ортогональное разложение</b>)</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Если $x \in S \cap S^{\perp}$, то $xx = 0 \Rightarrow x = 0$. А значит $S \cap S^{\perp} = \{0\}$, а значит $S + S^{\perp}$ - прямая. Осталось проверить, что $S + S^{\perp} = V$.</p>
-<p>Положим $\mathrm{dim}~V = n, \mathrm{dim}~S = k$. Возьмём ортонормированный базис $a_{1}, a_{2}, \dots, a_{k}$ подпространства $S$ и дополним этот базис до ортонормированного базиса пространства $V$. Пусть $a_{k+1},\dots,a_{n}$ - вектора, использованные для дополнения. Так как каждый из этих $n-k$ векторов ортогонален $a_{1}, a_{2}, \dots, a_{k}$, по <span>предложению</span>: $a_{k+1}, \dots, a_{n} \in S^{\perp}$.</p>
-<p>Итак, $S + S^{\perp}$ содержит все вектора $a_{1}, a_{2}, \dots, a_{n}$, составляющие базис $V$, откуда $S + S^{\perp} = V$ $\square$<br/>
-</p></div></p>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если $V$ - пространство со скалярным произведением, а $S$ - подпространство в $V$, то $V = S \oplus S^{\perp}$ (**ортогональное разложение**)
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Если $x \in S \cap S^{\perp}$, то $xx = 0 \Rightarrow x = 0$. А значит $S \cap S^{\perp} = \{0\}$, а значит $S + S^{\perp}$ - прямая. Осталось проверить, что $S + S^{\perp} = V$.
+
+Положим $\mathrm{dim}~V = n, \mathrm{dim}~S = k$. Возьмём ортонормированный базис $a_{1}, a_{2}, \dots, a_{k}$ подпространства $S$ и дополним этот базис до ортонормированного базиса пространства $V$. Пусть $a_{k+1},\dots,a_{n}$ - вектора, использованные для дополнения. Так как каждый из этих $n-k$ векторов ортогонален $a_{1}, a_{2}, \dots, a_{k}$, по <span>предложению</span>: $a_{k+1}, \dots, a_{n} \in S^{\perp}$.
+
+Итак, $S + S^{\perp}$ содержит все вектора $a_{1}, a_{2}, \dots, a_{n}$, составляющие базис $V$, откуда $S + S^{\perp} = V$ $\square$
+</p></div>
 <h3>Свойства ортогонального дополнения</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $V$ - пространство со скалярным произведением, $S, S_{1}, S_{2}$ - его подпространства. Тогда:
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $V$ - пространство со скалярным произведением, $S, S_{1}, S_{2}$ - его подпространства. Тогда:
 1) $V^{\perp} = \{0\},~~ \{0\}^{\perp} = V$
 2) $(S^{\perp})^{\perp} = S$
 3) $S_{1} \subseteq S_{2} \Rightarrow S_{2}^{\perp} \subseteq S_{1}^{\perp}$
 4) $(S_{1} + S_{2})^{\perp} = S_{1}^{\perp} \cap S_{2}^{\perp},~~ (S_{1} \cap S_{2})^{\perp} = S_{1}^{\perp} + S_{2}^{\perp}$
-5) $V = S_{1} \oplus S_{2} \Rightarrow V = S_{1}^{\perp} \oplus S_{2}^{\perp}$</p></div></p>
+5) $V = S_{1} \oplus S_{2} \Rightarrow V = S_{1}^{\perp} \oplus S_{2}^{\perp}$
+</p></div>
 <p>Д-во:<br/>
-<b>Свойство <br/>
-1.</b><br/>
-<div class="spoiler-markdown"><p>
-Если $x \in V^{\perp}$, то $\forall{y \in V}~~ xy = 0$, в частности $xx = 0$, а значит по <span>4 аксиоме</span> $x = 0$. Следовательно, $V^{\perp} = \{0\}$.
-Равенство $\{0\}^{\perp} = V$ вытекает из <span>замечания о нулевом векторе и ортогональности</span>.</p></div></p>
-<p><b>Свойство <br/>
-2.</b><br/>
-<div class="spoiler-markdown"><p>
-Из <span>определения ортогонального дополнения</span> вытекает, что если $x \in S$, то $\forall{a \in S^{\perp}}~~ a\perp x$. Следовательно, $S \subseteq (S^{\perp})^{\perp}$. Пусть $\mathrm{dim}~S = k, \mathrm{dim}~V = n$. В силу <span>теоремы об ортогональном разложении</span>:
+**Свойство <br/>
+1.**</p>
+<div class="spoiler-markdown"><p>Если $x \in V^{\perp}$, то $\forall{y \in V}~~ xy = 0$, в частности $xx = 0$, а значит по <span>4 аксиоме</span> $x = 0$. Следовательно, $V^{\perp} = \{0\}$.
+Равенство $\{0\}^{\perp} = V$ вытекает из <span>замечания о нулевом векторе и ортогональности</span>.
+</p></div>
+<p>**Свойство <br/>
+2.**</p>
+<div class="spoiler-markdown"><p>Из <span>определения ортогонального дополнения</span> вытекает, что если $x \in S$, то $\forall{a \in S^{\perp}}~~ a\perp x$. Следовательно, $S \subseteq (S^{\perp})^{\perp}$. Пусть $\mathrm{dim}~S = k, \mathrm{dim}~V = n$. В силу <span>теоремы об ортогональном разложении</span>:
 $$\mathrm{dim}~(S^{\perp})^{\perp} = n - \mathrm{dim}~S^{\perp} = n - (n - k) = k = \mathrm{dim}~S$$
-Итак, $S$ - подпространство $(S^{\perp})^{\perp}, \mathrm{dim}~S = \mathrm{dim}~(S^{\perp})^{\perp}$. Отсюда $S = (S^{\perp})^{\perp}$</p></div></p>
-<p><b>Свойство <br/>
-3.</b><br/>
-<div class="spoiler-markdown"><p>
-Пусть $S_{1} \subseteq S_{2}, x \in S_{2}^{\perp}$. Тогда $\forall{a \in S_{2}}~~ x \perp a$, а значит и $\forall{a \in S_{1}}$. Следовательно, $x \in S^{\perp}_{1}$ и потому $S_{2}^{\perp} \subseteq S_{1}^{\perp}$</p></div></p>
-<p><b>Свойство <br/>
-4.</b><br/>
-<div class="spoiler-markdown"><p><br/>
-Пусть $x \in S_{1}^{\perp} \cap S_{2}^{\perp},~~ y \in S_{1} + S_{2}$. Тогда $y = y_{1} + y_{2},~ y_{1} \in S_{1}, y_{2} \in S_{2}$. В силу выбора $x$ имеем:<br/>
-$$xy_{1} = xy_{2} = 0$$<br/>
-$$xy = x(y_{1} + y_{2}) = xy_{1} + xy_{2} = 0 + 0 = 0$$<br/>
-Значит $x \in (S_{1} + S_{2})^{\perp}$, потому $S_{1}^{\perp} \cap S_{2}^{\perp} \subseteq (S_{1} + S_{2})^{\perp}$.</p>
-<p>Докажем обратное включение. Пусть $x \in (S_{1} + S_{2})^{\perp}$. Так как $S_{1} \subseteq S_{1} + S_{2}$ и $S_{2} \subseteq S_{1} + S_{2}$, из свойства 3 вытекает, что $x \in S_{1}^{\perp}$ и $x \in S_{2}^{\perp}$, то есть $x \in S_{1}^{\perp} \cap S_{2}^{\perp}$, а значит $(S_{1} + S_{2})^{\perp} \subseteq S_{1}^{\perp} \cap S_{2}^{\perp}$.</p>
-<p>Мы проверили, что $(S_{1} + S_{2})^{\perp} = S_{1}^{\perp} \cap S_{2}^{\perp}$. Используя свойство 2, получаем:<br/>
-$$S_{1}^{\perp} + S_{2}^{\perp} = ((S_{1}^{\perp} + S_{2}^{\perp})^{\perp})^{\perp} = ((S_{1}^{\perp})^{\perp} \cap (S_{2}^{\perp})^{\perp})^{\perp} = (S_{1} \cap S_{2})^{\perp}$$<br/>
-</p></div></p>
-<p><b>Свойство <br/>
-5.</b><br/>
-<div class="spoiler-markdown"><p>
-$S_{1} \cap S_{2} = \{0\}$. Используя свойства 1 и 4, имеем:
+Итак, $S$ - подпространство $(S^{\perp})^{\perp}, \mathrm{dim}~S = \mathrm{dim}~(S^{\perp})^{\perp}$. Отсюда $S = (S^{\perp})^{\perp}$
+</p></div>
+<p>**Свойство <br/>
+3.**</p>
+<div class="spoiler-markdown"><p>Пусть $S_{1} \subseteq S_{2}, x \in S_{2}^{\perp}$. Тогда $\forall{a \in S_{2}}~~ x \perp a$, а значит и $\forall{a \in S_{1}}$. Следовательно, $x \in S^{\perp}_{1}$ и потому $S_{2}^{\perp} \subseteq S_{1}^{\perp}$
+</p></div>
+<p>**Свойство <br/>
+4.**</p>
+<div class="spoiler-markdown"><p>Пусть $x \in S_{1}^{\perp} \cap S_{2}^{\perp},~~ y \in S_{1} + S_{2}$. Тогда $y = y_{1} + y_{2},~ y_{1} \in S_{1}, y_{2} \in S_{2}$. В силу выбора $x$ имеем:
+$$xy_{1} = xy_{2} = 0$$
+$$xy = x(y_{1} + y_{2}) = xy_{1} + xy_{2} = 0 + 0 = 0$$
+Значит $x \in (S_{1} + S_{2})^{\perp}$, потому $S_{1}^{\perp} \cap S_{2}^{\perp} \subseteq (S_{1} + S_{2})^{\perp}$.
+
+Докажем обратное включение. Пусть $x \in (S_{1} + S_{2})^{\perp}$. Так как $S_{1} \subseteq S_{1} + S_{2}$ и $S_{2} \subseteq S_{1} + S_{2}$, из свойства 3 вытекает, что $x \in S_{1}^{\perp}$ и $x \in S_{2}^{\perp}$, то есть $x \in S_{1}^{\perp} \cap S_{2}^{\perp}$, а значит $(S_{1} + S_{2})^{\perp} \subseteq S_{1}^{\perp} \cap S_{2}^{\perp}$.
+
+Мы проверили, что $(S_{1} + S_{2})^{\perp} = S_{1}^{\perp} \cap S_{2}^{\perp}$. Используя свойство 2, получаем:
+$$S_{1}^{\perp} + S_{2}^{\perp} = ((S_{1}^{\perp} + S_{2}^{\perp})^{\perp})^{\perp} = ((S_{1}^{\perp})^{\perp} \cap (S_{2}^{\perp})^{\perp})^{\perp} = (S_{1} \cap S_{2})^{\perp}$$
+</p></div>
+<p>**Свойство <br/>
+5.**</p>
+<div class="spoiler-markdown"><p>$S_{1} \cap S_{2} = \{0\}$. Используя свойства 1 и 4, имеем:
 $$S_{1}^{\perp} + S_{2}^{\perp} = (S_{1} \cap S_{2})^{\perp} = \{0\}^{\perp} = V$$
 Так как $S_{1} + S_{2} = V$, а значит, используя 1 и 4, получаем:
 $$S_{1}^{\perp} \cap S_{2}^{\perp} = (S_{1} + S_{2})^{\perp} = V^{\perp} = \{0\}$$
-Значит $V = S_{1}^{\perp} \oplus S_{2}^{\perp}$ $~~~\square$</p></div></p>
+Значит $V = S_{1}^{\perp} \oplus S_{2}^{\perp}$ $~~~\square$
+</p></div>
 <h3>Определения про ортогональное разложение</h3>
-<p><div class="spoiler-markdown"><p><br/>
-Пусть $V$ - пространство со скалярным произведением, $S$ - его подпространство и $\mathbf{x} \in V$. В силу <span>теоремы об ортогональном разложении</span> $\exists{\mathbf{y} \in S, \mathbf{z} \in S^{\perp}}~~ \mathbf{x} = \mathbf{y} + \mathbf{z}$.</p>
-<p>Вектор $\mathbf{y} \in S$ в этом разложении называется <b>ортогональной проекцией</b> вектора $\mathbf{x}$ на подпространство $S$. Обозначается $\mathbf{x}_{S}$</p>
-<p>Вектор $\mathbf{z} \in S^{\perp}$ в этом разложении называется <b>ортогональной составляющей</b> вектора $\mathbf{x}$ относительно $S$. Обозначается $\mathbf{x}^{\perp}$</p>
-<p>Длина ортогональной составляющей называется <b>расстоянием</b> от $\mathbf{x}$ до $S$. Обозначается $d(\mathbf{x}, S)$.</p>
-<p>Если $V$ - евклидово, $S \neq \{0\}$ и $\mathbf{x}_{S} \neq 0$, то <b>углом</b> между $\mathbf{x}$ и $S$ называется угол между $\mathbf{x}$ и $\mathbf{x}_{S}$. Если $S \neq \{0\}$ и $\mathbf{x}_{S} = 0$, то угол равен $\dfrac{\pi}{2}$, что естественно, так как тогда $\mathbf{x} = \mathbf{x}^{\perp}$. Если же $S = \{0\}$, то угол не определён. Обозначается $(\widehat{x, S})$<br/>
-</p></div></p>
+<div class="spoiler-markdown"><p>Пусть $V$ - пространство со скалярным произведением, $S$ - его подпространство и $\mathbf{x} \in V$. В силу <span>теоремы об ортогональном разложении</span> $\exists{\mathbf{y} \in S, \mathbf{z} \in S^{\perp}}~~ \mathbf{x} = \mathbf{y} + \mathbf{z}$.
+
+Вектор $\mathbf{y} \in S$ в этом разложении называется **ортогональной проекцией** вектора $\mathbf{x}$ на подпространство $S$. Обозначается $\mathbf{x}_{S}$
+
+Вектор $\mathbf{z} \in S^{\perp}$ в этом разложении называется **ортогональной составляющей** вектора $\mathbf{x}$ относительно $S$. Обозначается $\mathbf{x}^{\perp}$
+
+Длина ортогональной составляющей называется **расстоянием** от $\mathbf{x}$ до $S$. Обозначается $d(\mathbf{x}, S)$.
+
+Если $V$ - евклидово, $S \neq \{0\}$ и $\mathbf{x}_{S} \neq 0$, то **углом** между $\mathbf{x}$ и $S$ называется угол между $\mathbf{x}$ и $\mathbf{x}_{S}$. Если $S \neq \{0\}$ и $\mathbf{x}_{S} = 0$, то угол равен $\dfrac{\pi}{2}$, что естественно, так как тогда $\mathbf{x} = \mathbf{x}^{\perp}$. Если же $S = \{0\}$, то угол не определён. Обозначается $(\widehat{x, S})$
+</p></div>
 <h3>Замечание об ортогональной проекции</h3>
-<p>Формулировка:<br/>
-<div class="spoiler-markdown"><p>
-Пусть $V$ - пространство со скалярным произведением, $S$ - его подпространство. Обозначим через $d_{\mathbf{a}}(\mathbf{x})$ - расстояние между $\mathbf{a} \in V$ и $\mathbf{x} \in S$.
-Тогда значение $d_{\mathbf{a}}(\mathbf{x})$ минимально $\iff$ $\mathbf{x} = \mathbf{a}_{S}$. При этом $d_{\mathbf{a}}(\mathbf{a}_{S}) = d(\mathbf{a}, S)$.</p></div></p>
-<p>Д-во:<br/>
-<div class="spoiler-markdown"><p><br/>
-Так как $\mathbf{a}_{S} - \mathbf{x} \in S$, из <span>теоремы Пифагора</span> вытекает:<br/>
-$$|\mathbf{a} - \mathbf{x}|^{2} = |(\mathbf{a}_{S} + \mathbf{a}^{\perp}) - \mathbf{x}|^{2} = |(\mathbf{a}_{S} - \mathbf{x}) + \mathbf{a}^{\perp}|^{2} = |\mathbf{a}_{S} - \mathbf{x}|^{2} + |\mathbf{a}^{\perp}|^{2}$$<br/>
-Поскольку $d(\mathbf{a}, \mathbf{x}) = |\mathbf{a} - \mathbf{x}|$, мы получаем, что значение $d_{\mathbf{a}}(\mathbf{x})$ минимально $\iff$ минимально значение выражения $|\mathbf{a}_{S} - \mathbf{x}|^{2}$. В свою очередь, значение последнего выражения минимально $\iff$ $\mathbf{a}_{S} - \mathbf{x} = \mathbf{0}$, т.е. $\mathbf{x} = \mathbf{a}_{S}$. Первое утверждение доказано.</p>
-<p>Из доказанного вытекает, что $d_{\mathbf{a}}(\mathbf{a}_{S}) = |\mathbf{a}^{\perp}| = d(\mathbf{a}, S)$ по определению расстояния от вектора до подпространства. $~~~\square$<br/>
-</p></div></p></div>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $V$ - пространство со скалярным произведением, $S$ - его подпространство. Обозначим через $d_{\mathbf{a}}(\mathbf{x})$ - расстояние между $\mathbf{a} \in V$ и $\mathbf{x} \in S$.
+Тогда значение $d_{\mathbf{a}}(\mathbf{x})$ минимально $\iff$ $\mathbf{x} = \mathbf{a}_{S}$. При этом $d_{\mathbf{a}}(\mathbf{a}_{S}) = d(\mathbf{a}, S)$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Так как $\mathbf{a}_{S} - \mathbf{x} \in S$, из <span>теоремы Пифагора</span> вытекает:
+$$|\mathbf{a} - \mathbf{x}|^{2} = |(\mathbf{a}_{S} + \mathbf{a}^{\perp}) - \mathbf{x}|^{2} = |(\mathbf{a}_{S} - \mathbf{x}) + \mathbf{a}^{\perp}|^{2} = |\mathbf{a}_{S} - \mathbf{x}|^{2} + |\mathbf{a}^{\perp}|^{2}$$
+Поскольку $d(\mathbf{a}, \mathbf{x}) = |\mathbf{a} - \mathbf{x}|$, мы получаем, что значение $d_{\mathbf{a}}(\mathbf{x})$ минимально $\iff$ минимально значение выражения $|\mathbf{a}_{S} - \mathbf{x}|^{2}$. В свою очередь, значение последнего выражения минимально $\iff$ $\mathbf{a}_{S} - \mathbf{x} = \mathbf{0}$, т.е. $\mathbf{x} = \mathbf{a}_{S}$. Первое утверждение доказано.
+
+Из доказанного вытекает, что $d_{\mathbf{a}}(\mathbf{a}_{S}) = |\mathbf{a}^{\perp}| = d(\mathbf{a}, S)$ по определению расстояния от вектора до подпространства. $~~~\square$
+</p></div></div>
 </body>
 </html>
