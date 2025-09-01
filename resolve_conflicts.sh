@@ -21,13 +21,19 @@ if [ -f content/index.md ] && git status --porcelain | grep -q "^UU.*content/ind
 EOF
     
     # Append content from main branch (skip any existing "О сайте" section)
-    git show origin/main:content/index.md | sed '/^#### О сайте/,/^$/d; /^#### Отличия от Obsidian:/,/^$/d' >> content/index.md
+    # Use git show to get the file content from main, filtering out the site-specific sections
+    if git show origin/main:content/index.md >/dev/null 2>&1; then
+        git show origin/main:content/index.md | sed '/^#### О сайте/,/^$/d; /^#### Отличия от Obsidian:/,/^$/d' >> content/index.md
+    else
+        echo "Warning: content/index.md not found in main branch, using conflict version"
+        git checkout --theirs content/index.md
+    fi
     
     git add content/index.md
     echo "Resolved content/index.md"
 fi
 
-# For any other conflicts, prefer main branch version
+# For any other conflicts, prefer main branch version (--theirs refers to the branch being merged, which is main)
 for file in $(git status --porcelain | grep "^UU" | cut -c4-); do
     if [ "$file" != "content/index.md" ]; then
         echo "Resolving $file by using main branch version..."
