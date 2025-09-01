@@ -1,5 +1,5 @@
 #### Материал по будущим экзаменам
-- Коллоквиум по матану, 3 семестр
+- [[Summaries/content/calculus_colloq_3/List of Topics|Коллоквиум по матану]], 3 семестр
 
 #### Материал по прошедшим экзаменам
 - Коллоквиум по матану, 1 семестр: [[calculus_colloq_1/List of Definitions|определения]], [[calculus_colloq_1/List of Theorems|теоремы]]
