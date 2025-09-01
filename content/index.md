@@ -1,12 +1,13 @@
-#### Материал по текущим экзаменам
-- [[calculus_exam_2/List of Theorems|Экзамен по матану]], 2 семестр
-- [[algem_exam_2/List of Topics|Экзамен по алгему]], 2 семестр
+#### Материал по будущим экзаменам
+- Коллоквиум по матану, 3 семестр
 
 #### Материал по прошедшим экзаменам
-- Коллоквиум по матану, 2 семестр: [[calculus_colloq_2/List of Definitions|определения]], [[calculus_colloq_2/List of Theorems|теоремы]]
-- [[calculus_exam_1/List of Theorems|Экзамен по матану]], 1 семестр
-- [[algem_exam_1/List of Topics|Экзамен по алгему]], 1 семестр
 - Коллоквиум по матану, 1 семестр: [[calculus_colloq_1/List of Definitions|определения]], [[calculus_colloq_1/List of Theorems|теоремы]]
+- [[algem_exam_1/List of Topics|Экзамен по алгему]], 1 семестр
+- [[calculus_exam_1/List of Theorems|Экзамен по матану]], 1 семестр
+- Коллоквиум по матану, 2 семестр: [[calculus_colloq_2/List of Definitions|определения]], [[calculus_colloq_2/List of Theorems|теоремы]]
+- [[calculus_exam_2/List of Theorems|Экзамен по матану]], 2 семестр
+- [[algem_exam_2/List of Topics|Экзамен по алгему]], 2 семестр
 
 #### Дополнительный материал
 - Python зачёт: [[Part_A|Часть A]], [[Part_B|Часть B]]
