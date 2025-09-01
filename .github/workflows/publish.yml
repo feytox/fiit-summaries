@@ -25,7 +25,11 @@ jobs:
       - name: Merge main into site
         run: |
           git switch site
-          git merge origin/main --no-edit
+          if ! git merge origin/main --no-edit; then
+            echo "Merge conflict detected, resolving automatically..."
+            ./resolve_conflicts.sh
+            git commit -m "Auto-resolve merge conflicts: preserve site intro, use main content"
+          fi
       
       - name: Setup Python
         uses: actions/setup-python@v4
