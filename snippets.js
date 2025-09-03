@@ -76,7 +76,7 @@
 	{trigger: "sign", replacement: "\\mathrm{sign}~", options: "mA"},
 	{trigger: "lim", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)}", options: "mA"},
 	{trigger: "liem", replacement: "\\lim_{${0:x} \\to ${1:a}} ${2:f(x)} = ${3:A}", options: "mA"},
-	{trigger: "part", replacement: "\\tau = \\{a = ${0:x}_{0} < ${0:x}_{1} < \\dots < ${0:x}_{n} = b\\}$1", options: "mA"},
+	{trigger: "part", replacement: "\\partial", options: "mA"},
 	{trigger: "dxk", replacement: "\\Delta x_{k}", options: "mA"},
 	{trigger: "lmd", replacement: "\\limits_{$0}$1", options: "mA"}, // d - типо нижний предел
 	{trigger: "lmw", replacement: "\\limits_{$0}^{$1}$2", options: "mA"}, // w - типо верхний, но там оба
