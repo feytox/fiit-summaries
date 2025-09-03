@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Главная страница</title>
+<title>List of Topics</title>
 <script>
        MathJax = {
         tex: {
@@ -188,33 +188,40 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h4>О сайте</h4>
-<p>Данный сайт это web-версия конспектов из <a href="https://github.com/feytox/fiit-summaries">репозитория</a>. На сайте возможны баги, поэтому советую пользоваться Obsidian. Подробная информация о конспектах описана в <a href="https://github.com/feytox/fiit-summaries">репозитории</a></p>
-<p>Отличия от Obsidian:<br/>
-- Конспекты здесь синхронизируются автоматически в течение нескольких минут после push в main.<br/>
-- Некоторый текст, возможно, отображается по-другому</p>
-<h4>Материал по будущим экзаменам</h4>
+<h1>List of Topics</h1><p>Коллок по матану ещё не скоро, однако материал здесь будет постепенно пополняться.</p>
+<h2>Определения</h2>
 <ul>
-<li><a href="calculus_colloq_3/List of Topics.html">Коллоквиум по матану</a>, 3 семестр</li>
+<li><a href="definitions/Метрика.html">Метрика</a></li>
+<li><a href="definitions/Шары.html">Шары</a></li>
+<li><a href="definitions/Окрестности.html">Окрестности</a></li>
+<li><a href="definitions/Внутренняя точка.html">Внутренняя точка</a></li>
+<li><a href="definitions/Ограниченное множество.html">Ограниченное множество</a></li>
+<li><a href="definitions/Открытое и замкнутое множество.html">Открытое и замкнутое множество</a></li>
+<li><a href="definitions/Граничная точка.html">Граничная точка</a></li>
+<li><a href="definitions/Предельная точка.html">Предельная точка</a></li>
+<li><a href="definitions/Покрытие.html">Покрытие</a></li>
+<li><a href="definitions/Компактное множество.html">Компактное множество</a></li>
+<li><a href="definitions/Диаметр множества.html">Диаметр множества</a></li>
+<li><a href="definitions/Изолированная точка.html">Изолированная точка</a></li>
+<li><a href="definitions/Метрическое пространство.html">Метрическое пространство</a></li>
+<li><a href="definitions/Предел последовательности.html">Предел последовательности</a></li>
+<li><a href="definitions/Эквивалентные метрики.html">Эквивалентные метрики</a></li>
 </ul>
-<h4>Материал по прошедшим экзаменам</h4>
+<h2>Теоремы</h2>
 <ul>
-<li>Коллоквиум по матану, 1 семестр: <a href="calculus_colloq_1/List of Definitions.html">определения</a>, <a href="calculus_colloq_1/List of Theorems.html">теоремы</a></li>
-<li><a href="algem_exam_1/List of Topics.html">Экзамен по алгему</a>, 1 семестр</li>
-<li><a href="calculus_exam_1/List of Theorems.html">Экзамен по матану</a>, 1 семестр</li>
-<li>Коллоквиум по матану, 2 семестр: <a href="calculus_colloq_2/List of Definitions.html">определения</a>, <a href="calculus_colloq_2/List of Theorems.html">теоремы</a></li>
-<li><a href="calculus_exam_2/List of Theorems.html">Экзамен по матану</a>, 2 семестр</li>
-<li><a href="algem_exam_2/List of Topics.html">Экзамен по алгему</a>, 2 семестр</li>
+<li><a href="theorems/Теорема о компактном множестве.html">Теорема о компактном множестве</a> $\star$</li>
+<li><a href="theorems/Лемма о конечном покрытии.html">Лемма о конечном покрытии</a></li>
+<li><a href="theorems/Теорема Больцано-Вейерштрасса.html">Теорема Больцано-Вейерштрасса</a></li>
+<li><a href="theorems/Теорема о вложенных стягивающихся прямоугольниках.html">Теорема о вложенных стягивающихся прямоугольниках</a></li>
+<li><a href="theorems/Теорема о покоординатной сходимости.html">Теорема о покоординатной сходимости</a></li>
 </ul>
-<h4>Дополнительный материал</h4>
+<h2>Утверждения</h2>
 <ul>
-<li>Python зачёт: <a href="python1/Part_A.html">Часть A</a>, <a href="python1/Part_B.html">Часть B</a></li>
+<li><a href="theorems/Связь открытости.html">Связь открытости</a> $\star$</li>
+<li><a href="theorems/Утверждения об открытых и замкнутых.html">Утверждения об открытых и замкнутых</a> $\star$</li>
 </ul>
-<h4>Примечание</h4>
-<ul>
-<li>Никто не застрахован от ошибок, поэтому если вы нашли ошибку в конспекте, пишите issue.</li>
-<li>Один билет может быть разбит на несколько файлов, обращайте на это внимание.</li>
-<li>В конспектах по линейной алгебре там, где не встречаются скаляры или они записаны греческими буквами, написание вектора может быть не полужирным (например, не "$\mathbf{x}, \mathbf{a}, \mathbf{b}, \mathbf{0}$", а "$x, a, b, 0$"). Сделано это для экономия времени, при желании это можно исправить.</li>
-</ul></div>
+<p>Обозначения:<br/>
+$\dagger$ - требует рефактора<br/>
+$\star$ - нужно дописать доказательство</p></div>
 </body>
 </html>
