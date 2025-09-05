@@ -7,6 +7,7 @@
 
 #### Материал по будущим экзаменам
 - [[calculus_colloq_3/List of Topics|Коллоквиум по матану]], 3 семестр
+- [[probability_1/List of Topics|Теория вероятностей]], 3 семестр
 
 #### Материал по прошедшим экзаменам
 - Коллоквиум по матану, 1 семестр: [[calculus_colloq_1/List of Definitions|определения]], [[calculus_colloq_1/List of Theorems|теоремы]]
