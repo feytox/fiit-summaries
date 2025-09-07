@@ -36,6 +36,8 @@
 	{trigger: "l==<", replacement: "\\Large\\impliedby", options: "mA"},
 	{trigger: "span", replacement: "\\langle $0 \\rangle$1", options: "mA"},
 	{trigger: "sim", replacement: "\\sim", options: "mA"},
+	{trigger: "eset", replacement: "\\varnothing", options: "mA"},
+	{trigger: "xor", replacement: "\\bigtriangleup", options: "mA"},
 
 
     // algem
