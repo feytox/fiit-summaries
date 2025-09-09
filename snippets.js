@@ -39,7 +39,6 @@
 	{trigger: "eset", replacement: "\\varnothing", options: "mA"},
 	{trigger: "xor", replacement: "\\bigtriangleup", options: "mA"},
 
-
     // algem
     {trigger: "ovvr", replacement: "\\overline{\\overline{$0}}$1", options: "mA"},
     {trigger: "baar", replacement: "\\bar{\\bar{$0}}$1", options: "mA"},
@@ -223,6 +222,7 @@
 	{trigger: "ZZ", replacement: "\\mathbb{Z}", options: "mA"},
 	{trigger: "NN", replacement: "\\mathbb{N}", options: "mA"},
     {trigger: "FF", replacement: "\\mathbb{F}", options: "mA"},
+    {trigger: "PP", replacement: "\\mathbb{P}", options: "mA"},
 
     // Handle spaces and backslashes
 	{trigger: "([^\\\\])(${GREEK})", replacement: "[[0]]\\[[1]]", options: "rmA", description: "Add backslash before Greek letters"},
