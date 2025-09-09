@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема о связи двойного и повторных пределов</title>
 <script>
        MathJax = {
         tex: {
@@ -188,47 +188,22 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Коллок по матану ещё не скоро, однако материал здесь будет постепенно пополняться.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Метрика.html">Метрика</a></li>
-<li><a href="definitions/Шары.html">Шары</a></li>
-<li><a href="definitions/Окрестности.html">Окрестности</a></li>
-<li><a href="definitions/Внутренняя точка.html">Внутренняя точка</a></li>
-<li><a href="definitions/Ограниченное множество.html">Ограниченное множество</a></li>
-<li><a href="definitions/Открытое и замкнутое множество.html">Открытое и замкнутое множество</a></li>
-<li><a href="definitions/Граничная точка.html">Граничная точка</a></li>
-<li><a href="definitions/Предельная точка.html">Предельная точка</a></li>
-<li><a href="definitions/Покрытие.html">Покрытие</a></li>
-<li><a href="definitions/Компактное множество.html">Компактное множество</a></li>
-<li><a href="definitions/Диаметр множества.html">Диаметр множества</a></li>
-<li><a href="definitions/Изолированная точка.html">Изолированная точка</a></li>
-<li><a href="definitions/Метрическое пространство.html">Метрическое пространство</a></li>
-<li><a href="definitions/Предел последовательности.html">Предел последовательности</a></li>
-<li><a href="definitions/Эквивалентные метрики.html">Эквивалентные метрики</a></li>
-<li><a href="definitions/Предел функции нескольких переменных.html">Предел функции нескольких переменных</a></li>
-<li><a href="definitions/Предел по направлению.html">Предел по направлению</a></li>
-<li><a href="definitions/Повторные пределы.html">Повторные пределы</a></li>
-</ul>
-<h2>Теоремы</h2>
-<ul>
-<li><a href="theorems/Теорема о компактном множестве.html">Теорема о компактном множестве</a> $\star$</li>
-<li><a href="theorems/Лемма о конечном покрытии.html">Лемма о конечном покрытии</a></li>
-<li><a href="theorems/Теорема Больцано-Вейерштрасса.html">Теорема Больцано-Вейерштрасса</a></li>
-<li><a href="theorems/Теорема о вложенных стягивающихся прямоугольниках.html">Теорема о вложенных стягивающихся прямоугольниках</a></li>
-<li><a href="theorems/Теорема о покоординатной сходимости.html">Теорема о покоординатной сходимости</a></li>
-<li><a href="theorems/Теорема об эквивалентности определений Коши и Гейне.html">Теорема об эквивалентности определений Коши и Гейне</a></li>
-<li><a href="theorems/Критерий Коши.html">Критерий Коши</a></li>
-<li><a href="theorems/Простейшие свойства пределов.html">Простейшие свойства пределов</a></li>
-<li><a href="theorems/Теорема о связи двойного и повторных пределов.html">Теорема о связи двойного и повторных пределов</a></li>
-</ul>
-<h2>Утверждения</h2>
-<ul>
-<li><a href="theorems/Связь открытости.html">Связь открытости</a> $\star$</li>
-<li><a href="theorems/Утверждения об открытых и замкнутых.html">Утверждения об открытых и замкнутых</a> $\star$</li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема о связи двойного и повторных пределов</h1><h2>Теорема о связи двойного и повторных пределов</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть:
+- $f(x, y)$ определена в $\dot{O}(x^{0}, y^{0})$
+- Cуществует $\lim\limits_{(x,y)\to(x^0,y^0)} f(x, y) = A$
+- $\forall{y \in \dot{O}(y^0)}$ существует $\lim\limits_{x \to x^0} f(x, y)$
+
+Тогда существует $\lim\limits_{y \to y^0} \left(\lim\limits_{x \to x^0} f(x, y)\right) = A$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>По условию
+$$\forall{\varepsilon &gt; 0}~~ \exists{\delta_{\varepsilon} &gt; 0}\mathpunct{:}~~ 0 &lt; \rho((x, y), (x^0, y^0)) &lt; \delta_{\varepsilon} \Rightarrow |f(x, y) - A| &lt; \dfrac{\varepsilon}{2}.$$
+Перейдем к пределу в последнем неравенстве
+$$\left|\lim\limits_{x \to x^0} f(x, y) - A\right| \leq \dfrac{\varepsilon}{2} &lt; \varepsilon.$$
+Эта оценка имеет место для всех $y$ из некоторой проколотой окрестности точки $y^0$, а это и есть требуемое равенство. 
+$\square$
+</p></div></div>
 </body>
 </html>

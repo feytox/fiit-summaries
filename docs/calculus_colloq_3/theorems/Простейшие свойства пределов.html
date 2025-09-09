@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Простейшие свойства пределов</title>
 <script>
        MathJax = {
         tex: {
@@ -188,47 +188,17 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Коллок по матану ещё не скоро, однако материал здесь будет постепенно пополняться.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Метрика.html">Метрика</a></li>
-<li><a href="definitions/Шары.html">Шары</a></li>
-<li><a href="definitions/Окрестности.html">Окрестности</a></li>
-<li><a href="definitions/Внутренняя точка.html">Внутренняя точка</a></li>
-<li><a href="definitions/Ограниченное множество.html">Ограниченное множество</a></li>
-<li><a href="definitions/Открытое и замкнутое множество.html">Открытое и замкнутое множество</a></li>
-<li><a href="definitions/Граничная точка.html">Граничная точка</a></li>
-<li><a href="definitions/Предельная точка.html">Предельная точка</a></li>
-<li><a href="definitions/Покрытие.html">Покрытие</a></li>
-<li><a href="definitions/Компактное множество.html">Компактное множество</a></li>
-<li><a href="definitions/Диаметр множества.html">Диаметр множества</a></li>
-<li><a href="definitions/Изолированная точка.html">Изолированная точка</a></li>
-<li><a href="definitions/Метрическое пространство.html">Метрическое пространство</a></li>
-<li><a href="definitions/Предел последовательности.html">Предел последовательности</a></li>
-<li><a href="definitions/Эквивалентные метрики.html">Эквивалентные метрики</a></li>
-<li><a href="definitions/Предел функции нескольких переменных.html">Предел функции нескольких переменных</a></li>
-<li><a href="definitions/Предел по направлению.html">Предел по направлению</a></li>
-<li><a href="definitions/Повторные пределы.html">Повторные пределы</a></li>
-</ul>
-<h2>Теоремы</h2>
-<ul>
-<li><a href="theorems/Теорема о компактном множестве.html">Теорема о компактном множестве</a> $\star$</li>
-<li><a href="theorems/Лемма о конечном покрытии.html">Лемма о конечном покрытии</a></li>
-<li><a href="theorems/Теорема Больцано-Вейерштрасса.html">Теорема Больцано-Вейерштрасса</a></li>
-<li><a href="theorems/Теорема о вложенных стягивающихся прямоугольниках.html">Теорема о вложенных стягивающихся прямоугольниках</a></li>
-<li><a href="theorems/Теорема о покоординатной сходимости.html">Теорема о покоординатной сходимости</a></li>
-<li><a href="theorems/Теорема об эквивалентности определений Коши и Гейне.html">Теорема об эквивалентности определений Коши и Гейне</a></li>
-<li><a href="theorems/Критерий Коши.html">Критерий Коши</a></li>
-<li><a href="theorems/Простейшие свойства пределов.html">Простейшие свойства пределов</a></li>
-<li><a href="theorems/Теорема о связи двойного и повторных пределов.html">Теорема о связи двойного и повторных пределов</a></li>
-</ul>
-<h2>Утверждения</h2>
-<ul>
-<li><a href="theorems/Связь открытости.html">Связь открытости</a> $\star$</li>
-<li><a href="theorems/Утверждения об открытых и замкнутых.html">Утверждения об открытых и замкнутых</a> $\star$</li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Простейшие свойства пределов</h1><h2>Теорема (Простейшие свойства пределов)</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>* Если функция имеет конечный предел в точке, то она ограничена в некоторой проколотой окрестности этой точки
+* Если $\lim\limits_{x \to x^0} f(x) = A \neq 0$, то $\exists{O(x^0)}\mathpunct{:}~~ x \in D \cap \dot{O}(x^0) \Rightarrow |f(x)| &gt; \dfrac{A}{2}$
+* Если $\forall{x \in D \cap \dot{O}(x^0)}\mathpunct{:}~~ f(x) \geq g(x)$, то $\lim\limits_{x \to x^0} f(x) \geq \lim\limits_{x \to x^0} g(x)$
+* $\lim\limits_{x \to x^0} (f(x) + g(x)) = \lim\limits_{x \to x^0} f(x) + \lim\limits_{x \to x^0} g(x)$
+* $\lim\limits_{x \to x^0} (f(x) - g(x)) = \lim\limits_{x \to x^0} f(x) - \lim\limits_{x \to x^0} g(x)$
+* $\lim\limits_{x \to x^0} (f(x) \cdot g(x)) = \lim\limits_{x \to x^0} f(x) \cdot \lim\limits_{x \to x^0} g(x)$
+* $\lim\limits_{x \to x^0} (f(x)/g(x)) = \lim\limits_{x \to x^0} f(x) / \lim\limits_{x \to x^0} g(x)$, если $\lim\limits_{x \to x^0} g(x) \neq 0$
+</p></div>
+<p>Д-во:<br/>
+Аналогично <span>доказательству свойств в одномерном случае</span></p></div>
 </body>
 </html>

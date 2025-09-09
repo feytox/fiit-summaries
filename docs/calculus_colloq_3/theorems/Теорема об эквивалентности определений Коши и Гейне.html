@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема об эквивалентности определений Коши и Гейне</title>
 <script>
        MathJax = {
         tex: {
@@ -188,47 +188,29 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Коллок по матану ещё не скоро, однако материал здесь будет постепенно пополняться.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Метрика.html">Метрика</a></li>
-<li><a href="definitions/Шары.html">Шары</a></li>
-<li><a href="definitions/Окрестности.html">Окрестности</a></li>
-<li><a href="definitions/Внутренняя точка.html">Внутренняя точка</a></li>
-<li><a href="definitions/Ограниченное множество.html">Ограниченное множество</a></li>
-<li><a href="definitions/Открытое и замкнутое множество.html">Открытое и замкнутое множество</a></li>
-<li><a href="definitions/Граничная точка.html">Граничная точка</a></li>
-<li><a href="definitions/Предельная точка.html">Предельная точка</a></li>
-<li><a href="definitions/Покрытие.html">Покрытие</a></li>
-<li><a href="definitions/Компактное множество.html">Компактное множество</a></li>
-<li><a href="definitions/Диаметр множества.html">Диаметр множества</a></li>
-<li><a href="definitions/Изолированная точка.html">Изолированная точка</a></li>
-<li><a href="definitions/Метрическое пространство.html">Метрическое пространство</a></li>
-<li><a href="definitions/Предел последовательности.html">Предел последовательности</a></li>
-<li><a href="definitions/Эквивалентные метрики.html">Эквивалентные метрики</a></li>
-<li><a href="definitions/Предел функции нескольких переменных.html">Предел функции нескольких переменных</a></li>
-<li><a href="definitions/Предел по направлению.html">Предел по направлению</a></li>
-<li><a href="definitions/Повторные пределы.html">Повторные пределы</a></li>
-</ul>
-<h2>Теоремы</h2>
-<ul>
-<li><a href="theorems/Теорема о компактном множестве.html">Теорема о компактном множестве</a> $\star$</li>
-<li><a href="theorems/Лемма о конечном покрытии.html">Лемма о конечном покрытии</a></li>
-<li><a href="theorems/Теорема Больцано-Вейерштрасса.html">Теорема Больцано-Вейерштрасса</a></li>
-<li><a href="theorems/Теорема о вложенных стягивающихся прямоугольниках.html">Теорема о вложенных стягивающихся прямоугольниках</a></li>
-<li><a href="theorems/Теорема о покоординатной сходимости.html">Теорема о покоординатной сходимости</a></li>
-<li><a href="theorems/Теорема об эквивалентности определений Коши и Гейне.html">Теорема об эквивалентности определений Коши и Гейне</a></li>
-<li><a href="theorems/Критерий Коши.html">Критерий Коши</a></li>
-<li><a href="theorems/Простейшие свойства пределов.html">Простейшие свойства пределов</a></li>
-<li><a href="theorems/Теорема о связи двойного и повторных пределов.html">Теорема о связи двойного и повторных пределов</a></li>
-</ul>
-<h2>Утверждения</h2>
-<ul>
-<li><a href="theorems/Связь открытости.html">Связь открытости</a> $\star$</li>
-<li><a href="theorems/Утверждения об открытых и замкнутых.html">Утверждения об открытых и замкнутых</a> $\star$</li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема об эквивалентности определений Коши и Гейне</h1><h2>Теорема об эквивалентности определений Коши и Гейне</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Определения по Коши и Гейне эквивалентны.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Аналогично <span>теореме в одномерном случае</span>
+
+$\Large{\implies}$
+Пусть $A$ — предел функции $f$ в точке $x^0$ по Коши. Покажем, что $A$ является пределом и по Гейне.
+Рассмотрим произвольную последовательность $\{x^n\} \subset D \setminus \{x^0\}\mathpunct{:}~~ x^n \xrightarrow{n \to \infty} x^0$. По заданному $\varepsilon &gt; 0$ найдем $\delta_{\varepsilon} &gt; 0$ такое, что при всех $x$, для которых $0 &lt; \rho(x, x^0) &lt; \delta_{\varepsilon}$, выполняется условие $|f(x) - A| &lt; \varepsilon$.
+Так как $x^n \xrightarrow{n \to \infty} x^0$, то существует число $N$, зависящее от этого $\delta_{\varepsilon}$, а в конечном счете зависящее от $\varepsilon$, такое, что $\forall{n &gt; N}$ справедлива оценка $\rho(x^n, x^0) &lt; \delta_{\varepsilon}$.
+Тогда для этих $n$ имеем $|f(x^n) - A| &lt; \varepsilon$, т. е. $A = \lim\limits_{n \to \infty} f(x^n)$.
+Таким образом, $A$ является пределом функции $f$ по Гейне.
+
+$\Large{\impliedby}$
+Пусть $A$ — предел функции $f$ в точке $x^0$ по Гейне. Покажем, что $A$ является пределом и по Коши.
+Предположим, что это не так.
+$$\exists{\varepsilon_0 &gt; 0}~~ \forall{\delta}~~ \exists{x \in D}\mathpunct{:}~~ 0 &lt; \rho(x, x^0) &lt; \delta \land |f(x) - A| \geq \varepsilon_0$$
+Возьмем последовательно $\delta = 1, \dfrac{1}{2}, \ldots, \dfrac{1}{n}, \ldots$
+Для каждого $n$ получим точку $x^n$:
+$$x^n \neq x^0, \quad \rho(x^n, x^0) &lt; \dfrac{1}{n}, \quad |f(x^n) - A| \geq \varepsilon_0$$
+Эта последовательность относится к числу тех, которые рассматриваются в определении предела по Гейне, но для нее $|f(x^n) - A| \geq \varepsilon_0$, что противоречит условию, что $A$ — предел функции $f$ по Гейне.
+$\square$
+</p></div></div>
 </body>
 </html>
