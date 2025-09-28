@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Дистрибутивность решётки</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,30 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Дистрибутивность решётки</h1><h2>Неравенства дистрибутивности</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>В произвольной решетке $(A, \vee, \wedge)$ выполнены неравенства:
+$$(a \wedge b) \vee (a \wedge c) \leq a \wedge (b \vee c)$$
+и
+$$a \vee (b \wedge c) \leq (a \vee b) \wedge (a \vee c)$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Докажем первое неравенство: $(a \wedge b) \vee (a \wedge c) \leq a \wedge (b \vee c)$.
+Это неравенство выполняется, потому что:
+$$ (a \wedge b) \wedge (a \wedge (b \vee c)) = ((a \wedge b) \wedge a) \wedge (b \vee c) = a \wedge (b \wedge (b \vee c)) = a \wedge b $$
+аналогично
+$$ (a \wedge c) \wedge (a \wedge (b \vee c)) = a \wedge c $$
+Из этих результатов следует:
+$$(a \wedge b) \vee (a \wedge (b \vee c)) = (a \wedge c) \vee (a \wedge (b \vee c)) = a \wedge (b \vee c)$$
+$$((a \wedge b) \vee (a \wedge c)) \vee (a \wedge (b \vee c)) = a \wedge (b \vee c)$$
+Отсюда получаем:
+$$(a \wedge b) \vee (a \wedge c) \leq a \wedge (b \vee c)$$
+Второе неравенство $a \vee (b \wedge c) \leq (a \vee b) \wedge (a \vee c)$ доказывается аналогично (двойственно).
+$\square$
+</p></div>
+<h2>Дистрибутивная решетка</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>Если для данной решетки $(A, \vee, \wedge)$ неравенства в теореме можно заменить равенствами, то решетка называется **дистрибутивной**.
+</p></div></div>
 </body>
 </html>

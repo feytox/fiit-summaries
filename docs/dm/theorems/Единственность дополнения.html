@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Единственность дополнения</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,26 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Единственность дополнения</h1><h2>Единственность дополнения в дистрибутивной решетке</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>В дистрибутивной решетке $(A, \lor, \land)$ любой элемент имеет не более одного дополнения.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Заметим, что для любого $a \in A$:
+- $0 \lor a = a$
+- $0 \land a = 0$
+- $1 \lor a = 1$
+- $1 \land a = a$
+
+Пусть $b$ и $b'$ — дополнения $a$. По определению дополнения это означает, что:
+- $a \lor b = 1$
+- $a \land b = 0$
+- $a \lor b' = 1$
+- $a \land b' = 0$
+
+Теперь докажем, что $b = b'$:
+$$b = b \lor (a \land b') = (b \lor a) \land (b \lor b') = (a \lor b') \land (b \lor b') = (a \land b) \lor b' = 0 \lor b' = b'$$
+$\square$
+</p></div></div>
 </body>
 </html>

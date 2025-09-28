@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Необходимое условие дифференцируемости</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,19 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Необходимое условие дифференцируемости</h1><h2>Теорема (необходимое условие дифференцируемости)</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если функция $f$ дифференцируема в точке $x^0$, то она непрерывна в этой точке, существуют частные производные по всем переменным и справедливы равенства $f'_{x_k}(x^0) = A_k$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Если $||\Delta x|| \to 0$, то $\forall{k \in \overline{1, m}}~~ \Delta x_k \to 0$ и
+$$\Delta f(x^0) = \sum_{k=1}^{m} A_k \Delta x_k + o(||\Delta x||) \to 0$$
+а это и есть непрерывность.
+
+Рассмотрим $\Delta x = (0, \dots, \Delta x_k, \dots, 0)$. Тогда из дифференцируемости
+$$\Delta f(x^0) = A_k \Delta x_k + o(|\Delta x_k|)$$
+$$f'_{x_k}(x^0) = \lim\limits_{\Delta x_k \to 0} \dfrac{\Delta f(x^0)}{\Delta x_k} = \lim\limits_{\Delta x_k \to 0} (A_k + o(1)) = A_k$$
+$\square$
+</p></div></div>
 </body>
 </html>

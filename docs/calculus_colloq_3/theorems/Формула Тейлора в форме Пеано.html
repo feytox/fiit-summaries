@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Формула Тейлора в форме Пеано</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,11 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Формула Тейлора в форме Пеано</h1><h2>Теорема (формула Тейлора в форме Пеано)</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если функция $n$ раз непрерывно дифференцируема в $O(x^0)$, то $\forall{x \in O(x^0)}$
+$$f(x) = f(x^0) + \sum_{k=1}^{n} \dfrac{d^k f(x^0)}{k!} + o(\| \Delta x \|^n), \quad \| \Delta x \| \to 0$$
+</p></div>
+<p>Д-во не требуется</p></div>
 </body>
 </html>

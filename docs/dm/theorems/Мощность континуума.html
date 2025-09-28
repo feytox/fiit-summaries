@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Мощность континуума</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,33 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Мощность континуума</h1><h2>Мощность континуума</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$$|\mathbb{R}| = 2^{\aleph_0}$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Ясно, что $|\mathbb{R}| = |(0, 1)|$, так как $f(x) = \dfrac{1}{\pi} \operatorname{arctg} x + \dfrac{1}{2}$ является биекцией $\mathbb{R}$ на $(0, 1)$
+
+$2^{\aleph_0}$ — это мощность множества $2^{\mathbb{N}}$ (множества всех подмножеств натуральных чисел).
+
+Достаточно доказать равномощность $(0, 1)$ и $2^{\mathbb{N}}$.
+
+**Докажем инъекцию $f \colon (0, 1) \to 2^{\mathbb{N}}$**
+Любое $x \in (0, 1)$ представимо **двоичной** дробью $x = 
+0.x_1 x_2 \ldots x_n \ldots$.
+Положим $f(x) = \{n \mathpunct{:} x_n = 1\}$; тогда $f \colon (0, 1) \to 2^{\mathbb{N}}$ — инъекция.
+
+**Докажем инъекцию $g \colon 2^{\mathbb{N}} \to (0, 1)$**
+Любое $A \subseteq \mathbb{N}$ имеет характеристическую функцию $\chi_A(n) = [n \text{ принадлежит } A]$.
+(Скобка Иверсона $[\text{высказывание}]$ конвертирует ИСТИНА/ЛОЖЬ в $1/0$)
+
+Положим $g(A)$ равным числу $x$, имеющему **троичную** запись $x = 
+0.x_1 x_2 \ldots x_n \ldots$, где $x_n = \chi_A(n)$.
+Следовательно, $g \colon 2^{\mathbb{N}} \to (0, 1)$ — инъекция.
+
+По теореме Бернштейна-Кантора: $|(0, 1)| = |2^{\mathbb{N}}|$.
+Таким образом, $|\mathbb{R}| = 2^{\aleph_0}$.
+$\square$
+</p></div></div>
 </body>
 </html>

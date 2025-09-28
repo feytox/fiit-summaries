@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Формула Тейлора в форме Лагранжа</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,27 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Формула Тейлора в форме Лагранжа</h1><h2>Формула Тейлора в форме Лагранжа</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если функция $n$ раз дифференцируема в $O(\mathbf{x}^{0})$, то $\forall{x \in O(\mathbf{x}^{0})}\mathpunct{,}~~ \exists{\theta \in (0; 1)}\mathpunct{,}~~ \mathbf{c} = \mathbf{x}^{0} + \theta(\mathbf{x} - \mathbf{x}^{0}) \in (\mathbf{x}, \mathbf{x}^{0})\mathpunct{:}$
+$$\begin{align}
+f(\mathbf{x}) = f(\mathbf{x}^{0}) &amp;+ \sum_{k=1}^{n-1} \dfrac{1}{k!} \sum_{j_{1}=1}^{m} \dots \sum_{j_{k}=1}^{m} \dfrac{\partial^k f(\mathbf{x}^{0})}{\partial x_{j_1} \dots \partial x_{j_k}} (x_{j_1} - x_{j_1}^{0}) \dots (x_{j_k} - x_{j_k}^{0}) \\
+&amp;+ \dfrac{1}{n!} \sum_{j_{1}=1}^{m} \dots \sum_{j_{n}=1}^{m} \dfrac{\partial^n f(\mathbf{c})}{\partial x_{j_1} \dots \partial x_{j_n}} (x_{j_1} - x_{j_1}^{0}) \dots (x_{j_n} - x_{j_n}^{0})
+\end{align}$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Рассмотрим функцию $g(t) = f(\mathbf{x}^{0} + t(\mathbf{x} - \mathbf{x}^{0})) = f(x_{1}^{0} + t(x_{1} - x_{1}^{0}), \dots, x_{m}^{0} + t(x_{m} - x_{m}^{0}))$.
+По формуле Тейлора для функции одной переменной $\exists{\theta \in (0; 1)}\mathpunct{:}$
+$$g(t) = g(0) + \sum_{k=1}^{n-1} \dfrac{g^{(k)}(0)}{k!} t^k + \dfrac{g^{(n)}(\theta t)}{n!} t^n.$$
+Осталось подставить $t = 1$ и заметить, что
+$$g(1) = f(\mathbf{x})\mathpunct{,}~~ g(0) = f(\mathbf{x}^{0})\mathpunct{,}~~ g'(0) = \sum_{j_{1}=1}^{m} \dfrac{\partial f(\mathbf{x}^{0})}{\partial x_{j_1}} (x_{j_1} - x_{j_1}^{0})\mathpunct{,}~~ \dots$$
+$\square$
+</p></div>
+<h2>Краткая форма формы Лагранжа</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $dx_k = \Delta x_k = x_k - x_k^0$.
+Если функция $n$ раз дифференцируема в $O(\mathbf{x}^0)$, то $\forall{\mathbf{x} \in O(\mathbf{x}^0)}~~ \exists{\mathbf{c} \in (\mathbf{x}, \mathbf{x}^0)}\mathpunct{:}$
+$$f(\mathbf{x}) = f(\mathbf{x}^0) + \sum_{k=1}^{n-1} \dfrac{d^k f(\mathbf{x}^0)}{k!} + \dfrac{d^n f(\mathbf{c})}{n!}$$
+</p></div></div>
 </body>
 </html>

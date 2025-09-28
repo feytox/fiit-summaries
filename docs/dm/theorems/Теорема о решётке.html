@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема о решётке</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,33 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема о решётке</h1><h2>Теорема о решётке</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть ЧУМ $(A, \leq)$ порожден решеткой $(A, \lor, \land)$. Тогда в $(A, \leq)$ для любой пары элементов $a, b \in A$ определены супремум и инфимум, причем $\sup(a, b) = a \lor b$ и $\inf(a, b) = a \land b$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Пусть ЧУМ $(A, \leq)$ порожден решеткой $(A, \lor, \land)$.
+Надо доказать, что $\sup(a, b)$ существует и равен $a \lor b$ для любых $a, b \in A$.
+(Доказательство для $\inf(a, b) = a \land b$ проводится аналогично).
+
+**
+1. $a \lor b$ — верхняя грань для $\{a, b\}$:**
+По свойству поглощения в решетке: $a \land (a \lor b) = a$.
+Это означает $a \leq (a \lor b)$ по определению отношения порядка в решетке (где $x \leq y \iff x \land y = x$).
+Аналогично, $b \land (a \lor b) = b \implies b \leq (a \lor b)$.
+
+**
+2. $a \lor b$ — наименьшая верхняя грань для $\{a, b\}$:**
+Пусть $x$ — произвольная верхняя грань для $\{a, b\}$, то есть $a \leq x$ и $b \leq x$.
+По определению отношения порядка в решетке (где $y \leq z \iff y \lor z = z$), из $a \leq x$ следует $a \lor x = x$, и из $b \leq x$ следует $b \lor x = x$.
+Тогда:
+$(a \lor b) \lor x = a \lor (b \lor x)$ (по ассоциативности операции $\lor$)
+$= a \lor x$ (так как $b \lor x = x$)
+$= x$ (так как $a \lor x = x$)
+Из $(a \lor b) \lor x = x$ следует, что $(a \lor b) \leq x$.
+
+Следовательно, $a \lor b = \sup(a,b)$.
+$\square$
+</p></div></div>
 </body>
 </html>

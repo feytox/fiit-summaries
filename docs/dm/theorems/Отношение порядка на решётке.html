@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Отношение порядка на решётке</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,51 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Отношение порядка на решётке</h1><h2>Отношение порядка на решетке</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $(A, \lor, \land)$ — решетка (алгебра).
+Определим на $A$ бинарное отношение $\preccurlyeq$ условием:
+$$a \preccurlyeq b \iff a \land b = a$$
+Тогда $\preccurlyeq$ является отношением порядка.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>**Рефлексивность**:
+По свойству идемпотентности, $a \land a = a$.
+Из определения, $a \land a = a \implies a \preccurlyeq a$.
+
+**Антисимметричность**:
+Пусть $a \preccurlyeq b$ и $b \preccurlyeq a$.
+По определению, это означает $a \land b = a$ и $b \land a = b$.
+По свойству коммутативности, $a \land b = b \land a$.
+Следовательно, $a = b$.
+
+**Транзитивность**:
+Пусть $a \preccurlyeq b$ и $b \preccurlyeq c$.
+По определению, это означает $a \land b = a$ и $b \land c = b$.
+Рассмотрим $a \land c$:
+$$a \land c = (a \land b) \land c \quad \text{(так как } a \land b = a \text{)}$$
+$$a \land c = a \land (b \land c) \quad \text{(по ассоциативности)}$$
+$$a \land c = a \land b \quad \text{(так как } b \land c = b \text{)}$$
+$$a \land c = a \quad \text{(так как } a \land b = a \text{)}$$
+Следовательно, $a \preccurlyeq c$.
+$\square$
+</p></div>
+<h2>Эквивалентное определение отношения порядка на решетке</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>То же самое отношение $\preccurlyeq$ можно определить условием $a \lor b = b$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Докажем эквивалентность двух определений:
+Пусть $a \preccurlyeq b$ по первому определению, т.е. $a \land b = a$.
+Тогда $a \lor b = (a \land b) \lor b$.
+По свойству поглощения для решеток, $(a \land b) \lor b = b$.
+Следовательно, $a \lor b = b$.
+
+Пусть $a \lor b = b$.
+Тогда $a \land b = a \land (a \lor b)$.
+По свойству поглощения для решеток, $a \land (a \lor b) = a$.
+Следовательно, $a \land b = a$, что соответствует первому определению $a \preccurlyeq b$.
+$\square$
+</p></div></div>
 </body>
 </html>

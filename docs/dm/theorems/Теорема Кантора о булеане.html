@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема Кантора о булеане</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,27 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема Кантора о булеане</h1><h2>Теорема Кантора о булеане</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Для любого множества $A$ выполнено неравенство: $|A| &lt; |2^A|$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Пусть $f(a) = \{a\}$ для всех $a \in A$.
+$f$ — инъекция из $A$ в $2^A$; значит, $|A| \leq |2^A|$.
+
+В обратную сторону докажем от противного:
+Пусть $\phi\mathpunct{:}~~ 2^A \to A$ — инъекция.
+Для каждого подмножества $B \subset A$:
+*   назовем элемент $\phi(B)$ синим, если $\phi(B) \in B$
+*   назовем элемент $\phi(B)$ красным, если $\phi(B) \notin B$
+
+$\Rightarrow$ так как $\phi$ — инъекция, любой элемент $A$ покрашен не более чем в один цвет.
+Рассмотрим множество $R$, состоящее из всех красных элементов $A$.
+*   если $\phi(R) \in R$, то элемент $\phi(R)$ по определению синий $\iff \phi(R) \notin R$
+*   если $\phi(R) \notin R$, то элемент $\phi(R)$ по определению красный $\iff \phi(R) \in R$
+
+$\Rightarrow$ противоречие; значит, $\phi$ не существует и $|2^A| \not\leq |A|$.
+$\square$
+</p></div></div>
 </body>
 </html>

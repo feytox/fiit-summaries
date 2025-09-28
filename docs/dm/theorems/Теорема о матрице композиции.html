@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема о матрице композиции</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,27 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема о матрице композиции</h1><h2>Теорема о матрице композиции отношений</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $\rho$ и $\sigma$ — бинарные отношения, а $M_{\rho}$ и $M_{\sigma}$ — их булевы матрицы. Тогда матрица композиции отношений $M_{\rho \circ \sigma}$ равна булевому произведению матриц $M_{\rho}M_{\sigma}$:
+$$M_{\rho \circ \sigma} = M_{\rho}M_{\sigma}$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Докажем, что элемент $(i,j)$ матрицы $M_{\rho \circ \sigma}$ равен 1 тогда и только тогда, когда элемент $(i,j)$ булева произведения $M_{\rho}M_{\sigma}$ равен 
+1.
+
+По определению матрицы отношения:
+$$M_{\rho \circ \sigma}[i,j] = 1 \iff (a_i, a_j) \in \rho \circ \sigma$$
+По определению композиции отношений:
+$$\iff \exists{\ell}\mathpunct{:}~~ (a_i, a_{\ell}) \in \rho \text{ и } (a_{\ell}, a_j) \in \sigma$$
+По определению матрицы отношения:
+$$\iff \exists{\ell}\mathpunct{:}~~ M_{\rho}[i,\ell] = 1 \text{ и } M_{\sigma}[\ell,j] = 1$$
+Так как $M_{\rho}[i,\ell], M_{\sigma}[\ell,j] \in \{0, 1\}$, их произведение равно 1 тогда и только тогда, когда оба множителя равны 1:
+$$\iff \exists{\ell}\mathpunct{:}~~ M_{\rho}[i,\ell]M_{\sigma}[\ell,j] = 1$$
+По определению булевого умножения матриц:
+$$\iff (M_{\rho}M_{\sigma})[i,j] = 1$$
+Следовательно, $M_{\rho \circ \sigma} = M_{\rho}M_{\sigma}$.
+$\square$
+</p></div></div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема Кантора о равномерной непрерывности</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,29 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема Кантора о равномерной непрерывности</h1><h2>Теорема Кантора о равномерной непрерывности</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если $f$ непрерывна на компактном $K$, то $f$ равномерно непрерывна на $K$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Доказательство от противного. Предположим, что $f$ не является равномерно непрерывной на $K$. Тогда отрицание определения:
+$$\exists{\varepsilon &gt; 0}~~ \forall{\delta &gt; 0} \mathpunct{:}~~ \exists{\mathbf{x}, \mathbf{y} \in K}~~ \rho(\mathbf{x}, \mathbf{y}) &lt; \delta \land |f(\mathbf{x}) - f(\mathbf{y})| \geq \varepsilon$$
+Выберем $\delta_n = \dfrac{1}{n}$ для $n = 1, 2, 3, \dots$. Тогда для каждого $n$ существуют точки $\mathbf{x}_n, \mathbf{y}_n \in K$ такие, что:
+$$\rho(\mathbf{x}_n, \mathbf{y}_n) &lt; \dfrac{1}{n} \land |f(\mathbf{x}_n) - f(\mathbf{y}_n)| \geq \varepsilon$$
+Последовательность $\{\mathbf{x}_n\}$ ограничена, так как $K$ компактно. По теореме Больцано-Вейерштрасса, из $\{\mathbf{x}_n\}$ можно выделить сходящуюся подпоследовательность $\{\mathbf{x}_{n_k}\}$:
+$$\mathbf{x}_{n_k} \to \mathbf{x}_0 \in K$$
+Теперь рассмотрим последовательность $\{\mathbf{y}_{n_k}\}$. Используя неравенство треугольника для метрики $\rho$:
+$$\rho(\mathbf{y}_{n_k}, \mathbf{x}_0) \leq \rho(\mathbf{y}_{n_k}, \mathbf{x}_{n_k}) + \rho(\mathbf{x}_{n_k}, \mathbf{x}_0)$$
+Мы знаем, что $\rho(\mathbf{y}_{n_k}, \mathbf{x}_{n_k}) &lt; \dfrac{1}{n_k}$ и $\rho(\mathbf{x}_{n_k}, \mathbf{x}_0) \to 0$ при $k \to \infty$. Следовательно:
+$$\rho(\mathbf{y}_{n_k}, \mathbf{x}_0) &lt; \dfrac{1}{n_k} + \rho(\mathbf{x}_{n_k}, \mathbf{x}_0) \to 0$$
+Это означает, что $\mathbf{y}_{n_k} \to \mathbf{x}_0$.
+Так как функция $f$ непрерывна на $K$, то она непрерывна в точке $\mathbf{x}_0$. Следовательно:
+$$\lim\limits_{k \to \infty} f(\mathbf{x}_{n_k}) = f(\mathbf{x}_0) \quad \text{и} \quad \lim\limits_{k \to \infty} f(\mathbf{y}_{n_k}) = f(\mathbf{x}_0)$$
+Тогда:
+$$\lim\limits_{k \to \infty} (f(\mathbf{x}_{n_k}) - f(\mathbf{y}_{n_k})) = f(\mathbf{x}_0) - f(\mathbf{x}_0) = 0$$
+Однако, мы имели $|f(\mathbf{x}_{n_k}) - f(\mathbf{y}_{n_k})| \geq \varepsilon$ для всех $k$. Это противоречит тому, что предел разности равен $0$.
+Полученное противоречие доказывает теорему.
+$\square$
+</p></div></div>
 </body>
 </html>

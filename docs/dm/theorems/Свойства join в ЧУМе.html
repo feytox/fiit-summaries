@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Свойства join в ЧУМе</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,35 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Свойства join в ЧУМе</h1><h2>Теорема об операции $\lor$ в ЧУМе</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Операция $\lor$ в ЧУМе ассоциативна, коммутативна и идемпотентна.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>**Идемпотентность:** $a \vee a = a$
+Очевидно, т.к. $\{a, a\} = \{a\}$ и $\sup(\{a\}) = a$.
+
+**Коммутативность:** $a \vee b = b \vee a$ 
+Очевидно, т.к. $\{a, b\} = \{b, a\}$.
+
+**Ассоциативность:** $(a \vee b) \vee c = a \vee (b \vee c)$
+Заметим, что $(a \preceq x \text{ и } b \preceq x) \iff \sup(\{a, b\}) \preceq x$.
+$x \in T(\{\sup(\{a, b\}), c\})$ означает, что $\sup(\{a, b\}) \preceq x \text{ и } c \preceq x$.
+
+Используя предыдущее замечание, получаем следующую цепочку эквивалентностей:
+$$x \in T(\{\sup(\{a, b\}), c\}) \iff a \preceq x \text{ и } b \preceq x \text{ и } c \preceq x \iff x \in T(\{a, b, c\})$$
+
+Из этого следует, что $T(\{\sup(\{a, b\}), c\}) = T(\{a, b, c\})$.
+Аналогично, $T(\{a, \sup(\{b, c\})\} ) = T(\{a, b, c\})$.
+Следовательно, $T(\{\sup(\{a, b\}), c\}) = T(\{a, \sup(\{b, c\})\})$
+Равенство множеств верхних границ означает равенство их наименьших верхних границ (супремумов):
+$$\sup(\{\sup(\{a, b\}), c\}) = \sup(\{a, \sup(\{b, c\})\})$$
+По определению операции $\lor$ как $\sup$, это эквивалентно $(a \vee b) \vee c = a \vee (b \vee c)$.
+$\square$
+</p></div>
+<h2>Следствие</h2>
+<div class="spoiler-markdown"><p>$(A, \vee)$ — полугруппа.
+Полурешетка = коммутативная полугруппа идемпотентов.
+</p></div></div>
 </body>
 </html>

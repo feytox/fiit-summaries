@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема Бернштейна-Кантора</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,50 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема Бернштейна-Кантора</h1><h2>Теорема Бернштейна–Кантора</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Биекция между множествами $A$ и $B$ существует тогда и только тогда, когда существуют инъекции из $A$ в $B$ и из $B$ в $A$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$\Large\implies$
+Необходимость очевидна, так как биекция — частный случай инъекции.
+
+$\Large\impliedby$
+Пусть $f: A \to B$ и $g: B \to A$ — инъекции.
+Обозначим $A_1 = g(B)$, $A_2 = g(f(A))$.
+
+Свойства функций:
+
+1. $g$ — биекция $B$ на $A_1$.
+
+2. $\phi = f \circ g$ — биекция $A$ на $A_2$
+
+Так как $B$ равномощно $A_1$, достаточно построить биекцию $A$ на $A_1$.
+
+**Построение $\psi\mathpunct{:}~ A \to A_1$:**
+Положим:
+$$C_0 = A_1 \setminus A_2, \quad\quad C_n = \phi(C_{n-1}) ~~\forall{n \in \mathbb{N}}$$
+$$C = \bigcup\limits_{n=0}^{\infty} C_i$$
+Определим функцию $\psi: A \to A_1$ условием:
+$$\psi(a) = \begin{cases} a, &amp; a \in C \\ \phi(a), &amp; a \notin C \end{cases}$$
+
+**Доказательство того, что $\psi$ — биекция $A$ на $A_1$:**
+$\psi(A) \subseteq A_1$ по построению $A_2$, $\phi$ и $C$. Докажем, что $\psi$ — биекция $A$ на $A_1$.
+Достаточно доказать, что любой элемент $c \in A_1$ имеет единственный $\psi$-прообраз.
+
+**Пусть $c \in C$:**
+$c$ — единственный $\psi$-прообраз $c$, принадлежащий $C$.
+Рассмотрим, может ли $a \in A \setminus C$ быть $\psi$-прообразом $c$:
+$$\text{если } a \in A \setminus C \text{ — } \psi\text{-прообраз } c \Rightarrow a = \phi^{-1}(c) \in C_i,~~ i \geq 1$$
+$$\Rightarrow a \in C_{i-1} \text{ (противоречие, т.к. } a \notin C) \Rightarrow c \text{ — единственный } \psi\text{-прообраз } c$$
+
+**Пусть $c \in A_1 \setminus C$:**
+У него нет $\psi$-прообразов в $C$.
+$c \in A_2$, т.е. имеет $\psi$-прообраз $\phi^{-1}(c)$ (единственный ввиду инъективности $\phi$).
+(Поскольку $c \notin C$, то $a = \phi^{-1}(c)$ также не может принадлежать $C$, иначе $c \in \phi(C) \subset C$).
+
+Таким образом, $\psi$ является биекцией $A$ на $A_1$. Так как $A_1$ равномощно $B$, то $A$ равномощно $B$.
+$\square$
+</p></div></div>
 </body>
 </html>

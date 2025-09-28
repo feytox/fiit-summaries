@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Частная производная второго порядка</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,16 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Частная производная второго порядка</h1><h2>Частная производная второго порядка</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>Пусть $f(\mathbf{x}) = f(x_1, \dots, x_m)$ определена и имеет $\dfrac{\partial f}{\partial x_k}$ в $O(\mathbf{x}^0)$.
+Если существует $\dfrac{\partial}{\partial x_j}\left(\dfrac{\partial f}{\partial x_k}\right)$, то ее называют **частной производной второго порядка**.
+Обозначение:
+$$f''_{x_k x_j}(\mathbf{x}^0) = \dfrac{\partial^2 f}{\partial x_j \partial x_k}(\mathbf{x}^0)$$
+Если $k \neq j$, то производную называют **смешанной**.
+Если $k = j$, то также используют обозначение:
+$$f''_{x_k x_k}(\mathbf{x}^0) = \dfrac{\partial^2 f}{\partial x_k^2}(\mathbf{x}^0)$$
+Производные высших порядков определяются аналогично
+</p></div></div>
 </body>
 </html>

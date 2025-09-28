@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Теорема Коши о промежуточном значении</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,18 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Теорема Коши о промежуточном значении</h1><h2>Теорема Коши о промежуточном значении</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть функция $f(x)$ непрерывна на связном множестве $D$, и для точек $\mathbf{a}, \mathbf{b} \in D$, $f(\mathbf{a}) &lt; f(\mathbf{b})$. Тогда $\forall{C \in (f(\mathbf{a}); f(\mathbf{b}))}$ существует $\mathbf{c} \in D$ такая, что $f(\mathbf{c}) = C$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Пусть такой непрерывной кривой является: 
+$$\gamma(t) = \begin{cases} x_1 = x_1(t), \\ \vdots \\ x_m = x_m(t) \end{cases}, \quad\quad[t_0, T] \to E \subset D, \quad\quad \gamma(t_0) = \mathbf{a},~~ \gamma(T) = \mathbf{b}$$
+Тогда сложная функция $g(t) = f(x_1(t), \ldots, x_m(t))$ непрерывна на $[t_0, T]$.
+Значит:
+$$\forall{C \in (f(\mathbf{a}); f(\mathbf{b})) = (g(t_0); g(T))}~~ \exists{t^* \in [t_0, T]}\mathpunct{:}~~ g(t^*) = C$$
+Точка $\mathbf{c} = \gamma(t^*) \in D$ искомая: $f(\mathbf{c}) = g(t^*) = C$.
+$\square$
+</p></div></div>
 </body>
 </html>

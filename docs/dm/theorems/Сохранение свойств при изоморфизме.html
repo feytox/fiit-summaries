@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Сохранение свойств при изоморфизме</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,38 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Сохранение свойств при изоморфизме</h1><h2>Сохранение свойств при изоморфизме</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Изоморфизм ЧУМов сохраняет:
+- минимальные элементы - $\forall{b \in A}\mathpunct{:}~~ (b \preccurlyeq a \iff b=a)$
+- наименьший элемент - $b \preccurlyeq a \iff b=a$
+- отношение покрытия
+</p></div>
+<p>Д-во (минимальные):</p>
+<div class="spoiler-markdown"><p>Для изоморфизма $f$:  
+$$f(b) \preccurlyeq f(a) \iff b \preccurlyeq a$$
+Из определения минимального элемента $a$: $b \preccurlyeq a \iff b=a$
+Поскольку $f$ — биекция, $b=a \iff f(b)=f(a)$.  
+Следовательно, $f(b) \preccurlyeq f(a) \iff f(b)=f(a)$, т.е. $f(a)$ — минимальный по определению.
+$\square$
+</p></div>
+<p>Д-во (наименьший):</p>
+<div class="spoiler-markdown"><p>Для изоморфизма $f$:  
+$$f(a) \preccurlyeq f(b) \iff a \preccurlyeq b$$
+По определению наименьшего элемента $a$, правая часть ($a \preccurlyeq b$) верна $\forall{b \in A}$.  
+Так как $f$ — биекция, для любого элемента $y$ в образе $f(A)$ существует $b \in A$ такой, что $y=f(b)$.  
+Следовательно, $f(a) \preccurlyeq y$ для всех $y \in f(A)$, т.е. $f(a)$ — наименьший по определению.
+$\square$
+</p></div>
+<p>Д-во (покрытие):</p>
+<div class="spoiler-markdown"><p>Пусть $a \triangleleft b$.
+Для изоморфизма $f$:
+$$f(a) \preccurlyeq f(b)$ и $f(a) \neq f(b)$$
+Если $\exists{c}\mathpunct{:}~~ f(a) \preccurlyeq f(c) \preccurlyeq f(b)$, то в силу свойств изоморфизма $a \preccurlyeq c \preccurlyeq b$.
+Поскольку $a \triangleleft b$, по определению отношения покрытия $c \in \{a,b\}$.
+Следовательно, $f(c) \in \{f(a), f(b)\}$.
+Таким образом, $f(a) \triangleleft f(b)$ по определению.
+$\square$
+</p></div></div>
 </body>
 </html>

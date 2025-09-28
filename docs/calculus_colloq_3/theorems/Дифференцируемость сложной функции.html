@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Дифференцируемость сложной функции</title>
 <script>
        MathJax = {
         tex: {
@@ -188,28 +188,32 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Здесь будет информация по терверу, извлечённая из блока теории к дз.</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/Полукольцо.html">Полукольцо</a></li>
-<li><a href="definitions/Кольцо.html">Кольцо</a></li>
-<li><a href="definitions/Единица системы множеств.html">Единица системы множеств</a></li>
-<li><a href="definitions/Алгебра множеств.html">Алгебра множеств</a></li>
-<li><a href="definitions/Сигма-кольцо.html">Сигма-кольцо</a></li>
-<li><a href="definitions/Сигма-алгебра.html">Сигма-алгебра</a></li>
-<li><a href="definitions/Несовместные события.html">Несовместные события</a></li>
-<li><a href="definitions/Независимые события.html">Независимые события</a></li>
-<li><a href="definitions/Совместная независимость.html">Совместная независимость</a></li>
-<li><a href="definitions/Совместная вероятность событий.html">Совместная вероятность событий</a></li>
-<li><a href="definitions/Условная вероятность.html">Условная вероятность</a></li>
-</ul>
-<h2>Формулы</h2>
-<ul>
-<li><a href="definitions/Формула Байеса.html">Формула Байеса</a></li>
-<li><a href="definitions/Формула полной вероятности.html">Формула полной вероятности</a></li>
-</ul>
-<p>Обозначения:<br/>
-$\dagger$ - требует рефактора<br/>
-$\star$ - нужно дописать доказательство</p></div>
+<h1>Дифференцируемость сложной функции</h1><h2>Теорема о дифференцируемости сложной функции</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если функция $f(x) = f(x_1, \ldots, x_m)$ дифференцируема в точке $x^0$, а функции $x_1(t), \ldots, x_m(t)$ дифференцируемы в точке $t^0 = (t_1^0, \ldots, t_s^0)$, причем $x^0 = (x_1(t^0), \ldots, x_m(t^0))$, то сложная функция $g(t) = f(x_1(t), \ldots, x_m(t))$ дифференцируема в точке $t^0$ и
+$$g'_{t_j}(t^0) = \sum_{k=1}^m \frac{\partial f}{\partial x_k}(x^0) \cdot \frac{\partial x_k}{\partial t_j}(t^0)$$
+</p></div>
+<p>(TODO: хочется условие более понятно записать)</p>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>По определению дифференцируемости имеем:
+$$\Delta f = \sum_{k=1}^m \frac{\partial f}{\partial x_k} \Delta x_k + o(||\Delta x||),$$
+$$\Delta x_k = \sum_{j=1}^s \frac{\partial x_k}{\partial t_j} \Delta t_j + o(||\Delta t||), \quad j=1, \ldots, s.$$
+Подставим выражение для $\Delta x_k$ в формулу для $\Delta f$:
+$$\Delta g = \sum_{k=1}^m \frac{\partial f}{\partial x_k} \left(\sum_{j=1}^s \frac{\partial x_k}{\partial t_j} \Delta t_j + o(||\Delta t||)\right) + o(||\Delta x||).$$
+Раскроем скобки и перегруппируем слагаемые:
+$$\begin{aligned}
+\Delta g &amp;= \sum_{k=1}^m \frac{\partial f}{\partial x_k} \sum_{j=1}^s \frac{\partial x_k}{\partial t_j} \Delta t_j + \sum_{k=1}^m \frac{\partial f}{\partial x_k} o(||\Delta t||) + o(||\Delta x||) \\
+&amp;= \sum_{j=1}^s \sum_{k=1}^m \frac{\partial f}{\partial x_k} \frac{\partial x_k}{\partial t_j} \Delta t_j + o(||\Delta t||) + o(||\Delta x||).
+\end{aligned}$$
+Так как функции $x_k(t)$ дифференцируемы в точке $t^0$, то $\Delta x_k = O(||\Delta t||)$ для каждого $k$. Следовательно, $||\Delta x|| = \sum_{k=1}^m |\Delta x_k| = \sum_{k=1}^m O(||\Delta t||) = O(||\Delta t||)$.
+Это означает, что $o(||\Delta x||)$ можно заменить на $o(||\Delta t||)$.
+Таким образом, окончательное выражение для $\Delta g$ принимает вид:
+$$\Delta g = \sum_{j=1}^s \left(\sum_{k=1}^m \frac{\partial f}{\partial x_k} \frac{\partial x_k}{\partial t_j}\right) \Delta t_j + o(||\Delta t||).$$
+По определению дифференцируемости, коэффициенты при $\Delta t_j$ являются частными производными $g'_{t_j}(t^0)$, вычисленными в точке $t^0$.
+Следовательно,
+$$g'_{t_j}(t^0) = \sum_{k=1}^m \frac{\partial f}{\partial x_k}(x^0) \cdot \frac{\partial x_k}{\partial t_j}(t^0).$$
+Что и требовалось доказать.
+$\square$
+</p></div></div>
 </body>
 </html>
