@@ -8,7 +8,6 @@
     {trigger: "$", replacement: "$$0$", options: "tmA"},
     {trigger: "ww", replacement: "^{$0}$1", options: "mA"}, // ВВерх типо
     {trigger: "dd", replacement: "_{$0}$1", options: "mA"}, // Down типо
-    {trigger: "|", replacement: "|$0|$1", options: "mA"},
     {trigger: "=>", replacement: "\\Rightarrow", options: "mA"},
 	{trigger: "=<", replacement: "\\Leftarrow", options: "mA"},
     {trigger: "==>", replacement: "\\implies", options: "mA"},
