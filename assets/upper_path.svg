@@ -1,0 +1,28 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .label {
+      font-family: 'Times New Roman', serif;
+      font-size: 16px;
+    }
+  </style>
+  <!-- Grid -->
+  <path d="
+    M 30 30 V 270 M 70 30 V 270 M 110 30 V 270 M 150 30 V 270 M 190 30 V 270 M 230 30 V 270 M 270 30 V 270
+    M 30 30 H 270 M 30 70 H 270 M 30 110 H 270 M 30 150 H 270 M 30 190 H 270 M 30 230 H 270 M 30 270 H 270
+    " stroke="gray" stroke-width="1" />
+
+  <!-- Red Path -->
+  <polyline points="30,270 30,230 70,230 70,150 110,150 110,110 190,110 190,70 230,70 230,30 270,30"
+      stroke="red" stroke-width="2" fill="none"/>
+
+  <!-- Diagonal Line -->
+  <line x1="30" y1="270" x2="270" y2="30" stroke="blue" stroke-width="2"/>
+
+  <!-- Dots -->
+  <circle cx="30" cy="270" r="4" fill="black"/>
+  <circle cx="270" cy="30" r="4" fill="black"/>
+
+  <!-- Labels -->
+  <text x="5" y="290" class="label">(0, 0)</text>
+  <text x="280" y="25" class="label">(n, n)</text>
+</svg>
