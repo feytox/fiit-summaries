@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>List of Theorems</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+    :root {
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
+        --obsidian-heading-color: #ffffff;
+        --obsidian-border-color: #4a4a4a;
+        --obsidian-code-background: #2a2a2a;
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.7;
+        color: var(--obsidian-text-color);
+        background-color: var(--obsidian-background);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 800px;
+        width: 100%;
+        background-color: var(--obsidian-container-background);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--obsidian-border-color);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--obsidian-heading-color);
+        margin-top: 1.8em;
+        margin-bottom: 1em;
+        line-height: 1.3;
+        font-weight: 600;
+    }
+
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    h4 { font-size: 1.3em; }
+
+    a {
+        color: var(--obsidian-link-color);
+        text-decoration: none;
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: #a0c4ff;
+        text-decoration: underline;
+    }
+
+    p {
+        margin-bottom: 1.2em;
+    }
+
+    .spoiler-markdown {
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-code-background);
+        cursor: pointer;
+        padding: 2px 5px;
+        border-radius: 4px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .spoiler-markdown:hover {
+        color: var(--obsidian-text-color);
+    }
+
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 30px;
+    }
+
+    li {
+        margin-bottom: 0.6em;
+    }
+
+    pre {
+        background-color: var(--obsidian-code-background);
+        border-radius: 6px;
+        padding: 18px;
+        overflow-x: auto;
+        margin-bottom: 1.5em;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+
+    code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
+        padding: 0.8em 25px;
+        color: #b0b0b0;
+        font-style: italic;
+        background-color: rgba(40, 40, 40, 0.5);
+        border-radius: 4px;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
+    }
+
+    strong, b {
+        font-weight: 700;
+    }
+
+    em, i {
+        font-style: italic;
+    }
+
+    #back-button {
+        font-size: 1.1em;
+        padding: 8px 15px;
+        display: inline-block;
+        cursor: pointer;
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-text-color);
+        border: 1px solid var(--obsidian-border-color);
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        margin-top: 20px;
+    }
+
+    #back-button:hover {
+        background-color: var(--obsidian-link-color);
+        color: #ffffff;
+        border-color: var(--obsidian-link-color);
+    }
+</style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content">
+<h1>List of Theorems</h1><p>Обозначения:<br/>
+$\dagger$ - требует рефактора<br/>
+$\star$ - нужно дописать доказательство</p>
+<h3>Теоремы</h3>
+<ol>
+<li>
+<p>◦ * <a href="definitions/Метрическое пространство.html">Метрические пространства</a><br/>
+   ◦ * <a href="definitions/Шары.html">Открытые и замкнутые шары</a><br/>
+   ◦ * <a href="definitions/Открытое и замкнутое множество.html">Открытые и замкнутые множества</a></p>
+</li>
+<li>
+<p>◦ * <a href="definitions/Предел последовательности.html">Предел последовательности</a><br/>
+   ◦ * <a href="theorems/Теорема о покоординатной сходимости.html">Теорема о покоординатной сходимости и эквивалентности метрик в R^m</a></p>
+</li>
+<li>
+<p>◦ <a href="theorems/Теорема о вложенных стягивающихся прямоугольниках.html">Принцип Кантора о вложенных стягивающихся прямоугольниках</a><br/>
+   ◦ <a href="theorems/Теорема Больцано-Вейерштрасса.html">Теорема Больцано-Вейерштрасса в R^m</a></p>
+</li>
+<li>
+<p>◦ <a href="theorems/Теорема о компактном множестве.html">Ограниченность и замкнутость компактного множества</a> $\star$ $\dagger$<br/>
+   ◦ <a href="theorems/Лемма о конечном покрытии.html">Лемма Гейне-Бореля о компактности в R^m</a></p>
+</li>
+<li>
+<p>◦ * <a href="definitions/Предел функции нескольких переменных.html">Предел функции нескольких переменных</a><br/>
+   ◦ * <a href="theorems/Теорема об эквивалентности определений Коши и Гейне.html">Эквивалентность определений</a><br/>
+   ◦ * <a href="theorems/Критерий Коши.html">Критерий Коши</a><br/>
+   ◦ * <a href="theorems/Теорема о связи двойного и повторных пределов.html">Теорема о связи двойного предела и повторных</a><br/>
+   ◦ * Связь предела с пределами по направлениям</p>
+</li>
+<li>
+<p>◦ <a href="theorems/Непрерывность сложной функции.html">Непрерывность сложной функции</a><br/>
+   ◦ <a href="theorems/Теорема Коши о промежуточном значении.html">Теорема Коши о промежуточных значениях</a></p>
+</li>
+<li>
+<p>◦ <a href="definitions/Замечание о свойствах непрерывности.html">Свойства непрерывных функций на компакте</a> $\dagger$<br/>
+   ◦ <a href="theorems/Теорема о достижимости точной грани.html">Теорема Вейерштрасса о компактности образа</a><br/>
+   ◦ <a href="theorems/Теорема Кантора о равномерной непрерывности.html">Теорема Кантора о равномерной непрерывности</a></p>
+</li>
+<li>
+<p>◦ <a href="definitions/Дифференцируемость.html">Дифференцируемость</a><br/>
+   ◦ <a href="theorems/Необходимое условие дифференцируемости.html">Необходимые условия дифференцируемости функции в точке</a><br/>
+   ◦ <a href="theorems/Достаточное условие дифференцируемости.html">Достаточные условия дифференцируемости функции в точке</a> $\dagger$</p>
+</li>
+<li>
+<p>◦ * <a href="definitions/Дифференциал.html">Дифференциал</a><br/>
+   ◦ * Геометрический смысл дифференцируемости: касательная плоскость</p>
+</li>
+<li>
+<p>◦ <a href="theorems/Дифференцируемость сложной функции.html">Дифференцируемость сложной функции</a> $\dagger$<br/>
+    ◦ <a href="definitions/Производная по направлению.html">Производные по направлению</a><br/>
+    ◦ Геометрический смысл градиента<br/>
+    ◦ <a href="theorems/Инвариантность формы первого дифференциала.html">Инвариантность первого дифференциала</a></p>
+</li>
+<li>
+<p>◦ <a href="theorems/Теорема Янга.html">Равенство смешанных производных</a><br/>
+    ◦ <a href="definitions/Дифференциал второго порядка.html">Дифференциалы второго и высших порядков</a><br/>
+    ◦ <a href="theorems/Формула Тейлора в форме Лагранжа.html">Формула Тейлора в форме Лагранжа</a> $\dagger$<br/>
+    ◦ * <a href="theorems/Формула Тейлора в форме Пеано.html">Формула Тейлора в форме Пеано</a><br/>
+    ◦ * <a href="theorems/Формула Тейлора второго порядка.html">Формула Тейлора второго порядка</a></p>
+</li>
+<li>
+<p>◦ <a href="theorems/Необходимое условие локального экстремума.html">Необходимые условия локального экстремума</a><br/>
+    ◦ <a href="theorems/Достаточные условия экстремума.html">Достаточные условия локального экстремума</a></p>
+</li>
+<li>
+<p>◦ <a href="theorems/Теорема о существовании неявной функции.html">Теорема о неявной функции, заданной одним уравнением</a></p>
+</li>
+<li>
+<p>◦ <a href="theorems/Теорема о системе неявных функций.html">Теорема о неявной функции, заданной системой уравнений</a></p>
+</li>
+<li>
+<p>◦ <a href="theorems/Необходимые условия локального условного экстремума.html">Необходимые условия условного экстремума</a><br/>
+    ◦ <a href="theorems/Достаточные условия локального условного экстремума.html">Достаточные условия условного экстремума (Метод Лагранжа)</a></p>
+</li>
+</ol></div>
+</body>
+</html>
