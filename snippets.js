@@ -222,6 +222,7 @@
 	{trigger: "NN", replacement: "\\mathbb{N}", options: "mA"},
     {trigger: "FF", replacement: "\\mathbb{F}", options: "mA"},
     {trigger: "PP", replacement: "\\mathbb{P}", options: "mA"},
+	{trigger: "EE", replacement: "\\mathbb{E}", options: "mA"},
 
     // Handle spaces and backslashes
 	{trigger: "([^\\\\])(${GREEK})", replacement: "[[0]]\\[[1]]", options: "rmA", description: "Add backslash before Greek letters"},
