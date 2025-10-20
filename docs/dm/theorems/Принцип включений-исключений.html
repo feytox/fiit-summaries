@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Принцип включений-исключений</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+    :root {
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
+        --obsidian-heading-color: #ffffff;
+        --obsidian-border-color: #4a4a4a;
+        --obsidian-code-background: #2a2a2a;
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.7;
+        color: var(--obsidian-text-color);
+        background-color: var(--obsidian-background);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 800px;
+        width: 100%;
+        background-color: var(--obsidian-container-background);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--obsidian-border-color);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--obsidian-heading-color);
+        margin-top: 1.8em;
+        margin-bottom: 1em;
+        line-height: 1.3;
+        font-weight: 600;
+    }
+
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    h4 { font-size: 1.3em; }
+
+    a {
+        color: var(--obsidian-link-color);
+        text-decoration: none;
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: #a0c4ff;
+        text-decoration: underline;
+    }
+
+    p {
+        margin-bottom: 1.2em;
+    }
+
+    .spoiler-markdown {
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-code-background);
+        cursor: pointer;
+        padding: 2px 5px;
+        border-radius: 4px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .spoiler-markdown:hover {
+        color: var(--obsidian-text-color);
+    }
+
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 30px;
+    }
+
+    li {
+        margin-bottom: 0.6em;
+    }
+
+    pre {
+        background-color: var(--obsidian-code-background);
+        border-radius: 6px;
+        padding: 18px;
+        overflow-x: auto;
+        margin-bottom: 1.5em;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+
+    code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
+        padding: 0.8em 25px;
+        color: #b0b0b0;
+        font-style: italic;
+        background-color: rgba(40, 40, 40, 0.5);
+        border-radius: 4px;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
+    }
+
+    strong, b {
+        font-weight: 700;
+    }
+
+    em, i {
+        font-style: italic;
+    }
+
+    #back-button {
+        font-size: 1.1em;
+        padding: 8px 15px;
+        display: inline-block;
+        cursor: pointer;
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-text-color);
+        border: 1px solid var(--obsidian-border-color);
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        margin-top: 20px;
+    }
+
+    #back-button:hover {
+        background-color: var(--obsidian-link-color);
+        color: #ffffff;
+        border-color: var(--obsidian-link-color);
+    }
+</style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content">
+<h1>Принцип включений-исключений</h1><h2>Теорема (Принцип включений-исключений)</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $A$ — конечное множество, $A_1, \ldots, A_k$ — его подмножества (не обязательно различные). Тогда
+$$
+\left|\bigcup_{i=1}^{k} A_i\right| = \sum_{\substack{X \neq \varnothing \\ X \subseteq \{1, \dots, k\}}} (-1)^{|X|-1} \left|\bigcap_{i \in X} A_i\right|. \quad (1)
+$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Возьмем произвольный элемент $a \in \bigcup_{i=1}^{k} A_i$. Пусть $Z = \{i \mid a \in A_i\}$ — множество индексов тех подмножеств, которым принадлежит $a$.
+
+Элемент $a$ входит во множество в левой части (1), т.е. добавляет к ней 
+1.
+
+В правой части (1) элемент $a$ входит во множество $\bigcap_{i \in X} A_i$ тогда и только тогда, когда $X \subseteq Z$. Для каждого такого $X$ он добавляет 1 к $\left|\bigcap_{i \in X} A_i\right|$.
+
+Следовательно, вклад элемента $a$ в правую часть равен:
+$$C_a = \sum_{\substack{X \subseteq Z \\ X \neq \varnothing}} (-1)^{|X|-1} \cdot 1$$
+Пусть $m = |Z|$. Сгруппируем в формуле для $C_a$ множества равной мощности $j = |X|$:
+$$C_a = \sum_{j=1}^{m} \binom{m}{j} (-1)^{j-1} = \left(\sum_{j=0}^{m} \binom{m}{j} (-1)^{j-1}\right) - \binom{m}{0}(-1)^{-1} = -\sum_{j=0}^{m} \binom{m}{j} (-1)^{j} + 1 = -(1-1)^m + 1 = 1$$
+Итак, каждый элемент добавляет 1 к левой и 1 к правой части (1). Следовательно, левая и правая части (1) равны.
+$\square$
+</p></div>
+<h2>Следствие из принципа включений-исключений</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Перепишем формулу (1) в виде:
+$$|\bigcup_{i=1}^{k} A_i| = \sum_{j=1}^{k} (-1)^{j-1} \left(\sum_{\substack{X \subset [
+1..k] \\ |X|=j}} |\bigcap_{i \in X} A_i|\right)$$
+Пусть для $j = 1, \dots, k$:
+$$N_j = \left(\sum_{\substack{X \subset [
+1..k] \\ |X|=j}} |\bigcap_{i \in X} A_i|\right); \text{ доопределим } N_0 = |A|$$
+Тогда число элементов, не обладающих ни одним из $k$ свойств, есть:
+$$|A \setminus \bigcup_{i=1}^{k} A_i| = |A| - |\bigcup_{i=1}^{k} A_i| = N_0 - \sum_{j=1}^{k} (-1)^{j-1} N_j = N_0 + \sum_{j=1}^{k} (-1)^{j} N_j = \sum_{j=0}^{k} (-1)^{j} N_j$$
+</p></div>
+<h2>Симметричный вариант ПВИ</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Пусть $|\bigcap_{i \in X} A_i| = s_{|X|}$ зависит только от $|X|$; тогда:
+$$N_j = \binom{k}{j} s_j$$
+</p></div></div>
+</body>
+</html>
