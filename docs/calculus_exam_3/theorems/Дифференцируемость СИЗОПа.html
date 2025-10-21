@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Главная страница</title>
+<title>Дифференцируемость СИЗОПа</title>
 <script>
        MathJax = {
         tex: {
@@ -188,35 +188,21 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h4>О сайте</h4>
-<p>Данный сайт это web-версия конспектов из <a href="https://github.com/feytox/fiit-summaries">репозитория</a>. На сайте возможны баги, поэтому советую пользоваться Obsidian. Подробная информация о конспектах описана в <a href="https://github.com/feytox/fiit-summaries">репозитории</a></p>
-<p>Отличия от Obsidian:<br/>
-- Конспекты здесь синхронизируются автоматически в течение нескольких минут после push в main.<br/>
-- Некоторый текст, возможно, отображается по-другому</p>
-<h4>Материал по текущему семестру</h4>
-<ul>
-<li><a href="calculus_colloq_3/List of Theorems.html">Коллоквиум по матану</a>, 3 семестр</li>
-<li><a href="dm/List of Topics.html">Дискретная математика</a>, 3 семестр</li>
-<li><a href="calculus_exam_3/List of Topics.html">Экзамен по матану</a>, 3 семестр</li>
-</ul>
-<h4>Материал по прошедшим экзаменам</h4>
-<ul>
-<li>Коллоквиум по матану, 1 семестр: <a href="calculus_colloq_1/List of Definitions.html">определения</a>, <a href="calculus_colloq_1/List of Theorems.html">теоремы</a></li>
-<li><a href="algem_exam_1/List of Topics.html">Экзамен по алгему</a>, 1 семестр</li>
-<li><a href="calculus_exam_1/List of Theorems.html">Экзамен по матану</a>, 1 семестр</li>
-<li>Коллоквиум по матану, 2 семестр: <a href="calculus_colloq_2/List of Definitions.html">определения</a>, <a href="calculus_colloq_2/List of Theorems.html">теоремы</a></li>
-<li><a href="calculus_exam_2/List of Theorems.html">Экзамен по матану</a>, 2 семестр</li>
-<li><a href="algem_exam_2/List of Topics.html">Экзамен по алгему</a>, 2 семестр</li>
-</ul>
-<h4>Дополнительный материал</h4>
-<ul>
-<li>Python зачёт: <a href="python1/Part_A.html">Часть A</a>, <a href="python1/Part_B.html">Часть B</a></li>
-</ul>
-<h4>Примечание</h4>
-<ul>
-<li>Никто не застрахован от ошибок, поэтому если вы нашли ошибку в конспекте, пишите issue.</li>
-<li>Один билет может быть разбит на несколько файлов, обращайте на это внимание.</li>
-<li>В конспектах по линейной алгебре там, где не встречаются скаляры или они записаны греческими буквами, написание вектора может быть не полужирным (например, не "$\mathbf{x}, \mathbf{a}, \mathbf{b}, \mathbf{0}$", а "$x, a, b, 0$"). Сделано это для экономия времени, при желании это можно исправить.</li>
-</ul></div>
+<h1>Дифференцируемость СИЗОПа</h1><h2>Теорема о дифференцировании СИЗОПа</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Если $f(x, y)$ и $f'_x(x, y)$ непрерывны на $[a, b] \times [c, d]$, $\varphi(x)$ и $\psi(x)$ дифференцируемы на $[a, b]$ и $c \le \varphi(x) \le \psi(x) \le d$, тогда $F(x) = \int_{\varphi(x)}^{\psi(x)} f(x, y) dy$ дифференцируем на $[a, b]$ и
+$$F'(x) = \int_{\varphi(x)}^{\psi(x)} f'_x(x, y) dy - f(x, \varphi(x))\varphi'(x) + f(x, \psi(x))\psi'(x)$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Рассмотрим функцию $\Phi(x, p, q) = \int_{p}^{q} f(x, y)dy$.
+Функция дифференцируема, так как $\Phi'_q(x, p, q) = f(x, q)$ и $\Phi'_p(x, p, q) = -f(x, p)$ непрерывны, а
+$$
+\begin{aligned}
+\Phi'_x(x, p, q) &amp;= \lim_{\Delta x \to 0} \frac{\Phi(x + \Delta x, p, q) - \Phi(x, p, q)}{\Delta x} = \\
+&amp;= \lim_{\Delta x \to 0} \int_{p}^{q} \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x}dy = \lim_{\Delta x \to 0} \int_{p}^{q} f'_x(c, y)dy = \int_{p}^{q} f'_x(x, y)dy
+\end{aligned}
+$$
+Осталось воспользоваться теоремой о дифференцируемости сложной функции для $F(x) = \Phi(x, \varphi, \psi)$.
+</p></div></div>
 </body>
 </html>
