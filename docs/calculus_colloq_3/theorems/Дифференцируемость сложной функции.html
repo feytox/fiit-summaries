@@ -190,10 +190,14 @@
 <div class="content">
 <h1>Дифференцируемость сложной функции</h1><h2>Теорема о дифференцируемости сложной функции</h2>
 <p>Формулировка:</p>
-<div class="spoiler-markdown"><p>Если функция $f(x) = f(x_1, \ldots, x_m)$ дифференцируема в точке $x^0$, а функции $x_1(t), \ldots, x_m(t)$ дифференцируемы в точке $t^0 = (t_1^0, \ldots, t_s^0)$, причем $x^0 = (x_1(t^0), \ldots, x_m(t^0))$, то сложная функция $g(t) = f(x_1(t), \ldots, x_m(t))$ дифференцируема в точке $t^0$ и
+<div class="spoiler-markdown"><p>Пусть:
+- $f(x) = f(x_1, \ldots, x_m)$ дифференцируема в точке $x^0$
+- $x_1(t), \ldots, x_m(t)$ дифференцируемы в точке $t^0 = (t_1^0, \ldots, t_s^0)$
+- $x^0 = (x_1(t^0), \ldots, x_m(t^0))$
+
+То сложная функция $g(t) = f(x_1(t), \ldots, x_m(t))$ дифференцируема в точке $t^0$ и
 $$g'_{t_j}(t^0) = \sum_{k=1}^m \frac{\partial f}{\partial x_k}(x^0) \cdot \frac{\partial x_k}{\partial t_j}(t^0)$$
 </p></div>
-<p>(TODO: хочется условие более понятно записать)</p>
 <p>Д-во:</p>
 <div class="spoiler-markdown"><p>По определению дифференцируемости имеем:
 $$\Delta f = \sum_{k=1}^m \frac{\partial f}{\partial x_k} \Delta x_k + o(||\Delta x||),$$
