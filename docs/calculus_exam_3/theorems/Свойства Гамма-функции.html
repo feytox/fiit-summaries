@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Свойства Гамма-функции</title>
 <script>
        MathJax = {
         tex: {
@@ -188,31 +188,42 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Экзамен по матану ещё не скоро, однако материал здесь будет постепенно пополняться (а может и нет)</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/СИЗОП.html">СИЗОП</a></li>
-<li><a href="definitions/НИЗОП.html">НИЗОП</a></li>
-<li><a href="definitions/Равномерная сходимость НИЗОПа.html">Равномерная сходимость НИЗОПа</a></li>
-<li><a href="definitions/Гамма-функция.html">Гамма-функция</a></li>
-<li><a href="definitions/Бета-функция.html">Бета-функция</a></li>
-</ul>
-<h2>Теоремы</h2>
-<ul>
-<li><a href="theorems/Непрерывность СИЗОПа.html">Непрерывность СИЗОПа</a></li>
-<li><a href="theorems/Интегрируемость СИЗОПа.html">Интегрируемость СИЗОПа</a></li>
-<li><a href="theorems/Дифференцируемость СИЗОПа.html">Дифференцируемость СИЗОПа</a></li>
-<li><a href="theorems/Критерий Коши НИЗОПа.html">Критерий Коши НИЗОПа</a></li>
-<li><a href="theorems/Признак сравнения и Вейерштрасса НИЗОП.html">Признак сравнения и Вейерштрасса НИЗОП</a></li>
-<li><a href="theorems/Признак Дирихле НИЗОПа.html">Признак Дирихле НИЗОПа</a></li>
-<li><a href="theorems/Признак Абеля НИЗОПа.html">Признак Абеля НИЗОПа</a></li>
-<li><a href="theorems/Предельный переход НИЗОП.html">Предельный переход НИЗОП</a></li>
-<li><a href="theorems/Интегрируемость НИЗОПа.html">Интегрируемость НИЗОПа</a></li>
-<li><a href="theorems/Дифференцируемость НИЗОПа.html">Дифференцируемость НИЗОПа</a></li>
-<li><a href="theorems/Свойства Гамма-функции.html">Свойства Гамма-функции</a></li>
-<li><a href="theorems/Свойства Бета-функции.html">Свойства Бета-функции</a></li>
-<li><a href="theorems/Связь Гамма и Бета-функций.html">Связь Гамма и Бета-функций</a></li>
-<li><a href="theorems/Интеграл Эйлера-Пуассона.html">Интеграл Эйлера-Пуассона</a></li>
-</ul></div>
+<h1>Свойства Гамма-функции</h1><h2>Равномерная сходимость</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$\Gamma(x)$ сходится равномерно на $[\varepsilon, E]$, $\forall{0 &lt; \varepsilon &lt; E &lt; \infty}$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Признак сравнения.
+</p></div>
+<h2>Непрерывность Гамма-функции</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$\Gamma(x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt$ непрерывна на $(0, \infty)$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Функция $t^{x-1}e^{-t}$ непрерывна, а интеграл сходится равномерно на $[\varepsilon, E] \subset (0, \infty)$. По теореме о непрерывности НИЗОПа $\Gamma(x)$ непрерывна на $[\varepsilon, E]$, значит и на объединении $\bigcup[\varepsilon, E] = (0, \infty)$.
+</p></div>
+<h2>Бесконечная дифференцируемость Гамма-функции</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$\Gamma(x)$ бесконечно дифференцируема на $(0, \infty)$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$(t^{x-1}e^{-t})^{(k)} = t^{x-1}e^{-t}\ln^k t$, а по признаку сравнения $\int_{0}^{\infty} t^{x-1}e^{-t}\ln^k t~dt$ сходится равномерно на $\forall {[\varepsilon, E]}$. Значит по теореме о дифференцируемости НИЗОПа $\Gamma(x)$ дифференцируема любое число раз на $[\varepsilon, E]$, а значит и на их объединении. Кроме того $\Gamma^{(k)}(x) = \int_{0}^{\infty} t^{x-1}e^{-t}\ln^k t~dt$.
+</p></div>
+<h2>Теорема (формула приведения)</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$$\Gamma(x + 1) = x\Gamma(x),~~ x &gt; 0$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Доказательство. Интегрированием по частям
+$$\Gamma(x + 1) = \int_{0}^{\infty} t^{x}e^{-t} dt = \left. t^{x}(-e^{-t}) \right|_{0}^{\infty} + \int_{0}^{\infty} xt^{x-1}e^{-t} dt = x\Gamma(x).$$
+</p></div>
+<h2>Следствие</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$$\Gamma(n) = (n - 1)!~~ \forall{n \in \mathbb{N}}$$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Доказательство. Б.И. $\Gamma(1) = \int_{0}^{\infty} t^{0}e^{-t} dt = \left. -e^{-t} \right|_{0}^{\infty} = 1 = 0!$.
+Ш.И. $\Gamma(n) = (n - 1)\Gamma(n - 1) = (n - 1)(n - 2)! = (n - 1)!$.
+</p></div></div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>List of Topics</title>
+<title>Интеграл Эйлера-Пуассона</title>
 <script>
        MathJax = {
         tex: {
@@ -188,31 +188,13 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>List of Topics</h1><p>Экзамен по матану ещё не скоро, однако материал здесь будет постепенно пополняться (а может и нет)</p>
-<h2>Определения</h2>
-<ul>
-<li><a href="definitions/СИЗОП.html">СИЗОП</a></li>
-<li><a href="definitions/НИЗОП.html">НИЗОП</a></li>
-<li><a href="definitions/Равномерная сходимость НИЗОПа.html">Равномерная сходимость НИЗОПа</a></li>
-<li><a href="definitions/Гамма-функция.html">Гамма-функция</a></li>
-<li><a href="definitions/Бета-функция.html">Бета-функция</a></li>
-</ul>
-<h2>Теоремы</h2>
-<ul>
-<li><a href="theorems/Непрерывность СИЗОПа.html">Непрерывность СИЗОПа</a></li>
-<li><a href="theorems/Интегрируемость СИЗОПа.html">Интегрируемость СИЗОПа</a></li>
-<li><a href="theorems/Дифференцируемость СИЗОПа.html">Дифференцируемость СИЗОПа</a></li>
-<li><a href="theorems/Критерий Коши НИЗОПа.html">Критерий Коши НИЗОПа</a></li>
-<li><a href="theorems/Признак сравнения и Вейерштрасса НИЗОП.html">Признак сравнения и Вейерштрасса НИЗОП</a></li>
-<li><a href="theorems/Признак Дирихле НИЗОПа.html">Признак Дирихле НИЗОПа</a></li>
-<li><a href="theorems/Признак Абеля НИЗОПа.html">Признак Абеля НИЗОПа</a></li>
-<li><a href="theorems/Предельный переход НИЗОП.html">Предельный переход НИЗОП</a></li>
-<li><a href="theorems/Интегрируемость НИЗОПа.html">Интегрируемость НИЗОПа</a></li>
-<li><a href="theorems/Дифференцируемость НИЗОПа.html">Дифференцируемость НИЗОПа</a></li>
-<li><a href="theorems/Свойства Гамма-функции.html">Свойства Гамма-функции</a></li>
-<li><a href="theorems/Свойства Бета-функции.html">Свойства Бета-функции</a></li>
-<li><a href="theorems/Связь Гамма и Бета-функций.html">Связь Гамма и Бета-функций</a></li>
-<li><a href="theorems/Интеграл Эйлера-Пуассона.html">Интеграл Эйлера-Пуассона</a></li>
-</ul></div>
+<h1>Интеграл Эйлера-Пуассона</h1><p>Формулировка:</p>
+<div class="spoiler-markdown"><p>$$ \int_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi} $$
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>$$ \Gamma\left(\frac{1}{2}\right) = \int_{0}^{\infty} t^{-\frac{1}{2}} e^{-t} dt = 2 \int_{0}^{\infty} e^{-t} d\left(t^{\frac{1}{2}}\right) = 2 \int_{0}^{\infty} e^{-x^2} dx $$
+$$ B\left(\frac{1}{2}, \frac{1}{2}\right) = \frac{\Gamma\left(\frac{1}{2}\right) \Gamma\left(\frac{1}{2}\right)}{\Gamma(1)} \Rightarrow \Gamma\left(\frac{1}{2}\right) = \sqrt{B\left(\frac{1}{2}, \frac{1}{2}\right)} $$
+$$ B\left(\frac{1}{2}, \frac{1}{2}\right) = \int_{0}^{1} t^{-\frac{1}{2}} (1-t)^{-\frac{1}{2}} dt = [t = \sin^2 x] = \int_{0}^{\frac{\pi}{2}} \frac{2 \sin x \cos x}{\sin x \cos x} dx = \pi $$
+</p></div></div>
 </body>
 </html>
