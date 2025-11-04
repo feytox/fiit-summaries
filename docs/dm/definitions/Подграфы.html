@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Формула Тейлора второго порядка</title>
+<title>Подграфы</title>
 <script>
        MathJax = {
         tex: {
@@ -188,10 +188,21 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>Формула Тейлора второго порядка</h1><h2>Формула Тейлора второго порядка</h2>
-<p>Формулировка:</p>
-<div class="spoiler-markdown"><p>Если функция дважды непрерывно дифференцируема в $O(x^0)$, то $\forall{x \in O(x^0)}$
-$$f(x) = f(x^0) + \sum_{k=1}^{m} f'_{x_k}(x^0)\Delta x_k + \dfrac{1}{2}\sum_{k=1}^{m}\sum_{j=1}^{m} f''_{x_k x_j}(x^0)\Delta x_k \Delta x_j + o(\| \Delta x \|^2), \quad \| \Delta x \| \to 0$$
+<h1>Подграфы</h1><h2>Подграф</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>Пусть $G = (V, E)$ - граф, $H = (V', E')$ называется **подграфом** графа $G$, если $V' \subseteq V, E' \subseteq E$, при этом предполагается, что в $E'$ могут входить только те ребра, концы которых лежат в $V'$ ($E' \subseteq E \cap (V' \times V')$).
+</p></div>
+<h2>Субграф</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>Подграф, у которого $V = V'$, называют **субграфом**.
+</p></div>
+<h2>Порожденный (индуцированный) подграф</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>$H = (V', E')$ - подграф $G = (V, E)$ и при этом если $\forall{v_i, v_j \in V'}\mathpunct{:}~~ v_i v_j \in E \Rightarrow v_i v_j \in E'$, то $H$ **порожденный (индуцированный)** множеством $V'$ подграф графа $G$.
+</p></div>
+<h2>Цикл в графе</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>**Циклом в графе** называется подграф, являющийся циклом.
 </p></div></div>
 </body>
 </html>

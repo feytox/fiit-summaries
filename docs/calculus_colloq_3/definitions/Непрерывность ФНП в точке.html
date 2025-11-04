@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Формула Тейлора второго порядка</title>
+<title>Непрерывность ФНП в точке</title>
 <script>
        MathJax = {
         tex: {
@@ -188,10 +188,15 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>Формула Тейлора второго порядка</h1><h2>Формула Тейлора второго порядка</h2>
-<p>Формулировка:</p>
-<div class="spoiler-markdown"><p>Если функция дважды непрерывно дифференцируема в $O(x^0)$, то $\forall{x \in O(x^0)}$
-$$f(x) = f(x^0) + \sum_{k=1}^{m} f'_{x_k}(x^0)\Delta x_k + \dfrac{1}{2}\sum_{k=1}^{m}\sum_{j=1}^{m} f''_{x_k x_j}(x^0)\Delta x_k \Delta x_j + o(\| \Delta x \|^2), \quad \| \Delta x \| \to 0$$
+<h1>Непрерывность ФНП в точке</h1><h2>Непрерывность функции в точке</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>Пусть $f(\mathbf{x}) = f(x_1, \dots, x_m) \mathpunct{:} \mathbb{R}^m \supset D \to \mathbb{R}$, и $\mathbf{x}^0 \in D$.  
+Функция $f$ **непрерывна в точке** $\mathbf{x}^0$, если:
+$$\forall{\varepsilon &gt; 0}~~ \exists{\delta_\varepsilon &gt; 0} \mathpunct{:}~~ \forall{\mathbf{x} \in D}~~ \rho(\mathbf{x}, \mathbf{x}^0) &lt; \delta_\varepsilon \Rightarrow |f(\mathbf{x}) - f(\mathbf{x}^0)| &lt; \varepsilon$$
+</p></div>
+<p>Замечание:</p>
+<div class="spoiler-markdown"><p>Если $\mathbf{x}^0$ - изолированная, то $f(\mathbf{x})$ непрерывна.
+Если $\mathbf{x}^0$ - предельная, то $f(\mathbf{x})$ непрерывна $\iff \lim\limits_{\mathbf{x} \to \mathbf{x}^0} f(\mathbf{x}) = f(\mathbf{x}^0)$.
 </p></div></div>
 </body>
 </html>

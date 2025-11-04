@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Формула Тейлора второго порядка</title>
+<title>Двудольный граф</title>
 <script>
        MathJax = {
         tex: {
@@ -188,10 +188,17 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>Формула Тейлора второго порядка</h1><h2>Формула Тейлора второго порядка</h2>
+<h1>Двудольный граф</h1><h2>Двудольный граф</h2>
+<p>Определение:</p>
+<div class="spoiler-markdown"><p>Пусть в графе $G = (X, Y, E)$ множество вершин $V = X \cup Y$ и $X \cap Y = \varnothing$.
+$X$ и $Y$ называются **долями графа**, и вершины, принадлежащие одной и той же доле, попарно несмежны.
+</p></div>
+<h2>Связь с деревом</h2>
 <p>Формулировка:</p>
-<div class="spoiler-markdown"><p>Если функция дважды непрерывно дифференцируема в $O(x^0)$, то $\forall{x \in O(x^0)}$
-$$f(x) = f(x^0) + \sum_{k=1}^{m} f'_{x_k}(x^0)\Delta x_k + \dfrac{1}{2}\sum_{k=1}^{m}\sum_{j=1}^{m} f''_{x_k x_j}(x^0)\Delta x_k \Delta x_j + o(\| \Delta x \|^2), \quad \| \Delta x \| \to 0$$
+<div class="spoiler-markdown"><p>Любое дерево — двудольный граф.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>В первую долю входит корень и все вершины, в которые из корня ведет путь четной длины, а во вторую остальные вершины.
 </p></div></div>
 </body>
 </html>

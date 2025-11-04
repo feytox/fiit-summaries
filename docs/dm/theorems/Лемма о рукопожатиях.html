@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Формула Тейлора второго порядка</title>
+<title>Лемма о рукопожатиях</title>
 <script>
        MathJax = {
         tex: {
@@ -188,10 +188,12 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>Формула Тейлора второго порядка</h1><h2>Формула Тейлора второго порядка</h2>
+<h1>Лемма о рукопожатиях</h1><h2>Лемма о рукопожатиях</h2>
 <p>Формулировка:</p>
-<div class="spoiler-markdown"><p>Если функция дважды непрерывно дифференцируема в $O(x^0)$, то $\forall{x \in O(x^0)}$
-$$f(x) = f(x^0) + \sum_{k=1}^{m} f'_{x_k}(x^0)\Delta x_k + \dfrac{1}{2}\sum_{k=1}^{m}\sum_{j=1}^{m} f''_{x_k x_j}(x^0)\Delta x_k \Delta x_j + o(\| \Delta x \|^2), \quad \| \Delta x \| \to 0$$
+<div class="spoiler-markdown"><p>В ориентированом графе $G = (V, E)$:
+$$\sum_{v \in V} d^+(v) = \sum_{v \in V} d^-(v) = |E|$$
+В неориентированом графе $G = (V, E)$:
+$$\sum_{v \in V} d(v) = 2|E|$$
 </p></div></div>
 </body>
 </html>

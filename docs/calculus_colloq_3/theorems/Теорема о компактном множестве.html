@@ -189,18 +189,20 @@
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
 <h1>Теорема о компактном множестве</h1><p>Формулировка:</p>
-<div class="spoiler-markdown"><p>Если $K$ - компактное, то $K$ - ограниченное и замкнутое
+<div class="spoiler-markdown"><p>Если $K$ - <span>компактное</span>, то $K$ - ограниченное и замкнутое
 </p></div>
 <p>Д-во:</p>
 <div class="spoiler-markdown"><p>Ограниченность очевидна.
 
-Докажем замкнутость. Пусть $A$ – компактно, возьмем $x \in X \setminus A$. Тогда
+Докажем замкнутость. Будем использовать <a href="Утверждения об открытых и замкнутых.html">свойства открытых и замкнутых множеств</a>. Пусть $A$ – компактно, возьмем $x \in X \setminus A$. Тогда
 $$\forall{a \in A}~~ \exists{O(a), O(x)}\mathpunct{:}~~ O(a) \cap O(x) = \varnothing$$
 $P = \bigcup_{a \in A} O(a)$ - покрытие множества $A$, значит найдутся $\bigcup_{k=1}^n O(a_k) \supset A$. Рассмотрим $O_k(x) \cap O(a_k) = \varnothing$. Тогда $G = \bigcup_{k=1}^n O_k(x)$ - окрестность $x$ и $G \cap A = \varnothing$. Значит $G \subset X \setminus A$ и открыто. Но тогда $X \setminus A$ – открыто, а $A$ – замкнуто.
 $\square$
 </p></div>
 <h2>Замечание</h2>
 <div class="spoiler-markdown"><p>Не всякое ограниченное и замкнутое множество является компактным.
+
+Например, замкнутый единичный шар в $l^{2}$ - пространстве всех бесконечных последовательностей, сумма квадратов которых сходится: $\sum\limits_{i=1}^{\infty} |x_{i}|^{2} &lt; \infty$
 </p></div></div>
 </body>
 </html>

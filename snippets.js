@@ -15,8 +15,8 @@
 	{trigger: "l==>", replacement: "\\Large\\implies", options: "mA"},
 	{trigger: "l==<", replacement: "\\Large\\impliedby", options: "mA"},
     {trigger: "com", replacement: "~~\\Huge|\\normalsize", options: "mA"},
-    {trigger: "caseor", replacement: "\\left[ \\begin{array} \\\\\n$0\n\\end{array} \\right.", options: "mA"}, // cases, but OR
-	{trigger: "caser", replacement: "\\left. \\begin{array} \\\\\n$0\n\\end{array} \\right\\}", options: "mA"}, // cases, but Right
+    {trigger: "caseor", replacement: "\\left[ \\begin{align} \n$0\n\\end{align} \\right.", options: "mA"}, // cases, but OR
+	{trigger: "caser", replacement: "\\left. \\begin{align} \n$0\n\\end{align} \\right\\}", options: "mA"}, // cases, but Right
     {trigger: ":", replacement: "\\mathpunct{:}~~", options: "mA"},
 	{trigger: "~~:", replacement: "\\mathpunct{:}~~", options: "mA"},
 	{trigger: "~:", replacement: "\\mathpunct{:}~$0", options: "mA"},
