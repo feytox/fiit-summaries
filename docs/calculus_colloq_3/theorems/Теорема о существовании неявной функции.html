@@ -207,7 +207,7 @@ $$f'_{x_k}(\mathbf{x}^0) = -\frac{F'_{x_k}(\mathbf{x}^0, y^0)}{F'_y(\mathbf{x}^0
 Тогда для достаточно малого $\varepsilon$: $F(\mathbf{x}^0, y^0 + \varepsilon) &gt; 0$, $F(\mathbf{x}^0, y^0 - \varepsilon) &lt; 0$.
 По теореме об отделимости от нуля:
 $$\exists{O(\mathbf{x}^0, y^0 + \varepsilon)}\mathpunct{:}~~ \forall{(\mathbf{x}, y) \in O(\mathbf{x}^0, y^0 + \varepsilon)}, F(\mathbf{x}, y) &gt; 0$$
-$$\exists{O(\mathbf{x}^0, y^0 + \varepsilon)}\mathpunct{:}~~ \forall{(\mathbf{x}, y) \in O(\mathbf{x}^0, y^0 - \varepsilon)}, F(\mathbf{x}, y) &lt; 0$$
+$$\exists{O(\mathbf{x}^0, y^0 - \varepsilon)}\mathpunct{:}~~ \forall{(\mathbf{x}, y) \in O(\mathbf{x}^0, y^0 - \varepsilon)}, F(\mathbf{x}, y) &lt; 0$$
 
 Выберем $\delta$ настолько малым, чтобы для $K = \{\mathbf{x} \mathpunct{:}~ |x_k - x_k^0| \leq \delta\}$ неравенства $F(\mathbf{x}, y^0 + \varepsilon) &gt; 0$, $F(\mathbf{x}, y^0 - \varepsilon) &lt; 0$ выполнялись для всех $\mathbf{x} \in K$.
 
@@ -215,10 +215,10 @@ $$\exists{O(\mathbf{x}^0, y^0 + \varepsilon)}\mathpunct{:}~~ \forall{(\mathbf{x}
 
 Значит по теореме о промежуточном значении:
 $$\exists{y^* \in [y^0 - \varepsilon, y^0 + \varepsilon]} \mathpunct{:}~ F(\mathbf{x}^*, y^*) = 0$$
-А из $F'_y(\mathbf{x}^0, y^0) &gt; 0$ и непрерывности $F'_y$ такая точка единственна.
+А из $F'_y(\mathbf{x}^0, y^0) &gt; 0$ и непрерывности $F'_y$ такая точка единственна. Значит мы установили однозначное соответствие, нашли искомую неявную функцию.
 Непрерывность следует из построения.
 
-Если $F(\mathbf{x}, y)$ дифференцируема, то по формуле Тейлора:
+Если $F(\mathbf{x}, y)$ дифференцируема, то по <a href="Формула Тейлора в форме Лагранжа.html">формуле Тейлора</a> (при $n = 1$):
 $$0 = F(x_1^0 + \Delta x_1, \dots, x_m^0, y^0 + \Delta y) - F(x_1^0, \dots, x_m^0, y^0) =$$
 $$F'_{x_1}(x_1^0 + \theta \Delta x_1, \dots, x_m^0, y^0 + \theta \Delta y)\Delta x_1 + F'_y(x_1^0 + \theta \Delta x_1, \dots, x_m^0, y^0 + \theta \Delta y)\Delta y.$$
 Отсюда:
