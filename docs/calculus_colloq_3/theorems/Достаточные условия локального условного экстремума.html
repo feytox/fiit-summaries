@@ -207,10 +207,11 @@ $$h(x_{n+1}, \dots, x_m) = f(\varphi_1(x_{n+1}, \dots, x_m), \dots, \varphi_n(x_
 $$d^2 h(x_{n+1}, \dots, x_m) = \sum_{i=1}^{m} \sum_{j=1}^{m} f''_{x_i x_j}(\mathbf{x}) dx_i dx_j + \sum_{j=1}^{m} f'_{x_j}(\mathbf{x}) d^2 x_j$$
 $$\sum_{j=1}^{m} \frac{\partial g_k}{\partial x_j}(\mathbf{x}) dx_j \equiv 0,~~ k = \overline{1, n} \implies$$
 $$\sum_{i=1}^{m} \sum_{j=1}^{m} \frac{\partial^2 g_k}{\partial x_j \partial x_i}(\mathbf{x}) dx_i dx_j + \sum_{j=1}^{m} \frac{\partial g_k}{\partial x_j}(\mathbf{x}) d^2 x_j = 0$$
-А если вспомнить, что $L(\mathbf{x}) = f(\mathbf{x}) - \sum_{k=1}^{n} \lambda_k g_k(\mathbf{x})$, то
+Вспомним, что $L(\mathbf{x}) = f(\mathbf{x}) - \sum\limits_{k=1}^{n} \lambda_k g_k(\mathbf{x})$ и к $d^{2}h$ прибавим все ${} \lambda_{k} d^{2}g_{k} {}$. Так как $d^{2}g_{k} = 0$, то $d^{2}h$ не изменится, но мы получим:
 $$
 \begin{aligned}
-d^2 h(x_{n+1}^0, \dots, x_m^0) &amp;= \sum_{i=1}^{m} \sum_{j=1}^{m} L''_{x_i x_j}(\mathbf{x}^0) dx_i dx_j + \sum_{j=1}^{m} L'_{x_j}(\mathbf{x}^0) d^2 x_j = \\
+d^2 h(x_{n+1}^0, \dots, x_m^0) &amp;= \sum_{i=1}^{m} \sum_{j=1}^{m} (f - \lambda_{k}g)''_{x_{i}x_j}(\mathbf{x}^0) dx_i dx_j + \sum_{j=1}^{m} (f-\lambda_{k}g)'_{x_j}(\mathbf{x}^0) d^2 x_j  \\
+&amp;= \sum_{i=1}^{m} \sum_{j=1}^{m} L''_{x_i x_j}(\mathbf{x}^0) dx_i dx_j + \sum_{j=1}^{m} L'_{x_j}(\mathbf{x}^0) d^2 x_j \\
 &amp;= \sum_{i=1}^{m} \sum_{j=1}^{m} L''_{x_i x_j}(\mathbf{x}^0) dx_i dx_j
 \end{aligned}
 $$
