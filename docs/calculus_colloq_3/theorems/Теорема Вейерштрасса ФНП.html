@@ -192,8 +192,19 @@
 <p>Формулировка:</p>
 <div class="spoiler-markdown"><p>Если $f$ непрерывна на компактном $K$, то её образ $f(K)$ - компакт.
 </p></div>
-<p>Д-во:<br/>
-TODO (можно вместо этого доказывать 2 нижние теоремы)</p>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>Сначала докажем, что если $f$ непрерывна на $G$ и $G$ открыто, то $f^{-1}(G)$ - открыто:
+$$x \in f^{-1}(G): f(x) \in G$$
+т.к. $G$ - открыто $\Rightarrow$ 
+$$\exists{O(f(x))} \subset G$$
+из непрерывности $f$ $\Rightarrow$  
+$$\exists{ O(x)}\mathpunct{:}~ f(O(x)) \subset O(f(x)) \subset G \Rightarrow O(x) \subset  f^{-1}(G)$$
+т.е. $\forall{x}$ входит с целой окрестностью, а это и есть <span>открытость</span>.
+
+Пусть $$f(K)\subset \bigcup G_{\alpha}$$ где все $G_{\alpha}$ открыты $\Rightarrow$ $K \subset \bigcup f^{-1}(G_{\alpha})$ и $f^{-1}(G_{\alpha})$ открыты $\Rightarrow$ 
+$$K \in \bigcup_{k=1}^{n}f^{-1}(G_{\alpha}) \Rightarrow f(K) \subset\bigcup_{k=1}^{n}(G_{\alpha}) $$
+$\Rightarrow f(K)$ - открыто. $\square$ 
+</p></div>
 <h2>Теорема об ограниченности</h2>
 <p>Формулировка:</p>
 <div class="spoiler-markdown"><p>Если $f$ непрерывна на компактном $K$, то $f$ ограничена.
