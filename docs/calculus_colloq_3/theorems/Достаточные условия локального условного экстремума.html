@@ -216,6 +216,30 @@ d^2 h(x_{n+1}^0, \dots, x_m^0) &amp;= \sum_{i=1}^{m} \sum_{j=1}^{m} (f - \lambda
 \end{aligned}
 $$
 $\square$
+</p></div>
+<h2>Замечание</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Достаточно рассматривать только дифференциалы, удовлетворяющие уравнениям связи
+</p></div>
+<p>Пример:</p>
+<div class="spoiler-markdown"><p>$f(x, y) = xy,~~ x + y - 2 = 0$. $L(x, y) = xy - \lambda(x + y - 2)$.
+$$
+\begin{cases}
+L'_{x} = y - \lambda = 0 \\
+L'_{y} = x - \lambda = 0 \\
+x + y - 2 = 0
+\end{cases} \implies (1, 1) \text{ - стационарная точка.}
+$$
+$$
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix},~~ A_1 = 0,~~ A_2 = -1 \text{ и достаточные условия не применимы.}
+$$
+$dL(1, 1) = 0dx^2 + dxdy + dydx + 0dy^2$
+$d(x + y - 2) = dx + dy = 0 \implies dL(1, 1) = -2dx^2 &lt; 0,~~ dx \neq 0$.
+
+Значит $(1, 1)$ - максимум.
 </p></div></div>
 </body>
 </html>
