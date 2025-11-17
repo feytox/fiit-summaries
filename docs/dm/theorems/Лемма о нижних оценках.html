@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Главная страница</title>
+<title>Лемма о нижних оценках</title>
 <script>
        MathJax = {
         tex: {
@@ -188,35 +188,17 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h4>О сайте</h4>
-<p>Данный сайт это web-версия конспектов из <a href="https://github.com/feytox/fiit-summaries">репозитория</a>. На сайте возможны баги, поэтому советую пользоваться Obsidian. Подробная информация о конспектах описана в <a href="https://github.com/feytox/fiit-summaries">репозитории</a></p>
-<p>Отличия от Obsidian:<br/>
-- Конспекты здесь синхронизируются автоматически в течение нескольких минут после push в main.<br/>
-- Некоторый текст, возможно, отображается по-другому</p>
-<h4>Материал по текущему семестру</h4>
-<ul>
-<li><a href="dm/List of Topics.html">Дискретная математика</a>, 3 семестр</li>
-<li><a href="calculus_exam_3/List of Topics.html">Экзамен по матану</a>, 3 семестр</li>
-</ul>
-<h4>Материал по прошедшим экзаменам</h4>
-<ul>
-<li>Коллоквиум по матану, 1 семестр: <a href="calculus_colloq_1/List of Definitions.html">определения</a>, <a href="calculus_colloq_1/List of Theorems.html">теоремы</a></li>
-<li><a href="algem_exam_1/List of Topics.html">Экзамен по алгему</a>, 1 семестр</li>
-<li><a href="calculus_exam_1/List of Theorems.html">Экзамен по матану</a>, 1 семестр</li>
-<li>Коллоквиум по матану, 2 семестр: <a href="calculus_colloq_2/List of Definitions.html">определения</a>, <a href="calculus_colloq_2/List of Theorems.html">теоремы</a></li>
-<li><a href="calculus_exam_2/List of Theorems.html">Экзамен по матану</a>, 2 семестр</li>
-<li><a href="algem_exam_2/List of Topics.html">Экзамен по алгему</a>, 2 семестр</li>
-<li><a href="calculus_colloq_3/List of Theorems.html">Коллоквиум по матану</a>, 3 семестр</li>
-</ul>
-<h4>Дополнительный материал</h4>
-<ul>
-<li>Python зачёт: <a href="python1/Part_A.html">Часть A</a>, <a href="python1/Part_B.html">Часть B</a></li>
-</ul>
-<h4>Примечание</h4>
-<ul>
-<li>Никто не застрахован от ошибок, поэтому если вы нашли ошибку в конспекте, пишите issue.</li>
-<li>Один билет может быть разбит на несколько файлов, обращайте на это внимание.</li>
-<li>В конспектах по линейной алгебре там, где не встречаются скаляры или они записаны греческими буквами, написание вектора может быть не полужирным (например, не "$\mathbf{x}, \mathbf{a}, \mathbf{b}, \mathbf{0}$", а "$x, a, b, 0$"). Сделано это для экономия времени, при желании это можно исправить.</li>
-</ul></div>
+<h1>Лемма о нижних оценках</h1><h2>Лемма о нижних оценках</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>
+1. Пусть $\omega(G)$ — максимальное число вершин в полном подграфе графа $G$ (кликовое число). Тогда $\chi(G) \ge \omega(G)$.
+
+2. Пусть $\beta(G)$ — максимальное число вершин в независимом множестве графа $G$ (число независимости). Тогда $\chi(G) \ge n/\beta(G)$, где $n$ — число вершин в $G$.
+</p></div>
+<p>Д-во:</p>
+<div class="spoiler-markdown"><p>В $G$ есть подграф $K_{\omega(G)}$, для раскраски которого нужно $\omega(G)$ цветов.
+Множество вершин разбивается на $\chi(G)$ независимых множеств, каждое мощности не более $\beta(G)$, откуда $n \le \chi(G)\beta(G)$.
+$\square$
+</p></div></div>
 </body>
 </html>
