@@ -1,5 +1,4 @@
 #### Материал по текущему семестру
-- [[calculus_colloq_3/List of Theorems|Коллоквиум по матану]], 3 семестр
 - [[dm/List of Topics|Дискретная математика]], 3 семестр
 - [[calculus_exam_3/List of Topics|Экзамен по матану]], 3 семестр
 
@@ -10,6 +9,7 @@
 - Коллоквиум по матану, 2 семестр: [[calculus_colloq_2/List of Definitions|определения]], [[calculus_colloq_2/List of Theorems|теоремы]]
 - [[calculus_exam_2/List of Theorems|Экзамен по матану]], 2 семестр
 - [[algem_exam_2/List of Topics|Экзамен по алгему]], 2 семестр
+- [[calculus_colloq_3/List of Theorems|Коллоквиум по матану]], 3 семестр
 
 #### Дополнительный материал
 - Python зачёт: [[Part_A|Часть A]], [[Part_B|Часть B]]
