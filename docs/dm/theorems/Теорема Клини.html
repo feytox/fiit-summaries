@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Теорема Клини</title>
+<script>
+       MathJax = {
+        tex: {
+          inlineMath: [['$', '$']],
+          displayMath: [['$$', '$$']],
+        }
+      };
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+    :root {
+        --obsidian-background: #181818;
+        --obsidian-text-color: #e2e2e2;
+        --obsidian-link-color: #8bb0e0;
+        --obsidian-heading-color: #ffffff;
+        --obsidian-border-color: #4a4a4a;
+        --obsidian-code-background: #2a2a2a;
+        --obsidian-code-text: #e2e2e2;
+        --obsidian-container-background: #222222;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.7;
+        color: var(--obsidian-text-color);
+        background-color: var(--obsidian-background);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 800px;
+        width: 100%;
+        background-color: var(--obsidian-container-background);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--obsidian-border-color);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--obsidian-heading-color);
+        margin-top: 1.8em;
+        margin-bottom: 1em;
+        line-height: 1.3;
+        font-weight: 600;
+    }
+
+    h1 { font-size: 2.5em; border-bottom: 1px solid var(--obsidian-border-color); padding-bottom: 0.3em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+    h4 { font-size: 1.3em; }
+
+    a {
+        color: var(--obsidian-link-color);
+        text-decoration: none;
+        transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: #a0c4ff;
+        text-decoration: underline;
+    }
+
+    p {
+        margin-bottom: 1.2em;
+    }
+
+    .spoiler-markdown {
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-code-background);
+        cursor: pointer;
+        padding: 2px 5px;
+        border-radius: 4px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .spoiler-markdown:hover {
+        color: var(--obsidian-text-color);
+    }
+
+    ul, ol {
+        margin-bottom: 1.2em;
+        padding-left: 30px;
+    }
+
+    li {
+        margin-bottom: 0.6em;
+    }
+
+    pre {
+        background-color: var(--obsidian-code-background);
+        border-radius: 6px;
+        padding: 18px;
+        overflow-x: auto;
+        margin-bottom: 1.5em;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+
+    code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        color: var(--obsidian-link-color);
+        background-color: rgba(60, 60, 60, 0.5);
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 5px solid var(--obsidian-link-color);
+        margin: 2em 0;
+        padding: 0.8em 25px;
+        color: #b0b0b0;
+        font-style: italic;
+        background-color: rgba(40, 40, 40, 0.5);
+        border-radius: 4px;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px dashed var(--obsidian-border-color);
+        margin: 3.5em 0;
+    }
+
+    strong, b {
+        font-weight: 700;
+    }
+
+    em, i {
+        font-style: italic;
+    }
+
+    #back-button {
+        font-size: 1.1em;
+        padding: 8px 15px;
+        display: inline-block;
+        cursor: pointer;
+        background-color: var(--obsidian-code-background);
+        color: var(--obsidian-text-color);
+        border: 1px solid var(--obsidian-border-color);
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        margin-top: 20px;
+    }
+
+    #back-button:hover {
+        background-color: var(--obsidian-link-color);
+        color: #ffffff;
+        border-color: var(--obsidian-link-color);
+    }
+</style>
+</head>
+<body>
+<script>
+        window.onload = function() {
+            if (history.length > 1) {
+                document.getElementById('back-button').style.display = 'block';
+            }
+        };
+  </script>
+<button id="back-button" onclick="history.back()">Вернуться назад</button>
+<div class="content">
+<h1>Теорема Клини</h1><h2>Теорема Клини</h2>
+<p>Формулировка:</p>
+<div class="spoiler-markdown"><p>Язык регулярен тогда и только тогда, когда он распознается некоторым конечным автоматом.
+</p></div>
+<h2>Д-во необходимости</h2>
+<div class="spoiler-markdown"><p>Докажем, что **любой регулярный язык распознается конечным автоматом**.
+
+**План:**
+
+1. Построить автоматы, распознающие языки $\varnothing, \{\lambda\}, \{a\}$ **(постройте самостоятельно)**
+
+2. По ДКА $\mathcal{A}_1 = (Q_1, \Sigma, \delta_1, s_1, T_1)$ и $\mathcal{A}_2 = (Q_2, \Sigma, \delta_2, s_2, T_2)$ построить автоматы, распознающие языки: $L(\mathcal{A}_1) \cup L(\mathcal{A}_2)$, $L(\mathcal{A}_1) \cdot L(\mathcal{A}_2)$, $(L(\mathcal{A}_1))^*$.
+
+**Объединение:**
+Для $L(\mathcal{A}_{\cup}) = L(\mathcal{A}_1) \cup L(\mathcal{A}_2)$ автомат строится следующим образом:
+$$\mathcal{A}_{\cup} = (Q_1 \cup Q_2, \Sigma, \delta_1 \cup \delta_2, \{s_1, s_2\}, T_1 \cup T_2)$$
+*Как получаем автомат:* Автоматы располагаются параллельно, их начальные состояния объединяются в новое множество начальных состояний НКА.
+
+**Конкатенация:**
+Для $L(\mathcal{A}_{\cdot}) = L(\mathcal{A}_1) \cdot L(\mathcal{A}_2)$:
+$$\mathcal{A}_{\cdot} = \begin{cases} 
+(Q_1 \cup Q_2, \Sigma, \delta, \{s_1\}, T_2), &amp; \text{при } \lambda \notin L_2 \\
+(Q_1 \cup Q_2, \Sigma, \delta, \{s_1\}, T_1 \cup T_2), &amp; \text{при } \lambda \in L_2
+\end{cases}$$
+где $\delta = \delta_1 \cup \delta_2 \cup \{(t, a, q) \mid t \in T_1, q \in Q_2, (s_2, a, q) \in \delta_2\}$.
+*Как получаем автомат:* Автоматы соединяются последовательно. Из терминальных состояний первого автомата добавляются переходы в состояния второго автомата, копирующие переходы из начального состояния второго автомата.
+
+**Замыкание Клини (Звезда):**
+Для $L(\mathcal{A}_{*}) = (L(\mathcal{A}_1))^*$:
+$$\mathcal{A}_{*} = (Q_1 \cup \{s'\}, \Sigma, \delta', \{s_1, s'\}, T \cup \{s'\})$$
+где $\delta' = \delta_1 \cup \{(t, a, q) \mid t \in T, q \in Q_1, (s_1, a, q) \in \delta_1\}$.
+(Примечание: $s'$ нужно только для распознавания $\lambda$).
+*Как получаем автомат:* Добавляются переходы из терминальных состояний обратно в начальную часть автомата (аналогично переходам из стартового состояния), создавая цикл. Дополнительно вводится новое изолированное начальное состояние $s'$, являющееся терминальным, чтобы принимать пустую строку.
+$\square$
+</p></div>
+<h2>Д-во достаточности</h2>
+<div class="spoiler-markdown"><p>**Регулярность автоматных языков**
+Пусть $\mathcal{A} = (Q, \Sigma, \delta, s, T)$ — автомат; докажем, что $L(\mathcal{A}) \in \mathbf{R}$ индукцией по $|\delta|$.
+
+**База индукции**: $|\delta| = 0$
+$L(\mathcal{A}) = \{\lambda\} \in \mathbf{R}$ при $s \in T$ и $L(\mathcal{A}) = \varnothing \in \mathbf{R}$ при $s \notin T$.
+
+**Шаг индукции**: $|\delta| = k$
+По предположению индукции, языки, распознаваемые автоматами с менее чем $k$ переходами (ребрами), регулярны.
+Возьмем произвольный переход $(q, a, r) \in \delta$, пусть $\delta' = \delta \setminus \{(q, a, r)\}$. Положим:
+$\mathcal{A}_0 = (Q, \Sigma, \delta', s, T)$
+$\mathcal{A}_1 = (Q, \Sigma, \delta', s, \{q\})$
+$\mathcal{A}_2 = (Q, \Sigma, \delta', r, \{q\})$
+$\mathcal{A}_3 = (Q, \Sigma, \delta', r, T)$
+Языки $L(\mathcal{A}_0), L(\mathcal{A}_1), L(\mathcal{A}_2), L(\mathcal{A}_3)$ регулярны по предположению индукции.
+
+Докажем, что $L(\mathcal{A}) = L(\mathcal{A}_0) \cup L(\mathcal{A}_1)a(L(\mathcal{A}_2)a)^* L(\mathcal{A}_3)$.
+Пусть $w \in L(\mathcal{A})$ помечает $(s, t)$-маршрут $W$ в $\mathcal{A}$, $t \in T$.
+Если $(q, a, r) \notin W$, то $w \in L(\mathcal{A}_0)$.
+Если $(q, a, r) \in W$, то $w = w_0 a w_1 \dots a w_n$, где $a$ отмечают **все** случаи использования перехода $(q, a, r)$:
+$$s \xrightarrow{w_0} q \xrightarrow{a} r \xrightarrow{w_1} \dots \xrightarrow{w_{n-1}} q \xrightarrow{a} r \xrightarrow{w_n} t$$
+Следовательно:
+$$w_0 \in L(\mathcal{A}_1), w_1, \dots, w_{n-1} \in L(\mathcal{A}_2), w_n \in L(\mathcal{A}_3) \Rightarrow w \in L(\mathcal{A}_1)a(L(\mathcal{A}_2)a)^* L(\mathcal{A}_3)$$
+$$ \Rightarrow w \in L(\mathcal{A}_0) \cup L(\mathcal{A}_1)a(L(\mathcal{A}_2)a)^* L(\mathcal{A}_3)$$
+В обратную сторону: $L(\mathcal{A}_0) \subseteq L(\mathcal{A})$ — очевидно.
+Если $w \in L(\mathcal{A}_1)a(L(\mathcal{A}_2)a)^* L(\mathcal{A}_3)$, то $w = w_0 a w_1 \dots a w_n$, как на рисунке выше $\Rightarrow w \in L(\mathcal{A})$.
+$\square$
+</p></div></div>
+</body>
+</html>
