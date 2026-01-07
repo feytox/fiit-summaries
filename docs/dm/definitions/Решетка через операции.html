@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Единственность дополнения</title>
+<title>Решетка через операции</title>
 <script>
        MathJax = {
         tex: {
@@ -188,26 +188,7 @@
   </script>
 <button id="back-button" onclick="history.back()">Вернуться назад</button>
 <div class="content">
-<h1>Единственность дополнения</h1><h2>Единственность дополнения в дистрибутивной решетке</h2>
-<p>Формулировка:</p>
-<div class="spoiler-markdown"><p>В дистрибутивной решетке $(A, \lor, \land)$ любой элемент имеет не более одного дополнения.
-</p></div>
-<p>Д-во:</p>
-<div class="spoiler-markdown"><p>Заметим, что для любого $a \in A$:
-- $0 \lor a = a$
-- $0 \land a = 0$
-- $1 \lor a = 1$
-- $1 \land a = a$
-
-Пусть $b$ и $b'$ — дополнения $a$. По определению дополнения это означает, что:
-- $a \lor b = 1$
-- $a \land b = 0$
-- $a \lor b' = 1$
-- $a \land b' = 0$
-
-Теперь докажем, что $b = b'$:
-$$b = b \lor (a \land b') = (b \lor a) \land (b \lor b') = 1 \land (b \lor b') = b \lor b'$$ аналогично для $b'$ тогда получаем равенство
-$\square$
-</p></div></div>
+<h1>Решетка через операции</h1><p>![[Pasted image <br/>
+20260107145842.png]]</p></div>
 </body>
 </html>
