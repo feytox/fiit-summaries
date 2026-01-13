@@ -195,15 +195,15 @@
 <div class="spoiler-markdown"><p>Рассмотрим единичную окружность, $OB$ образует угол ${} x \in \left( 0, \dfrac{\pi}{2} \right) {}$ c радиусом $OA$.
 !<span>circle.svg</span>
 Очевидно, что $S_{OAB} \leq S_{\text{сект}} \leq S_{OAC}$
-- $S_{OAB} = \dfrac{1}{2} \cdot \sin x \cdot 1$
+- $S_{OAB} = \dfrac{1}{2} \cdot \sin x \cdot 1 \cdot 1$
 - Так как радиус равен $1$, $S_{\text{круга}} = \pi$, а значит $S_{\text{сект}} = \dfrac{x}{2}$ - т.е. в два раза меньше, чем длина дуги этого сектора.
-- $S_{OAC} = \dfrac{1}{2} \cdot 1 \cdot \mathrm{tg} x$
+- $S_{OAC} = \dfrac{1}{2} \cdot 1^2 \cdot \mathrm{tg} x$
 
 Следовательно: 
 $$\dfrac{1}{2}\sin x \leq \dfrac{x}{2} \leq \dfrac{1}{2}\mathrm{tg} x \implies \sin x \leq x \leq \mathrm{tg} x \implies 1 \leq \dfrac{x}{\sin x} \leq \dfrac{1}{\cos x}$$
 Перевернём неравенство, получим:
 $$\forall{x \in \left( 0, \dfrac{\pi}{2} \right)}\mathpunct{:}~ \cos x \leq \dfrac{\sin x}{x} \leq 1$$
-Из того, что $\cos x$ - чётная, а $\sin x$ - нечётная функция, следует, что данное неравенство верно и для $x \in \left( - \dfrac{\pi}{2}, 0 \right)$
+Из того, что $\cos x$ и $\dfrac{\sin x}{x}$ - чётные функции, следует, что данное неравенство верно и для $x \in \left( - \dfrac{\pi}{2}, 0 \right)$
 
 Так как $\cos x$ - непрерывна, то $\lim_{x \to 0} \cos x = 1$. Применяя <span>лемму о двух миллиционерах</span>, получаем:
 $$\left. \begin{array} \\
